@@ -29,10 +29,11 @@ id welcome a `grep fixme` :p
 if we decide a way to store all images on the wiki on badlogic servers (to prevent 404s) we can `grep ![]` to find them!
 
 
-
 ## Misc. ##
 
 I'm not translating the [[Graphics]] post, because it needs to be rewritten! motivation! (see editors note for repetition)
+
+I'm also not translating a few of the pages marked `deprecated`, mostly the `beginner` tutorials. I chose not to because they're wildly out of date, and it seemed like it was futile
 
 
 ## issues: ##
