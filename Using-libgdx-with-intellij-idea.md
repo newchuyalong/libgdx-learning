@@ -1,5 +1,3 @@
-# fixme: formatting.
-
 First there will be a short version, outlining only the major steps. This is for people familiar with IntelliJ IDEA or those that have set up libgdx project before and only need a small recap. Below there is a step-by-step guide with screenshots.
 
 Following this guide will enable you to use IntelliJ IDEA while others on your team use the standard Eclipse setup.
@@ -53,7 +51,9 @@ The project in this guide is located in _C:\Android_ and named _!MyLibgdxGame_. 
   * Select _File->New Project_
   * Select _Create project from scratch_ in the dialog and press _Next_.
   * In the next screen, enter the name _(1)_ and select the location _(2)_ of the project. Give the module to be created the name _Main_ _(3)_ and then press _Next_.
+
   ![](http://matsemann.com/host/libgdx/newproject.png)
+
   * In the next screen, select _Create source directory_, name it _src_ and press _Next_.
   * Press _Finish_ in the last screen.
 
@@ -85,38 +85,44 @@ This step is only if you need a new Android SDK to select when creating the Andr
   * If the Android version you would like to target is not in list _(5)_, you will need to download it through the Android SDK tool first.
 
 ### Add the libgdx files ###
-```fixme, i think i can be better...```
-  * Right click the Desktop module __(1)__, select _New->Directory_ _(2)_. Name the directory _libs_ and press _OK_.|
 
-  * Do the same for the Main module _(3)_.|
-  http://matsemann.com/host/libgdx/createlibsdirectory.png
-  * Download libgdx, either the last stable or the [http://libgdx.badlogicgames.com/nightlies/ nightlies].|
+  * Right click the Desktop module _(1)_, select _New->Directory_ _(2)_. Name the directory _libs_ and press _OK_.
+
+  * Do the same for the Main module _(3)_.
+ 
+ ![](http://matsemann.com/host/libgdx/createlibsdirectory.png)
+
+  * Download libgdx, either the last stable or the [nightlies](http://libgdx.badlogicgames.com/nightlies/).
 
   * In the _libs_ folder for the Main module, place these files from the libgdx zip file:
     * gdx.jar
-    * sources/gdx-sources.jar |
+    * sources/gdx-sources.jar 
 
   * In the _libs_ folder for the Desktop module, place these files from the libgdx zip file:
     * gdx-natives.jar
     * gdx-backend-lwjgl.jar
-    * gdx-backend-lwjgl-natives.jar|
+    * gdx-backend-lwjgl-natives.jar
 
   * In the _libs_ folder for the Android module, place these files and directories from the libgdx zip file:
     * gdx-backend-android.jar
     * armeabi (the whole directory)
-    * armeabi-v7a (the whole directory)|
+    * armeabi-v7a (the whole directory)
+
   * The picture below shows how the libraries should be placed when done with this step.
 
-  ![](http://matsemann.com/host/libgdx/withlibs.png)
+![](http://matsemann.com/host/libgdx/withlibs.png)
 
 ### Add the libraries ###
+
   * Right click the Main module and select _Open Module Settings_.
   * Select _Libraries_ _(1)_ in the first panel.
   * Press the [+] _(2)_ above the second column and choose _Java_ if prompted.
   * Select the _libs_ directory of the Android module _(3)_ and press _OK_.
   * Select the Android module _(4)_ and press _OK_ again.
   * Name it _Androidlibs_ _(5)_.
-  http://matsemann.com/host/libgdx/androidlibs.png
+
+![](http://matsemann.com/host/libgdx/androidlibs.png)
+
   * Press the [+] _(2)_ again, but this time select the _libs_ directory of the Desktop module in _(3)_, select the Desktop module in  _(4)_ and name it _Desktoplibs_ in _(5)_.
   * Press the [+] _(2)_ again, but this time select the _libs_ directory of the Main module in _(3)_, select the Main module in  _(4)_ and name it _Mainlibs_ in _(5)_.
 
@@ -125,14 +131,17 @@ This step is only if you need a new Android SDK to select when creating the Andr
   * Select the Main module _(2)_ in the second panel.
   * Select the Dependencies tab _(3)_ in the third panel.
   * Check _Export_ in front of Mainlibs _(4)_
-  http://matsemann.com/host/libgdx/mainexport.png
+  
+![](http://matsemann.com/host/libgdx/mainexport.png)
 
   * Select the Desktop module _(5)_ in the second panel.
   * Press the [+] to the right _(6)_.
   * Select _Module Dependency_ _(7)_.
   * Select the Main module _(8)_ and press _OK_.
   * Select the Android module _(9)_ in the second panel and repeat _(6), (7) and (8)_.
-  http://matsemann.com/host/libgdx/addmoduledependency.png
+
+![](http://matsemann.com/host/libgdx/addmoduledependency.png)
+
   * Press _OK_ to close the Project Structure window.
 
 ### Add the starter classes ###
@@ -186,7 +195,7 @@ public class MyLibgdxGameAndroidStarter extends AndroidApplication
 }
 ```
 
-See [ApplicationConfiguration Starter Classes and Configuration] on how to use these settings and how to set up the manifest.
+See [[Starter Classes & Configuration]] on how to use these settings and how to set up the manifest.
 
 ### Linking the asset directories ###
 Android is a bit picky when it comes to assets, so it needs to have all the assets in its own assets-directory and will not fetch assets from the Main module (as the Desktop module would).
@@ -198,28 +207,33 @@ This leaves us with three options:
 
 #### Alternative 2: Working directory ####
   * Select _Run->Edit Configurations..._ _(1)_.
-  http://matsemann.com/host/libgdx/editconfigurations.png
+
+  ![](http://matsemann.com/host/libgdx/editconfigurations.png)
+
   * Press the [+] button _(2)_ and select _Application_ _(3)_.
   * Give the configuration a name _(4)_.
-  * Select the _!DesktopStarter_ class _(5)_.
+  * Select the _DesktopStarter_ class _(5)_.
   * Set the Working directory to the _Android\assets_ directory _(6)_.
   * Select the Desktop module _(7)_.
-  http://matsemann.com/host/libgdx/rundesktopconfig.png
+
+  ![](http://matsemann.com/host/libgdx/rundesktopconfig.png)
 
 #### Alternative 3: Sym-link ####
-See [http://matsemann.com/host/libgdx/symlink.png this image on how to set up sym-link] in windows. (will need to run Command Prompt as admin). Linux/OSX can do the same with the _ln -s_-command.
+See [this image on how to set up sym-link](http://matsemann.com/host/libgdx/symlink.png) in windows. (will need to run Command Prompt as admin). Linux/OSX can do the same with the _ln -s_-command.
 
 *Note:* You will need a _data_-directory in the Main module, and you will need to prefix all your assets with _data/_.
 
-And see [http://matsemann.com/host/libgdx/rundesktopconfig2.png this image on the run configuration] you should use.
+And see [this image on the run configuration](http://matsemann.com/host/libgdx/rundesktopconfig2.png) you should use.
   
 ----
 ## Tips for using IntelliJ IDEA ##
 _CTRL + Q_ when having the caret positioned over any method or variable or when viewing quick-suggestions will bring up the Javadoc.
-http://matsemann.com/host/libgdx/ctrlq.png
+
+![](http://matsemann.com/host/libgdx/ctrlq.png)
 
 _CTRL + SHIFT + I_ will show the code for a method in a small window, nice when you want to quick check the inner workings of a gdx class. This works because we added the gdx-sources.jar
-http://matsemann.com/host/libgdx/ctrlshifti.png
+
+![](http://matsemann.com/host/libgdx/ctrlshifti.png)
 
 _CTRL + LEFT MOUSE CLICK_ will open up the code in the editor.
 
