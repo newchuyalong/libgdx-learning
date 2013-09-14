@@ -1,17 +1,15 @@
-# fixme: ToC
+ * [TexturePacker](#TexturePacker)
+   * [Running TexturePacker2](#Running_TexturePacker2)
+   * [Directory structure](#Directory_structure)
+   * [Configuration](#Configuration)
+   * [Settings](#Settings)
+   * [NinePatches](#NinePatches)
+   * [indexes](#Image_indexes)
+   * [Packing](#Packing)
+   * [Automatic packing](#Automatic_packing)
+ * [TextureAtlas](#TextureAtlas)
 
- * [#TexturePacker TexturePacker]
-   * [#Running_TexturePacker2 Running TexturePacker2]
-   * [#Directory_structure Directory structure]
-   * [#Configuration Configuration]
-   * [#Settings Settings]
-   * [#NinePatches NinePatches]
-   * [#Image_indexes Image indexes]
-   * [#Packing Packing]
-   * [#Automatic_packing Automatic packing]
- * [#TextureAtlas TextureAtlas]
-
-# TexturePacker #
+# <a id="TexturePacker"></a>TexturePacker #
 
 In OpenGL, a texture is bound, some drawing is done, another texture is bound, more drawing is done, etc. Binding the texture is relatively expensive, so it is ideal to store many smaller images on a larger image, bind the larger texture once, then draw portions of it many times. libgdx has a `TexturePacker2` class which is a command line application that packs many smaller images on to larger images. It stores the locations of the smaller images so they are easily referenced by name in your application using the `TextureAtlas` class.
 
@@ -21,7 +19,7 @@ Note the latest version of the libgdx texture packer is the class `TexturePacker
 
 # fixme: what should i do with the above?
 
-## Running TexturePacker2 ##
+## <a id="Running_TexturePacker2"></a>Running TexturePacker2 ##
 
 The `TexturePacker2` class is in the gdx-tools project. It can be run from source via Eclipse:
 
@@ -42,7 +40,7 @@ java -cp gdx.jar;extensions/gdx-tools/gdx-tools.jar com.badlogic.gdx.tools.image
 
 Note that TexturePacker2 runs significantly faster with Java 1.7+, especially when packing hundreds of input images.
 
-## Directory structure ##
+## <a id="Directory_structure"></a>Directory structure ##
 
 TexturePacker can pack all images for an application in one shot. Given a directory, it recursively scans for image files. For each directory of images TexturePacker encounters, it packs the images on to a larger texture, called a page. If the images in a directory don't fit on the max size of a single page, multiple pages will be used.
 
@@ -54,7 +52,7 @@ To use subdirectories for organization without TexturePacker outputting a set of
 
 To avoid subdirectory paths being used in image names in the atlas file, see the `flattenPaths` setting.
 
-## Configuration ##
+## <a id="Configuration"></a>Configuration ##
 
 Each directory may contain a "pack.json" file, which is a JSON representation of the TexturePacker2.Settings class. Each subdirectory inherits all the settings from its parent directory. Any settings set in the subdirectory override those set in the parent directory.
 
@@ -95,7 +93,7 @@ Below is a JSON example with every available setting and the default value for e
 
 Note that this is libgdx's "minimal" JSON format, so double quotes are optional in most cases.
 
-## Settings ##
+## <a id="Settings"></a>Settings ##
 
 | *Field* | *Description* | *Default* |
 |:-------:|:------------- |:---------:|
@@ -128,15 +126,15 @@ Note that this is libgdx's "minimal" JSON format, so double quotes are optional 
 | `premultiplyAlpha` | If true, the RGB will be multiplied by the alpha. See [here](http://blogs.msdn.com/b/shawnhar/archive/2009/11/06/premultiplied-alpha.aspx) for more information. | false |
 | `useIndexes` | If false, image names are used without stripping any image index suffix. | false |
 
-## NinePatches ##
+## <a id="NinePatches"></a>NinePatches ##
 
 If an image file name ends with ".9" just before the file extension, it is considered a ninepatch. NinePatch images can be created using [this tool](http://developer.android.com/tools/help/draw9patch.html). The image must have a 1px transparent border. The upper and left edge may optionally have one contiguous line of black pixels which denote the split information, ie what part of the ninepatch will stretch. The bottom and right edge may optionally have one contiguous line of black pixels which denote the padding information, ie how content on top of the NinePatch should be inset. When this image is packed, the 1px border is removed and the split and padding information stored in the pack file. `TextureAtlas` allows an instance of NinePatch to created for the region using the split information.
 
-## Image indexes ##
+## <a id="Image_indexes"></a>Image indexes ##
 
 If an image file name ends with underscore and then a number (eg animation_23.png), the number is considered the "index" and is stored separately. The image name is stored without the underscore and index. `TextureAtlas` allows a list of all images with the same name to be retrieved, ordered by index. This makes it easy to pack animations without losing the order of the frames.
 
-## Packing ##
+## <a id="Packing"></a>Packing ##
 
 The TexturePackage2 class is in `gdx-tools.jar`, which is in the extensions directory of the nightlies/releases zip files. You only need the TexturePacker as a tool to process your image files for your application, you don't need it as a dependency to run your application. To run the packer you need both `gdx.jar` and `gdx-tools.jar`.
 
@@ -150,7 +148,7 @@ If `outputDir` is omitted, files will be placed in a new directory that is a sib
 
 While texture packing is intended to be a fully automated process, there has also been a nice UI contributed by Obli: [TexturePacker GUI](https://code.google.com/p/libgdx-texturepacker-gui/). There is also a commercial product at [texturepacker.com](http://www.codeandweb.com/texturepacker) that has even more features than the libgdx texture packer, such as automatic downsizing.
 
-## Automatic packing ##
+## <a id="Automatic_packing"></a>Automatic packing ##
 
 During development it can be convenient to have the desktop application run TexturePacker2 before starting the game:
 
@@ -171,7 +169,7 @@ Each time the game is run, all the images are packed. This can be especially con
 
 _Note: When loading files from the classpath, Eclipse usually will not reflect changes to files that are updated externally. The project with the changed files must be manually refreshed in Eclipse. During development files can be loaded through the filesystem instead, where this is not an issue._
 
-# TextureAtlas #
+# <a id="TextureAtlas"></a>TextureAtlas #
 
 The TexturePacker output is a directory of page images and a text file that describes all the images packed on the pages. This shows how to use the images in an application:
 
