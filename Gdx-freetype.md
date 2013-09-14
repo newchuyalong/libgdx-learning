@@ -1,0 +1,55 @@
+# Introduction #
+
+If you want to draw text in your game, you usually use a [[BitmapFont | Bitmap Fonts]].
+However, there is a downside:
+
+* BitmapFonts rely on an image, so you have to scale them if you want a different size, which may look ugly.*
+
+You could just save a BitmapFont of the biggest size needed in your game then and you never have to scale up, just down, right?
+Well, that's true, but such a BitmapFont can easily take up two times as much space on your hard drive as the corresponding TrueType Font (.ttf).
+Now imagine you have to ship all your big BitmapFonts with your game and your game uses ten different fonts... on an Android device. Bye bye, free storage!
+
+The solution to your problem is the `gdx-freetype` extension:
+  * ship only leightweight .ttf files with your game
+  * generate a BitmapFont of your desired size on the fly
+  * user might put his own fonts into your game
+
+# Details #
+
+Since this is an extension, it is not included in your LibGDX project by default.
+You have to put it in your project manually.
+
+## How to put gdx-freetype in your project ##
+
+In case you don't have it anymore, download the latest [nightly build](http://libgdx.badlogicgames.com/nightlies/).
+
+Open _libgdx-nightly-latest.zip/extensions/gdx-freetype_ and do the following:
+  * extract gdx-freetype.jar and gdx-freetype-natives.jar to your core project's libs folder
+  * link gdx-freetype.jar to your core, android and desktop project
+  * link gdx-freetype-natives.jar to your desktop project
+  * copy armeabi/libgdx-freetype.so to your android project's libs/armeabi folder
+  * copy armeabi-v7a/libgdx-freetype.so to your android project's libs/armeabi-v7a folder
+
+You're ready to go.
+
+## How to use gdx-freetype in code ##
+
+Using the gdx-freetype extension in your code is really simple.
+```java
+FreeTypeFontGenerator generator = new FreeTypeFontGenerator(Gdx.files.internal("fonts/myfont.ttf"));
+BitmapFont font12 = generator.generateFont(12); // font size 12 pixels
+BitmapFont font25 = generator.generateFont(25); // font size 25 pixels
+generator.dispose(); // don't forget to dispose to avoid memory leaks!
+```
+
+### latest info about caveats ###
+
+Quoting from http://www.badlogicgames.com/wordpress/?p=2300:
+  * If you use to big of a size, things might explode. BitmapFonts still only support a single atlas page at the moment, something I'll try to fix in the next couple of weeks.
+  * Asian scripts “might” work, see caveat above though. They contain just to many glyphs. I’m thinking about ways to fix this.
+  * Right-to-left scripts like Arabic are a no-go. The layout “algorithms” in BitmapFont and BitmapFontCache have no idea how to handle that.
+  * Throwing just any font at FreeType is not a super awesome idea. Some fonts in the wild are just terrible, with bad or no hinting information and will look like poopoo.
+
+----
+
+download an [example](https://bitbucket.org/dermetfan/somelibgdxtests/downloads/gdx-freetype%20test.jar)

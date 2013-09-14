@@ -1,0 +1,188 @@
+# fixme: ToC wiki link in 'helping yourself'
+
+The libgdx community is glad to help you when you get stuck or encounter a bug, but first you must make it as easy to help you as possible.
+
+ * [#Helping_Yourself Helping Yourself]
+ * [#Top_Title Topic Title]
+ * [#Context Context]
+ * [#Relevance Relevance]
+ * [#Problem_Statement Problem Statement]
+ * [#Exceptions Exceptions]
+ * [#Code_Snippets Code Snippets]
+ * [#Executable_Example_Code Executable Example Code]
+   * [#Example_Resources Example Resources]
+   * [#Barebones_Application Barebones Application]
+   * [#Barebones_SpriteBatch Barebones SpriteBatch]
+   * [#Barebones_Stage Barebones Stage]
+ * [#Attitude Attitude]
+ * [#Formatting Formatting]
+
+## Helping Yourself ##
+
+Please go through this short checklist to be sure you haven't missed an easy to find solution.
+
+  * Are you using the latest [nightly build](http://libgdx.badlogicgames.com/download.html)? Please try that first, as issues are being fixed every single day.
+  * Have you read the documentation on the [https://code.google.com/p/libgdx/wiki/TableOfContents wiki]? It can also be very helpful to look at the [Javadocs](http://libgdx.badlogicgames.com/nightlies/docs/api/) and [source code](https://github.com/libgdx/libgdx) (don't be shy!). Search the [tests](https://github.com/libgdx/libgdx/tree/master/tests/gdx-tests/src/com/badlogic/gdx/tests) for a specific class to find example code.
+  * Have you [searched the forum](http://www.badlogicgames.com/forum/search.php) for your problem?
+  * Have you [searched the issue tracker](https://code.google.com/p/libgdx/issues/advsearch) for your problem? Be sure to search "All issues", not just "Open issues".
+
+If you still have a problem, often the fastest way to get help is in the libgdx chat room, which is [#libgdx on irc.freenode.net](irc://irc.freenode.net/libgdx). Otherwise, if you wish to post on the [forum](http://www.badlogicgames.com/forum/) or post a new issue on the [tracker](https://code.google.com/p/libgdx/issues/list), keep reading.
+
+## Topic Title ##
+
+Write a clear and short topic title. Titles that do not describe the topic (such as "please help") or contain all caps, exclamation marks, etc make it much less likely that your post will be read.
+
+## Context ##
+
+Describe what you are trying to achieve. If it might help your question get answered, also explain the reasons why. If specific solutions are unacceptable, list them and why.
+
+Try to keep the information relevant. If you aren't sure, include the extra information but if your text gets very long, provide an executive summary separate from the rest.
+
+## Problem Statement ##
+
+Concisely describe the problem. Describe each approach you have tried and, for each of those, explain what you expected and what actually happened.
+
+If you fail to do this, likely you will be ignored. No one wants to guess what your problem is and often they don't have the time or patience to ask for the information you should have included from the start.
+
+## Exceptions ##
+
+If an exception occurred, include the full exception message and stack-trace.
+
+Often the first line number just after the deepest (nearest to the bottom) exception message is most relevant. If this line is in your code, along with the full exception message and stack-trace you should include your code for this line and 1-2 surrounding lines.
+
+```
+Exception in thread "LWJGL Application" com.badlogic.gdx.utils.GdxRuntimeException: java.lang.NullPointerException
+	at com.badlogic.gdx.backends.lwjgl.LwjglApplication$1.run(LwjglApplication.java:111)
+Caused by: java.lang.NullPointerException
+	at com.badlogic.gdx.scenes.scene2d.ui.Button.setStyle(Button.java:155) <- **MOST IMPORTANT LINE**
+	at com.badlogic.gdx.scenes.scene2d.ui.TextButton.setStyle(TextButton.java:55)
+	at com.badlogic.gdx.scenes.scene2d.ui.Button.<init>(Button.java:74)
+	at com.badlogic.gdx.scenes.scene2d.ui.TextButton.<init>(TextButton.java:34)
+	at com.badlogic.gdx.backends.lwjgl.LwjglApplication.mainLoop(LwjglApplication.java:125)
+	at com.badlogic.gdx.backends.lwjgl.LwjglApplication$1.run(LwjglApplication.java:108)
+```
+
+## Code Snippets ##
+
+Code snippets are most often not very useful. Unless you are blatantly misusing the API, most problems cannot be solved just by looking at a code snippet. Code snippets mostly lead to vague guesses at what might be wrong instead of a real answer to your question. Instead, include executable example code.
+
+## Executable Example Code ##
+
+Example code that can be copied, pasted, and run is the best way to get help. It saves those helping you time because they can see the problem right away. They can quickly fix your code or fix the bug, verify the fix, and show you the result. No matter what, an executable example has to be written to properly test, fix, and verify the fix. If you can't debug and fix the problem yourself, you can still help by providing the executable example.
+
+Creating executable example code does take some time. You need to take apart your application and reconstruct the relevant parts in a new, bare-bones application that shows the problem. Quite often just by doing this you will figure out the problem. If not, you will get help very quickly and the people helping you will have more time to help more people.
+
+### Example Resources ###
+
+Often executable examples need some resources, such as an image or sound file. It is extra work for those trying to help if they must download your specific resources. Instead, it is ideal to use resources from the [libgdx tests](https://github.com/libgdx/libgdx/tree/master/tests/gdx-tests-android/assets). This enables your example code to be simply pasted into the `gdx-tests-lwjgl` project and run.
+
+The easiest way to write an executable example is to paste one of the bare-bones applications below into the `gdx-tests-lwjgl` project and then modify it to show your problem, using only the [test resources](https://github.com/libgdx/libgdx/tree/master/tests/gdx-tests-android/assets).
+
+### Bare-bones Application ###
+
+Below is a simple, bare-bones, executable application. This can be used as a base for creating your own executable example code.
+
+```java
+import com.badlogic.gdx.*;
+import com.badlogic.gdx.backends.lwjgl.LwjglApplication;
+import com.badlogic.gdx.graphics.GL10;
+
+public class Barebones extends ApplicationAdapter {
+	public void create () {
+		// your code here
+	}
+
+	public void render () {
+		Gdx.gl.glClear(GL10.GL_COLOR_BUFFER_BIT);
+		// your code here
+	}
+
+	public static void main (String[] args) throws Exception {
+		new LwjglApplication(new Barebones());
+	}
+}
+```
+
+### Bare-bones SpriteBatch ###
+
+This bare-bones application uses SpriteBatch to draw an image from the `gdx-tests-lwjgl` project.
+
+```java
+import com.badlogic.gdx.*;
+import com.badlogic.gdx.backends.lwjgl.LwjglApplication;
+import com.badlogic.gdx.graphics.*;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+
+public class BarebonesBatch extends ApplicationAdapter {
+	SpriteBatch batch;
+	Texture texture;
+
+	public void create () {
+		batch = new SpriteBatch();
+		texture = new Texture(Gdx.files.internal("data/badlogic.jpg"));
+	}
+
+	public void render () {
+		Gdx.gl.glClear(GL10.GL_COLOR_BUFFER_BIT);
+		batch.begin();
+		batch.draw(texture, 100, 100);
+		batch.end();
+	}
+
+	public static void main (String[] args) throws Exception {
+		new LwjglApplication(new BarebonesBatch());
+	}
+}
+```
+
+### Bare-bones Stage ###
+
+This bare-bones application has a [scene2d Stage] and uses [[scene2d.ui]] to draw a label and a button. It uses the [[Skin]] from the `gdx-tests-lwjgl` project.
+
+```java
+import com.badlogic.gdx.*;
+import com.badlogic.gdx.backends.lwjgl.LwjglApplication;
+import com.badlogic.gdx.graphics.GL10;
+import com.badlogic.gdx.scenes.scene2d.Stage;
+import com.badlogic.gdx.scenes.scene2d.ui.*;
+
+public class BarebonesStage extends ApplicationAdapter {
+	Stage stage;
+
+	public void create () {
+		stage = new Stage();
+		Gdx.input.setInputProcessor(stage);
+
+		Skin skin = new Skin(Gdx.files.internal("data/uiskin.json"));
+		Label label = new Label("Some Label", skin);
+		TextButton button = new TextButton("Some Button", skin);
+
+		Table table = new Table();
+		stage.addActor(table);
+		table.setFillParent(true);
+
+		table.debug();
+		table.defaults().space(6);
+		table.add(label);
+		table.add(button);
+	}
+
+	public void render () {
+		Gdx.gl.glClear(GL10.GL_COLOR_BUFFER_BIT);
+		stage.draw();
+		Table.drawDebug(stage);
+	}
+
+	public static void main (String[] args) throws Exception {
+		new LwjglApplication(new BarebonesStage());
+	}
+}
+```
+
+## Attitude ##
+
+Begging for help or a quick answer tends to turn people off and makes it less likely you will receive help at all. Just be polite and your question will get answered politely as time allows. If you are rude, you will be ignored or met with rudeness in return. The people helping you are busy and providing you help for free simply because they are nice. They don't owe you anything and they don't have to care about you or your problems.
+
+## Formatting ##
+
+If you spend a little bit of your time to format your post nicely, it is more likely others will spend their time responding to your post. This means capital letters where appropriate, paragraphs to separate ideas, use actual words (rather than "u", "bcoz", etc), put code in code blocks, etc. If English is not your first language, we understand. No need to apologize, just do your best to make an effort.
