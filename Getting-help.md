@@ -1,23 +1,21 @@
-# fixme: ToC wiki link in 'helping yourself'
-
 The libgdx community is glad to help you when you get stuck or encounter a bug, but first you must make it as easy to help you as possible.
 
- * [#Helping_Yourself Helping Yourself]
- * [#Top_Title Topic Title]
- * [#Context Context]
- * [#Relevance Relevance]
- * [#Problem_Statement Problem Statement]
- * [#Exceptions Exceptions]
- * [#Code_Snippets Code Snippets]
- * [#Executable_Example_Code Executable Example Code]
-   * [#Example_Resources Example Resources]
-   * [#Barebones_Application Barebones Application]
-   * [#Barebones_SpriteBatch Barebones SpriteBatch]
-   * [#Barebones_Stage Barebones Stage]
- * [#Attitude Attitude]
- * [#Formatting Formatting]
+ * [Helping Yourself](#Helping_Yourself)
+ * [Topic Title](#Top_Title)
+ * [Context](#Context)
+ * [Relevance](#Relevance)
+ * [Problem Statement](#Problem_Statement)
+ * [Exceptions](#Exceptions)
+ * [Code Snippets](#Code_Snippets)
+ * [Executable Example Code](#Executable_Example_Code)
+   * [Example Resources](#Example_Resources)
+   * [Application](#Barebones_Application Barebones)
+   * [SpriteBatch](#Barebones_SpriteBatch Barebones)
+   * [Barebones Stage](#Barebones_Stage)
+ * [Attitude](#Attitude)
+ * [Formatting](#Formatting)
 
-## Helping Yourself ##
+## <a id="Helping_Yourself"></a>Helping Yourself ##
 
 Please go through this short checklist to be sure you haven't missed an easy to find solution.
 
@@ -28,23 +26,23 @@ Please go through this short checklist to be sure you haven't missed an easy to 
 
 If you still have a problem, often the fastest way to get help is in the libgdx chat room, which is [#libgdx on irc.freenode.net](irc://irc.freenode.net/libgdx). Otherwise, if you wish to post on the [forum](http://www.badlogicgames.com/forum/) or post a new issue on the [tracker](https://code.google.com/p/libgdx/issues/list), keep reading.
 
-## Topic Title ##
+## <a id="Topic_Title"></a>Topic Title ##
 
 Write a clear and short topic title. Titles that do not describe the topic (such as "please help") or contain all caps, exclamation marks, etc make it much less likely that your post will be read.
 
-## Context ##
+## <a id="Context"></a>Context ##
 
 Describe what you are trying to achieve. If it might help your question get answered, also explain the reasons why. If specific solutions are unacceptable, list them and why.
 
 Try to keep the information relevant. If you aren't sure, include the extra information but if your text gets very long, provide an executive summary separate from the rest.
 
-## Problem Statement ##
+## <a id="Problem_Statement"></a>Problem Statement ##
 
 Concisely describe the problem. Describe each approach you have tried and, for each of those, explain what you expected and what actually happened.
 
 If you fail to do this, likely you will be ignored. No one wants to guess what your problem is and often they don't have the time or patience to ask for the information you should have included from the start.
 
-## Exceptions ##
+## <a id="Exceptions"></a>Exceptions ##
 
 If an exception occurred, include the full exception message and stack-trace.
 
@@ -62,23 +60,23 @@ Caused by: java.lang.NullPointerException
 	at com.badlogic.gdx.backends.lwjgl.LwjglApplication$1.run(LwjglApplication.java:108)
 ```
 
-## Code Snippets ##
+## <a id="Code_Snippets"></a>Code Snippets ##
 
 Code snippets are most often not very useful. Unless you are blatantly misusing the API, most problems cannot be solved just by looking at a code snippet. Code snippets mostly lead to vague guesses at what might be wrong instead of a real answer to your question. Instead, include executable example code.
 
-## Executable Example Code ##
+## <a id="Executable_Example_Code"></a>Executable Example Code ##
 
 Example code that can be copied, pasted, and run is the best way to get help. It saves those helping you time because they can see the problem right away. They can quickly fix your code or fix the bug, verify the fix, and show you the result. No matter what, an executable example has to be written to properly test, fix, and verify the fix. If you can't debug and fix the problem yourself, you can still help by providing the executable example.
 
 Creating executable example code does take some time. You need to take apart your application and reconstruct the relevant parts in a new, bare-bones application that shows the problem. Quite often just by doing this you will figure out the problem. If not, you will get help very quickly and the people helping you will have more time to help more people.
 
-### Example Resources ###
+### <a id="Example_Resources"></a>Example Resources ###
 
 Often executable examples need some resources, such as an image or sound file. It is extra work for those trying to help if they must download your specific resources. Instead, it is ideal to use resources from the [libgdx tests](https://github.com/libgdx/libgdx/tree/master/tests/gdx-tests-android/assets). This enables your example code to be simply pasted into the `gdx-tests-lwjgl` project and run.
 
 The easiest way to write an executable example is to paste one of the bare-bones applications below into the `gdx-tests-lwjgl` project and then modify it to show your problem, using only the [test resources](https://github.com/libgdx/libgdx/tree/master/tests/gdx-tests-android/assets).
 
-### Bare-bones Application ###
+### <a id="Bare-bones_Application"></a>Bare-bones Application ###
 
 Below is a simple, bare-bones, executable application. This can be used as a base for creating your own executable example code.
 
@@ -103,7 +101,7 @@ public class Barebones extends ApplicationAdapter {
 }
 ```
 
-### Bare-bones SpriteBatch ###
+### <a id="Bare-bones_SpriteBatch"></a>Bare-bones SpriteBatch ###
 
 This bare-bones application uses SpriteBatch to draw an image from the `gdx-tests-lwjgl` project.
 
@@ -135,7 +133,7 @@ public class BarebonesBatch extends ApplicationAdapter {
 }
 ```
 
-### Bare-bones Stage ###
+### <a id="Bare-bones_Stage"></a>Bare-bones Stage ###
 
 This bare-bones application has a [scene2d Stage] and uses [[scene2d.ui]] to draw a label and a button. It uses the [[Skin]] from the `gdx-tests-lwjgl` project.
 
@@ -179,10 +177,10 @@ public class BarebonesStage extends ApplicationAdapter {
 }
 ```
 
-## Attitude ##
+## <a id="Attitude"></a>Attitude ##
 
 Begging for help or a quick answer tends to turn people off and makes it less likely you will receive help at all. Just be polite and your question will get answered politely as time allows. If you are rude, you will be ignored or met with rudeness in return. The people helping you are busy and providing you help for free simply because they are nice. They don't owe you anything and they don't have to care about you or your problems.
 
-## Formatting ##
+## <a id="Formatting"></a>Formatting ##
 
 If you spend a little bit of your time to format your post nicely, it is more likely others will spend their time responding to your post. This means capital letters where appropriate, paragraphs to separate ideas, use actual words (rather than "u", "bcoz", etc), put code in code blocks, etc. If English is not your first language, we understand. No need to apologize, just do your best to make an effort.
