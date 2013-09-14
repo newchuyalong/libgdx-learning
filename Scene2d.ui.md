@@ -1,51 +1,47 @@
-# scene2d.ui #
-
 ## Overview ##
-
-# fixme: need a working ToC (INTEGRAL TO USEFULNESS!)
 
 scene2d is libgdx's 2D scene graph. At its core, it provides basic 2D scene graph functionality: actors, groups, drawing, events, and actions. This is a lot of utility that applications can leverage, but it is reasonably low level. For games this is fine because most actors are application specific. For building UIs, the scene2d.ui package provides common UI widgets and other classes built on top of scene2d.
 
 It is highly recommended to read or least skim the [[scene2d documentation|scene2d]] before continuing.
 
- * [#Widget_and_WidgetGroup Widget and WidgetGroup]
- * [#Layout Layout]
- * [#Table Table]
- * [#Stage_setup Stage setup]
- * [#Skin Skin]
- * [#Drawable Drawable]
- * [#ChangeEvents ChangeEvents]
- * [#Clipping Clipping]
- * [#Rotation_and_scale Rotation and scale]
- * [#Widgets Widgets]
-   * [#Label Label]
-   * [#Image Image]
-   * [#Button Button]
-   * [#TextButton TextButton]
-   * [#ImageButton ImageButton]
-   * [#CheckBox CheckBox]
-   * [#ButtonGroup ButtonGroup]
-   * [#TextField TextField]
-   * [#Stack Stack]
-   * [#List List]
-   * [#SelectBox SelectBox]
-   * [#Slider Slider]
-   * [#ScrollPane ScrollPane]
-   * [#SplitPane SplitPane]
-   * [#Window Window]
-   * [#Touchpad Touchpad]
-   * [#Tree Tree]
-   * [#Dialog Dialog]
- * [#Widgets_without_scene2d.ui Widgets without scene2d.ui]
- * [#Examples Examples]
+ * [Widget and WidgetGroup](#Widget_and_WidgetGroup)
+ * [Layout](#Layout)
+ * [Table](#Table)
+ * [Stage setup](#Stage_setup)
+ * [Skin](#Skin)
+ * [Drawable](#Drawable)
+ * [ChangeEvents](#ChangeEvents)
+ * [Clipping](#Clipping)
+ * [Rotation and scale](#Rotation_and_scale)
+ * [Widgets](#Widgets)
+   * [Label](#Label)
+   * [Image](#Image)
+   * [Button](#Button)
+   * [TextButton](#TextButton)
+   * [ImageButton](#ImageButton)
+   * [CheckBox](#CheckBox)
+   * [ButtonGroup](#ButtonGroup)
+   * [TextField](#TextField)
+   * [Stack](#Stack)
+   * [List](#List)
+   * [SelectBox](#SelectBox)
+   * [Slider](#Slider)
+   * [ScrollPane](#ScrollPane)
+   * [SplitPane](#SplitPane)
+   * [Window](#Window)
+   * [Touchpad](#Touchpad)
+   * [Tree](#Tree)
+   * [Dialog](#Dialog)
+ * [Widgets without scene2d.ui](#Widgets_without_scene2d.ui)
+ * [Examples](#Examples)
 
-# Widget and WidgetGroup #
+# <a id="Widget_and_WidgetGroup"></a>Widget and WidgetGroup #
 
 UIs often have many UI widgets to be sized and positioned on the screen. Doing this manually is time consuming, makes code difficult to read and maintain, and doesn't easily adapt to different screen sizes. The Layout interface defines methods that allow for more intelligent layout for actors.
 
 The Widget and WidgetGroup classes extend Actor and Group respectively, and they both implement Layout. These two classes are the basis for actors that will participate in layout. UI widgets should extend WidgetGroup if they have child actors, otherwise they should extend Widget.
 
-## Layout ##
+## <a id="Layout"></a>Layout ##
 
 UI widgets do not set their own size and position. Instead, the parent widget sets the size and position of each child. Widgets provide a minimum, preferred, and maximum size that the parent can use as hints. Some parent widgets, such as Table, can be given constraints on how to size and position the children. To give a widget a specific size in a layout, the widget's minimum, preferred, and maximum size are left alone and size constraints are set in the parent.
 
@@ -55,13 +51,13 @@ Before each widget is drawn, it first calls `validate`. If the widget's layout i
 
 `invalidateHierarchy` should be called when the widget's state has changed that affects the widget's minimum, preferred, or maximum size. This means that the parent's layout may be affected by the widget's new desired size. `invalidateHierarchy` calls `invalidate` on the widget and every parent up to the root.
 
-## Table ##
+## <a id="Table"></a>Table ##
 
 The Table class is a WidgetGroup that sizes and positions its children using a logical table, similar to HTML tables. Tables are intended to be used extensively in scene2d.ui to layout widgets, as they are easy to use and much more powerful than manually sizing and positioning widgets. The underlying code for Table is actually a separate project called TableLayout.
 
 It is highly recommended to read the [TableLayout documentation](https://code.google.com/p/table-layout/) before building a UI using scene2d.ui.
 
-## Stage setup ##
+## <a id="Stage_setup"></a>Stage setup ##
 
 Most scene2d.ui layouts will use a table that is the size of the stage. All other widgets and nested tables are placed in this table.
 
@@ -102,7 +98,7 @@ Note that `setFillParent` is used on the root table, causing it to be sized to i
 
 Tables automatically adapt to various screen resolutions, so this sets up a stage that uses pixel coordinates. See [scene2d#Stage_setup scene2d stage setup] for setting up a stage that scales.
 
-## Skin ##
+## <a id="Skin"></a>Skin ##
 
 Most UI widgets are made up of a few configurable resources: images, fonts, colors, etc. All the resources needed to render a widget is called a "style". Each widget defines its own style class (usually a static member class) and has constructors for setting the initial style and a `setStyle` method for changing the style later. Styles can be configured in code:
 
@@ -127,7 +123,7 @@ Note the same style can be used for multiple widgets. Also note that all images 
 
 The Skin class can be used to more conveniently define the styles and other resources for UI widgets. See the [Skin Skin documentation] for more information. It is very strongly recommended to use Skin for convenience, even if not defining styles via JSON.
 
-## Drawable ##
+## <a id="Drawable"></a>Drawable ##
 
 The Drawable interface provides a draw method that takes a SpriteBatch, position, and size. The implementation can draw anything it wants: texture regions, sprites, animations, etc. Drawables are used extensively for all images that make up widgets. Implementations are provided to draw texture regions, sprites, nine patches, and to tile a texture region. Custom implementations can draw anything they like.
 
@@ -135,9 +131,9 @@ Drawable provides a minimum size, which can be used as a hint for the smallest i
 
 By default, NinePatchDrawable uses the top, right, bottom, and left sizes of the corresponding nine patch texture regions. However, the drawable sizes are separate from the nine patch sizes. The drawable sizes can be changed to draw content on the nine patch with more or less padding than the actual nine patch regions.
 
-Creating drawables is very common and somewhat tedious. It is recommended to use the [skin methods](https://code.google.com/p/libgdx/wiki/Skin#Conversions) to automatically obtain a drawable of the appropriate type.
+Creating drawables is very common and somewhat tedious. It is recommended to use the [skin methods](https://github.com/libgdx/libgdx/wiki/Skin#wiki-Conversions) to automatically obtain a drawable of the appropriate type.
 
-### ChangeEvents ###
+### <a id="ChangeEvents"></a>ChangeEvents ###
 
 Most widgets fire a ChangeEvent when something changes. This is a generic event, what actually changed depends on each widget. Eg, for a button the change is that the button was pressed, for a slider the change is the slider position, etc.
 
@@ -153,13 +149,13 @@ actor.addListener(new ChangeListener() {
 
 ChangeListener should be used when possible instead of ClickListener, eg on buttons. ClickListener reacts to input events on the widget and only knows if the widget has been clicked. The click will still be detected if the widget is disabled and doesn't handle the widget being changed by a key press or programmatically. Also, for most widgets the ChangeEvent can be cancelled, allowing the widget to revert the change.
 
-### Clipping ###
+### <a id="Clipping"></a>Clipping ###
 
 Clipping is most easily done using `setClip(true)` on a Table. Actors in the table will be clipped to the table's bounds. Culling is done so actors completely outside of the table's bounds are not drawn at all.
 
 Actors added to a table using the `add` Table methods get a table cell and will be sized and positioned by the table. Like any group, actors can still be added to a table using the `addActor` method. The table will not size and position actors added this way. This can be useful when using a table solely for clipping.
 
-## Rotation and scale ##
+## <a id="Rotation_and_scale"></a>Rotation and scale ##
 
 As [scene2d#Group_transform described previously], a scene2d group that has transform enabled causes a SpriteBatch flush before drawing its children. A UI often has dozens, if not hundreds, of groups. Flushing for each group would severely limit performance, so most scene2d.ui groups have transform set to false by default. Rotation and scale is ignored when the group's transform is disabled.
 
@@ -179,29 +175,29 @@ Note that scene2d.ui groups that perform layout, such as Table, will use the uns
 
 Widgets that perform clipping, such as ScrollPane, use `glScissor` which uses a screen aligned rectangle. These widgets cannot be rotated.
 
-## Widgets ##
+## <a id="Widgets"></a>Widgets ##
 
-### Label ###
+### <a id="Label"></a>Label ###
 
 Label displays text using a bitmap font and a color. The text may contain newlines. Word wrap may be enabled, in which case the width of the label should be set by the parent. The lines of text can be aligned relative to each other, and also all of the text aligned within the label widget.
 
 The labels that use the same font will be the same size, though they may have different colors. Bitmap fonts don't typical scale well, especially at small sizes. It is suggested to use a separate bitmap font for each font size. The bitmap font image should be packed into the skin's atlas to reduce texture binds.
 
-### Image ###
+### <a id="Image"></a>Image ###
 
 Image simply displays a drawable. The drawable can be a texture, texture region, ninepatch, sprite, etc. The drawable may be scaled and aligned within the image widget bounds in various ways.
 
-### Button ###
+### <a id="Button"></a>Button ###
 
 Button by itself it is just an empty button, but it extends table so other widgets can be added to it. It has an `up` background that is normally displayed, and a `down` background that is displayed when pressed. It has a checked state which is toggled each time it is clicked, and when checked it will use the `checked` background instead of `up`, if defined. It also has pressed/unpressed offsets, which offset the entire button contents when pressed/unpressed.
 
-### TextButton ###
+### <a id="TextButton"></a>TextButton ###
 
 TextButton extends Button and contains a label. TextButton adds to Button a bitmap font and a colors for the text in the up, down, and checked states.
 
 TextButton extends Button which extends Table, so widgets can be added to the TextButton using the Table methods.
 
-### ImageButton ###
+### <a id="ImageButton"></a>ImageButton ###
 
 ImageButton extends Button and contains an image widget. ImageButton adds to Button a drawables for the image widget in the up, down, and checked states.
 
@@ -209,69 +205,69 @@ Note that ImageButton extends Button, which already has a background drawable fo
 
 ImageButton extends Button which extends Table, so widgets can be added to the ImageButton using the Table methods.
 
-### CheckBox ###
+### <a id="CheckBox"></a>CheckBox ###
 
 CheckBox extends TextButton and adds an image widget to the left of the label. It has a drawable for the image widget for the checked and unchecked states.
 
-### ButtonGroup ###
+### <a id="ButtonGroup"></a>ButtonGroup ###
 
 ButtonGroup is not an actor and has no visuals. Buttons are added to it and it enforce a minimum and maximum number of checked buttons. This allows for buttons (button, text button, checkbox, etc) to be used as "radio" buttons.
 
-### TextField ###
+### <a id="TextField"></a>TextField ###
 
 TextField is a single line text entry field. It has drawables for the background, text cursor, and text selection, a font and font color for the entered text, and a font and font color for the message displayed when the text field is empty. Password mode can be enabled, where it will display asterisks instead of the entered text. 
 
-### Stack ###
+### <a id="Stack"></a>Stack ###
 
 Stack is a WidgetGroup that lays out each child to be the size of the stack. This is useful when it is necessary to have widgets stacked on top of each other. The first widget added to the stack is drawn on the bottom, and the last widget added is drawn on the top. 
 
-### List ###
+### <a id="List"></a>List ###
 
 List is a list box that displays textual items and highlights the selected item. List has a font, selected item background drawable, and a font color for selected and unselected items. A list does not scroll on its own, but is often put in a scrollpane.
 
-### SelectBox ###
+### <a id="SelectBox"></a>SelectBox ###
 
 SelectBox is a drop-down list, it allows one of a number of values to be chosen from a list. When inactive, the selected value is displayed. When activated, it shows the list of values that may be selected. SelectBox has drawables for the background, list background, and selected item background, a font and font color, and a setting for how much spacing is used between items.
 
-### Slider ###
+### <a id="Slider"></a>Slider ###
 
 Slider is a horizontal indicator that allows a user to set a value. The slider his a range (min, max) and a stepping between each value the slider represents. Slider has drawables for the background, the slider knob, and for the portion of the slider before and after the knob.
 
 A slider with touches disabled, a drawable before the knob, and without the knob can be used as a progress bar. Animation for changes to the slider value can be enabled to make the progress bar fill more smoothly.
 
-### ScrollPane ###
+### <a id="ScrollPane"></a>ScrollPane ###
 
 ScrollPane scrolls a child widget using scrollbars and/or mouse or touch dragging. Scrolling is automatically enabled when the widget is larger than the scroll pane. If the widget is smaller than the scroll pane in one direction, it is sized to the scroll pane in that direction. ScrollPane has many settings for if and how touches control scrolling, fading scrollbars, etc. ScrollPane has drawables for the background, horizontal scrollbar and knob, and vertical scrollbar and knob. If touches are enabled (the default), all the drawables are optional.
 
 The ScrollPane preferred width 
 
-### SplitPane ###
+### <a id="SplitPane"></a>SplitPane ###
 
 SplitPane contains two widgets and is divided in two either horizontally or vertically. The user may resize the widgets with a draggable splitter. The child widgets are always sized to fill their half of the splitpane. SplitPane has a drawable for the draggable splitter.
 
-### Window ###
+### <a id="Window"></a>Window ###
 
 Window is a table with a title bar area above the contents that displays a title. It can optionally act as a modal dialog, preventing touch events to widgets below. Window has a background drawable and a font and font color for the title.
 
-### Touchpad ###
+### <a id="Touchpad"></a>Touchpad ###
 
 Touchpad is an onscreen joystick that moves in a circular area. It has a background drawable and a drawable for the knob that the user drags around.
 
-### Tree ###
+### <a id="Tree"></a>Tree ###
 
 Tree displays a hierarchy of nodes. Each node may have child nodes and can be expanded or collapsed. Each node has an actor, allowing complete flexibility over how each item is displayed. Tree has drawables for the plus and minus icons next to each node's actor.
 
-### Dialog ###
+### <a id="Dialog"></a>Dialog ###
 
 Dialog is a window with a content table and a button table underneath. Anything can be added to the dialog, but convenience methods are provided to add a label to the content table and buttons to the button table.
 
-## Widgets without scene2d.ui ##
+## <a id="Widgets_without_scene2d.ui"></a>Widgets without scene2d.ui ##
 
 Widgets can be used as simple actors in scene2d, without using tables or the rest of scene2d.ui. Widgets have a default size and can be positioned absolutely, the same as any actor. If a widget's size is changed, the `invalidate` Widget method must be called so the widget will relayout at the new size.
 
 Some widgets, such as Table, don't have a default size after construction because their preferred size is based on the widgets they will contain. After the widgets have been added, the `pack` method can be used to set the width and height of the widget to its preferred width and height. This method also calls `invalidate` if the widget's size was changed, and then calls `validate` so that the widget adjusts itself to the new size.
 
-## Examples ##
+## <a id="Examples"></a>Examples ##
 
 For now, please see these test programs:
 
