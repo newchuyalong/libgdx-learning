@@ -40,7 +40,7 @@ Once passed to the `Application`, the `ApplicationListener` methods will be call
 
 The following diagram illustrates the life-cycle visually:
 
-http://libgdx.googlecode.com/svn/wiki/img/application_lifecycle_diagram.png
+![lifecycle](http://libgdx.googlecode.com/svn/wiki/img/application_lifecycle_diagram.png)
 
 ## Where is the main loop? ##
 Libgdx is event driven by nature, mostly due to the way Android and JavaScript work. An explicit main loop does not exist, however, the `ApplicationListener.render()` method can be regarded as the body of such a main loop.
