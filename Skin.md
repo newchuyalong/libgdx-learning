@@ -1,27 +1,23 @@
-#summary Stores UI widget resources
+# Skin #
 
-# fixme: needs a working ToC!
+ * [Overview](#Overview)
+ * [Resources](#Resources)
+ * [Convenience methods](#Convenience_Methods)
+ * [Conversions](#Conversions)
+ * [Modifying resources](#Modifying_resources)
+ * [Widget styles](#Widget_styles)
+ * [Skin JSON](#Skin_JSON)
+   * [Color](#Color)
+   * [BitmapFont](#BitmapFont)
+   * [TintedDrawable](#TintedDrawable)
 
-= Skin =
-
- * [#Overview Overview]
- * [#Resources Resources]
- * [#Convenience_methods Convenience methods]
- * [#Conversions Conversions]
- * [#Modifying_resources Modifying resources]
- * [#Widget_styles Widget styles]
- * [#Skin_JSON Skin JSON]
-   * [#Color Color]
-   * [#BitmapFont BitmapFont]
-   * [#TintedDrawable TintedDrawable]
-
-## Overview ##
+## <a id="Overview"></a>Overview ##
 
 The Skin class stores resources for UI widgets to use. It is a convenient container for texture regions, ninepatches, fonts, colors, etc. Skin also provides convenient conversions, such as retrieving a texture region as a ninepatch, sprite, or drawable.
 
 Resources in a skin typically come from a [[texture atlas| Texture Packer]], widget styles and other objects defined using JSON, and objects added to the skin via code. Even when JSON is not used, it is still recommended to use Skin with a texture atlas and objects added via code. This is much more convenient to obtain instances of drawables and serves as a central place to obtain UI resources.
 
-## Resources ##
+## <a id="Resources"></a>Resources ##
 
 Each resource in the skin has a name and type. The regions from a [texture atlas](https://code.google.com/p/libgdx/wiki/TexturePacker) can be made available as resources in the skin. Texture regions can be retrieved as a ninepatch, sprite, tiled drawable, or drawable.
 
@@ -42,7 +38,7 @@ skin.add("logo", new Texture("logo.png"));
 Texture logo = skin.get("logo", Texture.class);
 ```
 
-## Convenience methods ##
+## <a id="Convenience_Methods"></a>Convenience Methods ##
 
 There are convenience methods to retrieve resources for commons types.
 
@@ -59,7 +55,7 @@ Drawable drawable = skin.getDrawable("enemy");
 
 These methods are identical to passing in the appropriate class, but allow for slightly more concise code.
 
-## Conversions ##
+## <a id="Conversions"></a>Conversions ##
 
 All styles for UI widgets use a [Drawable](https://github.com/sinistersnare/libgdx/wiki/Scene2d.ui#drawable) when they need an image. This allows a texture region, ninepatch, sprite, etc to be used anywhere in the UI. Skin makes it easy to convert textures and texture regions to drawables and other types:
 
@@ -79,7 +75,7 @@ A texture can be retrieved as a region, ninepatch, sprite, tiled drawable or dra
 
 When converting a texture region to a drawable, the skin will choose the most appropriate drawable for that region. If the region is an AtlasRegion with ninepatch split information, then a NinePatchDrawable is returned. If the region is an AtlasRegion that has been rotated or whitespace stripped, then a SpriteDrawable is returned so the region will be drawn correctly. Otherwise, a TextureRegionDrawable is returned.
 
-## Modifying resources ##
+## <a id="Modifying_resources"></a>Modifying resources ##
 
 Resources obtained from the skin are not new instances, the same object is returned each time. If the object is modified, the changes will be reflected throughout the application. If this is not desired, a copy of the object should be made.
 
@@ -93,7 +89,7 @@ Drawable redDrawable = skin.newDrawable("whiteRegion", Color.RED);
 
 Note the new drawable is not stored in the skin. To store it in the skin it must be explicitly added with a name like any other resource.
 
-## Widget styles ##
+## <a id="Widget_styles"></a>Widget styles ##
 
 Skin is a useful container for providing texture regions and other resources that UI widgets need. It can also store the UI widget styles that define how widgets look.
 
@@ -114,7 +110,7 @@ If the style name is omitted, the name "default" is used:
 TextButton button = new TextButton("Click me!", skin);
 ```
 
-## Skin JSON ##
+## <a id="Skin_JSON"></a>Skin JSON ##
 
 A skin can be [populated programmatically](https://github.com/libgdx/libgdx/blob/master/tests/gdx-tests/src/com/badlogic/gdx/tests/UISimpleTest.java#L37). Alternatively, JSON can be used to describe named objects in the skin. This makes it convenient to define the UI widget styles. Note the JSON does not describe texture regions, ninepatche splits, or other information which comes from the [[texture atlas| Texture Packer]]. However, the JSON may reference the regions, ninepatches, and other resources in the skin by name. The JSON looks like this:
 
@@ -167,11 +163,11 @@ Note that order is important. A resource must be declared in the JSON above wher
 
 Skin files from the [libgdx tests](https://github.com/libgdx/libgdx/tree/master/tests/gdx-tests-android/assets/data) can be used as a starting point: uiskin.png, uiskin.atlas, uiskin.json, and default.fnt.
 
-### Color ###
+### <a id="Color"></a>Color ###
 
 Colors are defined in JSON as shown above. If the `r`, `g`, or `b` properties are not omitted, 0 is used. If `a` is omitted, 1 is used.
 
-### BitmapFont ###
+### <a id="BitmapFont"></a>BitmapFont ###
 
 A bitmap font is declared in the JSON like this:
 
@@ -187,7 +183,7 @@ To find the font's BMFont file, first the skin looks in the directory containing
 
 To find the font's image file, first the skin looks for a texture region with the same name as the font file, without the file extension. If not found, it will look in the directory containing the font file for an image with the same name as the font file, but with a "png" file extension.
 
-### TintedDrawable ###
+### <a id="TintedDrawable"></a>TintedDrawable ###
 
 It is very useful to tint regions various colors. For example, the regions for a white button can be tinted to have a button of any color. Drawables can be tinted in code using the `newDrawable` method. The Skin.TintedDrawable class provides a way to tint drawables in JSON:
 
