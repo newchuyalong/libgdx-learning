@@ -1,15 +1,15 @@
 # fixme: ToC
 
-# About the Bullet Physics extension #
+# <a id="About_the_Bullet_Physics_extension"></a>About the Bullet Physics extension #
 Bullet is a 3D Collision Detection and Rigid Body Dynamics Library. The Library is Open Source and free for commercial use, under the zlib license ([more info](http://bulletphysics.org/mediawiki-1.5.8/index.php/LICENSE)).
 
 The Bullet physics extension is a Java wrapper for the C++ engine. This page provides information about using that wrapper. For more documentation related to the Bullet engine, please visit [bulletphysics.org](http://bulletphysics.org). Any Bullet questions not related to libgdx specifically can best be asked on [their forum](http://www.bulletphysics.org/Bullet/phpBB3/).
 
 Practical information and examples on how to use the bullet wrapper can also be found at the [Bullet tests](https://github.com/libgdx/libgdx/tree/master/tests/gdx-tests/src/com/badlogic/gdx/tests/bullet).
 
-# Using Bullet in your project #
+# <a id="Using_Bullet_in_your_project"></a>Using Bullet in your project #
 
-## Setting up Bullet with libgdx ##
+## <a id="Setting_up_Bullet_with_libgdx"></a>Setting up Bullet with libgdx ##
 To use bullet physics in your project, you’ll need to add gdx-bullet.jar to your main project. Alternatively you can add the gdx-bullet project to the projects of the build path of your main project.
 
 For your desktop project you’ll need to add the gdx-bullet-natives.jar to the libraries.
@@ -18,7 +18,7 @@ For your android project you’ll need to copy the armeabi/libgdx-bullet.so and 
 
 Bullet isn’t supported for GWT at the moment.
 
-## Initializing Bullet ##
+## Initializing_Bullet"></a>Initializing Bullet ##
 
 Before you can use Bullet, you’ll need to load the libraries. This can be done by adding the following line in your create method:
 ```java
@@ -32,10 +32,10 @@ public class InvokeRuntimeExceptionTest {
 }
 ```
 
-## Working with Bullet wrapper ##
+## <a id="Working_with_Bullet_wrapper"></a>Working with Bullet wrapper ##
 The wrapper tends to follow the original bullet class names. Meaning that most classes are prefixed with “bt”. There are a few exceptions on this, which are mostly nested structs. These are custom implemented directly into the `com.badlogic.gdx.physics.bullet` package. Unfortunately some nested structs and some base classes are not suitable for a one on one translation. See the custom classes section for more information on that. If you find a class that is missing you can post it on the forums so it can be added to the wrapper.
 
-## Callbacks ##
+## <a id="Callbacks"></a>Callbacks ##
 
 Callbacks require some special attention. By default the wrapper only supports a one way interaction (from Java to C++). Callback interfaces, where C++ needs to call Java code are custom implemented. If you find a callback interface that isn't implemented yet, you can post it on the forums so it can be added to the wrapper.
 
@@ -55,10 +55,10 @@ List of callback interfaces (might not be complete):
  * `ContactListener`
  * `ContactCache`
 
-## Properties ##
+## <a id="Properties"></a>Properties ##
 Properties are encapsulated by getter and setter methods. The naming of the getter and setter methods omits the "m`_`" prefix. For example, the `m_collisionObject` member of the native class `btCollisionObjectWrapper` is implemented as `getCollisionObject()` and `setCollisionObject(...)`.
 
-## Creating and destroying objects ##
+## <a id="Creating_and_destroying_objects"></a>Creating and destroying objects ##
 Every time you create a bullet class in Java it also creates the corresponding class in C++. While the Java object is maintained by the garbage collector, the C++ object isn’t. To avoid having orphaned C++ objects resulting in memory leaks, the C++ object is by default automatically destroyed when the Java object is destroyed by the garbage collector. 
 
 While this might be useful in some cases, it’s merely a fail-safe and you shouldn't rely on it. Since you can’t control the garbage collector, you can’t control _if_, _when_ and _in which order_ the objects are actually being destroyed. Therefor the wrapper logs an error when an object is automatically destroyed by the garbage collector. You can disable logging using the second argument of the `Bullet.init()` method.
@@ -67,7 +67,7 @@ Instead you should keep a reference to every object you create until it’s not 
 
 The above is only true for the objects you are responsible of. Which are all Bullet classes you create with the new keyword and also includes classes you create using helper methods. You don’t have to dispose objects that are returned by regular methods or provided to you in callback methods.
 
-## Referencing objects ##
+## <a id="Referencing_objects"></a>Referencing objects ##
 A stated above, you should keep a reference to every Bullet class and call the dispose method when it’s no longer needed. When your application becomes more complex and objects are shared amongst multiple other objects, it can become difficult to keep track of references. Therefor the bullet wrapper support reference counting.
 
 Reference counting is disabled by default. To disable it, call `Bullet.init();` with the first argument set to true:
@@ -79,7 +79,7 @@ When using reference counting, you must call the `obtain()` method on each objec
 
 Some wrapper classes help you in managing references. For example the `btCompoundShape` class obtains a reference to all its child shapes and releases them when it is disposed.
 
-## Extending classes ##
+## <a id="Extending_classes"></a>Extending classes ##
 You can extend the bullet classes, but it’s recommended not to do so except for callback classes (in which case you should only override the intended methods). The information you add to a class is not available in C++. Furthermore the result of any method of the bullet wrapper that returns a class you’ve overridden will not implement that class. For example:
 ``java
 btCollisionShape shape = collisionObjectA.getCollisionShape();
@@ -95,10 +95,10 @@ Some classes provide a static `upcast` method which can be used to cast the obje
 btRigidBody bodyA = btRigidBody.upcast(collisionObjectA);
 ```
 
-## Comparing classes ##
+## <a id="Comparing_classes"></a>Comparing classes ##
 You can compare wrapper classes using the `equals()` method, which checks if the classes both wrap the same native class. To get the pointer to the underlying C++ class you can use the `getCPointer` method of the specific object. You can also compare these pointers to check if Java classes wrap the same C++ class.
 
-## Common classes ##
+## <a id="Common_classes"></a>Common classes ##
 Bullet uses some classes also available in the libgdx core. While these bullet classes are available for you to use, the wrapper tries to use the libgdx class where possible. Currently this is implemented for:
 
 | *Bullet* | *Libgdx* |
@@ -138,15 +138,15 @@ public void setWorldTransform (final Matrix4 worldTrans) {
 }
 ```
 
-## Using arrays ##
+## <a id="Using_arrays"></a>Using arrays ##
 Where possible the wrapper uses direct ByteBuffer objects to pass arrays from Java to C++. This avoids copying the array on the call and allows you to share the same byte buffer for both OpenGL ES and Bullet. If needed you can create a new ByteByffer using `BufferUtils.newUnsafeByteBuffer`, which you should manually delete using `BufferUtils.disposeUnsafeByteBuffer`.
 
 In cases where ByteBuffer can't be used or is unwanted to be used, a normal array is used. By default this means that the array is copied using iteration from Java to C++ at start of the method and copied back at the end of the method. To avoid this overhead the wrapper tries to use the Java array directly from within C++ where possible using critical arrays. During such method Java garbage collecting is blocked. An example of such method is `btBroadphasePairArray.getCollisionObjects`.
 
-## Contact Callbacks ##
+## <a id="Contact_Callbacks"></a>Contact Callbacks ##
 Contact callbacks allow you to be notified when a contact/collision on two objects occur ([more info](http://bulletphysics.org/mediawiki-1.5.8/index.php/Collision_Callbacks_and_Triggers#Contact_Callbacks)). By default there are three callbacks: [`onContactAdded`](http://bulletphysics.org/mediawiki-1.5.8/index.php/Collision_Callbacks_and_Triggers#gContactAddedCallback), [`onContactProcessed`](http://bulletphysics.org/mediawiki-1.5.8/index.php/Collision_Callbacks_and_Triggers#gContactProcessedCallback) and [`onContactDestroyed`](http://bulletphysics.org/mediawiki-1.5.8/index.php/Collision_Callbacks_and_Triggers#gContactDestroyedCallback)) . The wrapper adds two additional callbacks: `onContactStarted` and `onContactEnded`. The callbacks are global (independent of e.g. the collision world), there can be only one implementation per callback active at the same time.
 
-### Contact Listeners ###
+### <a id="Contact_Listeners"></a>Contact Listeners ###
 You can extend the ContactListener class to implement one or more callbacks:
 ```java
 public class MyContactListener extends ContactListener {
@@ -185,7 +185,7 @@ Make sure to override the method that only provides the arguments you are actual
 
 To identify a contact along the added, processed and destroyed callbacks, you can use the `setUserValue(int);` and `getUserValue();` of the `btManifoldPoint` instance that the callback provides. This is also the value supplied to the `onContactDestroyed(int)` method of the `ContactDestroyedListener` class.
 
-### Contact Filtering ###
+### <a id="Contact_Filtering"></a>Contact Filtering ###
 
 Contact callbacks are invoked a lot. JNI bridging between C++ and Java on every call adds quite an overhead, which decreases performance. Therefor the bullet wrapper allows you to specify for which objects you would like to receive contacts. This is done by contact filtering.
 
@@ -223,10 +223,10 @@ public class MyContactListener extends ContactListener {
 
 Even when using contact filtering, the callbacks can be invoked quite often on collision. To avoid this you can set the filter to zero after processing. For example, in the case of the player and the coin, it's best to let the coin collide with the player and than set it's filter to zero on first contact, instead of letting the player collide with the coin.
 
-## Custom classes ##
+## <a id="Custom_classes"></a>Custom classes ##
 In some cases it's not possible to wrap a C++ bullet class/method in a Java class/method, in which case a custom class or method is used to bridge the two. The following list describes those. Note that the list might not be complete.
 
-### btCollisionObject ###
+### <a id="btCollisionObject"></a>btCollisionObject ###
 
 The btCollisionObject is modified to reuse Java objects instead of creating a new Java object every time. This is done using the static `btCollisionObject.instances` map. To remove an object from the map and delete the native object use the `dispose` method.
 
@@ -266,15 +266,15 @@ The `btCollisionObject` also adds the following methods:
 ### ClosestNotMeConvexResultCallback ###
 The `ClosestNotMeConvexResultCallback` class is a custom `ClosestConvexResultCallback` implementation which you can use to perform a `convexSweepTest` on all objects except the specified one.
 
-### ClosestNotMeRayResultCallback ###
+### <a id="ClosestNotMeRayResultCallback"></a>ClosestNotMeRayResultCallback ###
 
 The `ClosestNotMeRayResultCallback` class is a custom `ClosestRayResultCallback` implementation which you can use to perform a `rayTest` on all objects except the specified one.
 
-### InternalTickCallback ###
+### <a id="InternalTickCallback"></a>InternalTickCallback ###
 
 The `InternalTickCallback` is implemented to bridge the callback required by `btDynamicsWorld#setInternalTickCallback` to a java class. You can extend the class and override `onInternalTick` method. You can use the `attach` and `detach` methods to start and stop getting tick callbacks.
 
-### btDefaultMotionState ###
+### <a id="btDefaultMotionState"></a>btDefaultMotionState ###
 
 In some cases it's easier to use `btDefaultMotionState` instead of extending `btMotionState`. The following custom methods are available for `btDefaultMotionState`.
  * `getGraphicsWorldTrans(Matrix4)`
@@ -282,11 +282,11 @@ In some cases it's easier to use `btDefaultMotionState` instead of extending `bt
  * `getStartWorldTrans(Matrix4)`
 Note that extending `btMotionState` with your own implementation is the preferred method.
 
-### btCompoundShape ###
+### <a id="btCompoundShape"></a>btCompoundShape ###
 
 The `btCompoundShape` class allows to keep a reference to child shapes, so you don't have to do that. To use it, use the `addChildShape` with the third `managed` argument set to true. Note that this will delete the managed child shape if the compound shape is deleted. Therefor the managed shapes should be exclusive for the compound shape.
 
-### btIndexedMesh ###
+### <a id="btIndexedMesh"></a>btIndexedMesh ###
 
 The `btIndexedMesh` class adds the constructor:
  * `btIndexedMesh(Mesh)`
@@ -296,23 +296,23 @@ And the methods:
  * `set(Mesh)`
 For easy constructing or setting a `btIndexedMesh` based on a `Mesh` instance or a vertex and index buffer. The buffers itself are not managed by the wrapper and should out-live the object.
 
-### btTriangleIndexVertexArray ###
+### <a id="btTriangleIndexVertexArray"></a>btTriangleIndexVertexArray ###
 
 The `btTriangleIndexVertexArray` class adds the ability to maintain a reference to the Java `btIndexedMesh` classes it holds. To use it call `addIndexedMesh` with the last argument `managed` set to true. When the `btTriangleIndexVertexArray` is destroyed it will also destroy it's managed `btIndexedMesh` children.
 
 Also, the `btTriangleIndexVertexArray` class adds the `addMesh` and `addModel` methods and likewise constructors, for easy constructing and setting the class.
 
-### btBvhTriangleMeshShape ###
+### <a id="btBvhTriangleMeshShape"></a>btBvhTriangleMeshShape ###
 
 The `btBvhTriangleMeshShape` class adds the ability to maintain a reference to the Java `btStridingMeshInterface` class. To use it construct the class with the argument `managed` set to true. When the `btBvhTriangleMeshShape` is destroyed it will also destroy the managed `btStridingMeshInterface`.
 
 Also, the `btBvhTriangleMeshShape` class add constructors for easy constructing one or more `Mesh` or `Model` instances.
 
-### btConvexHullShape ###
+### <a id="btConvexHullShape"></a>btConvexHullShape ###
 
 The `btConvexHullShape` class adds a convenience constructor `btConvexHullShape(btShapeHull)`.
 
-### btBroadphasePairArray ###
+### <a id="btBroadphasePairArray"></a>btBroadphasePairArray ###
 
 The `btBroadphasePairArray` class adds methods to get all collision objects within it at once:
 ```java
