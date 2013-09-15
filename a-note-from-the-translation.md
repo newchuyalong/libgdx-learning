@@ -1,3 +1,9 @@
+# TODOs Mario
+ * Files page needs the table fixed
+ * Preferences page needs the table fixed
+ * Go through all articles one more time and see if all links are working
+ * Completed everything up until and including Audio
+
 ## Possible Mistakes ##
 
 some of the words (specifically PascalCase'd words) might come with a `!` prefacing them.(for example: !PascalCase) This is due to how Google Code parsed for other wiki pages. the bang stopped the text from being parsed, and i might have missed a lot of them, because they're quite hard to find.
