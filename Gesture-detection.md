@@ -3,11 +3,11 @@ Touch screens lend themselves well to gesture based input. A gesture could be a 
 
 Libgdx provides a [GestureDetector](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/input/GestureDetector.html) that lets you detect the following gestures:
 
-  * *tap*: A user touches the screen and lifts the finger again. The finger must not move outside a specified square area around the initial touch position for a tap to be registered. Multiple consecutive taps will be detected if the user performs taps within a specified time interval.
-  * *pan*: A user drags a finger across the screen. The detector will report the current touch coordinates as well as the delta between the current and previous touch positions. Useful to implement camera panning in 2D.
-  * *fling*: A user dragged the finger across the screen, then lifted it. Useful to implement swipe gestures.
-  * *zoom*: A user places two fingers on the screen and moves them together/apart. The detector will report both the initial and current distance between fingers in pixels. Useful to implement camera zooming.
-  * *pinch*: Similar to zoom. The detector will report the initial and current finger positions instead of the distance. Useful to implement camera zooming and more sophisticated gestures such as rotation.
+  * **tap**: A user touches the screen and lifts the finger again. The finger must not move outside a specified square area around the initial touch position for a tap to be registered. Multiple consecutive taps will be detected if the user performs taps within a specified time interval.
+  * **pan**: A user drags a finger across the screen. The detector will report the current touch coordinates as well as the delta between the current and previous touch positions. Useful to implement camera panning in 2D.
+  * **fling**: A user dragged the finger across the screen, then lifted it. Useful to implement swipe gestures.
+  * **zoom**: A user places two fingers on the screen and moves them together/apart. The detector will report both the initial and current distance between fingers in pixels. Useful to implement camera zooming.
+  * **pinch**: Similar to zoom. The detector will report the initial and current finger positions instead of the distance. Useful to implement camera zooming and more sophisticated gestures such as rotation.
 
 A `GestureDetector` is an [[Event Handling]] in disguise. To listen for gestures, one has to implement the [GestureListener](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/input/GestureDetector.GestureListener.html) interface and pass it to the constructor of the `GestureDetector`. The detector is then set as an InputProcessor, either on an InputMultiplexer or as the main InputProcessor:
 
