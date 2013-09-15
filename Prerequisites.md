@@ -22,7 +22,7 @@ Once all of these tools are installed, proceed to [Project Setup](https://github
   * ~~Make sure both `javac` and `ant` can be executed from the command line!~~
 
 
-### To work directly from the [source repository](https://github.com/libgdx/libgdx)**
+### To work directly from the [source repository](https://github.com/libgdx/libgdx)
   * A Git client to fetch the source from the repository.
   * [Ant](http://ant.apache.org/bindownload.cgi). Download and extract the zip, and make sure you can execute `ant` from the command line by adding its bin/ folder to your PATH environment variable.
   * `javac` needs to be in your PATH
