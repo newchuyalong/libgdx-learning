@@ -269,7 +269,7 @@ Finally, add a section for the settings activity in the AndroidManifest.xml as u
 </service>
 ```
 
-~~## iOS Xamarin (Deprecated) ##
+## iOS Xamarin (Deprecated!) ##
 
 The iOS backend relies on using Xamarin's [MonoDevelop](http://xamarin.com/monotouch) IDE for development and a Monotouch license for deployment.  The entry-point for a Monotouch application is the AppDelegate found in the Main.cs file of the project.  An example of this is below:
 
@@ -358,7 +358,7 @@ IN        = -r:libs/ios/gdx.dll -recurse:target/*.class
 OUT       = target/my-gdx-game.dll
 ```
 
-This file specifies the input files that comprise the my-gdx-game.dll assembly.~~
+This file specifies the input files that comprise the my-gdx-game.dll assembly.
 
 ## HTML5/GWT ##
 The main entry-point for an HTML5/GWT application is a {{{GwtApplication}}}. Open {{{GwtLauncher.java}}} in the my-gdx-game-html5 project:
