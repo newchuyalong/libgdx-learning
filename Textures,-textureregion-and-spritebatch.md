@@ -1,4 +1,4 @@
-# fixme: not doing this one
+# No Op: Outdated
 
 This article introduces the basics of 2D graphics, namely the use of Texture, TextureRegion and SpriteBatch. 
 
