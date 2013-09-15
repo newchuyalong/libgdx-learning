@@ -1,4 +1,4 @@
-You can access PCM data from the microphone on a PC or Android phone via the [AudioRecorder](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/audio/AudioRecorder.html) interface. To create an instance of that interface use:
+You can access PCM data from the microphone on a PC or Android phone via the [AudioRecorder](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/audio/AudioRecorder.html) [(code)](https://github.com/libgdx/libgdx/blob/master/gdx/src/com/badlogic/gdx/audio/AudioRecorder.java) interface. To create an instance of that interface use:
 
 ```java
 AudioRecorder recorder = Gdx.audio.newAudioRecorder(22050, true);
