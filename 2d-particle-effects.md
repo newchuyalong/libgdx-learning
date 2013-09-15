@@ -6,7 +6,7 @@ There is a video tutorial though:
 
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=LCLa-rgR_MA
 " target="_blank"><img src="http://img.youtube.com/vi/LCLa-rgR_MA/0.jpg" 
-alt="Libgdx setup video" width="480" height="360" border="10" /></a>
+alt="Libgdx 2D Particle Effects" width="480" height="360" border="10" /></a>
 
 
 
