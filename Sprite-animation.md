@@ -1,6 +1,3 @@
-# fixme: gcode links, most all deprecated articles have them.
-
-
 Sprite animation is the technique used to create the illusion of movement using static images. This article describes how to create animations with libGdx.
 
 ## Details ##
