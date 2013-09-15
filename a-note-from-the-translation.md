@@ -35,6 +35,15 @@ I'm not translating the [[Graphics]] post, because it needs to be rewritten! mot
 
 I'm also not translating a few of the pages marked `deprecated`, mostly the `beginner` tutorials. I chose not to because they're wildly out of date, and it seemed like it was futile
 
+Videos are not supported on github :( so we use a small workaround by posting a screenshot of the video, which leads to a link to the youtube video. Here is the syntax:
+
+```
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=YOUTUBE_VIDEO_ID_HERE
+" target="_blank"><img src="http://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg" 
+alt="IMAGE ALT TEXT HERE" width="480" height="360" border="10" /></a>
+```
+
+Lets hope Github eventually supports embedded videos!
 
 ## issues: ##
 
