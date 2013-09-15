@@ -1,4 +1,4 @@
-fixme: not translating
+# No Op: Not Translating
 
 
 #summary learn about a viewport's proportions, how to specify a projection, and to use Camera
