@@ -1,7 +1,3 @@
-# NinePatch images #
-
-# fixme: images hosted on GCode #
-
 This article introduce NinePatch images, how the can be created and how they
 are used in a Libgdx context.
 
