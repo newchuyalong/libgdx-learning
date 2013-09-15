@@ -31,11 +31,11 @@ if we decide a way to store all images on the wiki on badlogic servers (to preve
 
 ## Misc. ##
 
-I'm not translating the [[Graphics]] post, because it needs to be rewritten! motivation! (see editors note for repetition)
+* I'm not translating the [[Graphics]] post, because it needs to be rewritten! motivation! (see editors note for repetition)
 
-I'm also not translating a few of the pages marked `deprecated`, mostly the `beginner` tutorials. I chose not to because they're wildly out of date, and it seemed like it was futile
+* I'm also not translating a few of the pages marked `deprecated`, mostly the `beginner` tutorials. I chose not to because they're wildly out of date, and it seemed like it was futile
 
-Videos are not supported on github :( so we use a small workaround by posting a screenshot of the video, which leads to a link to the youtube video. Here is the syntax:
+* Videos are not supported on github :( so we use a small workaround by posting a screenshot of the video, which leads to a link to the youtube video. Here is the syntax:
 
 ```
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=YOUTUBE_VIDEO_ID_HERE
@@ -44,6 +44,8 @@ alt="IMAGE ALT TEXT HERE" width="480" height="360" border="10" /></a>
 ```
 
 Lets hope Github eventually supports embedded videos!
+
+* the images hosted on the old libgdx svn on google code dont want to load. we need a host that is trustworthy to store the pictures.
 
 ## issues: ##
 
