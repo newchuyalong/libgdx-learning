@@ -18,7 +18,10 @@ To *additionally target iOS* you will also need:
 
 Follow this if you don't want to read a lot of text. Otherwise continue below.
 
-[![Libgdx setup video](http://img.youtube.com/vi/mmH05k6HFsI/0.jpg)](http://www.youtube.com/watch?v=mmH05k6HFsI)
+
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=mmH05k6HFsI
+" target="_blank"><img src="http://img.youtube.com/vi/mmH05k6HFsI/0.jpg" 
+alt="Libgdx setup video" width="480" height="360" border="10" /></a>
 
 
 ## Using "Libgdx Setup" ##
