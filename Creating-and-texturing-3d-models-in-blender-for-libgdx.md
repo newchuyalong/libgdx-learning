@@ -1,4 +1,4 @@
-fixme: not translating
+# No Op: Not Translating
 
 
 = Creating and texturizing 3d models in Blender for libgdx =
