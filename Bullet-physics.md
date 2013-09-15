@@ -1,4 +1,30 @@
-# fixme: ToC
+ * [About the Bullet Physics extension](#About_the_Bullet_Physics_extension)
+ * [Setting up Bullet with libgdx](#Setting_up_Bullet_with_libgdx)
+    * [Initializing Bullet](#Initializing_Bullet)
+    * [Working with Bullet wrapper](#Working_with_Bullet_wrapper)
+    * [Callbacks](#Callbacks)
+    * [Properties](#Properties)
+    * [Creating and destroying objects](#Creating_and_destroying_objects)
+    * [Referencing objects](#Referencing_objects)
+    * [Extending classes](#Extending_classes)
+    * [Comparing classes](#Comparing_classes)
+    * [Common classes](#Common_classes)
+    * [Using arrays](#Using_arrays)
+    * [Contact Callbacks](#Contact_Callbacks)
+        * [Contact Listeners](#Contact_Listeners)
+        * [Contact Filtering](#Contact_Filtering)
+    * [Custom classes](#Custom_classes)
+       * [btCollisionObject](#btCollisionObject)
+       * [ClosestNotMeRayResultCallback](#ClosestNotMeRayResultCallback)
+       * [InternalTickCallback](#InternalTickCallback)
+       * [btDefaultMotionState](#btDefaultMotionState)
+       * [btCompoundShape](#btCompoundShape)
+       * [btIndexedMesh](#btIndexedMesh)
+       * [btTriangleIndexVertexArray](#btTriangleIndexVertexArray)
+       * [btBvhTriangleMeshShape](#btBvhTriangleMeshShape)
+       * [btConvexHullShape](#btConvexHullShape)
+       * [btBroadphasePairArray](#btBroadphasePairArray)
+
 
 # <a id="About_the_Bullet_Physics_extension"></a>About the Bullet Physics extension #
 Bullet is a 3D Collision Detection and Rigid Body Dynamics Library. The Library is Open Source and free for commercial use, under the zlib license ([more info](http://bulletphysics.org/mediawiki-1.5.8/index.php/LICENSE)).
@@ -18,7 +44,7 @@ For your android project you’ll need to copy the armeabi/libgdx-bullet.so and 
 
 Bullet isn’t supported for GWT at the moment.
 
-## Initializing_Bullet"></a>Initializing Bullet ##
+## <a id="Initializing_Bullet"></a>Initializing Bullet ##
 
 Before you can use Bullet, you’ll need to load the libraries. This can be done by adding the following line in your create method:
 ```java
