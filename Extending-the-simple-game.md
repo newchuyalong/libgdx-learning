@@ -1,16 +1,14 @@
-# Extending the Simple Game #
-
 In this tutorial we will be extending the simple game "Drop", made in a [[a previous tutorial |A Simple Game]]. We will be adding a menu screen, and a couple of features to make this game a little more fully featured.
 
 Lets get started with an introduction to a few more advanced classes in our game.
 
 ## The Screen interface ##
 
-Screens are fundamental to any game with multiple components. Screens contain much of the methods you are used to from !ApplicationListener objects, and includes a couple new methods {{{show}}} and {{{hide}}}, which are called when the Screen gains and loses focus, respectively.
+Screens are fundamental to any game with multiple components. Screens contain much of the methods you are used to from ApplicationListener objects, and includes a couple new methods `show` and `hide`, which are called when the Screen gains and loses focus, respectively.
 
 ## The Game Class ##
 
-The Game abstract class provides an implementation of !ApplicationListener for you to use, along with some helper methods to set and handle Screen rendering.
+The Game abstract class provides an implementation of ApplicationListener for you to use, along with some helper methods to set and handle Screen rendering.
 
 Together, Screen and Game objects are used to create a simple and powerful structure for games.
 
@@ -51,7 +49,7 @@ public class Drop extends Game {
 
 ```
 
-we start the application with instantiating a !SpriteBatch and a !BitmapFont. It is a bad practice to create multiple objects that can be shared instead (see [http://en.wikipedia.org/wiki/Don't_repeat_yourself DRY]). The !SpriteBatch object is used to render objects onto the screen, such as textures; and the !BitmapFont object is used, along with a !SpriteBatch, to render text onto the screen. We will touch more on this in the Screen classes.
+we start the application with instantiating a SpriteBatch and a BitmapFont. It is a bad practice to create multiple objects that can be shared instead (see [DRY](http://en.wikipedia.org/wiki/Don't_repeat_yourself)). The SpriteBatch object is used to render objects onto the screen, such as textures; and the BitmapFont object is used, along with a SpriteBatch, to render text onto the screen. We will touch more on this in the Screen classes.
 
 then, we set the Screen of the Game to a MainMenuScreen object, with a Drop instance as its first and only parameter.
 
@@ -61,7 +59,7 @@ finally, another reminder to dispose of objects! [Further reading.](https://code
 
 ## The Main Menu ##
 
-now, lets get into the nitty-gritty of the !MainMenuScreen class.
+now, lets get into the nitty-gritty of the MainMenuScreen class.
 
 
 ```java
@@ -132,7 +130,7 @@ We then check to see if the screen has been touched, if it has, then we check to
 
 ## The Game Screen ##
 
-now that we have our main menu finished, its time to finally get to making our game. We will be lifting most of the code from the [[A Simple Game | original game]] as to avoid redundancy, and avoid having to think of a different game idea to implement as simply as Drop is. 
+now that we have our main menu finished, its time to finally get to making our game. We will be lifting most of the code from the [[original game | A Simple Game]] as to avoid redundancy, and avoid having to think of a different game idea to implement as simply as Drop is. 
 
 
 ```java
