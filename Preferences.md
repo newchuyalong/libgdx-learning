@@ -36,8 +36,8 @@ prefs.flush();
 On Windows, Linux, and OS X, preferences are stored in an xml file within the user's home directory.
 
 
-| Windows | `%UserProfile%/.prefs/My Preferences` |
-| Linux and OS X | `~/.prefs/My Preferences` |
+Windows | `%UserProfile%/.prefs/My Preferences`
+Linux and OS X | `~/.prefs/My Preferences`
 
 The file is named whatever you passed to `Gdx.app.getPreferences()`.
 
