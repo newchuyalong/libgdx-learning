@@ -1,4 +1,4 @@
-# fixme: not translating
+# No Op: not translating
 
 
 #summary Creating a libgdx project, create your first triangle
