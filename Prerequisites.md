@@ -27,4 +27,4 @@ Once all of these tools are installed, proceed to [Project Setup](https://github
   * [Ant](http://ant.apache.org/bindownload.cgi). Download and extract the zip, and make sure you can execute `ant` from the command line by adding its bin/ folder to your PATH environment variable.
   * `javac` needs to be in your PATH
   * `JAVA_HOME` needs to be set to your JDK installation directory.  
-  * If you want to also compile the native C/C++ sources, you will need compilers for each platform. See SourceBuilding for more info.
+  * If you want to also compile the native C/C++ sources, you will need compilers for each platform. See [[Building libgdx from source]] for more info.
