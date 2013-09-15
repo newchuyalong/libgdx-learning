@@ -15,9 +15,7 @@ In OpenGL, a texture is bound, some drawing is done, another texture is bound, m
 
 TexturePacker is based on [the maximal rectangles algorithm](http://clb.demon.fi/projects/even-more-rectangle-bin-packing). It also does brute force, packing various ways at various sizes and then choosing the most efficient result.
 
-Note the latest version of the libgdx texture packer is the class `TexturePacker2`. The [https://code.google.com/p/libgdx/wiki/DeprecatedTexturePacker TexturePacker] class is deprecated.
-
-# fixme: what should i do with the above?
+_Note the latest version of the libgdx texture packer is the class `TexturePacker2`. The `TexturePacker` class is deprecated._
 
 ## <a id="Running_TexturePacker2"></a>Running TexturePacker2 ##
 
