@@ -50,7 +50,7 @@ Assuming you named your project "my-gdx-game" in the Setup UI, you will end up w
 
 All your application's assets should be stored in the Android project's assets folder. The desktop, iOS and HTML5 projects link to this folder, so there is no need to store duplicates of these assets.
 
-~~ *Note for Xamarin iOS DEPRECATED!*: Xamarin Studio will not automatically add files you put into your Android project's assets folder. You have to add those manually by right clicking the project and linking to the files. You then have to set the "Build Action" of each newly added file to "Content", otherwise the file will not be included in the final build output! Also, please read through [this article](http://code.google.com/p/libgdx/wiki/IOSWIP) You'll also have to manipulate a script that comes with the iOS SDK!~~
+~~*Note for Xamarin iOS DEPRECATED!*: Xamarin Studio will not automatically add files you put into your Android project's assets folder. You have to add those manually by right clicking the project and linking to the files. You then have to set the "Build Action" of each newly added file to "Content", otherwise the file will not be included in the final build output! Also, please read through [this article](http://code.google.com/p/libgdx/wiki/IOSWIP) You'll also have to manipulate a script that comes with the iOS SDK!~~
 
 ## Running Your Application ##
 
