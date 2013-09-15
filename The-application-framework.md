@@ -38,7 +38,7 @@ The actual code of the application is located in a class that implements the [Ap
 
 See [[Starter Classes & Configuration]] for details on starter classes.
 
-== Accessing Modules ==
+## Accessing Modules
 The modules described earlier can be accessed via static fields of the [Gdx class](https://github.com/libgdx/libgdx/tree/master/gdx/src/com/badlogic/gdx/Gdx.java). This is essentially a set of global variables that allows easy access to any module of libgdx. While generally viewed as very bad coding practice, we decided for using this mechanism to ease the pain usually associated with passing around references to things that are used often, at all kinds of places within the code base.
 
 To access e.g. the audio module one can simply write the following:
