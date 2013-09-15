@@ -1,29 +1,28 @@
-To target *Windows, Linux, Mac OS X, Android and HTML5* you will need:
+### To target *'Windows, Linux, Mac OS X, Android and HTML5** you will need:
 
   * [Java Development Kit (JDK)](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
-  *  [Eclipse](http://www.eclipse.org/downloads/), the "Eclipse IDE for Java Developers" is usually sufficient.
+  * [Eclipse](http://www.eclipse.org/downloads/), the "Eclipse IDE for Java Developers" is usually sufficient.
   * [Android SDK and Eclipse ADT Plugin](http://developer.android.com/sdk/installing.html), simply follow the installation instructions. If you work from source, make sure to install *all* platforms in the Android SDK manager!
   * [Google Web Toolkit](https://developers.google.com/web-toolkit/usingeclipse)
 
-To *additionally target iOS* you will also need:
+### To additionally target iOS
 
-*RoboVM backend, use this!*
+**RoboVM backend, use this!**
   * A Mac, iOS Development does not work on Windows/Linux thanks to Apple.
   * The latest XCode, which you can get from the Mac OS X App Store for free
-  * [RoboVM](http://www.robovm.org/docs.html#eclipse), simply install the Eclipse plugin, or use the command line version.
+  * [RoboVM](http://www.robovm.org/docs.html#eclipse), simply install the Eclipse plugin. Make sure to update the plugin frequently!
 
-*Xamarin.iOS backend, [deprecated](http://www.badlogicgames.com/wordpress/?p=3156)*
-  * ~~A Mac, iOS deployment does not work on Windows/Linux. ~~
-  * ~~The latest XCode ~~
+Once all of these tools are installed, proceed to [[Project Setup]]
+
+**Xamarin.iOS backend, [deprecated](http://www.badlogicgames.com/wordpress/?p=3156)**
+  * ~~A Mac, iOS deployment does not work on Windows/Linux.~~
+  * ~~The latest XCode~~
   * ~~[Xamarin.iOS](http://xamarin.com/download), you can use the evaluation license to test on the simulator and device, to deploy to an iOS device or the App Store you will either need a [student license (79$)](http://www.badlogicgames.com/wordpress/?p=2629 ) or a full license (299$)~~
   * ~~[Ant](http://tweedo.com/mirror/apache//ant/binaries/apache-ant-1.8.4-bin.zip). Download and extract the zip to say /Users/you/ant, then create a symlink via `ln -s /Users/you/ant/bin/ant /usr/bin/ant`~~
   * ~~Make sure both `javac` and `ant` can be executed from the command line!~~
 
-Once all of these tools are installed, proceed to [[Project Setup]]
 
-*Note:* a user reported that installation of the Google Web Toolkit and related Eclipse plugins might be blocked by anti-virus software. See [this issue](http://code.google.com/p/libgdx/issues/detail?id=1202).
-
-To *work directly from the [source repository](https://github.com/libgdx/libgdx)*
+### To work directly from the [source repository](https://github.com/libgdx/libgdx)**
   * A Git client to fetch the source from the repository.
   * [Ant](http://ant.apache.org/bindownload.cgi). Download and extract the zip, and make sure you can execute `ant` from the command line by adding its bin/ folder to your PATH environment variable.
   * `javac` needs to be in your PATH
