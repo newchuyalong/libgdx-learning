@@ -87,4 +87,4 @@ All your application's assets should be stored in the Android project's assets f
   * ~~**iOS Xamarin DEPRECATED!**: in Xamarin Studio, select a debug profile (either simulator or device) then hit the build and debug button.~~
 
 ## Manual Project Setup ##
-Please refer to [Manual Project Setup] (does not include iOS RoboVM Setup)
+Please refer to [Manual Project Setup]
