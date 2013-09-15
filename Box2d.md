@@ -227,6 +227,25 @@ Keep in mind applying forces or impulses will wake the body. Sometimes this beha
 dynamicBody.applyLinearImpulse(0.8f, 0, pos.x, pos.y, false);
 ```
 
+**Player Movement Example**
+
+In this example, we will make a player run left or right and accelerate to a maximum velocity, just like Sonic the Hedgehog. For this example we have already created a Dynamic Body named 'player'. In addition we have defined a MAX_VELOCITY variable so our player won't accelerate beyond this value. Now it's just a matter of applying a linear impulse when a key is pressed.
+
+```java
+Vector2 vel = this.player.body.getLinearVelocity();
+Vector2 pos = this.player.body.getPosition();
+		
+// apply left impulse, but only if max velocity is not reached yet
+if (Gdx.input.isKeyPressed(Keys.A) && vel.x > -MAX_VELOCITY) {			
+     this.player.body.applyLinearImpulse(-0.80f, 0, pos.x, pos.y, true);
+}
+
+// apply right impulse, but only if max velocity is not reached yet
+if (Gdx.input.isKeyPressed(Keys.D) && vel.x < MAX_VELOCITY) {
+     this.player.body.applyLinearImpulse(0.80f, 0, pos.x, pos.y, true);
+}
+```
+
 ## <a id="joints_and_gears"></a>Joints and Gears ##
 
 Coming soon
