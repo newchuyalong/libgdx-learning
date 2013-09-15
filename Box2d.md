@@ -191,7 +191,41 @@ kinematicBody.setLinearVelocity(0.0f, 1.0f);
 
 ## <a id="impulses_forces"></a>Impulses/Forces ##
 
-Coming soon
+Impulses and Forces are used to move a body in addition to gravity and collision. 
+
+Forces occur gradually over time to change the velocity of a body. For example, a rocket lifting off would slowly have forces applied as the rocket slowly begins to accelerate.
+
+Impulses on the other hand make immediate changes to the body's velocity. For example, playing Pac-Man the character always moved at a constant speed and achieved instant velocity upon being moved.
+
+First you will need a Dynamic Body to apply forces/impulses to, see the [Dynamic Bodies](#dynamic_bodies) section above.
+
+**Applying Force**
+
+Forces are applied in Newtons at a World Point. If the force is not applied to the center of mass, it will generate torque and affect the angular velocity.
+
+```java
+// Apply a force of 1 meter per second on the X-axis at pos.x/pos.y of the body slowly moving it right
+dynamicBody.applyForce(1.0f, 0.0f, pos.x, pos.y, true);
+
+// If we always want to apply force at the center of the body, use the following
+dynamicBody.applyForceToCenter(1.0f, 0.0f, true);
+```
+
+**Applying Impulse**
+
+Impulses are just like Forces with the exception that they immediately modify the velocity of a body. As such if the impulse is not applied at the center of a body, it will create torque which modifies angular velocity. Impulses are applied in Newton-seconds or kg-m/s.
+
+```java
+// Immediately set the X-velocity to 1 meter per second causing the body to move right quickly
+dynamicBody.applyLinearImpulse(1.0f, 0, pos.x, pos.y, true);
+```
+
+Keep in mind applying forces or impulses will wake the body. Sometimes this behavior is undesired. For example, you may be applying a steady force and want to allow the body to sleep to improve performance. In this case you can set the wake boolean value to false.
+
+```java
+// Apply impulse but don't wake the body
+dynamicBody.applyLinearImpulse(0.8f, 0, pos.x, pos.y, false);
+```
 
 ## <a id="joints_and_gears"></a>Joints and Gears ##
 
