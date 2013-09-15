@@ -1,6 +1,4 @@
 # TODOs Mario
- * Files page needs the table fixed
- * Preferences page needs the table fixed
  * Go through all articles one more time and see if all links are working
  * Completed everything up until and including Audio
 
