@@ -1,12 +1,13 @@
-# fixme: youtube link... #
-
 See this article on how to use the ParticleEditor.
 
 Documentation is currently lacking for libgdx particles, sorry.
 
 There is a video tutorial though:
 
-video url="http://www.youtube.com/watch?v=LCLa-rgR_MA"
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=LCLa-rgR_MA
+" target="_blank"><img src="http://img.youtube.com/vi/LCLa-rgR_MA/0.jpg" 
+alt="Libgdx setup video" width="480" height="360" border="10" /></a>
+
 
 
   * [source](https://bitbucket.org/dermetfan/somelibgdxtests/src/207cfc0a6123b48200d5cf721df222cbe7faf1be/src/net/dermetfan/someLibgdxTests/screens/ParticleEffectsTutorial.java?at=default) of the video
