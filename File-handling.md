@@ -1,6 +1,6 @@
 Libgdx applications run on three different platforms: desktop systems (Windows, Linux, Mac OS X), Android, and JavaScript/WebGL capable browsers. Each of these platforms handles file I/O a little differently. 
 
-Libgdx's [Files](https://github.com/libgdx/libgdx/tree/master/gdx/src/com/badlogic/gdx/Files.java) module provides the ability to:
+Libgdx's [Files](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/Files.html) [(code)](https://github.com/libgdx/libgdx/tree/master/gdx/src/com/badlogic/gdx/Files.java) module provides the ability to:
 
   * Read from a file
   * Write to a file
