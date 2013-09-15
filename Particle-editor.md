@@ -1,5 +1,3 @@
-# fixme: youtube video
-
 The libgdx Particle Editor is a powerful tool for making particle effects. See the video and documentation below. The Java API works (the editor is built using it) but could use some clean up and definitely some documentation. There is a [runnable example](https://github.com/libgdx/libgdx/blob/master/tests/gdx-tests/src/com/badlogic/gdx/tests/ParticleEmitterTest.java), though unfortunately it isn't the simplest or typical usage. Improvements to particles is planned, but will be some time until we can get to it.
 
 ## Running the Particle Editor ##
@@ -18,7 +16,11 @@ Click this image for the JWS, though this is not as up to date as running from s
 
 ## Using the Particle Editor ##
 
-video url="http://www.youtube.com/watch?v=w8xkf3O4nho"
+Video:
+
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=w8xkf3O4nho
+" target="_blank"><img src="http://img.youtube.com/vi/w8xkf3O4nho/0.jpg" 
+alt="Particle Editor Usage" width="480" height="360" border="10" /></a>
 
 Also see this [tutorial on JGO](http://www.java-gaming.org/topics/particle-effects-in-libgdx/29484/view.html).
 
