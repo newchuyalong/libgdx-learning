@@ -19,11 +19,7 @@ To *additionally target iOS* you will also need:
 
 Follow this if you don't want to read a lot of text. Otherwise continue below.
 
-<wiki:video url="http://www.youtube.com/watch?v=mmH05k6HFsI"/> <!-- wat -->
-
-```this dun fucked up```
-
-[![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/watch?v=mmH05k6HFsI/0.jpg)](http://www.youtube.com/watch?v=watch?v=mmH05k6HFsI)
+[![Libgdx setup video](http://img.youtube.com/vi/mmH05k6HFsI/0.jpg)](http://www.youtube.com/watch?v=mmH05k6HFsI)
 
 
 ## Using "Libgdx Setup" ##
