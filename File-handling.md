@@ -18,19 +18,17 @@ Here we review the filesystem paradigms of the platforms Libgdx supports
 ### Desktop (Windows, Linux, Mac OS X) ###
 On a desktop OS, the filesystem is one big chunk of memory. Files can be referenced with paths relative to the current working directory (the directory the application was executed in) or absolute paths. Ignoring file permissions, files and directories are usually readable and writable by all applications.
 
-=== Android ===
+### Android
 On Android the situation is a little bit more complex. Files can be stored inside the application's [APK](http://en.wikipedia.org/wiki/APK_(file_format\)) either as resources or as assets. These files are read-only. Libgdx only uses the [assets mechanism](http://developer.android.com/reference/android/content/res/AssetManager.html), as it provides raw access to the byte streams and more closely resembles a traditional filesystem. [Resources](http://developer.android.com/guide/topics/resources/index.html) better lend themselves to normal Android applications but introduce problems when used in games. Android manipulates them at load time, e.g. it automatically resizes images.
 
 Assets are stored in your Android project's `assets` directory and will be packaged with your APK automatically when you deploy your application. No other application can access these files. 
 
 Files can also be stored on the [internal storage](http://developer.android.com/guide/topics/data/data-storage.html#filesInternal), where they are readable and writable. Each installed application has a dedicated internal storage directory. This directory is again only accessible by that application. One can think of this storage as a private working area for the application.
 
-Finally, files can be stored on the [external storage](http://developer.android.com/guide/topics/data/data-storage.html#filesExternal), such as an SD-card. External storage might not always be available, e.g. the user could pull out the SD-card. Files in this storage location should thus be considered volatile. You will need to add a permission to your AndroidManifest.xml file to be allowed to write to the external storage, see [http://code.google.com/p/libgdx/wiki/ApplicationConfiguration#Permissions here]
-
-# FIX THE ABOVE LINK \^ #
+Finally, files can be stored on the [external storage](http://developer.android.com/guide/topics/data/data-storage.html#filesExternal), such as an SD-card. External storage might not always be available, e.g. the user could pull out the SD-card. Files in this storage location should thus be considered volatile. You will need to add a permission to your AndroidManifest.xml file to be allowed to write to the external storage, see [Permissions](https://github.com/libgdx/libgdx/wiki/Starter-classes-%26-configuration#permissions)
 
 ### iOS ###
-On iOS all file types except classpath files are available. That means if you have resources packed into your Jar, they won't be available to you at runtime. 
+On iOS all file types are available. 
 
 ### Javascript/WebGL ###
 A raw Javascript/WebGL application doesn't have a traditional filesystem concept. Instead, assets like images are referenced by URLs pointing to files on one or more servers. Modern browsers also support [Local Storage](http://diveintohtml5.info/storage.html) which comes close to a traditional read/write filesystem.
@@ -49,9 +47,9 @@ A file in libgdx is represented by an instance of the [FileHandle](https://githu
 
 Absolute and classpath files are mostly used for tools such as desktop editors, that have more complex file i/o requirements. For games these can be safely ignored. The order in which you should use the types is as follows:
 
-  * *Internal Files*: all the assets (images, audio files, etc.) that are packaged with your application are internal files. If you use the Setup UI, just drop them in your Android project's `assets` folder.
-  * *Local Files*: if you need to write small files to e.g. save a game state, use local files. These are in general private to your application. If you want a key/value store instead, you can also look into [[Preferences]].
-  * *External Files*: if you need to write big files, e.g. screenshots, or download files from the web, they should go on the external storage. Note that the external storage is volatile, a user can remove it or delete the files you wrote.
+  * **Internal Files**: all the assets (images, audio files, etc.) that are packaged with your application are internal files. If you use the Setup UI, just drop them in your Android project's `assets` folder.
+  * **Local Files**: if you need to write small files to e.g. save a game state, use local files. These are in general private to your application. If you want a key/value store instead, you can also look into [[Preferences]].
+  * **External Files**: if you need to write big files, e.g. screenshots, or download files from the web, they should go on the external storage. Note that the external storage is volatile, a user can remove it or delete the files you wrote.
 
 ## Checking Storage availability and paths ##
 The different storage types might not be available depending on the platform your application runs on. You can query this kind of information via the Files module:
@@ -110,14 +108,14 @@ boolean isDirectory = Gdx.files.external("test/").isDirectory();
 
 Listing a directory is equally simple:
 
-```
+```java
 FileHandle[] files = Gdx.files.local("mylocaldir/").list();
 for(FileHandle file: files) {
    // do something interesting here
 }
-```java
+```
 
-*Note*: Listing of internal directories is not supported on Desktop.
+**Note**: Listing of internal directories is not supported on Desktop.
 
 We can also ask for the parent directory of a file or create a FileHandle for a file in a directory (aka "child").
 
@@ -130,7 +128,7 @@ FileHandle child = Gdx.files.internal("data/sounds/").child("myaudiofile.mp3");
 
 There are many more methods in FileHandle that let you check for specific attributes of a file. Please refer to the Javadocs for detail.
 
-*Note*: These functions are mostly unimplemented in the HTML5 back-end at the moment. Try to not rely on them to much if HTML5 will be a target of your application.
+**Note**: These functions are mostly unimplemented in the HTML5 back-end at the moment. Try to not rely on them to much if HTML5 will be a target of your application.
 
 ## Error Handling ##
 Some operations on FileHandles can fail. We adopted `RuntimeExceptions` to signal errors instead of checked Exceptions. Our reasoning goes like this: 90% of the time we will access files that we know exist and are readable (e.g. internal files packaged with our application).
