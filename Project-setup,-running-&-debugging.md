@@ -57,15 +57,14 @@ All your application's assets should be stored in the Android project's assets f
   * **Desktop**: Right click the desktop project, `Run As -> Java Application`. Select the desktop starter class (e.g. Main.java).
   * **Android**: make sure you have a device connected and that it shows up in DDMS. If you do not know what this means, please refer to the [Android Developer Guide](http://developer.android.com/guide/index.html). Right click your Android project, `Run As -> Android Application`.
   * **iOS RoboVM**: Right click the robovm project, `Run As -> iOS Device App` to run on a connected device, or `Run As -> iOS Simulator App` to run on the iOS simulator. If you run on a device, you need to [provision](https://developer.apple.com/library/ios/documentation/ToolsLanguages/Conceptual/YourFirstAppStoreSubmission/ProvisionYourDevicesforDevelopment/ProvisionYourDevicesforDevelopment.html) it to be able to deploy to it!
-
   * **HTML5**: there are two modes in which you can run your application.
-    # development/hosted mode: runs the actual Java code via GWT plugin magic and allows debugging and hot swapping code (kind of).
-      # Right click the HTML5 project, `Run As -> Web Application`. 
-      # In the "Web Development" view, click the URL. Your standard browser will open up. If you have not installed the GWT plugin yet, you will be prompted to do so. After installation of the plugin, simply refresh the site in the browser.
-    # production/web mode: you will need a web server that serves the compiled files (e.g. [Ngnix](http://nginx.org/) or a browser that allows to execute JavaScript from local files.
-      # Right click the HTML5 project, `Google -> GWT Compile`
-      # Once compiled, place the contents of the war/ directory into a directory your web server can serve. Omit the WEB-INF folder.
-      # Point your browser at an URL which will display the `.html` file.
+    * development/hosted mode: runs the actual Java code via GWT plugin magic and allows debugging and hot swapping code (kind of).
+      * Right click the HTML5 project, `Run As -> Web Application`. 
+      * In the "Web Development" view, click the URL. Your standard browser will open up. If you have not installed the GWT plugin yet, you will be prompted to do so. After installation of the plugin, simply refresh the site in the browser.
+    * production/web mode: you will need a web server that serves the compiled files (e.g. [Ngnix](http://nginx.org/) or a browser that allows to execute JavaScript from local files.
+      * Right click the HTML5 project, `Google -> GWT Compile`
+      * Once compiled, place the contents of the war/ directory into a directory your web server can serve. Omit the WEB-INF folder.
+      * Point your browser at an URL which will display the `.html` file.
   * ~~**iOS Xamarin DEPRECATED!**: In Xamarin Studio, select a release or debug profile (either simulator or device) then hit the build and run button.~~
 
 ## Debugging Your Application ##
