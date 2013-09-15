@@ -1,7 +1,5 @@
 # Maps #
 
-# fixme: GCode image link #
-
 Libgdx features a generic maps API. All map related classes can be found in the [com.badlogic.gdx.maps](https://github.com/libgdx/libgdx/tree/master/gdx/src/com/badlogic/gdx/maps) package. The root package contains the base classes, sub-packages contain specialized implementations for tile maps and other forms of maps.
 
 ## Base Classes ##
