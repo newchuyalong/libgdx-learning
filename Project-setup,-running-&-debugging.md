@@ -1,14 +1,14 @@
 Libgdx is very Eclipse centric due to it's Android and HTML5/GWT back-ends. this article discusses how to setup libgdx projects for Eclipse. Check out this [[Using libgdx with IntelliJ IDEA]] if you use IntelliJ. If you prefer to use a different IDE, please refer to the bottom of this page which outlines the dependencies in detail.
 
 ## Prerequisites ##
-To target *Windows, Linux, Mac OS X, Android and HTML5* you will need:
+To target **Windows, Linux, Mac OS X, Android and HTML5** you will need:
 
   * [Java Development Kit (JDK)](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
   * [Eclipse](http://www.eclipse.org/downloads/), the "Eclipse IDE for Java Developers" is usually sufficient.
-  * [Android SDK and Eclipse ADT Plugin](http://developer.android.com/sdk/installing.html), simply follow the installation instructions. If you work from source, make sure to install *all* platforms in the Android SDK manager!
+  * [Android SDK and Eclipse ADT Plugin](http://developer.android.com/sdk/installing.html), simply follow the installation instructions. If you work from source, make sure to install **all** platforms in the Android SDK manager!
   * [Google Web Toolkit](https://developers.google.com/web-toolkit/usingeclipse)
 
-To *additionally target iOS* you will also need:
+To **additionally target iOS** you will also need:
 
   * A Mac, iOS Development does not work on Windows/Linux thanks to Apple.
   * The latest XCode, which you can get from the Mac OS X App Store for free
@@ -41,24 +41,24 @@ As of version 0.9.3, libgdx comes with an easy to use application called "Libgdx
 ## Project Layout ##
 Assuming you named your project "my-gdx-game" in the Setup UI, you will end up with 4 projects:
 
-  * *Core project ("my-gdx-game")*: contains all the code of your application, minus the so called starter classes. All other projects link to this project. This project is usually referred to as the "core project".
-  * *Android project ("my-gdx-game-android")*: contains the starter class and other necessary files to run your application on Android. The assets/ folder stores the assets of your application for all platforms.
-  * *Desktop project ("my-gdx-game-desktop")*: contains the starter class to run your application on the desktop. Links to the Android project's assets/ folder as well as the core project.
-  * *HTML5 project ("my-gdx-game-html")*: contains the starter class and other necessary files to run your application as a native HTML5 application. Links to the Anroid project's assets/ folder (see gwt.xml file) as well as to the core project.
-  * *iOS RoboVM project ("my-gdx-game-robovm")*: contains the starter classes and other necessary files to run your application on iOS through [RoboVM](http://www.robovm.org/). Links to the Android project's assets/ folder (see robovm.xml) as well as the core project.
-  * ~~*iOS Xamarin project DEPRECATED! ("my-gdx-game-ios")*: contains the starter class and other necessary files to run your application as a native iOS application. Links to the Android project's assets/data folder. Contains an Ant script that will be invoked before each build that compiles your core project's source code to a .Net assembly (.dll file) which is then used to build the native app. *Please read [this article](http://code.google.com/p/libgdx/wiki/IOSWIP) for more information on the iOS backend!*~~
+  * **Core project ("my-gdx-game")**: contains all the code of your application, minus the so called starter classes. All other projects link to this project. This project is usually referred to as the "core project".
+  * **Android project ("my-gdx-game-android")**: contains the starter class and other necessary files to run your application on Android. The assets/ folder stores the assets of your application for all platforms.
+  * **Desktop project ("my-gdx-game-desktop")**: contains the starter class to run your application on the desktop. Links to the Android project's assets/ folder as well as the core project.
+  * **HTML5 project ("my-gdx-game-html")**: contains the starter class and other necessary files to run your application as a native HTML5 application. Links to the Anroid project's assets/ folder (see gwt.xml file) as well as to the core project.
+  * **iOS RoboVM project ("my-gdx-game-robovm")**: contains the starter classes and other necessary files to run your application on iOS through [RoboVM](http://www.robovm.org/). Links to the Android project's assets/ folder (see robovm.xml) as well as the core project.
+  * ~~**iOS Xamarin project DEPRECATED! ("my-gdx-game-ios")**: contains the starter class and other necessary files to run your application as a native iOS application. Links to the Android project's assets/data folder. Contains an Ant script that will be invoked before each build that compiles your core project's source code to a .Net assembly (.dll file) which is then used to build the native app. **Please read [this article](http://code.google.com/p/libgdx/wiki/IOSWIP) for more information on the iOS backend!**~~
 
 All your application's assets should be stored in the Android project's assets folder. The desktop, iOS and HTML5 projects link to this folder, so there is no need to store duplicates of these assets.
 
-~~*Note for Xamarin iOS DEPRECATED!*: Xamarin Studio will not automatically add files you put into your Android project's assets folder. You have to add those manually by right clicking the project and linking to the files. You then have to set the "Build Action" of each newly added file to "Content", otherwise the file will not be included in the final build output! Also, please read through [this article](http://code.google.com/p/libgdx/wiki/IOSWIP) You'll also have to manipulate a script that comes with the iOS SDK!~~
+~~**Note for Xamarin iOS DEPRECATED!**: Xamarin Studio will not automatically add files you put into your Android project's assets folder. You have to add those manually by right clicking the project and linking to the files. You then have to set the "Build Action" of each newly added file to "Content", otherwise the file will not be included in the final build output! Also, please read through [this article](http://code.google.com/p/libgdx/wiki/IOSWIP) You'll also have to manipulate a script that comes with the iOS SDK!~~
 
 ## Running Your Application ##
 
-  * *Desktop*: Right click the desktop project, `Run As -> Java Application`. Select the desktop starter class (e.g. Main.java).
-  * *Android*: make sure you have a device connected and that it shows up in DDMS. If you do not know what this means, please refer to the [Android Developer Guide](http://developer.android.com/guide/index.html). Right click your Android project, `Run As -> Android Application`.
-  * *iOS RoboVM*: Right click the robovm project, `Run As -> iOS Device App` to run on a connected device, or `Run As -> iOS Simulator App` to run on the iOS simulator.
-  * ~~*iOS Xamarin DEPRECATED!*: In Xamarin Studio, select a release or debug profile (either simulator or device) then hit the build and run button.~~
-  * *HTML5*: there are two modes in which you can run your application.
+  * **Desktop**: Right click the desktop project, `Run As -> Java Application`. Select the desktop starter class (e.g. Main.java).
+  * **Android**: make sure you have a device connected and that it shows up in DDMS. If you do not know what this means, please refer to the [Android Developer Guide](http://developer.android.com/guide/index.html). Right click your Android project, `Run As -> Android Application`.
+  * **iOS RoboVM**: Right click the robovm project, `Run As -> iOS Device App` to run on a connected device, or `Run As -> iOS Simulator App` to run on the iOS simulator. If you run on a device, you need to [provision](https://developer.apple.com/library/ios/documentation/ToolsLanguages/Conceptual/YourFirstAppStoreSubmission/ProvisionYourDevicesforDevelopment/ProvisionYourDevicesforDevelopment.html) it to be able to deploy to it!
+
+  * **HTML5**: there are two modes in which you can run your application.
     # development/hosted mode: runs the actual Java code via GWT plugin magic and allows debugging and hot swapping code (kind of).
       # Right click the HTML5 project, `Run As -> Web Application`. 
       # In the "Web Development" view, click the URL. Your standard browser will open up. If you have not installed the GWT plugin yet, you will be prompted to do so. After installation of the plugin, simply refresh the site in the browser.
@@ -66,6 +66,7 @@ All your application's assets should be stored in the Android project's assets f
       # Right click the HTML5 project, `Google -> GWT Compile`
       # Once compiled, place the contents of the war/ directory into a directory your web server can serve. Omit the WEB-INF folder.
       # Point your browser at an URL which will display the `.html` file.
+  * ~~**iOS Xamarin DEPRECATED!**: In Xamarin Studio, select a release or debug profile (either simulator or device) then hit the build and run button.~~
 
 ## Debugging Your Application ##
 
