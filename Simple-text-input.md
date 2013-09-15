@@ -4,8 +4,6 @@ On the desktop a Swing dialog will be opened, prompting the user to enter a stri
 
 On Android a standard Android dialog will be opened, again prompting the user for input.
 
-*Note:* this functionality is not yet supported on the Javascript/WebGL back-end. 
-
 To receive the input or a notification that the user canceled the input one has to implement the `TextInputListener` interface:
 
 ```java
