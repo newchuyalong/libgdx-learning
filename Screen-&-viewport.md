@@ -1,4 +1,4 @@
-# fixme: gcode links.
+# fixme: weird image issues.
 
 Every application or game that uses graphics, needs to work with the screen in a way. This page describes the different projections (for 2D and 3D) and how to set them up with libGDX.
 
