@@ -130,7 +130,7 @@ public class World() {
 }
 ```
 
-The [Pools](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/utils/Pools.html) class provides static methods for dynamically creating pools of any objects (using `[ReflectionPool](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/utils/ReflectionPool.html)` and black magic). In the above example, it could be used like this.
+The [Pools](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/utils/Pools.html) class provides static methods for dynamically creating pools of any objects (using [ReflectionPool](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/utils/ReflectionPool.html) and black magic). In the above example, it could be used like this.
 ```java
 private final Pool<Bullet> bulletPool = Pools.get(Bullet.class);
 ```
