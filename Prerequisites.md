@@ -1,4 +1,4 @@
-### To target *'Windows, Linux, Mac OS X, Android and HTML5** you will need:
+### To target Windows, Linux, Mac OS X, Android and HTML5 you will need:
 
   * [Java Development Kit (JDK)](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
   * [Eclipse](http://www.eclipse.org/downloads/), the "Eclipse IDE for Java Developers" is usually sufficient.
