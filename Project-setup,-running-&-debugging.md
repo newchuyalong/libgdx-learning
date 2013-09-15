@@ -69,21 +69,22 @@ All your application's assets should be stored in the Android project's assets f
 
 ## Debugging Your Application ##
 
-  * *Desktop*: Right click the desktop project, `Debug As -> Java Application`. Select the desktop starter class (e.g. Main.java). Set breakpoints where you need them, hot swap code (edit & save while debugging) to quickly test changes without restarting the app.
-  * *Android*: assuming you have a device connected, `Debug As -> Android Application`. Hot swapping is not supported, but you can use the DDMS perspective to check your memory usage, profile your application and so on. Refer to the Android Development Guide for more information.
-  * *iOS RoboVM*: debugging is currently not supported by RoboVM
-  * ~~*iOS Xamarin DEPRECATED!*: in Xamarin Studio, select a debug profile (either simulator or device) then hit the build and debug button.~~
-  * *HTML5*:
-    # development/hosted mode: runs the actual Java code via GWT plugin magic and allows debugging and hot swapping code (kind of).
-      # Right click the HTML5 project, `Debug As -> Web Application`. 
-      # In the "Web Development" view, click the URL. Your standard browser will open up. 
-      # Set breakpoints in your Java code. If you edit & save code, you'll have to refresh your browser for the changes to take effect. This will essentially restart your application. It's faster than recompiling though.
-    # production/web mode: 
-      # Right click the HTML5 project, `Google -> GWT Compile`
-      # Change the flags in "Advanced" to `-strict -draftCompile` and the "Output Style" to "detailed". This will produce very readable Javascript that you can map almost 1:1 to your Java code.
-      # Once compiled, place the contents of the war/ directory into a directory your web server can serve. Omit the WEB-INF folder.
+  * **Desktop**: Right click the desktop project, `Debug As -> Java Application`. Select the desktop starter class (e.g. Main.java). Set breakpoints where you need them, hot swap code (edit & save while debugging) to quickly test changes without restarting the app.
+  * **Android**: assuming you have a device connected, `Debug As -> Android Application`. Hot swapping is not supported, but you can use the DDMS perspective to check your memory usage, profile your application and so on. Refer to the Android Development Guide for more information.
+  * **iOS RoboVM**: debugging is currently not supported by RoboVM
+  * **HTML5**:
+    * development/hosted mode: runs the actual Java code via GWT plugin magic and allows debugging and hot swapping code (kind of).
+      * Right click the HTML5 project, `Debug As -> Web Application`. 
+      * In the "Web Development" view, click the URL. Your standard browser will open up. 
+      * Set breakpoints in your Java code. If you edit & save code, you'll have to refresh your browser for the changes to take effect. This will essentially restart your application. It's faster than recompiling though.
+    * production/web mode: 
+      * Right click the HTML5 project, `Google -> GWT Compile`
+      * Change the flags in "Advanced" to `-strict -draftCompile` and the "Output Style" to "detailed". This will produce very readable Javascript that you can map almost 1:1 to your Java code.
+      * Once compiled, place the contents of the war/ directory into a directory your web server can serve. Omit the WEB-INF folder.
       # Point your browser at an URL which will display the `.html` file.
       # Open up Firebug or similar tools, go to the JavaScript and set breakpoints, watch the callstack and so on. To find a Java Class method, simply search for the package/class/method name.
+    * super dev mode: through the power of source maps, you can also debug compiled JS as if it where Java, directly in your browser. See this blog post on [libgdx and super dev mode](http://www.badlogicgames.com/wordpress/?p=3073)
+  * ~~**iOS Xamarin DEPRECATED!**: in Xamarin Studio, select a debug profile (either simulator or device) then hit the build and debug button.~~
 
 ## Manual Project Setup ##
 Please refer to [Manual Project Setup] (does not include iOS RoboVM Setup)
