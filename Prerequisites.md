@@ -12,7 +12,7 @@
   * The latest XCode, which you can get from the Mac OS X App Store for free
   * [RoboVM](http://www.robovm.org/docs.html#eclipse), simply install the Eclipse plugin. Make sure to update the plugin frequently!
 
-Once all of these tools are installed, proceed to [[Project Setup]]
+Once all of these tools are installed, proceed to [Project Setup](https://github.com/libgdx/libgdx/wiki/Project-setup%2C-running-%26-debugging)
 
 **Xamarin.iOS backend, [deprecated](http://www.badlogicgames.com/wordpress/?p=3156)**
   * ~~A Mac, iOS deployment does not work on Windows/Linux.~~
