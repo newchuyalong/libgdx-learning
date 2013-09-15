@@ -232,7 +232,7 @@ In the `create()` method we instantiate the Rectangle and specify it's initial v
    bucket.y = 20;
    bucket.width = 64;
    bucket.height = 64;
-```java
+```
 
 We center the bucket horizontally and place it 20 pixels above the bottom edge of the screen. Wait, why is `bucket.y` set to 20, shouldn't it be 480 - 20? By default, all rendering in libgdx (and OpenGL) is performed with the y-axis pointing upwards. The x/y coordinates of the bucket define the bottom left corner of the bucket, the origin for drawing is located in the bottom left corner of the screen. The width and height of the rectangle are set to 64x64, our small-ish portion of our target resolutions height.
 
@@ -266,7 +266,7 @@ Now we can render our bucket:
    batch.begin();
    batch.draw(bucketImage, bucket.x, bucket.y);
    batch.end();
-```java
+```
 
 The first line tells the `SpriteBatch` to use the coordinate system specified by the camera. As stated earlier, this is done with something called a matrix, to be more specific, a projection matrix. The `camera.combined` field is a such a matrix. From there on the `SpriteBatch` will render everything in the coordinate system described earlier.
 
@@ -385,7 +385,7 @@ The raindrops need to be rendered. We'll add that to the `SpriteBatch` rendering
 
 One final adjustment: if a raindrop hits the bucket, we want to playback our drop sound and remove the raindrop from the array. We simply add the following lines to the raindrop update loop:
 
-```
+```java
       if(raindrop.overlaps(bucket)) {
          dropSound.play();
          iter.remove();
