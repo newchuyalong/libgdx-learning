@@ -1,8 +1,16 @@
-### The mechanism to deploy your game differs between platforms. ###
+###  ###
 
-# fixme: ToC
+* [Forward](#Forward)
+* [Deploy to Windows/Linux/Mac](#Deploy_to_Windows/Linux/Mac)
+* [Deploy to Android](#Deploy_to_Android)
+* [Deploy to iOS](#Deploy_to_iOS)
+* [Deploy to HTML/JS](#Deploy_to_HTML/JS)
 
-## Deploy to Windows/Linux/Mac ##
+
+### <a id="Forward"></a>Forward ###
+The mechanism to deploy your game differs between platforms. This article aims to articulate what is necessary to deploy to each platform that Libgdx officially supports.
+
+## <a id="Deploy_to_Windows/Linux/Mac"></a>Deploy to Windows/Linux/Mac OS X ##
 The easiest way to deploy to Windows/Linux/Mac is to create a runnable JAR in Eclipse, which includes all of your code, the code of libgdx and any extensions, and your assets. To create a runnable JAR:
 
   1. Right click your desktop project, select "Export"
@@ -15,13 +23,13 @@ The easiest way to deploy to Windows/Linux/Mac is to create a runnable JAR in Ec
 
 This will package all code and your assets into a single JAR file. To run the JAR file, a user can just double click it, provided she has Java installed.
 
-## Deploy to Android ##
+## <a id="Deploy_to_Android"></a>Deploy to Android ##
 TBD
 
-## Deploy to iOS ##
+## <a id="Deploy_to_iOS"></a>Deploy to iOS ##
 TBD
 
-## Deploy to HTML/JS ##
+## <a id="Deploy_to_HTML/JS"></a>Deploy to HTML/JS ##
 Deploying to HTML/JS is straightforward for most cases.
   1. Right click your html project and select "Google -> GWT Compile"
   2. Keep the default settings and click compile.
