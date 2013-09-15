@@ -1,7 +1,3 @@
-# Hiero #
-
-# fixme: GCode link (to hiero JNLP and other(s))
-
 Hiero is a bitmap font packing tool. It saves in the [Angel Code font](http://www.angelcode.com/products/bmfont/) format, which can be used by [BitmapFont | Bitmap Fonts] in libgdx applications.
 
 ## Running Hiero ##
