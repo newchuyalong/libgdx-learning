@@ -1,13 +1,10 @@
-# fixme: ToC
+ * [Overview](#Overview)
+ * [Writing Object Graphs](#Writing_Object_Graphs)
+ * [Reading Object Graphs](#Reading_Object_Graphs)
+ * [Customizing Serialization](#Customizing_Serialization)
+ * [Event Based Parsing](#Event_Based_Parsing)
 
-
- * [#Overview Overview]
- * [#Writing_object_graphs Writing object graphs]
- * [#Reading_object_graphs Reading object graphs]
- * [#Customizing_serialization Customizing serialization]
- * [#Event_based_parsing Event based parsing]
-
-## Overview ##
+## <a id="Overview"></a>Overview ##
 
 libgdx can perform automatic object to JSON serialization and JSON to object deserialization. Four small classes make up the API:
 
@@ -18,7 +15,7 @@ libgdx can perform automatic object to JSON serialization and JSON to object des
 
 To use these classes outside of libgdx, see the [JsonBeans](https://code.google.com/p/jsonbeans/) project.
 
-## Writing object graphs ##
+## <a id="Writing_Object_Graphs"></a>Writing Object Graphs ##
 
 The `Json` class uses reflection to automatically serialize objects to JSON. For example, here are two classes (getters/setters and constructors omitted):
 
@@ -152,7 +149,7 @@ System.out.println(json.prettyPrint(person));
 }
 ```
 
-## Reading object graphs ##
+## <a id="Reading_Object_Graphs"></a>Reading Object Graphs ##
 
 The `Json` class uses reflection to automatically deserialize objects from JSON. Here is how to deserialize the JSON from the previous examples:
 
@@ -200,7 +197,7 @@ JsonValue root = new JsonReader().parse(text);
 
 The `JsonValue` describes a JSON object, array, string, float, long, boolean, or null.
 
-## Customizing serialization ##
+## <a id="Customizing_Serialization"></a>Customizing Serialization ##
 
 Usually automatic serialization is desired and there is no need to customize how specific classes are serialized. When needed, serialization can be customized by either having the class to be serialized implement the `Json.Serializable` interface, or by registering a `Json.Serializer` with the `Json` instance. This example writes the phone numbers as an object with a single field:
 
@@ -265,6 +262,6 @@ System.out.println(text);
 Person person2 = json.fromJson(Person.class, text);
 ```
 
-## Event based parsing ##
+## <a id="Event_Based_Parsing"></a>Event Based Parsing ##
 
 The `JsonReader` class reads JSON and has protected methods that are called as JSON objects, arrays, strings, floats, longs, and booleans are encountered. By default, these methods build a DOM out of `JsonValue` objects. These methods can be overridden to do your own event based JSON handling.
