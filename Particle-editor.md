@@ -8,6 +8,8 @@ To run the editor, you can check out libgdx and run it [[from source | Running D
 java -cp gdx.jar;gdx-natives.jar;gdx-backend-lwjgl.jar;gdx-backend-lwjgl-natives.jar;extensions\gdx-tools\gdx-tools.jar com.badlogic.gdx.tools.particleeditor.ParticleEditor
 ```
 
+On Linux or Mac, simply replace the semicolons with colons and the backslashes with forward slashes.
+
 Click this image for the JWS, though this is not as up to date as running from source or from gdx-tools.jar:
 
 ![](http://libgdx.googlecode.com/svn/jws/particleeditor.jpg)
