@@ -24,6 +24,7 @@ For more documentation related to Box2D, please visit [box2d.org](http://box2d.o
   * [Contact Listeners](#contact_listeners)
   * [Code Snippets](#code_snippets)
   * [Resources](#resources)
+  * [Tools](#Tools)
 
 
 
@@ -336,7 +337,7 @@ There are a lot of really good Box2D resources out there and most of the code ca
   * http://box2d.org Documentation and forums are a great place to find help.
   * http://www.iforce2d.net/b2dtut/ A really good tutorial series on Box2D. Covers a lot of different problems which you will more than likely run across in your game development
 
-## <a id="tools"></a>Tools ##
+## <a id="Tools"></a>Tools ##
 
 The following is a list of tools for use with box2d and libgdx:
 
