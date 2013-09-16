@@ -1,6 +1,6 @@
 # JSON serialization #
 
-The [JSON | Reading & Writing JSON] class can automatically convert Java objects to and from JSON.
+The [[JSON | Reading & Writing JSON]] class can automatically convert Java objects to and from JSON.
 
 # Binary serialization #
 
