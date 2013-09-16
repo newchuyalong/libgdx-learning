@@ -335,3 +335,10 @@ There are a lot of really good Box2D resources out there and most of the code ca
 
   * http://box2d.org Documentation and forums are a great place to find help.
   * http://www.iforce2d.net/b2dtut/ A really good tutorial series on Box2D. Covers a lot of different problems which you will more than likely run across in your game development
+
+## <a id="tools"></a>Tools ##
+
+The following is a list of tools for use with box2d and libgdx:
+
+   * <a href="https://www.iforce2d.net/rube">RUBE</a> editor for creating box2d worlds.  Use <a href="https://github.com/tescott/RubeLoader">RubeLoader</a> for loading RUBE data into libgdx.
+   * Obli's <a href="http://www.aurelienribon.com/blog/projects/physics-body-editor/">Physics Body Editor</a>
