@@ -62,7 +62,7 @@ The following would go into the HTML5 project:
 /** Html5 implementation, same as DesktopLeaderboard **/
 public class Html5Leaderboard implements Leaderboard {
    public void submitScore(String user, int score) {
-      Gdx.app.log("DesktopLeaderboard", "would have submitted score for user " + user + ": " + score");
+      Gdx.app.log("Html5Leaderboard", "would have submitted score for user " + user + ": " + score");
    }
 }
 ```
