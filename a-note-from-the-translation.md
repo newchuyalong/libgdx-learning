@@ -26,13 +26,6 @@ renders the following:
 
 _please note that there should be a space in between `Docs (Code)` style formatting, in order to differentiate the two._
 
-## possible fixes and changes
-
-id welcome a `grep fixme` :p
-
-if we decide a way to store all images on the wiki on badlogic servers (to prevent 404s) we can `grep ![]` to find them!
-
-
 ## Misc. ##
 
 * I'm not translating the [[Graphics]] post, because it needs to be rewritten! motivation! (see editors note for repetition)
