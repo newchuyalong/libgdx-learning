@@ -226,7 +226,7 @@ This leaves us with three options:
 [[images/using-libgdx-with-intellij-idea13.png]]
 
 #### Alternative 3: Sym-link ####
-See [this image on how to set up sym-link]([[images/using-libgdx-with-intellij-idea14.png]]) in windows. (will need to run Command Prompt as admin). Linux/OSX can do the same with the _ln -s_-command.
+See [this image on how to set up sym-link](images/using-libgdx-with-intellij-idea14.png) in windows. (will need to run Command Prompt as admin). Linux/OSX can do the same with the _ln -s_-command.
 
 *Note:* You will need a _data_-directory in the Main module, and you will need to prefix all your assets with _data/_.
 
