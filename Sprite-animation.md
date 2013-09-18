@@ -121,7 +121,8 @@ Running the above code snippet, will produce a nice smooth animation of a man ru
 [[images/sprite-animation3.png]]
 
 Creating an animation is extremely simple by using the following constructor.
-| *Method signature* | *Description* |
+
+| Method signature | Description |
 |:-------------------|:--------------|
 | `Animation (float frameDuration, TextureRegion... keyFrames)` | The first parameter is the frame time and the second is an array of regions (frames) making up the animation|
 
