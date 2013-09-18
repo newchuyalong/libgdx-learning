@@ -4,7 +4,7 @@ LibGDX comprises several modules that provide services for each step of a typica
 
  * *Input* - Provides a unified input model and handler for all platforms. Supports keyboard, touchscreen, accelerometer and mouse where available. 
  * *Graphics* - Enables the drawing of images to the screen using the the hardware provided OpenGL ES implementation.
- * *[[Files | Files Module]]* - Abstracts file access on all platforms by providing convenient methods for read/write operations regardless of the media.
+ * *[[Files | File Module]]* - Abstracts file access on all platforms by providing convenient methods for read/write operations regardless of the media.
  * *Audio* - Facilitates sound recording and playback on all platforms.
  * *Math* - Utility module providing fast math calculations geared towards game development.
  * *Physics* - Complete wrapper for Box2D.
