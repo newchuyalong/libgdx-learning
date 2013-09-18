@@ -43,7 +43,7 @@ void main()
 }
 ```
 
-This fragment shader will simply render every fragment with solid red. gl_FragColor is another pre-defined keyword. It's used to output the final color for the fragment. Notice how we use {{{vec4(x,y,z,w)}}} to define a vector inside the shader. In this case the vector is used to define the color of the fragment.
+This fragment shader will simply render every fragment with solid red. gl_FragColor is another pre-defined keyword. It's used to output the final color for the fragment. Notice how we use `vec4(x,y,z,w)` to define a vector inside the shader. In this case the vector is used to define the color of the fragment.
 
 ## A simple ShaderProgram ##
 
