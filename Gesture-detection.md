@@ -1,7 +1,7 @@
 # Gesture Detection #
 Touch screens lend themselves well to gesture based input. A gesture could be a pinch with two fingers to indicate the desire to zoom, a tap or double tap, a long press and so on.
 
-Libgdx provides a [GestureDetector](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/input/GestureDetector.html) that lets you detect the following gestures:
+Libgdx provides a [GestureDetector](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/input/GestureDetector.html) [(source)](https://github.com/libgdx/libgdx/blob/master/gdx/src/com/badlogic/gdx/input/GestureDetector.java) that lets you detect the following gestures:
 
   * **tap**: A user touches the screen and lifts the finger again. The finger must not move outside a specified square area around the initial touch position for a tap to be registered. Multiple consecutive taps will be detected if the user performs taps within a specified time interval.
   * **pan**: A user drags a finger across the screen. The detector will report the current touch coordinates as well as the delta between the current and previous touch positions. Useful to implement camera panning in 2D.
