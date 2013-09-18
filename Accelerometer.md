@@ -4,7 +4,7 @@ Acceleration is measured in meters per second per second (m/s^2^). If an axis is
 
 The axes in an Android device are setup as follows:
 
-![](http://developer.android.com/images/axis_device.png)
+[[images/accelerometer.png]]
 
 Sadly, this configuration is different for tablets. Android devices have a notion called default orientation. For phones, portrait mode (as in the image above) is the default orientation. For tablets, landscape mode is the default orientation. A default landscape orientation device has it's axes rotated, so that the y-axis points up the smaller side of the device and the x-axis points to the right of the wider side.
 

@@ -22,4 +22,4 @@ The angles are given in degrees. Here's the interpretation of these values:
 
 Here's an illustration of the axis relative to the earth.
 
-![](http://developer.android.com/images/axis_globe_inverted.png)
+[[images/compass.png]]

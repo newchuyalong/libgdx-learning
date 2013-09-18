@@ -12,7 +12,7 @@ On Linux or Mac, simply replace the semicolons with colons and the backslashes w
 
 Click this image for the JWS, though this is not as up to date as running from source or from gdx-tools.jar:
 
-![](http://libgdx.googlecode.com/svn/jws/particleeditor.jpg)
+[[images/particle-editor.png]]
 
 [download](http://wiki.libgdx.googlecode.com/git/jws/particle-editor.jnlp)
 

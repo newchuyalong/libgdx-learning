@@ -6,7 +6,7 @@ An animation consists of multiple frames which are shown in a sequence at set in
 
 The following image shows a complete  running cycle of a man. It is called a sprite sheet. Each box is a sprite and it is called a frame. To create the running animation, the sprites have to be drawn one after the other as time passes.
 
-![](http://libgdx.googlecode.com/svn/wiki/img/sprite_animation_frames_1.png)
+[[images/sprite-animation1.png]]
 
 Depending on how fast the character is running, the time a frame is kept on the screen needs to be determined. The frame rate is the number of times we switch frames per second. Examining the sprite sheet, we can see that a complete running cycle consists of 30 frames (6 columns and 5 rows). If the character is to complete a cycle in a second, we need to show all the 30 frames in a second. That gives us the frame rate of 30 FPS (Frames Per Second). The clue is in the name.
 Going further, it is easy to calculate the state time (frame time), which is how much time a frame will be displayed before the next one replaces it. 1 second / 30 = 0.033.
@@ -15,7 +15,7 @@ In other words, to have an animation at  30 FPS, the current frame needs to be c
 
 An animation is a very simple state machine. The running man has 30 states as per the sprite sheet. The numbered frames represent the states a running man goes through.
 
-![](http://libgdx.googlecode.com/svn/wiki/img/sprite_animation_frames_2.png)
+[[images/sprite-animation2.png]]
 
 A state machine can’t be in 2 or more states at any given time. Working out the states is extremely easy.
 When the character is in State 1, then the sprite associated with that state is drawn. 
@@ -27,7 +27,7 @@ Looping animation means, that when the animation reached the last frame, it jump
 Using animations in libGdx is extremely simple. 
 One constraint regarding the size of the spritesheet needs to be remembered: when using OpenGL 1.x, the size of sprite sheet has to be power of two. (check Texture for more information).
 
-The following code snippet will create an Animation using the animation_sheet.png sprite-sheet and renders the animation to the screen. It is a very basic ApplicationListener. How to create one and what exactly it is, look [[here for textures|Textures, TextureRegion and SpriteBatch]].
+The following code snippet will create an Animation using the animation_sheet.png sprite-sheet and renders the animation to the screen. It is a very basic ApplicationListener. How to create one and what exactly it is, look [here for textures|Textures, TextureRegion and SpriteBatch].
 
 ```java
 public class Animator implements ApplicationListener {
@@ -93,7 +93,7 @@ FRAME_COLS, walkSheet.getHeight() / FRAME_ROWS);				// #10
 
 For example, if the animation is a 30FPS one, then the state change needs to happen at each 33.3 milliseconds. If the update happens at 10 milliseconds, the stateTime accumulates the elapsed time and the animation will change to the next state (frame) at the 4th update.
 
-*#9* - Creates a texture from animation_sheet.png which is placed in the assets directory of the project (check [[how to set up a project | Project Setup, Running & Debugging]])
+*#9* - Creates a texture from animation_sheet.png which is placed in the assets directory of the project (check [ProjectSetup how to set up a project])
 
 *#10* - *#11* - Using the split convenience method on the texture, we obtain a two dimensional array of the frames from the texture. Bear in mind that this works only if the frames are of equal size. Then with the help of a temporary variable, the walkFrames array is populated. This is necessary, as the Animation works with one dimensional arrays only. 
 
@@ -118,7 +118,7 @@ The second parameter is the array containing all the frames. The firs element is
 
 Running the above code snippet, will produce a nice smooth animation of a man running.
 
-![](http://libgdx.googlecode.com/svn/wiki/img/sprite_animation_ss.png)
+[[images/sprite-animation3.png]]
 
 Creating an animation is extremely simple by using the following constructor.
 | *Method signature* | *Description* |
@@ -131,4 +131,4 @@ Creating an animation is extremely simple by using the following constructor.
 
 ## Assets ##
 
-Get the sprite-sheet [here](http://libgdx.googlecode.com/svn/wiki/img/animation_sheet.png).
+Get the sprite-sheet [here](images/sprite-animation4.png).

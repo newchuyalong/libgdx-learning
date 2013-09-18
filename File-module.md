@@ -134,7 +134,7 @@ public class FilesExampleDesktop {
 
 Sample result:
 
-![](http://libgdx.googlecode.com/svn/wiki/img/file_module_example.png)
+[[images/file-module.png]]
 
 The Android version is analogous.
 

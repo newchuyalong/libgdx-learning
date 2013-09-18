@@ -1,10 +1,12 @@
+# fixme: weird image issues.
+
 Every application or game that uses graphics, needs to work with the screen in a way. This page describes the different projections (for 2D and 3D) and how to set them up with libGDX.
 
 For every application that uses graphics, a **viewport** needs to be defined. The **viewport** is a rectangular viewing region of the screen where the 3D scene is projected. It is nothing more than mapping the 3 dimensional objects to the 2 dimensional plane. 
 
 The following image shows a typical 3D scene with a perspective projection.
 
-![](http://libgdx.googlecode.com/svn/wiki/img/graphics_fundamentals_viewport_3dscene.png)
+[[images/screen-and-viewport1.png]]
 
 The eye is where the camera is and the *viewport* is the plane where all the objects found in the *view frustum* are projected to.
 
@@ -17,7 +19,7 @@ When the human eye looks at a scene, objects in the distance appear smaller than
 
 The following diagram shows the orthogonal projection.
 
-![](http://libgdx.googlecode.com/svn/wiki/img/graphics_fundamentals_viewport_2dscene.png)
+[[images/screen-and-viewport2.png]]
 
 For examples on how to work with the viewport, refer to [[this page | Projection, Viewport, & Camera]] where the notions are presented extensively with great examples.
 

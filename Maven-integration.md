@@ -132,16 +132,16 @@ Once you created your project via the archetype you can import it into IntelliJ 
 
 Once the project is loaded, you have to enable the profiles. Open the Maven Project view and check the three profiles, desktop, android and HTML. 
 
-![]( http://i.imgur.com/UdjIc.png)
+[[images/maven1.png]]
 
 To run the desktop project, create a new configuration via *Run -> Edit Configurations*. Create a new configuration by clicking the + button in the top left, and select Application. Set the Main class to the desktop starter class, and select the desktop module.
 
-![](http://i.imgur.com/dauBv.png)
+[[images/maven2.png]]
 
 Launch this configuration to run your app on the desktop.
 
 To run the android project, create a new configuration, this time selecting Android Application when creating the configuration. Select the Android module, then check *Run Maven Goal* and click on the *...* button to the right. In the dialog, select the Android project, then Lifecycle, and from the list of goals *package*. You can also set *Target Device* to *Show chooser dialog* so you get prompted whether to deploy to a device or an emulator.
 
-![](http://i.imgur.com/8Wtws.png)
+[[images/maven3.png]]
 
 Launch this configuration to run your app on your Android device or emulator.

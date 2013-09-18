@@ -289,7 +289,7 @@ public class DesktopCameraController {
 
 The result is the following application:
 
-![](http://libgdx.googlecode.com/svn/wiki/img/orthographic_camera_example_1.png)
+[[images/orthographic-camera.png]]
 
 Most of the time, one should not need to access the internals of a camera as the most common use-cases are covered by the following methods:
 

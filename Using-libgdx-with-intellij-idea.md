@@ -45,14 +45,14 @@ The project in this guide is located in _C:\Android_ and named _!MyLibgdxGame_. 
 
   * Make sure the Android plugin in IntelliJ IDEA is enabled. _File->Settings->Plugins_
 
-  ![](http://matsemann.com/host/libgdx/androidsupport.png)
+[[images/using-libgdx-with-intellij-idea01.png]]
 
 ### Creating the project ###
   * Select _File->New Project_
   * Select _Create project from scratch_ in the dialog and press _Next_.
   * In the next screen, enter the name _(1)_ and select the location _(2)_ of the project. Give the module to be created the name _Main_ _(3)_ and then press _Next_.
 
-  ![](http://matsemann.com/host/libgdx/newproject.png)
+[[images/using-libgdx-with-intellij-idea02.png]]
 
   * In the next screen, select _Create source directory_, name it _src_ and press _Next_.
   * Press _Finish_ in the last screen.
@@ -61,7 +61,9 @@ The project in this guide is located in _C:\Android_ and named _!MyLibgdxGame_. 
   * Select _File->New Module_ _(1)_.
   * Select _Create module from scratch_ and press _Next_.
   * Name it _Desktop_ _(2)_ and press _Next_.
-  ![](http://matsemann.com/host/libgdx/newmoduledesktop.png)
+
+[[images/using-libgdx-with-intellij-idea03.png]]
+
   * Select _Create source directory_, name it _src_ and press _Next_.
   * In the next screen press _Finish_.
 
@@ -69,10 +71,13 @@ The project in this guide is located in _C:\Android_ and named _!MyLibgdxGame_. 
   * Again, select _File->New Module_.
   * Select _Create module from scratch_ and press _Next_.
   * In this screen, give the module the name _Android_ _(1)_ and select the _Android Module_ type _(2)_. Then press _Next_.
-  ![](http://matsemann.com/host/libgdx/newmoduleandroid.png)
+  
+[[images/using-libgdx-with-intellij-idea04.png]]  
+
   * Select _Create source directory_, name it _src_ and press _Next_.
   * In the next screen, select the _Android SDK_ you want to target _(1)_. Give the application a name _(2)_, a package and create an activity _(3)_. If you have no Android SDK in the drop down menu, or would like to add more, read below.
-  ![](http://matsemann.com/host/libgdx/newmoduleandroid2.png)
+  
+[[images/using-libgdx-with-intellij-idea05.png]]
   * Select a run configuration and press _Finish_.
 
 ### Adding Android SDKs to IntelliJ IDEA ###
@@ -81,7 +86,9 @@ This step is only if you need a new Android SDK to select when creating the Andr
   * In the new window that appears, press the [+] button _(1)_, select _Android SDK_ _(2)_.
   * Yet another window will open. Here, select where you installed the Android SDK _(3)_ and press OK _(4)_.
   * Select _Java 1.6_ if prompted, and then select the Android SDK you would like to target _(5)_ and press OK _(6)_.
-  ![](http://matsemann.com/host/libgdx/configandroidsdkintellij.png)
+  
+[[images/using-libgdx-with-intellij-idea06.png]]
+
   * If the Android version you would like to target is not in list _(5)_, you will need to download it through the Android SDK tool first.
 
 ### Add the libgdx files ###
@@ -90,7 +97,7 @@ This step is only if you need a new Android SDK to select when creating the Andr
 
   * Do the same for the Main module _(3)_.
  
- ![](http://matsemann.com/host/libgdx/createlibsdirectory.png)
+[[images/using-libgdx-with-intellij-idea07.png]]
 
   * Download libgdx, either the last stable or the [nightlies](http://libgdx.badlogicgames.com/nightlies/).
 
@@ -110,7 +117,7 @@ This step is only if you need a new Android SDK to select when creating the Andr
 
   * The picture below shows how the libraries should be placed when done with this step.
 
-![](http://matsemann.com/host/libgdx/withlibs.png)
+[[images/using-libgdx-with-intellij-idea08.png]]
 
 ### Add the libraries ###
 
@@ -121,7 +128,7 @@ This step is only if you need a new Android SDK to select when creating the Andr
   * Select the Android module _(4)_ and press _OK_ again.
   * Name it _Androidlibs_ _(5)_.
 
-![](http://matsemann.com/host/libgdx/androidlibs.png)
+[[images/using-libgdx-with-intellij-idea09.png]]
 
   * Press the [+] _(2)_ again, but this time select the _libs_ directory of the Desktop module in _(3)_, select the Desktop module in  _(4)_ and name it _Desktoplibs_ in _(5)_.
   * Press the [+] _(2)_ again, but this time select the _libs_ directory of the Main module in _(3)_, select the Main module in  _(4)_ and name it _Mainlibs_ in _(5)_.
@@ -132,7 +139,7 @@ This step is only if you need a new Android SDK to select when creating the Andr
   * Select the Dependencies tab _(3)_ in the third panel.
   * Check _Export_ in front of Mainlibs _(4)_
   
-![](http://matsemann.com/host/libgdx/mainexport.png)
+[[images/using-libgdx-with-intellij-idea10.png]]
 
   * Select the Desktop module _(5)_ in the second panel.
   * Press the [+] to the right _(6)_.
@@ -140,7 +147,7 @@ This step is only if you need a new Android SDK to select when creating the Andr
   * Select the Main module _(8)_ and press _OK_.
   * Select the Android module _(9)_ in the second panel and repeat _(6), (7) and (8)_.
 
-![](http://matsemann.com/host/libgdx/addmoduledependency.png)
+[[images/using-libgdx-with-intellij-idea11.png]]
 
   * Press _OK_ to close the Project Structure window.
 
@@ -208,7 +215,7 @@ This leaves us with three options:
 #### Alternative 2: Working directory ####
   * Select _Run->Edit Configurations..._ _(1)_.
 
-  ![](http://matsemann.com/host/libgdx/editconfigurations.png)
+[[images/using-libgdx-with-intellij-idea12.png]]
 
   * Press the [+] button _(2)_ and select _Application_ _(3)_.
   * Give the configuration a name _(4)_.
@@ -216,24 +223,24 @@ This leaves us with three options:
   * Set the Working directory to the _Android\assets_ directory _(6)_.
   * Select the Desktop module _(7)_.
 
-  ![](http://matsemann.com/host/libgdx/rundesktopconfig.png)
+[[images/using-libgdx-with-intellij-idea13.png]]
 
 #### Alternative 3: Sym-link ####
-See [this image on how to set up sym-link](http://matsemann.com/host/libgdx/symlink.png) in windows. (will need to run Command Prompt as admin). Linux/OSX can do the same with the _ln -s_-command.
+See [this image on how to set up sym-link]([[images/using-libgdx-with-intellij-idea14.png]]) in windows. (will need to run Command Prompt as admin). Linux/OSX can do the same with the _ln -s_-command.
 
 *Note:* You will need a _data_-directory in the Main module, and you will need to prefix all your assets with _data/_.
 
-And see [this image on the run configuration](http://matsemann.com/host/libgdx/rundesktopconfig2.png) you should use.
+And see [this image on the run configuration](images/using-libgdx-with-intellij-idea15.png) you should use.
   
 ----
 ## Tips for using IntelliJ IDEA ##
 _CTRL + Q_ when having the caret positioned over any method or variable or when viewing quick-suggestions will bring up the Javadoc.
 
-![](http://matsemann.com/host/libgdx/ctrlq.png)
+[[images/using-libgdx-with-intellij-idea16.png]]
 
 _CTRL + SHIFT + I_ will show the code for a method in a small window, nice when you want to quick check the inner workings of a gdx class. This works because we added the gdx-sources.jar
 
-![](http://matsemann.com/host/libgdx/ctrlshifti.png)
+[[images/using-libgdx-with-intellij-idea17.png]]
 
 _CTRL + LEFT MOUSE CLICK_ will open up the code in the editor.
 
