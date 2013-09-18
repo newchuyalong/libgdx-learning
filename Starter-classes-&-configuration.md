@@ -54,7 +54,7 @@ public class MainActivity extends AndroidApplication {
 }
 ```
 
-The main entry-point method is the Activity's {{{onCreate()}}} method. Note that {{{MainActivity}}} derives from `AndroidApplication`, which itself derives from `Activity`. As in the desktop starter class, a configuration instance is created ([AndroidApplicationConfiguration](https://github.com/libgdx/libgdx/tree/master/backends/gdx-backend-android/src/com/badlogic/gdx/backends/android/AndroidApplicationConfiguration.java)). Once configured, the `AndroidApplication.initialize()` method is called, passing in the `ApplicationListener`, `MyGdxGame`)\ as well as the configuration. Refer to the [AndroidApplicationConfiguration Javadocs](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/backends/android/AndroidApplicationConfiguration.html) for more information on what configuration settings are available.
+The main entry-point method is the Activity's `onCreate()` method. Note that `MainActivity` derives from `AndroidApplication`, which itself derives from `Activity`. As in the desktop starter class, a configuration instance is created ([AndroidApplicationConfiguration](https://github.com/libgdx/libgdx/tree/master/backends/gdx-backend-android/src/com/badlogic/gdx/backends/android/AndroidApplicationConfiguration.java)). Once configured, the `AndroidApplication.initialize()` method is called, passing in the `ApplicationListener`, `MyGdxGame`)\ as well as the configuration. Refer to the [AndroidApplicationConfiguration Javadocs](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/backends/android/AndroidApplicationConfiguration.html) for more information on what configuration settings are available.
 
 Android applications can have multiple activities. Libgdx games should usually only consist of a single activity. Different screens of the game are implemented within libgdx, not as separate activities. The reason for this is that creating a new `Activity` also implies creating a new OpenGL context, which is time consuming and also means that all graphical resources have to be reloaded.
 
@@ -99,7 +99,7 @@ The `screenOrientation` attribute specifies a fixed orientation for the applicat
 The `configChanges` attribute is *crucial* and should always have the values shown above. Omitting this attribute means that the application will be restarted every time a physical keyboard is slid out/in or if the orientation of the device changes. If the `screenOrientation` attribute is omitted, a libgdx application will receive calls to `ApplicationListener.resize()` to indicate the orientation change. API clients can then re-layout the application accordingly.
 
 #### Permissions ####
-If an application needs to be able to write to the external storage of a device (e.g. SD-card), needs internet access, uses the vibrator, wants to keep the screen from going to sleep or wants to record audio, the following permissions need to be added to the {{{AndroidManifest.xml}}} file:
+If an application needs to be able to write to the external storage of a device (e.g. SD-card), needs internet access, uses the vibrator, wants to keep the screen from going to sleep or wants to record audio, the following permissions need to be added to the `AndroidManifest.xml` file:
 
 ```xml
 	<uses-permission android:name="android.permission.RECORD_AUDIO"/>
@@ -361,7 +361,7 @@ OUT       = target/my-gdx-game.dll
 This file specifies the input files that comprise the my-gdx-game.dll assembly.
 
 ## HTML5/GWT ##
-The main entry-point for an HTML5/GWT application is a {{{GwtApplication}}}. Open {{{GwtLauncher.java}}} in the my-gdx-game-html5 project:
+The main entry-point for an HTML5/GWT application is a `GwtApplication`. Open `GwtLauncher.java` in the my-gdx-game-html5 project:
 
 ```java
 package com.me.mygdxgame.client;
