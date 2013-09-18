@@ -1,4 +1,4 @@
-Libgdx is very Eclipse centric due to it's Android and HTML5/GWT back-ends. this article discusses how to setup libgdx projects for Eclipse. Check out this [[Using libgdx with IntelliJ IDEA]] if you use IntelliJ. If you prefer to use a different IDE, please refer to the bottom of this page which outlines the dependencies in detail.
+Libgdx is very Eclipse centric due to its Android and HTML5/GWT back-ends. This article discusses how to setup libgdx projects for Eclipse. Check out this [[Using libgdx with IntelliJ IDEA]] if you use IntelliJ. If you prefer to use a different IDE, please refer to the bottom of this page which outlines the dependencies in detail.
 
 ## Prerequisites ##
 To target **Windows, Linux, Mac OS X, Android and HTML5** you will need:
