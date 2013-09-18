@@ -27,7 +27,7 @@ Looping animation means, that when the animation reached the last frame, it jump
 Using animations in libGdx is extremely simple. 
 One constraint regarding the size of the spritesheet needs to be remembered: when using OpenGL 1.x, the size of sprite sheet has to be power of two. (check Texture for more information).
 
-The following code snippet will create an Animation using the animation_sheet.png sprite-sheet and renders the animation to the screen. It is a very basic ApplicationListener. How to create one and what exactly it is, look [here for textures|Textures, TextureRegion and SpriteBatch].
+The following code snippet will create an Animation using the animation_sheet.png sprite-sheet and renders the animation to the screen. It is a very basic ApplicationListener. How to create one and what exactly it is, look [[here for textures|Textures, TextureRegion and SpriteBatch]].
 
 ```java
 public class Animator implements ApplicationListener {
@@ -93,7 +93,7 @@ FRAME_COLS, walkSheet.getHeight() / FRAME_ROWS);				// #10
 
 For example, if the animation is a 30FPS one, then the state change needs to happen at each 33.3 milliseconds. If the update happens at 10 milliseconds, the stateTime accumulates the elapsed time and the animation will change to the next state (frame) at the 4th update.
 
-*#9* - Creates a texture from animation_sheet.png which is placed in the assets directory of the project (check [ProjectSetup how to set up a project])
+*#9* - Creates a texture from animation_sheet.png which is placed in the assets directory of the project (check [[how to set up a project | Project Setup, Running & Debugging]])
 
 *#10* - *#11* - Using the split convenience method on the texture, we obtain a two dimensional array of the frames from the texture. Bear in mind that this works only if the frames are of equal size. Then with the help of a temporary variable, the walkFrames array is populated. This is necessary, as the Animation works with one dimensional arrays only. 
 
