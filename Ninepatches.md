@@ -12,7 +12,7 @@ property one can create images that repeates either to very small
 regions, or scale to very big regions. Since the areas are pre-defined,
 the image won't look stretched (given that it has been created with
 scaling in mind). The corresponding NinePatch class in libgdx is located [here](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/graphics/g2d/NinePatch.html) 
-[https://github.com/libgdx/libgdx/tree/master/gdx/src/com/badlogic/gdx/graphics/g2d/NinePatch.java (code)].
+[(code)](https://github.com/libgdx/libgdx/tree/master/gdx/src/com/badlogic/gdx/graphics/g2d/NinePatch.java).
 
 A NinePatch is used in various of the Scene2d components of Libgdx,
 including:
