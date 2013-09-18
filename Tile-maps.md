@@ -13,7 +13,7 @@ A map is a set of layers. A layer contains a set of objects. Maps, layers and ob
 
 Properties of maps, layers or objects are represented by 
 [MapProperties](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/maps/MapProperties.html)
-[(docs)](https://github.com/libgdx/libgdx/blob/master/gdx/src/com/badlogic/gdx/maps/MapProperties.java). This class is essentially a hash map, with string keys and arbitrary values.
+[(source)](https://github.com/libgdx/libgdx/blob/master/gdx/src/com/badlogic/gdx/maps/MapProperties.java). This class is essentially a hash map, with string keys and arbitrary values.
 
 Which key/value pairs are available for a map, layer or object depends on the format from which it was loaded. To access properties, you can simply do the following:
 
