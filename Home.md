@@ -21,6 +21,7 @@
       * [[AdMob in Libgdx]]
       * [[Swarm in Libgdx]]
       * [[NextPeer in Libgdx]]
+      * [[Google Play Game Services in LibGDX]]
     * [[Working from Source]]
       * [[Running Demos & Tests]]
       * [[Building libgdx from Source]]
