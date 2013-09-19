@@ -107,7 +107,7 @@ Some wrapper classes help you in managing references. For example the `btCompoun
 
 ## <a id="Extending_classes"></a>Extending classes ##
 You can extend the bullet classes, but it’s recommended not to do so except for callback classes (in which case you should only override the intended methods). The information you add to a class is not available in C++. Furthermore the result of any method of the bullet wrapper that returns a class you’ve overridden will not implement that class. For example:
-``java
+```java
 btCollisionShape shape = collisionObjectA.getCollisionShape();
 ```
 
