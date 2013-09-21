@@ -5,7 +5,7 @@ Libgdx is mainly a java-based framework. However, because java produces Java Byt
 * [Scala](http://www.scala-lang.org/old/faq/4)
 * [Kotlin](http://confluence.jetbrains.com/display/Kotlin/Java+interoperability)
 * [JRuby](https://github.com/jruby/jruby/wiki/CallingJavaFromJRuby)
-* [Jython](http://www.jython.org/archive/21/docs/usejava.html)
+* [Jython](http://www.jython.org/jythonbook/en/1.0/JythonAndJavaIntegration.html)
 
 ## Desktop ##
 
