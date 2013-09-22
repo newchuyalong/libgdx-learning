@@ -88,9 +88,6 @@
               * [[Skin]]
       * 3D Graphics ??
         * [[Quick Start]]
-          * Basic 3D ??
-          * Loading Models ??
-          * Loading a Scene ??
         * Perspective Camera ??
         * Picking ??
     * [[Managing Your Assets]]
