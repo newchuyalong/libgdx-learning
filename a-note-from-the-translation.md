@@ -49,7 +49,7 @@ alt="IMAGE ALT TEXT HERE" width="480" height="360" border="10" /></a>
 
 Lets hope Github eventually supports embedded videos!
 
-* the images hosted on the old libgdx svn on google code dont want to load. we need a host that is trustworthy to store the pictures.
+* some articles on the Table of contents have a '??' appended. the question marks are supposed to represent a possible article that can go there. If you know what your doing/talking-about, please make an article there! you can also remove that if there is not supposed to be an article there!
 
 ## issues: ##
 
