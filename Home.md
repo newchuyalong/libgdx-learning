@@ -87,9 +87,9 @@
               * [[scene2d.ui]]
               * [[Skin]]
       * 3D Graphics ??
-        * [[Quick Start]]
-        * Perspective Camera ??
-        * Picking ??
+            * [[Quick Start]]
+            * Perspective Camera ??
+            * Picking ??
     * [[Managing Your Assets]]
     * Utilities
       * [[Reading & Writing JSON]]
