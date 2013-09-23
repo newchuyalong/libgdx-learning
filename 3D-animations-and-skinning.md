@@ -53,3 +53,20 @@ To start an animation when the current animation is completed, you can use the `
 
 ## Action animation
 An action animation is a (commonly short) animation that is executed on top of the current the animation. In practice, it is the same calling `animate(...)` with the action animation and calling `queue(...)` with the previous animation.
+
+## Animation speed
+Every animate method (like `setAnimation`, `animate`, `queue` and `action`) allows you to set the speed of that particular animation. The speed is defined as "seconds per second". So a value of `1` will play the animation at the normal speed. A value higher than one will play the animation faster (e.g. a value of `2` will execute the animation at twice the original speed). A value lower than one will play the animation slower (e.g. a value of `0.5` will execute the animation at half the original speed). The speed can be negative, meaning that the animation will be executed in reverse.
+
+While you can control the speed of an individual animation, you can also control the overall speed of every animation by changing the delta value of the `update(float delta)` method AnimationController. E.g. if you call `controller.update(0.5f * Gdx.graphics.getDeltaTime());`, the overall speed will be half the original speed. The delta value can also be negative, meaning all animations are played in reverse.
+
+## Node transformations
+While an animation is executed, all the affected node's will have the `isAnimated` member set to true. This will cause the Node's translation, rotation and scale values not be used. So, while animating, you cannot transform the affected nodes yourself.
+
+# Skinning
+Skinning is used to transform the model according to the transformation of one or more nodes (also called bones or joints). Most commonly when using skinning, invisible nodes (nodes with no NodeParts attached to them) are used to deform the model. These nodes (which commonly form a hierarchy) are also called a skeleton or armature.
+
+So in practice, when using skinning, your model has an invisible skeleton part (one or more nodes) and a visible part (one or more nodes). While the visible nodes themselves stay untransformed, the skeleton is transformed (e.g. by animation) and therefor affect the position of the vertices of the visible mesh.
+
+This is accomplished by using blend weights (also called bone weights) which are vertex attributes of the visible nodes. Each blend weight has an index (of the specific bone/node) and a weight (how much it is influenced by that bone/node). Each visible node (NodePart) has a reference to it's bones (nodes of the skeleton).
+
+LibGDX only supports shader skinning, which requires at least Open GL ES 2.0. If you created your skinned model using a modeling application, exported it to FBX and converted it to G3DB/G3DJ, then skinning should seamlessly work. Just keep in mind that you need to export both the visible and invisible (skeleton) nodes along with the animations themselves.
