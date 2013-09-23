@@ -88,6 +88,7 @@
               * [[Skin]]
       * 3D Graphics ??
             * [[Quick Start]]
+            * [[3D animations and skinning]]
             * Perspective Camera ??
             * Picking ??
     * [[Managing Your Assets]]
