@@ -173,7 +173,7 @@ The TexturePacker output is a directory of page images and a text file that desc
 
 ```java
 TextureAtlas atlas;
-atlas = new TextureAtlas(Gdx.files.internal("packedimages/pack"));
+atlas = new TextureAtlas(Gdx.files.internal("packedimages/pack.atlas"));
 AtlasRegion region = atlas.findRegion("imagename");
 Sprite sprite = atlas.createSprite("otherimagename");
 NinePatch patch = atlas.createPatch("patchimagename");
