@@ -9,7 +9,7 @@ Gdx.graphics.setContinuousRendering(false);
 Gdx.graphics.requestRendering();
 ```
 
-The first line tells the game to stop calling the render() method automatically. The second like triggers the render() method once. You have to use the second line wherever you want the render() method to be called.
+The first line tells the game to stop calling the render() method automatically. The second line triggers the render() method once. You have to use the second line wherever you want the render() method to be called.
 
 If continuous rendering is set to false, the render() method will be called only when the following things happen.
 
