@@ -51,6 +51,10 @@ and here is the Screen implementation (as `cljdx.core`)
            [com.badlogic.gdx.scenes.scene2d Stage]
            [com.badlogic.gdx.scenes.scene2d.ui Label Label$LabelStyle]))
 
+(gen-class
+  :name cljdx.core.Game
+  :extends com.badlogic.gdx.Game)
+
 (declare ^Stage stage)
 
 (def main-screen
@@ -72,9 +76,6 @@ and here is the Screen implementation (as `cljdx.core`)
     (resize [w h])
     (resume [])))
 
-(gen-class
-  :name cljdx.core.Game
-  :extends com.badlogic.gdx.Game)
 (defn -create [^Game this]
   (.setScreen this main-screen))
 ```
