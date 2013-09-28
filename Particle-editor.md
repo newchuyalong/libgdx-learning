@@ -85,4 +85,4 @@ Most effects can be simplified to use just a few images. My most complex effects
 
 ## loading Particle Effects in your game ##
 
-see GraphicsParticle
+see [2d-particle-effects](2d-particle-effects)
