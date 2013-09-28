@@ -3,7 +3,7 @@
 If you want to draw text in your game, you usually use a [[BitmapFont | Bitmap Fonts]].
 However, there is a downside:
 
-* BitmapFonts rely on an image, so you have to scale them if you want a different size, which may look ugly.*
+* **BitmapFonts rely on an image, so you have to scale them if you want a different size, which may look ugly.**
 
 You could just save a BitmapFont of the biggest size needed in your game then and you never have to scale up, just down, right?
 Well, that's true, but such a BitmapFont can easily take up two times as much space on your hard drive as the corresponding TrueType Font (.ttf).
