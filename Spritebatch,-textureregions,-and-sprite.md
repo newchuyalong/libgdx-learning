@@ -66,7 +66,7 @@ Here a texture is created and passed to a `SpriteBatch` to be drawn. The texture
 | `draw(Texture texture, float x, float y,`<br/>`int srcX, int srcY, int srcWidth, int srcHeight)` | Draws a portion of the texture. |
 | `draw(Texture texture, float x, float y,`<br/>`float width, float height, int srcX, int srcY,`<br/>`int srcWidth, int srcHeight, boolean flipX, boolean flipY)` | Draws a portion of a texture, stretched to the `width` and `height`, and optionally flipped. |
 | `draw(Texture texture, float x, float y,`<br/>`float originX, float originY, float width, float height,`<br/>`float scaleX, float scaleY, float rotation,`<br/>`int srcX, int srcY, int srcWidth, int srcHeight,`<br/>`boolean flipX, boolean flipY)` | This monster method draws a portion of a texture, stretched to the `width` and `height`, scaled and rotated around an origin, and optionally flipped. |
-| `draw(Texture texture, float x, float y,`<br/>`float width, float height, float u,`<br/>`float v, float u2, float v2)` || This draws a portion of a texture, stretched to the `width` and `height`. This is a somewhat advanced method as it uses texture coordinates from 0-1 rather than pixel coordinates. |
+| `draw(Texture texture, float x, float y,`<br/>`float width, float height, float u,`<br/>`float v, float u2, float v2)` | This draws a portion of a texture, stretched to the `width` and `height`. This is a somewhat advanced method as it uses texture coordinates from 0-1 rather than pixel coordinates. |
 | `draw(Texture texture, float[] spriteVertices, int offset, int length)` | This is an advanced method for passing in the raw geometry, texture coordinates, and color information. This can be used to draw any quadrilateral, not just rectangles. |
 
 ## TextureRegion ##
