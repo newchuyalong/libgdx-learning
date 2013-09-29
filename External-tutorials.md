@@ -1,4 +1,4 @@
-*Preliminary note:* Given the nature of this page's content it is likely that some of the links displayed here might become offline or even change. If you spot some broken link or wrong information please [contact us](http://www.badlogicgames.com/wordpress/?page_id=2) so we can fix it and maintain this webpage as up-to-date as possible. Please consider also sharing with us new websites that are not currently here. Thank you.
+*Preliminary note:* Given the nature of this page's content it is likely that some of the links displayed here might become offline or even change. If you spot some broken link or wrong information please [contact us](http://www.badlogicgames.com/wordpress/?page_id=2) or edit this page (all you need is a github account!) so we can fix it and maintain this webpage as up-to-date as possible. Please consider also sharing with us new websites that are not currently here. Thank you.
 
 
 # General Tutorial Websites #
