@@ -27,6 +27,7 @@
     * [[Using libgdx with other JVM languages]]
       * [[Using libgdx with Clojure]]
       * [[Using libgdx with Python]]
+      * [[Using libgdx with Scala]]
     * [[The Application Framework]]
       * [[The Life-Cycle]]
       * [[Starter Classes & Configuration]]
