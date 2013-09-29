@@ -4,6 +4,8 @@ Python has been implemented in several different ways; the standard interpreter 
 
 This article uses the latest Jython beta (Jython 2.7b1 available [here](http://tinyurl.com/d4s8qvd)), this release aims to bring compatilibity with CPython 2.7, so we will be programming with Python 2.7 syntax in this article.
 
+**Note:** at the time of writting, you can only use Jython with libgdx on the desktop.
+
 ## Setup ##
 
 Jython can be worked on with any text editor, including Vim or Emacs. [PyDev](http://pydev.org/) is an option for eclipse users. Once the environment is setup, create a new Jython project, and all of the libgdx dependencies to the PYTHONPATH. for using the desktop LWJGL backend, this includes `gdx.jar`, `gdx-backend-lwjgl.jar`, `gdx-backend-lwjgl-natives.jar`, `gdx-backend-lwjgl.jar`, `gdx-natives.jar`, and `gdx-sources.jar`.
