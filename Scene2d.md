@@ -290,13 +290,13 @@ actor.addAction(sequence(moveTo(200, 100, 2), color(Color.RED, 6), delay(0.5f), 
 
 To run code when an action is complete, a sequence with a RunnableAction can be used:
 
-###
+```java
 actor.addAction(sequence(fadeIn(2), run(new Runnable() {
 	public void run () {
 		System.out.println("Action complete!");
 	}
 })));
-###
+```
 
 ### Interpolation ###
 
