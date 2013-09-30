@@ -18,7 +18,7 @@ Scene graphs have the drawback that they couple model and view. Actors store dat
 
 scene2d has three class at its core. The Actor class is a node in the graph which has a position, rectangular size, origin, scale, rotation, and color. The Group class is an actor that may have child actors. The Stage class has a camera, SpriteBatch, and a root group and handles drawing the actors and distributing input events.
 
-== Stage ==
+### Stage ###
 
 Stage is an InputProcessor. When it receives input events, it fires them on the appropriate actors. If the stage is being used as a UI on top of other content (eg, a HUD), an InputMultiplexer can be used to first give the stage a chance to handle an event. If an actor in the stage handles an event, stage's InputProcessor methods will return true, indicating the event has been handled and should not continue on to the next InputProcessor.
 
