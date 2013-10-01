@@ -12,7 +12,7 @@ Download the `helloworld.zip` source code at [downloads page](http://code.google
 
 In Eclipse, go to File -> Import... -> General -> Existing Projects Into Workspace. In the Import Projects screen, click Select archive file, and browse to the `helloworld.zip`. After that, make sure the `gdx-helloworld` and `gdx-helloworld-android` projects are found and selected, then click Finish.
 
-= Running =
+# Running #
 
 The first project we'll look at, `gdx-helloworld`, is where the game's code is located. You can run it as a stand-alone Java Desktop application, that is, it requires no simulator or Android handset. To run the application, in your Package Explorer view, right click on the `gdx-helloworld` folder, select Run As -> Java Application. If a dialog pops up, asking for the main class, select `HelloWorldDesktop`. The `Hello World` desktop application should start up:
 
