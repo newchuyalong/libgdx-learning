@@ -92,6 +92,7 @@
       * 3D Graphics ??
             * [[Quick Start]]
             * [[3D animations and skinning]]
+            * [[Importing Blender models in LibGDX]]
             * Perspective Camera ??
             * Picking ??
     * [[Managing Your Assets]]
