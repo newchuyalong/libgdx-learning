@@ -4,5 +4,8 @@ Blender is an open source modeling application you can use to create 3D models, 
 The default (preferred) method is to export to FBX. Make sure you select all and only those options (e.g. nodes and animations) you want to actually include. Don't include your camera, lights, etc. Next download the latest version of [fbx-conv](https://github.com/libgdx/fbx-conv) and convert the FBX file to G3DB. You'll need to flip texture coordinates by using the `-f` commandline option.
 `fbx-conv -f file.fbx`
 
+### Troubleshooting missing textures
+Please ensure you limit the size of your texture files to power of two dimensions (e.g. 32x32, 64x64 etc). A maximum recommended size would be 1024x1024 for widespread support, however larger sizes will work. Devices may render a black object if the texture dimensions are not supported by the device.
+
 ### RrSs warning
 When using the Blender FBX exporter, you might receive a RrSs warning when converting the FBX file. This is due to the Blender FBX exporter wrongfully exporting the transformations. The fbx-conv utility will correct this and you can safely ignore the warning.
