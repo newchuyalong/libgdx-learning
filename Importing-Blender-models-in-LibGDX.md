@@ -9,7 +9,5 @@ Optionally, you may also convert your file to the G3DJ format, which is a JSON f
 ### Troubleshooting missing textures
 Please ensure you limit the size of your texture files to power of two dimensions (e.g. 32x32, 64x64 etc). A maximum recommended size would be 1024x1024 for widespread support, however larger sizes will work. Devices may render a black object if the texture dimensions are not supported by the device.
 
-To check the contents of your converted files, you may convert 
-
 ### RrSs warning
 When using the Blender FBX exporter, you might receive a RrSs warning when converting the FBX file. This is due to the Blender FBX exporter wrongfully exporting the transformations. The fbx-conv utility will correct this and you can safely ignore the warning.
