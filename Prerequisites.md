@@ -7,20 +7,11 @@
 
 ### To additionally target iOS
 
-**RoboVM backend, use this!**
   * A Mac, iOS Development does not work on Windows/Linux thanks to Apple.
   * The latest XCode, which you can get from the Mac OS X App Store for free
   * [RoboVM](http://www.robovm.org/docs.html#eclipse), simply install the Eclipse plugin. Make sure to update the plugin frequently!
 
 Once all of these tools are installed, proceed to [Project Setup](https://github.com/libgdx/libgdx/wiki/Project-setup%2C-running-%26-debugging)
-
-**Xamarin.iOS backend, [deprecated](http://www.badlogicgames.com/wordpress/?p=3156)**
-  * ~~A Mac, iOS deployment does not work on Windows/Linux.~~
-  * ~~The latest XCode~~
-  * ~~[Xamarin.iOS](http://xamarin.com/download), you can use the evaluation license to test on the simulator and device, to deploy to an iOS device or the App Store you will either need a [student license (79$)](http://www.badlogicgames.com/wordpress/?p=2629 ) or a full license (299$)~~
-  * ~~[Ant](http://tweedo.com/mirror/apache//ant/binaries/apache-ant-1.8.4-bin.zip). Download and extract the zip to say /Users/you/ant, then create a symlink via `ln -s /Users/you/ant/bin/ant /usr/bin/ant`~~
-  * ~~Make sure both `javac` and `ant` can be executed from the command line!~~
-
 
 ### To work directly from the [source repository](https://github.com/libgdx/libgdx)
   * A Git client to fetch the source from the repository.
