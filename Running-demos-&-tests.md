@@ -1,4 +1,3 @@
-
 Libgdx comes with a ton of small [test examples](https://github.com/libgdx/libgdx/tree/master/tests/gdx-tests/src/com/badlogic/gdx/tests) and many [demo games](https://github.com/libgdx/libgdx/tree/master/demos). To run and easily analyze these, you need to work directly from the libgdx source.
 
 Before you start, make sure you have all the [[Prerequisites]] installed. You will not need the C/C++ cross compilers to run the tests and demos or mess with libgdx's Java source code.
@@ -43,7 +42,7 @@ You are now ready to start the tests or run the demo games.
 ## Running the Demos & Tests ##
 The test examples are contained in the gdx-tests project. This project only contains the source code. To actually start the tests on the desktop you have to run the LwjglTestStarter class, contained in the gdx-tests-lwjgl project. To run the tests on Android simply fire up the gdx-tests-android project in the emulator or on a connected device! To run the tests in your browser fire up the gdx-tests-gwt project.
 
-Running the demo games works similarly. Each demo game has 3-4 projects, the core project, the desktop project (sometimes that's the same as the core project), the android project and the html5 project.
+Running the demo games works similarly. Each demo game has 4-5 projects, the core project, the desktop project (sometimes that's the same as the core project), the android project, the html5 project and the iOS/RoboVM project.
 
 For both the tests and the demos the following steps are used to start the apps
 
