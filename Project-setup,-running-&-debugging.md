@@ -46,11 +46,8 @@ Assuming you named your project "my-gdx-game" in the Setup UI, you will end up w
   * **Desktop project ("my-gdx-game-desktop")**: contains the starter class to run your application on the desktop. Links to the Android project's assets/ folder as well as the core project.
   * **HTML5 project ("my-gdx-game-html")**: contains the starter class and other necessary files to run your application as a native HTML5 application. Links to the Anroid project's assets/ folder (see gwt.xml file) as well as to the core project.
   * **iOS RoboVM project ("my-gdx-game-robovm")**: contains the starter classes and other necessary files to run your application on iOS through [RoboVM](http://www.robovm.org/). Links to the Android project's assets/ folder (see robovm.xml) as well as the core project.
-  * ~~**iOS Xamarin project DEPRECATED! ("my-gdx-game-ios")**: contains the starter class and other necessary files to run your application as a native iOS application. Links to the Android project's assets/data folder. Contains an Ant script that will be invoked before each build that compiles your core project's source code to a .Net assembly (.dll file) which is then used to build the native app. **Please read [this article](http://code.google.com/p/libgdx/wiki/IOSWIP) for more information on the iOS backend!**~~
 
 All your application's assets should be stored in the Android project's assets folder. The desktop, iOS and HTML5 projects link to this folder, so there is no need to store duplicates of these assets.
-
-~~**Note for Xamarin iOS DEPRECATED!**: Xamarin Studio will not automatically add files you put into your Android project's assets folder. You have to add those manually by right clicking the project and linking to the files. You then have to set the "Build Action" of each newly added file to "Content", otherwise the file will not be included in the final build output! Also, please read through [this article](http://code.google.com/p/libgdx/wiki/IOSWIP) You'll also have to manipulate a script that comes with the iOS SDK!~~
 
 ## Running Your Application ##
 
@@ -65,7 +62,6 @@ All your application's assets should be stored in the Android project's assets f
       * Right click the HTML5 project, `Google -> GWT Compile`
       * Once compiled, place the contents of the war/ directory into a directory your web server can serve. Omit the WEB-INF folder.
       * Point your browser at an URL which will display the `.html` file.
-  * ~~**iOS Xamarin DEPRECATED!**: In Xamarin Studio, select a release or debug profile (either simulator or device) then hit the build and run button.~~
 
 ## Debugging Your Application ##
 
@@ -84,7 +80,6 @@ All your application's assets should be stored in the Android project's assets f
       # Point your browser at an URL which will display the `.html` file.
       # Open up Firebug or similar tools, go to the JavaScript and set breakpoints, watch the callstack and so on. To find a Java Class method, simply search for the package/class/method name.
     * super dev mode: through the power of source maps, you can also debug compiled JS as if it where Java, directly in your browser. See this blog post on [libgdx and super dev mode](http://www.badlogicgames.com/wordpress/?p=3073)
-  * ~~**iOS Xamarin DEPRECATED!**: in Xamarin Studio, select a debug profile (either simulator or device) then hit the build and debug button.~~
 
 ## Manual Project Setup ##
 Please refer to [Manual Project Setup](https://github.com/libgdx/libgdx/wiki/Manual-project-setup)
