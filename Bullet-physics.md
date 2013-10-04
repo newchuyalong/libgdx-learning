@@ -96,7 +96,7 @@ The above is only true for the objects you are responsible of. Which are all Bul
 ## <a id="Referencing_objects"></a>Referencing objects ##
 A stated above, you should keep a reference to every Bullet class and call the dispose method when it’s no longer needed. When your application becomes more complex and objects are shared amongst multiple other objects, it can become difficult to keep track of references. Therefor the bullet wrapper support reference counting.
 
-Reference counting is disabled by default. To disable it, call `Bullet.init();` with the first argument set to true:
+Reference counting is disabled by default. To enable it, call `Bullet.init();` with the first argument set to true:
 ```java
 Bullet.init(true);
 ```
