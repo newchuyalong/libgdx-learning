@@ -20,8 +20,8 @@ Because Libgdx is not hosted on any of Leiningen's default maven repos, we need 
                   :classifier "natives-desktop"]]
   :repositories [["sonatype"
                   "https://oss.sonatype.org/content/repositories/snapshots/"]]
-  :source-paths ["src/clojure" "src-common/clojure"]
-  :java-source-paths ["src/java" "src-common/java"]
+  :source-paths ["src/clojure"]
+  :java-source-paths ["src/java"]
   :aot [cljdx.desktop-launcher]
   :main cljdx.desktop-launcher)
 ```
@@ -55,12 +55,14 @@ and here is the Screen implementation (as `cljdx.core`)
   :name cljdx.core.Game
   :extends com.badlogic.gdx.Game)
 
+(declare ^Stage stage)
+
 (def main-screen
   (proxy [Screen] []
     (show []
+      (def stage (Stage.))
       (let [style (Label$LabelStyle. (BitmapFont.) (Color. 1.0 1.0 1.0 1.0))
-            label (Label. "Hello world!" style)
-            stage (Stage.)]
+            label (Label. "Hello world!" style)]
         (.addActor stage label)))
     (render [delta]
       (.glClearColor (Gdx/gl) 0 0 0 1)
