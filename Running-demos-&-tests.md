@@ -55,7 +55,7 @@ For both the tests and the demos the following steps are used to start the apps
 
 For a more in-depth description of the project setup as well as how to run and debug a libgdx project see ProjectSetupNew
 
-##Creating new tests
+##Creating New Tests
 To add a test:
 
 * Add a class to gdx-tests/src/com/badlogic/gdx/tests/, let it derive from GdxTest
