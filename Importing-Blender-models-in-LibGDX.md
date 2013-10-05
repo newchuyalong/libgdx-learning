@@ -13,6 +13,8 @@ Fbx-conv will compensate the coordinate system by rotating the model (to y-up). 
 
 When fbx-conv needs to compensate the coordinate system, it will rotate all root nodes of the model 90 degrees along the X-axis. It will also modify any animations accordingly. The geometry (vertices) itself however, remains unchanged.
 
+However, if you want to use z-up in your application, then you can set Blender's FBX exporter coordinate system option to y-up. This will cause fbx-conv not to rotate your model and animation, so it will be z-up.
+
 ### Troubleshooting missing textures
 Please ensure you limit the size of your texture files to power of two dimensions (e.g. 32x32, 64x64 etc). A maximum recommended size would be 1024x1024 for widespread support, however larger sizes will work. Devices may render a black object if the texture dimensions are not supported by the device.
 
