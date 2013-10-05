@@ -6,6 +6,13 @@ The default (preferred) method is to export to FBX. Make sure you select all and
 
 Optionally, you may also convert your file to the G3DJ format, which is a JSON format which is readily viewable with a simple text editor. `fbx-conv -o G3DJ file.fbx` Please note that G3DJ will take longer to load when you run your application, as it is not a binary format.
 
+### Setting the coordinate system (up-axis)
+The coordinate system Blender uses (z-up) is different compared to the most common system used for games (y-up). The Blender FBX exporter contains the option to change the coordinate system to y-up (which might be even the default in the FBX exporter), do not use this option, instead set it to Blender's default (z-up). 
+
+Fbx-conv will compensate the coordinate system by rotating the model (to y-up). However it will only be able to do this, if the fbx file itself contains the correct information. The Blender FBX exporter option will not modify the model, instead it will simply act like its y-up (causing fbx-conv unable to compensate).
+
+When fbx-conv needs to compensate the coordinate system, it will rotate all root nodes of the model 90 degrees along the X-axis. It will also modify any animations accordingly. The geometry (vertices) itself however, remains unchanged.
+
 ### Troubleshooting missing textures
 Please ensure you limit the size of your texture files to power of two dimensions (e.g. 32x32, 64x64 etc). A maximum recommended size would be 1024x1024 for widespread support, however larger sizes will work. Devices may render a black object if the texture dimensions are not supported by the device.
 
