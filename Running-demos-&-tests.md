@@ -37,6 +37,8 @@ Eclipse now imports all the projects from the libgdx directory. On first import,
   * Select all projects in the package explorer, then hit `F5` to refresh them (vodoo...)
   * There will be a few issues remaining concerning GWT. In the Problems view, right click on each entry saying "The web.xml file does not exist", select `Quick Fix` and press `OK`
 
+If you did not run 'ant -f fetch.xml' before this point, you will encounter many errors here due to missing backends.
+
 You are now ready to start the tests or run the demo games.
 
 ## Running the Demos & Tests ##
@@ -52,3 +54,11 @@ For both the tests and the demos the following steps are used to start the apps
   * Select Run As -> Web Application for the html5 project. A new view opens up, click the URL that's presented to you. You might get prompted to install the GWT plugin for your browser of choice (hint: use Chrome). Note that the app runs in development mode, which means it will be terribly slow. For full speed you have to compile the HTML project, then deploy it to a web server.
 
 For a more in-depth description of the project setup as well as how to run and debug a libgdx project see ProjectSetupNew
+
+##Creating new tests
+To add a test:
+
+* Add a class to gdx-tests/src/com/badlogic/gdx/tests/, let it derive from GdxTest
+* Add any assets you need to gdx-tests-android/assets/data. Ideally you want to reuse assets already in there
+* Add your class to GdxTests#tests, it's a long list of Class instances. This will automatically add your test to the desktop and Android test runners (E.g. LwjglTestStarter)
+* Add your test to GwtTestWrapper, through creating an Instancer. Your test needs to specify that it needs GL20 for it to work with the GWT test harness.
