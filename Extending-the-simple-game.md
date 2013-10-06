@@ -1,6 +1,6 @@
-In this tutorial we will be extending the simple game "Drop", made in a [[a previous tutorial |A Simple Game]]. We will be adding a menu screen, and a couple of features to make this game a little more fully featured.
+In this tutorial we will be extending the simple game "Drop", made in [[a previous tutorial |A Simple Game]]. We will be adding a menu screen, and a couple of features to make this game a little more fully featured.
 
-Lets get started with an introduction to a few more advanced classes in our game.
+Let's get started with an introduction to a few more advanced classes in our game.
 
 ## The Screen interface ##
 
@@ -14,7 +14,7 @@ Together, Screen and Game objects are used to create a simple and powerful struc
 
 We will start with creating a Game object, which will be the entry point to our game.
 
-Lets show some code and walk through it:
+Let's show some code and walk through it:
 
 ```java
 package com.badlogic.drop;
@@ -49,17 +49,17 @@ public class Drop extends Game {
 
 ```
 
-we start the application with instantiating a SpriteBatch and a BitmapFont. It is a bad practice to create multiple objects that can be shared instead (see [DRY](http://en.wikipedia.org/wiki/Don't_repeat_yourself)). The SpriteBatch object is used to render objects onto the screen, such as textures; and the BitmapFont object is used, along with a SpriteBatch, to render text onto the screen. We will touch more on this in the Screen classes.
+We start the application with instantiating a SpriteBatch and a BitmapFont. It is a bad practice to create multiple objects that can be shared instead (see [DRY](http://en.wikipedia.org/wiki/Don't_repeat_yourself)). The SpriteBatch object is used to render objects onto the screen, such as textures; and the BitmapFont object is used, along with a SpriteBatch, to render text onto the screen. We will touch more on this in the Screen classes.
 
-then, we set the Screen of the Game to a MainMenuScreen object, with a Drop instance as its first and only parameter.
+Next, we set the Screen of the Game to a `MainMenuScreen` object, with a Drop instance as its first and only parameter.
 
-A common mistake is to forget to call `super.render()` with a Game implementation. Without this call, the Screen that you set in the create() method will not be rendered!
+A common mistake is to forget to call `super.render()` with a Game implementation. Without this call, the Screen that you set in the `create()` method will not be rendered!
 
-finally, another reminder to dispose of objects! [Further reading.](https://code.google.com/p/libgdx/wiki/AssetManager)
+Finally, another reminder to dispose of objects! [Further reading.](https://code.google.com/p/libgdx/wiki/AssetManager)
 
 ## The Main Menu ##
 
-now, lets get into the nitty-gritty of the MainMenuScreen class.
+Now, let's get into the nitty-gritty of the MainMenuScreen class.
 
 
 ```java
@@ -92,7 +92,7 @@ public class MainMenuScreen implements Screen {
 
 In this code snippet, we make the constructor for the `MainMenuScreen` class, which implements the Screen interface. The Screen interface does not provide any sort of `create()` method, so we instead use a constructor. The only parameter for the constructor necessary for this game is an instance of `Drop`, so that we can call upon its methods and fields if necessary.
 
-next, the final "meaty" method in the `MainMenuScreen` class: render(float)
+Next, the final "meaty" method in the `MainMenuScreen` class: render(float)
 
 ```java
 public class MainMenuScreen implements Screen {
@@ -126,11 +126,11 @@ public class MainMenuScreen implements Screen {
 
 The code here is fairly straightforward, except for the fact that we need to call game's SpriteBatch and BitmapFont instances instead of creating our own. `game.font.draw(SpriteBatch, String, float,float)`, is how text is rendered to the screen. LibGDX comes with a pre-made font, Arial, so that you can you use the default constructor and still get a font.
 
-We then check to see if the screen has been touched, if it has, then we check to set the games screen to a GameScreen instance, and then dispose of the current instance of MainMenuScreen. The rest of the methods that are needed to implement in the MainMenuScreen are left empty, so ill continue to omit them (there is nothing to dispose of in this class).
+We then check to see if the screen has been touched, if it has, then we check to set the games screen to a GameScreen instance, and then dispose of the current instance of MainMenuScreen. The rest of the methods that are needed to implement in the MainMenuScreen are left empty, so I'll continue to omit them (there is nothing to dispose of in this class).
 
 ## The Game Screen ##
 
-now that we have our main menu finished, its time to finally get to making our game. We will be lifting most of the code from the [[original game | A Simple Game]] as to avoid redundancy, and avoid having to think of a different game idea to implement as simply as Drop is. 
+Now that we have our main menu finished, it's time to finally get to making our game. We will be lifting most of the code from the [[original game | A Simple Game]] as to avoid redundancy, and avoid having to think of a different game idea to implement as simply as Drop is. 
 
 
 ```java
@@ -305,7 +305,7 @@ public class GameScreen implements Screen {
 
 ```
 
-this code is almost 95% the same as the original implementation, except now we use a constructor instead of the `create()` method of the `ApplicatonListener`, and pass in a Drop object, like in the `MainMenuScreen` class. We also start playing the music as soon as the Screen is set to `GameScreen`. 
+This code is almost 95% the same as the original implementation, except now we use a constructor instead of the `create()` method of the `ApplicationListener`, and pass in a `Drop` object, like in the `MainMenuScreen` class. We also start playing the music as soon as the Screen is set to `GameScreen`. 
 
 We also added a string to the top left corner of the game, which tracks the amount of raindrops collected.
 
@@ -315,6 +315,6 @@ For the full code, please visit [this Github gist](https://gist.github.com/sinis
 
 ## The Future ##
 
-now that you have a grasp of multiple screens, its time to take advantage of the opportunity. Learn [Scene2d](https://code.google.com/p/libgdx/wiki/scene2d) [Scene2D.ui](https://code.google.com/p/libgdx/wiki/scene2dui) and [Skins](https://code.google.com/p/libgdx/wiki/Skin) to make your main menu beautiful, and maybe add explosions to the drop game, for realism of course.
+Now that you have a grasp of multiple screens, it's time to take advantage of the opportunity. Learn [Scene2d](https://code.google.com/p/libgdx/wiki/scene2d) [Scene2D.ui](https://code.google.com/p/libgdx/wiki/scene2dui) and [Skins](https://code.google.com/p/libgdx/wiki/Skin) to make your main menu beautiful, and maybe add explosions to the drop game, for realism of course.
 
 If you've also read the next steps from the previous Drop tutorial, you should be ready to make your own game. The best practice is to get out there and do it, so go and make the next big thing!
