@@ -33,14 +33,14 @@ TBD
 
 ## <a id="Deploy_to_HTML/JS"></a>Deploy to HTML/JS ##
 Deploying to HTML/JS is straightforward for most cases.
-  1. Right click your html project and select "Google -> GWT Compile"
-  2. Keep the default settings and click compile.
-  3. A window will appear asking you to select the WAR directory. It is in you html project's folder.
+  1. Right click your HTML project and select "Google -> GWT Compile"
+  2. Keep the default settings and click compile
+  3. A window will appear asking you to select the WAR directory. It is in your HTML project's folder.
   4. GWT will proceed to cross-compile your code into javascript. It will take awhile, but you can view the progress by pulling up the console in Eclipse.
 
-Once the compile is complete everything you need to run your game on the web will be inside the war directory. Unless you are using RPC calls or other server side operations in your game, there are only a few things left to do.
-  1. Copy the "index.html" file, your assets folder, and the folder ending in "mygdxgame.GWTDefinition" to a directory on your web server.
-  2. Navigate to the URL and you should see a loading screen for your game. 
+Once the compile is complete everything you need to run your game on the web will be inside the WAR directory. Unless you are using RPC calls or other server side operations in your game, there are only a few things left to do.
+  1. Copy the "index.html" file, your assets folder, and the folder ending in "mygdxgame.GWTDefinition" to a directory on your web server
+  2. Navigate to the URL and you should see a loading screen for your game
 
 Notes:
-  * If you are using server-side operations in your code, you will need to install Tomcat or similar software on your web server and place the full contents of your project's war directory in the "webapp" directory. More details [here.](https://tomcat.apache.org/tomcat-6.0-doc/appdev/deployment.html)  
+  * If you are using server-side operations in your code, you will need to install Tomcat or similar software on your web server and place the full contents of your project's WAR directory in the "webapp" directory. More details [here.](https://tomcat.apache.org/tomcat-6.0-doc/appdev/deployment.html)  
