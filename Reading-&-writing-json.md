@@ -271,42 +271,42 @@ Person person2 = json.fromJson(Person.class, text);
 
 `writeObjectStart` is used to start writing a JSON object, then values can be written using the write methods that take a name string. When the object is finished, `writeObjectEnd` must be called:
 
-{{{
+```
 json.writeObjectStart();
 json.writeValue("name", "value");
 json.writeObjectEnd();
-}}}
+```
 
 The `writeObjectStart` methods that take an actualType and a knownType will write a class field to the JSON if the types differ. This enables the actual type to be known during deserialization. For example, the known type may be java.util.Map but the actual type is java.util.LinkedHashMap (which extends HashMap), so deserialization needs to know the actual type to create.
 
 Writing arrays works in a similar manner, except the values should be written using the write methods that do not take a name string:
 
-{{{
+```
 json.writeArrayStart();
 json.writeValue("value1");
 json.writeValue("value2");
 json.writeArrayEnd();
-}}}
+```
 
 The `Json` class can automatically write Java object fields and values. `writeFields` writes all fields and values for the specified Java object to the current JSON object:
 
-{{{
+```
 json.writeObjectStart();
 json.writeFields(someObject);
 json.writeObjectEnd();
-}}}
+```
 
 The `writeField` method writes the value for a single Java object field:
 
-{{{
+```
 json.writeObjectStart();
 json.writeField(someObject, "javaFieldName", "jsonFieldName");
 json.writeObjectEnd();
-}}}
+```
 
 Many of the write methods take an "element type" parameter. This is used to specify the known type of objects in a collection. For example, for a list:
 
-{{{
+```
 ArrayList list = new ArrayList();
 list.add(someObject1);
 list.add(someObject2);
@@ -325,11 +325,11 @@ json.writeObjectEnd();
 		{ class: com.example.SomeOtherObject, value: four }
 	]
 }
-}}}
+```
 
 Here the known type of objects in the list is Object, so each object in the JSON for "items" has a class field that specifies Integer or String. By specifying the element type, Integer is used as the known type so only the last entry in the JSON for "items" has a class field:
 
-{{{
+```
 json.writeObjectStart();
 json.writeValue("items", list, ArrayList.class, Integer.class);
 json.writeObjectEnd();
@@ -342,7 +342,7 @@ json.writeObjectEnd();
 		{ class: com.example.SomeOtherObject, value: four }
 	]
 }
-}}}
+```
 
 For maps, the element type is used for the values. The keys for maps are always strings, a limitation of how object fields are described using JSON.
 
