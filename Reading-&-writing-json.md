@@ -2,6 +2,7 @@
  * [Writing Object Graphs](#Writing_Object_Graphs)
  * [Reading Object Graphs](#Reading_Object_Graphs)
  * [Customizing Serialization](#Customizing_Serialization)
+ * [Serialization Methods](#Serialization_Methods)
  * [Event Based Parsing](#Event_Based_Parsing)
 
 ## <a id="Overview"></a>Overview ##
@@ -199,7 +200,9 @@ The `JsonValue` describes a JSON object, array, string, float, long, boolean, or
 
 ## <a id="Customizing_Serialization"></a>Customizing Serialization ##
 
-Usually automatic serialization is desired and there is no need to customize how specific classes are serialized. When needed, serialization can be customized by either having the class to be serialized implement the `Json.Serializable` interface, or by registering a `Json.Serializer` with the `Json` instance. This example writes the phone numbers as an object with a single field:
+Usually automatic serialization is desired and there is no need to customize how specific classes are serialized. When needed, serialization can be customized by either having the class to be serialized implement the `Json.Serializable` interface, or by registering a `Json.Serializer` with the `Json` instance.
+
+This example uses `Json.Serializable` to write a phone number as an object with a single field:
 
 ```java
 static public class PhoneNumber implements Json.Serializable {
@@ -236,9 +239,9 @@ age: 31
 }
 ```
 
-In the `Json.Serializable` interface methods, the `Json` instance is given. It has many methods to read and write data to the JSON. When using `Json.Serializable`, the surrounding JSON object is handled automatically in the `write` method. This is why the `read` method always receives a `JsonValue` that represents a JSON object.
+The class implementing `Json.Serializable` must have a zero argument constructor because object construction is done for you. In the `write` method, the surrounding JSON object has already been written. The `read` method always receives a `JsonValue` that represents that JSON object.
 
-`Json.Serializer` provides more control over what is output, requiring `writeObjectStart` and `writeObjectEnd` to be called to achieve the same effect. A JSON array or a simple value could be output instead of an object. `Json.Serializer` also allows the object creation to be customized.
+`Json.Serializer` provides more control over what is output, requiring `writeObjectStart` and `writeObjectEnd` to be called if you require a JSON object like `Json.Serializable`. Alternatively, a JSON array or a simple value (string, int, boolean) could be output instead of an object. `Json.Serializer` also allows the object creation to be customized:
 
 ```
 Json json = new Json();
@@ -261,6 +264,89 @@ String text = json.prettyPrint(person);
 System.out.println(text);
 Person person2 = json.fromJson(Person.class, text);
 ```
+
+## <a id="Serialization_Methods"></a>Serialization Methods ##
+
+`Json` has many methods to read and write data to the JSON. Write methods without a name string are used to write a value that is not a JSON object field (eg, a string or an object in a JSON array). Write methods that take a name string are used to write a field name and value for a JSON object. 
+
+`writeObjectStart` is used to start writing a JSON object, then values can be written using the write methods that take a name string. When the object is finished, `writeObjectEnd` must be called:
+
+{{{
+json.writeObjectStart();
+json.writeValue("name", "value");
+json.writeObjectEnd();
+}}}
+
+The `writeObjectStart` methods that take an actualType and a knownType will write a class field to the JSON if the types differ. This enables the actual type to be known during deserialization. For example, the known type may be java.util.Map but the actual type is java.util.LinkedHashMap (which extends HashMap), so deserialization needs to know the actual type to create.
+
+Writing arrays works in a similar manner, except the values should be written using the write methods that do not take a name string:
+
+{{{
+json.writeArrayStart();
+json.writeValue("value1");
+json.writeValue("value2");
+json.writeArrayEnd();
+}}}
+
+The `Json` class can automatically write Java object fields and values. `writeFields` writes all fields and values for the specified Java object to the current JSON object:
+
+{{{
+json.writeObjectStart();
+json.writeFields(someObject);
+json.writeObjectEnd();
+}}}
+
+The `writeField` method writes the value for a single Java object field:
+
+{{{
+json.writeObjectStart();
+json.writeField(someObject, "javaFieldName", "jsonFieldName");
+json.writeObjectEnd();
+}}}
+
+Many of the write methods take an "element type" parameter. This is used to specify the known type of objects in a collection. For example, for a list:
+
+{{{
+ArrayList list = new ArrayList();
+list.add(someObject1);
+list.add(someObject2);
+list.add(someObject3);
+list.add(someOtherObject);
+...
+json.writeObjectStart();
+json.writeValue("items", list);
+json.writeObjectEnd();
+
+{
+	items: [
+		{ class: com.example.SomeObject, value: 1 },
+		{ class: com.example.SomeObject, value: 2 },
+		{ class: com.example.SomeObject, value: 3 },
+		{ class: com.example.SomeOtherObject, value: four }
+	]
+}
+}}}
+
+Here the known type of objects in the list is Object, so each object in the JSON for "items" has a class field that specifies Integer or String. By specifying the element type, Integer is used as the known type so only the last entry in the JSON for "items" has a class field:
+
+{{{
+json.writeObjectStart();
+json.writeValue("items", list, ArrayList.class, Integer.class);
+json.writeObjectEnd();
+
+{
+	items: [
+		{ value: 1 },
+		{ value: 2 },
+		{ value: 3 },
+		{ class: com.example.SomeOtherObject, value: four }
+	]
+}
+}}}
+
+For maps, the element type is used for the values. The keys for maps are always strings, a limitation of how object fields are described using JSON.
+
+Note that the `Json` class uses generics on Java field declarations to determine the element type where possible.
 
 ## <a id="Event_Based_Parsing"></a>Event Based Parsing ##
 
