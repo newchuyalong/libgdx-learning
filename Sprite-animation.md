@@ -93,7 +93,7 @@ FRAME_COLS, walkSheet.getHeight() / FRAME_ROWS);				// #10
 
 For example, if the animation is a 30FPS one, then the state change needs to happen at each 33.3 milliseconds. If the update happens at 10 milliseconds, the stateTime accumulates the elapsed time and the animation will change to the next state (frame) at the 4th update.
 
-*#9* - Creates a texture from animation_sheet.png which is placed in the assets directory of the project (check [ProjectSetup how to set up a project])
+*#9* - Creates a texture from animation_sheet.png which is placed in the assets directory of the project (check [[how to set up a project | Project setup, running & debugging]])
 
 *#10* - *#11* - Using the split convenience method on the texture, we obtain a two dimensional array of the frames from the texture. Bear in mind that this works only if the frames are of equal size. Then with the help of a temporary variable, the walkFrames array is populated. This is necessary, as the Animation works with one dimensional arrays only. 
 
