@@ -55,7 +55,7 @@ Next, we set the Screen of the Game to a `MainMenuScreen` object, with a Drop in
 
 A common mistake is to forget to call `super.render()` with a Game implementation. Without this call, the Screen that you set in the `create()` method will not be rendered!
 
-Finally, another reminder to dispose of objects! [Further reading.](https://code.google.com/p/libgdx/wiki/AssetManager)
+Finally, another reminder to dispose of objects! [[Further reading. | Managing your assets]]
 
 ## The Main Menu ##
 
