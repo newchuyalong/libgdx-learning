@@ -6,6 +6,8 @@ The default (preferred) method is to export to FBX. Make sure you select all and
 
 Optionally, you may also convert your file to the G3DJ format, which is a JSON format which is readily viewable with a simple text editor. `fbx-conv -o G3DJ file.fbx` Please note that G3DJ will take longer to load when you run your application, as it is not a binary format.
 
+Please note that there is a known limitation to using the FBX export in Blender. The current exporter only supports texface textures (i.e. textures assigned to an UV map). 
+
 ### Setting the coordinate system (up-axis)
 The coordinate system Blender uses (z-up) is different compared to the most common system used for games (y-up). The Blender FBX exporter contains the option to change the coordinate system to y-up (which might be even the default in the FBX exporter), do not use this option, instead set it to Blender's default (z-up). 
 
@@ -17,7 +19,7 @@ However, if you want to use z-up in your application, then you can set Blender's
 
 ### Troubleshooting missing textures
 
-If your faces are not drawn, please check try disabling back face culling. Your faces may be missing because they are facing away from the camera. 
+If your faces are not drawn, please check try disabling back face culling. Your faces may be missing because they are facing away from the camera. `DefaultShader.defaultCullFace = 0;`
 
 ### Troubleshooting black textures
 
@@ -25,6 +27,7 @@ Please ensure you limit the size of your texture files to POT (power of two dime
 
 Additionally test that your lighting/color is configured in a way which will illuminate your model instance. A good test is to pass a null environment pointer to your Model Batch, which will disable lighting effects.
 
+If you have used Blender's FBX export script, please ensure your textures were assigned to a UV map, as the export script only supports texface textures.
 
 
 ### RrSs warning
