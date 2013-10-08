@@ -254,8 +254,8 @@ public class GameScreen implements Screen {
 			spawnRaindrop();
 
 		// move the raindrops, remove any that are beneath the bottom edge of
-		// the screen or that hit the bucket. In the later case we play back
-		// a sound effect as well.
+		// the screen or that hit the bucket. In the later case we increase the 
+		// value our drops counter and add a sound effect.
 		Iterator<Rectangle> iter = raindrops.iterator();
 		while (iter.hasNext()) {
 			Rectangle raindrop = iter.next();
