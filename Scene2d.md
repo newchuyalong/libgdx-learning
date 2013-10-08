@@ -100,7 +100,7 @@ public void resize (int width, int height) {
 }
 ```
 
-See [LetterBoxTest](https://github.com/libgdx/libgdx/blob/master/tests/gdx-tests/src/com/badlogic/gdx/tests/LetterBoxTest.java), [LetterBoxTest2](https://github.com/libgdx/libgdx/blob/master/tests/gdx-tests/src/com/badlogic/gdx/tests/LetterBoxTest2.java), and [LetterBoxTest3](https://github.com/libgdx/libgdx/blob/master/tests/gdx-tests/src/com/badlogic/gdx/tests/LetterBoxTest3.java) for runnable examples of keeping an aspect ratio.
+See [LetterBoxTest1](https://github.com/libgdx/libgdx/blob/master/tests/gdx-tests/src/com/badlogic/gdx/tests/LetterBoxTest1.java), [LetterBoxTest2](https://github.com/libgdx/libgdx/blob/master/tests/gdx-tests/src/com/badlogic/gdx/tests/LetterBoxTest2.java), and [LetterBoxTest3](https://github.com/libgdx/libgdx/blob/master/tests/gdx-tests/src/com/badlogic/gdx/tests/LetterBoxTest3.java) for runnable examples of keeping an aspect ratio.
 
 ## Drawing ##
 
