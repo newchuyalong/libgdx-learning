@@ -13,7 +13,7 @@
       * [[Maven Integration]]
       * [[Using libgdx with IntelliJ IDEA]]
       * [[Using libgdx with Android Studio]]
-      * [[iOS Notes]]
+      * [[RoboVM Notes]]
       * [[GWT Notes]]
       * [[GWT Super Dev Mode]]
     * [[Third Party Services]]
