@@ -315,6 +315,6 @@ For the full code, please visit [this Github gist](https://gist.github.com/sinis
 
 ## The Future ##
 
-Now that you have a grasp of multiple screens, it's time to take advantage of the opportunity. Learn [Scene2d](https://code.google.com/p/libgdx/wiki/scene2d) [Scene2D.ui](https://code.google.com/p/libgdx/wiki/scene2dui) and [Skins](https://code.google.com/p/libgdx/wiki/Skin) to make your main menu beautiful, and maybe add explosions to the drop game, for realism of course.
+Now that you have a grasp of multiple screens, it's time to take advantage of the opportunity. Learn about [[Scene2d | scene2d]] [[Scene2D.ui | Scene2d.ui]] and [[Skins | Skin]] to make your main menu beautiful, and maybe add explosions to the drop game, for realism of course.
 
 If you've also read the next steps from the previous Drop tutorial, you should be ready to make your own game. The best practice is to get out there and do it, so go and make the next big thing!
