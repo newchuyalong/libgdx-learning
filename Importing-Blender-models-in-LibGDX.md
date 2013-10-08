@@ -16,7 +16,16 @@ When fbx-conv needs to compensate the coordinate system, it will rotate all root
 However, if you want to use z-up in your application, then you can set Blender's FBX exporter coordinate system option to y-up. This will cause fbx-conv not to rotate your model and animations, so it will be z-up.
 
 ### Troubleshooting missing textures
-Please ensure you limit the size of your texture files to power of two dimensions (e.g. 32x32, 64x64 etc). A maximum recommended size would be 1024x1024 for widespread support, however larger sizes will work. Devices may render a black object if the texture dimensions are not supported by the device.
+
+If your faces are not drawn, please check try disabling back face culling. Your faces may be missing because they are facing away from the camera. 
+
+### Troubleshooting black textures
+
+Please ensure you limit the size of your texture files to POT (power of two dimensions) which are square shaped meaning of equal width and height (e.g. 32x32, 64x64 etc). A maximum recommended size would be 1024x1024 for widespread support, however larger sizes may still render, depending on device. Often non-POT textures render correctly on a desktop, but not on mobiles. This is a limitation specific to the GPU being used, and non-POT support will vary from device to device.
+
+Additionally test that your lighting/color is configured in a way which will illuminate your model instance. A good test is to pass a null environment pointer to your Model Batch, which will disable lighting effects.
+
+
 
 ### RrSs warning
 When using the Blender FBX exporter, you might receive a RrSs warning when converting the FBX file. This is due to the Blender FBX exporter wrongfully exporting the transformations. The fbx-conv utility will correct this and you can safely ignore the warning.
