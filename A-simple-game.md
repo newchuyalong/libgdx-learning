@@ -25,7 +25,7 @@ The game idea is very simple:
   * Bucket located in the lower part of the screen
   * Raindrops spawn randomly at the top of the screen every second and accelerate downwards.
   * Player can drag the bucket horizontally via the mouse/touch or move it via the left and right cursor keys.
-  * The game has no end, think of it as a zen like experience :)
+  * The game has no end, think of it as a zen-like experience :)
 
 ## The Assets ##
 We need a few images and sound effects to make the game look somewhat pretty. For the graphics we need to define a target resolution of 800x480 pixels (landscape mode on Android). If the device the game is run on does not have that resolution, we simply scale everything to fit on the screen. *Note:* for high profile games you might want to consider to have different assets for different screen densities. This is a big topic on its own and won't be covered here.
@@ -34,7 +34,7 @@ The raindrop and the bucket should take up a small-ish portion of the screen ver
 
 I took the assets from the following sources:
 
-  * water drop sound by jungle, see http://www.freesound.org/people/junggle/sounds/30341/
+  * water drop sound by junggle, see http://www.freesound.org/people/junggle/sounds/30341/
   * rain by acclivity, see http://www.freesound.org/people/acclivity/sounds/28283/
   * droplet sprite by mvdv, see https://www.box.com/s/peqrdkwjl6guhpm48nit
   * bucket sprite by mvdv, see https://www.box.com/s/605bvdlwuqubtutbyf4x
@@ -116,7 +116,7 @@ public class MainActivity extends AndroidApplication {
 }
 ```
 
-We can not define the resolution of the `Activity`, as it is set by the Android operating system. As we defined earlier, we'll simply scale the 800x480 target resolution to whatever the resolution of the device is.
+We cannot define the resolution of the `Activity`, as it is set by the Android operating system. As we defined earlier, we'll simply scale the 800x480 target resolution to whatever the resolution of the device is.
 
 Finally we want to make sure the HTML5 project also uses a 800x480 drawing area. For this we modify the `GwtLauncher.java` file in the html5 project:
 
