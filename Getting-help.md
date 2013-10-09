@@ -70,7 +70,7 @@ Example code that can be copied, pasted, and run is the best way to get help. It
 
 Creating executable example code does take some time. You need to take apart your application and reconstruct the relevant parts in a new, bare-bones application that shows the problem. Quite often just by doing this you will figure out the problem. If not, you will get help very quickly and the people helping you will have more time to help more people.
 
-Example code should be contained entirely in a single class (use static member classes if needed) and executable, meaning it has a main method and can simply be copied, pasted, and run.
+Example code should be contained entirely in a single class (use static member classes if needed) and executable, meaning it has a main method and can simply be copied, pasted, and run. Do not use a GdxTest, as that cannot be copy, pasted, and run.
 
 ### <a id="Example_Resources"></a>Example Resources ###
 
