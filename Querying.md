@@ -16,7 +16,6 @@ switch (Gdx.app.getType()) {
         break;
     default:
         // Other platforms specific code
-        break;
 }
 ```
 
