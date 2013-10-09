@@ -26,8 +26,8 @@ This will return the SDK level supported on the current device, e.g. 3 for Andro
 For debugging and profiling purposes it is often necessary to know the memory consumption, for both the Java heap and the native heap:
 
 ```java
-int javaHeap = Gdx.app.getJavaHeap();
-int nativeHeap = Gdx.app.getNativeHeap();
+long javaHeap = Gdx.app.getJavaHeap();
+long nativeHeap = Gdx.app.getNativeHeap();
 ```
 
 Both methods return the number of bytes currently in use on the respective heap.
