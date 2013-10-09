@@ -300,7 +300,7 @@ actor.addAction(sequence(fadeIn(2), run(new Runnable() {
 
 ### Interpolation ###
 
-The tweening curve can be set for actions that manipulate an actor over time. This is done by giving the action an instance of Interpolation. The Interpolation class has many static fields for convenience, or you can write your own. See InterpolationTest for an interactive demo of each interpolation.
+The tweening curve can be set for actions that manipulate an actor over time. This is done by giving the action an instance of Interpolation. The Interpolation class has many static fields for convenience, or you can write your own. See [InterpolationTest](https://github.com/libgdx/libgdx/blob/master/tests/gdx-tests/src/com/badlogic/gdx/tests/InterpolationTest.java) for an interactive demo of each interpolation.
 
 ```java
 MoveToAction action = Actions.action(MoveToAction.class);
