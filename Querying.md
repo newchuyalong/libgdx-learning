@@ -1,16 +1,22 @@
 The `Application` interface provides various methods to query properties of the run-time environment.
 
 ### Getting the Application Type ###
-Sometimes it is necessary to special case specific parts of an application depending on the platform it is running on. The `Application.getApplicationType()` method returns the platform the application is currently running on:
+Sometimes it is necessary to special case specific parts of an application depending on the platform it is running on. The `Application.getType()` method returns the platform the application is currently running on:
 
 ```java
-switch(Gdx.app.getApplicationType()) {
-   case ApplicationType.Android:
-       // android specific code
-   case ApplicationType.Desktop:
-       // desktop specific code
-   case ApplicationType.WebGl:
-       /// HTML5 specific code
+switch (Gdx.app.getType()) {
+    case Android:
+        // android specific code
+        break;
+    case Desktop:
+        // desktop specific code
+        break;
+    case WebGl:
+        // HTML5 specific code
+        break;
+    default:
+        // Other platforms specific code
+        break;
 }
 ```
 
