@@ -1,6 +1,8 @@
 # Table of Contents
 [[a note from the translation]]
 
+[[Wiki Rules]]
+
   * **Developer's Guide**
     * [[Introduction|Introduction]]
     * [[Goals & Features]]
