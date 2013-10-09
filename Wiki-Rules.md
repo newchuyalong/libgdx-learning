@@ -13,9 +13,14 @@ renders the following:
 [Texture](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/graphics/Texture.html)
 [(code)](https://github.com/libgdx/libgdx/tree/master/gdx/src/com/badlogic/gdx/graphics/Texture.java) 
 
- *please note that there should be a space in between `ClassName (Code)` style formatting, in order to differentiate the two.*
+### Notes on Doc Links ###
 
-*note 2: please make the format `ClassName (Code)` with the word `Code`, not `Source` or any derivative of that. Consistency is key!*
+* please note that there should be a space in between `ClassName (Code)` style formatting, in order to differentiate the two.
+
+* please make the format `ClassName (Code)` with the word `Code`, not `Source` or any derivative of that. Consistency is key!
+
+*  if a link to documentation ends in a right paren `)`, it will mess up the markdown. take this as an example: `http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/graphics/Texture.html#getWidth()`. when using the markdown formatting of `[]()` the end paren will mess up the link, so please remember to escape the ending paren (`)`) so for example:
+
 
 ## Videos ##
 
@@ -72,7 +77,21 @@ Github's web interface is the only way that a non-contributor can easily edit a 
 Github does NOT have a robust pull request system for wiki changes, so this is the way it is for non-trivial changes to the wiki. If you have any problems, **PLEASE** contact support@github.com with your wishlist (hopefully something like "please make github wikis better! $IDEAS"). If you have a problem, it is necessary that you voice yourself to Github!
 
 ## Commit Messages ##
-It is optional to create a commit message for a wiki edit, however it is very imperative that you make one. make a small effort to say something like the following 'fixed typo...' see the next section `Small Typo Fixes` for more information
+It is optional to create a commit message for a wiki edit, however it is very imperative that you make one. make a small effort to say something like the following 'fixed typo...' see the next section `Small Typo Fixes` for more information. Also please add the Page name to the commit if only editing a single page in the commit, and the commit message does not create redundancy.
 
-## Small Typo Fixes ##
+
+### Small Typo Fixes ###
 Github wiki's diff system is not as robust as the diff system for code. If you make a tiny change, in the commit message please say "Fixed typo alpa -> alpha" or something of the sort
+
+here are some good and bad commit message examples:
+
+good:
+* `Added docs about serialization @ Reading and Writing JSON` 
+* `Added info about BitmapFonts`
+* `Fixed paren issue in link @ Accelerometer`
+* `Added more rules for consistency`
+
+bad: 
+* `fixed typo`
+* `lulhax`
+* `Sinistersnare is amazing` (regardless of how true it is, this is a bad commit message)
