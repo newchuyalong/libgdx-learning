@@ -20,7 +20,7 @@ AssetManager manager = new AssetManager();
 This sets up a standard AssetManager, with all the loaders libgdx has in store at the moment. Let's see how the loading mechanism works.
 
 ### Loading Assets ###
-To load assets, the AssetManager needs to know how to load a specific type of asset. This functionality is implemented via AssetLoaders. There's two variants, SynchronourAssetLoader and AsynchronousAssetLoader. The former loads everything on the rendering thread, the later loads parts of the asset on another thread, e.g. the Pixmap needed for a Texture, and then loads the OpenGL dependent part on the rendering thread. The following resources can be loaded out of the box with the AssetManager as constructed above.
+To load assets, the AssetManager needs to know how to load a specific type of asset. This functionality is implemented via AssetLoaders. There's two variants, SynchronousAssetLoader and AsynchronousAssetLoader. The former loads everything on the rendering thread, the later loads parts of the asset on another thread, e.g. the Pixmap needed for a Texture, and then loads the OpenGL dependent part on the rendering thread. The following resources can be loaded out of the box with the AssetManager as constructed above.
 
 
   * Pixmaps via PixmapLoader
