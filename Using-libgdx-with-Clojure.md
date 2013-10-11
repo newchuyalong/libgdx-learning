@@ -60,7 +60,7 @@ and here is the Screen implementation (as `cljdx.core`)
     (proxy [Screen] []
       (show []
         (reset! stage (Stage.))
-        (let [style (Label$LabelStyle. (BitmapFont.) (Color. 1.0 1.0 1.0 1.0))
+        (let [style (Label$LabelStyle. (BitmapFont.) (Color. 1 1 1 1))
               label (Label. "Hello world!" style)]
           (.addActor @stage label)))
       (render [delta]
