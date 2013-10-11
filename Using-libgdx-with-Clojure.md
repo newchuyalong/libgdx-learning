@@ -64,7 +64,7 @@ and here is the Screen implementation (as `cljdx.core`)
               label (Label. "Hello world!" style)]
           (.addActor @stage label)))
       (render [delta]
-        (.glClearColor (Gdx/gl) 0 0 0 1)
+        (.glClearColor (Gdx/gl) 0 0 0 0)
         (.glClear (Gdx/gl) GL20/GL_COLOR_BUFFER_BIT)
         (doto @stage
           (.act delta)
