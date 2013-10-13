@@ -1,4 +1,3 @@
-
 ## rendering super-smooth scalable bitmap fonts ##
 
 Signed distance field rendering is a technique used in Team Fortress 2, and documented by Chris Green of Valve in the SIGGRAPH 2007 paper [Improved Alpha-Tested Magniﬁcation for Vector Textures and Special Effects.](http://www.valvesoftware.com/publications/2007/SIGGRAPH2007_AlphaTestedMagnification.pdf) It allows you to render bitmap fonts without jagged edges even at high magnifications. This article describes how to implement the technique in libgdx.
@@ -152,7 +151,7 @@ There are all sorts of additional tricks you can do based on the `distance` vari
 
 The generator used by Hiero can also be used as a stand-alone command line tool, to process pre-existing black and white images. Run it from an unzipped libgdx distribution directory as follows:
 ```shell
-java -cp extensions/gdx-tools.jar:gdx.jar com.badlogic.gdx.tools.distancefield.DistanceFieldGenerator
+java -cp gdx.jar;gdx-natives.jar;gdx-backend-lwjgl.jar;gdx-backend-lwjgl-natives.jar;extensions\gdx-tools\gdx-tools.jar com.badlogic.gdx.tools.distancefield.DistanceFieldGenerator
 ```
 
 This will print usage instructions:
