@@ -13,7 +13,7 @@ This works out of the box, as the desktop libgdx backend uses the JVM that you h
 
 ## Android ##
 
-This works for many languages, but it is sometimes unavaiable. For best results, search on your favorite search engine [JVM language of choice] on android. 
+This works for many languages, but it is sometimes unavailable. For best results, search on your favorite search engine [JVM language of choice] on android. 
 
 Some examples: 
 
