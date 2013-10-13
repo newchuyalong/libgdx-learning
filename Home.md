@@ -77,7 +77,7 @@
       * 2D Graphics
             * [[SpriteBatch, TextureRegions, and Sprite]]
             * [[Clipping, with the use of ScissorStack]]
-            * Orthographic Camera ??
+            * [[Orthographic camera]]
             * Mapping Touch Coordinates ??
             * [[NinePatches]]
             * [[Bitmap Fonts]]
