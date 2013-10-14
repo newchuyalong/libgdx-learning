@@ -135,7 +135,7 @@ mapRenderer.render(foregroundLayers);
 By rendering each layer separately and modifying the view for every layer, you can also achieve a parallax effect.
 
 ## Tiled Maps ##
-Maps that contain layers with tiles are handled by the classes in the [https://github.com/libgdx/libgdx/tree/master/gdx/src/com/badlogic/gdx/maps/tiled com.badlogic.gdx.maps.tiled] package. The package contains loaders for different formats.
+Maps that contain layers with tiles are handled by the classes in the [com.badlogic.gdx.maps.tiled](https://github.com/libgdx/libgdx/tree/master/gdx/src/com/badlogic/gdx/maps/tiled) package. The package contains loaders for different formats.
 
 Tile maps are loaded into 
 [TiledMap](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/maps/tiled/TiledMap.html)
