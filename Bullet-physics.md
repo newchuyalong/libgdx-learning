@@ -82,19 +82,19 @@ List of callback interfaces (might not be complete):
  * `ContactCache`
 
 ## <a id="Properties"></a>Properties ##
-Properties are encapsulated by getter and setter methods. The naming of the getter and setter methods omits the "m`_`" prefix. For example, the `m_collisionObject` member of the native class `btCollisionObjectWrapper` is implemented as `getCollisionObject()` and `setCollisionObject(...)`.
+Properties are encapsulated by getter and setter methods. The naming of the getter and setter methods omits the `m_` prefix. For example, the `m_collisionObject` member of the native class `btCollisionObjectWrapper` is implemented as `getCollisionObject()` and `setCollisionObject(...)`.
 
 ## <a id="Creating_and_destroying_objects"></a>Creating and destroying objects ##
 Every time you create a bullet class in Java it also creates the corresponding class in C++. While the Java object is maintained by the garbage collector, the C++ object isn’t. To avoid having orphaned C++ objects resulting in memory leaks, the C++ object is by default automatically destroyed when the Java object is destroyed by the garbage collector. 
 
-While this might be useful in some cases, it’s merely a fail-safe and you shouldn't rely on it. Since you can’t control the garbage collector, you can’t control _if_, _when_ and _in which order_ the objects are actually being destroyed. Therefor the wrapper logs an error when an object is automatically destroyed by the garbage collector. You can disable logging using the second argument of the `Bullet.init()` method.
+While this might be useful in some cases, it’s merely a fail-safe and you shouldn't rely on it. Since you can’t control the garbage collector, you can’t control _if_, _when_ and _in which order_ the objects are actually being destroyed. Therefor the wrapper logs an error when an object is automatically destroyed by the garbage collector. You can disable this error logging using the second argument of the `Bullet.init()` method, but you should preferably use the method in the following paragraph.
 
-Instead you should keep a reference to every object you create until it’s not needed anymore and then destroy it yourself. You can destroy the C++ object by calling the `.dispose()` method on the Java object, after which you should remove all references to the Java object since it’s unusable after that. 
+In order to ensure correct garbage collection you should keep a reference to every object you create until it’s not needed anymore and then destroy it yourself. You can destroy the C++ object by calling the `.dispose()` method on the Java object, after which you should remove all references to the Java object since it’s unusable after that. 
 
-The above is only true for the objects you are responsible of. Which are all Bullet classes you create with the new keyword and also includes classes you create using helper methods. You don’t have to dispose objects that are returned by regular methods or provided to you in callback methods.
+The above is only true for the objects you are responsible of, which are all Bullet classes you create with the `new` keyword as well as classes you create using helper methods. You don’t have to dispose objects that are returned by regular methods or provided to you in callback methods.
 
 ## <a id="Referencing_objects"></a>Referencing objects ##
-A stated above, you should keep a reference to every Bullet class and call the dispose method when it’s no longer needed. When your application becomes more complex and objects are shared amongst multiple other objects, it can become difficult to keep track of references. Therefor the bullet wrapper support reference counting.
+As stated above, you should keep a reference to every Bullet class and call the dispose method when it’s no longer needed. When your application becomes more complex and objects are shared amongst multiple other objects, it can become difficult to keep track of references. Therefor the bullet wrapper support reference counting.
 
 Reference counting is disabled by default. To enable it, call `Bullet.init();` with the first argument set to true:
 ```java
@@ -113,7 +113,7 @@ btCollisionShape shape = collisionObjectA.getCollisionShape();
 
 This will create a new Java btCollisionShape class which doesn’t implement any extended class.
 
-There is one exception on this for btCollisionObject, where the wrapper tries to reuse the same Java class. Furthermore the Java implementation of the btCollisionObject class adds a `userData` member which can be used to attach additional data to the object. To accomplish this the wrapper maintains an array with references to all btCollisionObject instances. You can access that array using the static field `btCollisionObject.instances`. Check the [#btCollisionObject btCollisionObject] section for detailed information on this.
+There is one exception to this for btCollisionObject, where the wrapper tries to reuse the same Java class. Furthermore the Java implementation of the btCollisionObject class adds a `userData` member which can be used to attach additional data to the object. To accomplish this the wrapper maintains an array with references to all btCollisionObject instances. You can access that array using the static field `btCollisionObject.instances`. Check the [btCollisionObject](#btCollisionObject) section for detailed information on this.
 
 Some classes provide a static `upcast` method which can be used to cast the object to an higher class. For example:
 
@@ -122,10 +122,10 @@ btRigidBody bodyA = btRigidBody.upcast(collisionObjectA);
 ```
 
 ## <a id="Comparing_classes"></a>Comparing classes ##
-You can compare wrapper classes using the `equals()` method, which checks if the classes both wrap the same native class. To get the pointer to the underlying C++ class you can use the `getCPointer` method of the specific object. You can also compare these pointers to check if Java classes wrap the same C++ class.
+You can compare wrapper classes using the `equals()` method, which checks if the classes both wrap the same native class. To get the pointer to the underlying C++ class you can use the `getCPointer` method of the specific object. You can also compare these pointers to check whether the Java classes wrap the same C++ class.
 
 ## <a id="Common_classes"></a>Common classes ##
-Bullet uses some classes also available in the libgdx core. While these bullet classes are available for you to use, the wrapper tries to use the libgdx class where possible. Currently this is implemented for:
+Bullet uses some classes also available in the libgdx core. While these bullet classes are available for you to use, the wrapper tries to use the libgdx class where possible. Currently these are implemented for:
 
 | *Bullet* | *Libgdx* |
 |:--------:|:--------:|
@@ -167,10 +167,12 @@ public void setWorldTransform (final Matrix4 worldTrans) {
 ## <a id="Using_arrays"></a>Using arrays ##
 Where possible the wrapper uses direct ByteBuffer objects to pass arrays from Java to C++. This avoids copying the array on the call and allows you to share the same byte buffer for both OpenGL ES and Bullet. If needed you can create a new ByteByffer using `BufferUtils.newUnsafeByteBuffer`, which you should manually delete using `BufferUtils.disposeUnsafeByteBuffer`.
 
-In cases where ByteBuffer can't be used or is unwanted to be used, a normal array is used. By default this means that the array is copied using iteration from Java to C++ at start of the method and copied back at the end of the method. To avoid this overhead the wrapper tries to use the Java array directly from within C++ where possible using critical arrays. During such method Java garbage collecting is blocked. An example of such method is `btBroadphasePairArray.getCollisionObjects`.
+In cases where ByteBuffer can't be used or is unwanted, a normal array is used. By default this means that the array is copied using iteration from Java to C++ at start of the method and copied back at the end of the method. To avoid this overhead the wrapper tries to use the Java array directly from within C++ where possible using critical arrays. During such method Java garbage collecting is blocked. An example of such method is `btBroadphasePairArray.getCollisionObjects`.
 
 ## <a id="Contact_Callbacks"></a>Contact Callbacks ##
-Contact callbacks allow you to be notified when a contact/collision on two objects occur ([more info](http://bulletphysics.org/mediawiki-1.5.8/index.php/Collision_Callbacks_and_Triggers#Contact_Callbacks)). By default there are three callbacks: [`onContactAdded`](http://bulletphysics.org/mediawiki-1.5.8/index.php/Collision_Callbacks_and_Triggers#gContactAddedCallback), [`onContactProcessed`](http://bulletphysics.org/mediawiki-1.5.8/index.php/Collision_Callbacks_and_Triggers#gContactProcessedCallback) and [`onContactDestroyed`](http://bulletphysics.org/mediawiki-1.5.8/index.php/Collision_Callbacks_and_Triggers#gContactDestroyedCallback)) . The wrapper adds two additional callbacks: `onContactStarted` and `onContactEnded`. The callbacks are global (independent of e.g. the collision world), there can be only one implementation per callback active at the same time.
+Contact callbacks allow you to be notified when a contact/collision on two objects occur ([more info and a performance related warning](http://bulletphysics.org/mediawiki-1.5.8/index.php/Collision_Callbacks_and_Triggers#Contact_Callbacks)).
+
+By default there are three callbacks: [`onContactAdded`](http://bulletphysics.org/mediawiki-1.5.8/index.php/Collision_Callbacks_and_Triggers#gContactAddedCallback), [`onContactProcessed`](http://bulletphysics.org/mediawiki-1.5.8/index.php/Collision_Callbacks_and_Triggers#gContactProcessedCallback) and [`onContactDestroyed`](http://bulletphysics.org/mediawiki-1.5.8/index.php/Collision_Callbacks_and_Triggers#gContactDestroyedCallback)) . The wrapper adds two additional callbacks: `onContactStarted` and `onContactEnded`. The callbacks are global (independent of e.g. the collision world), there can be only one implementation per callback active at any given time.
 
 ### <a id="Contact_Listeners"></a>Contact Listeners ###
 You can extend the ContactListener class to implement one or more callbacks:
@@ -256,7 +258,7 @@ In some cases it's not possible to wrap a C++ bullet class/method in a Java clas
 
 The btCollisionObject is modified to reuse Java objects instead of creating a new Java object every time. This is done using the static `btCollisionObject.instances` map. To remove an object from the map and delete the native object use the `dispose` method.
 
-Besides reusing instances, the Bullet wrappers allows you to provide an unique number to identify the instance. For example the index/ID of the entity in your entity system. Some frequently called methods allow you to use that value instead of the instance itself. This completely eliminates the overhead of mapping C++ and Java instances. You can set this value using the `setUserValue(int);` method and retrieve the value using the `getUserValue();` method.
+Besides reusing instances, the Bullet wrappers allows you to provide a unique number to identify the instance. For example the index/ID of the entity in your entity system. Some frequently called methods allow you to use that value instead of the instance itself. This completely eliminates the overhead of mapping C++ and Java instances. You can set this value using the `setUserValue(int);` method and retrieve the value using the `getUserValue();` method.
 
 ```java
 public class MyGameObject {
