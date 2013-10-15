@@ -24,8 +24,8 @@ _Note: Step 5 makes `gdx.jar` a transitive dependency. That means that projects 
 
 Before doing these steps, the [Android SDK](http://developer.android.com/sdk/installing.html) must first be installed.
 
-  * Create a new Android project in Eclipse: File -> New -> Project -> Android Project. Name it appropriately (eg, "gamename-android"). For build target, check "Android 1.5". Specify a package name (eg, "com.gamename"). Next to "Create Activity" enter "!AndroidGame". Click Finish.
-  * Go to the project folder on the file system and create a subfolder named `libs`. From the [http://libgdx.l33tlabs.org/ nightly zip], place `gdx-backend-android.jar` and the `armeabi` and `armeabi-v7a` folders in the libs folder.
+  * Create a new Android project in Eclipse: File -> New -> Project -> Android Project. Name it appropriately (eg, "gamename-android"). For build target, check "Android 1.5". Specify a package name (eg, "com.gamename"). Next to "Create Activity" enter "AndroidGame". Click Finish.
+  * Go to the project folder on the file system and create a subfolder named `libs`. From the [nightly zip](http://libgdx.badlogicgames.com/nightlies/), place `gdx-backend-android.jar` and the `armeabi` and `armeabi-v7a` folders in the libs folder.
   * In Eclipse, right click the project -> Refresh. Right click again -> Properties -> Java Build Path -> Libraries -> Add JARs, select `gdx-backend-android.jar` and click OK.
   * Click Add JARs again, select `gdx.jar` under the main project and click OK.
   * Click the Projects tab, click Add, check the main project and click OK twice.
