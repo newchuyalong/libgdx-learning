@@ -118,3 +118,5 @@ At some point you may want to update libgdx to the latest. To do this, download 
 | main | libs/gdx.jar<br>libs/gdx-sources.jar |
 | Android | libs/gdx-backend-android.jar<br>libs/armeabi _(directory)_<br>libs/armeabi-v7a _(directory)_ |
 | desktop | libs/gdx-natives.jar<br>libs/gdx-backend-lwjgl.jar<br>libs/gdx-backend-lwjgl-natives.jar |
+
+*Note: [`Ready IntellijIdea 12 Community Edition Project`](https://github.com/ruslux/IntellijIdea-pure-libGDX-project)
