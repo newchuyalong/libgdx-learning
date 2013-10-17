@@ -4,7 +4,7 @@
    * [Configuration](#Configuration)
    * [Settings](#Settings)
    * [NinePatches](#NinePatches)
-   * [indexes](#Image_indexes)
+   * [Indexes](#Image_indexes)
    * [Packing](#Packing)
    * [Automatic packing](#Automatic_packing)
  * [TextureAtlas](#TextureAtlas)
