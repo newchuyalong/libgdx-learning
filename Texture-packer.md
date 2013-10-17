@@ -85,7 +85,8 @@ Below is a JSON example with every available setting and the default value for e
 	combineSubdirectories: false,
 	flattenPaths: false,
 	premultiplyAlpha: false,
-	useIndexes: true
+	useIndexes: true,
+	limitMemory: true
 }
 ```
 
@@ -122,7 +123,8 @@ Note that this is libgdx's "minimal" JSON format, so double quotes are optional 
 | `combineSubdirectories` | If true, the directory containing the settings file and all subdirectories are packed as if they were in the same directory. Any settings files in the subdirectories are ignored. | false |
 | `flattenPaths` | If true, only image file names are used in the atlas, any subdirectories are not used. | false |
 | `premultiplyAlpha` | If true, the RGB will be multiplied by the alpha. See [here](http://blogs.msdn.com/b/shawnhar/archive/2009/11/06/premultiplied-alpha.aspx) for more information. | false |
-| `useIndexes` | If false, image names are used without stripping any image index suffix. | false |
+| `useIndexes` | If false, image names are used without stripping any image index suffix. | true |
+| `limitMemory` | If true, only one image is in memory at any given time, but each image will be read twice. If false, all images are kept in memory during packing but they are only read once. | true |
 
 ## <a id="NinePatches"></a>NinePatches ##
 
