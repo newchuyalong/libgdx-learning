@@ -57,7 +57,10 @@ alt="IMAGE ALT TEXT HERE" width="480" height="360" border="10" /></a>
 
 Lets hope Github eventually supports embedded videos!
 
+## Sidebar Issues ##
 
+The sidebar used in this wiki causes a few problems with preformatted text. This example will (most likely) be chopped off due to the sidebar: `http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/graphics/Texture.html#getWidth()`
+ To work around this issue, one should wrap the large amount of unbroken link in a triple backtick (\```) block and put it on a newline. Check the source of this page, specifically, the 'Notes on Doc Links' section.
 
 ## The Main Table Of Contents ##
 
@@ -121,3 +124,5 @@ bad:
 * `fixed typo`
 * `lulhax`
 * `Sinistersnare is amazing` (regardless of how true it is, this is a bad commit message)
+
+
