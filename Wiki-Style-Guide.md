@@ -31,8 +31,19 @@ renders the following:
 
 * Please make the format `ClassName (Code)` with the word `Code`, not `Source` or any derivative of that. Consistency is key!
 
-*  If a link to documentation ends in a right paren `)`, it will mess up the markdown. take this as an example: `http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/graphics/Texture.html#getWidth()`. when using the markdown formatting of `[]()` the end paren will mess up the link, so please remember to escape the ending paren (`)`) so for example:
+*  If a link to documentation ends in a right paren `)`, it will mess up the markdown. take this as an example: 
 
+```
+http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/graphics/Texture.html#getWidth()
+```
+
+when using the markdown formatting of `[]()` the end paren will mess up the link, so please remember to escape the ending paren (`)`) so for example, it should be :
+
+```
+[Link to Texture#getWidth](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/graphics/Texture.html#getWidth(\))
+```
+
+without the escaped paren, a 404 is imminent!
 
 ## Videos ##
 
