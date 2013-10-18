@@ -1,7 +1,7 @@
 # Table of Contents
 [[a note from the translation]]
 
-[[Wiki Rules]]
+[[Wiki Style Guide]]
 
   * **Developer's Guide**
     * [[Introduction|Introduction]]
