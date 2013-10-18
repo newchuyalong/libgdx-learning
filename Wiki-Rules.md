@@ -1,6 +1,18 @@
 This page is a notice on how to edit libgdx wiki pages. Please read this before contributing to the libgdx wiki.
 
 
+## General Syntax ##
+
+We use Markdown in this wiki; [heres a reference](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet). Please learn your way around with this, as to avoid markup differences.
+
+### notable syntax ###
+
+* wiki links are made using `[ [` and `] ]` (without the spaces) with a `|` (pipe) to separate text from link. For example:
+
+[ [link text to simple game | A simple game] ] \(without the spaces in between the outer brackets) renders this: [[link text to simple game | A simple game]]  
+
+do NOT use conventional \[]() syntax for wiki-links.
+
 ## linking to code/docs ##
 Links are done as follows: `[ClassName](link to docs) [(code)](link to code)` for example:
 ```
