@@ -5,15 +5,15 @@ This page is a notice on how to edit libgdx wiki pages. Please read this before 
 
 We use Markdown in this wiki; [heres a reference](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet). Please learn your way around with this, as to avoid markup differences.
 
-### notable syntax ###
+### Notable syntax ###
 
-* wiki links are made using `[ [` and `] ]` (without the spaces) with a `|` (pipe) to separate text from link. For example:
+* Wiki links are made using `[ [` and `] ]` (without the spaces) with a `|` (pipe) to separate text from link. For example:
 
 [ [link text to simple game | A simple game] ] \(without the spaces in between the outer brackets) renders this: [[link text to simple game | A simple game]]  
 
-do NOT use conventional \[]() syntax for wiki-links.
+Do NOT use conventional \[]() syntax for wiki-links.
 
-## linking to code/docs ##
+## Linking to code/docs ##
 Links are done as follows: `[ClassName](link to docs) [(code)](link to code)` for example:
 ```
 [Texture](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/graphics/Texture.html)
@@ -27,11 +27,11 @@ renders the following:
 
 ### Notes on Doc Links ###
 
-* please note that there should be a space in between `ClassName (Code)` style formatting, in order to differentiate the two.
+* Please note that there should be a space in between `ClassName (Code)` style formatting, in order to differentiate the two.
 
-* please make the format `ClassName (Code)` with the word `Code`, not `Source` or any derivative of that. Consistency is key!
+* Please make the format `ClassName (Code)` with the word `Code`, not `Source` or any derivative of that. Consistency is key!
 
-*  if a link to documentation ends in a right paren `)`, it will mess up the markdown. take this as an example: `http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/graphics/Texture.html#getWidth()`. when using the markdown formatting of `[]()` the end paren will mess up the link, so please remember to escape the ending paren (`)`) so for example:
+*  If a link to documentation ends in a right paren `)`, it will mess up the markdown. take this as an example: `http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/graphics/Texture.html#getWidth()`. when using the markdown formatting of `[]()` the end paren will mess up the link, so please remember to escape the ending paren (`)`) so for example:
 
 
 ## Videos ##
@@ -52,6 +52,9 @@ Lets hope Github eventually supports embedded videos!
 
 If you make a page, you will most likely want it to be displayed on the main Libgdx wiki Table of contents and the sidebar Table of Contents. When you create an article, please create a second edit of the Home page with the appropriate positioning of your article. Mirror this change in the sidebar ToC, as to maintain likeness between the two.
 
+### Non pages on the Table of Contents ###
+
+The Table of contents contains a few pages that do not have a link, and are appended with a `??`. This is to signify that during translation from Google Code wiki to Github Wiki, there were a couple of pages without links. If you have something to contribute on the topic of one of those pages without a page (yet!), please feel free to add a page, and add your content, then reflect your changes in the ToC by adding a link.
 
 
 ## Tables of Contents per page ##
@@ -80,11 +83,11 @@ Images need to be added manually through a desktop interface (A.K.A. not through
 
 Github's web interface is the only way that a non-contributor can easily edit a wiki. If a person is to make a large edit that spans multiple pages, it can be done via the web interface, but it is recommended to take the following steps:
 
-* fork the repo
-* clone your forked repo locally
-* make necessary changes
-* commit and push that to your forked repo
-* email a libgdx maintainer (who has commit rights) to clone your repo and push it themselves.
+* Fork the repo
+* Clone your forked repo locally
+* Make necessary changes
+* Commit and push that to your forked repo
+* Email a libgdx maintainer (who has commit rights) to clone your repo and push it themselves.
 
 Github does NOT have a robust pull request system for wiki changes, so this is the way it is for non-trivial changes to the wiki. If you have any problems, **PLEASE** contact support@github.com with your wishlist (hopefully something like "please make github wikis better! $IDEAS"). If you have a problem, it is necessary that you voice yourself to Github!
 
@@ -93,9 +96,9 @@ It is optional to create a commit message for a wiki edit, however it is very im
 
 
 ### Small Typo Fixes ###
-Github wiki's diff system is not as robust as the diff system for code. If you make a tiny change, in the commit message please say "Fixed typo alpa -> alpha" or something of the sort
+Github wiki's diff system is not as robust as the diff system for code. If you make a tiny change, in the commit message please say "Fixed typo alpa -> alpha" or something of the sort.
 
-here are some good and bad commit message examples:
+Here are some good and bad commit message examples:
 
 good:
 * `Added docs about serialization @ Reading and Writing JSON` 
