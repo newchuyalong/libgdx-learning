@@ -40,13 +40,13 @@ Note that TexturePacker2 runs significantly faster with Java 1.7+, especially wh
 
 ## <a id="Directory_structure"></a>Directory structure ##
 
-TexturePacker can pack all images for an application in one shot. Given a directory, it recursively scans for image files. For each directory of images TexturePacker encounters, it packs the images on to a larger texture, called a page. If the images in a directory don't fit on the max size of a single page, multiple pages will be used.
+TexturePacker2 can pack all images for an application in one shot. Given a directory, it recursively scans for image files. For each directory of images TexturePacker2 encounters, it packs the images on to a larger texture, called a page. If the images in a directory don't fit on the max size of a single page, multiple pages will be used.
 
 Images in the same directory go on the same set of pages. If all images fit on a single page, no subdirectories should be used because with one page the app will only ever perform one texture bind. Otherwise, subdirectories can be used to segregate related images to minimize texture binds. Eg, an application may want to place all the "game" images in a separate directory from the "pause menu" images, since these two sets of images are drawn serially: all the game images are drawn (one bind), then the pause menu is drawn on top (another bind). If the images were in a single directory that resulted in more than one page, each page could contain a mix of game and pause menu images, which would cause unnecessary texture binds.
 
 Subdirectories are also useful to group images with related texture settings. Settings like format (RGBA, RGB, etc) and filter (nearest, linear, etc) are per texture. Images that need different per texture settings need to go on separate pages, so should be placed in separate subdirectories.
 
-To use subdirectories for organization without TexturePacker outputting a set of pages for each subdirectory, see the `combineSubdirectories` setting.
+To use subdirectories for organization without TexturePacker2 outputting a set of pages for each subdirectory, see the `combineSubdirectories` setting.
 
 To avoid subdirectory paths being used in image names in the atlas file, see the `flattenPaths` setting.
 
@@ -136,7 +136,7 @@ If an image file name ends with underscore and then a number (eg animation_23.pn
 
 ## <a id="Packing"></a>Packing ##
 
-The TexturePackage2 class is in `gdx-tools.jar`, which is in the extensions directory of the nightlies/releases zip files. You only need the TexturePacker as a tool to process your image files for your application, you don't need it as a dependency to run your application. To run the packer you need both `gdx.jar` and `gdx-tools.jar`.
+The TexturePacker2 class is in `gdx-tools.jar`, which is in the extensions directory of the nightlies/releases zip files. You only need TexturePacker2 as a tool to process your image files for your application, you don't need it as a dependency to run your application. To run the packer you need both `gdx.jar` and `gdx-tools.jar`.
 
 ```
 java -classpath gdx.jar;gdx-tools.jar com.badlogic.gdx.tools.imagepacker.TexturePacker2 inputDir outputDir packFileName
@@ -171,7 +171,7 @@ _Note: When loading files from the classpath, Eclipse usually will not reflect c
 
 # <a id="TextureAtlas"></a>TextureAtlas #
 
-The TexturePacker output is a directory of page images and a text file that describes all the images packed on the pages. This shows how to use the images in an application:
+The TexturePacker2 output is a directory of page images and a text file that describes all the images packed on the pages. This shows how to use the images in an application:
 
 ```java
 TextureAtlas atlas;
