@@ -24,7 +24,7 @@ We then set up alpha testing to output a pixel only when the alpha is greater th
 
 # Generating the font #
 
-This process is much the same as for regular [[ bitmap fonts|Bitmap Fonts]], but you need a recent (November 2012) build of Hiero that is capable of creating the distance field. If there is a filter called "Distance field" in the version of Hiero you're using, you're good. Otherwise, grab the libgdx source and run Hiero from the `gdx-tools` project.
+This process is much the same as for regular [[ bitmap fonts|Bitmap Fonts]], but you need a recent (November 2012) build of Hiero that is capable of creating the distance field. If there is a filter called "Distance field" in the version of Hiero you're using, you're good. Otherwise, grab the libgdx source and [[run Hiero|Hiero]] from the `gdx-tools` project.
 
   * Fire up Hiero and choose your font and attributes as normal.
   * In the "Effects" list on the right, double-click "Distance field".
