@@ -73,18 +73,11 @@ The Table of contents contains a few pages that do not have a link, and are appe
 
 ## Tables of Contents per page ##
 
-The way that we are pursuing ToC's in the wiki are through `<a>` tags and links to them from the header. It resembles the following:
+Tables of contents have to be manually created on a per-page basis. For an example of how to do so outside of this section, please refer to our [[box2d]] article.
 
-`[Creating a World](#creating_a_world)`
+When creating headers in markdown, we specify using a number of octothorpes (`#`) that define the header level. When we create a header `## Comments and Questions/Concerns ##` in an article entitled `Help Me` the corresponding link would be `help-me#comments-and-questionsconcerns` 
 
-where the #creating_a_world would be the following header:
-
-`## <a id="creating_a_world"></a>Creating a World ##`
-
-You will have to manually create a list out of the headers. 
-
-If there is a better solution known, please let me know on IRC (sinistersnare), i would love to have a more elegant way to do this than hacking with HTML.
-
+so when we go to make our table of contents, it would be in an unordered list, and using these qualified page fragment links. Please see the [[box2d]] article for more information.
 
 ## Adding Images ##
 
@@ -124,5 +117,4 @@ bad:
 * `fixed typo`
 * `lulhax`
 * `Sinistersnare is amazing` (regardless of how true it is, this is a bad commit message)
-
 
