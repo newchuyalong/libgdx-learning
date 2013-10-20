@@ -8,28 +8,28 @@ For more documentation related to Box2D, please visit [box2d.org](http://box2d.o
 
 ## Table of Contents ##
 
-  * [Creating a World](#creating_a_world)
-  * [Debug Renderer](#debug_renderer)
-  * [Stepping the simulation](#stepping_the_simulation)
-  * [Rendering](#rendering)
-  * [Objects/Bodies](#objects_bodies)
-    * [Dynamic Bodies](#dynamic_bodies)
-    * [Static Bodies](#static_bodies)
-    * [Kinematic Bodies](#kinematic_bodies)
-  * [Impulses/Forces](#impulses_forces)
-  * [Joints and Gears](#joints_and_gears)
-  * [Fixture Shapes](#fixture_shapes)
-  * [Sprites and Bodies](#sprites_and_bodies)
-  * [Sensors](#sensors)
-  * [Contact Listeners](#contact_listeners)
-  * [Code Snippets](#code_snippets)
-  * [Resources](#resources)
-  * [Tools](#Tools)
+  * [Creating a World](box2d#creating-a-world)
+  * [Debug Renderer](box2d#debug-renderer)
+  * [Stepping the simulation](box2d#stepping-the-simulation)
+  * [Rendering](box2d#rendering)
+  * [Objects/Bodies](box2d#objectsbodies)
+    * [Dynamic Bodies](box2d#dynamic-bodies)
+    * [Static Bodies](box2d#static-bodies)
+    * [Kinematic Bodies](box2d#kinematic-bodies)
+  * [Impulses/Forces](box2d#impulsesforces)
+  * [Joints and Gears](box2d#joints-and-gears)
+  * [Fixture Shapes](box2d#fixture-shapes)
+  * [Sprites and Bodies](box2d#sprites-and-bodies)
+  * [Sensors](box2d#sensors)
+  * [Contact Listeners](box2d#contact-listeners)
+  * [Code Snippets](box2d#code-snippets)
+  * [Resources](box2d#resources)
+  * [Tools](box2d#tools)
 
 
 
 
-## <a id="creating_a_world"></a>Creating a World ##
+## Creating a World ##
 
 When setting up Box2D the first thing we need is a world. The world object is basically what holds all your physics objects/bodies and simulates the reactions between them. It does not however render the objects for you; for that you will use libgdx graphics functions. That said, libgdx does come with a Box2D debug renderer which is extremely handy for debugging your physics simulations, or even for testing your game-play before writing any rendering code.
 
@@ -58,7 +58,7 @@ The second value in the world creation is a boolean value which tells the world 
 
 
 
-## <a id="debug_renderer"></a>Debug Renderer ##
+## Debug Renderer ##
 
 The next thing we are going to do is setup our debug renderer. You generally will not use this in a released version of your game, but for testing purposes we will set it up now like so:
 
@@ -68,7 +68,7 @@ Box2DDebugRenderer debugRenderer = new Box2DDebugRenderer();
 
 
 
-## <a id="stepping_the_simulation"></a>Stepping the simulation ##
+## Stepping the simulation ##
 
 To update our simulation we need to tell our world to step. Stepping basically updates the world objects through time. The best place to call our step function is at the end of our `render()` loop. In a perfect world everyones frame rate is the same
 
@@ -82,7 +82,7 @@ The other two arguments are `velocityIterations` and `positionIterations`. For n
 
 
 
-## <a id="rendering"></a>Rendering ##
+## Rendering ##
 
 It is recommended that you render all your graphics before you do your physics step, otherwise it will be out of sync. To do this with our debug renderer we do the following:
 
@@ -94,7 +94,7 @@ The first argument is our Box2D world and the second argument is our libgdx came
 
 
 
-## <a id="objects_bodies"></a>Objects/Bodies ##
+## Objects/Bodies ##
 
 Now if you run your game it will be pretty boring as nothing happens. The world steps but we don’t see anything as we don’t have anything to interact with it. So now we’re going to add some objects.
 
@@ -105,7 +105,7 @@ A fixture has a shape, density, friction and restitution attached to it. Shape i
 Bodies come in three different types: dynamic, kinematic and static. Each type is described below.
 
 
-### <a id="dynamic_bodies"></a>Dynamic Bodies ###
+### Dynamic Bodies ###
 
 Dynamic bodies are objects which move around and are affected by forces and other dynamic, kinematic and static objects. Dynamic bodies are suitable for any object which needs to move and be affected by forces. 
 
@@ -145,7 +145,7 @@ Now we have create a ball like object and added it to our world. If you run the 
 
 
 
-### <a id="static_bodies"></a>Static Bodies ###
+### Static Bodies ###
 
 Static bodies are objects which do not move and are not affected by forces. Dynamic bodies are affected by static bodies. Static bodies are perfect for ground, walls, and any object which does not need to move. Static bodies require less computing power.
 
@@ -177,7 +177,7 @@ Now if you run the game you should see a ball fall and then bounce on our newly 
 
 
 
-### <a id="kinematic_bodies"></a>Kinematic Bodies ###
+### Kinematic Bodies ###
 
 Kinematic bodies are somewhat in between static and dynamic bodies. Like static bodies, they do not react to forces, but like dynamic bodies, they do have the ability to move. Kinematic bodies are great for things where you, the programmer, want to be in full control of a body's motion, such as a moving platform in a platform game.
 
@@ -190,7 +190,7 @@ You can create a kinematic body in much the same way as the dynamic and static b
 kinematicBody.setLinearVelocity(0.0f, 1.0f);
 ```
 
-## <a id="impulses_forces"></a>Impulses/Forces ##
+## Impulses/Forces ##
 
 Impulses and Forces are used to move a body in addition to gravity and collision. 
 
@@ -251,11 +251,11 @@ if (Gdx.input.isKeyPressed(Keys.D) && vel.x < MAX_VELOCITY) {
 
 Coming soon
 
-## <a id="fixture_shapes"></a>Fixture Shapes ##
+## Fixture Shapes ##
 
 Coming soon
 
-## <a id="sprites_and_bodies"></a>Sprites and Bodies ##
+## Sprites and Bodies ##
 
 The easiest way to manage a link between your sprites or game objects and Box2D is with Box2D’s User Data. You can set the user data to your game object and then update the object's position based on the Box2D body.
 
@@ -292,7 +292,7 @@ while (bi.hasNext()){
 
 Then render your sprites using a libgdx `SpriteBatch` as usual.
 
-## <a id="sensors"></a>Sensors ##
+## Sensors ##
 Sensors are Bodies that do not produce automatic response when collide. This is interesting when is needed to be in complete control of what happens when two shapes overlap.
 To imagine that, we may think of a drone that has some kind of circular distance of sight. This body should follow the drone but shouldn't make physical reactions to it, and the other bodies. It should detect when some target is inside it's shape.
 Every body can be a Sensor, it just must have the 'isSensor' flag set to true. An example of this would be like this:
@@ -304,7 +304,7 @@ fixtureDef.isSensor = true;
 
 In order to listen to this sensor contact, we need to implement the ContactListener interface methods.
 
-## <a id="contact_listeners"></a>Contact Listeners ##
+## Contact Listeners ##
 The Contact Listeners listen to a fixture who is colliding. This methods mainly contain a Contact object. The contact object contain information about the two bodies involved.
 The beginContact method is called when the object overlap the other. When the object moves out of this collision the endContact method is called.
 
@@ -326,18 +326,18 @@ public class ListenerClass implements ContactListener {
 We might get information about the bodies from the contact fixtures.
 Depending of the application desing, the Entity class should be referenced in the Body or Fixture user data, so we can use it from the contact and make some changes (e.g. change the player health).
 
-## <a id="code_snippets"></a>Code Snippets ##
+## Code Snippets ##
 
 Coming soon
 
-## <a id="resources"></a>Resources ##
+## Resources ##
 
 There are a lot of really good Box2D resources out there and most of the code can be easily converted to libgdx.
 
   * http://box2d.org Documentation and forums are a great place to find help.
   * http://www.iforce2d.net/b2dtut/ A really good tutorial series on Box2D. Covers a lot of different problems which you will more than likely run across in your game development
 
-## <a id="Tools"></a>Tools ##
+## Tools ##
 
 The following is a list of tools for use with box2d and libgdx:
 
