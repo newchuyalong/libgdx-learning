@@ -81,7 +81,7 @@ In the upper left of the particle editor, “Count” shows how many particles e
 
 Effect settings saved with the particle editor are written to a text file, which can be loaded into a ParticleEffect instance in your game. The ParticleEffect can load images from a directory, or a SpriteSheet. Of course, a SpriteSheet is recommended and can easily be made with the SpriteSheetPacker.
 
-Most effects can be simplified to use just a few images. My most complex effects that use 4 or more emitters typically only need 15 or so total particles alive at once. My crappy Droid can render 250 32×32 blended particles at 46 fos, 500 particles at 36 fps, and 1000 particles at 26 fps (see ParticleEmitterTest in gdx-tests). However, the performance varies greatly with the particle image size.
+Most effects can be simplified to use just a few images. My most complex effects that use 4 or more emitters typically only need 15 or so total particles alive at once. My crappy Droid can render 250 32×32 blended particles at 46 fps, 500 particles at 36 fps, and 1000 particles at 26 fps (see ParticleEmitterTest in gdx-tests). However, the performance varies greatly with the particle image size.
 
 ## loading Particle Effects in your game ##
 
