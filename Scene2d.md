@@ -177,9 +177,11 @@ For example, imagine a group (a button) which has a child (a label). When the la
 
 ### InputListener ###
 
-EventListeners are added to actors to be notified about events. EventListener is an interface with a `handle(Event)` method. Implementations use instanceof to determine if they should handle the event. Typically, for each type of event a specific listener class is provided for convenience. Eg, InputEvent is fired when an actor receives an input event and InputListener is provided to simplify listening for InputEvent. Just override the InputListener methods for the input events you are interested in:
+EventListeners are added to actors to be notified about events. EventListener is an interface with a `handle(Event)` method. Classes that implement the EventListener interface use `instanceof` to determine whether they should handle the event. For most types of events, specific listener classes are provided for convenience. For example, [InputListener](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/scenes/scene2d/InputListener.html) is provided for receiving and handling InputEvents. An actor just needs to add an InputListener to start receiving input events. InputListener has several methods that may be overridden, and two are shown below:
 
 ```java
+actor.setBounds(0, 0, texture.getWidth(), texture.getHeight());
+
 actor.addListener(new InputListener() {
 	public boolean touchDown (InputEvent event, float x, float y, int pointer, int button) {
 		System.out.println("down");
@@ -192,7 +194,7 @@ actor.addListener(new InputListener() {
 });
 ```
 
-Note InputListener has many other methods that can be overridden which are not shown above.
+Note that the actor must specify its bounds in order to receive input events within those bounds.
 
 To handle touch and mouse events, override `touchDown`, `touchDragged`, and `touchUp`. The touchDragged and touchUp events will only be received if touchDown returns true. Also, the touchDragged and touchUp events will be received even if they do not occur over the actor. This simplifies the most common touch event use cases.
 
