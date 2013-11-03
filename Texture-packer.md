@@ -32,8 +32,13 @@ public class MyPacker {
 
 It can also be run from the [nightly build](http://libgdx.badlogicgames.com/nightlies/):
 
-```java
+```
+//*NIX (OS X/Linux)
 java -cp gdx.jar:extensions/gdx-tools/gdx-tools.jar com.badlogic.gdx.tools.imagepacker.TexturePacker2 inputDir [outputDir] [packFileName]
+
+//WINDOWS
+java -cp gdx.jar;extensions/gdx-tools/gdx-tools.jar com.badlogic.gdx.tools.imagepacker.TexturePacker2 inputDir [outputDir] [packFileName]
+
 ```
 
 Note that TexturePacker2 runs significantly faster with Java 1.7+, especially when packing hundreds of input images.
@@ -139,7 +144,12 @@ If an image file name ends with underscore and then a number (eg animation_23.pn
 The TexturePacker2 class is in `gdx-tools.jar`, which is in the extensions directory of the nightlies/releases zip files. You only need TexturePacker2 as a tool to process your image files for your application, you don't need it as a dependency to run your application. To run the packer you need both `gdx.jar` and `gdx-tools.jar`.
 
 ```
-java -classpath gdx.jar:gdx-tools.jar com.badlogic.gdx.tools.imagepacker.TexturePacker2 inputDir outputDir packFileName
+//*NIX (OS X/Linux)
+java -cp gdx.jar:gdx-tools.jar com.badlogic.gdx.tools.imagepacker.TexturePacker2 inputDir outputDir packFileName
+
+//WINDOWS
+java -cp gdx.jar;gdx-tools.jar com.badlogic.gdx.tools.imagepacker.TexturePacker2 inputDir outputDir packFileName
+
 ```
 
 Be sure to specify the `TexturePacker2` class, not the deprecated `TexturePacker` class. `inputDir` is the root directory containing the images. `outputDir` is the output directory where the packed images will be placed. `packFileName` is the name prefix used for the output files.
