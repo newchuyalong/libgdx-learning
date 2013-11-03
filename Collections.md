@@ -4,7 +4,7 @@
 
 A resizable, ordered or unordered array of objects. It often replaces ArrayList. It provides direct access to the backing array, which can be of a specific type rather than just Object[]. It can also be unordered, acting like a [bag/multiset](http://en.wikipedia.org/wiki/Set_%28computer_science%29#Multiset). In this case, a memory copy is avoided when removing elements (the last element is moved to the removed element's position).
 
-The iterator returned by `iterator()` is always the same instance, allowing the Array to be used with the enhanced for each syntax without creating garbage. Note however that this differs from most iterable collections! It cannot be used in nested loops, else it will cause hard to find bugs.
+The iterator returned by `iterator()` is always the same instance, allowing the Array to be used with the enhanced for-each (`for( : )`) syntax without creating garbage. Note however that this differs from most iterable collections! It cannot be used in nested loops, else it will cause hard to find bugs.
 
 ## Primitive lists ##
 
