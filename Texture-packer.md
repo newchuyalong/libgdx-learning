@@ -33,7 +33,7 @@ public class MyPacker {
 It can also be run from the [nightly build](http://libgdx.badlogicgames.com/nightlies/):
 
 ```java
-java -cp gdx.jar;extensions/gdx-tools/gdx-tools.jar com.badlogic.gdx.tools.imagepacker.TexturePacker2 inputDir [outputDir] [packFileName]
+java -cp gdx.jar:extensions/gdx-tools/gdx-tools.jar com.badlogic.gdx.tools.imagepacker.TexturePacker2 inputDir [outputDir] [packFileName]
 ```
 
 Note that TexturePacker2 runs significantly faster with Java 1.7+, especially when packing hundreds of input images.
