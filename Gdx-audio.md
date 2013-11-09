@@ -3,7 +3,7 @@ Gdx-audio is an extension offering a lower-level API for audio. Features are:
 * KissFFT and Java FFT by Damien Di Fede for comparison
 * SoundTouch for pitch shifting, time stretching and playback rate modification
 
-It is being distributed with every release in the extensions folder. To use the extension add the gdx-audio.jar and gdx-audio-natives.jar to your desktop project. For your android project add the gdx-audio.jar and copy the libgdx-audio.so files to your libs/armeabi and libs/armeabi-v7a folders.
+It is being distributed with every release in the extensions folder. To use the extension add the gdx-audio.jar and gdx-audio-natives.jar to your desktop project. For your android project add the gdx-audio.jar and copy the libgdx-audio.so files to your libs/armeabi and libs/armeabi-v7a folders. GWT (html) and iOS backends are currently not supported.
 
 For usage examples see:
 * Mpg123Test, shows how to decode an mp3 with the Mpg123Decoder class
