@@ -304,7 +304,7 @@ We want the bucket to move without acceleration, at two hundred pixels/units per
    if(Gdx.input.isKeyPressed(Keys.RIGHT)) bucket.x += 200 * Gdx.graphics.getDeltaTime();
 ```
 
-The method `Gdx.input.isKeyPressed()` tells us whether a specific key is pressed. The `Keys` enumeration contains all the keycodes that libgdx supports. The method {`Gdx.graphics.getDeltaTime()` returns the time passed between the last and the current frame in seconds. All we need to do is modify the bucket's x-coordinate by adding/subtracting 100 units times the delta time in seconds.
+The method `Gdx.input.isKeyPressed()` tells us whether a specific key is pressed. The `Keys` enumeration contains all the keycodes that libgdx supports. The method {`Gdx.graphics.getDeltaTime()` returns the time passed between the last and the current frame in seconds. All we need to do is modify the bucket's x-coordinate by adding/subtracting 200 units times the delta time in seconds.
 
 We also need to make sure our bucket stays within the screen limits:
 
