@@ -214,7 +214,7 @@ We are almost done with creating all the things we need to run this simple game.
 ## Adding the Bucket ##
 The last bits that are missing are representations of our bucket and the raindrop. Let's think about what we need to represent those in code:
 
-  * A bucket/raindrop has an x/y position in the our 800x480 units world.
+  * A bucket/raindrop has an x/y position in our 800x480 units world.
   * A bucket/raindrop has a width and height, expressed in the units of our world.
   * A bucket/raindrop has a graphical representation, we already have those in form of the `Texture` instances we loaded.
 
