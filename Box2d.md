@@ -39,22 +39,11 @@ To create the world we use the following code:
 World world = new World(new Vector2(0, -10), true); 
 ```
 
-The first argument we supply is a 2D vector containing the gravity: `0` to indicate no gravity in the horizontal direction, and -10 is a downwards force like in real life (assuming your y axis points upwards). These values can be anything you like, but remember to stick to a constant scale. In Box2D 1 unit = 1 metre, and you should scale your graphics accordingly for the most realistic results. 
-
-Most people use static variables for converting between Box2D sizes and your game object sizes, for example:
-
-```java
-static final float WORLD_TO_BOX = 0.01f;
-static final float BOX_TO_WORLD = 100f;
-```
-
-If you wanted to get the Box2D size for one of your game sprites, you would convert it by doing:
-
-```java
-sprite.getHeight() * WORLD_TO_BOX;
-```
+The first argument we supply is a 2D vector containing the gravity: `0` to indicate no gravity in the horizontal direction, and -10 is a downwards force like in real life (assuming your y axis points upwards). These values can be anything you like, but remember to stick to a constant scale. In Box2D 1 unit = 1 metre.
 
 The second value in the world creation is a boolean value which tells the world if we want objects to sleep or not. Generally we want objects to sleep as this conserves CPU usage, but there are situations where you might not want your objects to sleep.
+
+It is adviced to use the same scale you use for Box2D to draw graphics. This means drawing a Sprite with a width/height in meters. To scale up the graphics to make them visible, you should use a camera with a viewportWidth / viewportHeight also in meters. E.g: drawing a Sprite with a width of 2.0f (2 meters) and using a camera viewportWidth of 20.0f, the Sprite will fill 1/10th of the width on the window.
 
 
 
