@@ -225,8 +225,8 @@ static int COIN_FLAG = 4; // third bit
 btCollisionObject player;
 btCollisionObject coin;
 ...
-player.setCollisionFlag(PLAYER_FLAG);
-coin.setCollisionFilter(PLAYER_FLAG);
+player.setContactCallbackFlag(PLAYER_FLAG);
+coin.setContactCallbackFilter(PLAYER_FLAG);
 // The listener will only be called if a coin collides with player
 ```
 
