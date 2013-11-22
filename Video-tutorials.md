@@ -36,3 +36,9 @@ Fun with Gdx Remote (search on the Android Market for a compiled binary).
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=AdpyXb77mB0
 " target="_blank"><img src="http://img.youtube.com/vi/AdpyXb77mB0/0.jpg" 
 alt="Libgdx Remote" width="480" height="360" border="10" /></a>
+
+## Android Game Development Series ##
+Series on creating android games using libgdx.
+
+<a href="http://www.youtube.com/watch?v=8LxIjNN7DKE&feature=share&list=PLvnXjBkwUhDHHUDTkV42GscJHf3BplZtN&index=7"><img src="http://i1.ytimg.com/vi/kVXcInMmkQg/default.jpg" 
+alt="Libgdx Remote" width="480" height="360" border="10" /></a>
