@@ -153,3 +153,4 @@
             * [[AdMob in Libgdx]]
             * [[Integrating Libgdx and the Device camera]]
             * String Builder ??
+    * [[Known Issues]]
