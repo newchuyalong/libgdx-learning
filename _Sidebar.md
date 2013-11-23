@@ -118,7 +118,7 @@
       * [[Hiero]]
       * [[Particle Editor]]
     * Extensions
-      * gdx-audio ??
+      * [[gdx-audio]]
       * [[gdx-freetype]]
     * [[Deploying your Application]]
     * Building Libgdx ??
@@ -153,3 +153,4 @@
             * [[AdMob in Libgdx]]
             * [[Integrating Libgdx and the Device camera]]
             * String Builder ??
+    * [[Known Issues]]
