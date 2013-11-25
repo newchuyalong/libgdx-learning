@@ -44,7 +44,7 @@ Assuming you named your project "my-gdx-game" in the Setup UI, you will end up w
   * **Core project ("my-gdx-game")**: contains all the code of your application, minus the so called starter classes. All other projects link to this project. This project is usually referred to as the "core project".
   * **Android project ("my-gdx-game-android")**: contains the starter class and other necessary files to run your application on Android. The assets/ folder stores the assets of your application for all platforms.
   * **Desktop project ("my-gdx-game-desktop")**: contains the starter class to run your application on the desktop. Links to the Android project's assets/ folder as well as the core project.
-  * **HTML5 project ("my-gdx-game-html")**: contains the starter class and other necessary files to run your application as a native HTML5 application. Links to the Anroid project's assets/ folder (see gwt.xml file) as well as to the core project.
+  * **HTML5 project ("my-gdx-game-html")**: contains the starter class and other necessary files to run your application as a native HTML5 application. Links to the Android project's assets/ folder (see gwt.xml file) as well as to the core project.
   * **iOS RoboVM project ("my-gdx-game-robovm")**: contains the starter classes and other necessary files to run your application on iOS through [RoboVM](http://www.robovm.org/). Links to the Android project's assets/ folder (see robovm.xml) as well as the core project.
 
 All your application's assets should be stored in the Android project's assets folder. The desktop, iOS and HTML5 projects link to this folder, so there is no need to store duplicates of these assets.
