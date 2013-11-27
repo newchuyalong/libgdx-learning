@@ -94,7 +94,7 @@ In order to ensure correct garbage collection you should keep a reference to eve
 The above is only true for the objects you are responsible of, which are all Bullet classes you create with the `new` keyword as well as classes you create using helper methods. You don’t have to dispose objects that are returned by regular methods or provided to you in callback methods.
 
 ## <a id="Referencing_objects"></a>Referencing objects ##
-As stated above, you should keep a reference to every Bullet class and call the dispose method when it’s no longer needed. When your application becomes more complex and objects are shared amongst multiple other objects, it can become difficult to keep track of references. Therefor the bullet wrapper support reference counting.
+As stated above, you should keep a reference to every Bullet class and call the dispose method when it’s no longer needed. When your application becomes more complex and objects are shared amongst multiple other objects, it can become difficult to keep track of references. Therefore the bullet wrapper support reference counting.
 
 Reference counting is disabled by default. To enable it, call `Bullet.init();` with the first argument set to true:
 ```java
