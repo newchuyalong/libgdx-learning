@@ -23,6 +23,10 @@ Hiero rasterizes TTF fonts using Java's font rendering. Kerning is supported. Th
 
 ## Alternatives ##
 
+### Glyph Designer ###
+
+[Glyph Designer](http://www.71squared.com/glyphdesigner) is a commercial bitmap font tool designed specifically for Mac. It allows you to create beautifully styled text with custom backgrounds, gradient fills, gradient strokes & shadows. The command line interface allows you to export multi-lingual character sets and target multiple device profiles. At time of writing Glyph Designer is priced at $39.99
+
 ### BMFont ###
 
 The [BMFont](http://www.angelcode.com/products/bmfont/) tool uses FreeType and can produce better results at small sizes. It can also do supersampling, providing smoother glyphs. BMFont does not support effects like drop-shadows or outlines, but glyphs can be output with padding and effects applied with Paint.NET, Photoshop, etc. Typical export settings are [here](http://wiki.libgdx.googlecode.com/git/img/bmfont-export.png).
