@@ -36,7 +36,7 @@ Stage also has a size. This describes how many units wide and tall the stage is 
 
 If running where the application window can be resized (eg, on the desktop), the stage's viewport should be set when the application window is resized.
 
-Here is an example of the most basic scene2d application with no actors, using pixel stage coordinates. Each unit in the stage corresponds to 1 pixel. Here the boolean passed to `setViewport` has no effect because the aspect ratio of the stage and viewport are the same. Note that the 3 parameter `setViewport` is called which does not specify a viewport position and size, so the entire screen is used as the viewport.
+Here is an example of the most basic scene2d application with no actors, using pixel stage coordinates. Each unit in the stage corresponds to 1 pixel, which means nothing is stretched. Here the boolean passed to `setViewport` has no effect because the aspect ratio of the stage and viewport are the same. Note that the 3 parameter `setViewport` is called which does not specify a viewport position and size, so the entire screen is used as the viewport.
 
 ```java
 private Stage stage;
