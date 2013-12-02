@@ -1,3 +1,6 @@
+The newest, and easiest way to setup libgdx for use with IntelliJ IDEA is to use the gradle build system.
+[A detailed tutorial can be read here](http://www.gamefromscratch.com/post/2013/12/01/Using-LibGDX-with-IntelliJ-with-Gradle.aspx)
+
 First there will be a short version, outlining only the major steps. This is for people familiar with IntelliJ IDEA or those that have set up libgdx project before and only need a small recap. Below there is a step-by-step guide with screenshots.
 
 Following this guide will enable you to use IntelliJ IDEA while others on your team use the standard Eclipse setup.
