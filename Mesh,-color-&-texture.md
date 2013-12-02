@@ -10,7 +10,7 @@ The MyFirstTriangle tutorial showed us how to create a new project and use the M
 
 Follow the instructions in the MyFirstTriangle tutorial to create a new libgdx desktop project. We'll call the desktop project `mesh-color-texture` and we'll defer creating the Android project until later. Remember to include the libgdx library JAR files. In the project, create a package and name it `com.test.meshcolortexture`. In that package, create a class named `MeshColorTexture` which implements the `ApplicationListener` interfrace. Inside, we'll just copy most of what we created from the MyFirstTriangle tutorial:
 
-{{{
+```java
 package com.test.meshcolortexture;
 
 import com.badlogic.gdx.ApplicationListener;
@@ -54,11 +54,11 @@ public class MeshColorTexture implements ApplicationListener {
     @Override
     public void resume() { }
 }
-}}}
+```
 
 Then, create a class named `MeshColorTextureDesktop` that creates a `JoglApplication` using an instance of the `MeshColorTexture` class. Again, it's very similiar to the MyFirstTriangle tutorial:
 
-{{{
+```java
 package com.test.meshcolortexture;
 
 import com.badlogic.gdx.backends.jogl.JoglApplication;
@@ -68,7 +68,7 @@ public class MeshColorTextureDesktop {
         new JoglApplication(new MeshColorTexture(), "Mesh with Color and Texture", 480, 320, false);
     }
 }
-}}}
+```
 
 = Mesh =
 
