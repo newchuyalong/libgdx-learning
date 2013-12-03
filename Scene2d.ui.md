@@ -55,7 +55,7 @@ Before each widget is drawn, it first calls `validate`. If the widget's layout i
 
 The Table class is a WidgetGroup that sizes and positions its children using a logical table, similar to HTML tables. Tables are intended to be used extensively in scene2d.ui to layout widgets, as they are easy to use and much more powerful than manually sizing and positioning widgets. The underlying code for Table is actually a separate project called TableLayout.
 
-It is highly recommended to read the [TableLayout documentation](https://code.google.com/p/table-layout/) before building a UI using scene2d.ui.
+It is highly recommended to read the [TableLayout documentation](https://github.com/EsotericSoftware/tablelayout) before building a UI using scene2d.ui.
 
 ## <a id="Stage_setup"></a>Stage setup ##
 
