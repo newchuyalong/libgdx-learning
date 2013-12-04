@@ -213,7 +213,9 @@ As you can see it has three methods which provide the `btManifoldPoint` and thre
 Make sure to override the method that only provides the arguments you are actually going to use. For example, if you are not going to use the `btManifoldPoint` then it wouldn’t make sense to create an object for that argument each time the callback is called. Likewise using `btCollisionObject` is more performant than using `btCollisionObjectWrapper`, because the `btCollisionObject` is reused. The `userValue` is even more performant, because the object isn’t mapped at all  (see [#btCollisionObject btCollisionObject] on how to use the useValue).
 
 The `onContactAdded` callback will only be triggered if at least one of the two colliding bodies has the `CF_CUSTOM_MATERIAL_CALLBACK` set:
-```body.setCollisionFlags(e.body.getCollisionFlags() | btCollisionObject.CollisionFlags.CF_CUSTOM_MATERIAL_CALLBACK);```
+```java
+body.setCollisionFlags(e.body.getCollisionFlags() | btCollisionObject.CollisionFlags.CF_CUSTOM_MATERIAL_CALLBACK);
+```
 
 To identify a contact along the added, processed and destroyed callbacks, you can use the `setUserValue(int);` and `getUserValue();` of the `btManifoldPoint` instance that the callback provides. This is also the value supplied to the `onContactDestroyed(int)` method of the `ContactListener` class. Note that the `onContactDestroyed` callback is only triggered if the user value is non-zero.
 
