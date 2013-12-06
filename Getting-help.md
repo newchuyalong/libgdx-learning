@@ -22,9 +22,9 @@ Please go through this short checklist to be sure you haven't missed an easy to 
   * Are you using the latest [nightly build](http://libgdx.badlogicgames.com/download.html)? Please try that first, as issues are being fixed every single day.
   * Have you read the documentation on the [[Table of Contents | Home]])? It can also be very helpful to look at the [Javadocs](http://libgdx.badlogicgames.com/nightlies/docs/api/) and [source code](https://github.com/libgdx/libgdx) (don't be shy!). Search the [tests](https://github.com/libgdx/libgdx/tree/master/tests/gdx-tests/src/com/badlogic/gdx/tests) for a specific class to find example code.
   * Have you [searched the forum](http://www.badlogicgames.com/forum/search.php) for your problem?
-  * Have you [searched the issue tracker](https://code.google.com/p/libgdx/issues/advsearch) for your problem? Be sure to search "All issues", not just "Open issues".
+  * Have you [searched the issue tracker](https://github.com/libgdx/libgdx/issues) for your problem? Be sure to search "All issues", not just "Open issues".
 
-If you still have a problem, often the fastest way to get help is in the libgdx chat room, which is [#libgdx on irc.freenode.net](irc://irc.freenode.net/libgdx). Otherwise, if you wish to post on the [forum](http://www.badlogicgames.com/forum/) or post a new issue on the [tracker](https://code.google.com/p/libgdx/issues/list), keep reading.
+If you still have a problem, often the fastest way to get help is in the libgdx chat room, which is [#libgdx on irc.freenode.net](irc://irc.freenode.net/libgdx). Otherwise, if you wish to post on the [forum](http://www.badlogicgames.com/forum/) or post a new issue on the [tracker](https://github.com/libgdx/libgdx/issues), keep reading.
 
 ## <a id="Topic_Title"></a>Topic Title ##
 
