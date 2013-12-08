@@ -93,6 +93,7 @@
               * [[Skin]]
       * 3D Graphics ??
             * [[Quick Start]]
+            * [[Models]]
             * [[3D animations and skinning]]
             * [[Importing Blender models in LibGDX]]
             * Perspective Camera ??
