@@ -72,6 +72,6 @@ This list reduces the JRE size to about 36MB. Note that for faster start up the 
 
 On Windows, [launch4j](http://launch4j.sourceforge.net/) can be used to create an EXE that starts the embedded JRE.
 
-Mac uses a specific folder structure that will appear as an application in OSX. A shell script is invoked when the app is run. We will post an example soon. The app files should be packaged in a DMG so that execute flags are preserved, otherwise some ZIP extractors don't give the resulting files permission to execute.
+Mac uses a specific folder structure that will appear as an application in OSX. A shell script is invoked when the app is run. The app files should be packaged in a DMG so that execute flags are preserved, otherwise some ZIP extractors don't give the resulting files permission to execute.
 
 Linux uses a shell script.
