@@ -1,5 +1,5 @@
 *Note: Java 1.7 currently causes problems with Android. Please make sure your project uses Java 1.6*
-*Note: it's recommended to use the setup-ui if you want to deploy to iOS as well*
+*Note: use of setup-ui is highly recommended if you want to deploy to iOS*
 
 This page describes how to configure Eclipse to develop and run libgdx applications on both the desktop and Android.
 
@@ -35,7 +35,7 @@ _Note: The folder really must be called "libs", a naming convention forced on us
 
 ## Asset folder setup ##
 
-The Android project has a sub-folder named `assets`, which was created automatically. Files available to the Android application must be placed here. This is problematic, because these same files must be available to the desktop application. Rather than maintain two copies of all the files, the desktop project can be configured to find the assets in the Android project:
+The Android project has a sub-folder named `assets`, which is created automatically. Files available to the Android application must be placed here. This is problematic, because these same files must be available to the desktop application. Rather than maintain two copies of all the files, the desktop project should be configured to find the assets in the Android project:
 
   * Click the Source tab, click Link Source, Browse, select the "assets" folder from your Android project and click OK.
   * Specify "assets" for the folder name and click Finish then OK.
