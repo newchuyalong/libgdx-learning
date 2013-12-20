@@ -4,7 +4,7 @@ The [[JSON | Reading & Writing JSON]] class can automatically convert Java objec
 
 # Binary serialization #
 
-[Kryo](http://code.google.com/p/kryo/) can be used to automatically and [efficiently](https://github.com/eishay/jvm-serializers/wiki) serialize game state.
+[Kryo](https://github.com/EsotericSoftware/kryo) can be used to automatically and [efficiently](https://github.com/eishay/jvm-serializers/wiki) serialize game state.
 
 ## libgdx Kryo Serializers ##
 
