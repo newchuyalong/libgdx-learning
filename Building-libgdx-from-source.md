@@ -22,7 +22,6 @@ There are a couple of challenges involved in building libgdx's native source cod
   * C/C++ code can only be accessed from within Java via [JNI](http://en.wikipedia.org/wiki/Java_Native_Interface), for which we have a special solution called [gdx-jnigen](http://www.badlogicgames.com/wordpress/?p=2254).
   * We need to build for multiple platforms, Windows (32/64bit), Linux (32/64-bit), Mac OS X (32/64bit), Android(arm6/arm7) and iOS(i386/arm7)
   * The Mac OS X and iOS builds can only be executed on a Mac, insert mandatory Apple hate here.
-  * In addition to compiling the C/C++ natives, we also need to convert various jar files to .Net assemblies via IKVM for iOS.
 
 Let's discuss each individual part, before diving into setting up the necessary cross-compilation tool-chains and looking at the compilation flow.
 
