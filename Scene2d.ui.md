@@ -211,7 +211,7 @@ CheckBox extends TextButton and adds an image widget to the left of the label. I
 
 ### <a id="ButtonGroup"></a>ButtonGroup ###
 
-ButtonGroup is not an actor and has no visuals. Buttons are added to it and it enforce a minimum and maximum number of checked buttons. This allows for buttons (button, text button, checkbox, etc) to be used as "radio" buttons.
+ButtonGroup is not an actor and has no visuals. Buttons are added to it and it enforces a minimum and maximum number of checked buttons. This allows for buttons (button, text button, checkbox, etc) to be used as "radio" buttons.
 
 ### <a id="TextField"></a>TextField ###
 
