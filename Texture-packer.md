@@ -68,7 +68,7 @@ Below is a JSON example with every available setting and the default value for e
 	paddingY: 2,
 	bleed: true,
 	edgePadding: true,
-	duplicatePadding: true,
+	duplicatePadding: false,
 	rotation: false,
 	minWidth: 16,
 	minHeight: 16,
