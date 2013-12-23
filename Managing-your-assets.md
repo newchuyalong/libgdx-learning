@@ -1,6 +1,6 @@
 ### Why would I want to use the AssetManager ###
 
-If your game is very simple, and loading resources doesn't take a lot of time you don't want to use the AssetManager. In all other cases I'd recommend using it due to the following nice behaviours:
+If your game is very simple, and loading resources doesn't take a lot of time you don't want to use the [AssetManager](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/assets/AssetManager.html) [(code)](https://github.com/libgdx/libgdx/blob/master/gdx/src/com/badlogic/gdx/assets/AssetManager.java). In all other cases I'd recommend using it due to the following nice behaviours:
 
 
   * Loading of most resources is done asynchronously, so you can display a reactive loading screen while things load
