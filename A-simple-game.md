@@ -320,7 +320,7 @@ For the raindrops we keep a list of `Rectangle` instances, each keeping track of
    Array<Rectangle> raindrops;
 ```
 
-The `Array` class is a libgdx utility class to be used instead of standard Java collections like `ArrayList`. The problem with the later is that they produce garbage in various ways. The `Array` class tries to minimize garbage as much as possible. Libgdx offers other garbage collector aware collections such as hash-maps or sets as well.
+The `Array` class is a libgdx utility class to be used instead of standard Java collections like `ArrayList`. The problem with the latter is that they produce garbage in various ways. The `Array` class tries to minimize garbage as much as possible. Libgdx offers other garbage collector aware collections such as hash-maps or sets as well.
 
 We also need to keep track of the last time we spawned a raindrop, so we add another field:
 
