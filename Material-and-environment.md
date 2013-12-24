@@ -27,11 +27,25 @@ note that the ColorAttribute class contains a convenience method to do the same:
 Attribute attribute = ColorAttribute.createDiffuse(Color.RED);
 ```
 
+### Using attributes
+The most common actions for attributes are `set`, `has`, `remove`, and `get`.
+
+You can use the `set` method to add or change an attribute. If there is already an attribute of the same type if will be first removed, after which the new attribute is added. For example: `material.set(FloatAttribute.createAlphaTest(0.25f));`
+
+Using the `has` method it is possible to check if a specific attribute type is set. For example: `material.has(FloatAttribute.AlphaTest);`. It is also possible to check for multiple attributes, for example: `material.has(FloatAttribute.AlphaTest | ColorAttribute.Diffuse);`. In which case the `has` method will only return `true` if all attributes are set. Note that because the `has` method uses a bitwise check it is quite fast and can be used prior to e.g. a call to `remove` to ensure the attribute is actually set.
+
+With the `remove` method you can remove an attribute of a specific type, for example:
+`material.remove(FloatAttribute.AlphaTest);`. You can also remove multiple attributes at once, for example: `material.remove(FloatAttribute.AlphaTest | ColorAttribute.Diffuse);`.
+
+The `get` method can be used to fetch an attribute of a specific type. For example: `material.get(FloatAttribute.AlphaTest);`. If the attribute isn't set the `get` method will return `null`. Because the type implies the class, you can safely cast the result without checking: `(FloatAttribute)material.get(FloatAttribute.AlphaTest);`. For convenience there's also a template method: `material.get(FloatAttribute.class, FloatAttribute.AlphaTest);`.
+
+Besides that you can also `clear` (to remove all attributes), iterate (it implements `Iterable<Attribute>`) and compare (it implements `Comparator<Attribute>`, however the `same` method provides additional options) attributes. The `getMask()` method provides access to the mask containing all attributes, for example `material.getMask() & FloatAttribute.AlphaTest == FloatAttribute.AlphaTest` is the same as `material.has(FloatAttribute.AlphaTest)`.
+
 ### Custom attribute types
 It is possible to use a standard attribute class for a new custom type. For example when you want to use the ColorAttribute class to specify a custom type of color. There are three things you must consider in that case:
 1. Name your attribute type. Each attribute type must have an _unique_ alias (name). You might want to (but don't have to) use the uniform name for that. The alias will also be used for debugging, e.g. when calling `attribute.toString()`.
 2. Register your attribute type. This is to make sure there is only one attribute type for each bit. This can be done only from within the Attribute class or a subclass.
-3. Make ColorAttribute accept the custom type. The ColorAttribute class and most other attribute classes checks the type on construction, this allows you to cast attributes without having to check anything other then the type. For example `(ColorAttribute)material.get(ColorAttribute.Diffuse)` will always work because ColorAttribute is the only attribute accepting the Diffuse type.
+3. Make ColorAttribute accept the custom type. The ColorAttribute class and most other attribute classes checks the type on construction, this allows you to cast attributes without having to check anything other then the type. For example `(ColorAttribute)material.get(ColorAttribute.Diffuse)` will always work because ColorAttribute is the only attribute accepting the `ColorAttribute.Diffuse` type.
 
 Because of step 2 and 3, you must extend the Attribute class to add a custom attribute type:
 ```
@@ -77,3 +91,51 @@ public class DoubleAttribute extends Attribute {
 }
 ```
 Of course `MyDouble1Alias`, `MyDouble1`, `"myDouble1"`, `MyDouble2Alias`, `MyDouble2` and `"myDouble2"` should be replaced by a more meaningful description.
+
+## Available attributes
+Like stated above its possible to create custom attributes. However, there are a few attributes already included, which are listed below.
+
+### BlendingAttribute
+By default the 3D api assumes everything is opaque. The `BlendingAttribute` is most commonly used for materials (in case of environment it will change the default behavior) and can be used to specify that the material is or is not blended. The `BlendingAttribute` doesn't require you to specify a type on construction, its type is always `BlendingAttribute.Type`, unless it's extended. It contains four properties which can be specified:
+* `blended` indicates whether or not the material should be treated as blended. This is primarily used for sorting, for example opaque objects are drawn prior to transparent objects.
+* `sourceFunction` OpenGL enum which specifies how the (incoming) red, green, blue, and alpha source blending factors are computed, by default it is set to GL_SRC_ALPHA.
+* `destFunction` OpenGL enum which specifies how the (existing) red, green, blue, and alpha destination blending factors are computed, by default it is set to GL_ONE_MINUS_SRC_ALPHA. For additive blending you might want to set it to GL_ONE.
+* `opacity` The amount of opacity (the source alpha value), ranging from 0 (fully transparent) to 1 (fully opaque).
+
+### ColorAttribute
+The `ColorAttribute` allows you to pass a color to the shader. For that it only contains one property: `.color`. You can set the color during construction (it will be set by value) or using the `.color.set(...)` method. The `ColorAttribute` requires an attribute type to be specified, by default the following types are available:
+* `ColorAttribute.Diffuse`
+* `ColorAttribute.Specular`
+* `ColorAttribute.Ambient`
+* `ColorAttribute.Emissive`
+* `ColorAttribute.Reflection`
+* `ColorAttribute.AmbientLight`
+* `ColorAttribute.Fog`
+
+Where the latter two are most commonly used for Environment, while the others or commonly used for Material.
+
+### CubemapAttribute
+To pass a `Cubemap` to the shader the `CubemapAttribute` can be used. It's value is the `textureDescription` member which can be used to specify the cubemap along with other texture related values. The `CubemapAttribute` requires an attribute type to be specified, by default the `CubemapAttribute.EnvironmentMap` is the only valid type.
+
+### DepthTestAttribute
+Just like the `BlendingAttribute`, does the `DepthTestAttribute` not require an attribute type. It is always `DepthTestAttribute.Type`. The `DepthTestAttribute` can be used to specify depth testing and writing, using the following properties:
+* `depthFunc` The depth test function, or 0 (or GL_NONE) to disable depth test, by default it is GL10.GL_LEQUAL.
+* `depthRangeNear` Mapping of near clipping plane to window coordinates, by default 0.0
+* `depthRangeFar` Mapping of far clipping plane to window coordinates, by default 1.0
+* `depthMask` Whether or not to write to the depth buffer, enabled by default.
+
+### FloatAttribute
+To pass a single floating point value to the shader, the `FloatAttribute` can be used. The value can be specified on construction or using the `.value` member. The `FloatAttribute` requires an attribute type, which by default can be:
+* `Shininess` Used for specular lighting.
+* `AlphaTest` Used to discard pixels when the alpha value is equal or below the specified value.
+
+### IntAttribute
+Similar to the `FloatAttribute` class, the `IntAttribute` allows you to pass an integer value to the shader. Likewise the `.value` member can be used or the value can be set on construction. The `IntAttribute` requires an attribute type, which by default can be:
+* `CullFace` OpenGL enum to specify face culling, either GL_NONE (no culling), GL_FRONT (only render back faces) or GL_BACK (only render front faces). The default depends on the shader, the default shader uses GL_BACK by default.
+
+### TextureAttribute
+`TextureAttribute` can be used to pass a `Texture` to the shader. Just like the `CubemapAttribute` it has a `textureDescription` member which allows you to set the `Texture` amongst some texture related values like repeat and filter. The `TextureAttribute` requires an attribute type, which by default can be one of the following:
+* `Diffuse`
+* `Specular`
+* `Bump`
+* `Normal`
