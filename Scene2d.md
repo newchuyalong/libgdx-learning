@@ -114,7 +114,8 @@ public class MyActor extends Actor {
 		region = new TextureRegion(...);
 	}
 
-	public void draw (SpriteBatch batch, float parentAlpha) {
+	@Override
+	public void draw (Batch batch, float parentAlpha) {
 		Color color = getColor();
 		batch.setColor(color.r, color.g, color.b, color.a * parentAlpha);
 		batch.draw(region, getX(), getY(), getOriginX(), getOriginY(),
