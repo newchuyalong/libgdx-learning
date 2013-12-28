@@ -31,6 +31,8 @@ To load assets, the AssetManager needs to know how to load a specific type of as
   * TileMapRenderers via TileMapRendererLoader
   * Music instances via MusicLoader
   * Sound instances via SoundLoader
+  * Skins via SkinLoader
+  * Particle Effects via ParticleEffectLoader
 
 Loading a specific asset is simple:
 
