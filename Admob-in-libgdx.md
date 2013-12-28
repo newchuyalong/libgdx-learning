@@ -13,7 +13,7 @@ HelloWorldDesktop:
 ```java
 public class HelloWorldDesktop {
     public static void main (String[] argv) {
-        new JwglApplication(new HelloWorld(), "Hello World", 480, 320, false);
+        new JoglApplication(new HelloWorld(), "Hello World", 480, 320, false);
     }
 }
 ```
