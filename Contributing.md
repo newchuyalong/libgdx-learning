@@ -39,7 +39,7 @@ If you create a new class, please add at least class documentation that explains
 If your class is explicitly thread-safe, mention it in the Javadoc. The default assumption is that classes are not thread-safe, to reduce the amount of costly locks in the code base.
 
 ### Performance Considerations
-Libgdx is meant to run on both desktop and mobile platforms, including browsers (JavaScript!). While the desktop HotSpot VM can take quit a beating in terms of unnecessary allocations, Dalvik and consorts don't.
+Libgdx is meant to run on both desktop and mobile platforms, including browsers (JavaScript!). While the desktop HotSpot VM can take quite a beating in terms of unnecessary allocations, Dalvik and consorts don't.
 
 A couple of guidelines:
 
