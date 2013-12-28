@@ -13,7 +13,7 @@ HelloWorldDesktop:
 ```java
 public class HelloWorldDesktop {
     public static void main (String[] argv) {
-        new JoglApplication(new HelloWorld(), "Hello World", 480, 320, false);
+        new LwjglApplication(new HelloWorld(), "Hello World", 480, 320, false);
     }
 }
 ```
@@ -29,7 +29,7 @@ public class HelloWorldAndroid extends AndroidApplication {
 }
 ```
 
-They're pretty similar. They both create a `new HelloWorld()`, and pass that into something that sets up the application. On the desktop that's a JoglApplication, on Android that's the `initialize()` method. Then the HelloWorld class does all the work of the application.
+They're pretty similar. They both create a `new HelloWorld()`, and pass that into something that sets up the application. On the desktop that's a LwjglApplication, on Android that's the `initialize()` method. Then the HelloWorld class does all the work of the application.
 
 Let's take a closer look at the `initialize()` method. There are two forms, and one of them calls the other. If you follow that code through, here's the stuff that sets up an Android application:
 
@@ -304,7 +304,7 @@ public class HelloWorldDesktop implements IActivityRequestHandler {
             application = new HelloWorldDesktop();
         }
 		
-        new JoglApplication(new HelloWorld(application), "Hello World", 480, 320, false);
+        new LwjglApplication(new HelloWorld(application), "Hello World", 480, 320, false);
     }
 
     @Override
@@ -456,7 +456,7 @@ HelloWorldDesktop.java:
  ******************************************************************************/
 package com.badlogic.gdx.helloworld;
 
-import com.badlogic.gdx.backends.jogl.JoglApplication;
+import com.badlogic.gdx.backends.lwjgl.LwjglApplication;
 
 public class HelloWorldDesktop implements IActivityRequestHandler {
     private static HelloWorldDesktop application;
@@ -465,7 +465,7 @@ public class HelloWorldDesktop implements IActivityRequestHandler {
             application = new HelloWorldDesktop();
         }
 		
-        new JoglApplication(new HelloWorld(application), "Hello World", 480, 320, false);
+        new LwjglApplication(new HelloWorld(application), "Hello World", 480, 320, false);
     }
 
     @Override
