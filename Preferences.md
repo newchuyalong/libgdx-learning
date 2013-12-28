@@ -21,7 +21,7 @@ prefs.putBoolean("soundOn", true);
 prefs.putInteger("highscore", 10);
 ```
 
-Note that getter methods come in two flavors: with and without a default value. The defalt value will be returned if there is no value fot the specified key in the preferences.
+Note that getter methods come in two flavors: with and without a default value. The default value will be returned if there is no value fot the specified key in the preferences.
 
 ## Flushing ##
 Your changes to a preferences instance will only get persisted if you explicitly call the `flush()` method.
