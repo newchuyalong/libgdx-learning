@@ -11,6 +11,8 @@ Libgdx is mainly a java-based framework. However, because java produces Java Byt
 
 This works out of the box, as the desktop libgdx backend uses the JVM that you have installed on your computer, which is most likely either OpenJDK or Oracle JDK. Both of these JVMs support polyglot code, as they run on .class files, not java source code.
 
+* [libGDX and Ruby](https://github.com/kabbotta/LibGDX-and-Ruby)
+
 ## Android ##
 
 This works for many languages, but it is sometimes unavailable. For best results, search on your favorite search engine [JVM language of choice] on android. 
