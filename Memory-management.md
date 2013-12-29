@@ -13,9 +13,12 @@ The following classes need to be disposed of manually:
   * ETC1Data
   * FrameBuffer
   * Mesh
+  * Model
+  * ModelBatch
   * ParticleEffect
   * Pixmap
   * PixmapPacker
+  * Shader
   * ShaderProgram
   * Shape
   * Skin
@@ -27,6 +30,7 @@ The following classes need to be disposed of manually:
   * TileAtlas
   * TileMapRenderer
   * com.badlogic.gdx.physics.box2d.World
+  * all bullet classes
 
 Resources should be disposed of as soon as they are no longer needed, freeing up memory associated with them. Accessing a disposed resource will result in undefined errors, so make sure to clear out all references you have to a disposed resource.
 
