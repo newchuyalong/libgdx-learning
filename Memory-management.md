@@ -2,7 +2,7 @@ Games are resource heavy applications. Images and sound effects can take up a co
 
 We want fine grained control over the life-time of our resources. There are multiple classes in libgdx which represent such resources. They all implement a common [Disposable](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/utils/Disposable.html) interface which indicates that instances of this class need to be disposed of manually at the end of the life-time. **Failure to dispose resources will lead to severe memory leaks!**.
 
-The following classes need to be disposed of manually:
+The following classes need to be disposed of manually (might not be complete):
 
   * AssetManager
   * Bitmap
