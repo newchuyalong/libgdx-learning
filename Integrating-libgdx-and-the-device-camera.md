@@ -381,7 +381,7 @@ After finishing to save the picture, we stop the preview and remove the !CameraS
 ```
 
 ## Fixing Screen and Camera resolution discrepancies ##
-There is still one problem in our Pixmaps merging process. The resolution of the Camera and our screenshot maybe very different (e.g. in my test on Sumsung Galaxy Ace, I was streaching a 480x320 screenshot to a 2560x1920 picture). one way around it is to enlarge the Ligdx view size to a larger size than the actual physical device screen size.
+There is still one problem in our Pixmaps merging process. The resolution of the Camera and our screenshot maybe very different (e.g. in my test on Sumsung Galaxy Ace, I was streaching a 480x320 screenshot to a 2560x1920 picture). one way around it is to enlarge the Libgdx view size to a larger size than the actual physical device screen size.
 This is done using the setFixedSize() function. The actual screen size that can be defined depends on the memory allocated to the GPU and again your mileage may vary.
 I found that if I do it once during the initialization I can set the virtual screen size to 1920x1280, but this will results with a slower rendering.
 Other way to do it is to call the setFixedSize() function only during the takingPicture procedure and returning it to its orignal afterwards. However, in this case I managed to set the virtual screen size to 960x640 (probably because some of the GPU memory is already allocated for the screen with the original size)
