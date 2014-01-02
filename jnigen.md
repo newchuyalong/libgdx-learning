@@ -70,7 +70,7 @@ public class ExampleBuild {
 
 First, `NativeCodeGenerator` is used to generate the native source from the Java source. It needs to be told where to find the Java source, the class files for that source, the directory to output the native source, a list of glob patterns for what Java source files to process, and a list of glob patterns for what source files to exclude.
 
-Next, build targets are defined for each platform. `BuildTarget.newDefaultTarget` is used to provide reasonable defaults for each target. This build is meant to be built on Windows, so the default `compilerPrefix` of "i686-w64-mingw32-" needs to be changed to "mingw32-". There are other fields on `BuildTarget` that can be customized, such as source files to include/exclude, header directories, C/C++ flags, linker flags, linked libraries, etc.
+Next, build targets are defined for each platform. `BuildTarget.newDefaultTarget` is used to provide reasonable defaults for each target. This build is meant to be built on Windows, so the Windows 32 bit default `compilerPrefix` of "i686-w64-mingw32-" (which is good for building on Linux) needs to be changed to "mingw32-". There are other fields on `BuildTarget` that can be customized, such as source files to include/exclude, header directories, C/C++ flags, linker flags, linked libraries, etc.
 
 Next, `AntScriptGenerator` is used to output the Ant build scripts. The `BuildConfig` specifies global build settings, such as the name of the native library ("example" here), input and output directories, etc.
 
