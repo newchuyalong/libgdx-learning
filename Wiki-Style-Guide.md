@@ -1,9 +1,23 @@
 This page is a notice on how to edit libgdx wiki pages. Please read this before contributing to the libgdx wiki.
 
 
+## Questions ##
+
+If you have any questions about how to edit this wiki, please do not hesitate to ask! See our [[community  page | Community & Support]] for more information.
+
 ## General Syntax ##
 
-We use Markdown in this wiki; [heres a reference](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet). Please learn your way around with this, as to avoid markup differences.
+We use Markdown in this wiki, [heres a reference](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet). Please learn your way around with this, as to avoid markup differences.
+
+### Style ###
+
+*(This section is mostly just so sinistersnare does not go crazy looking at different syntax styles all the time... 'consistency is key')*
+
+This section is for the markdown that is used, it will have no user facing changes, so does not particularly matter to the lay-reader.
+
+Make sure to end each header with the appropriate amount of pound signs! `### test` is a valid `<h3>` tag in markdown, but it looks much cleaner to do `### test ###` instead. 
+
+Also, after headers, leave a line of white space please.
 
 ### Notable syntax ###
 
