@@ -49,7 +49,7 @@ public class TextureFun implements ApplicationListener {
 ```
 
 1. The `druidTexture` is declared. This will be the decoded image from the hard disk or SD card.
-2. The `SpriteBach` which will be used to display the `druidTexture` onto the screen.
+2. The `SpriteBatch` which will be used to display the `druidTexture` onto the screen.
 3. The texture is created. The file `druid.png` found in the asset (see [FileModule internal file]) directory is loaded, decoded and uploaded to the GPU and is ready to be used by OpenGL. Note that image format needs to be supported (.jpg, .png or .bmp) and the width and height of the image must be power of two. They don’t have to be equal, just power of two (POT). 64x32 pixels is fine.
 4. The `SpriteBatch` is instantiated and ready to be used.
 5. As pointed out earlier, the `SpriteBatch` is instructed to receive commands.
@@ -216,8 +216,8 @@ TextureRegion[][] regions = TextureRegion.split(texture, 64, 64)
 
 It starts the cutting from the top left corner and cuts out regions of 64x64 pixels and does that until it reaches the end of the row. Then it goes onto the second row if any, and starts it from the beginning until there are no more rows left. In the previous case it means that 2 rows are generated each having 2 columns (2 regions per row).
 
-For a complete description of Texture, TextureRegion and SpriteBatch, check out their [javadocs](http://libgdx.l33tlabs.org/docs/api/).
+---
 
-For a more on the subject and optimization tips, check out the excellent [SpriteBatch Drawing Images] article.
+For a complete description of Texture, TextureRegion and SpriteBatch, check out their [javadocs](http://libgdx.badlogicgames.com/nightlies/docs/api/).
 
 Sprites used from [here](http://blogoscoped.com/archive/2006-08-08-n51.html).
