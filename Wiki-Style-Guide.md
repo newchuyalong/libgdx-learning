@@ -9,7 +9,7 @@ If you have any questions about how to edit this wiki, please do not hesitate to
 
 We use Markdown in this wiki, [heres a reference](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet). Please learn your way around with this, as to avoid markup differences.
 
-### Style ###
+## Style ##
 
 *(This section is mostly just so sinistersnare does not go crazy looking at different syntax styles all the time... 'consistency is key')*
 
