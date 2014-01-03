@@ -105,6 +105,7 @@
       * [[Reading & Writing XML]]
       * [[Collections]]
       * [[Reflection]]
+      * [[jnigen]]
     * [[Math Utilities]]
       * [[Interpolation]]
       * [[Vectors, Matrices, Quaternions]]
