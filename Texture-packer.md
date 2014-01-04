@@ -107,7 +107,7 @@ Note that this is libgdx's "minimal" JSON format, so double quotes are optional 
 | `paddingY` | The number of pixels between packed images on the y-axis. | 2 |
 | `bleed` | If true, RGB values for transparent pixels are set based on the RGB values of the nearest non-transparent pixels. This prevents filtering artifacts when RGB values are sampled for transparent pixels. | true |
 | `edgePadding` | If true, half of the `paddingX` and `paddingY` will be used around the edges of the packed texture. | true |
-| `duplicatePadding` | If true, edge pixels are copied into the padding. | false |
+| `duplicatePadding` | If true, edge pixels are copied into the padding. `paddingX/Y` should be >= 2. | false |
 | `rotate` | If true, TexturePacker will attempt more efficient packing by rotating images 90 degrees. Applications must take special care to draw these regions properly. | false |
 | `minWidth` | The minimum width of output pages. | 16 |
 | `minHeight` | The minimum height of output pages. | 16 |
