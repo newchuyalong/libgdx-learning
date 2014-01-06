@@ -26,7 +26,21 @@ This will package all code and your assets into a single JAR file. To run the JA
 A project worth mentioning is [JarWrapper](https://github.com/stbachmann/JarWrapper), a tool to bundle a JRE with your desktop jar file in a cross platform manner. this tool is in development.
 
 ## <a id="Deploy_to_Android"></a>Deploy to Android ##
-TBD
+Deploying to Android takes some extra steps. This tutorial is done using Eclipse and the Android ADT plugin.
+- Right click your Android project and select "Export"
+- Select "Android -> Export Android Application"
+- Make sure the project you want to export is your project, select next
+- Select or create your keystore. If you are new to Android development, a keystore is used to sign your applications **and is required for putting your application on the market.** More information is available at: http://developer.android.com/tools/publishing/app-signing.html
+- Select your alias to sign with and enter the password. If you don't have an alias or want to create a new alias, select create new key and select next.
+- Now select the destination of where you want your app being exported to. This will export an .apk file in the selected directory capable of being uploaded to Google Play (formerly Android Market) and alternative app stores.
+- Select finish and your .apk will be built! 
+
+**Notes**
+- The .apk file can be used to install on devices directly such as via an email attachment or download. This requires the devices to have the 'Allow Unknown Sources' option enabled in settings. Some carriers unfortunately disable this setting.
+- LibGDX is only capable of *officially* exporting to devices running Android 1.5 or higher. Note that features supported by devices can vary, such as OpenGL ES 2 may not be supported on certain devices. 
+- OpenGL ES 2 requires Android 2.2 or higher and a graphics card supporting it.
+- Features that are incompatible with the device such as trying to use immersive mode on a pre-kitkat device will simply not do anything on unsupported devices.
+- If you want to upload to google play, here is a helpful link: http://developer.android.com/distribute/googleplay/publish/register.html
 
 ## <a id="Deploy_to_iOS"></a>Deploy to iOS ##
 TBD
