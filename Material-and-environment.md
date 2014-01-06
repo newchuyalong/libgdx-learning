@@ -52,6 +52,7 @@ Besides that you can also `clear` (to remove all attributes), iterate (it implem
 ### Custom attribute types ###
 
 It is possible to use a standard attribute class for a new custom type. For example when you want to use the ColorAttribute class to specify a custom type of color. There are three things you must consider in that case:
+
 1. Name your attribute type. Each attribute type must have an _unique_ alias (name). You might want to (but don't have to) use the uniform name for that. The alias will also be used for debugging, e.g. when calling `attribute.toString()`.
 2. Register your attribute type. This is to make sure there is only one attribute type for each bit. This can be done only from within the Attribute class or a subclass.
 3. Make ColorAttribute accept the custom type. The ColorAttribute class and most other attribute classes checks the type on construction, this allows you to cast attributes without having to check anything other then the type. For example `(ColorAttribute)material.get(ColorAttribute.Diffuse)` will always work because ColorAttribute is the only attribute accepting the `ColorAttribute.Diffuse` type.
@@ -143,16 +144,16 @@ Just like the `BlendingAttribute`, does the `DepthTestAttribute` not require an 
 
 ### FloatAttribute ###
 To pass a single floating point value to the shader, the `FloatAttribute` can be used. The value can be specified on construction or using the `.value` member. The `FloatAttribute` requires an attribute type, which by default can be:
-* `Shininess` Used for specular lighting.
-* `AlphaTest` Used to discard pixels when the alpha value is equal or below the specified value.
+* `FloatAttribute.Shininess` Used for specular lighting.
+* `FloatAttribute.AlphaTest` Used to discard pixels when the alpha value is equal or below the specified value.
 
 ### IntAttribute ###
 Similar to the `FloatAttribute` class, the `IntAttribute` allows you to pass an integer value to the shader. Likewise the `.value` member can be used or the value can be set on construction. The `IntAttribute` requires an attribute type, which by default can be:
-* `CullFace` OpenGL enum to specify face culling, either GL_NONE (no culling), GL_FRONT (only render back faces) or GL_BACK (only render front faces). The default depends on the shader, the default shader uses GL_BACK by default.
+* `IntAttribute.CullFace` OpenGL enum to specify face culling, either GL_NONE (no culling), GL_FRONT (only render back faces) or GL_BACK (only render front faces). The default depends on the shader, the default shader uses GL_BACK by default.
 
 ### TextureAttribute ###
 `TextureAttribute` can be used to pass a `Texture` to the shader. Just like the `CubemapAttribute` it has a `textureDescription` member which allows you to set the `Texture` amongst some texture related values like repeat and filter. The `TextureAttribute` requires an attribute type, which by default can be one of the following:
-* `Diffuse`
-* `Specular`
-* `Bump`
-* `Normal`
+* `TextureAttribute.Diffuse`
+* `TextureAttribute.Specular`
+* `TextureAttribute.Bump`
+* `TextureAttribute.Normal`
