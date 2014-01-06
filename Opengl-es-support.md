@@ -1,5 +1,9 @@
 Libgdx has interfaces for direct OpenGL ES 1.0, 1.1 and 2.0 access. OpenGL ES is emulated on the desktop by mapping OpenGL ES functions to desktop OpenGL functions. On some platforms (iOS, GWT/HTML) only OpenGL ES 2.0 is supported.
 
+**Note:** On Android, if your application requires OpenGL ES 2 to function please add the following to the Android Manifest: `<uses-feature android:glEsVersion="0x00020000" android:required="true" />` 
+
+This prevents your application from being seen by unsupported devices in the Play Store (formerly Android Market)
+
 ## Precision modifiers ##
 OpenGL ES 2.0 requires the specification of precision modifiers for attributes, uniforms and locals. Desktop OpenGL does not support this. You will have to guard against that in your fragment shader with something similar to this code snippet:
 
