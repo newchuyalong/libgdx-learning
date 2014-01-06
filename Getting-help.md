@@ -12,6 +12,7 @@ The libgdx community is glad to help you when you get stuck or encounter a bug, 
    * [Application](#Barebones_Application Barebones)
    * [SpriteBatch](#Barebones_SpriteBatch Barebones)
    * [Barebones Stage](#Barebones_Stage)
+ * [Actually Executable](#Actually_Executable)
  * [Attitude](#Attitude)
  * [Formatting](#Formatting)
 
@@ -178,6 +179,10 @@ public class BarebonesStage extends ApplicationAdapter {
 	}
 }
 ```
+
+## <a id="Actually_Executable"></a>Actually Executable ##
+
+If your executable example cannot be pasted into the `gdx-tests-lwjgl` project and run, then it is not actually an executable example. Others should not have to fix up your code to run it, not even to add a main method.
 
 ## <a id="Attitude"></a>Attitude ##
 
