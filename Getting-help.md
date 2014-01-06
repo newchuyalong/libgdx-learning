@@ -27,6 +27,25 @@ Please go through this short checklist to be sure you haven't missed an easy to 
 
 If you still have a problem, often the fastest way to get help is in the libgdx chat room, which is [#libgdx on irc.freenode.net](irc://irc.freenode.net/libgdx). Otherwise, if you wish to post on the [forum](http://www.badlogicgames.com/forum/) or post a new issue on the [tracker](https://github.com/libgdx/libgdx/issues), keep reading.
 
+## <a id="Help_us_help_you"></a>Help Us Help You ##
+If you believe your issue, error, or suspected bug is related to a specific backend, please present the following information with your issue. If you are on IRC have the following information on hand.
+
+**For Android backend issues**
+ - **Note:** Android issues can sometimes be more difficult do to device manufactures breaking things or buggy drivers.
+ - Please have the device name and Android version in the bug report. Providing things won't be broken, we will make an attempt to fix the issue or implement a workaround for the device.
+
+**For Desktop backend issues (jglfw, lwjgl)**
+ - Please list the operating system and version, architecture, and if necessary OpenGL version.
+ - Also mark specifically which of those backends have this issue.
+
+**For iOS (RoboVM) backend issues**
+ - Please list the iOS version, and device the issue occurs on
+
+**For GWT (WebGL) backend issues**
+ - Please list the operating system and version, and architecture.
+ - Please list the browser and browser version
+Listing this information can greatly reduce the workload on us and can greatly increase the chances your issue will be resolved or an available fix or workaround implemented.
+
 ## <a id="Topic_Title"></a>Topic Title ##
 
 Write a clear and short topic title. Titles that do not describe the topic (such as "please help") or contain all caps, exclamation marks, etc make it much less likely that your post will be read.
