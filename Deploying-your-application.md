@@ -41,6 +41,7 @@ Deploying to Android takes some extra steps. This tutorial is done using Eclipse
 - OpenGL ES 2 requires Android 2.2 or higher and a graphics card supporting it.
 - Features that are incompatible with the device such as trying to use immersive mode on a pre-kitkat device will simply not do anything on unsupported devices.
 - If you want to upload to google play, here is a helpful link: http://developer.android.com/distribute/googleplay/publish/register.html
+- LibGDX supports x86 Android devices starting with 0.9.9 and up. Make sure the x86 folder with libraries is in your project. Gdx-setup-ui should now generate your project with these. 
 
 ## <a id="Deploy_to_iOS"></a>Deploy to iOS ##
 TBD
