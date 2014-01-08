@@ -11,6 +11,7 @@ If your game is very simple, and loading resources doesn't take a lot of time yo
 Still with me? Then read on.
 
 ### Creating an AssetManager ###
+
 This part is rather simple:
 
 ```java
@@ -20,19 +21,18 @@ AssetManager manager = new AssetManager();
 This sets up a standard AssetManager, with all the loaders libgdx has in store at the moment. Let's see how the loading mechanism works.
 
 ### Loading Assets ###
+
 To load assets, the AssetManager needs to know how to load a specific type of asset. This functionality is implemented via AssetLoaders. There's two variants, SynchronousAssetLoader and AsynchronousAssetLoader. The former loads everything on the rendering thread, the later loads parts of the asset on another thread, e.g. the Pixmap needed for a Texture, and then loads the OpenGL dependent part on the rendering thread. The following resources can be loaded out of the box with the AssetManager as constructed above.
 
 
-  * Pixmaps via PixmapLoader
-  * Textures via TextureLoader
-  * BitmapFonts via BitmapFontLoader
-  * TextureAtlases via TextureAtlasLoader
-  * TiledAtlases via TiledAtlasLoader
-  * TileMapRenderers via TileMapRendererLoader
-  * Music instances via MusicLoader
-  * Sound instances via SoundLoader
-  * Skins via SkinLoader
-  * Particle Effects via ParticleEffectLoader
+  * Pixmaps via [PixmapLoader](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/assets/loaders/PixmapLoader.html) [(code)](https://github.com/libgdx/libgdx/blob/master/gdx/src/com/badlogic/gdx/assets/loaders/PixmapLoader.java)
+  * Textures via [TextureLoader](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/assets/loaders/TextureLoader.html) [(code)](https://github.com/libgdx/libgdx/blob/master/gdx/src/com/badlogic/gdx/assets/loaders/TextureLoader.java)
+  * BitmapFonts via [BitmapFontLoader](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/assets/loaders/BitmapFontLoader.html) [(code)](https://github.com/libgdx/libgdx/blob/master/gdx/src/com/badlogic/gdx/assets/loaders/BitmapFontLoader.java)
+  * TextureAtlases via [TextureAtlasLoader](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/assets/loaders/TextureAtlasLoader.html) [(code)](https://github.com/libgdx/libgdx/blob/master/gdx/src/com/badlogic/gdx/assets/loaders/TextureAtlasLoader.java)
+  * Music instances via [MusicLoader](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/assets/loaders/MusicLoader.html) [(code)](https://github.com/libgdx/libgdx/blob/master/gdx/src/com/badlogic/gdx/assets/loaders/MusicLoader.java)
+  * Sound instances via [SoundLoader](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/assets/loaders/SoundLoader.html) [(code)](https://github.com/libgdx/libgdx/blob/master/gdx/src/com/badlogic/gdx/assets/loaders/SoundLoader.java)
+  * Skins via [SkinLoader](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/assets/loaders/SkinLoader.html) [(code)](https://github.com/libgdx/libgdx/blob/master/gdx/src/com/badlogic/gdx/assets/loaders/SkinLoader.java)
+  * Particle Effects via [ParticleEffectLoader](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/assets/loaders/ParticleEffectLoader.html) [(code)](https://github.com/libgdx/libgdx/blob/master/gdx/src/com/badlogic/gdx/assets/loaders/ParticleEffectLoader.java)
 
 Loading a specific asset is simple:
 
@@ -42,7 +42,7 @@ manager.load("data/myfont.fnt", BitmapFont.class);
 manager.load("data/mymusic.ogg", Music.class);
 ```
 
-These calls will enqueue those assets for loading. The assets will be loaded in the order we called the AssetManager#load() method. Some loaders allow you to also pass parameters to them via AssetManager#load(). Say we want to specify a non-default filter and mipmapping setting for loading a texture:
+These calls will enqueue those assets for loading. The assets will be loaded in the order we called the [AssetManager#load()](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/assets/AssetManager.html#load(java.lang.String, java.lang.Class\)) method. Some loaders allow you to also pass parameters to them via AssetManager#load(). Say we want to specify a non-default filter and mipmapping setting for loading a texture:
 
 ```java
 TextureParameter param = new TextureParameter();
