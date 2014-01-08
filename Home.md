@@ -65,6 +65,7 @@
       * [[Fullscreen & VSync]]
       * [[Continuous & Non-Continuous Rendering]]
       * [[Clearing the Screen]]
+      * [[Take a Screenshot]]
       * [[OpenGL ES Support]]
             * Configuration & Querying OpenGL ??
             * Direct Access ??
