@@ -42,3 +42,17 @@ public class ScreenshotFactory {
 	}
 }
 ```
+
+##Using Screenshots to Create Videos
+
+Screenshots can also be used to create lossless videos by taking a screenshot every frame and using external software to convert the PNGs to a video.
+
+[Example Video](http://www.youtube.com/watch?v=NsblslUDWqU)
+
+On Linux, this can be done with ffmpeg.
+
+```bash
+ffmpeg -i screenshot-%d.png -r 60 -sameq -vcodec mpeg4 output.avi
+```
+
+To increase performance while taking screenshots, screenshots can be stored in memory (an Array or other collection) and written in a large batch.  This obviously requires large amounts of available memory, depending on the size of the PNGs and the number of shots taken per batch.  It is a good method for taking gameplay videos of only a few seconds in length without slowing down the game too much with File IO operations.
