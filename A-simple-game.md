@@ -180,7 +180,7 @@ For each of our assets we have a field in the `Drop` class so we can later refer
 
 Next we load the sound effect and the background music. Libgdx differentiates between sound effects, which are stored in memory, and music, which is streamed from wherever it is stored. Music is usually too big to be kept in memory completely, hence the differentiation. As a rule of thumb, you should use a `Sound` instance if your sample is shorter than 10 seconds, and a `Music` instance for longer audio pieces.
 
-Loading of a `Sound` or `Music` instance is done via `Gdx.app.newSound()` and `Gdx.app.newMusic()`. Both of these methods take a `FileHandle`, just like the `Texture` constructor.
+Loading of a `Sound` or `Music` instance is done via `Gdx.audio.newSound()` and `Gdx.audio.newMusic()`. Both of these methods take a `FileHandle`, just like the `Texture` constructor.
 
 At the end of the `create()` method we also tell the `Music` instance to loop and start playback immediately. If you run the application you'll see a nice pink background and hear the rain fall.
 
