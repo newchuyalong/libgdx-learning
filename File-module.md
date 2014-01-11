@@ -111,7 +111,7 @@ public class FilesExample implements ApplicationListener {
 Examine the code snippet carefully as each line contains a short comment describing what it does.
 It is worth focusing on the file handling for the time being, ignoring other functionalities and notions.
 
-The `clouds.png` file needs to be in the `data` directory which needs to be included in the build. Just use any `png` image. _The image sizes (width and height) must be powers of two_! See [Texture Texture] on why this is so important. 512x512 will do it as a region from the texture is used for the background.
+The `clouds.png` file needs to be in the `img` directory which needs to be included in the build. Just use any `png` image. _The image sizes (width and height) must be powers of two_! See [Texture Texture] on why this is so important. 512x512 will do it as a region from the texture is used for the background.
 
 The `mytxt.txt` file also needs to be created and added to the `com.badlogic.examples` package. Note that it is not the asset directory, this is to demonstrate the `classpath` typed file handle. The content of this file will be displayed in the resulting application.
 
