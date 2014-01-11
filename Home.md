@@ -94,7 +94,7 @@
             * [[scene2d]]
               * [[scene2d.ui]]
               * [[Skin]]
-      * 3D Graphics ??
+      * 3D Graphics
             * [[Quick Start]]
             * [[Models]]
             * [[Material and environment]]
