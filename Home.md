@@ -128,6 +128,7 @@
       * [[gdx-freetype]]
     * [[Deploying your Application]]
     * Building Libgdx ??
+    * [[Known Issues]]
   * Articles
     * [[Getting Help]]
     * [[External Tutorials]]
@@ -148,4 +149,3 @@
             * [[Actions]]
       * Misc
             * [[Integrating Libgdx and the Device camera]]
-    * [[Known Issues]]
