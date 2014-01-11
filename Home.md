@@ -137,15 +137,5 @@
   * Deprecated (May be outdated)
     * [[Graphics Module]]
       * [[Screen & Viewport]]
-    * Tutorials
-      * [[Video Tutorials]]
-      * Beginner
-            * [[Hello World]]
-            * [[My First Triangle]]
-            * [[Mesh, Color & Texture]]
-            * [[Projection, Viewport, & Camera]]
-            * [[Creating and texturing 3d models in Blender for Libgdx]]
-      * Intermediate
-            * [[Actions]]
-      * Misc
-            * [[Integrating Libgdx and the Device camera]]
+    * Misc
+      * [[Integrating Libgdx and the Device camera]]
