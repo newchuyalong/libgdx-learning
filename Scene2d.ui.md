@@ -121,7 +121,7 @@ table.add(button2);
 
 Note the same style can be used for multiple widgets. Also note that all images needed by UI widgets are actually implementations of the Drawable interface.
 
-The Skin class can be used to more conveniently define the styles and other resources for UI widgets. See the [Skin Skin documentation] for more information. It is very strongly recommended to use Skin for convenience, even if not defining styles via JSON.
+The Skin class can be used to more conveniently define the styles and other resources for UI widgets. See the [[Skin documentation|Skin]] for more information. It is very strongly recommended to use Skin for convenience, even if not defining styles via JSON.
 
 ## <a id="Drawable"></a>Drawable ##
 
