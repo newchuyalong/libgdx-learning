@@ -1,4 +1,4 @@
-Sprite animation is the technique used to create the illusion of movement using static images. This article describes how to create animations with libGdx.
+2D Animation is the technique used to create the illusion of movement using static images. This article describes how to create animations with libGdx.
 
 ## Details ##
 
@@ -46,8 +46,7 @@ public class Animator implements ApplicationListener {
 	@Override
 	public void create() {
 		walkSheet = new Texture(Gdx.files.internal("animation_sheet.png"));	// #9
-		TextureRegion[][] tmp = TextureRegion.split(walkSheet, walkSheet.getWidth() / 
-FRAME_COLS, walkSheet.getHeight() / FRAME_ROWS);				// #10
+		TextureRegion[][] tmp = TextureRegion.split(walkSheet, walkSheet.getWidth()/FRAME_COLS, walkSheet.getHeight()/FRAME_ROWS);				// #10
 		walkFrames = new TextureRegion[FRAME_COLS * FRAME_ROWS];
 		int index = 0;
 		for (int i = 0; i < FRAME_ROWS; i++) {
