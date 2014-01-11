@@ -77,6 +77,7 @@
               * [[Frame Buffer Objects]]
       * 2D Graphics
             * [[SpriteBatch, TextureRegions, and Sprite]]
+            * [[2D Animation]]
             * [[Clipping, with the use of ScissorStack]]
             * [[Orthographic camera]]
             * Mapping Touch Coordinates ??
@@ -138,10 +139,6 @@
     * [[File Module]]
     * [[Graphics Module]]
       * [[Screen & Viewport]]
-      * 2D Graphics
-            * [[Orthographic Camera]]
-            * [[Textures, TextureRegion and SpriteBatch]]
-            * [[Sprite Animation]]
     * [[Asset Manager]]
     * Tutorials
       * [[Video Tutorials]]
