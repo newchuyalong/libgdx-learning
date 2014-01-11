@@ -32,6 +32,7 @@
       * [[Using libgdx with Scala]]
     * [[The Application Framework]]
       * [[The Life-Cycle]]
+      * [[Modules Overview]]
       * [[Starter Classes & Configuration]]
       * [[Querying]]
       * [[Logging]]
@@ -133,9 +134,6 @@
     * [[ Bundling a JRE]]
     * [[Saved Game Serialization]]
   * Deprecated (May be outdated)
-    * The Application Framework
-      * The Application Life-cycle ??
-      * [[Modules Overview]]
     * [[Graphics Module]]
       * [[Screen & Viewport]]
     * Tutorials
@@ -149,7 +147,5 @@
       * Intermediate
             * [[Actions]]
       * Misc
-            * [[AdMob in Libgdx]]
             * [[Integrating Libgdx and the Device camera]]
-            * String Builder ??
     * [[Known Issues]]
