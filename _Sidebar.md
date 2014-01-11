@@ -32,6 +32,7 @@
       * [[Using libgdx with Scala]]
     * [[The Application Framework]]
       * [[The Life-Cycle]]
+      * [[Modules Overview]]
       * [[Starter Classes & Configuration]]
       * [[Querying]]
       * [[Logging]]
@@ -65,6 +66,7 @@
       * [[Fullscreen & VSync]]
       * [[Continuous & Non-Continuous Rendering]]
       * [[Clearing the Screen]]
+      * [[Take a Screenshot]]
       * [[OpenGL ES Support]]
             * Configuration & Querying OpenGL ??
             * Direct Access ??
@@ -76,6 +78,7 @@
               * [[Frame Buffer Objects]]
       * 2D Graphics
             * [[SpriteBatch, TextureRegions, and Sprite]]
+            * [[2D Animation]]
             * [[Clipping, with the use of ScissorStack]]
             * [[Orthographic camera]]
             * Mapping Touch Coordinates ??
@@ -125,35 +128,14 @@
       * [[gdx-freetype]]
     * [[Deploying your Application]]
     * Building Libgdx ??
+    * [[Known Issues]]
   * Articles
     * [[Getting Help]]
     * [[External Tutorials]]
     * [[ Bundling a JRE]]
     * [[Saved Game Serialization]]
   * Deprecated (May be outdated)
-    * The Application Framework
-      * The Application Life-cycle ??
-      * [[Modules Overview]]
-    * [[File Module]]
     * [[Graphics Module]]
       * [[Screen & Viewport]]
-      * 2D Graphics
-            * [[Orthographic Camera]]
-            * [[Textures, TextureRegion and SpriteBatch]]
-            * [[Sprite Animation]]
-    * [[Asset Manager]]
-    * Tutorials
-      * [[Video Tutorials]]
-      * Beginner
-            * [[Hello World]]
-            * [[My First Triangle]]
-            * [[Mesh, Color & Texture]]
-            * [[Projection, Viewport, & Camera]]
-            * [[Creating and texturing 3d models in Blender for Libgdx]]
-      * Intermediate
-            * [[Actions]]
-      * Misc
-            * [[AdMob in Libgdx]]
-            * [[Integrating Libgdx and the Device camera]]
-            * String Builder ??
-    * [[Known Issues]]
+    * Misc
+      * [[Integrating Libgdx and the Device camera]]
