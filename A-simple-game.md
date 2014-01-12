@@ -201,7 +201,7 @@ In the `create()` method we first create the camera like this:
    camera.setToOrtho(false, 800, 480);
 ```
 
-This will make sure the camera always shows us an area of our game world that is 800x480 units wide. Think of it as a virtual window into our world. We currently interpret the units as pixels to make our life a little easier. There's nothing from using other units though, e.g. meters or whatever you have. Cameras are very powerful and allow you to do a lot of things we won't cover in this basic tutorial. Check out the rest of the developer guide for more information.
+This will make sure the camera always shows us an area of our game world that is 800x480 units wide. Think of it as a virtual window into our world. We currently interpret the units as pixels to make our life a little easier. There's nothing preventing us from using other units though, e.g. meters or whatever you have. Cameras are very powerful and allow you to do a lot of things we won't cover in this basic tutorial. Check out the rest of the developer guide for more information.
 
 Next we create the `SpriteBatch` (we are still in the `create()` method):
 
