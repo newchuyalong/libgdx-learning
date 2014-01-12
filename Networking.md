@@ -17,13 +17,25 @@ Class Explanation:
 * [HttpStatus.java](https://github.com/libgdx/libgdx/blob/master/gdx/src/com/badlogic/gdx/net/HttpStatus.java) is a class used to give an easy way to see what the status code returned is.
 * [HttpParameterUtils.java](https://github.com/libgdx/libgdx/blob/master/gdx/src/com/badlogic/gdx/net/HttpParametersUtils.java) is a class used to provide utility methods for HTTP requests.
 
-To create a TCP client socket use this little piece of code: `Socket socket = Gdx.net.newClientSocket(Protocol protocol, String host, int port, SocketHints hints);`
+To create a TCP client socket use this little piece of code:
+```
+Socket socket = Gdx.net.newClientSocket(Protocol protocol, String host, int port, SocketHints hints);
+```
 
-To create a TCP server socket use this: `ServerSocket server = Gdx.net.newServerSocket(Protocol protocol, int port, ServerSocketHints hints);`
+To create a TCP server socket use this:
+```
+ServerSocket server = Gdx.net.newServerSocket(Protocol protocol, int port, ServerSocketHints hints);
+```
 
-To send an HTTP Request use this: `Gdx.net.sendHttpRequest(HttpRequest httpRequest, HttpResponseListener httpResponseListener);`
+To send an HTTP Request use this:
+```
+Gdx.net.sendHttpRequest(HttpRequest httpRequest, HttpResponseListener httpResponseListener);
+```
 
-To open the system browser use this: `Gdx.net.openURI(String URI)`
+To open the system browser use this:
+```
+Gdx.net.openURI(String URI)
+```
 ### Notes
 There are various notes needed when working with networking on different platforms.
 
