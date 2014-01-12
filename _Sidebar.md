@@ -41,6 +41,7 @@
     * [[A Simple Game]]
       * [[Extending the Simple Game]]
     * [[File Handling]]
+    * [[Networking]]
     * [[Preferences]]
     * [[Input Handling]]
       * [[Configuration & Querying]]
