@@ -39,10 +39,10 @@ mvn install
 To invoke the archetype, do the following:
 
 ```
-mvn archetype:generate -DarchetypeGroupId=com.badlogic.gdx -DarchetypeArtifactId=gdx-archetype -DarchetypeVersion=0.9.9-SNAPSHOT -DgroupId=com.badlogic.test -DartifactId=test -Dversion=1.0-SNAPSHOT -Dpackage=com.badlogic.test -DJavaGameClassName=Test
+mvn archetype:generate -DarchetypeGroupId=com.badlogic.gdx -DarchetypeArtifactId=gdx-archetype -DarchetypeVersion=1.0-SNAPSHOT -DgroupId=com.badlogic.test -DartifactId=test -Dversion=1.0-SNAPSHOT -Dpackage=com.badlogic.test -DJavaGameClassName=Test
 ```
 
-The first three parameters specify the archetype, which has group id com.badlogic.gdx, artifact id gdx-archetype and a version (currently 0.9.9-SNAPSHOT).
+The first three parameters specify the archetype, which has group id com.badlogic.gdx, artifact id gdx-archetype and a version (currently 1.0-SNAPSHOT).
 
 The next parameters specify attributes of your project.
 
