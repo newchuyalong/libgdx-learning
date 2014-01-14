@@ -105,7 +105,12 @@ mvn -Phtml package
 
 The end result is located in the target/ folder. You can either use the .war file that was generated and deploy that to Jetty/Tomcat, or copy the contents of the HTML/target/test-html-1.0-SNAPSHOT/ folder to a location your web server can server(or even better, create a sym-link if you are on an appropriate OS). The war/folder contains all the compiled JavaScript code, the index HTML file and the assets.
 
-There's currently no way to run the HTML5 project via Maven. This is partially due to path issues and the way the gwt and jetty plugins work.
+To run and test the HTML5 project, run:
+```
+mvn -Phtml install
+```
+
+And browse to http://127.0.0.1:8080/index.html
 
 ## IDE Integration ##
 Eclipse, Intellij Idea and NetBeans all support Maven projects in some form. The archetype goes to great lengths to make your libgdx project usable within Eclipse and Intellij Idea. NetBeans is unsupported at the time of writing.
