@@ -126,9 +126,11 @@ Before you can import your project, you need to install the following Eclipse pl
 
 Once the plugins are installed, you can import your Maven libgdx projects by going to *File -> Import... -> Maven -> Existing Maven Projects*. This will import the parent pom as project along with the core, desktop, android and html project.
 
-*Note* that the HTML project might not be recognized as a GWT project by Eclipse. To fix this, right click the project, go to *Properties -> Google -> Web Toolkit*. Check "Use Google Web Toolkit". Then go to *Properties -> Google -> Web Application*, check "This project has a WAR directory", specify `src/main/webapp` and finally check "Launch and deploy from this directory".
+*Note* that the HTML project might not be recognized as a GWT project by Eclipse. To fix this, right click the project, go to *Properties -> Google -> Web Toolkit*. Check "Use Google Web Toolkit". Then go to *Properties -> Google -> Web Application*, check "This project has a WAR directory", specify `target/webapp` and finally check "Launch and deploy from this directory".
 
-From there on you can [[Project Setup, Running & Debugging]] just as you'd do if you setup your projects via the gdx-setup-ui.
+From there on you can [[Project Setup, Running & Debugging]] just as you'd do if you setup your projects via the gdx-setup-ui. 
+
+If you change anything in the assets, you need to run "mvn -Phtml package" again and refresh the html project in Eclipse.
 
 ### IntelliJ Idea ###
 Before you start, you should make sure IntelliJ Idea knows where your Maven installation is located. Go to *File -> Settings*, and in the tree in the dialog chose Maven. Specify the directory where your Maven installation lives.
