@@ -31,7 +31,7 @@ Note that a _workspace_ in Eclipse is  a _project_ in IntelliJ IDEA, and that a 
   10. Add starter classes.
   11. Remember to configure the manifest.
   12. Link the assets between Android module and Main module:
-    * Make a run configuration for the !DesktopStarter and set the Working directory to be the Android/assets directory.
+    * Make a run configuration for the DesktopStarter and set the Working directory to be the Android/assets directory.
     * *_OR_*
     * Create a directory named _data_ in the main module, and make a sym-link from the assets directory in the Android module.
   13. Create an awesome app!
@@ -41,7 +41,7 @@ Note that a _workspace_ in Eclipse is  a _project_ in IntelliJ IDEA, and that a 
 ## Step-by-step guide with screenshots ##
 The screenshots were taken when running IntelliJ IDEA Ultimate 11.1.1 on Windows, so everything may not look exactly the same on your computer.
 
-The project in this guide is located in _C:\Android_ and named _!MyLibgdxGame_. All the code for the game will be in the _Main module_.
+The project in this guide is located in _C:\Android_ and named _MyLibgdxGame_. All the code for the game will be in the _Main module_.
 
 ### Preparing ##
   * You will need to install the [Android SDK](http://developer.android.com/sdk/index.html) and the Android versions you want to target.
@@ -158,6 +158,7 @@ This step is only if you need a new Android SDK to select when creating the Andr
   * Right click the Main module's _src_ directory and select _New->Package_. Give it a name, here _com.example.mylibgdxgame_ is used.
   * Right click the new package and select _New->Java Class_ and name it. Here _MyLibgdxGame_ is used.
   * Make the class implement _ApplicationListener_, or extend a class that does so. E.g. make it extend _Game_.
+
 ```java
 public class MyLibgdxGame extends Game {
     @Override
@@ -165,12 +166,14 @@ public class MyLibgdxGame extends Game {
     }
 }
 ```
+
   * This is the entry point for your game.
 
  
   * Right click the source directory in the Desktop module and add a new package here as well.
-  * Then add a Java Class to that package and name it _!DesktopStarter_.
+  * Then add a Java Class to that package and name it _DesktopStarter_.
   * Make the class look like the run configuration below, substitute the name of the game with the class you created in the Main module.
+
 ```java
 public class DesktopStarter {
     public static void main(String[] args) {
@@ -186,8 +189,9 @@ public class DesktopStarter {
 
  
   * Open up the class in the Android module, which was created when we created the Android module.
-  * Instead of extending _Activity_, the class should extend _!AndroidApplication_.
+  * Instead of extending _Activity_, the class should extend _AndroidApplication_.
   * Add _initialize_ and run configurations like below:
+
 ```java
 public class MyLibgdxGameAndroidStarter extends AndroidApplication
 {
