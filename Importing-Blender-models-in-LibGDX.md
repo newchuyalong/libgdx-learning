@@ -19,7 +19,7 @@ However, if you want to use z-up in your application, then you can set Blender's
 
 ### Troubleshooting missing textures
 
-If your faces are not drawn, please check try disabling back face culling. Your faces may be missing because they are facing away from the camera. `DefaultShader.defaultCullFace = 0;`
+If your faces are not drawn, please check try disabling back face culling. Your faces may be missing because they are facing away from the camera. `DefaultShader.defaultCullFace = 0;`  
 Also, it is quite common that the materials from Blender export with opacity set to Zero. If you notice your model is not being rendered. Go to the Material in Blender, and below "Transparency" set its Alpha to the desired one (usually 1, for full opacity).
 
 ### Troubleshooting black textures
