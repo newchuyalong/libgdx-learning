@@ -16,7 +16,7 @@ For more documentation related to Box2D, please visit [box2d.org](http://box2d.o
     * [Dynamic Bodies](box2d#dynamic-bodies)
     * [Static Bodies](box2d#static-bodies)
     * [Kinematic Bodies](box2d#kinematic-bodies)
-  * [Impulses/Forces](box2d#impulsesforces)
+  * [Impulses/Forces](box2d#wiki-impulsesforces)
   * [Joints and Gears](box2d#joints-and-gears)
   * [Fixture Shapes](box2d#fixture-shapes)
   * [Sprites and Bodies](box2d#sprites-and-bodies)
