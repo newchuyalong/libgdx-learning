@@ -1,7 +1,7 @@
-# No Op: not translating
+# Summary
 
-
-#summary Creating a libgdx project, create your first triangle
+* Create a libgdx project from scratch
+* Create your first triangle
 
 # Introduction
 
