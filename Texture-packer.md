@@ -20,7 +20,7 @@ TexturePacker uses multiple packing algorithms but the most notable is based on 
 The `TexturePacker` class is in the gdx-tools project. It can be run from source via Eclipse:
 
 ```java
-import com.badlogic.gdx.tools.imagepacker.TexturePacker;
+import com.badlogic.gdx.tools.texturepacker.TexturePacker;
 public class MyPacker {
 	public static void main (String[] args) throws Exception {
 		TexturePacker.process(inputDir, outputDir, packFileName);
@@ -32,10 +32,10 @@ It can also be run from the [nightly build](http://libgdx.badlogicgames.com/nigh
 
 ```
 //*NIX (OS X/Linux)
-java -cp gdx.jar:extensions/gdx-tools/gdx-tools.jar com.badlogic.gdx.tools.imagepacker.TexturePacker inputDir [outputDir] [packFileName]
+java -cp gdx.jar:extensions/gdx-tools/gdx-tools.jar com.badlogic.gdx.tools.texturepacker.TexturePacker inputDir [outputDir] [packFileName]
 
 //WINDOWS
-java -cp gdx.jar;extensions/gdx-tools/gdx-tools.jar com.badlogic.gdx.tools.imagepacker.TexturePacker inputDir [outputDir] [packFileName]
+java -cp gdx.jar;extensions/gdx-tools/gdx-tools.jar com.badlogic.gdx.tools.texturepacker.TexturePacker inputDir [outputDir] [packFileName]
 ```
 
 Note that TexturePacker runs significantly faster with Java 1.7+, especially when packing hundreds of input images.
@@ -148,10 +148,10 @@ The TexturePacker class is in `gdx-tools.jar`, which is in the extensions direct
 
 ```
 //*NIX (OS X/Linux)
-java -cp gdx.jar:gdx-tools.jar com.badlogic.gdx.tools.imagepacker.TexturePacker inputDir outputDir packFileName
+java -cp gdx.jar:gdx-tools.jar com.badlogic.gdx.tools.texturepacker.TexturePacker inputDir outputDir packFileName
 
 //WINDOWS
-java -cp gdx.jar;gdx-tools.jar com.badlogic.gdx.tools.imagepacker.TexturePacker inputDir outputDir packFileName
+java -cp gdx.jar;gdx-tools.jar com.badlogic.gdx.tools.texturepacker.TexturePacker inputDir outputDir packFileName
 ```
 
 `inputDir` is the root directory containing the images. `outputDir` is the output directory where the packed images will be placed. `packFileName` is the name of the pack file and the prefix used for the output packed image files.
