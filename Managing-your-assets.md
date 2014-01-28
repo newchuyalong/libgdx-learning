@@ -92,7 +92,7 @@ This of course assumes that those assets have been successfully loaded. If we wa
 
 ```java
 if(manager.isLoaded("data/mytexture.png")) {
-   // texture is available, let's fetch it and do do something interesting
+   // texture is available, let's fetch it and do something interesting
    Texture tex = manager.get("data/mytexture.png", Texture.class);
 }
 ```
