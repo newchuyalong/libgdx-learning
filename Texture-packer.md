@@ -92,7 +92,9 @@ Below is a JSON example with every available setting and the default value for e
 	flattenPaths: false,
 	premultiplyAlpha: false,
 	useIndexes: true,
-	limitMemory: true
+	limitMemory: true,
+	grid: false,
+	scale: [ 1 ]
 }
 ```
 
@@ -132,6 +134,8 @@ Note that this is libgdx's "minimal" JSON format, so double quotes are optional 
 | `premultiplyAlpha` | If true, the RGB will be multiplied by the alpha. See [here](http://blogs.msdn.com/b/shawnhar/archive/2009/11/06/premultiplied-alpha.aspx) for more information. | false |
 | `useIndexes` | If false, image names are used without stripping any image index suffix. | true |
 | `limitMemory` | If true, only one image is in memory at any given time, but each image will be read twice. If false, all images are kept in memory during packing but they are only read once. | true |
+| `grid` | If true, images are packed in a uniform grid, in order. | false |
+| `scale` | An atlas is output for each scale. | `[1]` ]
 
 ## <a id="NinePatches"></a>NinePatches ##
 
