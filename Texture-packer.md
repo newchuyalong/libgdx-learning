@@ -130,12 +130,12 @@ Note that this is libgdx's "minimal" JSON format, so double quotes are optional 
 | `fast` | If true, the texture packer will not pack as efficiently but will execute much faster. | false |
 | `debug` | If true, lines are drawn on the output pages to show the packed image bounds. | false |
 | `combineSubdirectories` | If true, the directory containing the settings file and all subdirectories are packed as if they were in the same directory. Any settings files in the subdirectories are ignored. | false |
-| `flattenPaths` | If true, only image file names are used in the atlas, any subdirectories are not used. | false |
+| `flattenPaths` | If true, subdirectory prefixes are stripped from image file names. Image file names should be unique. | false |
 | `premultiplyAlpha` | If true, the RGB will be multiplied by the alpha. See [here](http://blogs.msdn.com/b/shawnhar/archive/2009/11/06/premultiplied-alpha.aspx) for more information. | false |
 | `useIndexes` | If false, image names are used without stripping any image index suffix. | true |
-| `limitMemory` | If true, only one image is in memory at any given time, but each image will be read twice. If false, all images are kept in memory during packing but they are only read once. | true |
+| `limitMemory` | If true, only one image is in memory at any given time, but each image will be read twice. If false, all images are kept in memory during packing but are only read once. | true |
 | `grid` | If true, images are packed in a uniform grid, in order. | false |
-| `scale` | An atlas is output for each scale. | `[1]` ]
+| `scale` | An entire atlas is output for each scale. Used only at the root packing directory. | `[1]` ]
 
 ## <a id="NinePatches"></a>NinePatches ##
 
