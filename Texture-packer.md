@@ -44,9 +44,9 @@ Note that TexturePacker runs significantly faster with Java 1.7+, especially whe
 
 TexturePacker can pack all images for an application in one shot. Given a directory, it recursively scans for image files. For each directory of images TexturePacker encounters, it packs the images on to a larger texture, called a page. If the images in a directory don't fit on the max size of a single page, multiple pages will be used.
 
-Images in the same directory go on the same set of pages. If all images fit on a single page, no subdirectories should be used because with one page the app will only ever perform one texture bind. Otherwise, subdirectories can be used to segregate related images to minimize texture binds. Eg, an application may want to place all the "game" images in a separate directory from the "pause menu" images, since these two sets of images are drawn serially: all the game images are drawn (one bind), then the pause menu is drawn on top (another bind). If the images were in a single directory that resulted in more than one page, each page could contain a mix of game and pause menu images, which would cause unnecessary texture binds.
+Images in the same directory go on the same set of pages. If all images fit on a single page, no subdirectories should be used because with one page the app will only ever perform one texture bind. Otherwise, subdirectories can be used to segregate related images to minimize texture binds. Eg, an application may want to place all the "game" images in a separate directory from the "pause menu" images, since these two sets of images are drawn serially: all the game images are drawn (one bind), then the pause menu is drawn on top (another bind). If the images were in a single directory that resulted in more than one page, each page could contain a mix of game and pause menu images. This would cause multiple texture binds to render the game and pause menu instead of just one each.
 
-Subdirectories are also useful to group images with related texture settings. Settings like format (RGBA, RGB, etc) and filter (nearest, linear, etc) are per texture. Images that need different per texture settings need to go on separate pages, so should be placed in separate subdirectories.
+Subdirectories are also useful to group images with related texture settings. Settings like runtime memory format (RGBA, RGB, etc) and filtering (nearest, linear, etc) are per texture. Images that need different per texture settings need to go on separate pages, so should be placed in separate subdirectories.
 
 To use subdirectories for organization without TexturePacker outputting a set of pages for each subdirectory, see the `combineSubdirectories` setting.
 
@@ -154,11 +154,11 @@ java -cp gdx.jar:gdx-tools.jar com.badlogic.gdx.tools.imagepacker.TexturePacker 
 java -cp gdx.jar;gdx-tools.jar com.badlogic.gdx.tools.imagepacker.TexturePacker inputDir outputDir packFileName
 ```
 
-Be sure to specify the `TexturePacker` class, not the deprecated `TexturePacker` class. `inputDir` is the root directory containing the images. `outputDir` is the output directory where the packed images will be placed. `packFileName` is the name prefix used for the output files.
+`inputDir` is the root directory containing the images. `outputDir` is the output directory where the packed images will be placed. `packFileName` is the name of the pack file and the prefix used for the output packed image files.
 
 If `outputDir` is omitted, files will be placed in a new directory that is a sibling to `inputDir` with the suffix "-packed". If `packFileName` is omitted, "pack" is used.
 
-While texture packing is intended to be a fully automated process, there has also been a nice UI contributed by Obli: [TexturePacker GUI](https://code.google.com/p/libgdx-texturepacker-gui/). There is also a commercial product at [texturepacker.com](http://www.codeandweb.com/texturepacker) that has even more features than the libgdx texture packer, such as automatic downsizing.
+While texture packing is intended to be a fully automated process, there has also been a nice UI contributed by Obli (though slightly out of date): [TexturePacker GUI](https://code.google.com/p/libgdx-texturepacker-gui/). There is also a commercial product at [texturepacker.com](http://www.codeandweb.com/texturepacker) which is completely unrelated to libgdx's texture packer and has a UI, many features and nice documentation.
 
 ## <a id="Automatic_packing"></a>Automatic packing ##
 
@@ -177,7 +177,7 @@ public class DesktopGame {
 }
 ```
 
-Each time the game is run, all the images are packed. This can be especially convenient when giving a build to an artist, who can then try out new images without even knowing the game is using packed images.
+Each time the game is run, all the images are packed. This can be especially convenient when giving a build to an artist, who can then try out new images without even knowing the game is using packed images. If many images are packed, the `fast` setting can be useful to avoid waiting.
 
 _Note: When loading files from the classpath, Eclipse usually will not reflect changes to files that are updated externally. The project with the changed files must be manually refreshed in Eclipse. During development files can be loaded through the filesystem instead, where this is not an issue._
 
