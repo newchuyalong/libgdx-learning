@@ -1,5 +1,5 @@
  * [TexturePacker](#TexturePacker)
-   * [Running TexturePacker2](#Running_TexturePacker2)
+   * [Running TexturePacker](#Running_TexturePacker)
    * [Directory structure](#Directory_structure)
    * [Configuration](#Configuration)
    * [Settings](#Settings)
@@ -11,21 +11,19 @@
 
 # <a id="TexturePacker"></a>TexturePacker #
 
-In OpenGL, a texture is bound, some drawing is done, another texture is bound, more drawing is done, etc. Binding the texture is relatively expensive, so it is ideal to store many smaller images on a larger image, bind the larger texture once, then draw portions of it many times. libgdx has a `TexturePacker2` class which is a command line application that packs many smaller images on to larger images. It stores the locations of the smaller images so they are easily referenced by name in your application using the `TextureAtlas` class.
+In OpenGL, a texture is bound, some drawing is done, another texture is bound, more drawing is done, etc. Binding the texture is relatively expensive, so it is ideal to store many smaller images on a larger image, bind the larger texture once, then draw portions of it many times. libgdx has a `TexturePacker` class which is a command line application that packs many smaller images on to larger images. It stores the locations of the smaller images so they are easily referenced by name in your application using the `TextureAtlas` class.
 
-TexturePacker is based on [the maximal rectangles algorithm](http://clb.demon.fi/projects/even-more-rectangle-bin-packing). It also does brute force, packing various ways at various sizes and then choosing the most efficient result.
+TexturePacker uses multiple packing algorithms but the most notable is based on [the maximal rectangles algorithm](http://clb.demon.fi/projects/even-more-rectangle-bin-packing). It also uses brute force, packing with various heuristics at various sizes and then choosing the most efficient result.
 
-_Note the latest version of the libgdx texture packer is the class `TexturePacker2`. The `TexturePacker` class is deprecated._
+## <a id="Running_TexturePacker"></a>Running TexturePacker ##
 
-## <a id="Running_TexturePacker2"></a>Running TexturePacker2 ##
-
-The `TexturePacker2` class is in the gdx-tools project. It can be run from source via Eclipse:
+The `TexturePacker` class is in the gdx-tools project. It can be run from source via Eclipse:
 
 ```java
-import com.badlogic.gdx.tools.imagepacker.TexturePacker2;
+import com.badlogic.gdx.tools.imagepacker.TexturePacker;
 public class MyPacker {
 	public static void main (String[] args) throws Exception {
-		TexturePacker2.process(inputDir, outputDir, packFileName);
+		TexturePacker.process(inputDir, outputDir, packFileName);
 	}
 }
 ```
@@ -34,30 +32,29 @@ It can also be run from the [nightly build](http://libgdx.badlogicgames.com/nigh
 
 ```
 //*NIX (OS X/Linux)
-java -cp gdx.jar:extensions/gdx-tools/gdx-tools.jar com.badlogic.gdx.tools.imagepacker.TexturePacker2 inputDir [outputDir] [packFileName]
+java -cp gdx.jar:extensions/gdx-tools/gdx-tools.jar com.badlogic.gdx.tools.imagepacker.TexturePacker inputDir [outputDir] [packFileName]
 
 //WINDOWS
-java -cp gdx.jar;extensions/gdx-tools/gdx-tools.jar com.badlogic.gdx.tools.imagepacker.TexturePacker2 inputDir [outputDir] [packFileName]
-
+java -cp gdx.jar;extensions/gdx-tools/gdx-tools.jar com.badlogic.gdx.tools.imagepacker.TexturePacker inputDir [outputDir] [packFileName]
 ```
 
-Note that TexturePacker2 runs significantly faster with Java 1.7+, especially when packing hundreds of input images.
+Note that TexturePacker runs significantly faster with Java 1.7+, especially when packing hundreds of input images.
 
 ## <a id="Directory_structure"></a>Directory structure ##
 
-TexturePacker2 can pack all images for an application in one shot. Given a directory, it recursively scans for image files. For each directory of images TexturePacker2 encounters, it packs the images on to a larger texture, called a page. If the images in a directory don't fit on the max size of a single page, multiple pages will be used.
+TexturePacker can pack all images for an application in one shot. Given a directory, it recursively scans for image files. For each directory of images TexturePacker encounters, it packs the images on to a larger texture, called a page. If the images in a directory don't fit on the max size of a single page, multiple pages will be used.
 
 Images in the same directory go on the same set of pages. If all images fit on a single page, no subdirectories should be used because with one page the app will only ever perform one texture bind. Otherwise, subdirectories can be used to segregate related images to minimize texture binds. Eg, an application may want to place all the "game" images in a separate directory from the "pause menu" images, since these two sets of images are drawn serially: all the game images are drawn (one bind), then the pause menu is drawn on top (another bind). If the images were in a single directory that resulted in more than one page, each page could contain a mix of game and pause menu images, which would cause unnecessary texture binds.
 
 Subdirectories are also useful to group images with related texture settings. Settings like format (RGBA, RGB, etc) and filter (nearest, linear, etc) are per texture. Images that need different per texture settings need to go on separate pages, so should be placed in separate subdirectories.
 
-To use subdirectories for organization without TexturePacker2 outputting a set of pages for each subdirectory, see the `combineSubdirectories` setting.
+To use subdirectories for organization without TexturePacker outputting a set of pages for each subdirectory, see the `combineSubdirectories` setting.
 
 To avoid subdirectory paths being used in image names in the atlas file, see the `flattenPaths` setting.
 
 ## <a id="Configuration"></a>Configuration ##
 
-Each directory may contain a "pack.json" file, which is a JSON representation of the TexturePacker2.Settings class. Each subdirectory inherits all the settings from its parent directory. Any settings set in the subdirectory override those set in the parent directory.
+Each directory may contain a "pack.json" file, which is a JSON representation of the TexturePacker.Settings class. Each subdirectory inherits all the settings from its parent directory. Any settings set in the subdirectory override those set in the parent directory.
 
 Below is a JSON example with every available setting and the default value for each. All settings do not need to be specified, any or all may be omitted. If a setting is not specified for a directory or any parent directory, the default value is used.
 
@@ -147,18 +144,17 @@ If an image file name ends with underscore and then a number (eg animation_23.pn
 
 ## <a id="Packing"></a>Packing ##
 
-The TexturePacker2 class is in `gdx-tools.jar`, which is in the extensions directory of the nightlies/releases zip files. You only need TexturePacker2 as a tool to process your image files for your application, you don't need it as a dependency to run your application. To run the packer you need both `gdx.jar` and `gdx-tools.jar`.
+The TexturePacker class is in `gdx-tools.jar`, which is in the extensions directory of the nightlies/releases zip files. You only need TexturePacker as a tool to process your image files for your application, you don't need it as a dependency to run your application. To run the packer you need both `gdx.jar` and `gdx-tools.jar`.
 
 ```
 //*NIX (OS X/Linux)
-java -cp gdx.jar:gdx-tools.jar com.badlogic.gdx.tools.imagepacker.TexturePacker2 inputDir outputDir packFileName
+java -cp gdx.jar:gdx-tools.jar com.badlogic.gdx.tools.imagepacker.TexturePacker inputDir outputDir packFileName
 
 //WINDOWS
-java -cp gdx.jar;gdx-tools.jar com.badlogic.gdx.tools.imagepacker.TexturePacker2 inputDir outputDir packFileName
-
+java -cp gdx.jar;gdx-tools.jar com.badlogic.gdx.tools.imagepacker.TexturePacker inputDir outputDir packFileName
 ```
 
-Be sure to specify the `TexturePacker2` class, not the deprecated `TexturePacker` class. `inputDir` is the root directory containing the images. `outputDir` is the output directory where the packed images will be placed. `packFileName` is the name prefix used for the output files.
+Be sure to specify the `TexturePacker` class, not the deprecated `TexturePacker` class. `inputDir` is the root directory containing the images. `outputDir` is the output directory where the packed images will be placed. `packFileName` is the name prefix used for the output files.
 
 If `outputDir` is omitted, files will be placed in a new directory that is a sibling to `inputDir` with the suffix "-packed". If `packFileName` is omitted, "pack" is used.
 
@@ -166,7 +162,7 @@ While texture packing is intended to be a fully automated process, there has als
 
 ## <a id="Automatic_packing"></a>Automatic packing ##
 
-During development it can be convenient to have the desktop application run TexturePacker2 before starting the game:
+During development it can be convenient to have the desktop application run TexturePacker before starting the game:
 
 ```java
 public class DesktopGame {
@@ -174,7 +170,7 @@ public class DesktopGame {
 		Settings settings = new Settings();
 		settings.maxWidth = 512;
 		settings.maxHeight = 512;
-		TexturePacker2.process(settings, "../images", "../game-android/assets", "game");
+		TexturePacker.process(settings, "../images", "../game-android/assets", "game");
 
 		new LwjglApplication(new Game(), "Game", 320, 480, false);
 	}
@@ -187,7 +183,7 @@ _Note: When loading files from the classpath, Eclipse usually will not reflect c
 
 # <a id="TextureAtlas"></a>TextureAtlas #
 
-The TexturePacker2 output is a directory of page images and a text file that describes all the images packed on the pages. This shows how to use the images in an application:
+The TexturePacker output is a directory of page images and a text file that describes all the images packed on the pages. This shows how to use the images in an application:
 
 ```java
 TextureAtlas atlas;
