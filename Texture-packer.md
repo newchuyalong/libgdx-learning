@@ -132,7 +132,7 @@ Note that this is libgdx's "minimal" JSON format, so double quotes are optional 
 | `useIndexes` | If false, image names are used without stripping any image index suffix. | true |
 | `limitMemory` | If true, only one image is in memory at any given time, but each image will be read twice. If false, all images are kept in memory during packing but are only read once. | true |
 | `grid` | If true, images are packed in a uniform grid, in order. | false |
-| `scale` | An entire atlas is output for each scale. Used only at the root packing directory. | `[1]` ]
+| `scale` | For each scale, the images are scaled and an entire atlas is output. | `[1]` ]
 
 ## <a id="NinePatches"></a>NinePatches ##
 
