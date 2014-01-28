@@ -4,7 +4,7 @@ If your game is very simple, and loading resources doesn't take a lot of time yo
 
 
   * Loading of most resources is done asynchronously, so you can display a reactive loading screen while things load
-  * Assets are reference counted. If two assets A and B both depend on another asset C, C won't be disposed until A, B and C have been disposed. This also means that if you load an asset multiple times, it will actually be shared and only take up memory once!
+  * Assets are reference counted. If two assets A and B both depend on another asset C, C won't be disposed until A and B have been disposed. This also means that if you load an asset multiple times, it will actually be shared and only take up memory once!
   * A single place to store all your assets.
   * Allows to transparently implement things like caches (see FileHandleResolver below)
 
