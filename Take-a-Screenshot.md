@@ -1,6 +1,6 @@
 This example shows how to take a screenshot and save it in PNG format. It even adds a suffix when multiple Screenshots are taken.
 
-```
+```java
 public class ScreenshotFactory {
 
 	private static int counter = 1;
