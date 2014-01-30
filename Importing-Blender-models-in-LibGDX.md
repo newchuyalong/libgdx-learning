@@ -28,7 +28,7 @@ Please ensure you limit the size of your texture files to POT (power of two dime
 
 Additionally test that your lighting/color is configured in a way which will illuminate your model instance. A good test is to pass a null environment pointer to your Model Batch, which will disable lighting effects.
 
-If you have used Blender's FBX export script, please ensure your textures were assigned to a UV map, as the export script only supports texface textures.
+If you have used Blender's FBX export script, please ensure your textures were assigned to a UV map, as the export script only supports texface textures, go to edit mode, in UV/Texture editor select the texture/image that you want to export with the object.
 
 
 ### RrSs warning
