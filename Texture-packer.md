@@ -71,6 +71,7 @@ Below is a JSON example with every available setting and the default value for e
 	minHeight: 16,
 	maxWidth: 1024,
 	maxHeight: 1024,
+	square: false,
 	stripWhitespaceX: false,
 	stripWhitespaceY: false,
 	alphaThreshold: 0,
@@ -112,6 +113,7 @@ Note that this is libgdx's "minimal" JSON format, so double quotes are optional 
 | `minHeight` | The minimum height of output pages. | 16 |
 | `maxWidth` | The maximum width of output pages. 1024 is safe for all devices. Extremely old devices may have degraded performance over 512. | 1024 |
 | `maxHeight` | The maximum height of output pages. 1024 is safe for all devices. Extremely old devices may have degraded performance over 512. | 1024 |
+| `square` | If true, output pages are forced to have the same width and height (required for mipmapping in GL1). | false |
 | `stripWhitespaceX` | If true, blank pixels on the left and right edges of input images will be removed. Applications must take special care to draw these regions properly. | false |
 | `stripWhitespaceY` | If true, blank pixels on the top and bottom edges of input images will be removed. Applications must take special care to draw these regions properly. | false |
 | `alphaThreshold` | From 0 to 255. Alpha values below this are treated as zero when whitespace is stripped. | 0 |
