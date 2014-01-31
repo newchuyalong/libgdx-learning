@@ -19,7 +19,23 @@ Putting it all together, you can run the project generator on the command line a
 
 `java -jar gdx-setup.jar --dir mygame --name mygame --package com.badlogic.mygame --mainClass MyGame`
 
-This will create a directory called `mygame`with the following layout
+This will create a directory called `mygame`with the following layout:
+
+`
+build.gradle
+settings.gradle
+
+core/
+
+desktop/
+
+android/
+
+gwt/
+
+ios/
+
+`
 
 
 
