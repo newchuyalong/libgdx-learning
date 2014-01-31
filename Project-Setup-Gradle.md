@@ -19,18 +19,18 @@ In case of Gradle, both dependency management and build system go hand in hand. 
 
 ### Running from the command line
 ### Running from the command line
-# Running on windows
+#### Running on windows
 `gradlew clean`
-# Running on Linux / Mac OS
+### Running on Linux / Mac OS
 `./gradlew clean`
 
-# Running the desktop project
+### Running the desktop project
 `./gradlew desktop:run`
-# Running the android project
+### Running the android project
 `./gradlew android:installDebug`
-# Running the gwt project
+### Running the gwt project
 `./gradlew gwt:gwtDev`
-# Running the ios project
+### Running the ios project
 `./gradlew ios:whoknows`
 
 
