@@ -23,6 +23,16 @@ This will create a directory called `mygame`with the following layout:
 
 ```
 settings.gradle
+build.gradle
+gradlew
+gradlew.bat
+gradle
+
+core
+desktop
+android
+gwt
+ios
 ```
 
 ### Importing to Eclipse
