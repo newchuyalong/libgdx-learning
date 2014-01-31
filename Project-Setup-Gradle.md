@@ -55,9 +55,12 @@ To run the desktop project, use this gradle command:
 #### Running the android project
 To run the android project, use this gradle command:
 `./gradlew android:installDebug`
+
+This task will compile the APK for android and install it on a connected device. You will have to start the app manually on the device yourself.
 #### Running the gwt project
 To run the gwt project, use this gradle command:
 `./gradlew gwt:gwtDev`
+
 #### Running the ios project
 To run the ios project, use this gradle command:
 `./gradlew ios:whoknows`
