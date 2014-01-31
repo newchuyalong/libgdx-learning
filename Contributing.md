@@ -21,6 +21,9 @@ If you work on libgdx code, we require you to use the [Eclipse formatter](https:
 
 Failure to use the formatter will result in Nate being very upset.
 
+If you are using IntelliJ IDEA, you can still make use of the eclipse code formatter:
+see: [this article](http://blog.jetbrains.com/idea/2014/01/intellij-idea-13-importing-code-formatter-settings-from-eclipse/?utm_source=hootsuite&utm_campaign=hootsuite)
+
 ### Code Style ###
 
 Libgdx does not have an official coding standard. We mostly follow the usual [Java style](http://www.oracle.com/technetwork/java/codeconv-138413.html), and so should you.
