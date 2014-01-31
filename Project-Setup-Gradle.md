@@ -32,25 +32,29 @@ This will create a directory called `mygame`with the following layout
 ### Running & Debugging in Intellij Idea
 
 ### Running from the command line
+The ANDROID_HOME environment variable needs to be pointing to a valid android SDK before you do any command line wizardry. To do this on Windows, you can issue this from the command line:
+`set ANDROID_HOME=C:/Path/To/Your/Android/Sdk`
+On Linux and Mac OS X you can do this from the shell:
+`export ANDROID_HOME=/Path/To/Your/Android/Sdk`
+Once you have the ANDROID_HOME environment variable pointing at the Android SDK, you can use the following to run gradle tasks from the command line:
 
-### Running from the command line
-Once you have the ANDROID_HOME environment variable pointing at the Android SDK, you can use the following to run gradle tasks:
-
-
-On Windows:
-
+On Windows invoke gradle like this:
 `gradlew clean`
 
-On Mac IS or linux 
-
+On Mac OS or Linux invoke gradle like this: 
 `./gradlew clean`
+Note the leading dot slash on Unix like systems. In both cases, the clean task will remove all build files from all modules in the project, e.g. class files previously generated.
 #### Running the desktop project
+To run the desktop project, use this gradle command:
 `./gradlew desktop:run`
 #### Running the android project
+To run the android project, use this gradle command:
 `./gradlew android:installDebug`
 #### Running the gwt project
+To run the gwt project, use this gradle command:
 `./gradlew gwt:gwtDev`
 #### Running the ios project
+To run the ios project, use this gradle command:
 `./gradlew ios:whoknows`
 
 
