@@ -33,9 +33,13 @@ This will create a directory called `mygame`with the following layout
 
 ### Running from the command line
 The ANDROID_HOME environment variable needs to be pointing to a valid android SDK before you do any command line wizardry. To do this on Windows, you can issue this from the command line:
+
 `set ANDROID_HOME=C:/Path/To/Your/Android/Sdk`
+
 On Linux and Mac OS X you can do this from the shell:
+
 `export ANDROID_HOME=/Path/To/Your/Android/Sdk`
+
 Once you have the ANDROID_HOME environment variable pointing at the Android SDK, you can use the following to run gradle tasks from the command line:
 
 On Windows invoke gradle like this:
