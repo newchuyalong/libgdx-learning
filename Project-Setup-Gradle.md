@@ -22,17 +22,36 @@ Putting it all together, you can run the project generator on the command line a
 This will create a directory called `mygame`with the following layout:
 
 ```
-settings.gradle
-build.gradle
-gradlew
-gradlew.bat
-gradle
+settings.gradle            <- definition of sub-modules. By default core, desktop, android, gwt, ios
+build.gradle               <- main Gradle build file, defines dependencies and plugins
+gradlew                    <- script that will run Gradle on Unix systems
+gradlew.bat                <- script that will run Gradle on Windows
+gradle                     <- local gradle wrapper
 
-core
-desktop
-android
-gwt
-ios
+core/
+    build.gradle           <- Gradle build file for core project, no touchy!
+    src/                   <- Source folder for all your game's code
+
+desktop/
+    build.gradle           <- Gradle build file for desktop project, no touchy!
+    src/                   <- Source folder for your desktop project, contains Lwjgl launcher class
+
+android/
+    build.gradle           <- Gradle build file for android project, no touchy, seriously this time
+    AndroidManifest.xml    <- Android specific config
+    assets/                <- contains for your graphics, audio, etc.  Shared with other projects.
+    res/                   <- contains icons for your app and other resources
+    src/                   <- Source folder for your Android project, contains android launcher class
+
+gwt/
+    build.gradle           <- Gradle build file for the gwt project, no touchy
+    src/                   <- Source folder for your gwt project, contains launcher and gwt definition
+    webapp/                <- War template, on generation the contents are copied to war. Contains startup url index page and web.xml
+
+
+ios/
+    build.gradle           <- Gradle build file for the ios project, no touchy unless masochistic
+    src/                   <- Source folder for your ios project, contains launcher
 ```
 
 ### Importing to Eclipse
