@@ -76,6 +76,16 @@ Gradle in Intellij does not like any source paths that are outside of the conten
 * Don't use the gradle IDE integration, run from command line and import as a file system
 
 ### Running & Debugging in Intellij Idea
+##### Running the desktop project
+At the top window hit Run > Edit configurations, a dialog will pop up. Click Application on the left and use the little green + to create a new run configuration.
+![Edit run configuration](http://i.imgur.com/CZQgTpx.png)
+
+If you click the ... on the right hand side, you will be able choose from launchers in your projects. Choose the DesktopLauncher.
+
+Next you need to change the working directory to where your assets are. The usual way to do this is access everything from the android/assets folder as shown in the image.
+
+Finally choose the desktop module for classpath. Give it a run!
+
 
 ### Running from the command line
 The ANDROID_HOME environment variable needs to be pointing to a valid android SDK before you do any command line wizardry. To do this on Windows, you can issue this from the command line:
