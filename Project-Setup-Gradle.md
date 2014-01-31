@@ -18,19 +18,20 @@ In case of Gradle, both dependency management and build system go hand in hand. 
 ### Running & Debugging in Intellij Idea
 
 ### Running from the command line
-### Running from the command line
-#### Running on windows
-`gradlew clean`
-### Running on Linux / Mac OS
-`./gradlew clean`
 
-### Running the desktop project
+### Running from the command line
+Once you have the ANDROID_HOME environment varaible pointing ath the Android SDK, you can use the following to run gradle tasks:
+On Windows:
+`gradlew clean`
+On Mac IS or linux
+`./gradlew clean`
+#### Running the desktop project
 `./gradlew desktop:run`
-### Running the android project
+#### Running the android project
 `./gradlew android:installDebug`
-### Running the gwt project
+#### Running the gwt project
 `./gradlew gwt:gwtDev`
-### Running the ios project
+#### Running the ios project
 `./gradlew ios:whoknows`
 
 
