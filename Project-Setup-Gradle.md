@@ -21,22 +21,6 @@ Putting it all together, you can run the project generator on the command line a
 
 This will create a directory called `mygame`with the following layout:
 
-`
-build.gradle
-settings.gradle
-
-core/
-
-desktop/
-
-android/
-
-gwt/
-
-ios/
-
-`
-
 
 
 ### Importing to Eclipse
