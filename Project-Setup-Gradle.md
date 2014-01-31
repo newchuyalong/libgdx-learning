@@ -90,7 +90,7 @@ Finally choose the desktop module for classpath. Give it a run!
 At the top of the window hit Run > Edit configurations, a dialog will pop up. Click on Android Application on the left and if there is no project defined there, use the little green + to add a new configuration.
 ![Android run configuration](http://i.imgur.com/68zYHpx.png)
 
-All the settings here are fairly straight forward, if you have multiple activities you can choose which one you want to launch.  
+All the settings here are fairly straight forward, make sure you have the module selected as the android module, if you have multiple activities you can choose which one you want to launch.  
 
 Under target device, you can select if you want to run on an actual device or god forbid an emulator.
 
