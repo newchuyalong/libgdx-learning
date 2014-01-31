@@ -86,6 +86,16 @@ Next you need to change the working directory to where your assets are. The usua
 
 Finally choose the desktop module for classpath. Give it a run!
 
+##### Running the android project
+At the top of the window hit Run > Edit configurations, a dialog will pop up. Click on Android Application on the left and if there is no project defined there, use the little green + to add a new configuration.
+![Android run configuration](http://i.imgur.com/68zYHpx.png)
+
+All the settings here are fairly straight forward, if you have multiple activities you can choose which one you want to launch.  
+
+Under target device, you can select if you want to run on an actual device or god forbid an emulator.
+
+Hit ok, give it a run!
+
 
 ### Running from the command line
 The ANDROID_HOME environment variable needs to be pointing to a valid android SDK before you do any command line wizardry. To do this on Windows, you can issue this from the command line:
