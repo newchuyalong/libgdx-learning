@@ -37,6 +37,12 @@ To do this: File > Import Project, locate and choose the build.gradle in the roo
 
 Keep the settings as default unless you know that you want to use a customized gradle wrapper or your local distribution. Hit OK, and it will start the import of the project and pulling in the default dependencies. 
 
+#### A note on Intellij content root problems
+Gradle in Intellij does not like any source paths that are outside of the content root. For example setting the resource directory for the desktop project as the android assets folder, this will cause a gradle refresh to fail. There are currently on a few solutions for this problem, and none of them are that ideal.  The developers have said that it will someday play nice, but as for now you can do the following:
+
+* Dont use gradle tasks to run tasks that would require the content out of the root and keep the asset directories as 'wrong'
+* Copy assets to each project
+* Don't use the gradle IDE integration, run from command line and import as a file system
 
 ### Running & Debugging in Intellij Idea
 
