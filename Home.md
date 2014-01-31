@@ -10,7 +10,7 @@
     * [[Contributing]]
     * [[Games Built with Libgdx]]
     * [[Prerequisites]]
-    * [[Project-Setup-Gradle]]
+    * [[Project Setup Gradle]]
     * [[Project Setup, Running & Debugging]]
       * [[Manual Project Setup]]
       * [[Maven Integration]]
