@@ -24,10 +24,19 @@ This will create a directory called `mygame`with the following layout
 
 
 ### Importing to Eclipse
-
+#### As a file system
+#### Using the gradle plugin
 ### Running & Debugging in Eclipse
 
 ### Importing to Intellij Idea
+Intellij has gradle support bundled, so you can import a gradle project without installing any additional plugins.
+
+To do this: File > Import Project, locate and choose the build.gradle in the root directory of the project and press ok. 
+
+![Import Project](http://i.imgur.com/dx4ZJQh.png)
+
+Keep the settings as default unless you know that you want to use a customized gradle wrapper or your local distribution. Hit OK, and it will start the import of the project and pulling in the default dependencies. 
+
 
 ### Running & Debugging in Intellij Idea
 
