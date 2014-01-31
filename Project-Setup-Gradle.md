@@ -20,11 +20,10 @@ In case of Gradle, both dependency management and build system go hand in hand. 
 ### Running from the command line
 
 ### Running from the command line
-Once you have the ANDROID_HOME environment variable pointing at the Android SDK, you can use the following to run gradle tasks:
-
-On Windows:
+Once you have the ANDROID_HOME environment variable pointing at the Android SDK, you can use the following to run gradle tasks:--
+On Windows:--
 `gradlew clean`
-On Mac IS or linux
+On Mac IS or linux --
 `./gradlew clean`
 #### Running the desktop project
 `./gradlew desktop:run`
