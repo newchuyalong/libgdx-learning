@@ -8,6 +8,20 @@ A build system helps with building and packaging your application, without being
 In case of Gradle, both dependency management and build system go hand in hand. Both are configured in the same set of files. See the "Dependency Management" and "Packaging" sections below for more information.
 
 ### Creating a libgdx Gradle project
+Libgdx comes with a file called `gdx-setup.jar` which is an executable command line tool. It takes the following arguments:
+
+* **dir**: the directory to write the project to, relative or absolute
+* **name**: the name of the application, lower-case with minuses is usually a good idea, e.g. mygame
+* **package**: the Java package under which your code will live, e.g. com.badlogic.mygame
+* **mainClass**: the name of the main ApplicationListener of your app, e.g. MyGame
+
+Putting it all together, you can run the project generator on the command line as follows:
+
+`java -jar gdx-setup.jar --dir mygame --name mygame --package com.badlogic.mygame --mainClass MyGame``
+
+This will create a directory called `mygame`with the following layout
+
+
 
 ### Importing to Eclipse
 
