@@ -4,11 +4,17 @@ The libgdx Particle Editor is a powerful tool for making particle effects. See t
 
 To run the editor, you can check out libgdx and run it [[from source | Running Demos & Tests]]. The editor is in the gdx-tools project. Alternatively, you can download the [nightly build](http://libgdx.badlogicgames.com/nightlies/) and run the particle editor from the gdx-tools JAR:
 
+Windows:
+
 ```
 java -cp gdx.jar;gdx-natives.jar;gdx-backend-lwjgl.jar;gdx-backend-lwjgl-natives.jar;extensions\gdx-tools\gdx-tools.jar com.badlogic.gdx.tools.particleeditor.ParticleEditor
 ```
 
-On Linux or Mac, simply replace the semicolons with colons and the backslashes with forward slashes.
+Linux or Mac:
+
+```
+java -cp gdx.jar:gdx-natives.jar:gdx-backend-lwjgl.jar:gdx-backend-lwjgl-natives.jar:extensions/gdx-tools/gdx-tools.jar com.badlogic.gdx.tools.particleeditor.ParticleEditor
+```
 
 Click this image for the JWS, though this is not as up to date as running from source or from gdx-tools.jar:
 
