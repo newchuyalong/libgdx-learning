@@ -248,7 +248,7 @@ Coming soon
 
 The easiest way to manage a link between your sprites or game objects and Box2D is with Box2D’s User Data. You can set the user data to your game object and then update the object's position based on the Box2D body.
 
-Setting a bodies user data is easy
+Setting a body's user data is easy
 
 ```java
 body.setUserData(Object);
@@ -266,7 +266,7 @@ Iterator<Body> bi = world.getBodies();
 while (bi.hasNext()){
     Body b = bi.next();
 
-    // Get the bodies user data - in this example, our user 
+    // Get the body's user data - in this example, our user 
     // data is an instance of the Entity class
     Entity e = (Entity) b.getUserData();
 
