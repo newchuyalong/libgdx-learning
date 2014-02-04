@@ -14,7 +14,7 @@ libgdx can perform automatic object to JSON serialization and JSON to object des
   * `JsonValue`: Describes a JSON object, array, string, float, long, boolean, or null.
   * `Json`: Reads and writes arbitrary object graphs using `JsonReader` and `JsonWriter`.
 
-To use these classes outside of libgdx, see the [JsonBeans](https://code.google.com/p/jsonbeans/) project.
+To use these classes outside of libgdx, see the [JsonBeans](https://github.com/EsotericSoftware/jsonbeans/) project.
 
 ## <a id="Writing_Object_Graphs"></a>Writing Object Graphs ##
 
