@@ -105,12 +105,11 @@ If an application needs to be able to write to the external storage of a device 
 	<uses-permission android:name="android.permission.RECORD_AUDIO"/>
 	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 	<uses-permission android:name="android.permission.VIBRATE"/>
-	<uses-permission android:name="android.permission.WAKE_LOCK"/>	
 ```
 
 Users are generally suspicious of applications with many permissions, so chose these wisely. 
 
-For wake locking to work, the corresponding  `AndroidApplicationConfiguration.useWakeLock` needs to be set to true. 
+For wake locking to work, `AndroidApplicationConfiguration.useWakeLock` needs to be set to true. 
 
 If a game doesn't need accelerometer or compass access it is advised to disable these by setting the `useAccelerometer` and `useCompass` fields of `AndroidApplicationConfiguration` to false. 
 
