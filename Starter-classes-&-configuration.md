@@ -99,7 +99,7 @@ The `screenOrientation` attribute specifies a fixed orientation for the applicat
 The `configChanges` attribute is *crucial* and should always have the values shown above. Omitting this attribute means that the application will be restarted every time a physical keyboard is slid out/in or if the orientation of the device changes. If the `screenOrientation` attribute is omitted, a libgdx application will receive calls to `ApplicationListener.resize()` to indicate the orientation change. API clients can then re-layout the application accordingly.
 
 #### Permissions ####
-If an application needs to be able to write to the external storage of a device (e.g. SD-card), needs internet access, uses the vibrator, wants to keep the screen from going to sleep or wants to record audio, the following permissions need to be added to the `AndroidManifest.xml` file:
+If an application needs to be able to write to the external storage of a device (e.g. SD-card), needs internet access, uses the vibrator or wants to record audio, the following permissions need to be added to the `AndroidManifest.xml` file:
 
 ```xml
 	<uses-permission android:name="android.permission.RECORD_AUDIO"/>
