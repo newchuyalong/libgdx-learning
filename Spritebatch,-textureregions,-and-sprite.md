@@ -115,7 +115,7 @@ Here the `20, 20, 50, 50` describes the portion of the texture, which is rotated
 
 Note that `Sprite` mixes model information (position, rotation, etc) with view information (the texture being drawn). This makes `Sprite` inappropriate when applying a design pattern that wishes to strictly separate the model from the view. In that case, using `Texture` or `TextureRegion` may make more sense.
 
-Also note that there is no Sprite constructor that is related to the position of the Sprite. calling `Sprite(Texture, int, int, int, int)` does ***not** edit the position. It is necessary to call `Sprite#setPosition(float,float)` or else the sprite will be drawn at the default position of 0,0.
+Also note that there is no Sprite constructor that is related to the position of the Sprite. calling `Sprite(Texture, int, int, int, int)` does ***not*** edit the position. It is necessary to call `Sprite#setPosition(float,float)` or else the sprite will be drawn at the default position of 0,0.
 
 ## Tinting ##
 
