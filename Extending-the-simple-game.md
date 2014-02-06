@@ -92,7 +92,7 @@ public class MainMenuScreen implements Screen {
 
 In this code snippet, we make the constructor for the `MainMenuScreen` class, which implements the Screen interface. The Screen interface does not provide any sort of `create()` method, so we instead use a constructor. The only parameter for the constructor necessary for this game is an instance of `Drop`, so that we can call upon its methods and fields if necessary.
 
-Next, the final "meaty" method in the `MainMenuScreen` class: render(float)
+Next, the final "meaty" method in the `MainMenuScreen` class: `render(float)`
 
 ```java
 public class MainMenuScreen implements Screen {
