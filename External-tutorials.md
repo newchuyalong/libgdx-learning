@@ -22,6 +22,9 @@ These are webpages where individuals or companies write about their experience w
 
  * http://helios.hud.ac.uk/u1070589/blog/?p=202
 
+## Setup ##
+ * Gradle setup - http://duckseason.mobi/how-to-setup-gradle-for-existing-libgdx-multi-project-using-the-google-android-plug-in-2/
+
 ## Internationalization ##
 
  * http://siondream.com/blog/games/internationalization-for-libgdx-projects/
