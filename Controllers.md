@@ -66,8 +66,11 @@ Each method receives the Controller instance for which the event was triggered. 
 
 A ControllerListener can be either added to Controllers, in which case it will listen for events from all controllers, or to a specific Controller, in which case it will only receive events from that controller:
 
+```java
 Controllers.addListener(listener); // receives events from all controllers
 controller.addListener(listener); // receives events only from this controller
+```
+
 If you don’t want to implement all these methods, but only a select few, you can subclass [ControllerAdapter](https://github.com/libgdx/libgdx/blob/master/extensions/gdx-controllers/gdx-controllers/src/com/badlogic/gdx/controllers/ControllerAdapter.java)
 
 ```java
