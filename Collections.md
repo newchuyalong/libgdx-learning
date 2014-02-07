@@ -29,7 +29,7 @@ This is identical to Array except it guarantees that array entries provided by `
 SnapshotArray array = new SnapshotArray();
 // ...
 Object[] items = array.begin();
-for (int i = 0, n = array.size; i &lt; n; i++) {
+for (int i = 0, n = array.size; i < n; i++) {
 	Object item = items[i];
 	// ...
 }
