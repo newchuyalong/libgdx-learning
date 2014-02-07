@@ -49,6 +49,7 @@
       * [[Mouse, Touch & Keyboard]]
             * [[Polling]]
             * [[Event Handling]]
+      * [[Controllers]]
       * [[Gesture Detection]]
       * [[Simple Text Input]]
       * [[Accelerometer]]
