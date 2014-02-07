@@ -4,8 +4,8 @@ The goal of this extension is to provide the following functionality:
 * Enumerate connected controllers
 * Support for buttons, axes, sliders, POVs and accelerometers per controller
 * Listen for controller events globally or per controller
+* Poll controller state
 
-##Poll controller state
 We tried to keep the API as small as possible, with the potential for future additions. No initialization is necessary, the underlying backend will initialize automatically.
 
 ##Enumerating Controllers
