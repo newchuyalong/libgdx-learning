@@ -26,7 +26,7 @@ To check whether a specific input device is available on the platform the applic
 
 ```java
    boolean hardwareKeyboard = Gdx.input.isPeripheralAvailable(Peripheral.HardwareKeyboard);
-   boolean multiTouch = Gdx.input.isPeripheralAvailable(Peripheral. MultitouchScreen);
+   boolean multiTouch = Gdx.input.isPeripheralAvailable(Peripheral.MultitouchScreen);
 ```
 
 Please refer to the [Peripheral](https://github.com/libgdx/libgdx/blob/master/gdx/src/com/badlogic/gdx/Input.java#L243) enumeration to see the rest of the available constants.
