@@ -10,7 +10,7 @@ Well, that's true, but such a BitmapFont can easily take up two times as much sp
 Now imagine you have to ship all your big BitmapFonts with your game and your game uses ten different fonts... on an Android device. Bye bye, free storage!
 
 The solution to your problem is the `gdx-freetype` extension:
-  * ship only leightweight .ttf files with your game
+  * ship only lightweight .ttf files with your game
   * generate a BitmapFont of your desired size on the fly
   * user might put his own fonts into your game
 
