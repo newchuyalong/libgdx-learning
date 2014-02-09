@@ -5,3 +5,5 @@
 [[Distance field fonts]]
 
 [FreeTypeFontGenerator](http://www.badlogicgames.com/wordpress/?p=2300)
+
+[Glyph Designer](http://71squared.com/en/glyphdesigner) - a commercial bitmap font tool with a wide variety of options for shadows, gradients, stroke, etc.
