@@ -67,6 +67,25 @@ Leave everything as default and hit ok, it will start importing the project and 
 ### Running & Debugging in Eclipse
 
 ### Importing to Intellij Idea
+#### As a file system
+Let gradle generate the Intellij Idea project:
+```
+./gradlew idea
+```
+
+Once gradle is done with generating the project file, you can open this with Idea:
+
+1. File -> Open
+2. Select the .ipr file from the root directory, hit 'OK'
+
+You'll need to set the Android SDK for the android module:
+
+1. File -> Project Structure
+2. Select 'modules' in the panel on the left
+3. Select the android module
+4. Set the module SDK to the android SDK that you configured for IntelliJ
+
+#### Using the gradle plugin
 Intellij has gradle support bundled, so you can import a gradle project without installing any additional plugins.
 
 To do this: File > Import Project, locate and choose the build.gradle in the root directory of the project and press ok. 
