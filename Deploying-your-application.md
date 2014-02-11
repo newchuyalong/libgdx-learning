@@ -37,7 +37,7 @@ Deploying to Android takes some extra steps. This tutorial is done using Eclipse
 
 **Notes**
 - The .apk file can be used to install on devices directly such as via an email attachment or download. This requires the devices to have the 'Allow Unknown Sources' option enabled in settings. Some carriers unfortunately disable this setting.
-- LibGDX is only capable of *officially* exporting to devices running Android 1.5 or higher. Note that features supported by devices can vary, such as OpenGL ES 2 may not be supported on certain devices. 
+- LibGDX is only capable of *officially* exporting to devices running Android 2.2 or higher. If you are using LibGDX 0.9.9, you can export to Android 1.5+ Note that features supported by devices can vary, such as OpenGL ES 2 may not be supported on certain devices. 
 - OpenGL ES 2 requires Android 2.2 or higher and a graphics card supporting it.
 - Features that are incompatible with the device such as trying to use immersive mode on a pre-kitkat device will simply not do anything on unsupported devices.
 - If you want to upload to google play, here is a helpful link: http://developer.android.com/distribute/googleplay/publish/register.html
