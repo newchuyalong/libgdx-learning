@@ -141,6 +141,19 @@ On Mac OS or Linux invoke gradle like this:
 `./gradlew clean`
 
 Note the leading dot slash on Unix like systems. In both cases, the clean task will remove all build files from all modules in the project, e.g. class files previously generated.
+
+##### Basic Gradle tasks
+```
+Gwt
+compileGwt                   <- Compiles the java source code to javascript
+draftCompileGwt              <- compiles the java source code to javascript without optimizing.
+gwtSuperDev                  <- Runs GWT codeserver used for Super Dev Mode (GWT 2.5+)
+
+Gwt with war                 compileGwt automatically added to war, (keeps itself up to date)
+warTemplate                  <- explodes webapp contents to war, used in intial project build         
+gwtDev                       <- GWT Dev mode runs from the exploded webapp (war)
+draftWar                     <- Runs the draftCompileGwt code for quicker build times.
+```
 #### Running the desktop project
 To run the desktop project, use this gradle command:
 `./gradlew desktop:run`
