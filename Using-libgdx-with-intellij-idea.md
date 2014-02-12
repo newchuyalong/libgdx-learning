@@ -6,6 +6,8 @@ First there will be a short version, outlining only the major steps. This is for
 Following this guide will enable you to use IntelliJ IDEA while others on your team use the standard Eclipse setup.
 Note that a _workspace_ in Eclipse is  a _project_ in IntelliJ IDEA, and that a _project_ in Eclipse is a _module_ in IntelliJ IDEA.
 
+There is also a github repo containing a pre-built skeleton project for libgdx + IntelliJ that you can clone for a quick start: https://github.com/jrenner/libgdx-intellij-project-skeleton
+
 ## Quick reference ##
 
   1. Create a new project from scratch, name it and name the module _Main_.
