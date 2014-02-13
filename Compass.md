@@ -1,4 +1,4 @@
-Some Android phones have an integrated magnetic field sensor that provides information on how the device is oriented with respect to the magnetic north pole.
+Some Android devices and iOS devices have an integrated magnetic field sensor that provides information on how the device is oriented with respect to the magnetic north pole.
 
 Querying whether the compass is available works as follows:
 
