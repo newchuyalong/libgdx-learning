@@ -5,7 +5,7 @@ LibGDX includes some classes for cross-platform network operations. These classe
 * Cross-platform HTTP requests
 * Multi-platform TCP client and server socket support (excludes GWT) with configurable settings
 * Optimized  TCP client and server settings aiming for low-latency
-* Cross-platform browser access. (ex: You can create a link to your website in game and it will open the browser on all platforms. ) (excludes: Headless, Android Daydreams, and Android Live Wallpapers)
+* Cross-platform browser access. (ex: You can create a link to your website in game and it will open the browser on all platforms. ) (excludes: Android Daydreams, and Android Live Wallpapers)
 
 ## Implementation
 Class Explanation:
