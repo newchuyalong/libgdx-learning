@@ -168,8 +168,7 @@ Transforms can be enabled as needed, with some caveats. Not all widgets support 
 
 ```java
 TextButton button = new TextButton("Text Button", skin);
-Container wrapper = new Container();
-wrapper.add(button);
+Container wrapper = new Container(button);
 wrapper.setTransform(true);
 wrapper.setOrigin(wrapper.getPrefWidth() / 2, wrapper.getPrefHeight() / 2);
 wrapper.setRotation(45);
