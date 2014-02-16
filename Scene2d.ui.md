@@ -7,6 +7,7 @@ It is highly recommended to read or least skim the [[scene2d documentation|scene
  * [Widget and WidgetGroup](#Widget_and_WidgetGroup)
  * [Layout](#Layout)
  * [Table](#Table)
+ * [Container](#Container)
  * [Stage setup](#Stage_setup)
  * [Skin](#Skin)
  * [Drawable](#Drawable)
@@ -43,7 +44,7 @@ The Widget and WidgetGroup classes extend Actor and Group respectively, and they
 
 ## <a id="Layout"></a>Layout ##
 
-UI widgets do not set their own size and position. Instead, the parent widget sets the size and position of each child. Widgets provide a minimum, preferred, and maximum size that the parent can use as hints. Some parent widgets, such as Table, can be given constraints on how to size and position the children. To give a widget a specific size in a layout, the widget's minimum, preferred, and maximum size are left alone and size constraints are set in the parent.
+UI widgets do not set their own size and position. Instead, the parent widget sets the size and position of each child. Widgets provide a minimum, preferred, and maximum size that the parent can use as hints. Some parent widgets, such as Table and Container, can be given constraints on how to size and position the children. To give a widget a specific size in a layout, the widget's minimum, preferred, and maximum size are left alone and size constraints are set in the parent.
 
 Before each widget is drawn, it first calls `validate`. If the widget's layout is invalid, its `layout` method will be called so that the widget (and any child widgets) can cache information needed for drawing at their current size. The `invalidate` and `invalidateHierarchy` methods both invalidate the layout for a widget.
 
@@ -56,6 +57,10 @@ Before each widget is drawn, it first calls `validate`. If the widget's layout i
 The Table class is a WidgetGroup that sizes and positions its children using a logical table, similar to HTML tables. Tables are intended to be used extensively in scene2d.ui to layout widgets, as they are easy to use and much more powerful than manually sizing and positioning widgets. The underlying code for Table is actually a separate project called TableLayout.
 
 It is highly recommended to read the [TableLayout documentation](https://github.com/EsotericSoftware/tablelayout) before building a UI using scene2d.ui.
+
+## <a id="Container"></a>Container ##
+
+The Container class is very similar to Table, except that it only has a single child. Containers are useful for setting the size and alignment of a widget. This is just like using a Table with a single child, except Container is more lightweight.
 
 ## <a id="Stage_setup"></a>Stage setup ##
 
@@ -157,13 +162,13 @@ Actors added to a table using the `add` Table methods get a table cell and will 
 
 ## <a id="Rotation_and_scale"></a>Rotation and scale ##
 
-As [scene2d#Group_transform described previously], a scene2d group that has transform enabled causes a SpriteBatch flush before drawing its children. A UI often has dozens, if not hundreds, of groups. Flushing for each group would severely limit performance, so most scene2d.ui groups have transform set to false by default. Rotation and scale is ignored when the group's transform is disabled.
+As [described previously](Scene2d#wiki-group-transform), a scene2d group that has transform enabled causes a SpriteBatch flush before drawing its children. A UI often has dozens, if not hundreds, of groups. Flushing for each group would severely limit performance, so most scene2d.ui groups have transform set to false by default. Rotation and scale is ignored when the group's transform is disabled.
 
-Transforms can be enabled as needed, with some caveats. Not all widgets support all features when rotation or scaling is applied. Eg, transform can be enabled for a Table and then it can be rotated and scaled. Children will be drawn rotated and scaled, input is routed correctly, etc. However, the rotation and scale is ignored when table draws its background. Other widgets have similar limitations. A workaround for this problem is to wrap a widget in a table with transform enabled and set the rotation and scale on the table, not on the widget:
+Transforms can be enabled as needed, with some caveats. Not all widgets support all features when rotation or scaling is applied. Eg, transform can be enabled for a Table and then it can be rotated and scaled. Children will be drawn rotated and scaled, input is routed correctly, etc. However, other widgets may perform drawing without taking rotation and/or scale into account. A workaround for this problem is to wrap a widget in a table or container with transform enabled and set the rotation and scale on the table or container, not on the widget:
 
 ```java
 TextButton button = new TextButton("Text Button", skin);
-Table wrapper = new Table();
+Container wrapper = new Container();
 wrapper.add(button);
 wrapper.setTransform(true);
 wrapper.setOrigin(wrapper.getPrefWidth() / 2, wrapper.getPrefHeight() / 2);
@@ -171,7 +176,7 @@ wrapper.setRotation(45);
 wrapper.setScaleX(1.5f);
 ```
 
-Note that scene2d.ui groups that perform layout, such as Table, will use the unscaled and unrotated bounds of a transformed widget.
+Note that scene2d.ui groups that perform layout, such as Table, will use the unscaled and unrotated bounds of a transformed widget when computing the layout.
 
 Widgets that perform clipping, such as ScrollPane, use `glScissor` which uses a screen aligned rectangle. These widgets cannot be rotated.
 
