@@ -58,7 +58,7 @@ All your application's assets should be stored in the Android project's assets f
     * development/hosted mode: runs the actual Java code via GWT plugin magic and allows debugging and hot swapping code (kind of).
       * Right click the HTML5 project, `Run As -> Web Application`. 
       * In the "Web Development" view, click the URL. Your standard browser will open up. If you have not installed the GWT plugin yet, you will be prompted to do so. After installation of the plugin, simply refresh the site in the browser.
-    * production/web mode: you will need a web server that serves the compiled files (e.g. [Ngnix](http://nginx.org/) or a browser that allows to execute JavaScript from local files.
+    * production/web mode: you will need a web server that serves the compiled files (e.g. [Nginx](http://nginx.org/) or a browser that allows to execute JavaScript from local files.
       * Right click the HTML5 project, `Google -> GWT Compile`
       * Once compiled, place the contents of the war/ directory into a directory your web server can serve. Omit the WEB-INF folder.
       * Point your browser at an URL which will display the `.html` file.
