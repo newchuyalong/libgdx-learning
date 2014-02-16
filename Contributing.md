@@ -33,10 +33,9 @@ A few things we'd rather not like to see:
   * underscores in any kind of identifier
   * [Hungarian notation](http://en.wikipedia.org/wiki/Hungarian_notation)
   * Prefixes for fields or arguments
-  * Curlies on new lines
-  * Conditional block bodies without curlies
+  * Curly braces on new lines
 
-If you modify an existing file, follow the style of the code in there.
+If you modify an existing file, follow the style of the code in there. Curly braces may be omitted if it does not hurt readability.
 
 If you create a new file, make sure to add the Apache file header, as seen [here](https://github.com/libgdx/libgdx/blob/master/gdx/src/com/badlogic/gdx/Application.java).
 
