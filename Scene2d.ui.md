@@ -54,13 +54,13 @@ Before each widget is drawn, it first calls `validate`. If the widget's layout i
 
 ## <a id="Table"></a>Table ##
 
-The Table class is a WidgetGroup that sizes and positions its children using a logical table, similar to HTML tables. Tables are intended to be used extensively in scene2d.ui to layout widgets, as they are easy to use and much more powerful than manually sizing and positioning widgets. The underlying code for Table is actually a separate project called TableLayout.
+The Table class is a WidgetGroup that sizes and positions its children using a logical table, similar to HTML tables. Tables are intended to be used extensively in scene2d.ui to layout widgets, as they are easy to use and much more powerful than manually sizing and positioning widgets. Table-based layouts don't rely on absolute positioning and therefore automatically adjust to different widget sizes and screen resolutions.
 
-It is highly recommended to read the [TableLayout documentation](https://github.com/EsotericSoftware/tablelayout) before building a UI using scene2d.ui.
+The underlying code for Table is actually a separate project called TableLayout. It is highly recommended to read the [TableLayout documentation](https://github.com/EsotericSoftware/tablelayout) before building a UI using scene2d.ui.
 
 ## <a id="Container"></a>Container ##
 
-The Container class is very similar to Table, except that it only has a single child. Containers are useful for setting the size and alignment of a widget. This is just like using a Table with a single child, except Container is more lightweight.
+The Container class is very similar to Table, except that it has only a single child. Containers are useful for setting the size and alignment of a widget. This is equivalent to using a Table with a single child, but Container is more lightweight.
 
 ## <a id="Stage_setup"></a>Stage setup ##
 
