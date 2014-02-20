@@ -26,6 +26,7 @@ It is highly recommended to read or least skim the [[scene2d documentation|scene
    * [Stack](#Stack)
    * [List](#List)
    * [SelectBox](#SelectBox)
+   * [ProgressBar](#ProgressBar)
    * [Slider](#Slider)
    * [ScrollPane](#ScrollPane)
    * [SplitPane](#SplitPane)
@@ -233,11 +234,17 @@ List is a list box that displays textual items and highlights the selected item.
 
 SelectBox is a drop-down list, it allows one of a number of values to be chosen from a list. When inactive, the selected value is displayed. When activated, it shows the list of values that may be selected. SelectBox has drawables for the background, list background, and selected item background, a font and font color, and a setting for how much spacing is used between items.
 
+### <a id="ProgressBar"></a>ProgressBar ###
+
+Progress Bar is a widget that visually displays the progress of some activity or a variable value within a given range. The progress bar has a range (min, max) and a stepping between each value it represents. The percentage of completeness typically starts out as an empty progress bar and gradually becomes filled in as the task or value increases towards upper limit.
+
+A progress bar can be setup to be of horizontal or vertical orientation, although the increment direction is always the same. For horizontal progress bar, is grows to the right, for vertical, upwards. Animation for changes to the progress bar value can be enabled to make the bar fill more smoothly over time.
+
 ### <a id="Slider"></a>Slider ###
 
 Slider is a horizontal indicator that allows a user to set a value. The slider his a range (min, max) and a stepping between each value the slider represents. Slider has drawables for the background, the slider knob, and for the portion of the slider before and after the knob.
 
-A slider with touches disabled, a drawable before the knob, and without the knob can be used as a progress bar. Animation for changes to the slider value can be enabled to make the progress bar fill more smoothly.
+A slider with touches disabled, a drawable before the knob, and without the knob can be used as a substitute for progress bar, as both widgets share the same codebase and use same visual style. Animation for changes to the slider value can be enabled to make the progress bar fill more smoothly.
 
 ### <a id="ScrollPane"></a>ScrollPane ###
 
