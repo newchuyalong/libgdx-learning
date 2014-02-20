@@ -1,5 +1,10 @@
 The libgdx community is glad to help you when you get stuck or encounter a bug, but first you must make it as easy to help you as possible.
 
+Instead of reading this guide, you can use the libgdx Problem Wizzard which walks you through composing a forum post step by step:
+### [libgdx Problem Wizzard](http://libgdx.badlogicgames.com/wizzard.php)
+
+## Contents
+
  * [Helping Yourself](#Helping_Yourself)
  * [Topic Title](#Top_Title)
  * [Context](#Context)
