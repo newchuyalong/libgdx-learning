@@ -51,7 +51,7 @@ For both the tests and the demos the following steps are used to start the apps
   * Right click one of the projects mentioned above
   * Select Run As -> Java Application for desktop projects. In the upcoming dialog select LwjglTestStarter
   * Select Run As -> Android Application for the android project. This will either start the emulator or deploy the test project to a connected Android device
-  * Select Run As -> Web Application for the html5 project. A new view opens up, click the URL that's presented to you. You might get prompted to install the GWT plugin for your browser of choice (hint: use Chrome). Note that the app runs in development mode, which means it will be terribly slow. For full speed you have to compile the HTML project, then deploy it to a web server.
+  * Select Run As -> Web Application for the html5 project. You might be asked for a WAR directory.  Use the gdx-tests-gwt/war. A new view opens up, click the URL that's presented to you. You might get prompted to install the GWT plugin for your browser of choice (hint: use Chrome). Note that the app runs in development mode, which means it will be terribly slow. For full speed you have to compile the HTML project, then deploy it to a web server.
 
 For a more in-depth description of the project setup as well as how to run and debug a libgdx project see ProjectSetupNew
 
