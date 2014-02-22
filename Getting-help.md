@@ -103,7 +103,7 @@ Example code should be contained entirely in a single class (use static member c
 
 Often executable examples need some resources, such as an image or sound file. It is extra work for those trying to help if they must download your specific resources. Instead, it is ideal to use resources from the [libgdx tests](https://github.com/libgdx/libgdx/tree/master/tests/gdx-tests-android/assets). This enables your example code to be simply pasted into the `gdx-tests-lwjgl` project and run.
 
-The easiest way to write an executable example is to paste one of the bare-bones applications below into the `gdx-tests-lwjgl` project and then modify it to show your problem, using only the [test resources](https://github.com/libgdx/libgdx/tree/master/tests/gdx-tests-android/assets).
+The easiest way to write an executable example is to paste one of the bare-bones applications below into the `gdx-tests-lwjgl` project and then modify it to show your problem, using only the [test resources](https://github.com/libgdx/libgdx/tree/master/tests/gdx-tests-android/assets). Note the test resources are pulled in by `gdx-tests-lwjgl` from the `gdx-tests-android` project.
 
 ### <a id="Bare-bones_Application"></a>Bare-bones Application ###
 
