@@ -15,29 +15,29 @@ _Note: Step 5 makes `gdx.jar` a transitive dependency. That means that projects 
 
 ## Desktop project setup ##
 
-  * Create a new Java project in Eclipse: File -> New -> Project -> Java Project. Name it appropriately (eg, "gamename-desktop") and click Finish.
-  * Go to the project folder on the file system and create a sub-folder named `libs`. From the [`libgdx-nightly-latest.zip`](http://libgdx.badlogicgames.com/nightlies/), place `gdx-natives.jar`, `gdx-backend-lwjgl.jar` and `gdx-backend-lwjgl-natives.jar` in the libs folder.
-  * In Eclipse, right click the project -> Refresh. Right click again -> Properties -> Java Build Path -> Libraries -> Add JARs, select the three JARs and click OK.
-  * Click the Projects tab, click Add, check the main project and click OK.
+  1. Create a new Java project in Eclipse: File -> New -> Project -> Java Project. Name it appropriately (e.g., "gamename-desktop") and click Finish.
+  2. Go to the project folder on the file system and create a subfolder named `libs`. From the [`libgdx-nightly-latest.zip`](http://libgdx.badlogicgames.com/nightlies/), place `gdx-natives.jar`, `gdx-backend-lwjgl.jar` and `gdx-backend-lwjgl-natives.jar` in the libs folder.
+  3. In Eclipse, right click the project -> Refresh. Right click again -> Properties -> Java Build Path -> Libraries -> Add JARs, select the three JARs, and click OK.
+  4. Click the Projects tab, click Add, check the main project, and click OK.
 
 ## Android project setup ##
 
 Before doing these steps, the [Android SDK](http://developer.android.com/sdk/installing.html) must first be installed.
 
-  * Create a new Android project in Eclipse: File -> New -> Project -> Android Project. Name it appropriately (eg, "gamename-android"). For build target, check "Android 1.5". Specify a package name (eg, "com.gamename"). Next to "Create Activity" enter "AndroidGame". Click Finish.
-  * Go to the project folder on the file system and create a subfolder named `libs`. From the [nightly zip](http://libgdx.badlogicgames.com/nightlies/), place `gdx-backend-android.jar` and the `armeabi` and `armeabi-v7a` folders in the libs folder.
-  * In Eclipse, right click the project -> Refresh. Right click again -> Properties -> Java Build Path -> Libraries -> Add JARs, select `gdx-backend-android.jar` and click OK.
-  * Click Add JARs again, select `gdx.jar` under the main project and click OK.
-  * Click the Projects tab, click Add, check the main project and click OK twice.
-  * Click the Order and Export tab, check the main project.
+  1. Create a new Android project in Eclipse: File -> New -> Project -> Android Project. Name it appropriately (e.g., "gamename-android"). For build target, check "Android 1.5". Specify a package name (e.g., "com.gamename"). Next to "Create Activity" enter "AndroidGame". Click Finish.
+  2. Go to the project folder on the file system and create a subfolder named `libs`. From the [nightly zip](http://libgdx.badlogicgames.com/nightlies/), place `gdx-backend-android.jar` and the `armeabi` and `armeabi-v7a` folders in the libs folder.
+  3. In Eclipse, right click the project -> Refresh. Right click again -> Properties -> Java Build Path -> Libraries -> Add JARs, select `gdx-backend-android.jar` and click OK.
+  4. Click Add JARs again, select `gdx.jar` under the main project and click OK.
+  5. On the Projects tab: click Add, check the main project, and click OK.
+  6. On the Order and Export tab: check the main project.
 
 _Note: The folder really must be called "libs", a naming convention forced on us by the Android Eclipse plugin._
 
 ## Asset folder setup ##
 
-The Android project has a sub-folder named `assets`, which is created automatically. Files available to the Android application must be placed here. This is problematic, because these same files must be available to the desktop application. Rather than maintain two copies of all the files, the desktop project should be configured to find the assets in the Android project:
+The Android project has a subfolder named `assets`, which is created automatically. Files available to the Android application must be placed here. This is problematic, because these same files must be available to the desktop application. Rather than maintain two copies of all the files, the desktop project should be configured to find the assets in the Android project:
 
-  * Click the Source tab, click Link Source, Browse, select the "assets" folder from your Android project and click OK.
+  * In the Properties for the core project: click the Source tab, click Link Source, Browse, select the "assets" folder from your Android project and click OK.
   * Specify "assets" for the folder name and click Finish then OK.
 
 _Note: If your desktop and Android projects are in the same parent folder, you can use "`PARENT-1-PROJECT_LOC/gamename-android/assets`" for the location of the linked assets folder, where "`gamename-android`" is the name of your Android project. This is better than a hard-coded path if you plan on sharing your projects with others._
