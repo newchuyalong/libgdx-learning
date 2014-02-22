@@ -5,11 +5,11 @@ This page describes how to configure Eclipse to develop and run libgdx applicati
 
 ## Main project setup ##
 
-  * Create a new Java project in Eclipse: File -> New -> Project -> Java Project. Give it a name and click Finish.
-  * Go to the project folder on the file system and create a sub-folder named `libs`. Download the [`libgdx-nightly-latest.zip`](http://libgdx.badlogicgames.com/nightlies/) and place `gdx.jar` and `gdx-sources.jar` in the libs folder.
-  * In Eclipse, right click the project -> Refresh. Right click again -> Properties -> Java Build Path -> Libraries -> Add JARs, select `gdx.jar` and click OK.
-  * Under the `gdx.jar` file, double click "Source attachment", click Workspace, select the `gdx-sources.jar` and click OK.
-  * Click the Order and Export tab, check the `gdx.jar` and click OK.
+  1. Create a new Java project in Eclipse: File -> New -> Project -> Java Project. Give it a name and click Finish.
+  2. Go to the project folder on the file system and create a sub-folder named `libs`. Download the [`libgdx-nightly-latest.zip`](http://libgdx.badlogicgames.com/nightlies/) and place `gdx.jar` and `gdx-sources.jar` in the libs folder.
+  3. In Eclipse, right click the project -> Refresh. Right click again -> Properties -> Java Build Path -> Libraries -> Add JARs, select `gdx.jar` and click OK.
+  4. Under the `gdx.jar` file, double click "Source attachment", click Workspace, select the `gdx-sources.jar` and click OK.
+  5. Click the Order and Export tab, check the `gdx.jar` and click OK.
 
 _Note: Step 5 makes `gdx.jar` a transitive dependency. That means that projects that depend on the main project will also have `gdx.jar` on their classpath. However, this doesn't work for Android projects._
 
