@@ -38,10 +38,10 @@ public class OrthographicCameraController implements ApplicationListener {
 				new VertexAttribute(Usage.TextureCoordinates, 2, "attr_texCoords"));
 		texture = new Texture(Gdx.files.internal("data/sc_map.png"));
 		mesh.setVertices(new float[] { 
-				 -1024f, -1024f, 0, 0, 1,
-				  1024f, -1024f, 0, 1, 1,
-				  1024f,  1024f, 0, 1, 0,
-				 -1024f,  1024f, 0, 0, 0
+			          0,      0, 0, 0, 1,
+			      1024f,      0, 0, 1, 1,
+			      1024f,  1024f, 0, 1, 0,
+			          0,  1024f, 0, 0, 0
 		});
 		mesh.setIndices(new short[] { 0, 1, 2, 2, 3, 0 });
 
@@ -82,19 +82,19 @@ public class OrthographicCameraController implements ApplicationListener {
 			cam.zoom -= 0.02;
 		}
 		if(Gdx.input.isKeyPressed(Input.Keys.LEFT)) {
-			if (cam.position.x > 0)
+			if (cam.position.x > WIDTH / 2)
 				cam.translate(-3, 0, 0);
 		}
 		if(Gdx.input.isKeyPressed(Input.Keys.RIGHT)) {
-			if (cam.position.x < 1024)
+			if (cam.position.x < 1024 - WIDTH / 2)
 				cam.translate(3, 0, 0);
 		}
 		if(Gdx.input.isKeyPressed(Input.Keys.DOWN)) {
-			if (cam.position.y > 0)
+			if (cam.position.y > HEIGHT / 2)
 				cam.translate(0, -3, 0);
 		}
 		if(Gdx.input.isKeyPressed(Input.Keys.UP)) {
-			if (cam.position.y < 1024)
+			if (cam.position.y < 1024 - HEIGHT / 2)
 				cam.translate(0, 3, 0);
 		}
 		if(Gdx.input.isKeyPressed(Input.Keys.W)) {
@@ -164,10 +164,10 @@ public void create() {
 			new VertexAttribute(Usage.TextureCoordinates, 2, "attr_texCoords"));	// #2
 	texture = new Texture(Gdx.files.internal("img/sc_map.png"));		// #3
 	mesh.setVertices(new float[] { 
-			 -1024f, -1024f, 0, 0, 1,
-			  1024f, -1024f, 0, 1, 1,
+			      0,      0, 0, 0, 1,
+			  1024f,      0, 0, 1, 1,
 			  1024f,  1024f, 0, 1, 0,
-			 -1024f,  1024f, 0, 0, 0
+			      0,  1024f, 0, 0, 0
 	});									// #4
 	mesh.setIndices(new short[] { 0, 1, 2, 2, 3, 0 });			// #5		
 	cam = new OrthographicCamera(WIDTH, HEIGHT);				// #6
@@ -246,19 +246,19 @@ public void render() {
 			cam.zoom -= 0.02;
 		}
 		if(Gdx.input.isKeyPressed(Input.Keys.LEFT)) {
-			if (cam.position.x > 0)
+			if (cam.position.x > WIDTH / 2)
 				cam.translate(-3, 0, 0);
 		}
 		if(Gdx.input.isKeyPressed(Input.Keys.RIGHT)) {
-			if (cam.position.x < 1024)
+			if (cam.position.x < 1024 - WIDTH / 2)
 				cam.translate(3, 0, 0);
 		}
 		if(Gdx.input.isKeyPressed(Input.Keys.DOWN)) {
-			if (cam.position.y > 0)
+			if (cam.position.y > HEIGHT / 2)
 				cam.translate(0, -3, 0);
 		}
 		if(Gdx.input.isKeyPressed(Input.Keys.UP)) {
-			if (cam.position.y < 1024)
+			if (cam.position.y < 1024 - HEIGHT / 2)
 				cam.translate(0, 3, 0);
 		}
 		if(Gdx.input.isKeyPressed(Input.Keys.W)) {
