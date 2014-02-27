@@ -39,7 +39,7 @@ If you modify an existing file, follow the style of the code in there. Curly bra
 
 If you create a new file, make sure to add the Apache file header, as seen [here](https://github.com/libgdx/libgdx/blob/master/gdx/src/com/badlogic/gdx/Application.java).
 
-If you create a new class, please add at least class documentation that explains the usage and scope of he class. You can omit Javadoc for methods that are self-explanatory.
+If you create a new class, please add at least class documentation that explains the usage and scope of the class. You can omit Javadoc for methods that are self-explanatory.
 
 If your class is explicitly thread-safe, mention it in the Javadoc. The default assumption is that classes are not thread-safe, to reduce the amount of costly locks in the code base.
 
