@@ -13,11 +13,11 @@ When you load the G3DB/G3DJ file in your application using G3dModelLoader or Ass
 
 # Using animations
 ## Applying a single animation
-To apply an animation to a ModelInstance, you can create an AnimationController. An AnimationController is dedicated to a single ModelInstance and the ModelInstance must outlive the AnimationController. The AnimationController can be used to apply a single animation to the ModelInstance at a time, although it support blending (transition) between multiple animations. If you want to apply multiple animations to the same ModelInstance, you can use multiple AnimationControllers, as long as they don't interfere with each other (don't affect the same nodes).
+To apply an animation to a ModelInstance, you can create an AnimationController. An AnimationController is dedicated to a single ModelInstance and the ModelInstance must outlive the AnimationController. The AnimationController can be used to apply a single animation to the ModelInstance at a time, although it support blending (=transitioning) between multiple animations. If you want to apply multiple animations to the same ModelInstance, you can use multiple AnimationControllers, as long as they don't interfere with each other (don't affect the same nodes).
 
 When an animation is set (described below), the AnimationController needs to be updated every frame. This can be done using the `AnimationController.update(float delta)` method. The `delta` argument is used to inform the AnimationController how much time is past since the last call to update. Most commonly `Gdx.graphics.getDeltaTime()` is used for that parameter.
 
-To set the current animation use the `setAnimation(String id)` method. This will cause the animation to be played immediately (removing the current animation, if any). The `id` argument must be the name (case sensitive) of an existing animation within the ModelInstance.
+To set the current animation, use the `setAnimation(String id)` method. This will cause the animation to be played immediately (removing the current animation, if any). The `id` argument must be the name (case sensitive) of an existing animation within the ModelInstance.
 ```java
 ModelInstance instance;
 AnimationController controller;
@@ -46,10 +46,10 @@ Every animation method (like `setAnimation(...)` returns an `AnimationDesc` inst
 To get notified when an animation is looped or ended you can implement the `AnimationListener` interface. It will be notified when an animation is ended or looped. It receives the AnimationDesc of the animation that ended or looped. You can supply your AnimationListener with every animation method, e.g. `setAnimation(String id, int loopCount, AnimationListener listener)`.
 
 ## Blending animations
-When switching animation using the `setAnimation`, the previous animation is stopped abruptly. It is possible to blend to previous animation into the new animation, giving a smooth transition between animations. You can use the `animate(...)` for that. The animate method takes the same parameters as the setAnimation method along with an additional `transitionTime` argument. During this time the new animation will be linear interpolated on top of the old animation, resulting in a smooth transition. If there is no previous animation, then the new animation will start immediately.
+When switching animation using the `setAnimation`, the previous animation is stopped abruptly. It is possible to blend the previous animation into the new animation, giving a smooth transition between animations. You can use the `animate(...)` for that. The animate method takes the same parameters as the setAnimation method along with an additional `transitionTime` argument. During this time the new animation will be linear interpolated on top of the old animation, resulting in a smooth transition. If there is no previous animation, then the new animation will start immediately.
 
 ## Queuing animations
-To start an animation when the current animation is completed, you can use the `queue(...)` method. If the current animation is continuous looping, the queued animation will be executed when the current loop completed. Otherwise the queued animation will be executed when the current animation is ended (including all loops remaining). If there is no current animation, the queued animation will be executed immediately. Queued animations will be blended if a transition time greater than zero is specified.
+To start an animation when the current animation is completed, you can use the `queue(...)` method. If the current animation is continuously looping, the queued animation will be executed when the current loop completed. Otherwise the queued animation will be executed when the current animation is ended (including all loops remaining). If there is no current animation, the queued animation will be executed immediately. Queued animations will be blended if a transition time greater than zero is specified.
 
 ## Action animation
 An action animation is a (commonly short) animation that is executed on top of the current the animation. In practice, it is the same calling `animate(...)` with the action animation and calling `queue(...)` with the previous animation.
@@ -60,7 +60,7 @@ Every animate method (like `setAnimation`, `animate`, `queue` and `action`) allo
 While you can control the speed of an individual animation, you can also control the overall speed of every animation by changing the delta value of the `update(float delta)` method AnimationController. E.g. if you call `controller.update(0.5f * Gdx.graphics.getDeltaTime());`, the overall speed will be half the original speed. The delta value can also be negative, meaning all animations are played in reverse.
 
 ## Node transformations
-While an animation is executed, all the affected node's will have the `isAnimated` member set to true. This will cause the Node's translation, rotation and scale values not be used. So, while animating, you cannot transform the affected nodes yourself.
+While an animation is executed, all the affected nodes will have the `isAnimated` member set to true. This will cause the Node's translation, rotation and scale values not be used. So, while animating, you cannot transform the affected nodes yourself.
 
 # Skinning
 Skinning is used to transform the model according to the transformation of one or more nodes (also called bones or joints). Most commonly when using skinning, invisible nodes (nodes with no NodeParts attached to them) are used to deform the model. These nodes (which commonly form a hierarchy) are also called a skeleton or armature.
