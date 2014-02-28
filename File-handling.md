@@ -1,4 +1,4 @@
-Libgdx applications run on three different platforms: desktop systems (Windows, Linux, Mac OS X), Android, and JavaScript/WebGL capable browsers. Each of these platforms handles file I/O a little differently. 
+Libgdx applications run on four different platforms: desktop systems (Windows, Linux, Mac OS X, headless), Android, iOS, and JavaScript/WebGL capable browsers. Each of these platforms handles file I/O a little differently. 
 
 Libgdx's [Files](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/Files.html) [(code)](https://github.com/libgdx/libgdx/tree/master/gdx/src/com/badlogic/gdx/Files.java) module provides the ability to:
 
@@ -15,7 +15,7 @@ Before we can dive into that aspect of Libgdx, we have to first review the diffe
 ## Platform Filesystems ##
 Here we review the filesystem paradigms of the platforms Libgdx supports
 
-### Desktop (Windows, Linux, Mac OS X) ###
+### Desktop (Windows, Linux, Mac OS X, Headless) ###
 On a desktop OS, the filesystem is one big chunk of memory. Files can be referenced with paths relative to the current working directory (the directory the application was executed in) or absolute paths. Ignoring file permissions, files and directories are usually readable and writable by all applications.
 
 ### Android
