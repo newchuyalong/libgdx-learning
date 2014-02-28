@@ -59,7 +59,7 @@ public class InvokeRuntimeExceptionTest {
 ```
 
 ## <a id="Working_with_Bullet_wrapper"></a>Working with Bullet wrapper ##
-The wrapper tends to follow the original bullet class names. Meaning that most classes are prefixed with “bt”. There are a few exceptions on this, which are mostly nested structs. These are custom implemented directly into the `com.badlogic.gdx.physics.bullet` package. Unfortunately some nested structs and some base classes are not suitable for a one on one translation. See the custom classes section for more information on that. If you find a class that is missing you can post it on the forums so it can be added to the wrapper.
+The wrapper tends to follow the original bullet class names. Meaning that most classes are prefixed with “bt”. There are a few exceptions on this, which are mostly nested structs. These are custom implemented directly into the `com.badlogic.gdx.physics.bullet` package. Unfortunately some nested structs and some base classes are not suitable for a one on one translation. See the custom classes section for more information on that. If you find a class that is missing you can post it on the forums or issue tracker (https://github.com/libgdx/libgdx/issues), so it can be added to the wrapper.
 
 ## <a id="Callbacks"></a>Callbacks ##
 
