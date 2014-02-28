@@ -7,7 +7,7 @@ Libgdx tries not be the "end all, be all" solution. It does not force a specific
 ## Features ##
 See http://libgdx.badlogicgames.com/features.html for full features list.
 
-## Cross-Platform Support
+### Cross-Platform Support
 A single API to target:
 * Windows
 * Linux
@@ -18,10 +18,10 @@ A single API to target:
 * Java Applet (requires JVM to be installed)
 * JavaScript/WebGL (Google Chrome, Safari, Opera, Mozilla Firefox, IE via [Google Chrome Frame](https://developers.google.com/chrome/chrome-frame))
 
-## 3rd Part Support
+### 3rd Part Support
 Libgdx can be integrated with many 3rd party libraries, e.g. for adding leaderboards of multiplayer. We love:
 * [Swarm](http://swarmconnect.com/admin/docs/libgdx)
 * [Nextpeer](https://developers.nextpeer.com/docs/view/libgdx)
 
-## Audio
+### Audio
 * [Streaming music](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/audio/Music.html) and [sound effect](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/audio/Sound.html) playback for WAV, MP3, and OGG
