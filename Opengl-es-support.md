@@ -1,6 +1,9 @@
-Libgdx has interfaces for direct OpenGL ES 1.0, 1.1 and 2.0 access. OpenGL ES is emulated on the desktop by mapping OpenGL ES functions to desktop OpenGL functions. On some platforms (iOS, GWT/HTML) only OpenGL ES 2.0 is supported.
+Libgdx has interfaces for direct OpenGL ES 2.0 and 3.0 access. (If using LibGDX 0.9.9 or earlier, 1.0 and 1.x is available) OpenGL ES is emulated on the desktop by mapping OpenGL ES functions to desktop OpenGL functions. On some platforms (iOS, GWT/HTML) only OpenGL ES 2.0 is supported.
 
 **Note:** On Android, if your application requires OpenGL ES 2 to function please add the following to the Android Manifest: `<uses-feature android:glEsVersion="0x00020000" android:required="true" />` 
+
+If your Android application requires OpenGL ES 3, please add the following to the manifest:
+`<uses-feature android:glEsVersion="0x00030000" android:required="true" />`
 
 This prevents your application from being seen by unsupported devices in the Play Store (formerly Android Market)
 
