@@ -42,7 +42,7 @@ The `@off` comment turns off the Eclipse source formatter for the rest of the fi
 
 Next, a native method is defined. Normally for JNI you would need to run [javah](http://docs.oracle.com/javase/7/docs/technotes/tools/windows/javah.html) to generate stub source files which you would edit and need to keep up to date with the Java source. With jnigen, you just use a multi-line comment immediately after the native method which contains your native code. The parameters for the native method are available to your native code.
 
-Lastly, a main method is defined. The `SharedLibraryLoader` extracts the appropriate native library from the classpath and loads it. If using jnigen without libgdx, you can use `JniGenSharedLibraryLoader` instead which does the same thing. `JniGenSharedLibraryLoader` is the only class from jnigen that is needed at runtime, if you choose to use it.
+Lastly, a main method is defined. The `SharedLibraryLoader` extracts the appropriate native library from the classpath and loads it. This allows you to distribute your native libraries inside your JARs and you will never have problems with `java.library.path`. If using jnigen without libgdx, you can use `JniGenSharedLibraryLoader` instead which does the same thing. `JniGenSharedLibraryLoader` is the only class from jnigen that is needed at runtime, if you choose to use it.
 
 Here is the build for the native library above:
 
