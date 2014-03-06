@@ -4,6 +4,8 @@ jnigen is a small library that can be used with or without libgdx which allows C
 
 You will need MinGW for both 32 and 64 bit. After installation, be sure the `bin` directory is on your path.
 
+Note that gdx-jnigen is a Java project. It has a blank AndroidManifest.xml because the Android NDK requires it, but it is not an Android project.
+
 ###Windows###
 
   * **MinGW 32 bit** Run [mingw-get-setup.exe](http://optimate.dl.sourceforge.net/project/mingw/Installer/mingw-get-setup.exe), install with the GUI, choose `mingw32-base` and `mingw32-gcc-g++` under "Basic Setup", then Installation -> Apply Changes.
