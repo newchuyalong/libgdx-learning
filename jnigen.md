@@ -59,7 +59,7 @@ public class ExampleBuild {
 		BuildTarget linux64 = BuildTarget.newDefaultTarget(TargetOs.Linux, true);
 		BuildTarget mac = BuildTarget.newDefaultTarget(TargetOs.MacOsX, true);
 
-		new AntScriptGenerator().generate(new BuildConfig("example"), win32, win64);
+		new AntScriptGenerator().generate(new BuildConfig("my-native-lib"), win32, win64);
 		BuildExecutor.executeAnt("jni/build-windows32.xml", "-v -Dhas-compiler=true clean postcompile");
 		BuildExecutor.executeAnt("jni/build-windows64.xml", "-v -Dhas-compiler=true clean postcompile");
 		// BuildExecutor.executeAnt("jni/build-linux32.xml", "-v -Dhas-compiler=true clean postcompile");
@@ -74,7 +74,7 @@ First, `NativeCodeGenerator` is used to generate the native source from the Java
 
 Next, build targets are defined for each platform. `BuildTarget.newDefaultTarget` is used to provide reasonable defaults for each target. This build is meant to be built on Windows, so the Windows 32 bit default `compilerPrefix` of "i686-w64-mingw32-" (which is good for building on Linux) needs to be changed to "mingw32-". There are other fields on `BuildTarget` that can be customized, such as source files to include/exclude, header directories, C/C++ flags, linker flags, linked libraries, etc.
 
-Next, `AntScriptGenerator` is used to output the Ant build scripts. The `BuildConfig` specifies global build settings, such as the name of the native library ("example" here), input and output directories, etc.
+Next, `AntScriptGenerator` is used to output the Ant build scripts. The `BuildConfig` specifies global build settings, such as the name of the native library ("my-native-lib" here), input and output directories, etc.
 
 Lastly, the Ant scripts are run to build the actual native libraries and pack them into a JAR. To run the main method from the example above, the JAR just needs to be on the classpath.
 
