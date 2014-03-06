@@ -32,7 +32,7 @@ public class Example {
 	*/
 	
 	public static void main (String[] args) throws Exception {
-		new SharedLibraryLoader().load("spine-editor");
+		new SharedLibraryLoader().load("my-native-lib");
 		System.out.println(add(1, 2));
 	}
 }
