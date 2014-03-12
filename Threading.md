@@ -22,5 +22,10 @@ new Thread(new Runnable() {
 }).start();
 ```
 
+## Which libgdx classes are Thread-safe? ##
+No class in libgdx is thread-safe unless **explicitely marked** as thread-safe in the class documentation.
+
+You should never perform multi-threaded operations on anything that is graphics or audio related, e.g. use scene2D components from multiple threads.
+
 ## HTML5 ##
 JavaScript is inherently single-threaded. As such, threading is impossible. [Web Workers](http://www.whatwg.org/specs/web-apps/current-work/multipage/workers.html) might be an option in the future, however, data is passed via message passing between thread. Java uses different threading primitives and mechanisms, porting threading code to Web Workers will not be straight forward.
