@@ -62,35 +62,9 @@ BitmapFont font = new BitmapFont(Gdx.files.internal("myfont.fnt"), new TextureRe
 
 *Note*: If you're replacing a "regular" font by a distance field font, be aware that the font metrics are not the same. In particular, the extra padding causes the baseline to shift downwards, so you'll need to compensate by drawing your text higher.
 
-# Rendering with alpha testing (OpenGL ES 1) #
+# Rendering with a shader #
 
-Fixed-pipeline alpha testing was removed in OpenGL ES 2, so this technique requires that you're still using version 1 (which means you won't be able to use shaders elsewhere in your game either). Skip to the next section if you're using OpenGL ES 2.
-
-Let's assume you already have a `SpriteBatch` that you're using for drawing, and that you're somewhere in between a `begin()` and `end()` call. Because we're going to mess with OpenGL state outside the batch's control, we need to make sure all previous cached geometry is drawn:
-```java
-spriteBatch.flush();
-```
-
-Then turn on alpha testing and set it to discard all pixels with alpha below 0.5:
-```java
-Gdx.gl10.glEnable(GL10.GL_ALPHA_TEST);
-Gdx.gl10.glAlphaFunc(GL10.GL_GREATER, 0.5f);
-```
-
-We're now ready to draw. You have all the `draw*()` methods in `BitmapFont` at your disposal. The simplest example:
-```java
-font.draw(spriteBatch, "Hello smooth world!", 10, 10);
-```
-
-When done drawing text, be sure to clean up so we don't affect subsequent draw calls:
-```java
-spriteBatch.flush();
-Gdx.gl10.glDisable(GL10.GL_ALPHA_TEST);
-```
-
-# Rendering with a shader (OpenGL ES 2) #
-
-Without alpha testing support, we'll need a custom shader to render our distance field font. This is a bit more involved than alpha testing, but has as a major advantage that it allows for anti-aliased drawing (like in the screenshot at the beginning of this article). I'll assume that you are familiar with shaders in libgdx; if not, read the [OpenGLShader page on shaders].
+I'll assume that you are familiar with shaders in libgdx; if not, read the [[page on shaders|Shaders]].
 
 There is nothing special about the vertex shader; we can just duplicate the one that SpriteBatch uses by default. Just take care to name the variables in the way that `SpriteBatch` expects:
 ```cpp
@@ -112,6 +86,10 @@ void main() {
 
 The secret sauce is in the fragment shader. But even here, there's not much to it:
 ```cpp
+#ifdef GL_ES
+precision mediump float;
+#endif
+
 uniform sampler2D u_texture;
 
 varying vec4 v_color;
