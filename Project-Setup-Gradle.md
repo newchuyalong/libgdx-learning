@@ -54,75 +54,6 @@ ios/
     src/                   <- Source folder for your ios project, contains launcher
 ```
 
-### Importing to Eclipse
-#### As a file system
-#### Using the gradle plugin
-If you are plugin orientated, you might want to import the generated project using the gradle plugin for eclipse.  If you have the plugin installed you can import the gradle project directly.
-
-File > import > Gradle > Gradle Project
-You then need to locate the root build.gradle directory and click "Build Model"
-![Gradle plugin Eclipse](http://i.imgur.com/Uy6x9yb.png)
-
-Leave everything as default and hit ok, it will start importing the project and downloading the stock dependencies \o/
-### Running & Debugging in Eclipse
-
-### Importing to Intellij Idea
-#### As a file system
-Let gradle generate the Intellij Idea project:
-```
-./gradlew idea
-```
-
-Once gradle is done with generating the project file, you can open this with Idea:
-
-1. File -> Open
-2. Select the .ipr file from the root directory, hit 'OK'
-
-You'll need to set the Android SDK for the android module:
-
-1. File -> Project Structure
-2. Select 'modules' in the panel on the left
-3. Select the android module
-4. Set the module SDK to the android SDK that you configured for IntelliJ
-
-#### Using the gradle plugin
-Intellij has gradle support bundled, so you can import a gradle project without installing any additional plugins.
-
-To do this: File > Import Project, locate and choose the build.gradle in the root directory of the project and press ok. 
-
-![Import Project](http://i.imgur.com/dx4ZJQh.png)
-
-Keep the settings as default unless you know that you want to use a customized gradle wrapper or your local distribution. Hit OK, and it will start the import of the project and pulling in the default dependencies. 
-
-#### A note on Intellij content root problems
-Gradle in Intellij does not like any source paths that are outside of the content root. For example setting the resource directory for the desktop project as the android assets folder, this will cause a gradle refresh to fail. There are currently only a few solutions for this problem, and none of them are that ideal.  The developers have said that it will someday play nice, but as for now you can do the following:
-
-* Don't use gradle tasks to run tasks that would require the content out of the root and keep the asset directories as 'wrong'
-* Copy assets to each project
-* Don't use the gradle IDE integration, run from command line and import as a file system
-
-### Running & Debugging in Intellij Idea
-##### Running the desktop project
-At the top window hit Run > Edit configurations, a dialog will pop up. Click Application on the left and use the little green + to create a new run configuration.
-![Edit run configuration](http://i.imgur.com/CZQgTpx.png)
-
-If you click the ... on the right hand side, you will be able choose from launchers in your projects. Choose the DesktopLauncher.
-
-Next you need to change the working directory to where your assets are. The usual way to do this is access everything from the android/assets folder as shown in the image.
-
-Finally choose the desktop module for classpath. Give it a run!
-
-##### Running the android project
-At the top of the window hit Run > Edit configurations, a dialog will pop up. Click on Android Application on the left and if there is no project defined there, use the little green + to add a new configuration.
-![Android run configuration](http://i.imgur.com/68zYHpx.png)
-
-All the settings here are fairly straight forward, make sure you have the module selected as the android module, if you have multiple activities you can choose which one you want to launch.  
-
-Under target device, you can select if you want to run on an actual device or god forbid an emulator.
-
-Hit ok, give it a run!
-
-
 ### Running from the command line
 The ANDROID_HOME environment variable needs to be pointing to a valid android SDK before you do any command line wizardry. To do this on Windows, you can issue this from the command line:
 
@@ -141,6 +72,21 @@ On Mac OS or Linux invoke gradle like this:
 `./gradlew clean`
 
 Note the leading dot slash on Unix like systems. In both cases, the clean task will remove all build files from all modules in the project, e.g. class files previously generated.
+
+#### Running the desktop project
+`./gradlew desktop:run`
+#### Running the android project
+`./gradlew android:installDebug`
+
+This task will compile the APK for android and install it on a connected device. You will have to start the app manually on the device yourself.
+#### Running the gwt project
+`./gradlew gwt:gwtDev`
+
+#### Running the ios project
+`./gradlew ios:whoknows`
+
+
+### Packaging from the command line
 
 ##### Basic Gradle tasks
 
@@ -163,21 +109,3 @@ warTemplate                  <- explodes webapp contents to war, used in intial 
 gwtDev                       <- GWT Dev mode runs from the exploded webapp (war)
 draftWar                     <- Runs the draftCompileGwt code for quicker build times.
 ```
-#### Running the desktop project
-To run the desktop project, use this gradle command:
-`./gradlew desktop:run`
-#### Running the android project
-To run the android project, use this gradle command:
-`./gradlew android:installDebug`
-
-This task will compile the APK for android and install it on a connected device. You will have to start the app manually on the device yourself.
-#### Running the gwt project
-To run the gwt project, use this gradle command:
-`./gradlew gwt:gwtDev`
-
-#### Running the ios project
-To run the ios project, use this gradle command:
-`./gradlew ios:whoknows`
-
-
-### Packaging from the command line
