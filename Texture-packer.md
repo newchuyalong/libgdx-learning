@@ -92,7 +92,8 @@ Below is a JSON example with every available setting and the default value for e
 	useIndexes: true,
 	limitMemory: true,
 	grid: false,
-	scale: [ 1 ]
+	scale: [ 1 ],
+	scaleSuffix: [ "" ],
 }
 ```
 
@@ -135,6 +136,7 @@ Note that this is libgdx's "minimal" JSON format, so double quotes are optional 
 | `limitMemory` | If true, only one image is in memory at any given time, but each image will be read twice. If false, all images are kept in memory during packing but are only read once. | true |
 | `grid` | If true, images are packed in a uniform grid, in order. | false |
 | `scale` | For each scale, the images are scaled and an entire atlas is output. | `[1]` |
+| `scaleSuffix` | For each scale, the suffix to use for the output files. If omitted, files for multiple scales will be output with the same name to a subdirectory for each scale. | `[""]` |
 
 ## <a id="NinePatches"></a>NinePatches ##
 
