@@ -1,15 +1,15 @@
 # Skin #
 
- * [Overview](#Overview)
- * [Resources](#Resources)
- * [Convenience methods](#Convenience_Methods)
- * [Conversions](#Conversions)
- * [Modifying resources](#Modifying_resources)
- * [Widget styles](#Widget_styles)
- * [Skin JSON](#Skin_JSON)
-   * [Color](#Color)
-   * [BitmapFont](#BitmapFont)
-   * [TintedDrawable](#TintedDrawable)
+ * [Overview](#overview)
+ * [Resources](#resources)
+ * [Convenience methods](#convenience_methods)
+ * [Conversions](#conversions)
+ * [Modifying resources](#modifying_resources)
+ * [Widget styles](#widget_styles)
+ * [Skin JSON](#skin_json)
+   * [Color](#color)
+   * [BitmapFont](#bitmapfont)
+   * [TintedDrawable](#tinteddrawable)
 
 ## <a id="Overview"></a>Overview ##
 
