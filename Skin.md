@@ -15,6 +15,8 @@
 
 The Skin class stores resources for UI widgets to use. It is a convenient container for texture regions, ninepatches, fonts, colors, etc. Skin also provides convenient conversions, such as retrieving a texture region as a ninepatch, sprite, or drawable.
 
+Skin files from the [libgdx tests](https://github.com/libgdx/libgdx/tree/master/tests/gdx-tests-android/assets/data) can be used as a starting point: uiskin.png, uiskin.atlas, uiskin.json, and default.fnt. This enables you to quickly get started using scene2d.ui and replace the skin assets later.
+
 Resources in a skin typically come from a [[texture atlas| Texture Packer]], widget styles and other objects defined using JSON, and objects added to the skin via code. Even when JSON is not used, it is still recommended to use Skin with a texture atlas and objects added via code. This is much more convenient to obtain instances of drawables and serves as a central place to obtain UI resources.
 
 ## <a id="Resources"></a>Resources ##
