@@ -39,3 +39,5 @@ A Viewport may be disabled by calling `Viewport.disable()` will will reset the O
 In case picking needs to be done, Viewport offers convenient `project/unproject/getPickRay` methods, which uses the current viewport to do the correct picking.
 
 In case of Stage being used, the Stage's Camera needs to be supplied to the viewport and `Viewport.updateStage(Stage)` needs to be called when a resize event happens.
+
+To see the viewports in action, have a look at the tests at [GitHub](https://github.com/libgdx/libgdx/tree/master/tests/gdx-tests/src/com/badlogic/gdx/tests).
