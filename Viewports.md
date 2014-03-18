@@ -5,11 +5,17 @@ LibGDX provides a more convenient way of dealing with this problem, namely via V
 ### StretchedViewport
 This implementation supports working with a virtual screen size. That means one can assume that a screen is always of the size VirtualWidth x VirtualHeight. This virtual viewport will then always be stretched to fit the screen. There are no black bars, but the aspect ratio may not be the same after the scaling took place.
 
+![Stretched Viewport](http://imgur.com/oheUy0y)
+
 ### FixedViewport
 A FixedViewport also supports a virtual screen size. The different to StretchedViewport is that it will always maintain the aspect ratio of the virtual screen size (virtual viewport), while scaling it as much as possible to fit the screen. One disadvantage with this strategy is that there may appear black bars.
 
+![Fixed Viewport](http://imgur.com/Kv2wB94)
+
 ### ScreenViewport
 This viewport does not have a constant virtual screen size. The viewport will always match the window size which means that no scaling happens and no black bars appear. As a disadvantage this means that the gameplay might change, because a player with a bigger screen might see more of the game, than a player with a smaller screen size.
+
+![Screen Viewport](http://imgur.com/qtOytdq)
 
 ### DoubleRatioViewport (Coming Soon...)
 This viewport gets a minimum and a maximum aspect ratio and interpolates the viewport between those two values. It may add black bars in case the devices screen aspect ratio is not in the range.
