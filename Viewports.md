@@ -55,4 +55,19 @@ In case picking needs to be done, Viewport offers convenient `project/unproject/
 
 In case of Stage being used, the Stage's Camera needs to be supplied to the viewport and `Viewport.updateStage(Stage)` needs to be called when a resize event happens.
 
+    private Viewport viewport;
+    private Stage stage;
+
+    public void create() {
+        stage = new Stage();
+        viewport = new FixedViewport(stage.getCamera(), 800, 480);
+    }
+
+Whenever a resize event occurs, the viewport needs to be informed about it and updated. This will automatically recalculate the viewport parameters and update the camera:
+
+    public void resize(int width, int height) {
+        viewport.update(width, height);
+        viewport.updateStage(stage);
+    }
+
 To see the viewports in action, have a look at the tests at [GitHub](https://github.com/libgdx/libgdx/tree/master/tests/gdx-tests/src/com/badlogic/gdx/tests).
