@@ -1,5 +1,3 @@
-# Skin #
-
  * [Overview](#overview)
  * [Resources](#resources)
  * [Convenience methods](#convenience-methods)
