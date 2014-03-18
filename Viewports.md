@@ -63,8 +63,6 @@ In case of Stage being used, the Stage's Camera needs to be supplied to the view
         viewport = new FixedViewport(stage.getCamera(), 800, 480);
     }
 
-Whenever a resize event occurs, the viewport needs to be informed about it and updated. This will automatically recalculate the viewport parameters and update the camera:
-
     public void resize(int width, int height) {
         viewport.update(width, height);
         viewport.updateStage(stage);
