@@ -28,8 +28,8 @@ This viewport gets a minimum and a maximum aspect ratio and interpolates the vie
 ### MinMaxViewport (Coming Soon...)
 This keeps the viewport in between a minimum and a maximum virtual viewport. It will select the viewport that fits the current screen the most and then scales it up to the screen size. It may add black bars in case the devices screen aspect ratio is not in the range.
 
-### Additional viewports
-Different strategies may be implemented by `extending Viewport` and implementing `calculateViewport()`.
+### CustomViewport
+Different strategies may be implemented by doing `CustomViewport extends Viewport` and implementing `calculateViewport(width, height)`.
 
 ### Usage
 A viewport always manages a Camera's viewportWidth and viewportHeight. Thus a camera needs to be supplied to the constructors. Whenever a resize event occurs, the viewport needs to be informed about it and updated via `Viewport.update(width, height)`. This will automatically recalculate the viewport parameters and update the camera. Furthermore it will change the OpenGL Viewport via glViewport, which may add black bars if necessary, making it impossible to render in the area of the black bars.
