@@ -13,7 +13,7 @@ A `FixedViewport` also supports a virtual screen size. The difference to Stretch
 ![Fixed Viewport](http://i.imgur.com/Kv2wB94.png)
 
 ### StaticViewport
-The `StaticViewport` is similar to the FixedViewport. The only different is that no scaling takes place. The viewport will always have the same size which means that black bars are likely, or in case of small displays, even parts of the viewport may be cut off.
+The `StaticViewport` is similar to the FixedViewport. The only difference is that no scaling takes place. The viewport will always have the same size which means that black bars are likely, or in case of small displays, even parts of the viewport may be cut off.
 
 ![Fixed Viewport](http://i.imgur.com/8F697TX.png)
 
