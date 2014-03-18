@@ -32,9 +32,13 @@ This keeps the viewport in between a minimum and a maximum virtual viewport. It 
 Different strategies may be implemented by doing `CustomViewport extends Viewport` and implementing `calculateViewport(width, height)`.
 
 ### Usage
-A viewport always manages a Camera's viewportWidth and viewportHeight. Thus a camera needs to be supplied to the constructors. Whenever a resize event occurs, the viewport needs to be informed about it and updated via `Viewport.update(width, height)`. This will automatically recalculate the viewport parameters and update the camera. Furthermore it will change the OpenGL Viewport via glViewport, which may add black bars if necessary, making it impossible to render in the area of the black bars.
+A viewport always manages a Camera's viewportWidth and viewportHeight. Thus a camera needs to be supplied to the constructors. Whenever a resize event occurs, the viewport needs to be informed about it and updated via `Viewport.update(width, height)`. This will automatically recalculate the viewport parameters and update the camera.
 
-A Viewport may be disabled by calling `Viewport.disable()` will will reset the OpenGL viewport to the maximum size, making it possible to render nice borders in the area of the black bars. This might look like the following (probably with a more appropriate border picture :D)
+    public void resize(int width, int height) {
+        viewport.update(width, height);
+    }
+
+Furthermore it will change the OpenGL Viewport via glViewport, which may add black bars if necessary, making it impossible to render in the area of the black bars. A Viewport may be disabled by calling `Viewport.disable()`. This will reset the OpenGL viewport to the maximum size, making it possible to render nice borders in the area of the black bars. This might look like the following (probably with a more appropriate border picture :D)
 ![Border](http://i.imgur.com/OVamVTh.png?1)
 
 In case picking needs to be done, Viewport offers convenient `project/unproject/getPickRay` methods, which uses the current viewport to do the correct picking.
