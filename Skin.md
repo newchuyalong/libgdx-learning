@@ -2,11 +2,11 @@
 
  * [Overview](#overview)
  * [Resources](#resources)
- * [Convenience methods](#convenience_methods)
+ * [Convenience methods](#convenience-methods)
  * [Conversions](#conversions)
- * [Modifying resources](#modifying_resources)
- * [Widget styles](#widget_styles)
- * [Skin JSON](#skin_json)
+ * [Modifying resources](#modifying-resources)
+ * [Widget styles](#widget-styles)
+ * [Skin JSON](#skin-json)
    * [Color](#color)
    * [BitmapFont](#bitmapfont)
    * [TintedDrawable](#tinteddrawable)
@@ -29,7 +29,7 @@ skin.addRegions(atlas);
 TextureRegion hero = skin.get("hero", TextureRegion.class);
 ```
 
-Resources can also be defined for a skin using JSON ([#Skin_JSON see below]) or added using code:
+Resources can also be defined for a skin using JSON ([#skin-json see below]) or added using code:
 
 ```java
 Skin skin = new Skin();
