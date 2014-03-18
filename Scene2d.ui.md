@@ -106,7 +106,11 @@ Tables automatically adapt to various screen resolutions, so this sets up a stag
 
 ## <a id="Skin"></a>Skin ##
 
-Most UI widgets are made up of a few configurable resources: images, fonts, colors, etc. All the resources needed to render a widget is called a "style". Each widget defines its own style class (usually a static member class) and has constructors for setting the initial style and a `setStyle` method for changing the style later. Styles can be configured in code:
+Most UI widgets are made up of a few configurable resources: images, fonts, colors, etc. All the resources needed to render a widget is called a "style". Each widget defines its own style class (usually a static member class) and has constructors for setting the initial style and a `setStyle` method for changing the style later.
+
+Skin files from the [libgdx tests](https://github.com/libgdx/libgdx/tree/master/tests/gdx-tests-android/assets/data) can be used as a starting point. You will need: uiskin.png, uiskin.atlas, uiskin.json, and default.fnt. This enables you to quickly get started using scene2d.ui and replace the skin assets later.
+
+Styles can be configured using JSON or with code:
 
 ```java
 TextureRegion upRegion = ...
