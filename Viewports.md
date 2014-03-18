@@ -23,10 +23,10 @@ This viewport does not have a constant virtual screen size. The `ScreenViewport`
 ![Screen Viewport](http://i.imgur.com/qtOytdq.png)
 
 ### DoubleRatioViewport (Coming Soon...)
-This viewport gets a minimum and a maximum aspect ratio and interpolates the viewport between those two values. It may add black bars in case the devices screen aspect ratio is not in the range.
+This keeps the viewport in between a minimum and a maximum aspect ratio. It will select the aspect ratio that fits the current screen the most and then scales it up to the screen size. It may add black bars in case the devices screen aspect ratio is not in the range.
 
 ### MinMaxViewport (Coming Soon...)
-This keeps the viewport in between a minimum and a maximum virtual viewport. It will select the viewport that fits the current screen the most and then scales it up to the screen size. It may add black bars in case the devices screen aspect ratio is not in the range.
+This viewport gets a minimum and a maximum viewport and interpolates the viewport between those two values so that it fits the screen size the most. It may add black bars in case the devices screen aspect ratio is not in the range.
 
 ### CustomViewport
 Different strategies may be implemented by doing `CustomViewport extends Viewport` and implementing `calculateViewport(width, height)`.
