@@ -1,24 +1,24 @@
 When dealing with different screens it is often necessary to decide for a certain strategy how those different screen sizes and aspect ratios should be handled. Camera and Stage support different viewport strategies, for example when doing picking via `Camera.project(vec, viewportX, viewportY, viewportWidth, viewportHeight)`.
 
-LibGDX provides a more convenient way of dealing with this problem, namely via Viewports.
+LibGDX provides a more convenient way of dealing with this problem, namely via `Viewport`s.
 
 ### StretchedViewport
-This implementation supports working with a virtual screen size. That means one can assume that a screen is always of the size `virtualWidth x virtualHeight`. This virtual viewport will then always be stretched to fit the screen. There are no black bars, but the aspect ratio may not be the same after the scaling took place.
+The `StretchedViewport` supports working with a virtual screen size. That means one can assume that a screen is always of the size `virtualWidth x virtualHeight`. This virtual viewport will then always be stretched to fit the screen. There are no black bars, but the aspect ratio may not be the same after the scaling took place.
 
 ![Stretched Viewport](http://i.imgur.com/oheUy0y.png)
 
 ### FixedViewport
-A FixedViewport also supports a virtual screen size. The different to StretchedViewport is that it will always maintain the aspect ratio of the virtual screen size (virtual viewport), while scaling it as much as possible to fit the screen. One disadvantage with this strategy is that there may appear black bars.
+A `FixedViewport` also supports a virtual screen size. The difference to StretchedViewport is that it will always maintain the aspect ratio of the virtual screen size (virtual viewport), while scaling it as much as possible to fit the screen. One disadvantage with this strategy is that there may appear black bars.
 
 ![Fixed Viewport](http://i.imgur.com/Kv2wB94.png)
 
 ### StaticViewport
-The StaticViewport is similar to the FixedViewport. The only different is that no scaling takes place. The viewport will always have the same size which means that black bars are likely, or in case of small displays, even parts of the viewport may be cut off.
+The `StaticViewport` is similar to the FixedViewport. The only different is that no scaling takes place. The viewport will always have the same size which means that black bars are likely, or in case of small displays, even parts of the viewport may be cut off.
 
 ![Fixed Viewport](http://i.imgur.com/8F697TX.png)
 
 ### ScreenViewport
-This viewport does not have a constant virtual screen size. The viewport will always match the window size which means that no scaling happens and no black bars appear. As a disadvantage this means that the gameplay might change, because a player with a bigger screen might see more of the game, than a player with a smaller screen size.
+This viewport does not have a constant virtual screen size. The `ScreenViewport` will always match the window size which means that no scaling happens and no black bars appear. As a disadvantage this means that the gameplay might change, because a player with a bigger screen might see more of the game, than a player with a smaller screen size.
 
 ![Screen Viewport](http://i.imgur.com/qtOytdq.png)
 
