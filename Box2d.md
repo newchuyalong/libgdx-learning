@@ -313,8 +313,14 @@ public class ListenerClass implements ContactListener {
 		};
 ```
 
+This class needs to be set as the world's contact listener in the screen's show() or init() method.
+
+```java
+world.setContactListener(ListenerClass);
+```
+
 We might get information about the bodies from the contact fixtures.
-Depending of the application desing, the Entity class should be referenced in the Body or Fixture user data, so we can use it from the contact and make some changes (e.g. change the player health).
+Depending of the application design, the Entity class should be referenced in the Body or Fixture user data, so we can use it from the contact and make some changes (e.g. change the player health).
 
 ## Code Snippets ##
 
