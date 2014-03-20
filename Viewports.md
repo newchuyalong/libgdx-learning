@@ -51,7 +51,7 @@ Whenever a resize event occurs, the viewport needs to be informed about it and u
         viewport.update(width, height);
     }
 
-Furthermore it will change the OpenGL Viewport via glViewport, which may add black bars if necessary, making it impossible to render in the area of the black bars. A Viewport may be disabled by calling `Viewport.disable()`. This will reset the OpenGL viewport to the maximum size, making it possible to render nice borders in the area of the black bars. This might look like the following (probably with a more appropriate border picture...)
+Furthermore it will change the OpenGL Viewport via glViewport, which may add black bars if necessary, making it impossible to render in the area of the black bars. In case black bars appear with a certain viewport strategy, the OpenGL viewport may be reset to it's standard size and the viewport can be queried for the size of the bars via `Viewport.getLeftGutterWidth()` etc. For an example of how to do so, see [this test](https://github.com/libgdx/libgdx/blob/master/tests/gdx-tests/src/com/badlogic/gdx/tests/ViewportTest2.java). This might look like the following (probably with a more appropriate border picture...)
 ![Border](http://i.imgur.com/OVamVTh.png?1)
 
 In case picking needs to be done, Viewport offers convenient `project/unproject/getPickRay` methods, which uses the current viewport to do the correct picking.
