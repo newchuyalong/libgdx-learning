@@ -52,6 +52,7 @@
       * [GraphicsRuntime Fullscreen & VSync]
       * [GraphicsContinuous Continuous & Non-Continuous Rendering]
       * [GraphicsClearing Clearing the Screen]
+      * [Viewports Viewports]
       * [GraphicsOpenGL OpenGL ES Support]
         * [OpenGLConfigurationQuerying Configuration & Querying]
         * [OpenGLDirectAccess Direct Access]
