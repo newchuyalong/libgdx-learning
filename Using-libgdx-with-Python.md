@@ -21,7 +21,7 @@ from com.badlogic.gdx.utils import TimeUtils, Array
 from com.badlogic.gdx.math import MathUtils, Rectangle, Vector3
 from com.badlogic.gdx import ApplicationListener, Gdx, Input
 from com.badlogic.gdx.graphics.g2d import SpriteBatch
-from com.badlogic.gdx.graphics import Texture, OrthographicCamera, GL10
+from com.badlogic.gdx.graphics import Texture, OrthographicCamera, GL20
 
 class PyGdx(ApplicationListener):
     def __init__(self):
@@ -71,7 +71,7 @@ class PyGdx(ApplicationListener):
     
     def render(self):
         Gdx.gl.glClearColor(0,0,0.2,0)
-        Gdx.gl.glClear(GL10.GL_COLOR_BUFFER_BIT)
+        Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT)
         
         self.camera.update()
         
