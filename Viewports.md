@@ -4,10 +4,12 @@ LibGDX provides a more convenient way of dealing with this problem, namely via `
 
 ### StretchViewport
 The `StretchViewport` supports working with a virtual screen size. That means one can assume that a screen is always of the size `virtualWidth x virtualHeight`. This virtual viewport will then always be stretched to fit the screen. There are no black bars, but the aspect ratio may not be the same after the scaling took place.
+
 ![StretchViewport](http://i.imgur.com/oheUy0y.png)
 
 ### FitViewport
 A `FitViewport` also supports a virtual screen size. The difference to StretchViewport is that it will always maintain the aspect ratio of the virtual screen size (virtual viewport), while scaling it as much as possible to fit the screen. One disadvantage with this strategy is that there may appear black bars.
+
 ![FitViewport](http://i.imgur.com/Kv2wB94.png)
 
 ### FillViewport
@@ -15,6 +17,7 @@ A `FitViewport` also supports a virtual screen size. The difference to StretchVi
 
 ### ScreenViewport
 This viewport does not have a constant virtual screen size. The `ScreenViewport` will always match the window size which means that no scaling happens and no black bars appear. As a disadvantage this means that the gameplay might change, because a player with a bigger screen might see more of the game, than a player with a smaller screen size.
+
 ![Screen Viewport](http://i.imgur.com/qtOytdq.png)
 
 ### ExtendViewport
@@ -28,6 +31,7 @@ This viewport gets a minimum and a maximum viewport and interpolates the viewpor
 
 ### CustomViewport
 Different strategies may be implemented by doing `CustomViewport extends Viewport` and implementing `calculateViewport(width, height)`. Another approach is use the generic `ScalingViewport` and supplying another Scaling which is not yet covered by any other Viewport. One example could be to supply `Scaling.none` to it, which will result in a completely "StaticViewport", which always keeps the same size. It might look like this:
+
 ![StaticViewport](http://i.imgur.com/8F697TX.png)
 
 ### Usage
