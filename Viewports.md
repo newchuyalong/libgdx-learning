@@ -68,4 +68,4 @@ In case of Stage being used, the Stage's Camera needs to be supplied to the view
         viewport.updateStage(stage);
     }
 
-To see the viewports in action, have a look at the tests at [GitHub](https://github.com/libgdx/libgdx/tree/master/tests/gdx-tests/src/com/badlogic/gdx/tests).
+To see the viewports in action, have a look at the tests at [GitHub](https://github.com/libgdx/libgdx/tree/master/tests/gdx-tests/src/com/badlogic/gdx/tests/viewport).
