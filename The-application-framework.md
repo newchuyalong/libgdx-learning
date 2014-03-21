@@ -6,7 +6,7 @@ At its core, libgdx consists of five interfaces that provide means to interact w
   * *[Input](https://github.com/libgdx/libgdx/tree/master/gdx/src/com/badlogic/gdx/Input.java)*: informs the API client of user input such as mouse, keyboard, touch or accelerometer events. Both polling and event driven processing are supported.
   * *[Net](https://github.com/libgdx/libgdx/tree/master/gdx/src/com/badlogic/gdx/Net.java)**: provides means to access resources via HTTP/HTTPs in a cross-platform way, as well as create TCP server and client sockets.
   * *[Audio](https://github.com/libgdx/libgdx/tree/master/gdx/src/com/badlogic/gdx/Audio.java)*: provides means to playback sound effects and streaming music as well as directly accessing audio devices for PCM audio input/output.
-  * *[Graphics](https://github.com/libgdx/libgdx/tree/master/gdx/src/com/badlogic/gdx/Graphics.java)*: exposes OpenGL ES 1.x and 2.0 (where available) and allows querying/setting video modes and similar things.
+  * *[Graphics](https://github.com/libgdx/libgdx/tree/master/gdx/src/com/badlogic/gdx/Graphics.java)*: exposes OpenGL ES 2.0 (where available) and allows querying/setting video modes and similar things.
 
 ## Starter Classes ##
 The only platform specific code that needs to be written, are so called starter classes. For each platform that is targeted, a piece of code will instantiate a concrete implementation of the Application interface, provided by the back-end for the platform. For the desktop this might look something like this, using the Lwjgl back-end:
