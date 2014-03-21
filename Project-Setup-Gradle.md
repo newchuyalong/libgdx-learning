@@ -17,7 +17,7 @@ Libgdx comes with a file called `gdx-setup.jar` which is an executable command l
 
 Putting it all together, you can run the project generator on the command line as follows:
 
-`java -jar gdx-setup.jar --dir mygame --name mygame --package com.badlogic.mygame --mainClass MyGame`
+`java -cp gdx-setup.jar com.badlogic.gdx.setup.GdxSetup --dir mygame --name mygame --package com.badlogic.mygame --mainClass MyGame`
 
 This will create a directory called `mygame`with the following layout:
 
