@@ -2,7 +2,13 @@ While not strictly an input device, it nevertheless is a kind of a peripheral. W
 
 The vibrator allows you to vibrate the phone of a user. This can be used similar to more sophisticated force feedback functionality found commonly in game console controllers.
 
-The vibrator is only available on Android and needs a special permission in the manifest file "android.permission.VIBRATE". See the [[application configuration |Starter Classes & Configuration]] section if you are unsure how to specify permissions in your Android manifest.
+The vibrator is only available on Android and needs a special permission in the manifest file
+
+```java
+android.permission.VIBRATE
+```
+
+See the [[application configuration |Starter Classes & Configuration]] section if you are unsure how to specify permissions in your Android manifest.
 
 Vibrating the phone works as follows:
 
