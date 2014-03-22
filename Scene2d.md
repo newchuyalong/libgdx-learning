@@ -26,28 +26,23 @@ Stage has an `act` method that takes a delta time since last frame. This causes 
 
 ### Viewport ###
 
-The stage viewport is setup using the `setViewport` method.
+The stage viewport is managed by a [Viewport](Viewport) instance. The viewport controls how the stage is displayed on the screen, its aspect ratio, whether it is stretched and whether black bars appear (letterboxing). The viewport also converts stage coordinates to screen coordinates and vice versa.
 
-Stage has a viewport position and size which describes what part of the screen the stage will use. If `glViewport` is not used then the viewport position and size can be omitted when calling `setViewport`. This will cause the stage to use the entire screen as the viewport.
+The viewport is specified in the stage constructor or by using `setViewport`. If running where the application window can be resized (eg, on the desktop), the stage's viewport should be set when the application window is resized.
 
-Stage also has a size. This describes how many units wide and tall the stage is when drawn over the whole viewport. If the viewport matches the screen resolution, then 1 unit in stage coordinates will correspond to 1 pixel. If the viewport is bigger or smaller than the screen resolution, the stage will be scaled up or down to fill the screen.
-
-`setViewport` has a parameter named `keepAspectRatio` which only has an effect when the stage size and viewport size aspect ratio differ. If false, the stage is stretched to fill the viewport, which may distort the aspect ratio. If true, the stage is first scaled to fit the viewport in the longest dimension. Next the shorter dimension is lengthened to fill the viewport, which keeps the aspect ratio from changing.
-
-If running where the application window can be resized (eg, on the desktop), the stage's viewport should be set when the application window is resized.
-
-Here is an example of the most basic scene2d application with no actors, using pixel stage coordinates. Each unit in the stage corresponds to 1 pixel, which means nothing is stretched. Here the boolean passed to `setViewport` has no effect because the aspect ratio of the stage and viewport are the same. Note that the 3 parameter `setViewport` is called which does not specify a viewport position and size, so the entire screen is used as the viewport.
+Here is an example of the most basic scene2d application with no actors, using a `ScreenViewport`. With this viewport, each unit in the stage corresponds to 1 pixel. This means the stage is never stretched, but more or less of the stage is visible depending on the size of the screen or window. This is often useful for UI applications.
 
 ```java
 private Stage stage;
 
 public void create () {
-	stage = new Stage();
+	stage = new Stage(new ScreenViewport());
 	Gdx.input.setInputProcessor(stage);
 }
 
 public void resize (int width, int height) {
-	stage.setViewport(width, height, true);
+	// See below for what true means.
+	stage.getViewport().update(width, height, true);
 }
 
 public void render () {
@@ -61,46 +56,33 @@ public void dispose() {
 }
 ```
 
-Here is an example of using a fixed stage size. The stage will be stretched to the viewport, potentially stretching the stage's aspect ratio.
+Passing `true` when updating the viewport changes the camera position so it is centered on the stage, making 0,0 the bottom left corner. This is useful for UIs, where the camera position is not usually changed. When managing the camera position yourself, pass false or omit the boolean. If the stage position is not set, by default 0,0 will be in the center of the screen.
+
+Here is an example of using `StretchViewport`. The stage's size of 640x480 will be stretched to the screen size, potentially changing the stage's aspect ratio.
 
 ```java
-public void resize (int width, int height) {
-	stage.setViewport(800, 480, false);
-}
+	stage = new Stage(new StretchViewport(640, 480));
 ```
 
-Here is another example of using a fixed stage size. The stage will be scaled to fit, and then the shorter dimension increased to fit the screen. The stage's aspect ratio will not change, but it may become longer in one direction. Note that 0,0 in the stage is still at the bottom left corner of the screen.
+Here is an example of using `FitViewport`. The stage's size of 640x480 is scaled to fit the screen without changing the aspect ratio, then black bars are added on either side to take up the remaining space (letterboxing). Note that `glViewport` is used so the stage cannot draw within the black bars.
 
 ```java
-public void resize (int width, int height) {
-	stage.setViewport(800, 480, true);
-}
+	stage = new Stage(new FitViewport(640, 480));
 ```
 
-Here is yet another example of using a fixed stage size, but with "black bars" on either side. As before, the stage is scaled to fit and then lengthened in one direction. The camera is then shifted so that 0,0 in the stage is half the amount the stage was lengthened. Note the stage still takes up the entire viewport, which is the whole screen, so drawing can occur within the "black bars".
+Here is an example of using `ExtendViewport`. The stage's size of 640x480 is first scaled to fit without changing the aspect ratio, then the stage's shorter dimension is increased to fill the screen. The aspect ratio is not changed and there are no black bars, but the stage may be longer in one direction.
 
 ```java
-public void resize (int width, int height) {
-	stage.setViewport(800, 480, true);
-	stage.getCamera().translate(-stage.getGutterWidth(), -stage.getGutterHeight(), 0);
-}
+	stage = new Stage(new ExtendViewport(640, 480));
 ```
 
-This example also uses a fixed stage size with "black bars" on either side, this time using `glViewport`. First the stage size of 800x480 is scaled to fit the screen size using the `Scaling` class. The result is used to configure `glViewport`, which changes which part of the screen OpenGL will use. Lastly, `setViewport` is passed the viewport position and size. The result is the same as the last example, the stage has "black bars" as necessary to keep the aspect ratio, but no drawing can occur outside the viewport.
+Here is an example of using `ExtendViewport` with a maximum size. As before, the stage's size of 640x480 is first scaled to fit without changing the aspect ratio, then the stage's shorter dimension is increased to fill the screen. However, the stage's size won't be increased beyond the maximum size of 800x480. This approach allows you to show more of the world to support many different aspect ratios without showing black bars.
 
 ```java
-public void resize (int width, int height) {
-	Vector2 size = Scaling.fit.apply(800, 480, width, height);
-	int viewportX = (int)(width - size.x) / 2;
-	int viewportY = (int)(height - size.y) / 2;
-	int viewportWidth = (int)size.x;
-	int viewportHeight = (int)size.y;
-	Gdx.gl.glViewport(viewportX, viewportY, viewportWidth, viewportHeight);
-	stage.setViewport(800, 480, true, viewportX, viewportY, viewportWidth, viewportHeight);
-}
+	stage = new Stage(new ExtendViewport(640, 480, 800, 480));
 ```
 
-See [LetterBoxTest1](https://github.com/libgdx/libgdx/blob/master/tests/gdx-tests/src/com/badlogic/gdx/tests/LetterBoxTest1.java), [LetterBoxTest2](https://github.com/libgdx/libgdx/blob/master/tests/gdx-tests/src/com/badlogic/gdx/tests/LetterBoxTest2.java), and [LetterBoxTest3](https://github.com/libgdx/libgdx/blob/master/tests/gdx-tests/src/com/badlogic/gdx/tests/LetterBoxTest3.java) for runnable examples of keeping an aspect ratio.
+See [Viewport](Viewport) for more information.
 
 ## Drawing ##
 
