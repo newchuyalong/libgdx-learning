@@ -84,7 +84,7 @@ public void create () {
 }
 
 public void resize (int width, int height) {
-	stage.setViewport(width, height, true);
+	stage.getViewport().update(width, height, true);
 }
 
 public void render () {
