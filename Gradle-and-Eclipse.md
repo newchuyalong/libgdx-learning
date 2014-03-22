@@ -4,8 +4,6 @@ Using the Gradle project with Eclipse can be done in two ways:
 * Generate Eclipse projects on the command line and import them into Eclipse
 * Install the Eclipse Gradle Integration and load the Gradle projects directly
 
-We'll investigate both ways of doing this.
-
 #### Generating and Importing Eclipse projects
 Open the command line, navigate to your project's root folder, then execute
 
