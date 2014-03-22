@@ -55,9 +55,9 @@ Furthermore it will change the OpenGL Viewport via glViewport, which may add bla
 
 ![Border](http://i.imgur.com/OVamVTh.png?1)
 
-In case picking needs to be done, Viewport offers convenient `project/unproject/getPickRay` methods, which uses the current viewport to do the correct picking.
+In case picking needs to be done, Viewport offers convenient `project/unproject/getPickRay` methods, which uses the current viewport to do the correct picking. This is how you convert to and from screen and world coordinates.
 
-In case of Stage being used, the Stage's Camera needs to be supplied to the viewport and `Viewport.updateStage(Stage)` needs to be called when a resize event happens.
+When Stage is used, the Stage's viewport needs to be updated when a resize event happens.
 
     private Stage stage;
 
@@ -66,8 +66,10 @@ In case of Stage being used, the Stage's Camera needs to be supplied to the view
     }
 
     public void resize(int width, int height) {
-        // use true here in case of a UI-only stage to center the camera
+        // use true here to center the camera
         stage.getViewport().update(width, height, false);
     }
+
+### Examples
 
 To see the viewports in action, have a look at the tests here: [ViewportTest1](https://github.com/libgdx/libgdx/blob/master/tests/gdx-tests/src/com/badlogic/gdx/tests/ViewportTest1.java), [ViewportTest2](https://github.com/libgdx/libgdx/blob/master/tests/gdx-tests/src/com/badlogic/gdx/tests/ViewportTest2.java) and [ViewportTest3](https://github.com/libgdx/libgdx/blob/master/tests/gdx-tests/src/com/badlogic/gdx/tests/ViewportTest3.java).
