@@ -1,7 +1,7 @@
 ### Importing to Eclipse
 Using the Gradle project with Eclipse can be done in two ways:
 
-* Generate Eclipse projects on the command line and import them into Eclipse
+* Generate Eclipse projects on the command line and import them to Eclipse
 * Install the Eclipse Gradle Integration and load the Gradle projects directly
 
 #### Generating and Importing Eclipse projects
@@ -13,7 +13,7 @@ This will generate .classpath and .project files for every subproject (core, des
 
 Next, open Eclipse, go to File -> Import -> General -> Existing Projects into Workspace. Click on the Browse button and select your project's root directory. You should see a list of projects (android, core, desktop, gwt, ios), all checked. Click the Finish button.
 
-### Importing with Gradle Integration
+#### Importing with Gradle Integration
 If you have installed the [Eclipse Gradle Integration plugin](https://github.com/spring-projects/eclipse-integration-gradle/blob/master/README.md) (check the section 'Installing Gradle tooling from update site") you can work without dropping down onto the command line.
 
-Simple go to File -> Import -> Gradle 
+Simple go to File -> Import -> Gradle -> Gradle Project, click Browse and navigate to the root folder of your project, then click Build Model. After a while, you'll see a root project and subprojects (android, core, desktop, gwt, ios). Select all the projects and click Finish.
