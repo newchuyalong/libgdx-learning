@@ -26,7 +26,7 @@ Stage has an `act` method that takes a delta time since last frame. This causes 
 
 ### Viewport ###
 
-The stage viewport is managed by a [Viewport](Viewports) instance. The viewport controls how the stage is displayed on the screen, its aspect ratio, whether it is stretched and whether black bars appear (letterboxing). The viewport also converts stage coordinates to screen coordinates and vice versa.
+The stage viewport is managed by a [Viewport](Viewports) instance. The viewport controls how the stage is displayed on the screen, the stage's aspect ratio (whether it is stretched) and whether black bars appear (letterboxing). The viewport also converts screen coordinates to and from stage coordinates.
 
 The viewport is specified in the stage constructor or by using `setViewport`. If running where the application window can be resized (eg, on the desktop), the stage's viewport should be set when the application window is resized.
 
