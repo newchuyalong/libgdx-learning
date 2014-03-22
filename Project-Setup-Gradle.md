@@ -53,3 +53,10 @@ ios/
     build.gradle           <- Gradle build file for the ios project, no touchy unless masochistic
     src/                   <- Source folder for your ios project, contains launcher
 ```
+
+## Commandline, Eclipse, Intellij IDEA
+Once you generated your project, you can run, debug and package it using the command line, Eclipse or Intellij IDEA:
+
+    * [[Gradle on the Commandline]]
+    * [[Gradle and Eclipse]]
+    * [[Gradle and Intellij Idea]]
