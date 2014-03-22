@@ -11,6 +11,7 @@
     * [[Games Built with Libgdx]]
     * [[Prerequisites]]
     * [[Gradle Project Setup, Running, Debugging and Packaging|Project Setup Gradle]]
+      * [[Gradle on the Commandline]]
       * [[Gradle and Eclipse]]
     * [[Project Setup, Running & Debugging]]
       * [[Manual Project Setup]]
