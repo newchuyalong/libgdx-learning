@@ -83,29 +83,11 @@ This task will compile the APK for android and install it on a connected device.
 `./gradlew gwt:gwtDev`
 
 #### Running the ios project
-`./gradlew ios:whoknows`
+`./gradlew ios:launchIPhoneSimulator`
+`./gradlew ios:launchIPadSimulator`
+`./gradlew ios:launchIOSDevice`
 
+The last command will launch your ios project on a connected iDevice, provided it is provisioned. Please refer to Apple's docs on how to provision a device.
 
 ### Packaging from the command line
-
-##### Basic Gradle tasks
-
-RoboVM
-```
-launchIPhoneSimulator        <- Runs your app on the iPhone simulator
-launchIPadSimulator          <- Runs your app on the iPad simulator
-launchIOSDevice              <- Runs your app in the iOS device connected
-createIPA                    <- Creates .ipa file
-```
-Gwt
-```
-compileGwt                   <- Compiles the java source code to javascript
-draftCompileGwt              <- compiles the java source code to javascript without optimizing.
-gwtSuperDev                  <- Runs GWT codeserver used for Super Dev Mode (GWT 2.5+)
-```
-Gwt with War    (compileGwt automatically added to war, (keeps itself up to date))
-```
-warTemplate                  <- explodes webapp contents to war, used in intial project build         
-gwtDev                       <- GWT Dev mode runs from the exploded webapp (war)
-draftWar                     <- Runs the draftCompileGwt code for quicker build times.
-```
+TBD
