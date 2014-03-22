@@ -64,7 +64,7 @@ Here is an example of using `StretchViewport`. The stage's size of 640x480 will 
 	stage = new Stage(new StretchViewport(640, 480));
 ```
 
-Here is an example of using `FitViewport`. The stage's size of 640x480 is scaled to fit the screen without changing the aspect ratio, then black bars are added on either side to take up the remaining space (letterboxing). Note that `glViewport` is used so the stage cannot draw within the black bars.
+Here is an example of using `FitViewport`. The stage's size of 640x480 is scaled to fit the screen without changing the aspect ratio, then black bars are added on either side to take up the remaining space (letterboxing).
 
 ```java
 	stage = new Stage(new FitViewport(640, 480));
@@ -80,6 +80,18 @@ Here is an example of using `ExtendViewport` with a maximum size. As before, the
 
 ```java
 	stage = new Stage(new ExtendViewport(640, 480, 800, 480));
+```
+
+Most viewports that show black bars use `glViewport`, so the stage cannot draw within the black bars. The `glViewport` can be set to the full screen to draw in the black bars outside of the stage.
+
+```java
+// Set the viewport to the whole screen.
+Gdx.gl.glViewport(0, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
+
+// Draw anywhere on the screen.
+
+// Restore the stage's viewport.
+stage.getViewport().update(Gdx.graphics.getWidth(), Gdx.graphics.getHeight(), true);
 ```
 
 See [Viewport](Viewports) for more information.
