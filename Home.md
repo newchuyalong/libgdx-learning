@@ -13,6 +13,7 @@
     * [[Gradle Project Setup, Running, Debugging and Packaging|Project Setup Gradle]]
       * [[Gradle on the Commandline]]
       * [[Gradle and Eclipse]]
+      * [[Gradle and Intellij Idea]]
     * [[Project Setup, Running & Debugging]]
       * [[Manual Project Setup]]
       * [[Maven Integration]]
