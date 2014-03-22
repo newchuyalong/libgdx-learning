@@ -23,16 +23,11 @@ This viewport does not have a constant virtual screen size. The `ScreenViewport`
 ### ExtendViewport
 The `ExtendViewport` keeps the world aspect ratio without black bars by extending the world in one direction. The world is first scaled to fit within the viewport, then the shorter dimension is lengthened to fill the viewport.
 
-### MinMaxViewport
-This viewport gets a minimum and maximum dimensions and a `snap` flag.
+![Extend Viewport](http://i.imgur.com/HX6QS8r.png)
 
-When the `snap` flag is enabled, it will pick the closest dimensions to the screen aspect ratio and use `FitViewport`'s scaling strategy. This will result in black bars (letterboxing) if the screen doesn't exactly match any of the two supported ratios.
+A maximum set of dimensions can be supplied to `ExtendViewport`, in which case, black bars will be added when the aspect ratio falls out of the supported range.
 
-![Snapped Min Max Viewport](http://i.imgur.com/uPYHZkG.png)
-
-When the `snap` flag is disabled and the screen aspect ratio falls within the supported range, it will keep it and scale the image. Otherwise, it will pick the closest supported aspect ratio and use `FitViewport`'s scaling strategy.
-
-![Non snapped Min Max Viewport](http://i.imgur.com/sMeYW9m.png)
+![Extend Viewport with maximum dimensions](http://i.imgur.com/vQeRKPY.png)
 
 ### CustomViewport
 Different strategies may be implemented by doing `CustomViewport extends Viewport` and implementing `calculateViewport(width, height)`. Another approach is use the generic `ScalingViewport` and supplying another Scaling which is not yet covered by any other Viewport. One example could be to supply `Scaling.none` to it, which will result in a completely "StaticViewport", which always keeps the same size. It might look like this:
