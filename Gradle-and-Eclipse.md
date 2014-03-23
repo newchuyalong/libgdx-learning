@@ -1,3 +1,5 @@
+Before you can import your project into Eclipse, make sure you [setup your development environment|Setting-up-your-Development-Environment-%28Eclipse%2C-Intellij-IDEA%29]!
+
 ## Importing to Eclipse
 Using the Gradle project with Eclipse can be done in two ways:
 
