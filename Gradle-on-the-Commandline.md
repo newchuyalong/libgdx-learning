@@ -37,22 +37,22 @@ This will start your application in [GWT Super Dev Mode](http://www.badlogicgame
 ## Packaging the project
 Every platform has a different kind of distribution format. In this section we'll see how we can generate those distributions via Gradle.
 
-## Packaging for the desktop
+### Packaging for the desktop
 `gradlew desktop:dist`
 
 This will create a runnable JAR file located in the `desktop/build/libs/` folder. It contains all necessary code as well as all your art assets from the android/assets folder and can be run either by double clicking or on the command line via `java -jar jar-file-name.jar`. Your audience must have a JVM installed for this to work. The JAR will work on Windows, Linux and Mac OS X!
 
-## Packaging for Android
+### Packaging for Android
 `gradlew android:assembleRelease`
 
 This will create an unsinged APK file in the `android/build/apk` folder. You can install this APK file on any Android device that allows [installation from unknown sources](http://developer.android.com/distribute/open.html#unknown-sources). For distribution on the Google Play Store you have to [sign your APK](http://developer.android.com/tools/publishing/app-signing.html). The APK build by the above command is already in release mode, you you only need to follow the steps for keytool and jarsigner. 
 
-## Packaging for iOS
+### Packaging for iOS
 `gradlew ios:createIPA`
 
 This will create an IPA in the `ios/build/robovm` folder that you distribute to the Apple App Store. You can follow Apple's guide on [app store distribution](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppDistributionGuide/Introduction/Introduction.html)
 
-## Packaging for the Web
+### Packaging for the Web
 `gradle gwt:dist`
 
 This will compile your your app to Javascript and place the resulting Javascript, HTML and asset files in the `gwt/build/dist/` folder. The contents of this folder have to be served up by a web server, e.g. Apache or Nginx. Just treat the contents like you'd treat any other static HTML/Javascript site. There is no Java or Java Applets involved!
