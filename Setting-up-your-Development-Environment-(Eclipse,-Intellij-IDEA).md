@@ -15,7 +15,7 @@ To additionally target iOS
   * The latest XCode, which you can get from the Mac OS X App Store for free
   * [RoboVM](http://www.robovm.com/docs#robovm-for-eclipse), simply install the Eclipse plugin. Make sure to update the plugin frequently!
 
-Once all of these tools are installed, proceed to [Project Setup](https://github.com/libgdx/libgdx/wiki/Project-setup%2C-running-%26-debugging)
+Once all of these tools are installed, proceed to [[creating your project|Project Setup Gradle]]
 
 ### Setting up Intellij IDEA
 To develop your application via Eclipse, you need to install the following pieces of software.
@@ -29,4 +29,4 @@ To additionally target iOS
   * A Mac, iOS Development does not work on Windows/Linux thanks to Apple.
   * The latest XCode, which you can get from the Mac OS X App Store for free
 
-Once all of these tools are installed, proceed to [Project Setup](https://github.com/libgdx/libgdx/wiki/Project-setup%2C-running-%26-debugging)
+Once all of these tools are installed, proceed to [[creating your project|Project Setup Gradle]]
