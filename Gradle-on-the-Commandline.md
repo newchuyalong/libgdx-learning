@@ -36,10 +36,12 @@ This will start your application in [GWT Super Dev Mode](http://www.badlogicgame
 
 #### Running the ios project
 `./gradlew ios:launchIPhoneSimulator`
+
 `./gradlew ios:launchIPadSimulator`
+
 `./gradlew ios:launchIOSDevice`
 
-The last command will launch your ios project on a connected iDevice, provided it is provisioned. Please refer to Apple's docs on how to provision a device.
+The first two commands will launch your app on an iPhone or iPad simualtor, the last command will launch your ios project on a connected iDevice, provided it is provisioned. Please refer to Apple's docs on how to provision a device.
 
 ### Packaging from the command line
 TBD
