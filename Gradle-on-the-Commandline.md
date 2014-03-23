@@ -45,3 +45,4 @@ This will create a runnable JAR file located in the `desktop/build/libs/` folder
 ## Packaging for Android
 `gradlew android:assembleRelease`
 
+This will create an unsinged APK file in the `android/build/apk` folder. You can install this APK file on any Android device that allows [installation from unknown sources](http://developer.android.com/distribute/open.html#unknown-sources). For distribution on the Google Play Store you have to [sign your APK](http://developer.android.com/tools/publishing/app-signing.html). The APK build by the above command is already in release mode, you you only need to follow the steps for keytool and jarsigner. 
