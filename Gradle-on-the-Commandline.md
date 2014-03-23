@@ -1,4 +1,4 @@
-### Running from the command line
+## Setting up ANDROID_HOME
 The ANDROID_HOME environment variable needs to be pointing to a valid android SDK before you do any command line wizardry. To do this on Windows, you can issue this from the command line:
 
 `set ANDROID_HOME=C:/Path/To/Your/Android/Sdk`
@@ -17,12 +17,18 @@ On Mac OS or Linux invoke gradle like this:
 
 Note the leading dot slash on Unix like systems. In both cases, the clean task will remove all build files from all modules in the project, e.g. class files previously generated.
 
+### Running the project
+Gradle let's you easily run a project from the commandline. Just use the gradlew command specify your target platform and the run command for that platform.
+
 #### Running the desktop project
 `./gradlew desktop:run`
-#### Running the android project
-`./gradlew android:installDebug`
 
-This task will compile the APK for android and install it on a connected device. You will have to start the app manually on the device yourself.
+This compiles your core and desktop project, and runs the desktop starter. The working directory is the android project's assets folder!
+
+#### Running the android project
+`./gradlew android:installDebug android:run`
+
+This task will create a debug APK of your application, install it on the first connected emulator or device and start the main activity. The process is split into two tasks because the Android Gradle plugin lets you create multiple flavors of your app (e.g. debug as above, release, ...). You can find more information on the (Android Gradle Plugin site](http://tools.android.com/tech-docs/new-build-system/user-guide).
 #### Running the gwt project
 `./gradlew gwt:gwtDev`
 
