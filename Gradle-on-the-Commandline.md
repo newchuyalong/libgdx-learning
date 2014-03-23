@@ -50,4 +50,4 @@ This will create an unsinged APK file in the `android/build/apk` folder. You can
 ## Packaging for iOS
 `gradlew ios:createIPA`
 
-This will create an IPA that you distribute to the Apple App Store. You can follow Apple's guide on [app store distribution](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppDistributionGuide/Introduction/Introduction.html)
+This will create an IPA in the ìos/build/robovm` folder that you distribute to the Apple App Store. You can follow Apple's guide on [app store distribution](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppDistributionGuide/Introduction/Introduction.html)
