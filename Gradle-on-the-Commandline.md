@@ -56,3 +56,9 @@ This will create an IPA in the `ios/build/robovm` folder that you distribute to 
 `gradle gwt:dist`
 
 This will compile your your app to Javascript and place the resulting Javascript, HTML and asset files in the `gwt/build/dist/` folder. The contents of this folder have to be served up by a web server, e.g. Apache or Nginx. Just treat the contents like you'd treat any other static HTML/Javascript site. There is no Java or Java Applets involved!
+
+If you have Python installed, you can test your distribution by executing the following in the `gwt/build/dist` folder:
+
+`python -m SimpleHTTPServer`
+
+You can then open a browser to [http://localhost:8000](http://localhost:8000) and see your project in action.
