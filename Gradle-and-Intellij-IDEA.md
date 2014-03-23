@@ -1,60 +1,22 @@
-## Importing to Intellij IDEA
-Intellij IDEA supports Gradle projects out of the box. As such, you don't have to drop down onto the command line to generate Intellij IDEA projects. Open Intellij IDEA, and select Import Project, then select to the build.gradle file in the root folder of your project and press OK. In the next dialog leave all settings as they are and hit OK. That's it!
+You just [[generated your libgdx project|Project Setup Gradle]], now it's time to start developing its guts in Intellij IDEA! Before you can import your project into Eclipse, make sure you [[setup your development environment|Setting up your Development Environment (Eclipse, Intellij IDEA)]]!
 
-#### As a file system
-Let gradle generate the Intellij Idea project:
-```
-./gradlew idea
-```
+## Importing Your Project
+Go to `Import Project`, navigate to your project folder and select the `build.gradle` file. Hit `OK`. In the next dialog, leave all settings as they are and hit `OK` again. Intellij IDEA will now import your project. This can take a while on the first time, as it downloads the Gradle wrapper and some dependencies.
 
-Once gradle is done with generating the project file, you can open this with Idea:
+## Running Your Project
 
-1. File -> Open
-2. Select the .ipr file from the root directory, hit 'OK'
+  * **Desktop**: `Run -> Edit Configurations...`, click the plus (+) button and select `Application`. Set the `Name`to `Desktop`.Set the field `Use classpath of module` to `desktop`, then click on the button of the `Main class` field and select the `DesktopLauncher` class. Set the `Working directory` to your `android/assets/` folder! Click `Apply` and then `OK`. You have now created a run configuration for your desktop project. You can now select the configuration and run it.
+  * **Android**: A configuration for the Android project should be automatically created on project import. As such, you only have to select the configuration and run it!
+  * **iOS**: `Run -> Edit Configurations...`, click the plus (+) button and select `Gradle`. Set the `Name` to `iOS`, set the `Gradle Project` to `ios`, set the `Tasks` to `launchIPhoneSimulator` (alternatives are `launchIPadSimulator` and `launchIOSDevice`for [provisioned devices](https://developer.apple.com/library/ios/documentation/ToolsLanguages/Conceptual/YourFirstAppStoreSubmission/ProvisionYourDevicesforDevelopment/ProvisionYourDevicesforDevelopment.html)). Click `Apply` and then `OK`. You have now created a run configuration for your iOS project. You can now select the configuration and run it. The first run will take a bit longer as RoboVM has to compile the entire JDK for iOS. Subsequent runs will compile considerably faster!
+## Packaging your Project
+  * **HTML**: `Run -> Edit Configurations...`, click the plus (+) button and select `Gradle`. Set the `Name` to `HTML`, set the `Gradle Project` to `gwt`, set the `Tasks` to `superDev`. Click `Apply` and then `OK`. You have now created a run configuration for your iOS project. You can now select the configuration and run it. Follow the build process in the console. This will take a while, as your Java code is compiled to Javascript. Once you see the message `The code server is ready`, fire up your browser and go to [http://localhost:9876](http://localhost:9876). Drag the `Dev Mode On`bookmarklet to your browser bar. You only have to do this once! Next, go to [http://localhost:8080/gwt](http://localhost:8080/gwt). This is your app running in the browser! When you change any of your Java code, just click the `Dev Mode On` bookmarklet while you are on the site and the server at port 9876 will recompile your code and reload the page!
 
-You'll need to set the Android SDK for the android module:
+## Debugging Your Project
+Follow the steps for running the project, but instead of launching via the run (Play) button, launch your configuration via the debug (bug) button. Note that RoboVM currently does not support debugging. Debuggin of the GWT build can be done in the browser as follows:
 
-1. File -> Project Structure
-2. Select 'modules' in the panel on the left
-3. Select the android module
-4. Set the module SDK to the android SDK that you configured for IntelliJ
+Run the superDev Gradle task as before. Go to [http://localhost:8080/gwt](http://localhost:8080/gwt), click on the `Dev Mode On` boorkmarklet and hit `Compile`. In Chrome, press `F12` to bring up the developer tools, go to the sources tab and find the Java file you want to debug. Set breakpoints, step and inspect variables using the power of source maps!
 
-#### Using the gradle plugin
-Intellij has gradle support bundled, so you can import a gradle project without installing any additional plugins.
+![super dev mode](http://libgdx.badlogicgames.com/uploads/Screen%20Shot%202014-03-23%20at%2019.11.27-BkaIpjttPQ.png)
 
-To do this: File > Import Project, locate and choose the build.gradle in the root directory of the project and press ok. 
-
-![Import Project](http://i.imgur.com/dx4ZJQh.png)
-
-Keep the settings as default unless you know that you want to use a customized gradle wrapper or your local distribution. Hit OK, and it will start the import of the project and pulling in the default dependencies. 
-
-#### A note on Intellij content root problems
-Gradle in Intellij does not like any source paths that are outside of the content root. For example setting the resource directory for the desktop project as the android assets folder, this will cause a gradle refresh to fail. There are currently only a few solutions for this problem, and none of them are that ideal.  The developers have said that it will someday play nice, but as for now you can do the following:
-
-* Don't use gradle tasks to run tasks that would require the content out of the root and keep the asset directories as 'wrong'
-* Copy assets to each project
-* Don't use the gradle IDE integration, run from command line and import as a file system
-
-### Running & Debugging in Intellij Idea
-##### Running the desktop project
-At the top window hit Run > Edit configurations, a dialog will pop up. Click Application on the left and use the little green + to create a new run configuration.
-![Edit run configuration](http://i.imgur.com/CZQgTpx.png)
-
-If you click the ... on the right hand side, you will be able choose from launchers in your projects. Choose the DesktopLauncher.
-
-Next you need to change the working directory to where your assets are. The usual way to do this is access everything from the android/assets folder as shown in the image.
-
-Finally choose the desktop module for classpath. Give it a run!
-
-##### Running the android project
-At the top of the window hit Run > Edit configurations, a dialog will pop up. Click on Android Application on the left and if there is no project defined there, use the little green + to add a new configuration.
-![Android run configuration](http://i.imgur.com/68zYHpx.png)
-
-All the settings here are fairly straight forward, make sure you have the module selected as the android module, if you have multiple activities you can choose which one you want to launch.  
-
-Under target device, you can select if you want to run on an actual device or god forbid an emulator.
-
-Hit ok, give it a run!
-
-## Packaging your Application
-It's easiest to package your application from the command line, or use Gradle task within Eclipse. To see the relevant Gradle tasks, check the [[Gradle command line documentation|Gradle on the Commandline]].
+## Packaging your Project
+It's easiest to package your application from the command line, or using the Gradle task within Intellij IDEA. To see the relevant Gradle tasks, check the [[Gradle command line documentation|Gradle on the Commandline]].
