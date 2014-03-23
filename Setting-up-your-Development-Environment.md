@@ -1,11 +1,11 @@
-### To target Windows, Linux, Mac OS X, Android and HTML5 you will need:
+### Developing via Eclipse
 
   * [Java Development Kit (JDK)](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
   * [Eclipse](http://www.eclipse.org/downloads/), the "Eclipse IDE for Java Developers" is usually sufficient.
   * [Android SDK and Eclipse ADT Plugin](http://developer.android.com/sdk/installing.html), simply follow the installation instructions. If you work from source, make sure to install *all* platforms in the Android SDK manager!
-  * [Google Web Toolkit](https://developers.google.com/web-toolkit/usingeclipse)
+  * Gradle Eclipse Integration 
 
-### To additionally target iOS
+To additionally target iOS
 
   * A Mac, iOS Development does not work on Windows/Linux thanks to Apple.
   * The latest XCode, which you can get from the Mac OS X App Store for free
