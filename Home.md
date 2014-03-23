@@ -5,11 +5,11 @@
 
   * **Developer's Guide**
     * [[Introduction|Introduction]]
-    * [[Goals & Features]]
-    * [[Community & Support]]
-    * [[Contributing]]
-    * [[Games Built with Libgdx]]
-    * [[Prerequisites]]
+      * [[Goals & Features]]
+      * [[Community & Support]]
+      * [[Contributing]]
+      * [[Games Built with Libgdx]]
+    * [[Setting up your Development Environment]]
     * [[Gradle Project Setup, Running, Debugging and Packaging|Project Setup Gradle]]
       * [[Gradle on the Commandline]]
       * [[Gradle and Eclipse]]
