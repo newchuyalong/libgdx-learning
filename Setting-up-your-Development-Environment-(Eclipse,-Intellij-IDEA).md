@@ -6,7 +6,7 @@ To develop your application via Eclipse, you need to install the following piece
   * [Java Development Kit (JDK)](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
   * [Eclipse](http://www.eclipse.org/downloads/), the "Eclipse IDE for Java Developers" is usually sufficient.
   * [Android SDK](http://developer.android.com/sdk/installing.html), you only need the SDK, not the ADT bundle, which includes Eclipse. Install all platforms via the SDK Manager!
-  * [Android Development Tools for Eclipse], aka ADT Plugin. Use this update site: https://dl-ssl.google.com/android/eclipse/
+  * [Android Development Tools for Eclipse](http://developer.android.com/tools/sdk/eclipse-adt.html), aka ADT Plugin. Use this update site: https://dl-ssl.google.com/android/eclipse/
   * [Eclipse Integration Gradle](https://github.com/spring-projects/eclipse-integration-gradle/), use this update site: http://dist.springsource.com/release/TOOLS/gradle
 
 To additionally target iOS
@@ -17,7 +17,7 @@ To additionally target iOS
 
 Once all of these tools are installed, proceed to [Project Setup](https://github.com/libgdx/libgdx/wiki/Project-setup%2C-running-%26-debugging)
 
-### Setting up Gradle
+### Setting up Intellij IDEA
 To develop your application via Eclipse, you need to install the following pieces of software.
 
   * [Java Development Kit (JDK)](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
