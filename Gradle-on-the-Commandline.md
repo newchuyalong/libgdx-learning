@@ -46,3 +46,8 @@ This will create a runnable JAR file located in the `desktop/build/libs/` folder
 `gradlew android:assembleRelease`
 
 This will create an unsinged APK file in the `android/build/apk` folder. You can install this APK file on any Android device that allows [installation from unknown sources](http://developer.android.com/distribute/open.html#unknown-sources). For distribution on the Google Play Store you have to [sign your APK](http://developer.android.com/tools/publishing/app-signing.html). The APK build by the above command is already in release mode, you you only need to follow the steps for keytool and jarsigner. 
+
+## Packaging for iOS
+`gradlew ios:createIPA`
+
+This will create an IPA that you distribute to the Apple App Store. You can follow Apple's guide on [app store distribution](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppDistributionGuide/Introduction/Introduction.html)
