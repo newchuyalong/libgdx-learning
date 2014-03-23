@@ -1,16 +1,16 @@
 You just [[generated your libgdx project|Project Setup Gradle]], now it's time to start developing its guts in Eclipse! Before you can import your project into Eclipse, make sure you [[setup your development environment|Setting up your Development Environment (Eclipse, Intellij IDEA)]]!
 
-## Importing to Eclipse
+## Importing the project
 Go to `File -> Import -> Gradle -> Gradle Project`, click Browse and navigate to the root folder of your project, then click `Build Model`. After a while, you'll see a root project and subprojects (android, core, desktop, gwt, ios). Select all the projects and click `Finish`. Note that this process can take a minute or two the first time you do it, as Gradle and some dependencies will be downloaded in the background.
 
-## Running Your Application ##
+## Running Your Project ##
 
   * **Desktop**: Right click the desktop project, `Run As -> Java Application`. Select the desktop starter class (e.g. DesktopLauncher.java).
   * **Android**: make sure you have a device connected and that it shows up in DDMS (see  [Android Developer Guide](http://developer.android.com/guide/index.html)). Right click your Android project, `Run As -> Android Application`.
   * **iOS RoboVM**: Right click the robovm project, `Run As -> iOS Device App` to run on a connected device, or `Run As -> iOS Simulator App` to run on the iOS simulator. If you run on a device, you need to [provision](https://developer.apple.com/library/ios/documentation/ToolsLanguages/Conceptual/YourFirstAppStoreSubmission/ProvisionYourDevicesforDevelopment/ProvisionYourDevicesforDevelopment.html) it to be able to deploy to it!
   * **HTML5**: Right click the gwt project, `Run As -> Gradle Build ...`. Select `superDev` mode from the list, click `Apply` and `Run`. You can now follow the build process in the console. This will take a while, as your Java code is compiled to Javascript. Once you see the message `The code server is ready`, fire up your browser and go to [http://localhost:9876](http://localhost:9876). Drag the `Dev Mode On`bookmarklet to your browser bar. You only have to do this once! Next, go to [http://localhost:8080/gwt](http://localhost:8080/gwt). This is your app running in the browser! When you change any of your Java code, just click the `Dev Mode On` bookmarklet while you are on the site and the server at port 9876 will recompile your code and reload the page!
 
-## Debugging Your Application ##
+## Debugging Your Project ##
 
   * **Desktop**: Right click the desktop project, `Debug As -> Java Application`. Select the desktop starter class (e.g. Main.java). Set breakpoints where you need them, hot swap code (edit & save while debugging) to quickly test changes without restarting the app.
   * **Android**: assuming you have a device connected, `Debug As -> Android Application`. Hot swapping is not supported, but you can use the DDMS perspective to check your memory usage, profile your application and so on. Refer to the Android Development Guide for more information.
@@ -19,5 +19,5 @@ Go to `File -> Import -> Gradle -> Gradle Project`, click Browse and navigate to
 
 ![super dev mode](http://libgdx.badlogicgames.com/uploads/Screen%20Shot%202014-03-23%20at%2019.11.27-BkaIpjttPQ.png)
 
-## Packaging your Application
+## Packaging Your Project
 It's easiest to package your application from the command line, or use Gradle task within Eclipse. To see the relevant Gradle tasks, check the [[Gradle command line documentation|Gradle on the Commandline]].
