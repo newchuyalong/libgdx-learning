@@ -55,3 +55,6 @@ All the settings here are fairly straight forward, make sure you have the module
 Under target device, you can select if you want to run on an actual device or god forbid an emulator.
 
 Hit ok, give it a run!
+
+## Packaging your Application
+It's easiest to package your application from the command line, or use Gradle task within Eclipse. To see the relevant Gradle tasks, check the [[Gradle command line documentation|Gradle on the Commandline]].
