@@ -11,7 +11,7 @@ Go to `File -> Import -> Gradle -> Gradle Project`, click Browse and navigate to
   * **HTML5**: Right click the gwt project, `Run As -> Gradle Build ...`. Select `superDev` mode from the list, click `Apply` and `Run`. You can now follow the build process in the console. This will take a while, as your Java code is compiled to Javascript. Once you see the message `The code server is ready`, fire up your browser and go to [http://localhost:9876](http://localhost:9876). Drag the `Dev Mode On`bookmarklet to your browser bar. You only have to do this once! Next, go to [http://localhost:8080/gwt](http://localhost:8080/gwt). This is your app running in the browser! When you change any of your Java code, just click the `Dev Mode On` bookmarklet while you are on the site and the server at port 9876 will recompile your code and reload the page!
 
 ## Debugging Your Project ##
-Follow the steps for running the project, but instead of launching via `Run as`, launch your configuration via 'Debug as`. Note that RoboVM currently does not support debugging. Debuggin of the GWT build can be done in the browser as follows:
+Follow the steps for running the project, but instead of launching via `Run as`, launch your configuration via `Debug as`. Note that RoboVM currently does not support debugging. Debuggin of the GWT build can be done in the browser as follows:
 
 Run the superDev Gradle task as before. Go to [http://localhost:8080/gwt](http://localhost:8080/gwt), click on the `Dev Mode On` boorkmarklet and hit `Compile`. In Chrome, press `F12` to bring up the developer tools, go to the sources tab and find the Java file you want to debug. Set breakpoints, step and inspect variables using the power of source maps!
 
