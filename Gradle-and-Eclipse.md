@@ -18,3 +18,6 @@ Go to `File -> Import -> Gradle -> Gradle Project`, click Browse and navigate to
   * **HTML5**: Right click the gwt project, `Run As -> Gradle Build ...`. Select `superDev` mode from the list, click `Apply` and `Run`. You can now follow the build process in the console. This will take a while, as your Java code is compiled to Javascript. Once you see the message `The code server is ready`, fire up your browser and go to [http://localhost:9876](http://localhost:9876). Drag the `Dev Mode On`bookmarklet to your browser bar. You only have to do this once! Next, go to [http://localhost:8080/gwt](http://localhost:8080/gwt). This is your app running in the browser! Click on the `Dev Mode On` boorkmarklet and hit `Compile`. In Chrome, press `F12` to bring up the developer tools, go to the sources tab and find the Java file you want to debug. Set breakpoints, step and inspect variables using the power of source maps!
 
 ![super dev mode](http://libgdx.badlogicgames.com/uploads/Screen%20Shot%202014-03-23%20at%2019.11.27-BkaIpjttPQ.png)
+
+## Packaging your Application
+It's easiest to package your application from the command line, or use Gradle task within Eclipse. To see the relevant Gradle tasks, check the [[Gradle command line documentation|Gradle on the Commandline]].
