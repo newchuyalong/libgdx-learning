@@ -47,3 +47,13 @@ The first two commands will launch your app on an iPhone or iPad simualtor, the 
 This will start your application in [GWT Super Dev Mode](http://www.badlogicgames.com/wordpress/?p=3073), which compiles your Java code to Javascript, and allows you to debug your Java code directly in the browser. If you see the message `Next, visit: http://localhost:9876` in your shell, open the browser and navigate to that address. Drag the "Dev Mode On" bookmarklet do your browser bookmarks bar. Next open http://localhost:8080/gwt. This is your application running in the browser! If you change any of your Java code in the core project, just click the bookmarklet, then click "Compile". The changes will take effect in a few seconds. If you modify your assets, you have to restart the server with the above command.
 
 ## Packaging from the command line
+Every platform has a different kind of distribution format. In this section we'll see how we can generate those distributions via Gradle.
+
+## Packaging for the desktop
+`./gradlew desktop:dist``
+
+This will create a runnable JAR file located in the `desktop/build/libs/ folder. It contains all necessary code as well as all your art assets from the android/assets folder and can be run either by double clicking or on the command line via `java -jar jar-file-name.jar`. Your audience must have a JVM installed for this to work. The JAR will work on Windows, Linux and Mac OS X!
+
+## Packaging for Android
+`./gradlew android:assembleRelease`
+
