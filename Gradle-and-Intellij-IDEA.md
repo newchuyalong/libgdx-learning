@@ -1,4 +1,6 @@
-### Importing to Intellij Idea
+## Importing to Intellij IDEA
+Intellij IDEA supports Gradle projects out of the box. As such, you don't have to drop down onto the command line to generate Intellij IDEA projects. Open Intellij IDEA, and select Import Project, then select to the build.gradle file in the root folder of your project and press OK. In the next dialog leave all settings as they are and hit OK. That's it!
+
 #### As a file system
 Let gradle generate the Intellij Idea project:
 ```
