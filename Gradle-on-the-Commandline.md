@@ -18,7 +18,7 @@ This compiles your core and desktop project, and runs the desktop starter. The w
 ### Running the Android project
 `gradlew android:installDebug android:run`
 
-This task will create a debug APK of your application, install it on the first connected emulator or device and start the main activity. The process is split into two tasks because the Android Gradle plugin lets you create multiple flavors of your app (e.g. debug as above, release, ...). You can find more information on the (Android Gradle Plugin site](http://tools.android.com/tech-docs/new-build-system/user-guide).
+This task will create a debug APK of your application, install it on the first connected emulator or device and start the main activity. The process is split into two tasks because the Android Gradle plugin lets you create multiple flavors of your app (e.g. debug as above, release, ...). You can find more information on the [Android Gradle Plugin site](http://tools.android.com/tech-docs/new-build-system/user-guide).
 
 ### Running the iOS project
 `gradlew ios:launchIPhoneSimulator`
