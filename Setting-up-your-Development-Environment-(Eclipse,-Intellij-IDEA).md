@@ -18,7 +18,7 @@ To additionally target iOS
 Once all of these tools are installed, proceed to [[creating your project|Project Setup Gradle]]
 
 ### Setting up Intellij IDEA
-To develop your application via Eclipse, you need to install the following pieces of software.
+To develop your application via Intellij IDEA, you need to install the following pieces of software.
 
   * [Java Development Kit (JDK)](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
   * [Intellij IDEA 13+](http://www.jetbrains.com/idea/download/), the Community edition is sufficient
