@@ -22,7 +22,7 @@ To develop your application via Eclipse, you need to install the following piece
 
   * [Java Development Kit (JDK)](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
   * [Intellij IDEA 13+](http://www.jetbrains.com/idea/download/), the Community edition is sufficient
-  * [Android SDK](http://developer.android.com/sdk/installing.html), you only need the SDK, not the ADT bundle, which includes Eclipse. Install all platforms via the SDK Manager!
+  * [Android SDK](http://developer.android.com/sdk/installing.html), you only need the SDK, not the ADT bundle, which includes Eclipse. Install all platforms via the SDK Manager! You also have to create an environment variable called ANDROID_HOME, which points at your Android SDK installation directory!
 
 To additionally target iOS
 
