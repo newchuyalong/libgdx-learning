@@ -54,6 +54,7 @@ This will create an IPA in the `ios/build/robovm` folder that you distribute to 
 
 ### Packaging for the Web
 `gradle gwt:compileGwt`
+
 `gradle gwt:dist`
 
 Note: the first task needs to be executed separately due to this [issue](https://github.com/libgdx/libgdx/issues/1541)
