@@ -1,4 +1,23 @@
 This article will show you how you can run your application from the command line and package it for distribution for the different platforms!
+## Contents
+* [**Prerequisites**](#setting-up-android_home) 
+ * [Setting the ANDROID_HOME variable] (#setting-up-android_home)
+* [**Running**](#running-the-project)
+ * [Running on Desktop] (#running-the-desktop-project)
+ * [Running on Android] (#running-the-android-project)
+ * [Running on iOS] (#running-the-ios-project)
+ * [Running Gwt] (#running-the-gwt-project)
+* [**Packaging**](#packaging-the-project) 
+ * [Packaging Desktop](#packaging-for-the-desktop)
+ * [Packaging Android](#packaging-for-android)
+ * [Packaging iOS](#packaging-for-ios)
+ * [Packaging Gwt](#packaging-for-the-web) 
+* [**Debugging/Problems**](#debugging-and-common-problems) 
+ * [Gradle tasks failing] (#gradle-tasks-are-failing)
+ * [Common problems] (#common-problems)
+ * [Debugging projects] (#debugging-projects)
+
+***
 
 ## Setting up ANDROID_HOME
 The ANDROID_HOME environment variable needs to be pointing to a valid android SDK before you do any command line wizardry.
@@ -9,6 +28,8 @@ Linux, Mac OS X: `export ANDROID_HOME=/Path/To/Your/Android/Sdk`
 
 ## Running the project
 Gradle let's you easily run a project from the commandline. Just use the gradlew command specify your target platform and the run command for that platform.
+
+[**Desktop**](#running-the-desktop-project) - [**Android**](#running-the-android-project) - [**iOS**](#running-the-ios-project) - [**Gwt**](#running-the-gwt-project) 
 
 ### Running the desktop project
 `gradlew desktop:run`
@@ -37,6 +58,9 @@ This will start your application in [GWT Super Dev Mode](http://www.badlogicgame
 ## Packaging the project
 Every platform has a different kind of distribution format. In this section we'll see how we can generate those distributions via Gradle.
 
+[**Desktop**](#packaging-for-the-desktop) - [**Android**](#packaging-for-android) - [**iOS**](#packaging-for-ios) - [**Gwt**](#packaging-for-the-web) 
+
+
 ### Packaging for the desktop
 `gradlew desktop:dist`
 
@@ -62,3 +86,13 @@ If you have Python installed, you can test your distribution by executing the fo
 `python -m SimpleHTTPServer`
 
 You can then open a browser to [http://localhost:8000](http://localhost:8000) and see your project in action.
+
+## Debugging and common problems
+### Gradle tasks are failing
+If when you invoke gradle, the build or refresh fails to get more information, run the same command again and add the --debug arguments to the command.
+e.g
+```./gradlew tasks --debug```
+This will provide you with a stacktrace and give you a better idea of why gradle is failing.
+
+### Common problems
+### Debugging Projects
