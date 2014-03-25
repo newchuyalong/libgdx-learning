@@ -3,8 +3,8 @@ You just [[generated your libgdx project|Project Setup Gradle]], now it's time t
 ## Importing Your Project
 Go to `Import Project`, navigate to your project folder and select the `build.gradle` file. Hit `OK`. In the next dialog, leave all settings as they are and hit `OK` again. Intellij IDEA will now import your project. This can take a while on the first time, as it downloads the Gradle wrapper and some dependencies.
 
+### Common Problems
 If you run into problems due to a missing validation-api:1.0.0.GA artifact, delete your Maven cache at `C:\Users\username\.m2` or `/Users/username/.m2` or `/home/username/.m2`.
-![missing artifact](http://i.imgur.com/URxvrYe.png)
 
 ## Running Your Project
 
