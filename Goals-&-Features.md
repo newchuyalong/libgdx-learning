@@ -18,7 +18,7 @@ A single API to target:
 * Java Applet (requires JVM to be installed)
 * JavaScript/WebGL (Google Chrome, Safari, Opera, Mozilla Firefox, IE via [Google Chrome Frame](https://developers.google.com/chrome/chrome-frame))
 
-### 3rd Part Support
+### 3rd Party Support
 Libgdx can be integrated with many 3rd party libraries, e.g. for adding leaderboards of multiplayer. We love:
 * [Swarm](http://swarmconnect.com/admin/docs/libgdx)
 * [Nextpeer](https://developers.nextpeer.com/docs/view/libgdx)
