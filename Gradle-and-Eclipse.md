@@ -3,6 +3,9 @@ You just [[generated your libgdx project|Project Setup Gradle]], now it's time t
 ## Importing Your Project
 Go to `File -> Import -> Gradle -> Gradle Project`, click Browse and navigate to the root folder of your project, then click `Build Model`. After a while, you'll see a root project and subprojects (android, core, desktop, gwt, ios). Select all the projects and click `Finish`. Note that this process can take a minute or two the first time you do it, as Gradle and some dependencies will be downloaded in the background.
 
+If you run into problems due to a missing validation-api:1.0.0.GA artifact, delete your Maven cache at `C:\Users\username\.m2` or `/Users/username/.m2` or `/home/username/.m2`.
+![missing artifact](http://i.imgur.com/URxvrYe.png)
+
 ## Running Your Project ##
 
   * **Desktop**: Right click the desktop project, `Run As -> Java Application`. Select the desktop starter class (e.g. DesktopLauncher.java). The application will fail the first time. Open the Run Configuration you just created and set the working directory to the `android/assets/` directory!
