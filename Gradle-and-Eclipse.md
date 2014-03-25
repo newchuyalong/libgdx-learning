@@ -4,6 +4,7 @@ You just [[generated your libgdx project|Project Setup Gradle]], now it's time t
 Go to `File -> Import -> Gradle -> Gradle Project`, click Browse and navigate to the root folder of your project, then click `Build Model`. After a while, you'll see a root project and subprojects (android, core, desktop, gwt, ios). Select all the projects and click `Finish`. Note that this process can take a minute or two the first time you do it, as Gradle and some dependencies will be downloaded in the background.
 
 Your Eclipse workspace folder must not be the same as your project's root folder (see this [issue](https://github.com/libgdx/libgdx/issues/1537)).
+
 If you run into problems due to a missing validation-api:1.0.0.GA artifact, delete your Maven cache at `C:\Users\username\.m2` or `/Users/username/.m2` or `/home/username/.m2`.
 ![missing artifact](http://i.imgur.com/URxvrYe.png)
 
