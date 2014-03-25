@@ -3,9 +3,9 @@ Libgdx comes with a file called `gdx-setup.jar` which is an executable UI and co
 
 #### [Download gdx-setup.jar](http://libgdx.badlogicgames.com/nightlies/dist/gdx-setup.jar)
 
-![setup ui](http://libgdx.badlogicgames.com/uploads/Screen%20Shot%202014-03-23%20at%2018.54.16-6c0i9ho3ym.png)
+![setup ui](http://i.imgur.com/EpsK1A3.png)
 
-Specify your application name, your Java package name, the name of your main class and the output directory, then click "Generate". Now you are ready to import the project into your IDE, run, debug and package it!
+Specify your application name, your Java package name, the name of your main class, the output directory, and the path to your android sdk, then click "Generate". Now you are ready to import the project into your IDE, run, debug and package it!
 
   * [[Eclipse|Gradle and Eclipse]]
   * [[Intellij IDEA|Gradle and Intellij IDEA]]
@@ -18,10 +18,11 @@ IF you run it from the command line, specify the following arguments.
 * **name**: the name of the application, lower-case with minuses is usually a good idea, e.g. mygame
 * **package**: the Java package under which your code will live, e.g. com.badlogic.mygame
 * **mainClass**: the name of the main ApplicationListener of your app, e.g. MyGame
+* **sdkLocation**: the location of your android sdk, Intellij uses this if ANDROID_HOME is not set
 
 Putting it all together, you can run the project generator on the command line as follows:
 
-`java -jar gdx-setup.jar --dir mygame --name mygame --package com.badlogic.mygame --mainClass MyGame`
+`java -jar gdx-setup.jar --dir mygame --name mygame --package com.badlogic.mygame --mainClass MyGame --sdkLocation mySdkLocation`
 
 ### Project layout
 This will create a directory called `mygame`with the following layout:
@@ -32,6 +33,7 @@ build.gradle               <- main Gradle build file, defines dependencies and p
 gradlew                    <- script that will run Gradle on Unix systems
 gradlew.bat                <- script that will run Gradle on Windows
 gradle                     <- local gradle wrapper
+local.properties           <- Intellij only file, defines android sdk location
 
 core/
     build.gradle           <- Gradle build file for core project, no touchy!
