@@ -70,7 +70,8 @@ Moving on to the Android project, we want the application to be run in landscape
     android:versionCode="1"
     android:versionName="1.0" >
 
-    <uses-sdk android:minSdkVersion="5" android:targetSdkVersion="15" />
+    <uses-sdk android:minSdkVersion="8" android:targetSdkVersion="19" />
+    <uses-feature android:glEsVersion="0x00020000" android:required="true" />
 
     <application
         android:icon="@drawable/ic_launcher"
