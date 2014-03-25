@@ -163,9 +163,8 @@ _Note: Be sure to clear the screen each frame. If this is not done, a texture wi
 
 ## Viewport ##
 
-`SpriteBatch` manages its own projection and transformation matrixes. When a `SpriteBatch` is created, it uses the current application size to setup an orthographic projection using a y-up coordinate system. When `begin` is called, it sets up the viewport.
+`SpriteBatch` manages its own projection and transformation matrixes. When a `SpriteBatch` is created, it uses the current application size to setup an orthographic projection using a y-up coordinate system. When `begin` is called, it sets up the [viewport](https://github.com/libgdx/libgdx/wiki/Viewports).
 
-_Note: Once we have documentation on configuring the viewport, we should link to it here._
 
 ## Performance tuning ##
 
