@@ -10,7 +10,7 @@ If you run into problems due to a missing validation-api:1.0.0.GA artifact, dele
 
   * **Desktop**: Right click the desktop project, `Run`. You can run it.
   * **Android**: make sure you have a device connected. Right click your Android project, `Tasks -> installDebug`.
-  * **iOS RoboVM**: Right click the robovm project, `Tasks -> launchIPhoneSimulator` to run on a connected device(alternatives are `launchIPadSimulator` and `launchIPhoneSimulator `for [provisioned devices](https://developer.apple.com/library/ios/documentation/ToolsLanguages/Conceptual/YourFirstAppStoreSubmission/ProvisionYourDevicesforDevelopment/ProvisionYourDevicesforDevelopment.html))
+  * **iOS RoboVM**: Right click the robovm project, `Tasks -> launchIPhoneSimulator` (alternatives are `launchIPadSimulator` and `launchIOSDevice`for [provisioned devices]
 The first run will take a bit longer as RoboVM has to compile the entire JDK for iOS. Subsequent runs will compile considerably faster!
   * **HTML5**: Right click the gwt project, `Tasks -> superDev`. You can now follow the build process in the console. This will take a while, as your Java code is compiled to Javascript. Once you see the message `The code server is ready`, fire up your browser and go to [http://localhost:9876](http://localhost:9876). Drag the `Dev Mode On`bookmarklet to your browser bar. You only have to do this once! Next, go to [http://localhost:8080/gwt](http://localhost:8080/gwt). This is your app running in the browser! When you change any of your Java code, just click the `Dev Mode On` bookmarklet while you are on the site and the server at port 9876 will recompile your code and reload the page!
 
