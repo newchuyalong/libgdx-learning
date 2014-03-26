@@ -1,4 +1,4 @@
-You just [[generated your libgdx project|Project Setup Gradle]], now it's time to start developing its guts in Eclipse! Before you can import your project into Eclipse, make sure you [[setup your development environment|Setting up your Development Environment (Eclipse, Intellij IDEA)]]!
+You just [[generated your libgdx project|Project Setup Gradle]], now it's time to start developing its guts in Eclipse! Before you can import your project into Eclipse, make sure you [[setup your development environment|Setting up your Development Environment (Eclipse, Intellij IDEA, NetBeans)]]!
 
 ## Importing Your Project
 Go to `File -> Import -> Gradle -> Gradle Project`, click Browse and navigate to the root folder of your project, then click `Build Model`. After a while, you'll see a root project and subprojects (android, core, desktop, gwt, ios). Select all the projects and click `Finish`. Note that this process can take a minute or two the first time you do it, as Gradle and some dependencies will be downloaded in the background.
