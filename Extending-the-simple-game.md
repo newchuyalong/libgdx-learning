@@ -166,7 +166,7 @@ public class GameScreen implements Screen {
 	int dropsGathered;
 
 	public GameScreen(final Drop gam) {
-		this.game = gam;
+		this.game = game;
 
 		// load the images for the droplet and the bucket, 64x64 pixels each
 		dropImage = new Texture(Gdx.files.internal("droplet.png"));
