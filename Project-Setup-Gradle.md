@@ -9,6 +9,7 @@ Specify your application name, your Java package name, the name of your main cla
 
   * [[Eclipse|Gradle and Eclipse]]
   * [[Intellij IDEA|Gradle and Intellij IDEA]]
+  * [[NetBeans|Gradle and NetBeans]]
   * [[Commandline|Gradle on the Commandline]]
 
 ### Creating a libgx project on the command line
