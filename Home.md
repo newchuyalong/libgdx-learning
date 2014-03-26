@@ -13,6 +13,7 @@
     * [[Creating, Running, Debugging and Packaging your Project|Project Setup Gradle]]
       * [[Eclipse|Gradle and Eclipse]]
       * [[Intellij Idea|Gradle and Intellij IDEA]]
+      * [[NetBeans|Gradle and NetBeans]]
       * [[Commandline|Gradle on the Commandline]]
     * [[Third Party Services]]
       * [[AdMob in Libgdx]]
