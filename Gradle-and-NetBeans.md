@@ -1,7 +1,7 @@
 You just [[generated your libgdx project|Project Setup Gradle]], now it's time to start developing its guts in NetBeans! Before you can import your project into NetBeans, make sure you [[setup your development environment|Setting up your Development Environment (Eclipse, Intellij IDEA, NetBeans)]]!
 
 ## Importing Your Project
-Go to `File -> Open Project...`,å click Browse and navigate to the root folder of your project, then click `Open Project`. NetBeans will now import your project. This can take a while on the first time, as it downloads the Gradle wrapper and some dependencies.
+Go to `File -> Open Project...`,click Browse and navigate to the root folder of your project, then click `Open Project`. NetBeans will now import your project. This can take a while on the first time, as it downloads the Gradle wrapper and some dependencies.
 
 ### Common Problems
 If you run into problems due to a missing validation-api:1.0.0.GA artifact, delete your Maven cache at `C:\Users\username\.m2` or `/Users/username/.m2` or `/home/username/.m2`.
