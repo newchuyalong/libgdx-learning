@@ -5,21 +5,21 @@ Instead of reading this guide, you can use the libgdx Problem Wizzard which walk
 
 ## Contents
 
- * [Helping Yourself](#Helping_Yourself)
- * [Topic Title](#Top_Title)
- * [Context](#Context)
- * [Relevance](#Relevance)
- * [Problem Statement](#Problem_Statement)
- * [Exceptions](#Exceptions)
- * [Code Snippets](#Code_Snippets)
- * [Executable Example Code](#Executable_Example_Code)
-   * [Example Resources](#Example_Resources)
-   * [Application](#Barebones_Application Barebones)
-   * [SpriteBatch](#Barebones_SpriteBatch Barebones)
-   * [Barebones Stage](#Barebones_Stage)
- * [Actually Executable](#Actually_Executable)
- * [Attitude](#Attitude)
- * [Formatting](#Formatting)
+ * [Helping Yourself](#helping_yourself)
+ * [Topic Title](#top_title)
+ * [Context](#context)
+ * [Relevance](#relevance)
+ * [Problem Statement](#problem_statement)
+ * [Exceptions](#exceptions)
+ * [Code Snippets](#code_snippets)
+ * [Executable Example Code](#executable_example_code)
+   * [Example Resources](#example_resources)
+   * [Application](#barebones_application barebones)
+   * [SpriteBatch](#barebones_spritebatch barebones)
+   * [Barebones Stage](#barebones_stage)
+ * [Actually Executable](#actually_executable)
+ * [Attitude](#attitude)
+ * [Formatting](#formatting)
 
 ## <a id="Helping_Yourself"></a>Helping Yourself ##
 
@@ -112,7 +112,7 @@ Below is a simple, bare-bones, executable application. This can be used as a bas
 ```java
 import com.badlogic.gdx.*;
 import com.badlogic.gdx.backends.lwjgl.LwjglApplication;
-import com.badlogic.gdx.graphics.GL10;
+import com.badlogic.gdx.graphics.GL20;
 
 public class Barebones extends ApplicationAdapter {
 	public void create () {
@@ -120,7 +120,7 @@ public class Barebones extends ApplicationAdapter {
 	}
 
 	public void render () {
-		Gdx.gl.glClear(GL10.GL_COLOR_BUFFER_BIT);
+		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 		// your code here
 	}
 
@@ -150,7 +150,7 @@ public class BarebonesBatch extends ApplicationAdapter {
 	}
 
 	public void render () {
-		Gdx.gl.glClear(GL10.GL_COLOR_BUFFER_BIT);
+		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 		batch.begin();
 		batch.draw(texture, 100, 100);
 		batch.end();
@@ -169,7 +169,7 @@ This bare-bones application has a [[scene2d]] Stage and uses [[scene2d.ui]] to d
 ```java
 import com.badlogic.gdx.*;
 import com.badlogic.gdx.backends.lwjgl.LwjglApplication;
-import com.badlogic.gdx.graphics.GL10;
+import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.*;
 
@@ -180,7 +180,7 @@ public class BarebonesStage extends ApplicationAdapter {
 		stage = new Stage();
 		Gdx.input.setInputProcessor(stage);
 
-		Skin skin = new Skin(Gdx.files.internal("data/uiskin.json"));
+		Skin skin = new Skin(Gdx.files.internal("skin.json"));
 		Label label = new Label("Some Label", skin);
 		TextButton button = new TextButton("Some Button", skin);
 
@@ -195,7 +195,7 @@ public class BarebonesStage extends ApplicationAdapter {
 	}
 
 	public void render () {
-		Gdx.gl.glClear(GL10.GL_COLOR_BUFFER_BIT);
+		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 		stage.draw();
 		Table.drawDebug(stage);
 	}
@@ -203,8 +203,7 @@ public class BarebonesStage extends ApplicationAdapter {
 	public static void main (String[] args) throws Exception {
 		new LwjglApplication(new BarebonesStage());
 	}
-}
-```
+}```
 
 ## <a id="Actually_Executable"></a>Actually Executable ##
 
