@@ -203,7 +203,8 @@ public class BarebonesStage extends ApplicationAdapter {
 	public static void main (String[] args) throws Exception {
 		new LwjglApplication(new BarebonesStage());
 	}
-}```
+}
+```
 
 ## <a id="Actually_Executable"></a>Actually Executable ##
 
