@@ -172,12 +172,13 @@ import com.badlogic.gdx.backends.lwjgl.LwjglApplication;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.*;
+import com.badlogic.gdx.utils.viewport.*;
 
 public class BarebonesStage extends ApplicationAdapter {
 	Stage stage;
 
 	public void create () {
-		stage = new Stage();
+		stage = new Stage(new StretchViewport());
 		Gdx.input.setInputProcessor(stage);
 
 		Skin skin = new Skin(Gdx.files.internal("skin.json"));
