@@ -199,6 +199,11 @@ public class BarebonesStage extends ApplicationAdapter {
 		stage.draw();
 		Table.drawDebug(stage);
 	}
+	
+	public void resize (int width, int height) {
+		// Pass false to not modify the camera position.
+		stage.getViewport().update(width, height, true);
+	}
 
 	public static void main (String[] args) throws Exception {
 		new LwjglApplication(new BarebonesStage());
