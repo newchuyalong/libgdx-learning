@@ -95,7 +95,7 @@ Code snippets are most often not very useful. Unless you are blatantly misusing 
 
 Example code that can be copied, pasted, and run is the best way to get help. It saves those helping you time because they can see the problem right away. They can quickly fix your code or fix the bug, verify the fix, and show you the result. No matter what, an executable example has to be written to properly test, fix, and verify the fix. If you can't debug and fix the problem yourself, you can still help by providing the executable example.
 
-Creating executable example code does take some time. You need to take apart your application and reconstruct the relevant parts in a new, bare-bones application that shows the problem. Quite often just by doing this you will figure out the problem. If not, you will get help very quickly and the people helping you will have more time to help more people.
+Creating executable example code does take some time. You need to take apart your application and reconstruct the relevant parts in a new, barebones application that shows the problem. Quite often just by doing this you will figure out the problem. If not, you will get help very quickly and the people helping you will have more time to help more people.
 
 Example code should be contained entirely in a single class (use static member classes if needed) and executable, meaning it has a main method and can simply be copied, pasted, and run. Do not use a GdxTest, as that cannot be copy, pasted, and run.
 
@@ -103,11 +103,11 @@ Example code should be contained entirely in a single class (use static member c
 
 Often executable examples need some resources, such as an image or sound file. It is extra work for those trying to help if they must download your specific resources. Instead, it is ideal to use resources from the [libgdx tests](https://github.com/libgdx/libgdx/tree/master/tests/gdx-tests-android/assets). This enables your example code to be simply pasted into the `gdx-tests-lwjgl` project and run.
 
-The easiest way to write an executable example is to paste one of the bare-bones applications below into the `gdx-tests-lwjgl` project and then modify it to show your problem, using only the [test resources](https://github.com/libgdx/libgdx/tree/master/tests/gdx-tests-android/assets). Note the test resources are pulled in by `gdx-tests-lwjgl` from the `gdx-tests-android` project.
+The easiest way to write an executable example is to paste one of the barebones applications below into the `gdx-tests-lwjgl` project and then modify it to show your problem, using only the [test resources](https://github.com/libgdx/libgdx/tree/master/tests/gdx-tests-android/assets). Note the test resources are pulled in by `gdx-tests-lwjgl` from the `gdx-tests-android` project.
 
-### <a id="Bare-bones_Application"></a>Bare-bones Application ###
+### <a id="barebones_Application"></a>barebones Application ###
 
-Below is a simple, bare-bones, executable application. This can be used as a base for creating your own executable example code.
+Below is a simple, barebones, executable application. This can be used as a base for creating your own executable example code.
 
 ```java
 import com.badlogic.gdx.*;
@@ -130,9 +130,9 @@ public class Barebones extends ApplicationAdapter {
 }
 ```
 
-### <a id="Bare-bones_SpriteBatch"></a>Bare-bones SpriteBatch ###
+### <a id="barebones_SpriteBatch"></a>barebones SpriteBatch ###
 
-This bare-bones application uses SpriteBatch to draw an image from the `gdx-tests-lwjgl` project.
+This barebones application uses SpriteBatch to draw an image from the `gdx-tests-lwjgl` project.
 
 ```java
 import com.badlogic.gdx.*;
@@ -162,9 +162,9 @@ public class BarebonesBatch extends ApplicationAdapter {
 }
 ```
 
-### <a id="Bare-bones_Stage"></a>Bare-bones Stage ###
+### <a id="barebones_Stage"></a>barebones Stage ###
 
-This bare-bones application has a [[scene2d]] Stage and uses [[scene2d.ui]] to draw a label and a button. It uses the [[Skin]] from the `gdx-tests-lwjgl` project.
+This barebones application has a [[scene2d]] Stage and uses [[scene2d.ui]] to draw a label and a button. It uses the [[Skin]] from the `gdx-tests-lwjgl` project.
 
 ```java
 import com.badlogic.gdx.*;
