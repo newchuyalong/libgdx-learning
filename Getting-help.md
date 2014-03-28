@@ -178,7 +178,7 @@ public class BarebonesStage extends ApplicationAdapter {
 	Stage stage;
 
 	public void create () {
-		stage = new Stage(new StretchViewport());
+		stage = new Stage(new ScreenViewport());
 		Gdx.input.setInputProcessor(stage);
 
 		Skin skin = new Skin(Gdx.files.internal("skin.json"));
