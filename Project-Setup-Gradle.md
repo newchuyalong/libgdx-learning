@@ -1,7 +1,7 @@
 ### Creating a libgdx project
 Libgdx comes with a file called `gdx-setup.jar` which is an executable UI and command line tool. You can simply execute the JAR file which will open the setup UI.
 
-#### [Download gdx-setup.jar](http://libgdx.badlogicgames.com/nightlies/dist/gdx-setup.jar)
+#### [Download gdx-setup.jar](http://bit.ly/1i3C7i3)
 
 ![setup ui](http://i.imgur.com/EpsK1A3.png)
 
