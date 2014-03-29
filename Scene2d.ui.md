@@ -102,7 +102,7 @@ public void dispose() {
 
 Note that `setFillParent` is used on the root table, causing it to be sized to its parent (in this case, the stage) when validated. Normally a widget's size is set by its parent and `setFillParent` must not be used. `setFillParent` is for convenience only when the widget's parent does not set the size of its children (such as the stage).
 
-Tables automatically adapt to various screen resolutions, so this sets up a stage that uses pixel coordinates. See [scene2d#Stage_setup scene2d stage setup] for setting up a stage that scales.
+Tables automatically adapt to various screen resolutions, so this sets up a stage that uses pixel coordinates. See [[stage viewport setup|Scene2d#viewport]] for setting up a stage that scales.
 
 ## <a id="Skin"></a>Skin ##
 
