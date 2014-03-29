@@ -87,7 +87,7 @@ The “myfile.txt” file is located in the directory where the compiled classes
 FileHandle handle = Gdx.files.external("myfile.txt");
 ```
 
-In this case, “`myfile.txt`” needs to be in the users’ home directory (`/home/<user>/myfile.txt` on linux or `\Users\<user>\myfile.txt` on Windows and MacOS) on desktop, and in the root of the SD card on Android.
+In this case, “`myfile.txt`” needs to be in the users’ [home directory](http://wikipedia.org/wiki/Home_directory) (`/home/<user>/myfile.txt` on Linux, `/Users/<user>/myfile.txt` on OSX and `C:\Users\<user>\myfile.txt` on Windows) on desktop, and in the root of the SD card on Android.
 
 ```java
 FileHandle handle = Gdx.files.absolute("/some_dir/subdir/myfile.txt");
