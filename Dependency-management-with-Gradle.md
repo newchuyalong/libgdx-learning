@@ -110,7 +110,7 @@ compile '<groupId>:<artifactId>:<version>:<classifier>'
 
 Lets take a quick example to see how this works with the root build.gradle file.
 
-[Here](#freetypefont-gradle) we see the dependencies for the FreeType Extension, say we want our Android project to have this dependency.  We locate our project(":android") { stub in the build.gradle:
+[Here](#freetypefont-gradle) we see the dependencies for the FreeType Extension, say we want our Android project to have this dependency.  We locate our **project(":android")** stub in the root directory's build.gradle:
 ```groovy
 project(":android") {
     apply plugin: "android"
@@ -127,14 +127,14 @@ project(":android") {
 }
 ```
 
-We know our FreeType extension has declarations:
+**We know our FreeType extension has declarations:**
 ```groovy
 compile 'com.badlogicgames.gdx:gdx-freetype:$gdxVersion'
 natives 'com.badlogicgames.gdx:gdx-freetype-platform:$gdxVersion:natives-armeabi'
 natives 'com.badlogicgames.gdx:gdx-freetype-platform:$gdxVersion:natives-armeabi-v7a'
 ```
 
-So all we need to do is whack it in the dependencies stub
+**So all we need to do is whack it in the dependencies stub**
 
 ```groovy
 project(":android") {
@@ -232,7 +232,42 @@ Not compatible!
 Not compatible!
 
 ### Maven Dependencies
+#### Adding external repositories
 #### Maven Dependency Examples
 
 ### File Dependencies
+If you have a dependency that is not mavenized, you can still depend on them!
 
+To do this, in your project stub in the root build.gradle file, locate the dependencies { } section as always, and add the following:
+
+```groovy
+dependencies {
+    compile fileTree(dir: 'libs', include: '*.jar')
+}
+```
+
+This will include all the .jar files in the libs directory as dependencies.
+
+An example with a _fuller_ script:
+```groovy
+project(":android") {
+    apply plugin: "android"
+
+    configurations { natives }
+
+    dependencies {
+        compile project(":core")
+        compile "com.badlogicgames.gdx:gdx-backend-android:$gdxVersion"
+        natives "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-x86"
+        natives "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-armeabi"
+        natives "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-armeabi-v7a"
+   
+        compile 'com.badlogicgames.gdx:gdx-freetype:$gdxVersion'
+        natives 'com.badlogicgames.gdx:gdx-freetype-platform:$gdxVersion:natives-armeabi'
+        natives 'com.badlogicgames.gdx:gdx-freetype-platform:$gdxVersion:natives-armeabi-v7a'
+        compile fileTree(dir: 'libs', include '*.jar')
+    }
+}
+```
+
+It is worth nothing that these file dependencies are not included in the published dependency descriptor for your project, but they are included in transitive project dependencies within the same build.
