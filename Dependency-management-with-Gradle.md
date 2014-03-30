@@ -99,6 +99,36 @@ project(":android") {
 
 ### Libgdx Dependencies
 #### Libgdx Extensions
+Mavenized libgdx extensions ready to import from the build.gradle script include:
+* [Bullet] (#bullet-gradle)
+* [FreeTypeFont] (#freetypefont-gradle)
+* [Tools] (#tools-gradle)
+
+#### Bullet Gradle
+Core Dependency:
+```groovy
+compile 'com.badlogicgames.gdx:gdx-bullet:$gdxVersion'
+```
+Desktop Dependency:
+```groovy
+compile 'com.badlogicgames.gdx:gdx-bullet-platform:$gdxVersion:natives-desktop'
+```
+Android Dependency:
+```groovy
+compile 'com.badlogicgames.gdx:gdx-bullet:$gdxVersion'
+natives 'com.badlogicgames.gdx:gdx-bullet-platform:$gdxVersion:natives-armeabi'
+natives 'com.badlogicgames.gdx:gdx-bullet-platform:$gdxVersion:natives-armeabi-v7a'
+```
+iOS Dependency:
+```groovy
+compile 'com.badlogicgames.gdx:gdx-bullet:$gdxVersion'
+natives 'com.badlogicgames.gdx:gdx-bullet-platform:$gdxVersion:natives-ios'
+```
+GWT Dependency:
+Not compatible!
+
+#### FreeTypeFont Gradle
+#### Tools Gradle
 
 ### Maven Dependencies
 #### Maven Dependency Examples
