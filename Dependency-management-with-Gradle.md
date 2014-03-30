@@ -12,6 +12,7 @@
 Dependency management with Gradle is easy to understand, and has many different approaches.  If you are familiar with Maven or Ivy, Gradle is fully compatible with both approaches, as well as being able to support custom approaches.  If you aren't familiar with Gradle, there are great resources on their site to learn, it is recommended you give them a read to get comfortable with Gradle.
 * [Gradle's User Guide](http://www.gradle.org/docs/current/userguide/userguide.html)
 * [Gradle's Depedency Management Guide](http://www.gradle.org/docs/current/userguide/dependency_management.html)
+* [Declare your dependencies] (http://www.gradle.org/docs/current/userguide/dependency_management.html#sec:how_to_declare_your_dependencies)
 
 ### Guide to build.gradle
 Gradle projects are managed by build.gradle files in their root directory. If you have used the gdx-setup.jar to build your libgdx project you will notice the structure: [Structure Example](https://github.com/libgdx/libgdx/wiki/Project-Setup-Gradle#project-layout)
@@ -98,6 +99,64 @@ project(":android") {
 ```
 
 ### Libgdx Dependencies
+Dependencies are configured in the root build.gradle file as shown in the build.gradle guide above.
+In order to add an external dependency to a project, you must declare the dependency correctly under the correct part of the build.script.
+
+(some) Libgdx extensions are mavenized and pushed to the maven repo, which means we can very easily pull them into our projects from the build.gradle file.  You can see in the list [below](#libgdx-extensions) of the format that these depdencies take. 
+If you are familiar with maven, notice the format:
+```groovy
+compile '<groupId>:<artifactId>:<version>:<classifier>'
+```
+
+Lets take a quick example to see how this works with the root build.gradle file.
+
+[Here](#freetypefont-gradle) we see the dependencies for the FreeType Extension, say we want our Android project to have this dependency.  We locate our project(":android") { stub in the build.gradle:
+```groovy
+project(":android") {
+    apply plugin: "android"
+
+    configurations { natives }
+
+    dependencies {
+        compile project(":core")
+        compile "com.badlogicgames.gdx:gdx-backend-android:$gdxVersion"
+        natives "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-x86"
+        natives "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-armeabi"
+        natives "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-armeabi-v7a"
+    }
+}
+```
+
+We know our FreeType extension has declarations:
+```groovy
+compile 'com.badlogicgames.gdx:gdx-freetype:$gdxVersion'
+natives 'com.badlogicgames.gdx:gdx-freetype-platform:$gdxVersion:natives-armeabi'
+natives 'com.badlogicgames.gdx:gdx-freetype-platform:$gdxVersion:natives-armeabi-v7a'
+```
+
+So all we need to do is whack it in the dependencies stub
+
+```groovy
+project(":android") {
+    apply plugin: "android"
+
+    configurations { natives }
+
+    dependencies {
+        compile project(":core")
+        compile "com.badlogicgames.gdx:gdx-backend-android:$gdxVersion"
+        natives "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-x86"
+        natives "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-armeabi"
+        natives "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-armeabi-v7a"
+   
+        compile 'com.badlogicgames.gdx:gdx-freetype:$gdxVersion'
+        natives 'com.badlogicgames.gdx:gdx-freetype-platform:$gdxVersion:natives-armeabi'
+        natives 'com.badlogicgames.gdx:gdx-freetype-platform:$gdxVersion:natives-armeabi-v7a'
+    }
+}
+```
+And we are done, our android project now has the freetype dependency. Easy eh.
+
 #### Libgdx Extensions
 Mavenized libgdx extensions ready to import from the build.gradle script include:
 * [Bullet] (#bullet-gradle)
@@ -105,30 +164,72 @@ Mavenized libgdx extensions ready to import from the build.gradle script include
 * [Tools] (#tools-gradle)
 
 #### Bullet Gradle
-Core Dependency:
+**Core Dependency:**
 ```groovy
 compile 'com.badlogicgames.gdx:gdx-bullet:$gdxVersion'
 ```
-Desktop Dependency:
+**Desktop Dependency:**
 ```groovy
 compile 'com.badlogicgames.gdx:gdx-bullet-platform:$gdxVersion:natives-desktop'
 ```
-Android Dependency:
+**Android Dependency:**
 ```groovy
 compile 'com.badlogicgames.gdx:gdx-bullet:$gdxVersion'
 natives 'com.badlogicgames.gdx:gdx-bullet-platform:$gdxVersion:natives-armeabi'
 natives 'com.badlogicgames.gdx:gdx-bullet-platform:$gdxVersion:natives-armeabi-v7a'
 ```
-iOS Dependency:
+**iOS Dependency:**
 ```groovy
 compile 'com.badlogicgames.gdx:gdx-bullet:$gdxVersion'
 natives 'com.badlogicgames.gdx:gdx-bullet-platform:$gdxVersion:natives-ios'
 ```
-GWT Dependency:
+**GWT Dependency:**
 Not compatible!
 
+***
+
 #### FreeTypeFont Gradle
+**Core Dependency:**
+```groovy
+compile 'com.badlogicgames.gdx:gdx-freetype:$gdxVersion'
+```
+**Desktop Dependency:**
+```groovy
+compile 'com.badlogicgames.gdx:gdx-freetype-platform:$gdxVersion:natives-desktop'
+```
+**Android Dependency:**
+```groovy
+compile 'com.badlogicgames.gdx:gdx-freetype:$gdxVersion'
+natives 'com.badlogicgames.gdx:gdx-freetype-platform:$gdxVersion:natives-armeabi'
+natives 'com.badlogicgames.gdx:gdx-freetype-platform:$gdxVersion:natives-armeabi-v7a'
+```
+**iOS Dependency:**
+```groovy
+compile 'com.badlogicgames.gdx:gdx-freetype:$gdxVersion'
+natives 'com.badlogicgames.gdx:gdx-freetype-platform:$gdxVersion:natives-ios'
+```
+**GWT Dependency:**
+Not compatible!
+
+***
+
 #### Tools Gradle
+**Core Dependency:**
+```groovy
+compile 'com.badlogicgames.gdx:gdx-tools:$gdxVersion'
+```
+**Desktop Dependency:**
+```groovy
+compile 'com.badlogicgames.gdx:gdx-tools:$gdxVersion'
+```
+**Android Dependency:**
+Not compatible!
+
+**iOS Dependency:**
+Not compatible!
+
+**GWT Dependency:**
+Not compatible!
 
 ### Maven Dependencies
 #### Maven Dependency Examples
