@@ -17,12 +17,12 @@ Dependency management with Gradle is easy to understand, and has many different 
 ### Guide to build.gradle
 Gradle projects are managed by build.gradle files in their root directory. If you have used the gdx-setup.jar to build your libgdx project you will notice the structure: [Structure Example](https://github.com/libgdx/libgdx/wiki/Project-Setup-Gradle#project-layout)
 
-The root directory, and each sub directory contains a build.gradle file, for clarity we will define the dependencies in the root directory's build.gradle file.
+The root directory, and each sub directory contains a build.gradle file, for clarity we will define the dependencies in the root directory's build.gradle file. (Note it can be done in each of the build.gradle scripts in the sub directories, it is just cleaner and easier to follow when it is handled all in one place)
 
 Here is a small section of the _default_ buildscript that is generated from the setup:
 
-_Full script you will see will differ slightly depending on what other modules you have
-see here [here](https://github.com/libgdx/libgdx/blob/master/extensions/gdx-setup/src/com/badlogic/gdx/setup/resources/build.gradle)_
+_Full script you will see will differ slightly depending on what other modules you have, 
+see [here](https://github.com/libgdx/libgdx/blob/master/extensions/gdx-setup/src/com/badlogic/gdx/setup/resources/build.gradle)_
 ```groovy
 buildscript {
     //Defines the repositories that are required by this script, e.g. android plugin
