@@ -7,7 +7,7 @@
 * [**Maven Dependencies**] (#maven-dependencies)
  * [Examples] (#maven-dependency-examples)
 * [**File Dependencies**] (#file-dependencies)
-* [**Declaring Dependencies with Gwt] (#gwt-inheritance)
+* [**Declaring Dependencies with Gwt**] (#gwt-inheritance)
 
 ### Useful links
 Dependency management with Gradle is easy to understand, and has many different approaches.  If you are familiar with Maven or Ivy, Gradle is fully compatible with both approaches, as well as being able to support custom approaches.  If you aren't familiar with Gradle, there are great resources on their site to learn, it is recommended you give them a read to get comfortable with Gradle.
@@ -278,7 +278,7 @@ Gwt is special, so in order to let the GWT compiler know what modules the projec
 
 This is done in the gwt.xml files in the gwt sub directory. You will need to make the changes both to the GdxDefinition.gwt.xml and also the GdxDefinitionSuperdev.gwt.xml.
 
-The _default_ gwt.xml:
+**The _default_ gwt.xml:**
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE module PUBLIC "-//Google Inc.//DTD Google Web Toolkit trunk//EN" "http://google-web-toolkit.googlecode.com/svn/trunk/distro-source/core/src/gwt-module.dtd">
@@ -292,19 +292,21 @@ The _default_ gwt.xml:
 ```
 We depend on the libgdx gwt backend, as well as the core project, so we have them defined in an <inherits> tag.  So when you add your dependency via methods above, you need to add it here too!
 
-An example: The Universal Tween Engine
+**An example: The Universal Tween Engine**
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE module PUBLIC "-//Google Inc.//DTD Google Web Toolkit trunk//EN" "http://google-web-toolkit.googlecode.com/svn/trunk/distro-source/core/src/gwt-module.dtd">
 <module rename-to="html">
 	<inherits name='com.badlogic.gdx.backends.gdx_backends_gwt' />
 	<inherits name='com.badlogic.mygame.MyGame' />
-        //Lets inherit tween 
-        <inherits name='aurelienribon.tweenengine'/>
+	//Lets inherit tween
+	<inherits name='aurelienribon.tweenengine'/>
 	<entry-point class='com.badlogic.mygame.client.GwtLauncher' />
 	
 	<set-configuration-property name="gdx.assetpath" value="../android/assets" />
 </module>
 ```
+
+
 
 List of libgdx extensions that support gwt....
