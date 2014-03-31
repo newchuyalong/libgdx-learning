@@ -26,6 +26,8 @@ Windows: `set ANDROID_HOME=C:/Path/To/Your/Android/Sdk`
 
 Linux, Mac OS X: `export ANDROID_HOME=/Path/To/Your/Android/Sdk`
 
+Alternatively you can create a file called "local.properties" with the following content: `sdk.dir /Path/To/Your/Android/Sdk`
+
 ## Running the project
 Gradle let's you easily run a project from the commandline. Just use the gradlew command specify your target platform and the run command for that platform.
 
