@@ -181,7 +181,6 @@ public class DesktopStarter {
     public static void main(String[] args) {
         LwjglApplicationConfiguration cfg = new LwjglApplicationConfiguration();
         cfg.title = "Title";
-        cfg.useGL20 = true;
         cfg.width = 800;
         cfg.height = 480;
         new LwjglApplication(new MyLibgdxGame(), cfg);
@@ -205,7 +204,6 @@ public class MyLibgdxGameAndroidStarter extends AndroidApplication
         cfg.useAccelerometer = false;
         cfg.useCompass = false;
         cfg.useWakelock = true;
-        cfg.useGL20 = true;
         initialize(new MyLibgdxGame(), cfg);
     }
 }
