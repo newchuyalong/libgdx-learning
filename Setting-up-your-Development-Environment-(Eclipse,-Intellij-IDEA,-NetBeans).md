@@ -3,7 +3,7 @@ Libgdx projects use [Gradle](http://www.gradle.org/) to manage dependencies, the
 ### Setting up Eclipse 
 To develop your application via Eclipse, you need to install the following pieces of software.
 
-  * [Java Development Kit (JDK)](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
+  * [Java Development Kit 7+ (JDK) (6 will not work!)](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
   * [Eclipse](http://www.eclipse.org/downloads/), the "Eclipse IDE for Java Developers" is usually sufficient.
   * [Android SDK](http://developer.android.com/sdk/installing.html), you only need the SDK, not the ADT bundle, which includes Eclipse. Install all platforms via the SDK Manager!
   * [Android Development Tools for Eclipse](http://developer.android.com/tools/sdk/eclipse-adt.html), aka ADT Plugin. Use this update site: https://dl-ssl.google.com/android/eclipse/
@@ -20,7 +20,7 @@ Once all of these tools are installed, proceed to [[creating your project|Projec
 ### Setting up Intellij IDEA
 To develop your application via Intellij IDEA, you need to install the following pieces of software.
 
-  * [Java Development Kit (JDK)](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
+  * [Java Development Kit 7+ (JDK) (6 will not work!)](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
   * [Intellij IDEA 13.0.2+](http://www.jetbrains.com/idea/download/), the Community edition is sufficient
   * [Android SDK](http://developer.android.com/sdk/installing.html), you only need the SDK, not the ADT bundle, which includes Eclipse. Install all platforms via the SDK Manager! You also have to create an environment variable called ANDROID_HOME, which points at your Android SDK installation directory!
 
@@ -34,7 +34,7 @@ Once all of these tools are installed, proceed to [[creating your project|Projec
 ### Setting up NetBeans
 To develop your application via NetBeans, you need to install the following pieces of software.
 
-  * [Java Development Kit (JDK)](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
+  * [Java Development Kit 7+ (JDK) (6 will not work!)](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
   * [NetBeans 7.3+](https://netbeans.org/downloads/), the "Java SE" is sufficient
   * [Android SDK](http://developer.android.com/sdk/installing.html), you only need the SDK, not the ADT bundle, which includes Eclipse. Install all platforms via the SDK Manager! You also have to create an environment variable called ANDROID_HOME, which points at your Android SDK installation directory!
   * [NBAndroid](http://www.nbandroid.org), use this update center: http://nbandroid.org/updates/updates.xml
