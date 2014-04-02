@@ -72,7 +72,7 @@ These maps are identical to !ObjectMap except they use primitive types for the k
 
 ###  [OrderedMap](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/utils/OrderedMap.html) [(code)](https://github.com/libgdx/libgdx/blob/master/gdx/src/com/badlogic/gdx/utils/OrderedMap.java) ###
 
-This map is identical to ObjectMap except keys are also stored in an Array. This adds overhead to put an remove but provides ordered iteration. The key Array can be sorted directly to change the iteration order.
+This map is identical to ObjectMap except keys are also stored in an Array. This adds overhead to put and remove but provides ordered iteration. The key Array can be sorted directly to change the iteration order.
 
 ### [IdentityMap](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/utils/IdentityMap.html) [(code)](https://github.com/libgdx/libgdx/blob/master/gdx/src/com/badlogic/gdx/utils/IdentityMap.java) ###
 
