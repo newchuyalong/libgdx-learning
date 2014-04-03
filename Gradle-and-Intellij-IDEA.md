@@ -6,6 +6,8 @@ Go to `Import Project`, navigate to your project folder and select the `build.gr
 ### Common Problems
 If you run into problems due to a missing validation-api:1.0.0.GA artifact, delete your Maven cache at `C:\Users\username\.m2` or `/Users/username/.m2` or `/home/username/.m2`.
 
+`Unsupported major.minor version 51.0` may occur on Mac OS X. Check out [this article by Serapth](http://www.gamefromscratch.com/post/2014/04/03/Troubleshooting-IntelliJLibGDXRoboVMGradle-issues-on-Mac-OS.aspx) detailing how to solve this issue.
+
 ## Running Your Project
 
   * **Desktop**: `Run -> Edit Configurations...`, click the plus (+) button and select `Application`. Set the `Name`to `Desktop`.Set the field `Use classpath of module` to `desktop`, then click on the button of the `Main class` field and select the `DesktopLauncher` class. Set the `Working directory` to your `android/assets/` folder! Click `Apply` and then `OK`. You have now created a run configuration for your desktop project. You can now select the configuration and run it.
