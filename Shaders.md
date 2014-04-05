@@ -72,7 +72,7 @@ String fragmentShader = "#ifdef GL_ES\n" +
                         "uniform sampler2D u_texture;\n" + 
                         "void main()                                  \n" + 
                         "{                                            \n" + 
-                        "  gl_FragColor = v_color * texture2D(u_texture, v_texCoords);\n"
+                        "  gl_FragColor = v_color * texture2D(u_texture, v_texCoords);\n" +
                         "}";
 ```
 
