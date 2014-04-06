@@ -4,8 +4,8 @@
 * [**Guide to build.gradle**] (#guide-to-build.gradle)
 * [**Libgdx Dependencies**] (#libgdx-dependencies)
  * [Available libgdx extensions] (#libgdx-extensions)
-* [**Maven Dependencies**] (#maven-dependencies)
- * [Examples] (#maven-dependency-examples)
+* [**External Dependencies**] (#external-dependencies)
+ * [Examples] (#adding-dependencies)
 * [**File Dependencies**] (#file-dependencies)
 * [**Declaring Dependencies with Gwt**] (#gwt-inheritance)
 
@@ -232,9 +232,42 @@ Not compatible!
 **GWT Dependency:**
 Not compatible!
 
-### Maven Dependencies
+### External Dependencies
 #### Adding external repositories
-#### Maven Dependency Examples
+Gradle finds files defined as dependencies by looking through all the repositories defined in the buildscript.  Gradle understands several repository formats, which include Maven and Ivy. 
+ 
+Under the allprojects stub, you can see how repositories are defined. Here is an example:
+```groovy
+allprojects {    
+    repositories {
+        // Remote Maven repo
+        maven { url "https://oss.sonatype.org/content/repositories/snapshots/" } 
+        // Maven Central Repo
+        mavenCentral()
+        // Local Maven repo
+        mavenLocal()
+        // Remote Ivy dir
+        ivy { url "http://some.ivy.com/repo" }
+        // Local Ivy dir
+        ivy { url "../local-repo" }
+    }
+}
+```
+#### Adding Dependencies
+External dependencies are identified by their group, name, version and sometimes classifier attributes.
+
+```groovy
+dependencies {
+    compile group: 'com.badlogicgames.gdx', name: 'gdx', version: '1.0-SNAPSHOT', classifier: 'natives-desktop'
+}
+```
+Gradle allows you to use shortcuts when defining external dependencies, the above configuration is the same as:
+
+```groovy
+dependencies {
+    compile 'com.badlogicgames.gdx:gdx:1.0-SNAPSHOT:natives-desktop'
+}
+```
 
 ### File Dependencies
 If you have a dependency that is not mavenized, you can still depend on them!
