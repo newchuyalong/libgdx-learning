@@ -69,4 +69,4 @@ A dependency management system is an easy way to pull in 3rd party libraries int
 
 A build system helps with building and packaging your application, without being tied to a specific IDE. This is especially useful if you use a build or continuous integration server, where IDEs aren't readily available. Instead, the build server can call the build system, providing it with a build configuration so it knows how to build your application for different platforms.
 
-In case of Gradle, both dependency management and build system go hand in hand. Both are configured in the same set of files. See the "Dependency Management" and "Packaging" sections below for more information.
+In case of Gradle, both dependency management and build system go hand in hand. Both are configured in the same set of files. See the [[Dependency management with Gradle]] and "Packaging" sections below for more information.
