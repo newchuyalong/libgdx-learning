@@ -188,3 +188,37 @@ Here are a number of jnigen builds that can serve as examples of varying complex
   * [DesktopControllersBuild](https://github.com/libgdx/libgdx/blob/master/extensions/gdx-controllers/gdx-controllers-desktop/src/com/badlogic/gdx/controllers/desktop/DesktopControllersBuild.java#L25)
   * [FreetypeBuild](https://github.com/libgdx/libgdx/blob/master/extensions/gdx-freetype/src/com/badlogic/gdx/graphics/g2d/freetype/FreetypeBuild.java#L26)
   * [ImageBuild](https://github.com/libgdx/libgdx/blob/master/extensions/gdx-image/src/com/badlogic/gdx/graphics/g2d/ImageBuild.java#L26)
+
+### ccache
+Using [ccache](http://ccache.samba.org/) is highly recommended if you build for all platforms (Linux, Windows, Mac OS X, Android, iOS, arm arm-v7, x86, x64 and all permutations). For libgdx, we use a very simple setup. On our build server, we have an `/opt/ccache` directory that houses a bunch of shell scripts, one for each compiler binary:
+
+```
+jenkins@badlogic:~/workspace/libgdx/gdx/jni$ ls -lah /opt/ccache/
+-rwxr-xr-x  1 jenkins  www-data   44 Apr  6 13:14 g++
+-rwxr-xr-x  1 jenkins  www-data   44 Apr  6 13:14 gcc
+-rwxr-xr-x  1 jenkins  www-data   78 Apr  6 13:15 i686-w64-mingw32-g++
+-rwxr-xr-x  1 jenkins  www-data   78 Apr  6 13:15 i686-w64-mingw32-gcc
+-rwxr-xr-x  1 jenkins  www-data   82 Apr  6 13:15 x86_64-w64-mingw32-g++
+-rwxr-xr-x  1 jenkins  www-data   82 Apr  6 13:15 x86_64-w64-mingw32-gcc
+```
+
+Each of these scripts looks like this (with a modified executable name of course):
+
+```
+echo "g++ ccache!"
+ccache /usr/bin/g++ "$@"
+```
+
+To make ccache work, just make sure the `/opt/ccache` directory is first in your PATH:
+
+```
+export PATH=/opt/ccache:$PATH
+```
+
+Any time one of the compilers is invoked, the shell scripts redirect to ccache.
+
+For Android it is sufficient to set NDK_CCACHE
+
+```
+export NDK_CCACHE=ccache
+```
