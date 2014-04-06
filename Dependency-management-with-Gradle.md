@@ -163,6 +163,7 @@ And we are done, our android project now has the freetype dependency. Easy eh.
 Mavenized libgdx extensions ready to import from the build.gradle script include:
 * [Bullet] (#bullet-gradle)
 * [FreeTypeFont] (#freetypefont-gradle)
+* [Controllers](#controllers-gradle)
 * [Tools] (#tools-gradle)
 
 #### Bullet Gradle
@@ -212,6 +213,32 @@ natives "com.badlogicgames.gdx:gdx-freetype-platform:$gdxVersion:natives-ios"
 ```
 **GWT Dependency:**
 Not compatible!
+
+***
+
+#### Controllers Gradle
+**Core Dependency:**
+```groovy
+compile "com.badlogicgames.gdx:gdx-controllers:$gdxVersion"
+```
+**Desktop Dependency:**
+```groovy
+compile "com.badlogicgames.gdx:gdx-controllers-desktop:$gdxVersion"
+compile "com.badlogicgames.gdx:gdx-controllers-platform:$gdxVersion:natives-desktop"
+```
+**Android Dependency:**
+```groovy
+compile "com.badlogicgames.gdx:gdx-controllers-android:$gdxVersion"
+```
+**iOS Dependency:**
+Not supported, but you can still compile and run your iOS app. Controllers just won't be available
+
+**GWT Dependency:**
+```groovy
+compile "com.badlogicgames.gdx:gdx-controllers:$gdxVersion:sources"
+compile "com.badlogicgames.gdx:gdx-controllers-gwt:$gdxVersion"
+compile "com.badlogicgames.gdx:gdx-controllers-gwt:$gdxVersion:sources"
+```
 
 ***
 
