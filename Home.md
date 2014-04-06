@@ -15,7 +15,7 @@
       * [[Intellij Idea|Gradle and Intellij IDEA]]
       * [[NetBeans|Gradle and NetBeans]]
       * [[Commandline|Gradle on the Commandline]]
-      * [[Dependency-management-with-Gradle|Adding extensions and 3rd party libraries]]
+      * [[Adding extensions and 3rd party libraries|Dependency management with Gradle]]
     * [[Third Party Services]]
       * [[AdMob in Libgdx]]
       * [[Swarm in Libgdx]]
