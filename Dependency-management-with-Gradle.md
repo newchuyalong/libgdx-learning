@@ -131,9 +131,9 @@ project(":android") {
 
 **We know our FreeType extension has declarations:**
 ```groovy
-compile 'com.badlogicgames.gdx:gdx-freetype:$gdxVersion'
-natives 'com.badlogicgames.gdx:gdx-freetype-platform:$gdxVersion:natives-armeabi'
-natives 'com.badlogicgames.gdx:gdx-freetype-platform:$gdxVersion:natives-armeabi-v7a'
+compile "com.badlogicgames.gdx:gdx-freetype:$gdxVersion"
+natives "com.badlogicgames.gdx:gdx-freetype-platform:$gdxVersion:natives-armeabi"
+natives "com.badlogicgames.gdx:gdx-freetype-platform:$gdxVersion:natives-armeabi-v7a"
 ```
 
 **So all we need to do is whack it in the dependencies stub**
@@ -151,9 +151,9 @@ project(":android") {
         natives "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-armeabi"
         natives "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-armeabi-v7a"
    
-        compile 'com.badlogicgames.gdx:gdx-freetype:$gdxVersion'
-        natives 'com.badlogicgames.gdx:gdx-freetype-platform:$gdxVersion:natives-armeabi'
-        natives 'com.badlogicgames.gdx:gdx-freetype-platform:$gdxVersion:natives-armeabi-v7a'
+        compile "com.badlogicgames.gdx:gdx-freetype:$gdxVersion"
+        natives "com.badlogicgames.gdx:gdx-freetype-platform:$gdxVersion:natives-armeabi"
+        natives "com.badlogicgames.gdx:gdx-freetype-platform:$gdxVersion:natives-armeabi-v7a"
     }
 }
 ```
@@ -168,22 +168,22 @@ Mavenized libgdx extensions ready to import from the build.gradle script include
 #### Bullet Gradle
 **Core Dependency:**
 ```groovy
-compile 'com.badlogicgames.gdx:gdx-bullet:$gdxVersion'
+compile "com.badlogicgames.gdx:gdx-bullet:$gdxVersion"
 ```
 **Desktop Dependency:**
 ```groovy
-compile 'com.badlogicgames.gdx:gdx-bullet-platform:$gdxVersion:natives-desktop'
+compile "com.badlogicgames.gdx:gdx-bullet-platform:$gdxVersion:natives-desktop"
 ```
 **Android Dependency:**
 ```groovy
-compile 'com.badlogicgames.gdx:gdx-bullet:$gdxVersion'
-natives 'com.badlogicgames.gdx:gdx-bullet-platform:$gdxVersion:natives-armeabi'
-natives 'com.badlogicgames.gdx:gdx-bullet-platform:$gdxVersion:natives-armeabi-v7a'
+compile "com.badlogicgames.gdx:gdx-bullet:$gdxVersion"
+natives "com.badlogicgames.gdx:gdx-bullet-platform:$gdxVersion:natives-armeabi"
+natives "com.badlogicgames.gdx:gdx-bullet-platform:$gdxVersion:natives-armeabi-v7a"
 ```
 **iOS Dependency:**
 ```groovy
-compile 'com.badlogicgames.gdx:gdx-bullet:$gdxVersion'
-natives 'com.badlogicgames.gdx:gdx-bullet-platform:$gdxVersion:natives-ios'
+compile "com.badlogicgames.gdx:gdx-bullet:$gdxVersion"
+natives "com.badlogicgames.gdx:gdx-bullet-platform:$gdxVersion:natives-ios"
 ```
 **GWT Dependency:**
 Not compatible!
@@ -193,22 +193,22 @@ Not compatible!
 #### FreeTypeFont Gradle
 **Core Dependency:**
 ```groovy
-compile 'com.badlogicgames.gdx:gdx-freetype:$gdxVersion'
+compile "com.badlogicgames.gdx:gdx-freetype:$gdxVersion"
 ```
 **Desktop Dependency:**
 ```groovy
-compile 'com.badlogicgames.gdx:gdx-freetype-platform:$gdxVersion:natives-desktop'
+compile "com.badlogicgames.gdx:gdx-freetype-platform:$gdxVersion:natives-desktop"
 ```
 **Android Dependency:**
 ```groovy
-compile 'com.badlogicgames.gdx:gdx-freetype:$gdxVersion'
-natives 'com.badlogicgames.gdx:gdx-freetype-platform:$gdxVersion:natives-armeabi'
-natives 'com.badlogicgames.gdx:gdx-freetype-platform:$gdxVersion:natives-armeabi-v7a'
+compile "com.badlogicgames.gdx:gdx-freetype:$gdxVersion"
+natives "com.badlogicgames.gdx:gdx-freetype-platform:$gdxVersion:natives-armeabi"
+natives "com.badlogicgames.gdx:gdx-freetype-platform:$gdxVersion:natives-armeabi-v7a"
 ```
 **iOS Dependency:**
 ```groovy
-compile 'com.badlogicgames.gdx:gdx-freetype:$gdxVersion'
-natives 'com.badlogicgames.gdx:gdx-freetype-platform:$gdxVersion:natives-ios'
+compile "com.badlogicgames.gdx:gdx-freetype:$gdxVersion"
+natives "com.badlogicgames.gdx:gdx-freetype-platform:$gdxVersion:natives-ios"
 ```
 **GWT Dependency:**
 Not compatible!
@@ -218,11 +218,11 @@ Not compatible!
 #### Tools Gradle
 **Core Dependency:**
 ```groovy
-compile 'com.badlogicgames.gdx:gdx-tools:$gdxVersion'
+compile "com.badlogicgames.gdx:gdx-tools:$gdxVersion"
 ```
 **Desktop Dependency:**
 ```groovy
-compile 'com.badlogicgames.gdx:gdx-tools:$gdxVersion'
+compile "com.badlogicgames.gdx:gdx-tools:$gdxVersion"
 ```
 **Android Dependency:**
 Not compatible!
@@ -297,9 +297,9 @@ project(":android") {
         natives "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-armeabi"
         natives "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-armeabi-v7a"
    
-        compile 'com.badlogicgames.gdx:gdx-freetype:$gdxVersion'
-        natives 'com.badlogicgames.gdx:gdx-freetype-platform:$gdxVersion:natives-armeabi'
-        natives 'com.badlogicgames.gdx:gdx-freetype-platform:$gdxVersion:natives-armeabi-v7a'
+        compile "com.badlogicgames.gdx:gdx-freetype:$gdxVersion"
+        natives "com.badlogicgames.gdx:gdx-freetype-platform:$gdxVersion:natives-armeabi"
+        natives "com.badlogicgames.gdx:gdx-freetype-platform:$gdxVersion:natives-armeabi-v7a"
         compile fileTree(dir: 'libs', include '*.jar')
     }
 }
