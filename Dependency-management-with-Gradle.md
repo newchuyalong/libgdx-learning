@@ -5,6 +5,7 @@
 * [**Libgdx Dependencies**] (#libgdx-dependencies)
  * [Available libgdx extensions] (#libgdx-extensions)
 * [**External Dependencies**] (#external-dependencies)
+ * [Adding Repositories] (#adding-repositories)
  * [Examples] (#adding-dependencies)
 * [**File Dependencies**] (#file-dependencies)
 * [**Declaring Dependencies with Gwt**] (#gwt-inheritance)
