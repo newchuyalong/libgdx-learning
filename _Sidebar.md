@@ -11,6 +11,7 @@
     * [[Games Built with Libgdx]]
     * [[ Prerequisites]]
     * [[Gradle Project Setup, Running, Debugging and Packaging|Project Setup Gradle]]
+      * [[Dependency management with Gradle]]
     * [[Project Setup, Running & Debugging]]
       * [[Manual Project Setup]]
       * [[Maven Integration]]
