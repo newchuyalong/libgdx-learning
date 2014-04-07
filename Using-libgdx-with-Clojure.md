@@ -14,15 +14,15 @@ Because Libgdx is not hosted on any of Leiningen's default maven repos, we need 
           :distribution :repo
           :comments "Same as LibGDX"}
   :dependencies [[org.clojure/clojure "1.5.1"]
-                 [com.badlogicgames.gdx/gdx "0.9.9-SNAPSHOT"]
-                 [com.badlogicgames.gdx/gdx-backend-lwjgl "0.9.9-SNAPSHOT"]
-                 [com.badlogicgames.gdx/gdx-platform "0.9.9-SNAPSHOT"
+                 [com.badlogicgames.gdx/gdx "1.0-SNAPSHOT"]
+                 [com.badlogicgames.gdx/gdx-backend-lwjgl "1.0-SNAPSHOT"]
+                 [com.badlogicgames.gdx/gdx-platform "1.0-SNAPSHOT"
                   :classifier "natives-desktop"]]
   :repositories [["sonatype"
                   "https://oss.sonatype.org/content/repositories/snapshots/"]]
   :source-paths ["src/clojure"]
   :java-source-paths ["src/java"]
-  :aot [cljdx.desktop-launcher]
+  :aot :all
   :main cljdx.desktop-launcher)
 ```
 
@@ -38,7 +38,7 @@ here is the equivalent to Main.java, which we are naming `cljdx.desktop-launcher
 
 (defn -main
   []
-  (LwjglApplication. (cljdx.core.Game.) "cljdx" 800 600 true))
+  (LwjglApplication. (cljdx.core.Game.) "cljdx" 800 600))
 ```
 
 and here is the Screen implementation (as `cljdx.core`)
