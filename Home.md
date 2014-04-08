@@ -124,7 +124,6 @@
       * [[Hiero]]
       * [[Particle Editor]]
     * Extensions
-      * [[gdx-audio]]
       * [[gdx-freetype]]
     * [[Deploying your Application]]
     * Building Libgdx ??
