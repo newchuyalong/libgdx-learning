@@ -16,6 +16,7 @@ If you run into problems due to a missing validation-api:1.0.0.GA artifact, dele
 
   * **HTML**: `View -> Tool Window -> Terminal`, in the terminal, make sure you are in the root folder of your project. Then execute `gradlew.bat gwt:superDev` (Windows) or `./gradlew gwt:superDev` (Linux, Windows). This will take a while, as your Java code is compiled to Javascript. Once you see the message `The code server is ready`, fire up your browser and go to  [http://localhost:8080/gwt](http://localhost:8080/gwt). This is your app running in the browser! When you change any of your Java code or assets, just click the `SuperDev refresh` button while you are on the site and the server will recompile your code and reload the page! To kill the process, simply press `CTRL + C` in the terminal window.
 
+Once this [bug in the Gradle tooling API](http://issues.gradle.org/browse/GRADLE-1539) is fixed, we can simplify running the HTML5 by using the Gradle integration. At the moment, the Gradle process will run forever even if canceled.
 ## Debugging Your Project
 Follow the steps for running the project, but instead of launching via the run (Play) button, launch your configuration via the debug (bug) button. Note that RoboVM currently does not support debugging. Debuggin of the GWT build can be done in the browser as follows:
 
