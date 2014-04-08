@@ -5,7 +5,7 @@ Libgdx comes with a file called `gdx-setup.jar` which is an executable UI and co
 
 ![setup ui](http://i.imgur.com/EpsK1A3.png)
 
-Specify your application name, your Java package name, the name of your main class, the output directory, and the path to your android sdk, then click "Generate". Now you are ready to import the project into your IDE, run, debug and package it!
+Specify your application name, your Java package name, the name of your main class, the output directory, and the path to your android sdk, then click "Generate". **Now you are ready to import the project into your IDE, run, debug and package it!**
 
   * [[Eclipse|Gradle and Eclipse]]
   * [[Intellij IDEA|Gradle and Intellij IDEA]]
