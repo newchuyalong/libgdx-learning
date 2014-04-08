@@ -1,3 +1,5 @@
+**This extension has been removed as per 8th of April 2014**
+
 Gdx-audio is an extension offering a lower-level API for audio. Features are:
 * Decoders for mp3, ogg Vorbis and wav, using Mpg123, Xiph Tremor
 * KissFFT and Java FFT by Damien Di Fede for comparison
