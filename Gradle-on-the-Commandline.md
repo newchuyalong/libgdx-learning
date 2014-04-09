@@ -6,12 +6,12 @@ This article will show you how you can run your application from the command lin
  * [Running on Desktop] (#running-the-desktop-project)
  * [Running on Android] (#running-the-android-project)
  * [Running on iOS] (#running-the-ios-project)
- * [Running Gwt] (#running-the-gwt-project)
+ * [Running HTML] (#running-the-html-project)
 * [**Packaging**](#packaging-the-project) 
  * [Packaging Desktop](#packaging-for-the-desktop)
  * [Packaging Android](#packaging-for-android)
  * [Packaging iOS](#packaging-for-ios)
- * [Packaging Gwt](#packaging-for-the-web) 
+ * [Packaging HTML](#packaging-for-the-web) 
 * [**Debugging/Problems**](#debugging-and-common-problems) 
  * [Gradle tasks failing] (#gradle-tasks-are-failing)
  * [Common problems] (#common-problems)
@@ -31,7 +31,7 @@ Alternatively you can create a file called "local.properties" with the following
 ## Running the project
 Gradle let's you easily run a project from the commandline. Just use the gradlew command specify your target platform and the run command for that platform.
 
-[**Desktop**](#running-the-desktop-project) - [**Android**](#running-the-android-project) - [**iOS**](#running-the-ios-project) - [**Gwt**](#running-the-gwt-project) 
+[**Desktop**](#running-the-desktop-project) - [**Android**](#running-the-android-project) - [**iOS**](#running-the-ios-project) - [**HTML**](#running-the-html-project) 
 
 ### Running the desktop project
 `gradlew desktop:run`
@@ -52,15 +52,15 @@ This task will create a debug APK of your application, install it on the first c
 
 The first two commands will launch your app on an iPhone or iPad simualtor, the last command will launch your ios project on a connected iDevice, provided it is provisioned. Please refer to Apple's docs on how to provision a device. Note that the first time you run your iOS project, the compilation will take a long time. Compilation time will decrease significantly on subsequent runs!
 
-### Running the GWT project
-`gradlew gwt:superDev`
+### Running the HTML project
+`gradlew html:superDev`
 
 This will start your application in [GWT Super Dev Mode](http://www.badlogicgames.com/wordpress/?p=3073), which compiles your Java code to Javascript, and allows you to debug your Java code directly in the browser. If you see the message `Next, visit: http://localhost:9876` in your shell, open the browser and navigate to that address. Drag the "Dev Mode On" bookmarklet do your browser bookmarks bar. Next open [http://localhost:8080/gwt](http://localhost:8080/gwt). This is your application running in the browser! If you change any of your Java code in the core project, just click the bookmarklet, then click "Compile". The changes will take effect in a few seconds. If you modify your assets, you have to restart the server with the above command.
 
 ## Packaging the project
 Every platform has a different kind of distribution format. In this section we'll see how we can generate those distributions via Gradle.
 
-[**Desktop**](#packaging-for-the-desktop) - [**Android**](#packaging-for-android) - [**iOS**](#packaging-for-ios) - [**Gwt**](#packaging-for-the-web) 
+[**Desktop**](#packaging-for-the-desktop) - [**Android**](#packaging-for-android) - [**iOS**](#packaging-for-ios) - [**HTML**](#packaging-for-the-web) 
 
 
 ### Packaging for the desktop
@@ -79,11 +79,11 @@ This will create an unsinged APK file in the `android/build/apk` folder. You can
 This will create an IPA in the `ios/build/robovm` folder that you distribute to the Apple App Store. You can follow Apple's guide on [app store distribution](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppDistributionGuide/Introduction/Introduction.html)
 
 ### Packaging for the Web
-`gradle gwt:dist`
+`gradle html:dist`
 
-This will compile your your app to Javascript and place the resulting Javascript, HTML and asset files in the `gwt/build/dist/` folder. The contents of this folder have to be served up by a web server, e.g. Apache or Nginx. Just treat the contents like you'd treat any other static HTML/Javascript site. There is no Java or Java Applets involved!
+This will compile your your app to Javascript and place the resulting Javascript, HTML and asset files in the `html/build/dist/` folder. The contents of this folder have to be served up by a web server, e.g. Apache or Nginx. Just treat the contents like you'd treat any other static HTML/Javascript site. There is no Java or Java Applets involved!
 
-If you have Python installed, you can test your distribution by executing the following in the `gwt/build/dist` folder:
+If you have Python installed, you can test your distribution by executing the following in the `html/build/dist` folder:
 
 `python -m SimpleHTTPServer`
 
