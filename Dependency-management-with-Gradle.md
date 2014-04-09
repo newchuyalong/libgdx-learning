@@ -8,7 +8,7 @@
  * [Adding Repositories] (#adding-external-repositories)
  * [Examples] (#adding-dependencies)
 * [**File Dependencies**] (#file-dependencies)
-* [**Declaring Dependencies with Gwt**] (#gwt-inheritance)
+* [**Declaring Dependencies with HTML**] (#gwt-inheritance)
 
 ### Useful links
 Dependency management with Gradle is easy to understand, and has many different approaches.  If you are familiar with Maven or Ivy, Gradle is fully compatible with both approaches, as well as being able to support custom approaches.  If you aren't familiar with Gradle, there are great resources on their site to learn, it is recommended you give them a read to get comfortable with Gradle.
@@ -186,7 +186,7 @@ natives "com.badlogicgames.gdx:gdx-bullet-platform:$gdxVersion:natives-armeabi-v
 compile "com.badlogicgames.gdx:gdx-bullet:$gdxVersion"
 natives "com.badlogicgames.gdx:gdx-bullet-platform:$gdxVersion:natives-ios"
 ```
-**GWT Dependency:**
+**HTML Dependency:**
 Not compatible!
 
 ***
@@ -211,7 +211,7 @@ natives "com.badlogicgames.gdx:gdx-freetype-platform:$gdxVersion:natives-armeabi
 compile "com.badlogicgames.gdx:gdx-freetype:$gdxVersion"
 natives "com.badlogicgames.gdx:gdx-freetype-platform:$gdxVersion:natives-ios"
 ```
-**GWT Dependency:**
+**HTML Dependency:**
 Not compatible!
 
 ***
@@ -233,7 +233,7 @@ compile "com.badlogicgames.gdx:gdx-controllers-android:$gdxVersion"
 **iOS Dependency:**
 Not supported, but you can still compile and run your iOS app. Controllers just won't be available
 
-**GWT Dependency:**
+**HTML Dependency:**
 ```groovy
 compile "com.badlogicgames.gdx:gdx-controllers:$gdxVersion:sources"
 compile "com.badlogicgames.gdx:gdx-controllers-gwt:$gdxVersion"
@@ -257,7 +257,7 @@ Not compatible!
 **iOS Dependency:**
 Not compatible!
 
-**GWT Dependency:**
+**HTML Dependency:**
 Not compatible!
 
 ### External Dependencies
