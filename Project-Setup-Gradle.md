@@ -51,7 +51,7 @@ android/
     res/                   <- contains icons for your app and other resources
     src/                   <- Source folder for your Android project, contains android launcher class
 
-html/
+gwt/
     build.gradle           <- Gradle build file for the html project, no touchy
     src/                   <- Source folder for your html project, contains launcher and html definition
     webapp/                <- War template, on generation the contents are copied to war. Contains startup url index page and web.xml
