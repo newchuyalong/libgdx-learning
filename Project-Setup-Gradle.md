@@ -29,7 +29,7 @@ Putting it all together, you can run the project generator on the command line a
 This will create a directory called `mygame`with the following layout:
 
 ```
-settings.gradle            <- definition of sub-modules. By default core, desktop, android, gwt, ios
+settings.gradle            <- definition of sub-modules. By default core, desktop, android, html, ios
 build.gradle               <- main Gradle build file, defines dependencies and plugins
 gradlew                    <- script that will run Gradle on Unix systems
 gradlew.bat                <- script that will run Gradle on Windows
@@ -51,9 +51,9 @@ android/
     res/                   <- contains icons for your app and other resources
     src/                   <- Source folder for your Android project, contains android launcher class
 
-gwt/
-    build.gradle           <- Gradle build file for the gwt project, no touchy
-    src/                   <- Source folder for your gwt project, contains launcher and gwt definition
+html/
+    build.gradle           <- Gradle build file for the html project, no touchy
+    src/                   <- Source folder for your html project, contains launcher and html definition
     webapp/                <- War template, on generation the contents are copied to war. Contains startup url index page and web.xml
 
 
