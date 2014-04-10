@@ -65,4 +65,11 @@ With your Linux host running Jenkins, go to http://JENKINS_ADDRESS:8080.
 You can now startup your Mac, open a browser and navigate to http://JENKINS_ADDRESS:8080/computer/Mac/. Click on the `Launch` button to download the Java Web start file, double click it to run the slave. Once it's running, you should see marked as being online in your Jenkins instance.
 
 ## Setting up the libgdx Mac Job
-* 
+The Mac job calls into the build-mac-ios.xml Ant script, then copies all the Mac and iOS native libraries to the Linux master node which will then continue building the rest of libgdx. For this we need to create a job, let's call it libgdx-mac.
+
+* Click `New Item`, enter `libgdx-mac` as the name, and select `Freestyle Project`, press `OK`
+* Click `Restrict where this project can be run` and enter the name of the Mac slave (`Mac`)
+* Under `Source Code Management`, select git and specify the libgdx repo URL `https://github.com/libgdx/libgdx.git`, leave the rest as is (branch master etc.)
+* Click `Add build step`, select `Invoke Ant`, set `Targets` to `-f build-mac-ios.xml -v`
+* Click `Add post-build action`, select `Copy files back to the job's workspace on the master node`, and for `Files to copy` sepcify `**/*.a,**/*.dylib`. This will copy all the Mac and iOS native libraries back to the master node, which will pack it with the native libraries for the other platforms
+
