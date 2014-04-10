@@ -84,5 +84,23 @@ The main job is executed on the Linux host, which builds all Java related things
 * Under `Build Triggers`, select `Poll SCM` and set `Schedule` to `@hourly`
 * Under `Build`, click `Add build step`, select `Trigger/call builds on other projects`, set `Projects to build` to `libgdx-mac`, check `Block until the triggered projects finish their builds`
 * Under `Build`, click `Add build step`, select `Invoke Ant`, set `Targets` to `-f build.xml -Dbuild-natives=true -Dversion=nightly -v`
+* (Optional) Under `Build`, click `Add build step`, select `Execute shell`, then write a shell script to copy the outputs of the libgdx build (nightly zip) to a webserver of your choice. See below for an example
 * Under `Build`, click `Add build step`, select `Invoke top-level Maven targets`, set `Goals` to `clean deploy`
 * Under `Post-build Actions`, click `Add post-build action`, select `E-mail Notification`, specify the recipients, use a space as a separator.
+
+### Shell Script to copy nightly build to webserver
+```shell
+rm -rf /srv/www/libgdx.badlogicgames.com/public_html/nightlies/*.zip
+rm -rf /srv/www/libgdx.badlogicgames.com/public_html/nightlies/*.zip.MD5
+rm -rf /srv/www/libgdx.badlogicgames.com/public_html/nightlies/dist
+rm -rf /srv/www/libgdx.badlogicgames.com/public_html/nightlies/docs
+rm -rf /src/www/libgdx.badlogicgames.com/public_html/nightlies/config
+cp $WORKSPACE/libgdx-nightly.zip /srv/www/libgdx.badlogicgames.com/public_html/nightlies/libgdx-nightly-`date +%Y%m%d`.zip
+cp $WORKSPACE/libgdx-nightly.zip.MD5 /srv/www/libgdx.badlogicgames.com/public_html/nightlies/libgdx-nightly-`date +%Y%m%d`.zip.MD5
+ln -s /srv/www/libgdx.badlogicgames.com/public_html/nightlies/libgdx-nightly-`date +%Y%m%d`.zip /srv/www/libgdx.badlogicgames.com/public_html/nightlies/libgdx-nightly-latest.zip
+ln -s /srv/www/libgdx.badlogicgames.com/public_html/nightlies/libgdx-nightly-`date +%Y%m%d`.zip.MD5 /srv/www/libgdx.badlogicgames.com/public_html/nightlies/libgdx-nightly-latest.zip.MD5
+cp -r  $WORKSPACE/dist/docs /srv/www/libgdx.badlogicgames.com/public_html/nightlies/docs
+cp -r  $WORKSPACE/dist/ /srv/www/libgdx.badlogicgames.com/public_html/nightlies/
+cp -r $WORKSPACE/extensions/gdx-setup-ui/config /srv/www/libgdx.badlogicgames.com/public_html/nightlies/
+rm -rf /srv/www/libgdx.badlogicgames.com/public_html/nightlies/.svn
+```
