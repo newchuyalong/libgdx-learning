@@ -17,6 +17,7 @@ The Linux host has to be a 64-bit installation. We use Ubuntu 13.10, newer relea
   * after installation, open `/etc/default/jenkins` and set `HTTP_HOST` and `AJP_HOST` to `0.0.0.0` to listen for connections on all net devices
   * setup users, enable global security using the Jenkins user database, letting any logged in user to anything
   * install the following plugins: Copy to Slave Plugin, Git Plugin, Mailer, Maven Project Plugin, Parameterized Trigger Plugin, Gradle Plugin
+  * Go to the "Configure System" site and set the Ant, Maven and OpenJDK installation locations
 * ccache
 
 The following software has to be installed manually
