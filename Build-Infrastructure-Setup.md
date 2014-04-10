@@ -15,6 +15,7 @@ The Linux host has to be a 64-bit installation. We use Ubuntu 13.10, newer relea
   * add `deb http://pkg.jenkins-ci.org/debian binary/` to `/etc/apt/sources.list`
   * `sudo apt-get update` followed by `sudo apt-get install jenkins`, this will install the latest Jenkins version and provide an update path in the future instead of using the Jenkins version from the Ubuntu repositories
   * after installation, open `/etc/default/jenkins` and set `HTTP_HOST` and `AJP_HOST` to `0.0.0.0` to listen for connections on all net devices
+  * setup users, enable global security using the Jenkins user database, letting any logged in user to anything
   * install the following plugins: Copy to Slave Plugin, Git Plugin, Mailer, Maven Project Plugin, Parameterized Trigger Plugin, Gradle Plugin
 * ccache
 
