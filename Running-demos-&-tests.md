@@ -1,4 +1,4 @@
-Libgdx comes with a ton of small [test examples](https://github.com/libgdx/libgdx/tree/master/tests/gdx-tests/src/com/badlogic/gdx/tests) and many [demo games](https://github.com/libgdx/libgdx/tree/master/demos). To run and easily analyze these, you need to work directly from the libgdx source.
+Libgdx comes with a ton of small [test examples](https://github.com/libgdx/libgdx/tree/master/tests/gdx-tests/src/com/badlogic/gdx/tests) and many [demo games](https://github.com/libgdx) (Note: As of 8-Apr-2014, the demos have been [moved out of the main repo](https://twitter.com/badlogicgames/status/453574748598177793)). To run and easily analyze these, you need to work directly from the libgdx source.
 
 Before you start, make sure you have all the [[Prerequisites]] installed. You will not need the C/C++ cross compilers to run the tests and demos or mess with libgdx's Java source code.
 
