@@ -20,7 +20,7 @@ The Linux host has to be a 64-bit installation. We use Ubuntu 13.10, newer relea
   * install the following plugins: Copy to Slave Plugin, Git Plugin, Mailer, Maven Project Plugin, Parameterized Trigger Plugin, Gradle Plugin
   * Go to the "Configure System" site and set the Ant and installation locations
 * gcc, g++, gcc-multilib, g++-multilib (linux compilers, 32- and 64-bit)
-* mesa-common-dev, libxxf86vm-dev, libxrandr-dev, xorg-dev (Linux OpenGL development, only needed for jglfw, 64-bit only)
+* mesa-common-dev, libxxf86vm-dev, libxrandr-dev, libx11-dev:i386 (Linux OpenGL development, only needed for jglfw, 64-bit only)
 * mingw-w64 (windows compilers, 32- and 64-bit)
 * ccache (optional, see ccache section below)
 
