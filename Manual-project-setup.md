@@ -81,12 +81,12 @@ import com.badlogic.gdx.backends.lwjgl.LwjglApplication;
 
 public class DesktopGame {
 	public static void main (String[] args) {
-		new LwjglApplication(new Game(), "Game", 480, 320, false);
+		new LwjglApplication(new Game(), "Game", 480, 320);
 	}
 }
 ```
 
-This code creates an LwjglApplication, gives it an instance of your game, a title, and size. The "false" means we aren't using OpenGL ES 2.0 (we will use 1.0/1.1).
+This code creates an LwjglApplication, gives it an instance of your game, a title, and size.
 
 To run the game on the desktop, right click the project -> Debug As -> Java Application. You should get a black window titled "Game".
 
@@ -105,7 +105,7 @@ public class AndroidGame extends AndroidApplication {
 }
 ```
 
-This code is an Android activity that calls initialize, passing an instance of your game. Again, the "false" means we aren't using OpenGL ES 2.0.
+This code is an Android activity that calls initialize, passing an instance of your game.
 
 To run the game on Android, right click the project -> Debug As -> Android Application. The screen will turn black, since the game doesn't yet do anything. If any errors occur running the application, they show up in the Logcat view, which can be seen by clicking Window -> Show View -> Other -> Android -> Logcat.
 
