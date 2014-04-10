@@ -55,7 +55,7 @@ Once the Mac is setup, you can move on to setting up the Jobs on Jenkins
 ## Setting up the libgdx Jenkins jobs
 With your Linux host running Jenkins, go to http://JENKINS_ADDRESS:8080.
 
-### Setting up the Mac Slave
+### Setting up the Jenkins Mac Slave
 * On the landing page, click on `Manage Jenkins`, then go to `Manage Nodes`. 
 * Click on `New Node`, give it the name `Mac`, select `Dumb Slave` and press `OK`.
 * Set the `Remote FS root` to a folder of your choice, e.g. `/Users/badlogic/jenkins`
@@ -64,12 +64,25 @@ With your Linux host running Jenkins, go to http://JENKINS_ADDRESS:8080.
 
 You can now startup your Mac, open a browser and navigate to http://JENKINS_ADDRESS:8080/computer/Mac/. Click on the `Launch` button to download the Java Web start file, double click it to run the slave. Once it's running, you should see marked as being online in your Jenkins instance.
 
-## Setting up the libgdx Mac Job
+### Setting up the Jenkins libgdx Mac Job
 The Mac job calls into the build-mac-ios.xml Ant script, then copies all the Mac and iOS native libraries to the Linux master node which will then continue building the rest of libgdx. For this we need to create a job, let's call it libgdx-mac.
 
 * Click `New Item`, enter `libgdx-mac` as the name, and select `Freestyle Project`, press `OK`
+* Click `Discard Old Builds`, set max # builds to keep to 1
 * Click `Restrict where this project can be run` and enter the name of the Mac slave (`Mac`)
 * Under `Source Code Management`, select git and specify the libgdx repo URL `https://github.com/libgdx/libgdx.git`, leave the rest as is (branch master etc.)
-* Click `Add build step`, select `Invoke Ant`, set `Targets` to `-f build-mac-ios.xml -v`
-* Click `Add post-build action`, select `Copy files back to the job's workspace on the master node`, and for `Files to copy` sepcify `**/*.a,**/*.dylib`. This will copy all the Mac and iOS native libraries back to the master node, which will pack it with the native libraries for the other platforms
+* Under `Build`, click `Add build step`, select `Invoke Ant`, set `Targets` to `-f build-mac-ios.xml -v`
+* Under `Post-build Actions`, click `Add post-build action`, select `Copy files back to the job's workspace on the master node`, and for `Files to copy` sepcify `**/*.a,**/*.dylib`. This will copy all the Mac and iOS native libraries back to the master node, which will pack it with the native libraries for the other platforms
+* Under `Post-build Actions`, click `Add post-build action`, select `E-mail Notification`, specify the recipients, use a space as a separator.
 
+### Setting up the Jenkins libgdx Job
+The main job is executed on the Linux host, which builds all Java related things, all Windows, Linux and Android native files, invokes the Mac job and copies the Mac and iOS natives over, then finally packages it all up neatly and distributes the nightly build to the website and pushes the Maven artifacts to SonaType. Here's how that job's setup
+
+* Click `New Item`, enter `libgdx` as the name, and select `Freestyle Project`, press `OK`
+* Click `Discard Old Builds`, set max # builds to keep to 1
+* Under `Source Code Management`, select git and specify the libgdx repo URL `https://github.com/libgdx/libgdx.git`, leave the rest as is (branch master etc.)
+* Under `Build Triggers`, select `Poll SCM` and set `Schedule` to `@hourly`
+* Under `Build`, click `Add build step`, select `Trigger/call builds on other projects`, set `Projects to build` to `libgdx-mac`, check `Block until the triggered projects finish their builds`
+* Under `Build`, click `Add build step`, select `Invoke Ant`, set `Targets` to `-f build.xml -Dbuild-natives=true -Dversion=nightly -v`
+* Under `Build`, click `Add build step`, select `Invoke top-level Maven targets`, set `Goals` to `clean deploy`
+* Under `Post-build Actions`, click `Add post-build action`, select `E-mail Notification`, specify the recipients, use a space as a separator.
