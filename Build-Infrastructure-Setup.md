@@ -40,3 +40,29 @@ The following software has to be installed manually
   * Add `export ANDROID_NDK=/opt/android-ndk` to `/etc/profile`
   * Add `export NDK_HOME=/opt/android-ndk` to `/etc/profile`
   * Make sure the Jenkins user can execute ndk-build
+
+## Setting up the Mac OS X host
+We need a Mac to build natives for iOS and Mac OS X. This host will then be used as a Jenkins slave to build parts of the libgdx project. This dependency is expressed in the Jenkins Jobs responsible for building libgdx, see below. The Mac needs to have the following things installed:
+
+* [JDK 8+](http://www.oracle.com/technetwork/java/javase/downloads/index-jsp-138363.html)
+* XCode, install via the Mac App Store
+  * Make sure the command line utilities are also installed, search Google for how to do this with the latest XCode.
+  * you don't need a developers license to compile for a device, you just can't deploy to one
+* Ant 1.9.3, install via [Homebrew](http://brew.sh/)
+
+Once the Mac is setup, you can move on to setting up the Jobs on Jenkins
+
+## Setting up the libgdx Jenkins jobs
+With your Linux host running Jenkins, go to http://JENKINS_ADDRESS:8080.
+
+### Setting up the Mac Slave
+* On the landing page, click on `Manage Jenkins`, then go to `Manage Nodes`. 
+* Click on `New Node`, give it the name `Mac`, select `Dumb Slave` and press `OK`.
+* Set the `Remote FS root` to a folder of your choice, e.g. `/Users/badlogic/jenkins`
+* Set `Usage` to `Leave this machine for tied jobs only`
+* Set `Launch method` to `Launch Slave agents via Java Web Start`
+
+You can now startup your Mac, open a browser and navigate to http://JENKINS_ADDRESS:8080/computer/Mac/. Click on the `Launch` button to download the Java Web start file, double click it to run the slave. Once it's running, you should see marked as being online in your Jenkins instance.
+
+## Setting up the libgdx Mac Job
+* 
