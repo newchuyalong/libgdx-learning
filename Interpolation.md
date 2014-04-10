@@ -17,4 +17,4 @@ These are the basic built-in types of interpolation:
 
 Most types offer three varieties which bias towards one or the other or both ends of the curve creating an easing in or out of the animation.
 
-See InterpolationTest for a visual display of each interpolation.
+See [InterpolationTest](https://github.com/libgdx/libgdx/blob/master/tests/gdx-tests/src/com/badlogic/gdx/tests/InterpolationTest.java) for a visual display of each interpolation.
