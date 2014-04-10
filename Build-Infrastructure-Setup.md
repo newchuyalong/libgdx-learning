@@ -7,9 +7,10 @@ The following sections document how to setup this build infrastructure.
 ## Setting up the Linux host
 The Linux host has to be a 64-bit installation. We use Ubuntu 13.10, newer releases or other Linux distributions should work just as well. The following Debian packages can be installed from the official repositories
 
-* openjdk-7-jdk
+* unzip
 * daemon
 * git
+* openjdk-7-jdk
 * jenkins (latest)
   * `wget -q -O - http://pkg.jenkins-ci.org/debian/jenkins-ci.org.key | sudo apt-key add -`
   * add `deb http://pkg.jenkins-ci.org/debian binary/` to `/etc/apt/sources.list`
@@ -18,6 +19,7 @@ The Linux host has to be a 64-bit installation. We use Ubuntu 13.10, newer relea
   * setup users, enable global security using the Jenkins user database, letting any logged in user to anything
   * install the following plugins: Copy to Slave Plugin, Git Plugin, Mailer, Maven Project Plugin, Parameterized Trigger Plugin, Gradle Plugin
   * Go to the "Configure System" site and set the Ant and installation locations
+* gcc, g++, gcc-multilib, g++-multilib
 * ccache
 
 The following software has to be installed manually
@@ -25,6 +27,13 @@ The following software has to be installed manually
 * [Ant 1.9.3+](http://ant.apache.org/) (fixes a bug that's vital for build time reduction!)
   * Download the latest binary distribution, unzip it to /opt/ant
   * Add `export PATH=$PATH:/opt/ant/bin` to `/etc/profile`
-* [Android SDK](https://developer.android.com/tools/sdk/ndk/index.html)
+  * Make sure the Jenkins user can execute Ant
+* [Maven 3+](http://maven.apache.org/download.cgi)
+  * Download the latest binary distribution, unzip it to /opt/maven
+  * Add `export PATH=$PATH:/opt/mave/bin` to `/etc/profile`
+  * Make sure the Jenkins user can execute Maven
+  * modify /opt/maven/conf/settings.xml to include the credentials for SonaType snapshot deployment (ask Mario)
+* [Android NDK](https://developer.android.com/tools/sdk/ndk/index.html)
   * Download the latest tar.bz2, unpack to /opt/android-ndk
   * Add `export ANDROID_NDK=/opt/android-ndk` to `/etc/profile`
+  * Make sure the Jenkins user can execute ndk-build
