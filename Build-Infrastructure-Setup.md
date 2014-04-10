@@ -22,7 +22,7 @@ The Linux host has to be a 64-bit installation. We use Ubuntu 13.10, newer relea
 * gcc, g++, gcc-multilib, g++-multilib (linux compilers, 32- and 64-bit)
 * mesa-common-dev, libxxf86vm-dev, libxrandr-dev (Linux OpenGL development, only needed for jglfw, 64-bit only)
 * mingw-w64 (windows compilers, 32- and 64-bit)
-* ccache
+* ccache (optional, see ccache section below)
 
 The following software has to be installed manually
 
@@ -49,6 +49,7 @@ We need a Mac to build natives for iOS and Mac OS X. This host will then be used
   * Make sure the command line utilities are also installed, search Google for how to do this with the latest XCode.
   * you don't need a developers license to compile for a device, you just can't deploy to one
 * Ant 1.9.3, install via [Homebrew](http://brew.sh/)
+* (optional) ccache via Homebrew
 
 Once the Mac is setup, you can move on to setting up the Jobs on Jenkins
 
@@ -104,3 +105,33 @@ cp -r  $WORKSPACE/dist/ /srv/www/libgdx.badlogicgames.com/public_html/nightlies/
 cp -r $WORKSPACE/extensions/gdx-setup-ui/config /srv/www/libgdx.badlogicgames.com/public_html/nightlies/
 rm -rf /srv/www/libgdx.badlogicgames.com/public_html/nightlies/.svn
 ```
+
+## CCACHE
+The native builds can take considerable time, as such we'd like to only build what changed. Our C/C++ build system is based on a custom set of Ant scripts which do not support incremental builds (but are super easy to setup, see [jnigen](https://github.com/libgdx/libgdx/wiki/jnigen). And even (C)Make builds don't necessarily help you with incremental builds. Also, you want to clear your build if you publish snapshots, so any incremental build you get from a proper C/C++ build tool doesn't really help.
+
+To solve this issue, we use [ccache](http://ccache.samba.org/) which caches compilation results (object files). Ccache acts as a proxy to C/C++, hashes any sourcecode file you push through it (epxanding preprocessor macros and includes), checking if it has a binary fitting that hash in it's cache. If it does, it can directly return the object file instead of having to invoke GCC. Which is nice, as it gives us sort of incremental builds even if we clean out any previous build results!
+
+Setting up ccache for cross-compilation is pretty simple.
+
+### Linux Host ccache setup
+* Install ccache via `apt-get install ccache`
+* Create a directory `/opt/ccache` owned by the jenkins user
+* Add a line at the bottom of `/etc/profile` like this: `export PATH=/opt/ccache:$PATH`
+* Add a line at the bottom of `/etc/profile` like this: `export NDK_CCACHE="ccache"`, this will make the Android NDK use ccache!
+* For each compiler executable (gcc, g++, i686-w64-mingw32-gcc, i686-w64-mingw32-g++, x86_64-w64-mingw32-gcc, x86_64-w64-mingw32-g++), create a script that looks analogous to this:
+```
+ccache /usr/bin/x86_64-w64-mingw32-gcc "$@"
+```
+
+And that's it. Through this, we proxy all compiler calls through ccache which will speed up our build considerably.
+
+### Mac Host ccache setup
+* Install ccache through Homebrew
+* Create a directory `/opt/ccache` owned by the jenkins user
+* Add a line at the bottom of `/etc/profile` like this: `export PATH=/opt/ccache:$PATH`
+* For each compiler executable (gcc, g++), create a script that looks analogous to this:
+```
+ccache /usr/bin/g++ "$@"
+```
+
+Through this, we proxy all compiler calls for Mac OS X native compilation through ccache, speeding up our build. I have yet to figure out a way to make this work with our iOS native builds.
