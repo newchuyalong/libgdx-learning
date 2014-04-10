@@ -20,7 +20,7 @@ The Linux host has to be a 64-bit installation. We use Ubuntu 13.10, newer relea
   * install the following plugins: Copy to Slave Plugin, Git Plugin, Mailer, Maven Project Plugin, Parameterized Trigger Plugin, Gradle Plugin
   * Go to the "Configure System" site and set the Ant and installation locations
 * gcc, g++, gcc-multilib, g++-multilib (linux compilers, 32- and 64-bit)
-* mesa-common-dev, libxxf86vm-dev, libxrandr-dev (Linux OpenGL headers)
+* mesa-common-dev, libxxf86vm-dev, libxrandr-dev (Linux OpenGL development, only needed for jglfw, 64-bit only)
 * mingw-w64 (windows compilers, 32- and 64-bit)
 * ccache
 
@@ -38,4 +38,5 @@ The following software has to be installed manually
 * [Android NDK](https://developer.android.com/tools/sdk/ndk/index.html)
   * Download the latest tar.bz2, unpack to /opt/android-ndk
   * Add `export ANDROID_NDK=/opt/android-ndk` to `/etc/profile`
+  * Add `export NDK_HOME=/opt/android-ndk` to `/etc/profile`
   * Make sure the Jenkins user can execute ndk-build
