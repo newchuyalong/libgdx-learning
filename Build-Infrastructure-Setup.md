@@ -19,7 +19,9 @@ The Linux host has to be a 64-bit installation. We use Ubuntu 13.10, newer relea
   * setup users, enable global security using the Jenkins user database, letting any logged in user to anything
   * install the following plugins: Copy to Slave Plugin, Git Plugin, Mailer, Maven Project Plugin, Parameterized Trigger Plugin, Gradle Plugin
   * Go to the "Configure System" site and set the Ant and installation locations
-* gcc, g++, gcc-multilib, g++-multilib
+* gcc, g++, gcc-multilib, g++-multilib (linux compilers, 32- and 64-bit)
+* mesa-common-dev, libxxf86vm-dev (Linux OpenGL headers)
+* mingw-w64 (windows compilers, 32- and 64-bit)
 * ccache
 
 The following software has to be installed manually
