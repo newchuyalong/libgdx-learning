@@ -73,7 +73,7 @@ The Mac job calls into the build-mac-ios.xml Ant script, then copies all the Mac
 * Click `Restrict where this project can be run` and enter the name of the Mac slave (`Mac`)
 * Under `Source Code Management`, select git and specify the libgdx repo URL `https://github.com/libgdx/libgdx.git`, leave the rest as is (branch master etc.)
 * Under `Build`, click `Add build step`, select `Invoke Ant`, set `Targets` to `-f build-mac-ios.xml -v`
-* Under `Post-build Actions`, click `Add post-build action`, select `Copy files back to the job's workspace on the master node`, and for `Files to copy` sepcify `**/*.a,**/*.dylib`. This will copy all the Mac and iOS native libraries back to the master node, which will pack it with the native libraries for the other platforms
+* Under `Post-build Actions`, click `Add post-build action`, select `Copy files back to the job's workspace on the master node`, and for `Files to copy` sepcify `**/*.a,**/*.dylib`. Click on `Advanced`, then check `Override destination folder` and set it to `/var/lib/jenkins/workspace/libgdx` or wherever your libgdx workspace lives on the Linux host. This will copy all the Mac and iOS native libraries back to the master node, which will pack it with the native libraries for the other platforms
 * Under `Post-build Actions`, click `Add post-build action`, select `E-mail Notification`, specify the recipients, use a space as a separator.
 
 ### Setting up the Jenkins libgdx Job
