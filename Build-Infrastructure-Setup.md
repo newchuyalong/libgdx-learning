@@ -94,7 +94,7 @@ rm -rf /srv/www/libgdx.badlogicgames.com/public_html/nightlies/*.zip
 rm -rf /srv/www/libgdx.badlogicgames.com/public_html/nightlies/*.zip.MD5
 rm -rf /srv/www/libgdx.badlogicgames.com/public_html/nightlies/dist
 rm -rf /srv/www/libgdx.badlogicgames.com/public_html/nightlies/docs
-rm -rf /src/www/libgdx.badlogicgames.com/public_html/nightlies/config
+rm -rf /srv/www/libgdx.badlogicgames.com/public_html/nightlies/config
 cp $WORKSPACE/libgdx-nightly.zip /srv/www/libgdx.badlogicgames.com/public_html/nightlies/libgdx-nightly-`date +%Y%m%d`.zip
 cp $WORKSPACE/libgdx-nightly.zip.MD5 /srv/www/libgdx.badlogicgames.com/public_html/nightlies/libgdx-nightly-`date +%Y%m%d`.zip.MD5
 ln -s /srv/www/libgdx.badlogicgames.com/public_html/nightlies/libgdx-nightly-`date +%Y%m%d`.zip /srv/www/libgdx.badlogicgames.com/public_html/nightlies/libgdx-nightly-latest.zip
