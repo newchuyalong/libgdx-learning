@@ -38,7 +38,7 @@ public class Example {
 }
 ```
 
-The `@off` comment turns off the Eclipse source formatter for the rest of the file. This prevents it from ruining the formatting of our native code in the comments.
+The `@off` comment turns off the Eclipse source formatter for the rest of the file. This prevents it from ruining the formatting of our native code in the comments. This feature has to be turned "on" in Eclipse preferences: Java > Code Style > Formatter. Click on "Edit" button, "Off/On Tags", check off "Enable Off/On tags".
 
 Next, a native method is defined. Normally for JNI you would need to run [javah](http://docs.oracle.com/javase/7/docs/technotes/tools/windows/javah.html) to generate stub source files which you would edit and need to keep up to date with the Java source. With jnigen, you just use a multi-line comment immediately after the native method which contains your native code. The parameters for the native method are available to your native code.
 
