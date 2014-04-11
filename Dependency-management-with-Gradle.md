@@ -17,9 +17,9 @@ Dependency management with Gradle is easy to understand, and has many different 
 * [Declare your dependencies] (http://www.gradle.org/docs/current/userguide/dependency_management.html#sec:how_to_declare_your_dependencies)
 
 ### Guide to build.gradle
-Gradle projects are managed by build.gradle files in their root directory. If you have used the gdx-setup.jar to build your libgdx project you will notice the structure: [Structure Example](https://github.com/libgdx/libgdx/wiki/Project-Setup-Gradle#project-layout)
+Gradle projects are managed by `build.gradle` files in their root directory. If you have used the gdx-setup.jar to build your libgdx project you will notice the structure: [Structure Example](https://github.com/libgdx/libgdx/wiki/Project-Setup-Gradle#project-layout)
 
-The root directory, and each sub directory contains a build.gradle file, for clarity we will define the dependencies in the root directory's build.gradle file. (Note it can be done in each of the build.gradle scripts in the sub directories, it is just cleaner and easier to follow when it is handled all in one place)
+The root directory, and each sub directory contains a `build.gradle` file, for clarity we will define the dependencies in the root directory's `build.gradle` file. (Note it can be done in each of the `build.gradle` scripts in the sub directories, it is just cleaner and easier to follow when it is handled all in one place)
 
 Here is a small section of the _default_ buildscript that is generated from the setup:
 
@@ -101,18 +101,18 @@ project(":android") {
 ```
 
 ### Libgdx Dependencies
-Dependencies are configured in the root build.gradle file as shown in the build.gradle guide above.
+Dependencies are configured in the root `build.gradle` file as shown in the build.gradle guide above.
 In order to add an external dependency to a project, you must declare the dependency correctly under the correct part of the build.script.
 
-(some) Libgdx extensions are mavenized and pushed to the maven repo, which means we can very easily pull them into our projects from the build.gradle file.  You can see in the list [below](#libgdx-extensions) of the format that these depdencies take. 
+(Some) Libgdx extensions are mavenized and pushed to the maven repo, which means we can very easily pull them into our projects from the `build.gradle` file.  You can see in the list [below](#libgdx-extensions) of the format that these depdencies take. 
 If you are familiar with maven, notice the format:
 ```groovy
 compile '<groupId>:<artifactId>:<version>:<classifier>'
 ```
 
-Lets take a quick example to see how this works with the root build.gradle file.
+Let's take a quick example to see how this works with the root `build.gradle` file.
 
-[Here](#freetypefont-gradle) we see the dependencies for the FreeType Extension, say we want our Android project to have this dependency.  We locate our **project(":android")** stub in the root directory's build.gradle:
+[Here](#freetypefont-gradle) we see the dependencies for the FreeType Extension, say we want our Android project to have this dependency.  We locate our `project(":android")` stub in the root directory's `build.gradle`:
 ```groovy
 project(":android") {
     apply plugin: "android"
@@ -160,7 +160,7 @@ project(":android") {
 And we are done, our android project now has the freetype dependency. Easy eh.
 
 #### Libgdx Extensions
-Mavenized libgdx extensions ready to import from the build.gradle script include:
+Mavenized libgdx extensions ready to import from the `build.gradle` script include:
 * [Bullet] (#bullet-gradle)
 * [FreeTypeFont] (#freetypefont-gradle)
 * [Controllers](#controllers-gradle)
@@ -264,7 +264,7 @@ Not compatible!
 #### Adding external repositories
 Gradle finds files defined as dependencies by looking through all the repositories defined in the buildscript.  Gradle understands several repository formats, which include Maven and Ivy. 
  
-Under the allprojects stub, you can see how repositories are defined. Here is an example:
+Under the `allprojects` stub, you can see how repositories are defined. Here is an example:
 ```groovy
 allprojects {    
     repositories {
@@ -300,7 +300,7 @@ dependencies {
 ### File Dependencies
 If you have a dependency that is not mavenized, you can still depend on them!
 
-To do this, in your project stub in the root build.gradle file, locate the dependencies { } section as always, and add the following:
+To do this, in your project stub in the root `build.gradle` file, locate the dependencies { } section as always, and add the following:
 
 ```groovy
 dependencies {
@@ -337,7 +337,7 @@ It is worth nothing that these file dependencies are not included in the publish
 ### Gwt Inheritance
 Gwt is special, so in order to let the GWT compiler know what modules the project depends on, and _inherits_ from, you need to let it know.
 
-This is done in the gwt.xml files in the gwt sub directory. You will need to make the changes both to the GdxDefinition.gwt.xml and also the GdxDefinitionSuperdev.gwt.xml.
+This is done in the `gwt.xml` files in the gwt sub directory. You will need to make the changes both to the `GdxDefinition.gwt.xml` and also the `GdxDefinitionSuperdev.gwt.xml`.
 
 **The _default_ gwt.xml:**
 ```xml
@@ -360,7 +360,7 @@ We depend on the libgdx gwt backend, as well as the core project, so we have the
 <module rename-to="html">
 	<inherits name='com.badlogic.gdx.backends.gdx_backends_gwt' />
 	<inherits name='com.badlogic.mygame.MyGame' />
-	//Lets inherit tween
+	//Let's inherit tween
 	<inherits name='aurelienribon.tweenengine'/>
 	<entry-point class='com.badlogic.mygame.client.GwtLauncher' />
 	
