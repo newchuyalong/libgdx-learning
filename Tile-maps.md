@@ -7,7 +7,7 @@ The set of base classes is meant to be generic so we can support not only tiled 
 
 A map is a set of layers. A layer contains a set of objects. Maps, layers and objects have properties, that depend on the format they've been loaded from. For some formats there are specialized map, layer and object implementations, more on that later. The class hierarchy of the base classes looks as follows:
 
-[[images/tile-maps1.png]]
+![](http://siondream.com/blog/wp-content/uploads/2013/03/maps-api.png)
 
 ### Properties ###
 
