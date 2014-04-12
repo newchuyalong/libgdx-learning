@@ -29,7 +29,22 @@ public class HelloWorldAndroid extends AndroidApplication {
 }
 ```
 
-They're pretty similar. They both create a `new HelloWorld()`, and pass that into something that sets up the application. On the desktop that's a LwjglApplication, on Android that's the `initialize()` method. Then the HelloWorld class does all the work of the application.
+HelloWorldIOS:
+
+```java
+public class HelloWorldIOS extends Delegate {
+	@Override
+	protected IOSApplication createApplication() {
+		final IOSApplicationConfiguration config = new IOSApplicationConfiguration();
+		config.orientationLandscape = false;
+		config.orientationPortrait = true;
+
+		return new IOSApplication(new HelloWorld(), config);
+	}
+}
+```
+
+They're pretty similar. They all create a `new HelloWorld()`, and pass that into something that sets up the application. On the desktop that's a LwjglApplication, on Android that's the `initialize()` method and on IOS it's `IOSApplication()`. Then the HelloWorld class does all the work of the application.
 
 Let's take a closer look at the `initialize()` method. There are two forms, and one of them calls the other. If you follow that code through, here's the stuff that sets up an Android application:
 
@@ -583,5 +598,200 @@ public class HelloWorld implements ApplicationListener {
 
 	}
 	
+}
+```
+
+# iOS Setup (RoboVM) #
+For admob to work on IOS it's best to make sure you are doing the following things:
+
+* Make sure you project is using the latest libgdx version
+
+* Make sure you are on the latest RoboVM
+
+* Make sure you are using the latest admob bindings found here [robovm-ios-bindings - admob](https://github.com/BlueRiverInteractive/robovm-ios-bindings/tree/master/admob)
+
+* Admob needs a separate ad unit for iOS, so make sure you create a new app the key will be different than the one used for Android. 
+
+
+***
+
+1. Once you have the robovm admob bindings go ahead and import that into your ide.
+
+2. At this point you should have your xxxx-robovm project and also the imported admob robovm bindings project.
+
+3. Copy the libadmob.a file from the robovm bindings project into your libs/ios directory
+
+4. Open up your robovm.xml file in your xxxx-robovm project and add the lib like so:
+
+```xml
+	<libs>
+		<lib>libs/ios/libgdx.a</lib>
+		<lib>libs/ios/libObjectAL.a</lib>
+		<lib>libs/ios/libadmob.a</lib>
+	</libs>
+```
+
+5. Also in the robovm.xml add in the AdSupport weakFramework, your complete weakFrameworks should look similar to the following:
+
+```xml
+	<weakFrameworks>
+	  <framework>AdSupport</framework>
+	  <framework>StoreKit</framework>
+	</weakFrameworks>
+```
+
+6. Now you need to add a project reference to the robovm admob bindings project.  (This will vary depending on what IDE you are using)
+
+
+7. Now with the configuration complete please reference the code below to see how the ads can be configured.  Currently this example should place the ads at the top of the screen.
+
+
+
+```java
+package com.badlogic.gdx;
+
+import org.robovm.apple.coregraphics.CGRect;
+import org.robovm.apple.coregraphics.CGSize;
+import org.robovm.apple.foundation.NSArray;
+import org.robovm.apple.foundation.NSAutoreleasePool;
+import org.robovm.apple.foundation.NSObject;
+import org.robovm.apple.foundation.NSString;
+import org.robovm.apple.uikit.UIApplication;
+import org.robovm.apple.uikit.UIScreen;
+import org.robovm.bindings.admob.GADAdSizeManager;
+import org.robovm.bindings.admob.GADBannerView;
+import org.robovm.bindings.admob.GADBannerViewDelegateAdapter;
+import org.robovm.bindings.admob.GADRequest;
+import org.robovm.bindings.admob.GADRequestError;
+
+import com.badlogic.gdx.Application;
+import com.badlogic.gdx.backends.iosrobovm.IOSApplication;
+import com.badlogic.gdx.backends.iosrobovm.IOSApplication.Delegate;
+import com.badlogic.gdx.backends.iosrobovm.IOSApplicationConfiguration;
+import com.badlogic.gdx.utils.Logger;
+
+public class HelloWorldIOS extends Delegate implements IActivityRequestHandler {
+	private static final Logger log = new Logger(HelloWorldIOS.class.getName(), Application.LOG_DEBUG);
+	private static final boolean USE_TEST_DEVICES = true;
+	private GADBannerView adview;
+	private boolean adsInitialized = false;
+	private IOSApplication iosApplication;
+
+	@Override
+	protected IOSApplication createApplication() {
+		final IOSApplicationConfiguration config = new IOSApplicationConfiguration();
+		config.orientationLandscape = false;
+		config.orientationPortrait = true;
+
+		iosApplication = new IOSApplication(new HelloWorld(this), config);
+		return iosApplication;
+	}
+
+	public static void main(String[] argv) {
+		NSAutoreleasePool pool = new NSAutoreleasePool();
+		UIApplication.main(argv, null, HelloWorldIOS.class);
+		pool.close();
+	}
+
+	@Override
+	public void hide() {
+		initializeAds();
+
+		final CGSize screenSize = UIScreen.getMainScreen().getBounds().size();
+		double screenWidth = screenSize.width();
+
+		final CGSize adSize = adview.getBounds().size();
+		double adWidth = adSize.width();
+		double adHeight = adSize.height();
+
+		log.debug(String.format("Hidding ad. size[%s, %s]", adWidth, adHeight));
+
+		float bannerWidth = (float) screenWidth;
+		float bannerHeight = (float) (bannerWidth / adWidth * adHeight);
+
+		adview.setFrame(new CGRect(0, -bannerHeight, bannerWidth, bannerHeight));
+	}
+
+	@Override
+	public void show() {
+		initializeAds();
+
+		final CGSize screenSize = UIScreen.getMainScreen().getBounds().size();
+		double screenWidth = screenSize.width();
+
+		final CGSize adSize = adview.getBounds().size();
+		double adWidth = adSize.width();
+		double adHeight = adSize.height();
+
+		log.debug(String.format("Showing ad. size[%s, %s]", adWidth, adHeight));
+
+		float bannerWidth = (float) screenWidth;
+		float bannerHeight = (float) (bannerWidth / adWidth * adHeight);
+
+		adview.setFrame(new CGRect((screenWidth / 2) - adWidth / 2, 0, bannerWidth, bannerHeight));
+	}
+
+	public void initializeAds() {
+		if (!adsInitialized) {
+			log.debug("Initalizing ads...");
+
+			adsInitialized = true;
+
+			adview = new GADBannerView(GADAdSizeManager.smartBannerPortrait());
+			adview.setAdUnitID("xxxxxxxx"); //put your secret key here
+			adview.setRootViewController(iosApplication.getUIViewController());
+			iosApplication.getUIViewController().getView().addSubview(adview);
+
+			final GADRequest request = GADRequest.request();
+			if (USE_TEST_DEVICES) {
+				final NSArray<?> testDevices = new NSArray<NSObject>(
+						new NSString(GADRequest.GAD_SIMULATOR_ID));
+				request.setTestDevices(testDevices);
+				log.debug("Test devices: " + request.getTestDevices());
+			}
+
+			adview.setDelegate(new GADBannerViewDelegateAdapter() {
+				@Override
+				public void didReceiveAd(GADBannerView view) {
+					super.didReceiveAd(view);
+					log.debug("didReceiveAd");
+				}
+
+				@Override
+				public void didFailToReceiveAd(GADBannerView view,
+						GADRequestError error) {
+					super.didFailToReceiveAd(view, error);
+					log.debug("didFailToReceiveAd:" + error);
+				}
+			});
+
+			adview.loadRequest(request);
+
+			log.debug("Initalizing ads complete.");
+		}
+	}
+
+    @Override
+    public void showAds(boolean show) {
+    	initializeAds();
+
+       	final CGSize screenSize = UIScreen.getMainScreen().getBounds().size();
+		double screenWidth = screenSize.width();
+
+		final CGSize adSize = adview.getBounds().size();
+		double adWidth = adSize.width();
+		double adHeight = adSize.height();
+
+		log.debug(String.format("Hidding ad. size[%s, %s]", adWidth, adHeight));
+
+		float bannerWidth = (float) screenWidth;
+		float bannerHeight = (float) (bannerWidth / adWidth * adHeight);
+
+		if(show) {
+			adview.setFrame(new CGRect((screenWidth / 2) - adWidth / 2, 0, bannerWidth, bannerHeight));
+		} else {
+			adview.setFrame(new CGRect(0, -bannerHeight, bannerWidth, bannerHeight));
+		}
+    }
 }
 ```
