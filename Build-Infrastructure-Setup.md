@@ -36,10 +36,14 @@ The following software has to be installed manually
   * Make sure the Jenkins user can execute Maven
   * modify /opt/maven/conf/settings.xml to include the credentials for SonaType snapshot deployment (ask Mario)
 * [Android NDK](https://developer.android.com/tools/sdk/ndk/index.html)
-  * Download the latest tar.bz2, unpack to /opt/android-ndk
+  * Download the latest tar.bz2, unpack to `/opt/android-ndk`
   * Add `export ANDROID_NDK=/opt/android-ndk` to `/etc/profile`
   * Add `export NDK_HOME=/opt/android-ndk` to `/etc/profile`
   * Make sure the Jenkins user can execute ndk-build
+* [Android SDK]
+  * Download the latest .tgz, unpack to /opt/android-sdk
+  * Add `export ANDROID_HOME=/opt/android-sdk` to `/etc/profile`
+  * In `/opt/android-sdk/tools`, run `./android update sdk --no-ui` to install all platforms, build tools etc.
 
 ## Setting up the Mac OS X host
 We need a Mac to build natives for iOS and Mac OS X. This host will then be used as a Jenkins slave to build parts of the libgdx project. This dependency is expressed in the Jenkins Jobs responsible for building libgdx, see below. The Mac needs to have the following things installed:
