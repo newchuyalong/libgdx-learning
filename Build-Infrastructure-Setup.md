@@ -23,6 +23,7 @@ The Linux host has to be a 64-bit installation. We use Ubuntu 13.10, newer relea
 * mesa-common-dev, libxxf86vm-dev, libxrandr-dev, libx11-dev:i386 (Linux OpenGL development, only needed for jglfw, 64-bit only)
 * mingw-w64 (windows compilers, 32- and 64-bit)
 * ccache (optional, see ccache section below)
+* lib32z1 (cause Android SDK tools require it, aapt to be specific...)
 
 The following software has to be installed manually
 
