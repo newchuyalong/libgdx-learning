@@ -46,7 +46,7 @@ Accelerometer readings can only be accessed via polling in libgdx:
 
 Platforms or devices that don't have accelerometer support will return zero.
 
-See the [Super Jumper](https://github.com/libgdx/libgdx/tree/master/demos/superjumper) demo game for a demonstration on the usage of the accelerometer.
+See the [Super Jumper](https://github.com/libgdx/libgdx-demo-superjumper) demo game for a demonstration on the usage of the accelerometer.
 
 ## Rotation Matrix ##
 If you want to use the orientation of your device for rendering, it might be beneficial to work with the rotation matrix. See [this link](http://developer.android.com/reference/android/hardware/SensorManager.html#getRotationMatrix(float[], float[], float[], float[]\)) for an explanation. You can plug the resulting matrix directly into your OpenGL rendering:
