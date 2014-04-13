@@ -8,6 +8,7 @@ The following sections document how to setup this build infrastructure.
 The Linux host has to be a 64-bit installation. We use Ubuntu 13.10, newer releases or other Linux distributions should work just as well. The following Debian packages can be installed from the official repositories
 
 * unzip
+* zip
 * daemon
 * git
 * openjdk-7-jdk
