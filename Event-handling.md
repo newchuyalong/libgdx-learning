@@ -87,7 +87,7 @@ Gdx.input.setInputProcessor(new InputAdapter () {
       // your touch up code here
       return true; // return true to indicate the event was handled
    }
-}
+});
 ```
 
 ## InputMultiplexer ##
