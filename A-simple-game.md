@@ -1,4 +1,4 @@
-Before diving into the APIs provided by libgdx, let's create a very simple "game" that touches each module a little bit to get a feeling for things. We'll introduce a few concepts without going into to much detail.
+Before diving into the APIs provided by libgdx, let's create a very simple "game" that touches each module a little bit to get a feeling for things. We'll introduce a few concepts without going into too much detail.
 
 We'll look at:
 
