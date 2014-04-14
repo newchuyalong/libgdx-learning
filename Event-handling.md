@@ -72,6 +72,24 @@ Gdx.input.setInputProcessor(inputProcessor);
 
 From this point on, all new input events will be pushed to the `MyInputProcessor` instance. Events are dispatched right before the call to `ApplicationListener.render()`, on the rendering thread.
 
+## InputAdapter ##
+
+`InputAdapter` implements all the `InputProcessor`, returning false from each. You can extend `InputAdapter` so you only need to implement the methods you need. You can also use an anonymous inner class.
+
+```java
+Gdx.input.setInputProcessor(new InputAdapter () {
+   public boolean touchDown (int x, int y, int pointer, int button) {
+      // your touch down code here
+      return true; // return true to indicate the event was handled
+   }
+
+   public boolean touchUp (int x, int y, int pointer, int button) {
+      // your touch up code here
+      return true; // return true to indicate the event was handled
+   }
+}
+```
+
 ## InputMultiplexer ##
 Sometimes you want to chain `InputProcessors`, e.g. you have one processor for your UI which should be invoked first, and a second processor for input events that manipulate your game's world. You can use the [InputMultiplexer](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/InputMultiplexer.html) class to achieve this:
 
