@@ -114,7 +114,6 @@
       * [[Particle Editor]]
     * Extensions
       * [[gdx-freetype]]    
-    * [[Known Issues]]
     * [[Using libgdx with other JVM languages]]
       * [[Using libgdx with Clojure]]
       * [[Using libgdx with Python]]
