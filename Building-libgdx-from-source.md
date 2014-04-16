@@ -1,4 +1,6 @@
-Before trying to build libgdx from source yourself, make sure you have the [[Prerequisites]] installed!
+Before trying to build libgdx from source yourself, you'll have to install [[Eclipse and all other related software|Setting up your Development Environment (Eclipse, Intellij IDEA, NetBeans)]]. We currently don't support development with other IDEs.
+
+In addition you'll have to install [Ant](http://ant.apache.org/) and make sure its `bin/` directory is in your `PATH` environment variable so that you can execute Ant on the command line.
 
 ## Easy Way ##
 Libgdx's build system is based on [Ant](http://ant.apache.org/). Various Ant scripts are responsible for building different parts of libgdx.
@@ -23,4 +25,4 @@ There are a couple of challenges involved in building libgdx's native source cod
   * We need to build for multiple platforms, Windows (32/64bit), Linux (32/64-bit), Mac OS X (32/64bit), Android(arm6/arm7) and iOS(i386/arm7)
   * The Mac OS X and iOS builds can only be executed on a Mac, insert mandatory Apple hate here.
 
-We have a special solution called [jnigen](jnigen) for building the libgdx native libraries.
+We have a special solution called [jnigen](jnigen) for building the libgdx native libraries. You can also look at how our entire [[Build infrastructure setup]] if you want to fully reproduce all the native builds in an automated way!
