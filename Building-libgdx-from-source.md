@@ -2,6 +2,8 @@ Before trying to build libgdx from source yourself, you'll have to install [[Ecl
 
 In addition you'll have to install [Ant](http://ant.apache.org/) and make sure its `bin/` directory is in your `PATH` environment variable so that you can execute Ant on the command line.
 
+You can work with libgdx sources without ever having to touch the native C/C++ portions. For 99% of users that's all they need. For these contributors we provide the easy way to work with libgdx. For those hardcore 1%, you'll have to dive into building not only the Java sources, but also the native sources.
+
 ## Easy Way ##
 Libgdx's build system is based on [Ant](http://ant.apache.org/). Various Ant scripts are responsible for building different parts of libgdx.
 
