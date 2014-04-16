@@ -15,7 +15,8 @@
       * [[Commandline|Gradle on the Commandline]]
       * [[Adding extensions and 3rd party libraries|Dependency management with Gradle]]   
     * Working from Source
-      * [[Running Demos & Tests]]
+      * [[Running Demos]]
+      * [[Running Tests]]
       * [[Building libgdx from Source]]
     * [[The Application Framework]]
       * [[The Life-Cycle]]
