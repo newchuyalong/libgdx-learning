@@ -1,6 +1,4 @@
 # Table of Contents
-[[a note from the translation]]
-
 [[Wiki Style Guide]]
 
   * **Developer's Guide**
@@ -15,12 +13,7 @@
       * [[Intellij Idea|Gradle and Intellij IDEA]]
       * [[NetBeans|Gradle and NetBeans]]
       * [[Commandline|Gradle on the Commandline]]
-      * [[Adding extensions and 3rd party libraries|Dependency management with Gradle]]
-    * [[Third Party Services]]
-      * [[AdMob in Libgdx]]
-      * [[Swarm in Libgdx]]
-      * [[NextPeer in Libgdx]]
-      * [[Google Play Game Services in LibGDX]]
+      * [[Adding extensions and 3rd party libraries|Dependency management with Gradle]]   
     * [[Working from Source]]
       * [[Running Demos & Tests]]
       * [[Building libgdx from Source]]
@@ -124,17 +117,14 @@
       * [[Hiero]]
       * [[Particle Editor]]
     * Extensions
-      * [[gdx-freetype]]
-    * [[Deploying your Application]]
-    * Building Libgdx ??
+      * [[gdx-freetype]]    
     * [[Known Issues]]
+    * [[Third Party Services]]
+      * [[AdMob in Libgdx]]
+      * [[Swarm in Libgdx]]
+      * [[NextPeer in Libgdx]]
+      * [[Google Play Game Services in LibGDX]]
   * Articles
     * [[Getting Help]]
     * [[External Tutorials]]
     * [[ Bundling a JRE]]
-    * [[Saved Game Serialization]]
-  * Deprecated (May be outdated)
-    * [[Graphics Module]]
-      * [[Screen & Viewport]]
-    * Misc
-      * [[Integrating Libgdx and the Device camera]]
