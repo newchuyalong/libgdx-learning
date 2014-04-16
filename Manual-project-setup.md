@@ -1,3 +1,5 @@
+### Attention: this is extremely outdated and NOT supported anymore! Please use the [Gradle-based setup](https://github.com/libgdx/libgdx/wiki/Project-Setup-Gradle) instead
+
 *Note: Java 1.7 currently causes problems with Android. Please make sure your project uses Java 1.6*
 *Note: use of setup-ui is highly recommended if you want to deploy to iOS*
 
