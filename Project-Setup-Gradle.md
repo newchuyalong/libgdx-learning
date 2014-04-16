@@ -3,14 +3,14 @@ Libgdx comes with a file called `gdx-setup.jar` which is an executable UI and co
 
 #### [Download gdx-setup.jar](http://libgdx.badlogicgames.com/nightlies/dist/gdx-setup.jar)
 
-Specify your application name, your Java package name, the name of your main class, the output directory, and the path to your android sdk, then click "Generate". **Now you are ready to import the project into your IDE, run, debug and package it!**
+Specify your application name, your Java package name, the name of your main class, the output directory, and the path to your android sdk. Next, you can select what platforms you want to support. **Note: once chosen, you'll have to add new platforms manually!**. Finally, you can select extensions to be included in your app. Some may not work on all platforms, for which you'll get a warning. When you've set everything, click "Generate". **Now you are ready to import the project into your IDE, run, debug and package it!**
 
   * [[Eclipse|Gradle and Eclipse]]
   * [[Intellij IDEA|Gradle and Intellij IDEA]]
   * [[NetBeans|Gradle and NetBeans]]
   * [[Commandline|Gradle on the Commandline]]
 
-![setup ui](http://i.imgur.com/EpsK1A3.png =100x20)
+![setup ui](http://144.76.220.132/uploads/Screen%20Shot%202014-04-16%20at%2023.59.48-qVxlZr2zxk.png)
 
 ### Creating a libgx project on the command line
 IF you run it from the command line, specify the following arguments.
