@@ -120,5 +120,3 @@ At some point you may want to update libgdx to the latest. To do this, download 
 | desktop | libs/gdx-natives.jar<br>libs/gdx-backend-lwjgl.jar<br>libs/gdx-backend-lwjgl-natives.jar |
 
 There also exists a python script that will automatically update your libraries by fetching the latest nightlies: https://github.com/jrenner/libgdx-updater
-
-*Note: [`Ready IntellijIdea 12 Community Edition Project`](https://github.com/ruslux/IntellijIdea-pure-libGDX-project)
