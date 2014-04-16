@@ -2,10 +2,10 @@ Libgdx comes with a few demos that you can play around with to get a feeling for
 
 [Setup your development environment], then simple clone the repositories on Github (or click on the "Download ZIP" button of a project's site) and import the project into your favorite IDE as a Gradle project.
 
-[Cuboc - a simple platformer with a twist](https://github.com/libgdx/libgdx-demo-cuboc)
-[Gdx Invaders - a 3D space invaders clone](https://github.com/libgdx/libgdx-demo-invaders)
-[Pax Britannica - a one button RTS game](https://github.com/libgdx/libgdx-demo-pax-britannica)
-[Super Jumper - a Doodle jump clone with programmer's art](https://github.com/libgdx/libgdx-demo-superjumper)
-[Vector Pinball - a Box2D-based pinball game](https://github.com/libgdx/libgdx-demo-vector-pinball)
+* [Cuboc - a simple platformer with a twist](https://github.com/libgdx/libgdx-demo-cuboc)
+* [Gdx Invaders - a 3D space invaders clone](https://github.com/libgdx/libgdx-demo-invaders)
+* [Pax Britannica - a one button RTS game](https://github.com/libgdx/libgdx-demo-pax-britannica)
+* [Super Jumper - a Doodle jump clone with programmer's art](https://github.com/libgdx/libgdx-demo-superjumper)
+* [Vector Pinball - a Box2D-based pinball game](https://github.com/libgdx/libgdx-demo-vector-pinball)
 
 [You can try all these demos right in your browser!](http://libgdx.badlogicgames.com/demos/)
