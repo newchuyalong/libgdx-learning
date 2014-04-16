@@ -8,4 +8,4 @@ Libgdx comes with a few demos that you can play around with to get a feeling for
 * [Super Jumper - a Doodle jump clone with programmer's art](https://github.com/libgdx/libgdx-demo-superjumper)
 * [Vector Pinball - a Box2D-based pinball game](https://github.com/libgdx/libgdx-demo-vector-pinball)
 
-####[You can try all these demos right in your browser!](http://libgdx.badlogicgames.com/demos/)
+####[You can try all these demos right in your WebGL-enabled browser! (Except IE, including IE 11)](http://libgdx.badlogicgames.com/demos/)
