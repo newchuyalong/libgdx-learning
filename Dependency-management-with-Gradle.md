@@ -135,6 +135,7 @@ project(":android") {
 compile "com.badlogicgames.gdx:gdx-freetype:$gdxVersion"
 natives "com.badlogicgames.gdx:gdx-freetype-platform:$gdxVersion:natives-armeabi"
 natives "com.badlogicgames.gdx:gdx-freetype-platform:$gdxVersion:natives-armeabi-v7a"
+natives "com.badlogicgames.gdx:gdx-freetype-platform:$gdxVersion:natives-x86"
 ```
 
 **So all we need to do is whack it in the dependencies stub**
@@ -155,6 +156,7 @@ project(":android") {
         compile "com.badlogicgames.gdx:gdx-freetype:$gdxVersion"
         natives "com.badlogicgames.gdx:gdx-freetype-platform:$gdxVersion:natives-armeabi"
         natives "com.badlogicgames.gdx:gdx-freetype-platform:$gdxVersion:natives-armeabi-v7a"
+        natives "com.badlogicgames.gdx:gdx-freetype-platform:$gdxVersion:natives-x86"
     }
 }
 ```
@@ -180,6 +182,7 @@ compile "com.badlogicgames.gdx:gdx-box2d-platform:$gdxVersion:natives-desktop"
 ```
 **Android Dependency:**
 ```groovy
+compile "com.badlogicgames.gdx:gdx-box2d:$gdxVersion"
 natives "com.badlogicgames.gdx:gdx-box2d-platform:$gdxVersion:natives-armeabi"
 natives "com.badlogicgames.gdx:gdx-box2d-platform:$gdxVersion:natives-armeabi-v7a"
 natives "com.badlogicgames.gdx:gdx-box2d-platform:$gdxVersion:natives-x86"
@@ -210,6 +213,7 @@ compile "com.badlogicgames.gdx:gdx-bullet-platform:$gdxVersion:natives-desktop"
 compile "com.badlogicgames.gdx:gdx-bullet:$gdxVersion"
 natives "com.badlogicgames.gdx:gdx-bullet-platform:$gdxVersion:natives-armeabi"
 natives "com.badlogicgames.gdx:gdx-bullet-platform:$gdxVersion:natives-armeabi-v7a"
+natives "com.badlogicgames.gdx:gdx-bullet-platform:$gdxVersion:natives-armeabi-x86"
 ```
 **iOS Dependency:**
 ```groovy
@@ -235,6 +239,7 @@ compile "com.badlogicgames.gdx:gdx-freetype-platform:$gdxVersion:natives-desktop
 compile "com.badlogicgames.gdx:gdx-freetype:$gdxVersion"
 natives "com.badlogicgames.gdx:gdx-freetype-platform:$gdxVersion:natives-armeabi"
 natives "com.badlogicgames.gdx:gdx-freetype-platform:$gdxVersion:natives-armeabi-v7a"
+natives "com.badlogicgames.gdx:gdx-freetype-platform:$gdxVersion:natives-armeabi-x86"
 ```
 **iOS Dependency:**
 ```groovy
@@ -258,6 +263,7 @@ compile "com.badlogicgames.gdx:gdx-controllers-platform:$gdxVersion:natives-desk
 ```
 **Android Dependency:**
 ```groovy
+compile "com.badlogicgames.gdx:gdx-controllers:$gdxVersion"
 compile "com.badlogicgames.gdx:gdx-controllers-android:$gdxVersion"
 ```
 **iOS Dependency:**
