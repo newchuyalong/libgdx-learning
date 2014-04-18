@@ -18,17 +18,13 @@ public class ScreenshotFactory {
 	}
 
 	private static Pixmap getScreenshot(int x, int y, int w, int h,	boolean flipY){
-		Gdx.gl.glPixelStorei(GL20.GL_PACK_ALIGNMENT, 1);
-
-		final Pixmap pixmap = new Pixmap(w, h, Format.RGBA8888);
+		final Pixmap pixmap = ScreenUtils.getFrameBufferPixmap(x, y, w, h);
 		ByteBuffer pixels = pixmap.getPixels();
-		Gdx.gl.glReadPixels(x, y, w, h, GL20.GL_RGBA, GL20.GL_UNSIGNED_BYTE, pixels);
-
 		final int numBytes = w * h * 4;
 		byte[] lines = new byte[numBytes];
 		if (flipY){
 			pixels.clear();
-			pixels.get(lines);
+			pixels.put(lines);
 		}else{
 			final int numBytesPerLine = w * 4;
 			for (int i = 0; i < h; i++){
