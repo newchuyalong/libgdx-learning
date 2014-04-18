@@ -105,7 +105,7 @@ The `InputMultiplexer` will hand any new events to the first `InputProcessor` th
 ##Example of continuos Input handle##
 If you want to move an actor using the Input Processor, you will notice that it will move only when the key is typed (or pressed with keydown).
 To continuosly handle input, or to move a sprite, you could add a flag to your actor like this:
-```
+```java
 public class Bob
 {
     boolean movingLeft;
@@ -133,10 +133,10 @@ public class Bob
 	if(leftMove && t) leftMove = false;
 	rightMove = t;
     }
-'''
+```
 Then, in your Input processor:
 
-'''
+```java
 ...
     @Override
     public boolean keyDown(int keycode)
@@ -166,4 +166,4 @@ Then, in your Input processor:
 	}
 	return true;
     }
-'''
+```
