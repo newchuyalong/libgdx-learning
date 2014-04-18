@@ -17,23 +17,23 @@ public class ScreenshotFactory {
 		}
 	}
 
-	private static Pixmap getScreenshot(int x, int y, int w, int h,	boolean flipY){
+	private static Pixmap getScreenshot(int x, int y, int w, int h,	boolean yDown){
 		final Pixmap pixmap = ScreenUtils.getFrameBufferPixmap(x, y, w, h);
-		ByteBuffer pixels = pixmap.getPixels();
-		final int numBytes = w * h * 4;
-		byte[] lines = new byte[numBytes];
-		if (flipY){
-			pixels.clear();
-			pixels.put(lines);
-		}else{
-			final int numBytesPerLine = w * 4;
-			for (int i = 0; i < h; i++){
+
+		if (yDown) {
+			// Flip the pixmap over the y axis
+			ByteBuffer pixels = pixmap.getPixels();
+			int numBytes = w * h * 4;
+			byte[] lines = new byte[numBytes];
+			int numBytesPerLine = w * 4;
+			for (int i = 0; i < h; i++) {
 				pixels.position((h - i - 1) * numBytesPerLine);
 				pixels.get(lines, i * numBytesPerLine, numBytesPerLine);
 			}
 			pixels.clear();
 			pixels.put(lines);
 		}
+
 		return pixmap;
 	}
 }
