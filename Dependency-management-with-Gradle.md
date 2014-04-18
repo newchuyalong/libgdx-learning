@@ -1,7 +1,7 @@
 ## Contents
 
 * [**Useful links**] (#useful-links)
-* [**Guide to build.gradle**] (#guide-to-build.gradle)
+* [**Guide to build.gradle**] (#guide-to-buildgradle)
 * [**Libgdx Dependencies**] (#libgdx-dependencies)
  * [Available libgdx extensions] (#libgdx-extensions)
 * [**External Dependencies**] (#external-dependencies)
@@ -9,6 +9,7 @@
  * [Examples] (#adding-dependencies)
 * [**File Dependencies**] (#file-dependencies)
 * [**Declaring Dependencies with HTML**] (#gwt-inheritance)
+ * [Libgdx Extension Inherits] (#libgdx-extension-inherits)
 
 ### Useful links
 Dependency management with Gradle is easy to understand, and has many different approaches.  If you are familiar with Maven or Ivy, Gradle is fully compatible with both approaches, as well as being able to support custom approaches.  If you aren't familiar with Gradle, there are great resources on their site to learn, it is recommended you give them a read to get comfortable with Gradle.
@@ -377,6 +378,11 @@ This is done in the `gwt.xml` files in the gwt sub directory. You will need to m
 </module>
 ```
 We depend on the libgdx gwt backend, as well as the core project, so we have them defined in an <inherits> tag.  So when you add your dependency via methods above, you need to add it here too!
+
+#### Libgdx Extension Inherits
+* Libgdx Core - `<inherits name='com.badlogic.gdx.backends.gdx_backends_gwt' />`
+* Box2d       - `<inherits name='com.badlogic.gdx.physics.box2d.box2d-gwt' />`
+* Controllers - `<inherits name='com.badlogic.gdx.controllers.controllers-gwt' />`
 
 **An example: The Universal Tween Engine**
 ```xml
