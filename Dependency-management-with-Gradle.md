@@ -299,6 +299,10 @@ Not compatible!
 ```groovy
 compile "com.badlogicgames.box2dlights:box2dlights:1.1"
 ```
+**Android Dependency:**
+```groovy
+compile "com.badlogicgames.box2dlights:box2dlights:1.1"
+```
 **HTML Dependency:**
 ```groovy
 compile "com.badlogicgames.box2dlights:box2dlights:1.1:sources"
