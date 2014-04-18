@@ -161,6 +161,7 @@ And we are done, our android project now has the freetype dependency. Easy eh.
 
 #### Libgdx Extensions
 Mavenized libgdx extensions ready to import from the `build.gradle` script include:
+* [Box2D] (#box2d-gradle)
 * [Bullet] (#bullet-gradle)
 * [FreeTypeFont] (#freetypefont-gradle)
 * [Controllers](#controllers-gradle)
