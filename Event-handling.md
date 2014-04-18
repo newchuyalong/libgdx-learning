@@ -102,7 +102,7 @@ Gdx.input.setInputProcessor(multiplexer);
 
 The `InputMultiplexer` will hand any new events to the first `InputProcessor` that was added to it. If that processor returns false from the method invoked to handle the event, this indicates the event was not handled and the multiplexer will hand the event to the next processor in the chain. Through this mechanism, the `MyUiInputProcessor` can handle any events that fall inside one of its widgets and pass on any other events to the `MyGameInputProcessor`.
 
-##Example of continuos Input handle##
+##Example of continuous Input handle##
 If you want to move an actor using the Input Processor, you will notice that it will move only when the key is typed (or pressed with keydown).
 To continuosly handle input, or to move a sprite, you could add a flag to your actor like this:
 ```java
@@ -113,25 +113,25 @@ public class Bob
     ...
     updateMotion()
     {
-	if (leftMove)
-	{
-		x -= 5 * Gdx.graphics.getDeltaTime();
-	}
-	if (rightMove)
-	{
-		x += 5 * Gdx.graphics.getDeltaTime();
-	}
+	    if (leftMove)
+	    {
+		    x -= 5 * Gdx.graphics.getDeltaTime();
+	    }
+	    if (rightMove)
+	    {
+		    x += 5 * Gdx.graphics.getDeltaTime();
+	    }
     }
     ...
     public void setLeftMove(boolean t)
     {
-	if(rightMove && t) rightMove = false;
-	leftMove = t;
+	    if(rightMove && t) rightMove = false;
+	    leftMove = t;
     }
     public void setRightMove(boolean t)
     {
-	if(leftMove && t) leftMove = false;
-	rightMove = t;
+	    if(leftMove && t) leftMove = false;
+	    rightMove = t;
     }
 ```
 Then, in your Input processor:
@@ -141,29 +141,29 @@ Then, in your Input processor:
     @Override
     public boolean keyDown(int keycode)
     {
-	switch (keycode)
-	{
+	    switch (keycode)
+	    {
 		case Keys.LEFT:
 			bob.setLeftMove(true);
 			break;
 		case Keys.RIGHT:
 			bob.setRightMove(true);
 			break;
-	}
-	return true;
+	    }
+	    return true;
     }
     @Override
     public boolean keyUp(int keycode)
     {
-	switch (keycode)
-	{
+	    switch (keycode)
+	    {
 		case Keys.LEFT:
 			bob.setLeftMove(false);
 			break;
 		case Keys.RIGHT:
 			bob.setRightMove(false);
 			break;
-	}
-	return true;
+	    }
+	    return true;
     }
 ```
