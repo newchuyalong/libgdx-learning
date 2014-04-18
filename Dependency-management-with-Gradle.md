@@ -167,6 +167,7 @@ Mavenized libgdx extensions ready to import from the `build.gradle` script inclu
 * [FreeTypeFont] (#freetypefont-gradle)
 * [Controllers](#controllers-gradle)
 * [Tools] (#tools-gradle)
+* [Box2DLights] (#box2dlights-gradle)
 
 #### Box2D Gradle
 **Core Dependency:**
@@ -288,6 +289,22 @@ Not compatible!
 
 **HTML Dependency:**
 Not compatible!
+
+***
+
+#### Box2DLights Gradle
+* **Note:** this extension also requires the [Box2D](#box2d-gradle) extension
+
+**Core Dependency:**
+```groovy
+compile "com.badlogicgames.box2dlights:box2dlights:1.1"
+```
+**HTML Dependency:**
+```groovy
+compile "com.badlogicgames.box2dlights:box2dlights:1.1:sources"
+```
+
+***
 
 ### External Dependencies
 #### Adding external repositories
