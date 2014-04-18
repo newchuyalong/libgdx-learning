@@ -382,6 +382,7 @@ We depend on the libgdx gwt backend, as well as the core project, so we have the
 #### Libgdx Extension Inherits
 * Libgdx Core - `<inherits name='com.badlogic.gdx.backends.gdx_backends_gwt' />`
 * Box2d       - `<inherits name='com.badlogic.gdx.physics.box2d.box2d-gwt' />`
+* Box2dLights       - `<inherits name='Box2DLights' />`
 * Controllers - `<inherits name='com.badlogic.gdx.controllers.controllers-gwt' />`
 
 **An example: The Universal Tween Engine**
