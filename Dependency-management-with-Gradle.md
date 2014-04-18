@@ -192,6 +192,9 @@ natives "com.badlogicgames.gdx:gdx-box2d-platform:$gdxVersion:natives-ios"
 compile "com.badlogicgames.gdx:gdx-box2d-gwt:$gdxVersion:sources"
 compile "com.badlogicgames.gdx:gdx-box2d:$gdxVersion:sources"
 ```
+
+***
+
 #### Bullet Gradle
 **Core Dependency:**
 ```groovy
