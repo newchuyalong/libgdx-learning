@@ -166,6 +166,29 @@ Mavenized libgdx extensions ready to import from the `build.gradle` script inclu
 * [Controllers](#controllers-gradle)
 * [Tools] (#tools-gradle)
 
+#### Box2D Gradle
+**Core Dependency:**
+```groovy
+compile "com.badlogicgames.gdx:gdx-box2d:$gdxVersion"
+```
+**Desktop Dependency:**
+```groovy
+compile "com.badlogicgames.gdx:gdx-box2d-platform:$gdxVersion:natives-desktop"
+```
+**Android Dependency:**
+```groovy
+natives "com.badlogicgames.gdx:gdx-box2d-platform:$gdxVersion:natives-armeabi"
+natives "com.badlogicgames.gdx:gdx-box2d-platform:$gdxVersion:natives-armeabi-v7a"
+natives "com.badlogicgames.gdx:gdx-box2d-platform:$gdxVersion:natives-x86"
+```
+**iOS Dependency:**
+```groovy
+natives "com.badlogicgames.gdx:gdx-box2d-platform:$gdxVersion:natives-ios"
+```
+**HTML Dependency:**
+```groovy
+compile "com.badlogicgames.gdx:gdx-box2d-gwt:$gdxVersion:sources"
+```
 #### Bullet Gradle
 **Core Dependency:**
 ```groovy
