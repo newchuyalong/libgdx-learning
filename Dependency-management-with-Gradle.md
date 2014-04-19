@@ -111,7 +111,9 @@ If you are familiar with maven, notice the format:
 compile '<groupId>:<artifactId>:<version>:<classifier>'
 ```
 
-Let's take a quick example to see how this works with the root `build.gradle` file. Do not modify the individual `build.gradle` files in each of the different platform-specific folders (e.g., -desktop, -ios, -core). You should only be modifying the **root `build.gradle` file**.
+Let's take a quick example to see how this works with the root `build.gradle` file. 
+
+As mentioned earlier, you do not need to  modify the individual `build.gradle` files in each of the different platform-specific folders (e.g., -desktop, -ios, -core). You only need to modify the root `build.gradle` file.
 
 [Here](#freetypefont-gradle) we see the dependencies for the FreeType Extension, say we want our Android project to have this dependency.  We locate our `project(":android")` stub in the root directory's `build.gradle`:
 ```groovy
