@@ -1,4 +1,4 @@
-If you use AdMob in your LibGdx apps, and have not updated your app recently, you should consider doing so soon!
+If you use AdMob in your LibGdx apps, and have not updated recently, you should consider doing so soon!
 
 Google says:
 > Android (6.4.1 and earlier SDKs)
