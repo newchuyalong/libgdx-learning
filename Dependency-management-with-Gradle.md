@@ -105,7 +105,7 @@ project(":android") {
 Dependencies are configured in the **root** `build.gradle` file as shown in the build.gradle guide above.
 In order to add an external dependency to a project, you must declare the dependency correctly under the correct part of the build.script.
 
-(Some) Libgdx extensions are mavenized and pushed to the maven repo, which means we can very easily pull them into our projects from the `build.gradle` file.  You can see in the list [below](#libgdx-extensions) of the format that these depdencies take. 
+(Some) Libgdx extensions are mavenized and pushed to the maven repo, which means we can very easily pull them into our projects from the `build.gradle` file.  You can see in the list [below](#libgdx-extensions) of the format that these dependencies take. 
 If you are familiar with maven, notice the format:
 ```groovy
 compile '<groupId>:<artifactId>:<version>:<classifier>'
