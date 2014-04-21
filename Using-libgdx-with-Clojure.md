@@ -89,4 +89,5 @@ and thats all the code necessary! a `lein uberjar` will generate the required ru
 
 * The [Nightcode](https://nightcode.info/) clojure and Java IDE provides a wonderful Libgdx clojure template.
 * An example of the Simple Game tutorial in Clojure (without the sounds though) can be found from http://clojuregames.blogspot.com/2013/10/the-libgdx-simple-game-demo-in-clojure.html
+* The [play-clj library](https://github.com/oakes/play-clj) provides a Clojure wrapper for LibGDX.
 * More info would be greatly appreciated, there can certainly be more Polyglot Libgdx out there!
