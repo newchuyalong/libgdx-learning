@@ -13,10 +13,10 @@ Because Libgdx is not hosted on any of Leiningen's default maven repos, we need 
           :url "http://www.apache.org/licenses/LICENSE-2.0.html"
           :distribution :repo
           :comments "Same as LibGDX"}
-  :dependencies [[org.clojure/clojure "1.5.1"]
-                 [com.badlogicgames.gdx/gdx "1.0-SNAPSHOT"]
-                 [com.badlogicgames.gdx/gdx-backend-lwjgl "1.0-SNAPSHOT"]
-                 [com.badlogicgames.gdx/gdx-platform "1.0-SNAPSHOT"
+  :dependencies [[org.clojure/clojure "1.6.0"]
+                 [com.badlogicgames.gdx/gdx "1.0.1-SNAPSHOT"]
+                 [com.badlogicgames.gdx/gdx-backend-lwjgl "1.0.1-SNAPSHOT"]
+                 [com.badlogicgames.gdx/gdx-platform "1.0.1-SNAPSHOT"
                   :classifier "natives-desktop"]]
   :repositories [["sonatype"
                   "https://oss.sonatype.org/content/repositories/snapshots/"]]
