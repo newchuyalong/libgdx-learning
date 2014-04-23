@@ -215,7 +215,7 @@ compile "com.badlogicgames.gdx:gdx-bullet-platform:$gdxVersion:natives-desktop"
 compile "com.badlogicgames.gdx:gdx-bullet:$gdxVersion"
 natives "com.badlogicgames.gdx:gdx-bullet-platform:$gdxVersion:natives-armeabi"
 natives "com.badlogicgames.gdx:gdx-bullet-platform:$gdxVersion:natives-armeabi-v7a"
-natives "com.badlogicgames.gdx:gdx-bullet-platform:$gdxVersion:natives-armeabi-x86"
+natives "com.badlogicgames.gdx:gdx-bullet-platform:$gdxVersion:natives-x86"
 ```
 **iOS Dependency:**
 ```groovy
@@ -241,7 +241,7 @@ compile "com.badlogicgames.gdx:gdx-freetype-platform:$gdxVersion:natives-desktop
 compile "com.badlogicgames.gdx:gdx-freetype:$gdxVersion"
 natives "com.badlogicgames.gdx:gdx-freetype-platform:$gdxVersion:natives-armeabi"
 natives "com.badlogicgames.gdx:gdx-freetype-platform:$gdxVersion:natives-armeabi-v7a"
-natives "com.badlogicgames.gdx:gdx-freetype-platform:$gdxVersion:natives-armeabi-x86"
+natives "com.badlogicgames.gdx:gdx-freetype-platform:$gdxVersion:natives-x86"
 ```
 **iOS Dependency:**
 ```groovy
