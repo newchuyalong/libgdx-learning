@@ -7,8 +7,6 @@ If you've not updated your app recently you should consider doing so soon. Googl
 
 Ok, so we want to migrate to the new Google Play Services way of doing things - this wiki post walks you through the process :)
 
-**[Install this apk to see what we'll be building!](https://github.com/TheInvader360/tutorial-libgdx-google-ads/raw/master/tutorial-libgdx-ads.apk)**
-
 ***
 
 **Barebones Sample App**
