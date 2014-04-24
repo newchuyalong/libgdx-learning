@@ -6,9 +6,9 @@
  * [Available libgdx extensions] (#libgdx-extensions)
 * [**External Dependencies**] (#external-dependencies)
  * [Adding Repositories] (#adding-external-repositories)
- * [Examples] (#adding-dependencies)
- * [Maven-izing Local Dependencies] (#mavenizing-local-dependencies)
-* [**File Dependencies**] (#file-dependencies)
+ * [Mavenizing Local Dependencies] (#mavenizing-local-dependencies)
+ * [File Dependencies] (#file-dependencies)
+ * [Examples] (#external-dependencies-examples)
 * [**Declaring Dependencies with HTML**] (#gwt-inheritance)
  * [Libgdx Extension Inherits] (#libgdx-extension-inherits)
 
@@ -433,6 +433,41 @@ project(":android") {
 ```
 
 It is worth nothing that these file dependencies are not included in the published dependency descriptor for your project, but they are included in transitive project dependencies within the same build.
+
+### External Dependencies Examples
+#### universal-tween-engine using maven
+First, download and extract the tween-engine-api from it's repository \(https://code.google.com/p/java-universal-tween-engine/). To install this dependency and it's source files into your local maven repo, use these commands:
+```bash
+mvn install:install-file -Dfile=tween-engine-api.jar -DgroupId=aurelienribon \
+-DartifactId=tweenengine -Dversion=6.3.3 -Dpackaging=jar
+
+mvn install:install-file -Dfile=tween-engine-api-sources.jar -DgroupId=aurelienribon \
+-DartifactId=tweenengine -Dversion=6.3.3 -Dpackaging=jar -Dclassifier=sources
+```
+
+With the tween engine jars in your local maven repo, add a dependency to them in your build.gradle in the root project file.
+
+```groovy
+project(":core") {
+   ...
+
+    dependencies {
+        ...
+        compile "aurelienribon:tweenengine:6.3.3"
+        compile "aurelienribon:tweenengine:6.3.3:sources"
+    }
+}
+```
+
+Add the inheritance to GdxDefinition.gwt.xml and GdxDefinitionSuperdev.gwt.xml
+```xml
+<inherits name='aurelienribon.tweenengine'/>
+```
+
+Then just refresh your dependencies.
+```bash
+$ ./gradlew --refresh-dependencies
+```
 
 ### Gwt Inheritance
 Gwt is special, so in order to let the GWT compiler know what modules the project depends on, and _inherits_ from, you need to let it know.
