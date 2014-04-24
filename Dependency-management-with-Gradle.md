@@ -7,6 +7,7 @@
 * [**External Dependencies**] (#external-dependencies)
  * [Adding Repositories] (#adding-external-repositories)
  * [Examples] (#adding-dependencies)
+ * [Maven-izing Local Dependencies] (#mavenizing-local-dependencies)
 * [**File Dependencies**] (#file-dependencies)
 * [**Declaring Dependencies with HTML**] (#gwt-inheritance)
  * [Libgdx Extension Inherits] (#libgdx-extension-inherits)
@@ -354,6 +355,38 @@ dependencies {
     compile 'com.badlogicgames.gdx:gdx:1.0-SNAPSHOT:natives-desktop'
 }
 ```
+
+### Mavenizing Local Dependencies
+If you would prefer to use maven repositories to manage local .jar files, these two commands will take any local .jar file and install them (and their source) to your local maven repository.
+
+```bash
+mvn install:install-file -Dfile=<path-to-file> -DgroupId=<group-id> \
+-DartifactId=<artifact-id> -Dversion=<version> -Dpackaging=<packaging>
+```
+```bash
+mvn install:install-file -Dfile=<path-to-source-file> -DgroupId=<group-id> \
+-DartifactId=<artifact-id> -Dversion=<version> -Dpackaging=<packaging> -Dclassifier=sources
+```
+
+To then set up gradle to include your new dependency, edit your build.gradle file and edit the core project:
+```groovy
+project(":core") {
+   ...
+
+    dependencies {
+        ...
+        compile "<group-id>:<artifact-id>:<version>"
+        compile "<group-id>:<artifact-id>:<version>:sources"
+    }
+}
+```
+
+After this eclipse will need to rebuild it's dependencies, so run:
+```bash
+$ ./gradlew eclipse
+```
+
+Also, GWT will require some extra attention:
 
 ### File Dependencies
 If you have a dependency that is not mavenized, you can still depend on them!
