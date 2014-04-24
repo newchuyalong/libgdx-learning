@@ -360,12 +360,10 @@ dependencies {
 If you would prefer to use maven repositories to manage local .jar files, these two commands will take any local .jar file and install them (and their source) to your local maven repository.
 
 ```bash
-mvn install:install-file -Dfile=<path-to-file> -DgroupId=<group-id> \
--DartifactId=<artifact-id> -Dversion=<version> -Dpackaging=<packaging>
+mvn install:install-file -Dfile=<path-to-file> -DgroupId=<group-id> -DartifactId=<artifact-id> -Dversion=<version> -Dpackaging=<packaging>
 ```
 ```bash
-mvn install:install-file -Dfile=<path-to-source-file> -DgroupId=<group-id> \
--DartifactId=<artifact-id> -Dversion=<version> -Dpackaging=<packaging> -Dclassifier=sources
+mvn install:install-file -Dfile=<path-to-source-file> -DgroupId=<group-id> -DartifactId=<artifact-id> -Dversion=<version> -Dpackaging=<packaging> -Dclassifier=sources
 ```
 
 To then set up gradle to include your new dependency, edit your build.gradle file in the root project directory and edit the core project entry:
@@ -382,17 +380,9 @@ project(":core") {
 ```
 
 After this you will need to refresh your dependencies for your IDE to see, so run:
-```bash
-$ ./gradlew --refresh-dependencies
-```
-or
-```bash
-$ ./gradlew eclipse
-```
-or 
-```bash
-$ ./gradlew idea
-```
+Command line - `$ ./gradlew --refresh-dependencies`
+Eclipse - `$ ./gradlew eclipse` 
+IntelliJ - `$ ./gradlew idea`
 
 Also, don't forget that any dependencies added this way also need to be included in the [GWT inheritance file] (#gwt-inheritance).
 
@@ -438,11 +428,9 @@ It is worth nothing that these file dependencies are not included in the publish
 #### universal-tween-engine using maven
 First, download and extract the tween-engine-api from it's repository \(https://code.google.com/p/java-universal-tween-engine/). To install this dependency and it's source files into your local maven repo, use these commands:
 ```bash
-mvn install:install-file -Dfile=tween-engine-api.jar -DgroupId=aurelienribon \
--DartifactId=tweenengine -Dversion=6.3.3 -Dpackaging=jar
+mvn install:install-file -Dfile=tween-engine-api.jar -DgroupId=aurelienribon -DartifactId=tweenengine -Dversion=6.3.3 -Dpackaging=jar
 
-mvn install:install-file -Dfile=tween-engine-api-sources.jar -DgroupId=aurelienribon \
--DartifactId=tweenengine -Dversion=6.3.3 -Dpackaging=jar -Dclassifier=sources
+mvn install:install-file -Dfile=tween-engine-api-sources.jar -DgroupId=aurelienribon -DartifactId=tweenengine -Dversion=6.3.3 -Dpackaging=jar -Dclassifier=sources
 ```
 
 With the tween engine jars in your local maven repo, add a dependency to them in your build.gradle in the root project file.
