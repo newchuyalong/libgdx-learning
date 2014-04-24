@@ -368,7 +368,7 @@ mvn install:install-file -Dfile=<path-to-source-file> -DgroupId=<group-id> \
 -DartifactId=<artifact-id> -Dversion=<version> -Dpackaging=<packaging> -Dclassifier=sources
 ```
 
-To then set up gradle to include your new dependency, edit your build.gradle file and edit the core project:
+To then set up gradle to include your new dependency, edit your build.gradle file in the root project directory and edit the core project entry:
 ```groovy
 project(":core") {
    ...
@@ -381,12 +381,16 @@ project(":core") {
 }
 ```
 
-After this eclipse will need to rebuild it's dependencies, so run:
+After this you will need to refresh your dependencies for your IDE to see, so run:
 ```bash
 $ ./gradlew eclipse
 ```
+or 
+```bash
+$ ./gradlew idea
+```
 
-Also, GWT will require some extra attention:
+Also, don't forget that any dependencies added this way also need to be included in the [GWT inheritance file] (#gwt-inheritance).
 
 ### File Dependencies
 If you have a dependency that is not mavenized, you can still depend on them!
