@@ -383,6 +383,10 @@ project(":core") {
 
 After this you will need to refresh your dependencies for your IDE to see, so run:
 ```bash
+$ ./gradlew --refresh-dependencies
+```
+or
+```bash
 $ ./gradlew eclipse
 ```
 or 
