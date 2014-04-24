@@ -379,10 +379,10 @@ project(":core") {
 }
 ```
 
-After this you will need to refresh your dependencies for your IDE to see, so run:
-Command line - `$ ./gradlew --refresh-dependencies`
-Eclipse - `$ ./gradlew eclipse` 
-IntelliJ - `$ ./gradlew idea`
+After this you will need to refresh your dependencies for your IDE to see, so run:  
+Command line - `$ ./gradlew --refresh-dependencies`  
+Eclipse - `$ ./gradlew eclipse`  
+IntelliJ - `$ ./gradlew idea`  
 
 Also, don't forget that any dependencies added this way also need to be included in the [GWT inheritance file] (#gwt-inheritance).
 
