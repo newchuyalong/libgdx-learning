@@ -67,6 +67,7 @@ When Stage is used, the Stage's viewport needs to be updated when a resize event
 
     public void resize(int width, int height) {
         // use true here to center the camera
+        // that's what you probably want in case of a UI
         stage.getViewport().update(width, height, false);
     }
 
