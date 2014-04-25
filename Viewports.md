@@ -42,7 +42,7 @@ A viewport always manages a Camera's viewportWidth and viewportHeight. Thus a ca
 
     public void create() {
         camera = new PerspectiveCamera();
-        viewport = new FixedViewport(camera, 800, 480);
+        viewport = new FitViewport(camera, 800, 480);
     }
 
 Whenever a resize event occurs, the viewport needs to be informed about it and updated. This will automatically recalculate the viewport parameters and update the camera:
