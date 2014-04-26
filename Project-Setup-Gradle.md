@@ -12,7 +12,7 @@ Specify your application name, your Java package name, the name of your main cla
 
 ![setup ui](http://144.76.220.132/uploads/Screen%20Shot%202014-04-16%20at%2023.59.48-qVxlZr2zxk.png)
 
-### Creating a libgx project on the command line
+### Creating a libgdx project on the command line
 IF you run it from the command line, specify the following arguments.
 
 * **dir**: the directory to write the project to, relative or absolute
