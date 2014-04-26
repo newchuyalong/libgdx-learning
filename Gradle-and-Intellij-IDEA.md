@@ -6,7 +6,9 @@ Go to `Import Project`, navigate to your project folder and select the `build.gr
 ### Common Problems
 If you run into problems due to a missing validation-api:1.0.0.GA artifact, delete your Maven cache at `C:\Users\username\.m2` or `/Users/username/.m2` or `/home/username/.m2`.
 
-`Unsupported major.minor version 51.0` may occur on Mac OS X. Check out [this article by Serapth](http://www.gamefromscratch.com/post/2014/04/03/Troubleshooting-IntelliJLibGDXRoboVMGradle-issues-on-Mac-OS.aspx) detailing how to solve this issue.
+`Unsupported major.minor version 51.0` may occur on Mac OS X. Check out [this article by Serapth](http://www.gamefromscratch.com/post/2014/04/03/Troubleshooting-IntelliJLibGDXRoboVMGradle-issues-on-Mac-OS.aspx) detailing how to solve this issue.   
+   
+If you run into "Error:org.gradle.tooling.GradleConnectionException: Could not execute build using Gradle installation" check project structure ( Ctrl + Alt + Shift + S ) and add your java JDK to the Project SDK.
 
 ## Running Your Project
 
