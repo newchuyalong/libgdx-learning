@@ -28,7 +28,7 @@ sound.setPitch(id, 2);      // increases the pitch to 2x the original pitch
 
 id = sound.play(1.0f);      // plays the sound a second time, this is treated as a different instance
 sound.setPan(id, -1, 1);    // sets the pan of the sound to the left side at full volume
-sound.setLooping(id);       // keeps the sound looping
+sound.setLooping(id, true); // keeps the sound looping
 sound.stop(id);             // stops the looping sound 
 ```
 
