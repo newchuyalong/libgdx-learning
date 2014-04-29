@@ -7,6 +7,7 @@
       * [[Community & Support]]
       * [[Contributing]]
       * [[Games Built with Libgdx]]
+      * [[Roadmap]]
     * [[Setting up your Development Environment (Eclipse, Intellij IDEA, NetBeans)]]
     * [[Creating, Running, Debugging and Packaging your Project|Project Setup Gradle]]
       * [[Eclipse|Gradle and Eclipse]]
