@@ -9,6 +9,10 @@ Your Eclipse workspace folder must not be the same as your project's root folder
 If you run into problems due to a missing validation-api:1.0.0.GA artifact, delete your Maven cache at `C:\Users\username\.m2` or `/Users/username/.m2` or `/home/username/.m2`.
 ![missing artifact](http://i.imgur.com/URxvrYe.png)
 
+When importing your first project you receive the error:
+`com/github/jtakakura/gradle/plugins/robovm/RoboVMPlugin : Unsupported major.minor version 51.0`
+Make sure you are running Oracle's JDK version 7 or above.
+
 ## Running Your Project ##
 
   * **Desktop**: Right click the desktop project, `Run As -> Java Application`. Select the desktop starter class (e.g. DesktopLauncher.java).
