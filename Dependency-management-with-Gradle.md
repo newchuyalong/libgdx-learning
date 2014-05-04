@@ -477,6 +477,8 @@ This is done in the `gwt.xml` files in the gwt sub directory. You will need to m
 We depend on the libgdx gwt backend, as well as the core project, so we have them defined in an <inherits> tag.  So when you add your dependency via methods above, you need to add it here too!
 
 #### Libgdx Extension Inherits
+These are the libgdx extensions that are supported in gwt
+
 * Libgdx Core - `<inherits name='com.badlogic.gdx.backends.gdx_backends_gwt' />`
 * Box2d       - `<inherits name='com.badlogic.gdx.physics.box2d.box2d-gwt' />`
 * Box2dLights       - `<inherits name='Box2DLights' />`
@@ -497,6 +499,3 @@ We depend on the libgdx gwt backend, as well as the core project, so we have the
 </module>
 ```
 
-
-
-List of libgdx extensions that support gwt....
