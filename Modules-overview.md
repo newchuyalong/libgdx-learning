@@ -6,7 +6,7 @@ LibGDX comprises several modules that provide services for each step of a typica
  * *[[Graphics | Graphics]]** - Enables the drawing of images to the screen using the the hardware provided OpenGL ES implementation.
  * *[[Files | File Handling]]* - Abstracts file access on all platforms by providing convenient methods for read/write operations regardless of the media.
  * *[[Audio | Audio]]* - Facilitates sound recording and playback on all platforms.
- * *Net* - Provides methods to perform networking operations, such as simple HTTP get and post requests, and TCP server/client socket communication.
+ * *[[Networking | Networking]]* - Provides methods to perform networking operations, such as simple HTTP get and post requests, and TCP server/client socket communication.
 
 The following diagram shows the modules in a simple game architecture:
 
