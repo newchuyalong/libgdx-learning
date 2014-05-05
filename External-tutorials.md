@@ -16,6 +16,7 @@ These are webpages where individuals or companies write about their experience w
  * LibGDX video tutorials 1 - http://www.youtube.com/dermetfan
  * LibGDX video tutorials 2 - https://www.youtube.com/ForeignGuyMike
  * LibGDX Tutorial series - http://www.gamefromscratch.com/page/LibGDX-Tutorial-series.aspx
+ * bitowl's tutorials - http://bitowl.de/tag/tutorial/
 
 # Topic Specific Tutorials #
 
