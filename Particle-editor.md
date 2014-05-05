@@ -38,15 +38,15 @@ The first step to creating an effect is to choose an image. The default image is
 
 When you are configuring properties, you are actually configuring the particle emitter that will create and manage the particles. In code, the emitter is represented by the ParticleEmitter class. A particle effect is made up of one or more emitters, which is managed in the lower right of the particle editor. In code, the effect is represented by the ParticleEffect class, which has a list of ParticleEmitters. Most of emitter properties are self explanatory, but I will run through them quickly.
 
-Delay: When an effect starts, this emitter will do nothing for this many milliseconds. This can be used to synchronize multiple emitters.
+**Delay:** When an effect starts, this emitter will do nothing for this many milliseconds. This can be used to synchronize multiple emitters.
 
 Note the delay property has an “Active” button. Some properties can be turned off, which can minimize some of the work that needs to be done at run-time.
 
-Duration: How long the emitter will emit particles. Note this is not the same as how long particles will live.
+**Duration:** How long the emitter will emit particles. Note this is not the same as how long particles will live.
 
-Count: Controls the minimum number of particles that must always exist, and the maximum number of particles that can possibly exist. The minimum is nice for making sure particles are always visible, and the maximum lets the emitter know how much memory to allocate.
+**Count:** Controls the minimum number of particles that must always exist, and the maximum number of particles that can possibly exist. The minimum is nice for making sure particles are always visible, and the maximum lets the emitter know how much memory to allocate.
 
-Emission: How many particles will be emitted per second.
+**Emission:** How many particles will be emitted per second.
 
 Emission is the first property with a little chart, but all properties with a chart work the same way. Click on the chart to add nodes, click and drag to move nodes, and double click to delete nodes. The chart allows you to vary the value of the property over time. Note that the chart says “Duration” in the center. This means the x-axis represents the duration of the emitter (which of course is set with the duration property). Other charts may say “Life”, which means the x-axis represents the life of a single particle. The top of the y-axis represents the value specified for “High” and the bottom of the y-axis represents the value specified for “Low”. The chart can be expanded with the “+” button for a larger view.
 
@@ -54,31 +54,31 @@ The “High” and “Low” values each have a button marked “>”. When clic
 
 Finally, the last piece of functionality for charts is the “Relative” check-box. When unchecked, the value at any one point in time for the property will be what the chart shows. When checked, the value shown on the chart is added to the initial value of the property. Why? Imagine you have rotation set to start at 0 and go to 360 degrees over the life of a particle. This is nice, but all the particles start at the same zero rotation, so you change the “Low” value to start between 0 and 360. Now your particles will start between 0 and 360, and rotate to exactly 360 degrees. If a particle spawns at 330 degrees, it will only rotate 30 degrees. Now, if you check “Relative”, a particle that spawns at 330 degrees will rotate to 330 + 360 degrees, which is probably what you want in this case.
 
-Life: How long a single particle will live.
+**Life:** How long a single particle will live.
 
-Life Offset: How much life is used up when a particle spawns. The particle is still moved/rotated/etc for the portion of its life that is used up. This allows particles to spawn, eg, halfway through their life.
+**Life Offset:** How much life is used up when a particle spawns. The particle is still moved/rotated/etc for the portion of its life that is used up. This allows particles to spawn, eg, halfway through their life.
 
-X Offset and Y Offset: The amount in pixels to offset where particles spawn.
+**X Offset and Y Offset:** The amount in pixels to offset where particles spawn.
 
-Spawn: The shape used to spawn particles: point, line, square, or ellipse. Ellipse has additional settings.
+**Spawn:** The shape used to spawn particles: point, line, square, or ellipse. Ellipse has additional settings.
 
-Spawn Width and Spawn Height: Controls the size of the spawn shape.
+**Spawn Width and Spawn Height:** Controls the size of the spawn shape.
 
-Size: The size of the particle.
+**Size:** The size of the particle.
 
-Velocity: The speed of the particle.
+**Velocity:** The speed of the particle.
 
-Angle: The direction the particle travels. Not very useful if velocity is not active.
+**Angle:** The direction the particle travels. Not very useful if velocity is not active.
 
-Rotation: The rotation of the particle.
+**Rotation:** The rotation of the particle.
 
-Wind and Gravity: The x-axis or y-axis force to apply to particles, in pixels per second.
+**Wind and Gravity:** The x-axis or y-axis force to apply to particles, in pixels per second.
 
-Tint: The particle color. Click the little triangle and then use the sliders to change the color. Click in the bar above the triangle to add more triangles. This allows you to make particles change to any number of colors over their lifetime. Click and drag to move a triangle (if it isn’t at the start or end), double click to delete.
+**Tint:** The particle color. Click the little triangle and then use the sliders to change the color. Click in the bar above the triangle to add more triangles. This allows you to make particles change to any number of colors over their lifetime. Click and drag to move a triangle (if it isn’t at the start or end), double click to delete.
 
-Transparency: Controls the alpha of the particle.
+**Transparency:** Controls the alpha of the particle.
 
-Options, Additive: For additive blending.
+**Options, Additive:** For additive blending.
 Options, Attached: Means existing particles will move when the emitter moves.
 Options, Continuous: Means the emitter restarts as soon as its duration expires. Note that this means an effect will never end, so other emitters in the effect that are not continuous will never restart.
 Options, Aligned: The angle of a particle is added to the rotation. This allows you to align the particle image to the direction of travel.
