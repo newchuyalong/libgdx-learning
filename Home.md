@@ -14,6 +14,7 @@
       * [[Intellij Idea|Gradle and Intellij IDEA]]
       * [[NetBeans|Gradle and NetBeans]]
       * [[Commandline|Gradle on the Commandline]]
+      * [[Updating your libGDX version|UpdatingLibGDX]]
       * [[Adding extensions and 3rd party libraries|Dependency management with Gradle]]   
     * Working from Source
       * [[Running Demos]]
