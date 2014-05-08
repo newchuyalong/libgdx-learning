@@ -61,7 +61,7 @@ ios/
     build.gradle           <- Gradle build file for the ios project*
     src/                   <- Source folder for your ios project, contains launcher
 ```
-* These scripts contain tasks that package natives and distribute your applications on the respective platforms, you can add/maintain these tasks yourself, but only do so if you are familiar with Gradle, and what these tasks are doing, otherwise you will break your project.
+\* These scripts contain tasks that package natives and distribute your applications on the respective platforms, you can add/maintain these tasks yourself, but only do so if you are familiar with Gradle, and what these tasks are doing, otherwise you will break your project.
 
 ### What is Gradle?
 [Gradle](http://www.gradle.org/) is a dependency management and build system. 
