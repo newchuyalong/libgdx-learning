@@ -37,30 +37,31 @@ gradle                     <- local gradle wrapper
 local.properties           <- Intellij only file, defines android sdk location
 
 core/
-    build.gradle           <- Gradle build file for core project, no touchy!
+    build.gradle           <- Gradle build file for core project*
     src/                   <- Source folder for all your game's code
 
 desktop/
-    build.gradle           <- Gradle build file for desktop project, no touchy!
+    build.gradle           <- Gradle build file for desktop project*
     src/                   <- Source folder for your desktop project, contains Lwjgl launcher class
 
 android/
-    build.gradle           <- Gradle build file for android project, no touchy, seriously this time
+    build.gradle           <- Gradle build file for android project*
     AndroidManifest.xml    <- Android specific config
     assets/                <- contains for your graphics, audio, etc.  Shared with other projects.
     res/                   <- contains icons for your app and other resources
     src/                   <- Source folder for your Android project, contains android launcher class
 
 gwt/
-    build.gradle           <- Gradle build file for the html project, no touchy
+    build.gradle           <- Gradle build file for the html project*
     src/                   <- Source folder for your html project, contains launcher and html definition
     webapp/                <- War template, on generation the contents are copied to war. Contains startup url index page and web.xml
 
 
 ios/
-    build.gradle           <- Gradle build file for the ios project, no touchy unless masochistic
+    build.gradle           <- Gradle build file for the ios project*
     src/                   <- Source folder for your ios project, contains launcher
 ```
+* These scripts contain tasks that package natives and distribute your applications on the respective platforms, you can add/maintain these tasks yourself, but only do so if you are familiar with Gradle, and what these tasks are doing, otherwise you will break your project.
 
 ### What is Gradle?
 [Gradle](http://www.gradle.org/) is a dependency management and build system. 
