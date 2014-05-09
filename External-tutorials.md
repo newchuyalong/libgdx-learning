@@ -18,6 +18,10 @@ These are webpages where individuals or companies write about their experience w
  * LibGDX Tutorial series - http://www.gamefromscratch.com/page/LibGDX-Tutorial-series.aspx
  * bitowl's tutorials - http://bitowl.de/tag/tutorial/
  * Zombie Bird - http://www.kilobolt.com/zombie-bird-tutorial-flappy-bird-remake.html
+ * LibGdx en español (spanish) 
+http://libgdxspain.blogspot.com
+ * Libgdx tutorial series
+http://libgdxtutorialseries.blogspot.com
 
 # Topic Specific Tutorials #
 
