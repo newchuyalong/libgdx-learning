@@ -1,27 +1,39 @@
-Gradle is very powerful, and once you get used to it is a great tool to be versed in and have in your arsenal, but when mixed with your IDE it can cause workflow problems.  This varies from project to project, and from person to person; here is an example of such an issue:
+# Contents
+
+* [**Introduction**] (#introduction)
+* [**Optimizing Gradle integration in your IDE and on the command line**] (#tips-to-speed-up-Gradle-if-you-still-want-ide-integration)
+ * [**Gradle Daemon**] (#gradle-daemon)
+* [**Removing Gradle integration from your IDE**] (#how-to-remove-gradle-ide-integration-from-your-project)
+ * [**Intellij IDEA**] (#creating-your-idea-project)
+ * [**Eclipse**] (#creating-your-eclipse-project)
+* [**I dont want to use Gradle at all**] (#i-dont-want-to-use-gradle)
+
+
+## Introduction
+Gradle is very powerful, and once you get used to it is a great tool to be versed in and to have in your arsenal, but when mixed with your IDE it can cause workflow problems.  This varies from project to project, and from person to person; here is an example of such an issue:
 
 Having a multi-project, multi-flavour project, where you want to be running your desktop build very often to check your latest changes.  Due to how Gradle works (it allows the flexibility of accessing and changing any part of the build from any part of the project), it must configure all projects in a multi-project setup before any task is executed.  When you have a project with desktop only, this is usually very speedy, but when you add in an android project, html project the time starts to rack up.  This is especially noticeable in Intellij IDEA.
 
-Tips to speed up Gradle if you still want IDE integration
+## Tips to speed up Gradle if you still want IDE integration
 
 You can try a few things to get running more efficiently:
 
-Gradle daemon
+### Gradle daemon
 The Gradle daemon aims to lower execution time and startup time of tasks especially where tasks are executed frequently. 
 
 How to run with the Gradle daemon
-You can run tasks adding the flag --daemon
-You can also add the option to run on all tasks by editing a "gradle.properties" file that resides in the root directory of your project.
-Add the line; org.gradle.daemon=true
+You can run tasks adding the flag `--daemon`
+You can also add the option to run on all tasks by editing a `gradle.properties` file that resides in the root directory of your project.
+Add the line; `org.gradle.daemon=true`
 
-Further reading:
-Daemon http://www.gradle.org/docs/current/userguide/gradle_daemon.html
+_Further reading:_
+_Daemon http://www.gradle.org/docs/current/userguide/gradle_daemon.html_
 
 
 
-How to remove Gradle IDE integration from your project
+## How to remove Gradle IDE integration from your project
 
-Note: This only applies for Eclipse and Intellij IDEA users
+_Note: This only applies for Eclipse and Intellij IDEA users_
 
 With the project that is generated from gdx-setup.jar, the Gradle IDEA, and Gradle Eclipse plugins are applied to all projects.
 These plugins allow you to generate IDE specific files that you can then work from.
@@ -30,5 +42,9 @@ Doing this allows you to keep Gradle out of your IDE, so that when you want to l
 
 It also allows you to keep the power of Gradle at your disposal, to handle all your dependencies, packaging tasks, signing tasks, deployment and anything else you may want to implement by running from the command line.
 
-Creating your IDEA project
-Creating your Eclipse Project
+### Creating your IDEA project
+### Creating your Eclipse Project
+
+## I dont want to use Gradle
+Tough.
+
