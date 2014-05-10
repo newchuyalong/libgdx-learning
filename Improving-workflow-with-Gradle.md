@@ -1,7 +1,7 @@
 # Contents
 
 * [**Introduction**] (#introduction)
-* [**Optimizing Gradle integration in your IDE and on the command line**] (#tips-to-speed-up-Gradle-if-you-still-want-ide-integration)
+* [**Optimizing Gradle integration in your IDE and on the command line**] (#tips-to-speed-up-gradle-if-you-still-want-ide-integration)
  * [**Gradle Daemon**] (#gradle-daemon)
 * [**Removing Gradle integration from your IDE**] (#how-to-remove-gradle-ide-integration-from-your-project)
  * [**Intellij IDEA**] (#creating-your-idea-project)
