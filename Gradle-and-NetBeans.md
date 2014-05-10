@@ -11,7 +11,7 @@ In the project view:
 
   * **Desktop**: Right click the desktop project, `Run`. You can run it.
   * **Android**: make sure you have a device connected. Right click your Android project, `Tasks -> installDebug`.
-  * **iOS RoboVM**: Right click the robovm project, `Tasks -> launchIPhoneSimulator` (alternatives are `launchIPadSimulator` and `launchIOSDevice`for [provisioned devices](https://developer.apple.com/library/ios/documentation/ToolsLanguages/Conceptual/YourFirstAppStoreSubmission/ProvisionYourDevicesforDevelopment/ProvisionYourDevicesforDevelopment.html))
+  * **iOS RoboVM**: Right click the robovm project, `Tasks -> launchIPhoneSimulator` (alternatives are `launchIPadSimulator` and `launchIOSDevice`for [provisioned devices](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppDistributionGuide/Introduction/Introduction.html))
 The first run will take a bit longer as RoboVM has to compile the entire JDK for iOS. Subsequent runs will compile considerably faster!
   * **HTML5**: Right click the html project, `Tasks -> superDev`. You can now follow the build process in the console. This will take a while, as your Java code is compiled to Javascript. Once you see the message `The code server is ready`, fire up your browser and go to [http://localhost:8080/gwt](http://localhost:8080/gwt). This is your app running in the browser! When you change any of your Java code or assets, just click the `SuperDev Refresh` button while you are on the site and the server will recompile your code and reload the page!
 
