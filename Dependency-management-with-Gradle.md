@@ -402,7 +402,7 @@ This will include all the .jar files in the libs directory as dependencies.
 
 **NOTE**: "dir" is relative to the project root, if you add the dependencies to your android project, 'libs' would need to be in the android/ directory. If you added the dependencies in the core project, 'libs' would need to be in the core/directory.
 
-An example with a _fuller_ script:
+An example with a more _complete_ script:
 ```groovy
 project(":android") {
     apply plugin: "android"
