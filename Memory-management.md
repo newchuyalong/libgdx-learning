@@ -100,7 +100,7 @@ public class Bullet implements Poolable {
 
 In your game world class:
 ```java
-public class World() {
+public class World {
 
     // array containing the active bullets.
     private final Array<Bullet> activeBullets = new Array<Bullet>();
