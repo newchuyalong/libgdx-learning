@@ -21,7 +21,7 @@ boolean available = Gdx.input.isPeripheralAvailable(Peripheral.Accelerometer);
 If your game needs to know the current orientation of the device, the following method can be used:
 
 ```java
-int orientation = Gdx.input.getOrientation();
+int orientation = Gdx.input.getRotation();
 ```
 
 This will return a value of 0, 90, 180 or 270, giving you the angular difference between the current orientation and the native orientation.
