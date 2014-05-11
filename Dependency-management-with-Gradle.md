@@ -9,6 +9,8 @@
  * [Mavenizing Local Dependencies] (#mavenizing-local-dependencies)
  * [File Dependencies] (#file-dependencies)
  * [Examples] (#external-dependencies-examples)
+  * [Jar example] (#universal-tween-engine-by-jar)
+  * [Mavenize locally] (universal-tween-engine-by-locally-mavenizing-maven)
 * [**Declaring Dependencies with HTML**] (#gwt-inheritance)
  * [Libgdx Extension Inherits] (#libgdx-extension-inherits)
 
@@ -428,7 +430,29 @@ project(":android") {
 It is worth nothing that these file dependencies are not included in the published dependency descriptor for your project, but they are included in transitive project dependencies within the same build.
 
 ### External Dependencies Examples
-#### universal-tween-engine using maven
+#### Universal-Tween-Engine by jar
+1. Download the jars
+2. Place jars in the directory core/libs (You can change this if you wish)
+3. Alter your **build.gradle** script in the root directory as follows:
+--1. Locate the :core stub where the core project's dependencies are declared
+--2. Add the line in dependencies
+ ```grooovy
+compile fileTree(dir: 'libs', include: '*.jar')
+```
+--3. Your script should now look a little like this:
+```groovy
+project(":core") {
+   ...
+
+    dependencies {
+        ...
+        compile fileTree(dir: 'libs', include: '*.jar')
+    }
+}
+```
+--4. Refresh your Gradle, either on command line or using your IDE plugin.
+
+#### Universal-Tween-Engine by locally mavenizing maven
 First, download and extract the tween-engine-api from it's repository \(https://code.google.com/p/java-universal-tween-engine/). To install this dependency and it's source files into your local maven repo, use these commands:
 ```bash
 mvn install:install-file -Dfile=tween-engine-api.jar -DgroupId=aurelienribon -DartifactId=tweenengine -Dversion=6.3.3 -Dpackaging=jar
