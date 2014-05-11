@@ -451,7 +451,7 @@ project(":core") {
 }
 ```
 
-**Finally **Refresh your Gradle project, either on command line or using your IDE plugin.
+**Finally** Refresh your Gradle project, either on command line or using your IDE plugin.
 
 #### Universal-Tween-Engine by locally mavenizing maven
 First, download and extract the tween-engine-api from it's repository \(https://code.google.com/p/java-universal-tween-engine/). To install this dependency and it's source files into your local maven repo, use these commands:
