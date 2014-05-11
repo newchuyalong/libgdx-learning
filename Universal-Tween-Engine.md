@@ -61,3 +61,50 @@ This method is the easiest to get up and running but if you end up with multiple
   ```
   gradlew --refresh-dependencies
   ```
+
+## Using Your Local Maven Repository
+
+1. If you don't have Maven installed follow the instructions here: [Maven in Five Minutes]( http://maven.apache.org/guides/getting-started/maven-in-five-minutes.html)
+2. Download the Universal Tween Engine from here: https://code.google.com/p/java-universal-tween-engine/downloads/list
+3. Extract the universal tween engine zip file to some location on your system
+4. Open a command prompt to the location that you extracted the zip file
+5. Run the following commands to add the universal tween engine jars to your local maven repo:
+
+  ```
+mvn install:install-file -Dfile=tween-engine-api.jar -DgroupId=aurelienribon -DartifactId=tweenengine -Dversion=6.3.3 -Dpackaging=jar
+  ```
+  ```
+mvn install:install-file -Dfile=tween-engine-api-sources.jar -DgroupId=aurelienribon -DartifactId=tweenengine -Dversion=6.3.3 -Dpackaging=jar -Dclassifier=sources
+  ```
+6. Open up the build.gradle file located in the root of your project directory in a text editor or your IDE
+  * Locate the section marked **project(":core")**
+  * In the **dependencies** section add the following line:
+  ```
+  compile "aurelienribon:tweenengine:6.3.3"
+  compile "aurelienribon:tweenengine:6.3.3:sources"
+  ```
+  * the **project(":core")** section of your build.gradle file should now look like this:
+
+  ```groovy
+  project(":core") {
+     ...
+
+      dependencies {
+          ...
+          compile "aurelienribon:tweenengine:6.3.3"
+          compile "aurelienribon:tweenengine:6.3.3:sources"
+      }
+  }
+  ```
+7. **Required for HTML Projects**
+  * Add the following line to your **GdxDefinition.gwt.xml** and **GdxDefinitionSuperdev.gwt.xml** files
+    * they are located in &lt;my-project-dir&gt;/html/src/your/package/name
+  ```xml
+<inherits name='aurelienribon.tweenengine'/>
+  ```
+
+7. And most importantly you now need to refresh your project dependencies through your IDE or by running the following command from your project directory:
+
+  ```
+  gradlew --refresh-dependencies
+  ```
