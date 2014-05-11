@@ -2,7 +2,9 @@
 
 Since switching over to the gradle based build system some users have been having a hard time adding the Universal Tween Engine to their newly created projects. This article aims to make this process as painless as possible.
 
-> **Note:** this article assumes that you've already created a project using gdx-setup. If you haven't created your project yet follow the instructions here before continuing: [Project Setup Gradle](https://github.com/libgdx/libgdx/wiki/Project-Setup-Gradle)
+> **Note:** this article assumes that you've already created a project using gdx-setup. If you haven't created your project yet follow the instructions here before continuing:
+
+> [Project Setup Gradle](https://github.com/libgdx/libgdx/wiki/Project-Setup-Gradle)
 
 ## FileTree Dependency Method (Easiest)
 
