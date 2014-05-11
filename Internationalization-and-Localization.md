@@ -1,11 +1,11 @@
- * [Overview](#Overview)
- * [Creating Properties Files](#Creating_Properties_Files)
- * [Creating a Bundle](#Creating_a_Bundle)
- * [Fetch the Localized Strings](#Fetch_the_Localized_Strings)
- * [GWT Limitations](#GWT_Limitations)
- * [Multiple Bundles](#Multiple_Bundles)
+ * [Overview](#overview)
+ * [Creating Properties Files](#creating-properties-files)
+ * [Creating a Bundle](#creating-a-bundle)
+ * [Fetch the Localized Strings](#fetch-the-localized-strings)
+ * [GWT Limitations](#gwt-limitations)
+ * [Multiple Bundles](#multiple-bundles)
 
-## <a id="Overview"></a>Overview ##
+## Overview ##
 
 Technically speaking, _internationalization_ is the process of designing a software so that it can potentially be adapted to various languages and regions without engineering changes.
  _Localization_ is the process of adapting internationalized software for a specific region or language by adding locale-specific components and translating text.
@@ -16,7 +16,7 @@ Here we'll describe the cross-platform I18N system provided by LibGDX allowing y
 Basically, the `I18NBundle` class is used to store and fetch strings that are locale sensitive. A bundle allows you to easily provide different translations for you application.
 
 
-## <a id="Creating_Properties_Files"></a>Creating Properties Files ##
+## Creating Properties Files ##
 
 Conceptually each bundle is a set of properties files that share the same base name. In the example that follows `MyBundle` is the base name. The characters following the base name indicate the language code, country code, and variant of a Locale. `MyBundle_en_GB`, for example, matches the Locale specified by the language code for English (en) and the country code for Great Britain (GB).
 For the sake of simplicity we omit the extension `.properties` from file names.
@@ -51,7 +51,7 @@ Please, refer to the official javadoc of the MessageFormat class to learn all it
 Here I will bring to your attention only one interesting feature: formats are localizable. It means that typed data like number, date and time will be automatically expressed in the typical form of the specific locale. For esample, the float number 3.14 becomes 3,14 for the Italian local (notice the comma in place of the decimal point).
 
 
-## <a id="Creating_a_Bundle"></a>Creating a Bundle ##
+## Creating a Bundle ##
 
 An instance of the `I18NBundle` class manages the named strings for a locale after loading into memory the appropriate properties files.
 Invoke the factory method `createBundle` to get a new instance of the desired bundle.
@@ -103,12 +103,16 @@ String highScoreTime = myBundle.format("highScoreTime", highScore.getDate());
     So, if you're used to MessageFormat's syntax, remember that now single quotes never need to be escaped.
 
 
-## <a id="GWT_Limitations"></a>GWT Limitations ##
+## GWT Limitations ##
 
-TO BE DONE
+As said before, the I18N system provided by LibGdx is cross-platform. However there are some limitations when it comes to the GWT back end.
+In particular:
+- The format syntax of `java.text.MessageFormat` is not fully supported. You'll have to stick to a simplified syntax where formats are made only by their index, i.e. `{index}`.
+Format's type and style are not supported and cannot be used; otherwise an `IllegalArgumentException` is thrown.
+- Formats are never localized, meaning that the arguments passed to the `format` method are converted to a string with the `toString` method, so without taking into account the bundle's locale. 
 
 
-## <a id="Multiple_Bundles"></a>Multiple Bundles ##
+## Multiple Bundles ##
 
 Of course you can use multiple bundles in your application. For example, you might want to use a different bundle for each level of your game. Using multiple bundles offers some advantages:
    * Your code is easier to read and to maintain.
