@@ -12,8 +12,8 @@ This method is the easiest to get up and running but if you end up with multiple
 
 1. Download the Universal Tween Engine from here: [Universal Tween Engine](https://code.google.com/p/java-universal-tween-engine/downloads/list)
 2. In the root of your project directory create a new directory called 'libs'
-3. Extract the Universal Tween Engine zip file to the directory that you just created: &lt;my-project-dir&gt;/libs
-4. Open up the build.gradle file located in the root of your project directory in either a text editor or your IDE
+3. Extract the Universal Tween Engine zip file to the directory that you just created
+4. Open up the build.gradle file located in the root of your project directory in a text editor or your IDE
   * Locate the section marked **project(":core")**
   * In the **dependencies** section add the following line:
   ```
@@ -50,6 +50,9 @@ This method is the easiest to get up and running but if you end up with multiple
 6. **Required for HTML Projects**
   * Add the following line to your **GdxDefinition.gwt.xml** and **GdxDefinitionSuperdev.gwt.xml** files
     * they are located in &lt;my-project-dir&gt;/html/src/your/package/name
+  ```xml
+<inherits name='aurelienribon.tweenengine'/>
+  ```
 
 7. And most importantly you now need to refresh your project dependencies through your IDE or by running the following command from your project directory:
 
