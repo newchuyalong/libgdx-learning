@@ -1,11 +1,11 @@
- * [Overview](#Overview)
- * [Writing Object Graphs](#Writing_Object_Graphs)
- * [Reading Object Graphs](#Reading_Object_Graphs)
- * [Customizing Serialization](#Customizing_Serialization)
- * [Serialization Methods](#Serialization_Methods)
- * [Event Based Parsing](#Event_Based_Parsing)
+ * [Overview](#overview)
+ * [Writing Object Graphs](#writing-object-graphs)
+ * [Reading Object Graphs](#reading-object-graphs)
+ * [Customizing Serialization](#customizing-serialization)
+ * [Serialization Methods](#serialization-methods)
+ * [Event Based Parsing](#event-based-parsing)
 
-## <a id="Overview"></a>Overview ##
+## <a id="overview"></a>Overview ##
 
 libgdx can perform automatic object to JSON serialization and JSON to object deserialization. Four small classes make up the API:
 
@@ -16,7 +16,7 @@ libgdx can perform automatic object to JSON serialization and JSON to object des
 
 To use these classes outside of libgdx, see the [JsonBeans](https://github.com/EsotericSoftware/jsonbeans/) project.
 
-## <a id="Writing_Object_Graphs"></a>Writing Object Graphs ##
+## <a id="writing-object-graphs"></a>Writing Object Graphs ##
 
 The `Json` class uses reflection to automatically serialize objects to JSON. For example, here are two classes (getters/setters and constructors omitted):
 
@@ -150,7 +150,7 @@ System.out.println(json.prettyPrint(person));
 }
 ```
 
-## <a id="Reading_Object_Graphs"></a>Reading Object Graphs ##
+## <a id="reading-object-graphs"></a>Reading Object Graphs ##
 
 The `Json` class uses reflection to automatically deserialize objects from JSON. Here is how to deserialize the JSON from the previous examples:
 
@@ -198,7 +198,7 @@ JsonValue root = new JsonReader().parse(text);
 
 The `JsonValue` describes a JSON object, array, string, float, long, boolean, or null.
 
-## <a id="Customizing_Serialization"></a>Customizing Serialization ##
+## <a id="customizing-serialization"></a>Customizing Serialization ##
 
 Usually automatic serialization is desired and there is no need to customize how specific classes are serialized. When needed, serialization can be customized by either having the class to be serialized implement the `Json.Serializable` interface, or by registering a `Json.Serializer` with the `Json` instance.
 
@@ -265,7 +265,7 @@ System.out.println(text);
 Person person2 = json.fromJson(Person.class, text);
 ```
 
-## <a id="Serialization_Methods"></a>Serialization Methods ##
+## <a id="serialization-methods"></a>Serialization Methods ##
 
 `Json` has many methods to read and write data to the JSON. Write methods without a name string are used to write a value that is not a JSON object field (eg, a string or an object in a JSON array). Write methods that take a name string are used to write a field name and value for a JSON object. 
 
@@ -348,6 +348,6 @@ For maps, the element type is used for the values. The keys for maps are always 
 
 Note that the `Json` class uses generics on Java field declarations to determine the element type where possible.
 
-## <a id="Event_Based_Parsing"></a>Event Based Parsing ##
+## <a id="event-based-parsing"></a>Event Based Parsing ##
 
 The `JsonReader` class reads JSON and has protected methods that are called as JSON objects, arrays, strings, floats, longs, and booleans are encountered. By default, these methods build a DOM out of `JsonValue` objects. These methods can be overridden to do your own event based JSON handling.
