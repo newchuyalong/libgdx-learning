@@ -78,7 +78,7 @@ mvn install:install-file -Dfile=tween-engine-api-sources.jar -DgroupId=aurelienr
   ```
 6. Open up the build.gradle file located in the root of your project directory in a text editor or your IDE
   * Locate the section marked **project(":core")**
-  * In the **dependencies** section add the following line:
+  * In the **dependencies** section add the following lines:
   ```
   compile "aurelienribon:tweenengine:6.3.3"
   compile "aurelienribon:tweenengine:6.3.3:sources"
