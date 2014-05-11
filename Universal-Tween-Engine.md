@@ -50,7 +50,7 @@ This method is the easiest to get up and running but if you end up with multiple
   }
   ```
 6. **Required for HTML Projects**
-  * Add the following line to your **GdxDefinition.gwt.xml** and **GdxDefinitionSuperdev.gwt.xml** files
+  * Add the following line to **GdxDefinition.gwt.xml** and **GdxDefinitionSuperdev.gwt.xml**
     * they are located in &lt;my-project-dir&gt;/html/src/your/package/name
   ```xml
 <inherits name='aurelienribon.tweenengine'/>
@@ -97,7 +97,7 @@ mvn install:install-file -Dfile=tween-engine-api-sources.jar -DgroupId=aurelienr
   }
   ```
 7. **Required for HTML Projects**
-  * Add the following line to your **GdxDefinition.gwt.xml** and **GdxDefinitionSuperdev.gwt.xml** files
+  * Add the following line to **GdxDefinition.gwt.xml** and **GdxDefinitionSuperdev.gwt.xml**
     * they are located in &lt;my-project-dir&gt;/html/src/your/package/name
   ```xml
 <inherits name='aurelienribon.tweenengine'/>
