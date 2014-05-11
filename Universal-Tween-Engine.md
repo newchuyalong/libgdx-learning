@@ -8,7 +8,7 @@ Since switching over to the gradle based build system some users have been havin
 
 ## FileTree Dependency Method (Easiest)
 
-This method is the easiest to get up and running but if you end up with multiple projects that make use of the Universal Tween Engine you might want to consider using a Local Maven Repo. See below for instructions on how to do that.
+This method is the easiest to get up and running but if you end up with multiple projects that make use of the Universal Tween Engine you might want to consider [Using a Local Maven Repository](#using-your-local-maven-repository)
 
 ---
 
