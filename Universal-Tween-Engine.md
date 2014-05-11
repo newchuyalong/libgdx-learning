@@ -65,7 +65,7 @@ This method is the easiest to get up and running but if you end up with multiple
 ## Using Your Local Maven Repository
 
 1. If you don't have Maven installed follow the instructions here: [Maven in Five Minutes]( http://maven.apache.org/guides/getting-started/maven-in-five-minutes.html)
-2. Download the Universal Tween Engine from here: https://code.google.com/p/java-universal-tween-engine/downloads/list
+2. Download the Universal Tween Engine from here: [Universal Tween Engine](https://code.google.com/p/java-universal-tween-engine/downloads/list)
 3. Extract the universal tween engine zip file to some location on your system
 4. Open a command prompt to the location that you extracted the zip file
 5. Run the following commands to add the universal tween engine jars to your local maven repo:
