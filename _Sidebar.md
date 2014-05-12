@@ -16,6 +16,7 @@
       * [[Commandline|Gradle on the Commandline]]
       * [[Updating your libGDX version|Updating LibGDX]]
       * [[Adding extensions and 3rd party libraries|Dependency management with Gradle]]   
+      * [[Improving your Gradle workflow|Improving-workflow-with-Gradle]]
     * Working from Source
       * [[Running Demos]]
       * [[Running Tests]]
