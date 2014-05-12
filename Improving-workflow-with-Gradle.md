@@ -44,6 +44,8 @@ Doing this allows you to keep Gradle out of your IDE, so that when you want to l
 It also allows you to keep the power of Gradle at your disposal, to handle all your dependencies, packaging tasks, signing tasks, deployment and anything else you may want to implement by running from the command line.
 
 ### Creating your IDEA project
+From the command line, run the following command from your project root directory:
+(If on a UNIX based OS, use ./gradlew to invoke gradle)
 ```groovy
 gradlew idea
 ```
@@ -51,6 +53,8 @@ gradlew idea
 In IDEA:
 File > OPEN > Locate the .ipr that the task above generates
 ### Creating your Eclipse Project
+From the command line, run the following command from your project root directory:
+(If on a UNIX based OS, use ./gradlew to invoke gradle)
 ```groovy
 gradlew eclipse
 ```
