@@ -64,11 +64,11 @@ You are **never** forced to use Gradle, it is just recommended. If you want clar
 
 If you don't want to use Gradle, you have the following choices.
 
-* You can use the setup to create your project still and never touch Gradle again. Folow the guide from [here] (#how-to-remove-gradle-ide-integration-from-your-project) and never touch Gradle again.
+* You can use the setup to create your project still and never touch Gradle again. Follow the guide from [here] (#how-to-remove-gradle-ide-integration-from-your-project) and never touch Gradle again.
 * You can setup your project manually.
-* You can maintain the old setup and use that to generate your projects
+* You can maintain the old setup and use that to generate your projects.
 
-Doing either of these will mean: 
+Doing any of the above will have the following consequences: 
 * You no longer have access to packaging tasks, you will have to package and deploy your projects yourself
 * You will lose support for IDE's other than IDEA and Eclipse
 * You install all the plugins required for your IDE to interpret each of the sub-projects
