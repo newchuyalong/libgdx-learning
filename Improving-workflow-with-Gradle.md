@@ -46,7 +46,8 @@ It also allows you to keep the power of Gradle at your disposal, to handle all y
 ### Creating your Eclipse Project
 
 ## I dont want to use Gradle
-Contrary to popular belief, no one is forcing you to use Gradle, and no one has ever prevented you from setting up your project manually (Which is marginally more time consuming than the setup-ui).  If you don't want to do this manually, you can always maintain the old setup yourself, or you can even use gdx-setup.jar to create your project and never touch Gradle again.
+
+Contrary to popular belief, no one is forcing you to use Gradle, and no one has ever prevented you from setting up your project manually (Which is only _marginally _more time consuming than the setup-ui).  If you don't want to do this manually, you can always maintain the old setup yourself, or you can even use **gdx-setup.jar** to create your project, follow the guide from [here] (#how-to-remove-gradle-ide-integration-from-your-project) and never touch Gradle again.
 
 Doing either of these will mean: 
 * You no longer have access to packaging tasks, you will have to package and deploy your projects yourself
