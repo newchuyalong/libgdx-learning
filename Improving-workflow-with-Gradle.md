@@ -6,7 +6,7 @@
 * [**Removing Gradle integration from your IDE**] (#how-to-remove-gradle-ide-integration-from-your-project)
  * [**Intellij IDEA**] (#creating-your-idea-project)
  * [**Eclipse**] (#creating-your-eclipse-project)
-* [**I dont want to use Gradle at all**] (#i-dont-want-to-use-gradle)
+* [**I dont want to use Gradle at all**] (#libgdx-without-gradle)
 
 
 ## Introduction
@@ -43,11 +43,29 @@ Doing this allows you to keep Gradle out of your IDE, so that when you want to l
 It also allows you to keep the power of Gradle at your disposal, to handle all your dependencies, packaging tasks, signing tasks, deployment and anything else you may want to implement by running from the command line.
 
 ### Creating your IDEA project
+```groovy
+gradlew idea
+```
+
+In IDEA:
+File > OPEN > Locate the .ipr that the task above generates
 ### Creating your Eclipse Project
+```groovy
+gradlew eclipse
+```
 
-## I dont want to use Gradle
+In Eclipse:
+File > Import > Existing project into workspace > Locate the .project file and import
 
-Contrary to popular belief, no one is forcing you to use Gradle, and no one has ever prevented you from setting up your project manually (Which is only _marginally_ more time consuming than the setup-ui).  If you don't want to do this manually, you can always maintain the old setup yourself, or you can even use **gdx-setup.jar** to create your project, follow the guide from [here] (#how-to-remove-gradle-ide-integration-from-your-project) and never touch Gradle again.
+## Libgdx without Gradle
+
+You are **never** forced to use Gradle, it is just recommended. If you want clarification on why it is recommended, check [here] (#why-does-libgdx-recommend-gradle)
+
+If you don't want to use Gradle, you have the following choices.
+
+* You can use the setup to create your project still and never touch Gradle again. Folow the guide from [here] (#how-to-remove-gradle-ide-integration-from-your-project) and never touch Gradle again.
+* You can setup your project manually.
+* You can maintain the old setup and use that to generate your projects
 
 Doing either of these will mean: 
 * You no longer have access to packaging tasks, you will have to package and deploy your projects yourself
@@ -56,5 +74,34 @@ Doing either of these will mean:
 * You manually update your dependencies from now on, don't forget the platform specific natives too!
 
   
+## Why does LibGDX recommend Gradle
 
+#### Support
+* Using Gradle, LibGDX is supported regardless of what IDE you use, even if you don't use one.  Your development environment doesn't support Android/RoboVM/HTML/Java? Don't worry, Gradle can compile/build/run/package your project no matter what you use to code with.
+* Having one unified system of managing your project makes it easy to get support from other users. The more people that are using the same approach, the larger the support user base grows.
+
+#### Dependency Management
+One of the biggest pros of any build/dependency management system.
+* Easy to understand
+* Insanely quick and simple to stay up to date with the latest LibGDX, update one line-refresh-done. No more jar hunting.
+* Transitive dependencies (Inherit dependencies from projects you depend on)
+* Custom dependency definitions, depend on anything!
+* Full compatibility with all repository types (Maven, Ivy, etc)
+
+#### Flexibility
+Gradle is built with Ant and Maven very much in mind, and aims to combine the two to make a very powerful and flexible build automation tool.
+* Structure your build however you want, add custom tasks, use the rich API to completely customize your build to suit your needs
+* Want to run your project on a CI server? Just throw it up there install the jenkins Gradle plugin and you're good to go
+* The Gradle Wrapper allows you to be free of installing Gradle!
+
+#### Maintainability
+
+The setup keeps simplicity of generating projects that are compatible with all IDE's and all libgdx extensions.  As LibGDX grows, extensions are created and it will become more modular to strip out any potential bloat. This means **more** dependencies for you to add, the setup has been built with this in mind, and makes it very quick to add these to your project.    
+
+The setup itself is very simple, very transparent and maintainable by developers that didn't create it.  This lowers the bus factor for LibGDX and reduces strain when the setup requires an update/alteration.
+
+As previously mentioned, the Gradle project that is created by **gdx-setup.jar** includes tasks to run and package/distribute each project.  This allows LibGDX to have a unified way of packaging your project, rather than x amount of ways for y amount of IDE's.  This saves a lot of time in terms of writing documentation, following what every IDE is doing, and providing support on the forums; this gives developers more time to work on great features for LibGDX to help make your project awesome.
+
+#### It revolutionizes everything
+Look down. Now look back up. Look down again. You're siting on a chair. Look back up. You aren't using Gradle, your life is OK but it could be better. You read this Article and you decide you want to use Gradle. You use the **gdx-setup.jar** to generate your project and you get tinkering with it.  You use the power of Gradle to create 500 flappy clones from the same source code. You look down again, your chair is now made of gold and there are an infinite amount of monkeys with keyboards to code for you. Your life is now better and you can now concentrate on this things that matter.
 
