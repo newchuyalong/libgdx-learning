@@ -6,7 +6,8 @@
 * [**Removing Gradle integration from your IDE**] (#how-to-remove-gradle-ide-integration-from-your-project)
  * [**Intellij IDEA**] (#creating-your-idea-project)
  * [**Eclipse**] (#creating-your-eclipse-project)
-* [**I dont want to use Gradle at all**] (#libgdx-without-gradle)
+* [**LibGDX without Gradle**] (#libgdx-without-gradle)
+* [**Why does LibGDX recommend Gradle**] (why-does-libgdx-recommend-gradle)
 
 
 ## Introduction
