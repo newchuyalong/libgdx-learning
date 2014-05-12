@@ -7,7 +7,7 @@
  * [**Intellij IDEA**] (#creating-your-idea-project)
  * [**Eclipse**] (#creating-your-eclipse-project)
 * [**LibGDX without Gradle**] (#libgdx-without-gradle)
-* [**Why does LibGDX recommend Gradle**] (why-does-libgdx-recommend-gradle)
+* [**Why does LibGDX recommend Gradle**] (#why-does-libgdx-recommend-gradle)
 
 
 ## Introduction
