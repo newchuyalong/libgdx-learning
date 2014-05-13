@@ -2,7 +2,7 @@
  * [Creating Properties Files](#creating-properties-files)
  * [Creating a Bundle](#creating-a-bundle)
  * [Fetch the Localized Strings](#fetch-the-localized-strings)
- * [GWT Limitations](#gwt-limitations)
+ * [GWT Limitations and Compatibility](#gwt-limitations-and-compatibility)
  * [Multiple Bundles](#multiple-bundles)
 
 ## Overview ##
@@ -48,7 +48,7 @@ Notice that the key named `game` is missing from the Italian properties file sin
 As you may have already noticed, the strings in a properties file can contain parameters. These strings are commonly called patterns and follow the syntax specified by the `java.text.MessageFormat` API.
 In short, a pattern can contain zero or more formats of the form `{index, type, style}` where the type and the style are optional.
 Please, refer to the official javadoc of the MessageFormat class to learn all its features. 
-Here I will bring to your attention only one interesting feature: formats are localizable. It means that typed data like number, date and time will be automatically expressed in the typical form of the specific locale. For esample, the float number 3.14 becomes 3,14 for the Italian local (notice the comma in place of the decimal point).
+Here I will bring to your attention only one interesting feature: formats are localizable. It means that typed data like number, date and time will be automatically expressed in the typical form of the specific locale. For example, the float number 3.14 becomes 3,14 for the Italian local (notice the comma in place of the decimal point).
 
 
 ## Creating a Bundle ##
@@ -74,7 +74,7 @@ I18NBundle myBundle = I18NBundle.createBundle(baseFileHandle, locale);
   Note that `createBundle` looks for files based on the default Locale before it selects the base file `MyBundle.properties`. If `createBundle` fails to find a match it throws a `MissingResourceException`. To avoid throwing this exception, you should always provide a base file with no suffixes.  
 
 
-## <a id="Fetch_the_Localized_Strings"></a>Fetch the Localized Strings ##
+## Fetch the Localized Strings ##
 
 To retrieve the translated value from the bundle, invoke the `get` method as follows:
 ````java
@@ -103,13 +103,18 @@ String highScoreTime = myBundle.format("highScoreTime", highScore.getDate());
     So, if you're used to MessageFormat's syntax, remember that now single quotes never need to be escaped.
 
 
-## GWT Limitations ##
+## GWT Limitations and Compatibility ##
 
-As said before, the I18N system provided by LibGdx is cross-platform. However there are some limitations when it comes to the GWT back end.
+As said before, the I18N system provided by LibGdx is cross-platform. However there are some limitations when it comes to the GWT back-end.
 In particular:
-- The format syntax of `java.text.MessageFormat` is not fully supported. You'll have to stick to a simplified syntax where formats are made only by their index, i.e. `{index}`.
+- **Simple format:** The format syntax of `java.text.MessageFormat` is not fully supported. You'll have to stick to a simplified syntax where formats are made only by their index, i.e. `{index}`.
 Format's type and style are not supported and cannot be used; otherwise an `IllegalArgumentException` is thrown.
-- Formats are never localized, meaning that the arguments passed to the `format` method are converted to a string with the `toString` method, so without taking into account the bundle's locale. 
+- **Non localizable arguments:** Formats are never localized, meaning that the arguments passed to the `format` method are converted to a string with the `toString` method, so without taking into account the bundle's locale. 
+
+If your application can run on both GWT and non-GWT back-ends, you should call [I18NBundle.setSimpleFormat(true)](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/utils/I18NBundle.html#setSimpleFormatter%28boolean%29) when the application starts. This way all subsequent invocations of the factory method `createBundle` will create bundles having the same behavior on all back-ends.
+This is necessary because usually formats like `{0}` are localizable on non-GWT back-ends. For example, let's consider the property `msg={0}` and the call `myBundle.format("msg", MathUtils.PI);`.
+If `simpleFormat` is set to `false` you'll get the localized string `3,14` for the Italian locale on a non-GWT back-end (notice the comma and the rounding) and the non-localized string `3.1415927` for the same locale on the GWT back-end.
+On the contrary, if `simpleFormat` is set to `true` you'll get the non-localized string `3.1415927` for any locale on any back-end.  
 
 
 ## Multiple Bundles ##
@@ -118,4 +123,3 @@ Of course you can use multiple bundles in your application. For example, you mig
    * Your code is easier to read and to maintain.
    * You'll avoid huge bundles, which may take somewhat long to load into memory.
    * You can reduce memory usage by loading each bundle only when needed.
-
