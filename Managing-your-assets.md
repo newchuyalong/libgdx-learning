@@ -43,7 +43,7 @@ manager.load("data/myfont.fnt", BitmapFont.class);
 manager.load("data/mymusic.ogg", Music.class);
 ```
 
-These calls will enqueue those assets for loading. The assets will be loaded in the order we called the [AssetManager#load()](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/assets/AssetManager.html#load(java.lang.String, java.lang.Class\)) method. Some loaders allow you to also pass parameters to them via AssetManager#load(). Say we want to specify a non-default filter and mipmapping setting for loading a texture:
+These calls will enqueue those assets for loading. The assets will be loaded in the order we called the [AssetManager#load()](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/assets/AssetManager.html#load(java.lang.String,%20java.lang.Class)) method. Some loaders allow you to also pass parameters to them via AssetManager#load(). Say we want to specify a non-default filter and mipmapping setting for loading a texture:
 
 ```java
 TextureParameter param = new TextureParameter();
