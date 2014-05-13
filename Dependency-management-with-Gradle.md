@@ -194,6 +194,7 @@ natives "com.badlogicgames.gdx:gdx-box2d-platform:$gdxVersion:natives-x86"
 ```
 **iOS Dependency:**
 ```groovy
+compile "com.badlogicgames.gdx:gdx-box2d:$gdxVersion"
 natives "com.badlogicgames.gdx:gdx-box2d-platform:$gdxVersion:natives-ios"
 ```
 **HTML Dependency:**
@@ -526,4 +527,3 @@ These are the libgdx extensions that are supported in gwt
 	<set-configuration-property name="gdx.assetpath" value="../android/assets" />
 </module>
 ```
-
