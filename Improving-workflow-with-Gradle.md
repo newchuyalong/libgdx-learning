@@ -3,6 +3,7 @@
 * [**Introduction**] (#introduction)
 * [**Optimizing Gradle integration in your IDE and on the command line**] (#tips-to-speed-up-gradle-if-you-still-want-ide-integration)
  * [**Gradle Daemon**] (#gradle-daemon)
+ * [**Configuration on Demand**] (#configuration-on-demand)
 * [**Removing Gradle integration from your IDE**] (#how-to-remove-gradle-ide-integration-from-your-project)
  * [**Intellij IDEA**] (#creating-your-idea-project)
  * [**Eclipse**] (#creating-your-eclipse-project)
@@ -30,6 +31,11 @@ Add the line; `org.gradle.daemon=true`
 _Further reading:_
 _Daemon http://www.gradle.org/docs/current/userguide/gradle_daemon.html_
 
+### Configuration on Demand
+This setting helps to solve the issue of Gradle configuring the world before execution.  Using this setting, the root project is always configured, the project in the directory where the build is executed is configured, and only dependent projects are configured, resulting in much faster build times.
+
+To use this setting add the following to the `gradle.properties` file in the root directory of your project:
+Add the line; `org.gradle.configureondemand=true` 
 
 
 ## How to remove Gradle IDE integration from your project
