@@ -111,14 +111,14 @@
       * Bounding Volumes ??
       * Intersection & Overlap Testing ??
     * [[Physics]]
-      * [[Box2D]]
       * [[Bullet Physics]]
     * Tools
       * [[Texture Packer]]
       * [[Hiero]]
       * [[Particle Editor]]
     * Extensions
-      * [[gdx-freetype]]    
+      * [[gdx-freetype]]
+      * [[Box2D]]    
     * [[Using libgdx with other JVM languages]]
       * [[Using libgdx with Clojure]]
       * [[Using libgdx with Python]]
