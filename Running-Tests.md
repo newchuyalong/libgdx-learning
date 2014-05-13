@@ -60,6 +60,6 @@ To add a test:
 
 * Add a class to gdx-tests/src/com/badlogic/gdx/tests/, it should extend GdxTest
 * Add any assets you need to gdx-tests-android/assets/data. Ideally you want to reuse assets already in there
-* Add your class to GdxTests#tests, it's a long list of Class instances. Try to keep it in alphabetical order! This will automatically add your test to the desktop and Android test runners (E.g. LwjglTestStarter)
+* Add your class to gdx-tests/src/com/badlogic/gdx/tests/utils/GdxTests#tests, it's a long list of Class instances. Try to keep it in alphabetical order! This will automatically add your test to the desktop and Android test runners (E.g. LwjglTestStarter)
 * INCLUDE FOR GWT: Add your test to GwtTestWrapper, through creating an Instancer. Your test needs to specify that it needs GL20 for it to work with the GWT test harness.
 * EXCLUDE FROM GWT: Add a line to GdxTests.gwt.xml excluding your test and giving a short explanation for why it has been excluded in an xml comment.
