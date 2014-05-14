@@ -8,7 +8,7 @@ It is highly recommended to read or least skim the [[scene2d documentation|scene
  * [Layout](#layout)
  * [Table](#table)
  * [Container](#container)
- * [Stage setup](#stage_setup)
+ * [Stage setup](#stage-setup)
  * [Skin](#skin)
  * [Drawable](#drawable)
  * [ChangeEvents](#changeevents)
