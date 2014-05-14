@@ -13,7 +13,7 @@
     * [Mavenize locally] (universal-tween-engine-by-locally-mavenizing-maven)
 * [**Declaring Dependencies with HTML**] (#gwt-inheritance)
  * [Libgdx Extension Inherits] (#libgdx-extension-inherits)
-
+* [**Step by Step Universal Tween Engine guide**] (#step-by-step-universal-tween-engine-guide)
 ### Useful links
 Dependency management with Gradle is easy to understand, and has many different approaches.  If you are familiar with Maven or Ivy, Gradle is fully compatible with both approaches, as well as being able to support custom approaches.  If you aren't familiar with Gradle, there are great resources on their site to learn, it is recommended you give them a read to get comfortable with Gradle.
 * [Gradle's User Guide](http://www.gradle.org/docs/current/userguide/userguide.html)
@@ -527,3 +527,8 @@ These are the libgdx extensions that are supported in gwt
 	<set-configuration-property name="gdx.assetpath" value="../android/assets" />
 </module>
 ```
+
+#### Step by step Universal Tween Engine guide
+This guide uses everything that is explained in this article to add the Universal Tween Engine to your project as a dependency.
+
+[Click me](Universal-Tween-Engine)
