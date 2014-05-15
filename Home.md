@@ -127,6 +127,8 @@
       * [[Swarm in Libgdx]]
       * [[NextPeer in Libgdx]]
       * [[Google Play Game Services in LibGDX]]
+      * [[ProGuard/DexGuard and libGDX]]
+      * [[Excelsior JET and libGDX]]
   * Articles
     * [[Getting Help]]
     * [[External Tutorials]]
