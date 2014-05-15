@@ -13,17 +13,19 @@ This article runs you through the minimal amount of steps required to get your l
 ![](http://libgdx.badlogicgames.com/uploads/Screen%20Shot%202014-05-13%20at%2022.33.05-kbRqXATONp.png)
 8. Click the `Next` button
 9. Leave everything as is, click "Check consistency". You may get some unresolved import dependencies and some missing super classes. As long as these belong to libGDX or LWJL, you are fine!
-http://libgdx.badlogicgames.com/uploads/Screen%20Shot%202014-05-13%20at%2022.36.03-lnARcI45m0.png
+![](http://libgdx.badlogicgames.com/uploads/Screen%20Shot%202014-05-13%20at%2022.36.03-lnARcI45m0.png)
 10. Click the `Next` button
 11. Leave everything as is, except for maybe the maximum heap size
-http://libgdx.badlogicgames.com/uploads/Screen%20Shot%202014-05-13%20at%2022.37.42-LTZXfsAYzt.png
+![](http://libgdx.badlogicgames.com/uploads/Screen%20Shot%202014-05-13%20at%2022.37.42-LTZXfsAYzt.png)
 12. Click the `Next` button
 13. Set the executable name, leave the rest as is, click the `Next` button
-http://libgdx.badlogicgames.com/uploads/Screen%20Shot%202014-05-13%20at%2022.38.47-Iu59XREcyU.png
+![](http://libgdx.badlogicgames.com/uploads/Screen%20Shot%202014-05-13%20at%2022.38.47-Iu59XREcyU.png)
 14. Set the Windows icon file (.ico), click the `Next` button
-http://libgdx.badlogicgames.com/uploads/Screen%20Shot%202014-05-13%20at%2022.39.27-Xpkq5vRnjE.png
+![](http://libgdx.badlogicgames.com/uploads/Screen%20Shot%202014-05-13%20at%2022.39.27-Xpkq5vRnjE.png)
 15. Leave everything as is and hit `Build`. Save the configuration to your project's root folder. This will allow you to invoke the build from the command line, or load the settings into the Excelsior JET UI.
-http://libgdx.badlogicgames.com/uploads/Screen%20Shot%202014-05-13%20at%2022.40.08-APwYfRoK0Q.png
+![](http://libgdx.badlogicgames.com/uploads/Screen%20Shot%202014-05-13%20at%2022.40.08-APwYfRoK0Q.png)
 16. Wait for your app to be compiled/packaged to a native executable!
 17. After compilation, try out your native executable and distribute it to your users!
-http://libgdx.badlogicgames.com/uploads/Screen%20Shot%202014-05-13%20at%2022.46.05-GTrm7XG1GD.png
+![](http://libgdx.badlogicgames.com/uploads/Screen%20Shot%202014-05-13%20at%2022.46.05-GTrm7XG1GD.png)
+
+You can and **should** deviate from this guide and experiment with all the optimization options Excelsior JET has to offer. These will increase the runtime performance and decrease the executable size when configured to fit your applications needs. For more information, consult the Excelsior JET documentation.
