@@ -237,7 +237,7 @@ In the `create()` method we instantiate the Rectangle and specify it's initial v
 
 We center the bucket horizontally and place it 20 pixels above the bottom edge of the screen. Wait, why is `bucket.y` set to 20, shouldn't it be 480 - 20? By default, all rendering in libgdx (and OpenGL) is performed with the y-axis pointing upwards. The x/y coordinates of the bucket define the bottom left corner of the bucket, the origin for drawing is located in the bottom left corner of the screen. The width and height of the rectangle are set to 64x64, our small-ish portion of our target resolutions height.
 
-*Note:* it is possible to [change this setup](http://www.badlogicgames.com/forum/viewtopic.php?f=11&t=3565) so the y-axis points down and the origin is in the upper left corner of the screen. OpenGL and the camera class are so flexible that you can have pretty much any kind of viewing angle you want, in 2D and 3D. We'll continue using the above setup.
+*Note:* it is possible to [change this setup](https://github.com/libgdx/libgdx/blob/master/tests/gdx-tests/src/com/badlogic/gdx/tests/YDownTest.java) ([related discussion](http://www.badlogicgames.com/forum/viewtopic.php?f=11&t=3565)) so the y-axis points down and the origin is in the upper left corner of the screen. OpenGL and the camera class are so flexible that you can have pretty much any kind of viewing angle you want, in 2D and 3D. We'll continue using the above setup.
 
 ### Rendering the Bucket ###
 Time to render our bucket. The first thing we want to do is to clear the screen with a dark blue color. Simply change the `render()` method to look like this:
