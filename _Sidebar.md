@@ -78,6 +78,7 @@
             * [[NinePatches]]
             * [[Bitmap Fonts]]
               * [[Distance field fonts]]
+              * [[Color Markup Language]]
             * [[Using TextureAtlases]]
             * [[Pixmaps]]
             * [[Packing Atlases Offline]]
