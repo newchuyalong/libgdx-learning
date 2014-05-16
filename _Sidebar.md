@@ -70,7 +70,7 @@
               * [[Shaders]]
               * [[Frame Buffer Objects]]
       * 2D Graphics
-            * [[SpriteBatch, TextureRegions, and Sprite]]
+            * [[Textures, textureregion and spritebatch]]
             * [[2D Animation]]
             * [[Clipping, with the use of ScissorStack]]
             * [[Orthographic camera]]
