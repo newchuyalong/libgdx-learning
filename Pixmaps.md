@@ -55,4 +55,4 @@ In the preceding example, _pixmap_ will be written to an external location using
 
 # Drawing #
 
-Pixmap supports simple drawing operations such as the drawing of lines, filled or unfilled rectangles and circles, as well as the setting of individual pixels. These operations are also affected by color, blending, and filters which are controlled by `setColor()`, `setBlending()`, and `setFilter()` respectively.
+Pixmap supports simple drawing operations such as the drawing of lines, filled or unfilled rectangles and circles, as well as the setting of individual pixels and drawing of other pixmaps. These operations are also affected by color, blending, and filters which are controlled by `setColor()`, `setBlending()`, and `setFilter()` respectively.
