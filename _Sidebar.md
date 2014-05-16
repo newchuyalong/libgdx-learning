@@ -71,6 +71,7 @@
               * [[Frame Buffer Objects]]
       * 2D Graphics
             * [[Textures, textureregion and spritebatch]]
+            * [[Spritebatch, Textureregions, and Sprites]]
             * [[2D Animation]]
             * [[Clipping, with the use of ScissorStack]]
             * [[Orthographic camera]]
