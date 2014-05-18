@@ -1,6 +1,6 @@
  * [About the Bullet Physics extension](#about-the-bullet-physics-extension)
  * [Setting up Bullet with libgdx](#setting-up-bullet-with-libgdx)
-    * [Initializing Bullet](#Initializing_Bullet)
+    * [Initializing Bullet](#setting-up-bullet-with-libgdx)
     * [Working with Bullet wrapper](#Working_with_Bullet_wrapper)
     * [Callbacks](#Callbacks)
     * [Properties](#Properties)
