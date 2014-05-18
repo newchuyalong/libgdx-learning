@@ -1,3 +1,12 @@
+ * [Introduction](#introduction)
+ * [Background](#background)
+ * [Setup](#setup)
+ * [Initialization](#initialization)
+ * [Control](#control)
+ * [Code](#code)
+ * [iOS Setup (RoboVM)](#ios-setup-(robovm))
+
+
 # Introduction #
 
 This article shows you how to set up AdMob with a libgdx app. This is current roughly with AdMob 4.0.4 and libgdx 0.9.1. The same instructions will work with Mobclix as well (and probably others), the only changes being the differences between the AdMob and Mobclix APIs. In the code snippets, I'm going to leave out the package and import lines for brevity. If you're working in Eclipse, Ctrl-1 on any line showing an error will auto-fill-in the required imports.
@@ -604,6 +613,7 @@ public class HelloWorld implements ApplicationListener {
 ```
 
 # iOS Setup (RoboVM) #
+
 For admob to work on IOS it's best to make sure you are doing the following things:
 
 * Make sure you project is using the latest libgdx version
