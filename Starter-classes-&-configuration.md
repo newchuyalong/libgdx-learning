@@ -1,8 +1,17 @@
+* [Desktop (LWJGL)](#desktop-lwjgl)
+* [Android](#android)
+  - [Fragment based libgdx](#fragment-based-libgdx)
+  - [Live Wallpapers](#live-wallpapers)
+  - [Daydreams](#daydreams)
+* [iOS Xamarin (Deprecated!)](#ios xamarin-deprecated!)
+* [HTML5/GWT](#html-gwt)
+
+
 For each target platform, a starter class has to be written. This class instantiates a back-end specific `Application` implementation and the `ApplicationListener` that implements the application logic. The starter classes are platform dependent, let's have a look at how to instantiate and configure these for each back-end.
 
 This article assumes you have followed the instruction in [[Project Setup, Running & Debugging]] and have imported the generated core, desktop, Android and HTML5 projects into Eclipse.
 
-## Desktop (LWJGL) ##
+# Desktop (LWJGL) #
 Opening the `Main.java` class in `my-gdx-game` shows the following:
 
 ```java
@@ -30,7 +39,7 @@ Once the configuration object is set, an `LwjglApplication` is instantiated. The
 
 From there on a window is created and the ApplicationListener is invoked as described in [[The Life-Cycle]]
 
-## Android ##
+# Android #
 Android applications do not use a `main()` method as the entry-point, but instead require an Activity. Open the `MainActivity.java` class in the `my-gdx-game-android` project:
 
 ```java
@@ -126,7 +135,7 @@ If a game doesn't need accelerometer or compass access it is advised to disable 
 
 Please refer to the [Android Developer's Guide](http://developer.android.com/guide/index.html) for more information on how to set other attributes like icons for your application.
 
-### Live Wallpapers ###
+## Live Wallpapers ##
 Libgdx features a simple to use way to create [Live Wallpapers](http://android-developers.blogspot.co.at/2010/02/live-wallpapers.html) for Android. The starter class for a live wallpaper is called `AndroidLiveWallpaperService`, here's an example:
 
 ```java
@@ -211,7 +220,7 @@ Note that live wallpapers are only supported starting from Android 2.1 (SDK leve
 
 LWPs have some limitations concerning touch input. In general only tap/drop will be reported. If you want full touch you can see the `AndroidApplicationConfiguration#getTouchEventsForLiveWallpaper` flag to true to receive full multi-touch events.
 
-### Daydreams ###
+## Daydreams ##
 Since Android 4.2, users can set [Daydreams](http://developer.android.com/about/versions/android-4.2.html#Daydream) that will get displayed if the device is idle or docked. These daydreams are similar to screensavers and can display things like photo albums etc. Libgdx let's you write such daydreams easily.
 
 The starter class for a Daydream is called AndroidDaydream. Here's an example:
@@ -279,7 +288,7 @@ Finally, add a section for the settings activity in the AndroidManifest.xml as u
 </service>
 ```
 
-## iOS Xamarin (Deprecated!) ##
+# iOS Xamarin (Deprecated!) #
 
 The iOS backend relies on using Xamarin's [MonoDevelop](http://xamarin.com/monotouch) IDE for development and a Monotouch license for deployment.  The entry-point for a Monotouch application is the AppDelegate found in the Main.cs file of the project.  An example of this is below:
 
@@ -370,7 +379,7 @@ OUT       = target/my-gdx-game.dll
 
 This file specifies the input files that comprise the my-gdx-game.dll assembly.
 
-## HTML5/GWT ##
+# HTML5/GWT #
 The main entry-point for an HTML5/GWT application is a `GwtApplication`. Open `GwtLauncher.java` in the my-gdx-game-html5 project:
 
 ```java
