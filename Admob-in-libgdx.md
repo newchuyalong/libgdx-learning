@@ -4,7 +4,7 @@
  * [Initialization](#initialization)
  * [Control](#control)
  * [Code](#code)
- * [iOS Setup (RoboVM)](#ios-setup-(robovm))
+ * [iOS Setup (RoboVM)](#ios-setup-robovm)
 
 
 # Introduction #
