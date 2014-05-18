@@ -3,8 +3,8 @@
   - [Fragment based libgdx](#fragment-based-libgdx)
   - [Live Wallpapers](#live-wallpapers)
   - [Daydreams](#daydreams)
-* [iOS Xamarin (Deprecated!)](#ios xamarin-deprecated!)
-* [HTML5/GWT](#html-gwt)
+* [iOS Xamarin (Deprecated!)](#ios-xamarin-deprecated)
+* [HTML5/GWT](#html5gwt)
 
 
 For each target platform, a starter class has to be written. This class instantiates a back-end specific `Application` implementation and the `ApplicationListener` that implements the application logic. The starter classes are platform dependent, let's have a look at how to instantiate and configure these for each back-end.
