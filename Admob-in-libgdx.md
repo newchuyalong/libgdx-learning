@@ -340,7 +340,7 @@ Here's the full code for the various classes, for completeness:
 
 HelloWorldAndroid.java:
 
-```
+```java
 /*******************************************************************************
  * Copyright 2011 See AUTHORS file.
  * 
