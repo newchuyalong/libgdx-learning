@@ -2,7 +2,7 @@
 * [Platform Filesystems](#platform-filesystems)
 * [File (Storage) Types](#file-storage-types)
 * [Checking Storage availability and paths](#checking-storage-availability-and-paths)
-* [Obtaining FileHandles](#obtaining-fileHandles)
+* [Obtaining FileHandles](#obtaining-filehandles)
 * [Listing and Checking Properties of Files](#listing-and-checking-properties-of-files)
 * [Error Handling](#error-handling)
 * [Reading from a File](#reading-from-a-file)
