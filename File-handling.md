@@ -1,3 +1,16 @@
+* [Introduction](#introduction)
+* [Platform Filesystems](#platform-filesystems)
+* [File (Storage) Types](#file-storage-types)
+* [Checking Storage availability and paths](#checking-storage-availability-and-paths)
+* [Obtaining FileHandles](#obtaining-fileHandles)
+* [Listing and Checking Properties of Files](#listing-and-checking-properties-of-files)
+* [Error Handling](#error-handling)
+* [Reading from a File](#reading-from-a-file)
+* [Writing to a File](#writing-to-a-file)
+* [Deleting, Copying, Renaming and Moving Files/Directories](#deleting-copying-renaming-and-moving-filesdirectories)
+
+
+## Introduction ##
 Libgdx applications run on four different platforms: desktop systems (Windows, Linux, Mac OS X, headless), Android, iOS, and JavaScript/WebGL capable browsers. Each of these platforms handles file I/O a little differently. 
 
 Libgdx's [Files](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/Files.html) [(code)](https://github.com/libgdx/libgdx/tree/master/gdx/src/com/badlogic/gdx/Files.java) module provides the ability to:
