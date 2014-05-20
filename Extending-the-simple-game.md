@@ -4,7 +4,7 @@ Let's get started with an introduction to a few more advanced classes in our gam
 
 ## The Screen interface ##
 
-Screens are fundamental to any game with multiple components. Screens contain much of the methods you are used to from ApplicationListener objects, and includes a couple new methods `show` and `hide`, which are called when the Screen gains and loses focus, respectively.
+Screens are fundamental to any game with multiple components. Screens contain many of the methods you are used to from ApplicationListener objects, and include a couple of new methods: `show` and `hide`, which are called when the Screen gains or loses focus, respectively.
 
 ## The Game Class ##
 
