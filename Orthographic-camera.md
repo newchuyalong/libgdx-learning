@@ -235,7 +235,8 @@ public void render() {
 *#6* - *Sets the current projection and model-view matrix of the camera.* It is called *after* update.
 
 *#7 - #9* - Activates the texture and binds it to the context.
-*#10* - Renders the mash which is the map.
+
+*#10* - Renders the mesh, which is the map.
 
 ```java
 	private void handleInput() {
