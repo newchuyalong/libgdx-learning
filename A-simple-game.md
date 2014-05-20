@@ -393,7 +393,7 @@ One final adjustment: if a raindrop hits the bucket, we want to playback our dro
       }
 ```
 
-The `Rectangle.overlaps()` method checks if this rectangle overlaps with another rectangle. In our case, we tell the drop sound effect to play itself back and remove the raindrop from the array.
+The `Rectangle.overlaps()` method checks if this rectangle overlaps with another rectangle. In our case, we tell the drop sound effect to play itself and remove the raindrop from the array.
 
 ## Cleaning Up ##
 A user can close the application at any time. For this simple example there's nothing that needs to be done. However, it is in general a good idea to help out the operating system a little and clean up the mess we created.
@@ -418,7 +418,7 @@ Disposables are usually native resources which are not handled by the Java garba
 ## Handling Pausing/Resuming ##
 Android has the notation of pausing and resuming your application every time the user gets a phone call or presses the home button. Libgdx will do many things automatically for you in that case, e.g. reload images that might have gotten lost (OpenGL context loss, a terrible topic on its own), pause and resume music streams and so on.
 
-In our game there's no real need to handle pausing/resuming. As soon as the user comes back to the application, the game continues where it left. Usually one would implement a pause screen and ask the user to touch the screen to continue. This is left as an exercise for the reader. Check out the `ApplicationListener.pause()` and `ApplicationListener.resume()` methods.
+In our game there's no real need to handle pausing/resuming. As soon as the user comes back to the application, the game continues where it left. Usually one would implement a pause screen and ask the user to touch the screen to continue. This is left as an exercise for the reader - check out the `ApplicationListener.pause()` and `ApplicationListener.resume()` methods.
 
 ## The Full Source ##
 Here's the tiny source for our simple game:
@@ -577,6 +577,6 @@ public class Drop implements ApplicationListener {
 ```
 
 ## Where to go from here ##
-This was a very basic example of how to use libgdx to create a minimalistic game. Some things can be improved, like using the [Memory Management](https://github.com/libgdx/libgdx/wiki/Memory-management#object-pooling) class to recycle all the Rectangles we have the garbage collector clean up each time we delete a raindrop. OpenGL is also not to fond if we hand it to many different images in a batch. In our case it is OK, as we only had two images. Usually one would put all those images into a single `Texture`, also known as a `TextureAtlas`. `Screen`'s and `Game`'s can also be utilized for  increased interaction; to learn more, there is a second tutorial, based on this, which can be found [[here | Extending the Simple Game]]
+This was a very basic example of how to use libgdx to create a minimalistic game. Some things can be improved, like using the [Memory Management](https://github.com/libgdx/libgdx/wiki/Memory-management#object-pooling) class to recycle all the Rectangles we have the garbage collector clean up each time we delete a raindrop. OpenGL is also not too fond if we hand it too many different images in a batch (in our case it's OK as we only had two images). Usually one would put all those images into a single `Texture`, also known as a `TextureAtlas`. `Screen`s and `Game`s can also be utilized for increased interaction; to learn more, there is a second tutorial, based on this, which can be found [[here | Extending the Simple Game]]
 
 I'd highly recommend reading the rest of the developer guide and checking out the demos and tests in the Git repository. Happy coding. 
