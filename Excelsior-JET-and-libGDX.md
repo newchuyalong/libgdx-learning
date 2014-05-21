@@ -20,7 +20,7 @@ This article runs you through the minimal amount of steps required to get your l
 12. Click the `Next` button
 13. Set the executable name, leave the rest as is, click the `Next` button
 ![](http://libgdx.badlogicgames.com/uploads/Screen%20Shot%202014-05-13%20at%2022.38.47-Iu59XREcyU.png)
-14. On Windows, set the Windows icon file (.ico) for the resulting EXE file, and check `Hide console window` unless you *do* want to see what the EXE will write to stdout (same as `java` vs `javaw`.) Click the `Next` button.
+14. On Windows, set the Windows icon file (.ico) for the resulting EXE file, and make sure that `Hide console window` is checked unless you *do* want to see what the EXE will write to stdout. (That checkbox  get checked for you only if the command line you specified on the first step began with `javaw`.) Click the `Next` button.
 ![](http://libgdx.badlogicgames.com/uploads/Screen%20Shot%202014-05-13%20at%2022.39.27-Xpkq5vRnjE.png)
 15. Leave everything as is and hit `Build`. Save the configuration to your project's root folder. This will allow you to invoke the build from the command line, or load the settings into the Excelsior JET UI.
 ![](http://libgdx.badlogicgames.com/uploads/Screen%20Shot%202014-05-13%20at%2022.40.08-APwYfRoK0Q.png)
