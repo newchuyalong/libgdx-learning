@@ -35,11 +35,25 @@ You're ready to go.
 ## How to use gdx-freetype in code ##
 
 Using the gdx-freetype extension in your code is really simple.
+
 ```java
 FreeTypeFontGenerator generator = new FreeTypeFontGenerator(Gdx.files.internal("fonts/myfont.ttf"));
-BitmapFont font12 = generator.generateFont(12); // font size 12 pixels
-BitmapFont font25 = generator.generateFont(25); // font size 25 pixels
+FreeTypeFontParameter parameter = new FreeTypeFontParameter();
+parameter.size = 12;
+BitmapFont font12 = generator.generateFont(parameter); // font size 12 pixels
 generator.dispose(); // don't forget to dispose to avoid memory leaks!
+```
+
+
+The defaults for the [FreeTypeFontParameter](https://github.com/libgdx/libgdx/blob/master/extensions/gdx-freetype/src/com/badlogic/gdx/graphics/g2d/freetype/FreeTypeFontGenerator.java):
+```java
+size = 16;
+characters = FreeTypeFontGenerator.DEFAULT_CHARS;
+packer = null;
+flip = false;
+genMipMaps = false;
+minFilter = TextureFilter.Nearest;
+magFilter = TextureFilter.Nearest;
 ```
 
 ### latest info about caveats ###
