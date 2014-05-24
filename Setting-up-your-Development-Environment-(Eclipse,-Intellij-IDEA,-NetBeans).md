@@ -2,6 +2,7 @@ Libgdx projects use [Gradle](http://www.gradle.org/) to manage dependencies, the
 
 ### Setting up Eclipse 
 To develop your application via Eclipse, you need to install the following pieces of software.
+You can find an in depth guide [HERE.](http://www.toxsickproductions.be/libgdx/how-to-setup-your-libgdx-project/)
 
   * [Java Development Kit 7+ (JDK) (6 will not work!)](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
   * [Eclipse](http://www.eclipse.org/downloads/), the "Eclipse IDE for Java Developers" is usually sufficient.
