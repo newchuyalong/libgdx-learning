@@ -2,6 +2,7 @@
  * [Creating Properties Files](#creating-properties-files)
  * [Creating a Bundle](#creating-a-bundle)
  * [Fetch the Localized Strings](#fetch-the-localized-strings)
+ * [Plural Forms](#plural-forms)
  * [GWT Limitations and Compatibility](#gwt-limitations-and-compatibility)
  * [Multiple Bundles](#multiple-bundles)
 
@@ -101,6 +102,33 @@ String highScoreTime = myBundle.format("highScoreTime", highScore.getDate());
     - A left curly bracket must be doubled if you want it to be part of your string.
 
     So, if you're used to MessageFormat's syntax, remember that now single quotes never need to be escaped.
+
+
+## Plural forms ##
+
+Plural forms are supported through the standard `choice` format provided by `MessageFormat`.
+See the official documentation of the class `java.text.ChoiceFormat`.
+I'm going to show you just an example. Let's consider the following property:
+````
+collectedCoins=You collected {0,choice,0#no coins|1#one coin|1<{0,number,integer} coins|100<hundreds of coins} along the path.
+````
+You can retrieve the localized string as usual:
+````java
+System.out.println(myBundle.format("collectedCoins", 0));
+System.out.println(myBundle.format("collectedCoins", 1));
+System.out.println(myBundle.format("collectedCoins", 32));
+System.out.println(myBundle.format("collectedCoins", 117));
+````
+And the output result would be like the following: 
+````
+You collected no coins along the path.
+You collected one coin along the path.
+You collected 32 coins along the path.
+You collected hundreds of coins along the path.
+````
+
+It's worth noting that the choice format can properly handle nested formats as we did with `{0,number,integer}` inside `{0,choice,...}`.
+
 
 
 ## GWT Limitations and Compatibility ##
