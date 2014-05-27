@@ -28,6 +28,8 @@ public class MyPacker {
 }
 ```
 
+>If you use gradle, and the `TexturePacker` doesn't exist, add the gdx-tools to your [build.grade](https://github.com/libgdx/libgdx/wiki/Dependency-management-with-Gradle#tools-gradle) file.
+
 It can also be run from the [nightly build](http://libgdx.badlogicgames.com/nightlies/):
 
 ```
