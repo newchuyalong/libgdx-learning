@@ -64,3 +64,7 @@ jMonkeyEngine has an Angel Code [font tool](http://jmonkeyengine.org/groups/jmon
 ### bmglyph ###
 
 The [bmglyph](http://www.bmglyph.com//) tool is for OSX only and hasn't been evaluated.
+
+### Littera ###
+
+http://kvazars.com/littera/
