@@ -80,6 +80,14 @@ This is fairly standard setup for a shader that uses a position attribute, a col
 
 In the fragment shader we have a sampler2D; this is a special uniform used for textures. As you can see in the main function, we multiply the vertex color with the color from the texture lookup to produce the final output color.
 
+Here is a list of attributes that are in libgdx's own library for those who wish to easily attach shaders to SpriteBatchs and other parts of libgdx:
+* a_position
+* a_normal
+* a_color
+* a_texCoord, requires a number at the end, i.e. a_texCoord0, a_texCoord1, etc...
+* a_tangent
+* a_binormal
+
 To create the ShaderProgram we do the following:
 ```java
 ShaderProgram shader = new ShaderProgram(vertexShader, fragmentShader);
