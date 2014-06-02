@@ -24,7 +24,7 @@ public class Main {
    public static void main(String[] args) {
       LwjglApplicationConfiguration cfg = new LwjglApplicationConfiguration();
       cfg.title = "my-gdx-game";
-      cfg.useGL20 = false;
+      cfg.useGL30 = false;
       cfg.width = 480;
       cfg.height = 320;
 		
