@@ -3,7 +3,7 @@
 
   * **Developer's Guide**
     * [[Introduction|Introduction]]
-      * [[Goals & Features]]
+
       * [[Community & Support]]
       * [[Contributing]]
       * [[Games Built with Libgdx]]
