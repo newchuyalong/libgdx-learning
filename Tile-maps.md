@@ -99,8 +99,8 @@ As in the case of maps and layers, you can also access the more generic properti
 
 ### Map Renderer ###
 
-[MapRenderer](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/maps/MapRenderer.html)
-The [(code)](https://github.com/libgdx/libgdx/blob/master/gdx/src/com/badlogic/gdx/maps/MapRenderer.java) interface defines methods that allow you to render the layers and objects of a map.
+The [MapRenderer](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/maps/MapRenderer.html)
+[(code)](https://github.com/libgdx/libgdx/blob/master/gdx/src/com/badlogic/gdx/maps/MapRenderer.java) interface defines methods that allow you to render the layers and objects of a map.
 
 Before you can start rendering, you have to set the view on your map. Think of the view as window through which you look. The easiest way to achieve this, is to tell the map renderer about an OrthographicCamera it should use:
 
