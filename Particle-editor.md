@@ -78,10 +78,11 @@ Finally, the last piece of functionality for charts is the “Relative” check-
 
 **Transparency:** Controls the alpha of the particle.
 
-**Options, Additive:** For additive blending.
-Options, Attached: Means existing particles will move when the emitter moves.
-Options, Continuous: Means the emitter restarts as soon as its duration expires. Note that this means an effect will never end, so other emitters in the effect that are not continuous will never restart.
-Options, Aligned: The angle of a particle is added to the rotation. This allows you to align the particle image to the direction of travel.
+**Options**
+ - **Additive:** For additive blending.
+ - **Attached:** Means existing particles will move when the emitter moves.
+ - **Continuous:** Means the emitter restarts as soon as its duration expires. Note that this means an effect will never end, so other emitters in the effect that are not continuous will never restart.
+ - **Aligned:** The angle of a particle is added to the rotation. This allows you to align the particle image to the direction of travel.
 
 In the upper left of the particle editor, “Count” shows how many particles exist for the currently selected emitter. “Max” shows how many particles exist for all emitters over the past few seconds. Below that is a percentage that represents the duration percent of the currently selected emitter.
 
