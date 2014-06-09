@@ -118,6 +118,9 @@
       * [[Hiero]]
       * [[Particle Editor]]
     * Extensions
+      * Artificial Intelligence
+            * [[Message Handling]]
+            * [[State Machine]]
       * [[gdx-freetype]]
       * [[Box2D]]    
     * [[Using libgdx with other JVM languages]]
