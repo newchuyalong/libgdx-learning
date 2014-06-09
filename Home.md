@@ -111,8 +111,6 @@
       * [[Path interface & Splines]]
       * Bounding Volumes ??
       * Intersection & Overlap Testing ??
-    * [[Physics]]
-      * [[Bullet Physics]]
     * Tools
       * [[Texture Packer]]
       * [[Hiero]]
@@ -122,7 +120,9 @@
             * [[Message Handling]]
             * [[State Machine]]
       * [[gdx-freetype]]
-      * [[Box2D]]    
+      * [[Physics]]
+            * [[Box2D]]    
+            * [[Bullet Physics]]
     * [[Using libgdx with other JVM languages]]
       * [[Using libgdx with Clojure]]
       * [[Using libgdx with Python]]
