@@ -35,7 +35,7 @@ http://libgdxtutorialseries.blogspot.com
  * Gradle setup - http://duckseason.mobi/how-to-setup-gradle-for-existing-libgdx-multi-project-using-the-google-android-plug-in-2/
 
 ## Internationalization ##
-
+Libgdx offers official support for [[Internationalization and Localization]] since version 1.1.0. This is the recommended approach from now on. However, if you're using an older version of Libgdx you might be interested in the following articles:
  * http://siondream.com/blog/games/internationalization-for-libgdx-projects/
  * http://blog.gemserk.com/2012/05/23/android-and-desktop-games-internationalization-using-java-and-libgdx/
 
