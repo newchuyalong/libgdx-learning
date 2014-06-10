@@ -246,7 +246,7 @@ A cell can span multiple columns.
 
 Note that there is no rowspan. To acheive this, use a nested table.
 
-## Uniform
+### Uniform
 
 Cells with `uniform` set to true will be the same size.
 
