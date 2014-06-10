@@ -326,6 +326,6 @@ Table excels at sizing and positioning widgets that do not overlap. To layer wid
 
 ## Inserting cells
 
-Table allows a cell's widget to be changed or removed (by setting it to null), but Table currently does not allow cells to be inserted or removed. The Table needs to be rebuilt to do: call `clearChildren` to remove all children and cells, then add them all to the Table again.
+Table allows a cell's widget to be changed or removed (by setting it to null), but Table currently does not allow cells to be inserted in the middle or removed. To do that, the Table needs to be rebuilt: call `clearChildren` to remove all children and cells, then add them all to the Table again.
 
-If inserting or removing cells is neededing, [VerticalGroup](Scene2d.ui#verticalgroup) or [HorizontalGroup](Scene2d.ui#horizontalgroup) can be used.
+If inserting or removing cells is needed, [VerticalGroup](Scene2d.ui#verticalgroup) or [HorizontalGroup](Scene2d.ui#horizontalgroup) can be used.
