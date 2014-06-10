@@ -76,6 +76,7 @@ https://bitbucket.org/Thotep/gdx-shaders/wiki/Home
  This is a small library to make using shaders and frame-buffers easier in libgdx. Comes with a collection of sample GLSL shaders.
 
 * Water wobbling effect in tiled map: http://www.alcove-games.com/new-tutorial-vertex-shader-for-tiled-water/
+* Shader video tutorial series: https://www.youtube.com/playlist?list=PLXY8okVWvwZ1_aaMnBU5HF4UP3hHL60Vy
 
 ### Online Shader Tools ###
 
@@ -86,7 +87,9 @@ This websites will let you play with WebGL (provided your browser supports it) a
 
 ## Tile based games ##
 
- * http://siondream.com/blog/games/exploit-tileds-command-tool/ (Tutorial on how to speed up map editing in Tiled and testing the map)
+ * Tutorial on how to speed up map editing in Tiled and testing the map: http://siondream.com/blog/games/exploit-tileds-command-tool/
+* Video tutorial series on creating a tile game prototype: https://www.youtube.com/playlist?list=PLXY8okVWvwZ0qmqSBhOtqYRjzWtUCWylb
+* gdx-tiled-preprocessor video tutorial: http://youtu.be/q5D-TzlCRPM (Warning: the gdx-tiled-preprocessor was merged into gdx-tools)
 
 
 # External Tools & Frameworks #
@@ -115,6 +118,7 @@ These are interesting open-source projects found on the web that use libGDX. Thi
  * https://github.com/crmaykish/SimpleCiv (Civilization Clone)
  * https://github.com/gtomee/AudioSpectrumGDX (audio analyzer)
  * https://github.com/xclam/ageoftower (Tower Defense Game)
+ * https://bitbucket.org/dermetfan/libgdx-utils (support library with some Box2D classes)
  * https://github.com/aspic/libgdx-utils
  * https://github.com/iluwatar/TicTactoe
  * https://github.com/adketuri/onlinerpg (Herous of Umbra - http://heroesofumbra.com/ , uses Kryonet)
