@@ -182,7 +182,7 @@ Widgets that perform clipping, such as ScrollPane, use `glScissor` which uses a 
 
 ### <a id="Table"></a>Table ###
 
-The Table class is sizes and positions its children using a logical table, similar to HTML tables. Tables are intended to be used extensively in scene2d.ui to layout widgets, as they are easy to use and much more powerful than manually sizing and positioning widgets. Table-based layouts don't rely on absolute positioning and therefore automatically adjust to different widget sizes and screen resolutions.
+The Table class sizes and positions its children using a logical table, similar to HTML tables. Tables are intended to be used extensively in scene2d.ui to layout widgets, as they are easy to use and much more powerful than manually sizing and positioning widgets. Table-based layouts don't rely on absolute positioning and therefore automatically adjust to different widget sizes and screen resolutions.
 
 It is highly recommended to read the [Table documentation](Table) before building a UI using scene2d.ui.
 
