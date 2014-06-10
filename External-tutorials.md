@@ -27,6 +27,10 @@ http://libgdxtutorialseries.blogspot.com
 
 # Topic Specific Tutorials #
 
+## Porting your project to Windows 8.1 Desktop/Tablet and Phone ##
+
+ * http://www.badlogicgames.com/forum/viewtopic.php?f=17&t=14766
+
 ## Integrating Google Play Game Services ##
 
  * http://helios.hud.ac.uk/u1070589/blog/?p=202
