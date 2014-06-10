@@ -17,7 +17,42 @@ A finite state machine is a device which has a finite number of states it can be
 
 The idea behind a FSM is to decompose an object's behavior into easily manageable states.
 
-There are a number of ways of implementing finite state machines. Having performance in mind we have chosen to implement FSMs through _embedded rules_, thus hard-coding the rules for the state transitions within the states themselves.
+There are a number of ways of implementing finite state machines. A typical naive approach is to use a switch statement like the following.
+````java
+	public void runAway(int state) {
+		switch (state) {
+		case 0: // Wander
+			wander();
+			if (seeEnemy())
+				state = MathUtils.randomBoolean(0.8f) ? 1 : 0;
+			if (isDead())
+				state = 3;
+			break;
+		case 1: // Attack
+			attack();
+			if (isDead())
+				state = 3;
+			break;
+		case 2: // Run away
+			runAway();
+			if (isDead())
+				state = 3;
+			break;
+		case 3: // Dead
+			slowlyRot();
+			break;
+		}
+	}
+````
+The code above is a legitimate state machine, however it has some serious weakness:
+* The state changes (also known as transitions) are poorly regulated.
+* States are of type int and would be more robust and debuggable as classes or enums.
+* The omission of a single break keyword would cause hard-to-find bugs.
+* Redundant logic appears in multiple states.
+* No way to tell that a state has been entered for the first time.
+
+The right solution to these issues is to provide a more structured approach.
+Having performance in mind we have chosen to implement FSMs through _embedded rules_, thus hard-coding the rules for the state transitions within the states themselves.
 This architecture is known as the _state design pattern_ and provides an elegant way of implementing state-driven behavior.
 
 **IMPORTANT NOTE:**
