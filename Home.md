@@ -116,7 +116,7 @@
       * [[Hiero]]
       * [[Particle Editor]]
     * Extensions
-      * Artificial Intelligence
+      * [[Artificial Intelligence]]
             * [[Message Handling]]
             * [[State Machine]]
       * [[gdx-freetype]]
