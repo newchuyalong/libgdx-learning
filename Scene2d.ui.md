@@ -240,6 +240,10 @@ ButtonGroup is not an actor and has no visuals. Buttons are added to it and it e
 
 TextField is a single line text entry field. It has drawables for the background, text cursor, and text selection, a font and font color for the entered text, and a font and font color for the message displayed when the text field is empty. Password mode can be enabled, where it will display asterisks instead of the entered text. 
 
+### <a id="TextArea"></a>TextArea ###
+
+TextArea is similiar to a TextField, but allows multiple line text entry.
+
 ### <a id="Stack"></a>Stack ###
 
 Stack is a WidgetGroup that lays out each child to be the size of the stack. This is useful when it is necessary to have widgets stacked on top of each other. The first widget added to the stack is drawn on the bottom, and the last widget added is drawn on the top. 
