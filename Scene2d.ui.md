@@ -192,11 +192,11 @@ The Container class is equivalent to a Table with only a single child, but is mo
 
 ### <a id="VerticalGroup"></a>VerticalGroup ###
 
-The VerticalGroup class is equivalent to a Table with only a single column, but is more lightweight. VerticalGroup allows widgets to be inserted and removed, while Table does not.
+The VerticalGroup class is equivalent to a Table with only a single column, but is more lightweight. VerticalGroup allows widgets to be inserted in the middle and removed, while Table does not.
 
 ### <a id="HorizontalGroup"></a>HorizontalGroup ###
 
-The HorizontalGroup class is equivalent to a Table with only a single row, but is more lightweight. HorizontalGroup allows widgets to be inserted and removed, while Table does not.
+The HorizontalGroup class is equivalent to a Table with only a single row, but is more lightweight. HorizontalGroup allows widgets to be inserted in the middle and removed, while Table does not.
 
 ## <a id="Widgets"></a>Widgets ##
 
