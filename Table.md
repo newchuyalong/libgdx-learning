@@ -17,13 +17,14 @@ Table is a fork of [TableLayout](https://github.com/EsotericSoftware/tablelayout
 	- [Padding](#padding)
 	- [Spacing](#spacing)
 	- [Colspan](#colspan)
-- [Uniform](#uniform)
+	- [Uniform](#uniform)
 - [Defaults](#defaults)
 	- [Cell defaults](#cell-defaults)
 	- [Column defaults](#column-defaults)
 	- [Row defaults](#row-defaults)
 - [Values](#values)
 - [Overlapping widgets](#overlapping-widgets)
+- [Inserting cells](#inserting-cells)
 
 ## Quickstart
 
