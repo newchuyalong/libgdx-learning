@@ -6,16 +6,18 @@ It is highly recommended to read or least skim the [[scene2d documentation|scene
 
  * [Widget and WidgetGroup](#widget-and-widgetgroup)
  * [Layout](#layout)
-   * [Table](#table)
-   * [Container](#container)
-	* [VerticalGroup](#verticalgroup)
-	* [HorizontalGroup](#horizontalgroup)
  * [Stage setup](#stage-setup)
  * [Skin](#skin)
  * [Drawable](#drawable)
  * [ChangeEvents](#changeevents)
  * [Clipping](#clipping)
  * [Rotation and scale](#rotation_and_scale)
+ * [Layout widgets](#layout-widgets)
+   * [Table](#table)
+   * [Container](#container)
+   * [VerticalGroup](#verticalgroup)
+   * [HorizontalGroup](#horizontalgroup)
+   * [Stack](#stack)
  * [Widgets](#widgets)
    * [Label](#label)
    * [Image](#image)
@@ -25,7 +27,7 @@ It is highly recommended to read or least skim the [[scene2d documentation|scene
    * [CheckBox](#checkbox)
    * [ButtonGroup](#buttongroup)
    * [TextField](#textfield)
-   * [Stack](#stack)
+   * [TextArea](#textarea)
    * [List](#list)
    * [SelectBox](#selectbox)
    * [ProgressBar](#progressbar)
@@ -55,27 +57,9 @@ Before each widget is drawn, it first calls `validate`. If the widget's layout i
 
 `invalidateHierarchy` should be called when the widget's state has changed that affects the widget's minimum, preferred, or maximum size. This means that the parent's layout may be affected by the widget's new desired size. `invalidateHierarchy` calls `invalidate` on the widget and every parent up to the root.
 
-### <a id="Table"></a>Table ###
-
-The Table class is sizes and positions its children using a logical table, similar to HTML tables. Tables are intended to be used extensively in scene2d.ui to layout widgets, as they are easy to use and much more powerful than manually sizing and positioning widgets. Table-based layouts don't rely on absolute positioning and therefore automatically adjust to different widget sizes and screen resolutions.
-
-It is highly recommended to read the [Table documentation](Table) before building a UI using scene2d.ui.
-
-### <a id="Container"></a>Container ###
-
-The Container class is equivalent to a Table with only a single child, but is more lightweight. Container has all of the constraints of a table cell and are useful for setting the size and alignment of a single widget.
-
-### <a id="VerticalGroup"></a>VerticalGroup ###
-
-The VerticalGroup class is equivalent to a Table with only a single column, but is more lightweight. VerticalGroup allows widgets to be inserted and removed, while Table does not.
-
-### <a id="HorizontalGroup"></a>HorizontalGroup ###
-
-The HorizontalGroup class is equivalent to a Table with only a single row, but is more lightweight. HorizontalGroup allows widgets to be inserted and removed, while Table does not.
-
 ## <a id="Stage_setup"></a>Stage setup ##
 
-Most scene2d.ui layouts will use a table that is the size of the stage. All other widgets and nested tables are placed in this table.
+Most scene2d.ui layouts will use a [table](Table) that is the size of the stage. All other widgets and nested tables are placed in this table.
 
 Here is an example of the most basic scene2d.ui application with a root table:
 
@@ -193,6 +177,26 @@ wrapper.setScaleX(1.5f);
 Note that scene2d.ui groups that perform layout, such as Table, will use the unscaled and unrotated bounds of a transformed widget when computing the layout.
 
 Widgets that perform clipping, such as ScrollPane, use `glScissor` which uses a screen aligned rectangle. These widgets cannot be rotated.
+
+## <a id="Layout_Widgets"></a>Layout widgets ##
+
+### <a id="Table"></a>Table ###
+
+The Table class is sizes and positions its children using a logical table, similar to HTML tables. Tables are intended to be used extensively in scene2d.ui to layout widgets, as they are easy to use and much more powerful than manually sizing and positioning widgets. Table-based layouts don't rely on absolute positioning and therefore automatically adjust to different widget sizes and screen resolutions.
+
+It is highly recommended to read the [Table documentation](Table) before building a UI using scene2d.ui.
+
+### <a id="Container"></a>Container ###
+
+The Container class is equivalent to a Table with only a single child, but is more lightweight. Container has all of the constraints of a table cell and are useful for setting the size and alignment of a single widget.
+
+### <a id="VerticalGroup"></a>VerticalGroup ###
+
+The VerticalGroup class is equivalent to a Table with only a single column, but is more lightweight. VerticalGroup allows widgets to be inserted and removed, while Table does not.
+
+### <a id="HorizontalGroup"></a>HorizontalGroup ###
+
+The HorizontalGroup class is equivalent to a Table with only a single row, but is more lightweight. HorizontalGroup allows widgets to be inserted and removed, while Table does not.
 
 ## <a id="Widgets"></a>Widgets ##
 
