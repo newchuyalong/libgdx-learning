@@ -64,7 +64,7 @@ The state machine implementation provided by LibGDX is mainly based on the appro
 The states of the FSM are encapsulated as objects and contain the logic required to facilitate state transitions.
 All state objects implement the `State` interface which defines the following methods:
 - `enter(entity)` will execute when the state is entered
-- `execute(entity)` is called on the current state of the FSM on each update step
+- `update(entity)` is called on the current state of the FSM on each update step
 - `exit(entity)` will execute when the state is exited
 - `onMessage(telegram)` executes if the entity receives a message from the message dispatcher while it is in this state.
 
@@ -129,7 +129,7 @@ public class Troll {
 }
 ````
 
-When the update method of a Troll is called, it in turn calls the update method of its FSM which in turn calls the execute method of the current state. The current state may then use the Troll interface to query its owner, to adjust its owner's attributes, or to effect a state transition. In other words, how a Troll behaves when updated can be made completely dependent on the logic in its current state.
+When the update method of a Troll is called, it in turn calls the update method of its FSM which in turn calls the update method of the current state. The current state may then use the Troll interface to query its owner, to adjust its owner's attributes, or to effect a state transition. In other words, how a Troll behaves when updated can be made completely dependent on the logic in its current state.
 This is best illustrated with an example, so let's create a couple of states to enable a troll to run away from enemies when it feels threatened and to sleep when it feels safe.
 
 ````java
@@ -137,7 +137,7 @@ public enum TrollState implements State<Troll> {
 
 	RUN_AWAY() {
 		@Override
-		public void execute(Troll troll) {
+		public void update(Troll troll) {
 			if (troll.isSafe()) {
 				troll.stateMachine.changeState(SLEEP);
 			}
@@ -149,7 +149,7 @@ public enum TrollState implements State<Troll> {
 
 	SLEEP() {
 		@Override
-		public void execute(Troll troll) {
+		public void update(Troll troll) {
 			if (troll.isThreatened()) {
 				troll.stateMachine.changeState(RUN_AWAY);
 			}
