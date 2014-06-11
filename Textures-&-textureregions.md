@@ -1,1 +1,1 @@
-use a [[SpriteBatch! | SpriteBatch, TextureRegions, and Sprite]]
+use a [[Spritebatch, Textureregions, and Sprites]]
