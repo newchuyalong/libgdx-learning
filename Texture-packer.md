@@ -28,15 +28,15 @@ public class MyPacker {
 }
 ```
 
->If you use gradle, and the `TexturePacker` doesn't exist, add the gdx-tools to your [build.grade](https://github.com/libgdx/libgdx/wiki/Dependency-management-with-Gradle#tools-gradle) file.
+If you use gradle, and the `TexturePacker` doesn't exist, add the gdx-tools to your [build.grade](https://github.com/libgdx/libgdx/wiki/Dependency-management-with-Gradle#tools-gradle) file.
 
 It can also be run from the [nightly build](http://libgdx.badlogicgames.com/nightlies/):
 
 ```
-//*NIX (OS X/Linux)
+// OS X / Linux
 java -cp gdx.jar:extensions/gdx-tools/gdx-tools.jar com.badlogic.gdx.tools.texturepacker.TexturePacker inputDir [outputDir] [packFileName]
 
-//WINDOWS
+// WINDOWS
 java -cp gdx.jar;extensions/gdx-tools/gdx-tools.jar com.badlogic.gdx.tools.texturepacker.TexturePacker inputDir [outputDir] [packFileName]
 ```
 
