@@ -24,6 +24,8 @@ Now those will be active and start to monitor the actual GL calls for you. One i
 
 Note that you need to add up all calls to all existing GL instances.
 
+You might also implement something like view frustum culling to render only those things that are visible on the screen. The `GLProfiler.drawCalls` field will show the results of these kind of optimizations.
+
 In order to reset those numbers once you have read and displayed them (probably once per frame), you have to call the `GLProfiler.reset()` method, like this:
 
     ((GL20Profiler)Gdx.gl).reset();
