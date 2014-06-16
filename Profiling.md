@@ -18,7 +18,7 @@ To enable it you have to replace the original `GL20` and `GL30` instances with t
     Gdx.gl20 = new GL20Profiler(Gdx.gl20);
     Gdx.gl30 = new GL30Profiler(Gdx.gl30);
 
-Now those will be active and start to monitor the actualy GL calls for you. One information you might be interested in, could be the amount of texture bindings that happen, which are costly and might slow down your game. To optimize this, you might start to use a `TextureAtlas`. To prove with actual numbers that the texture bindings become less, you can read the `textureBinds` field from the profilers. That could look like this:
+Now those will be active and start to monitor the actual GL calls for you. One information you might be interested in, could be the amount of texture bindings that happen, which are costly and might slow down your game. To optimize this, you might start to use a `TextureAtlas`. To prove with actual numbers that the texture bindings become less, you can read the `textureBinds` field from the profilers. That could look like this:
 
     ((GLProfiler)Gdx.gl).textureBinds + ((GLProfiler)Gdx.gl20).textureBinds + ((GLProfiler)Gdx.gl30).textureBinds)
 
