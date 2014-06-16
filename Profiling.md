@@ -33,3 +33,9 @@ In order to reset those numbers once you have read and displayed them (probably 
 Note that in case you are using `Gdx.graphics.getGL20()` or `Gdx.graphics.getGL30()` you are bypassing the profiler and that's why you should use `Gdx.gl20` or `Gdx.gl30` directly.
 
 To see how to use this you can have a look at the [Benchmark3DTest](https://github.com/libgdx/libgdx/blob/master/tests/gdx-tests/src/com/badlogic/gdx/tests/g3d/Benchmark3DTest.java)
+
+Profiling 3D rendering
+----------------------
+Another small utility is the [`ProfilingModelBatch`](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/graphics/profiling/ProfilingModelBatch.html). This is a standard `ModelBatch` with the only addition that it keeps track of the amount of tris that have been rendered since the last call to `ProfilingModelBatch.reset()`.
+
+The [Benchmark3DTest](https://github.com/libgdx/libgdx/blob/master/tests/gdx-tests/src/com/badlogic/gdx/tests/g3d/Benchmark3DTest.java) shows how to use it.
