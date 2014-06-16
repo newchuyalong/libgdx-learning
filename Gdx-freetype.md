@@ -56,6 +56,8 @@ minFilter = TextureFilter.Nearest;
 magFilter = TextureFilter.Nearest;
 ```
 
+To enable the loading and retrieving of `FreeTypeFontGenerator` via the `AssetManager`, do `assetManager.setLoader(FreeTypeFontGenerator.class, new FreeTypeFontGeneratorLoader(new InternalFileHandleResolver()))`
+
 ### latest info about caveats ###
 
 Quoting from http://www.badlogicgames.com/wordpress/?p=2300:
