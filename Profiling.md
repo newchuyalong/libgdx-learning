@@ -6,7 +6,7 @@ The [`FPSLogger`](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogi
 
 PerformanceCounter
 ------------------
-The [`PerformanceCounter`](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/utils/PerformanceCounter.html) keeps track of the time and load (percentage of total time) a specific task takes. Call start() just before starting the task and stop() right after. You can do this multiple times if required. Every render or update call tick() to update the values. The time FloatCounter provides access to the minimum, maximum, average, total and current time the task takes. Likewise for the load value, which is the percentage of the total time.
+The [`PerformanceCounter`](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/utils/PerformanceCounter.html) keeps track of the time and load (percentage of total time) a specific task takes. Call `start()` just before starting the task and `stop()` right after. You can do this multiple times if required. Every render or update call `tick()` to update the values. The time FloatCounter provides access to the minimum, maximum, average, total and current time the task takes. Likewise for the load value, which is the percentage of the total time.
 
 OpenGL profiling
 ----------------
