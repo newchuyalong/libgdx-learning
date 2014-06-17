@@ -26,7 +26,7 @@ Currently the following informations are provided by the profiler:
 - Amount of used vertices
 - Amount of drawn primitives
 
-In order to reset those numbers once you have read and displayed them (probably once per frame), you have to call the `GLProfiler.reset()` method.
+In order to reset those numbers once you have read and displayed them (probably once per frame), you have to call the `GLProfiler.reset()` method. To completely disable the profiling and replace the profilers with the original `GL20` and `GL30` instances, use `GLProfiler.disable()`.
 
 *Note that in case you are using `Gdx.graphics.getGL20()` or `Gdx.graphics.getGL30()` you are bypassing the profiler and that's why you should use `Gdx.gl20` or `Gdx.gl30` directly.*
 
