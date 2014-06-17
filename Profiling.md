@@ -18,6 +18,14 @@ Now those will be active and start to monitor the actual GL calls for you. One i
 
 You might also implement something like view frustum culling to render only those things that are visible on the screen. The static method `GLProfiler.getDrawCalls()` will show the results of these kind of optimizations.
 
+Currently the following informations are provided by the profiler:
+- Amount of total OpenGL calls
+- Amount of draw calls
+- Amount of texture bindings
+- Amount of shader switches
+- Amount of used vertices
+- Amount of drawn primitives
+
 In order to reset those numbers once you have read and displayed them (probably once per frame), you have to call the `GLProfiler.reset()` method.
 
 *Note that in case you are using `Gdx.graphics.getGL20()` or `Gdx.graphics.getGL30()` you are bypassing the profiler and that's why you should use `Gdx.gl20` or `Gdx.gl30` directly.*
