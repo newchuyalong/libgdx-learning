@@ -14,9 +14,9 @@ Profiling the actual OpenGL calls that happen while your game is running is ofte
 
 To enable it you have to call the static method `GLProfiler.enable()`. Behind the scenes this will replace the original `GL20` and `GL30` instances with the profilers.
 
-Now those will be active and start to monitor the actual GL calls for you. One information you might be interested in, could be the amount of texture bindings that happen, which are costly and might slow down your game. To optimize this, you might start to use a `TextureAtlas`. To prove with actual numbers that the texture bindings become less, you can read the `textureBindings` field from the profilers. This is done via the static `GLProfiler.getTextureBindings()`.
+Now those will be active and start to monitor the actual GL calls for you. One information you might be interested in, could be the amount of texture bindings that happen, which are costly and might slow down your game. To optimize this, you might start to use a `TextureAtlas`. To prove with actual numbers that the texture bindings become less, you can read the static field `GLProfiler.textureBindings` field from the profiler.
 
-You might also implement something like view frustum culling to render only those things that are visible on the screen. The static method `GLProfiler.getDrawCalls()` will show the results of these kind of optimizations.
+You might also implement something like view frustum culling to render only those things that are visible on the screen. The static field `GLProfiler.drawCalls` will show the results of these kind of optimizations.
 
 Currently the following informations are provided by the profiler:
 - Amount of total OpenGL calls
@@ -24,9 +24,10 @@ Currently the following informations are provided by the profiler:
 - Amount of texture bindings
 - Amount of shader switches
 - Amount of used vertices
-- Amount of drawn primitives
 
-In order to reset those numbers once you have read and displayed them (probably once per frame), you have to call the `GLProfiler.reset()` method. To completely disable the profiling and replace the profilers with the original `GL20` and `GL30` instances, use `GLProfiler.disable()`.
+`GLProfiler.vertexCount` is actually a [`FloatCounter`](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/math/FloatCounter.html). Besides `GLProfiler.vertexCount.total` it has more information like `GLProfiler.vertexCount.min`, `GLProfiler.vertexCount.max` or `GLProfiler.vertexCount.average`, which are the values based on individual drawcalls.
+
+In order to reset all these numbers once you have read and displayed them (probably once per frame), you have to call the `GLProfiler.reset()` method. To completely disable the profiling and replace the profilers with the original `GL20` and `GL30` instances, use `GLProfiler.disable()`.
 
 *Note that in case you are using `Gdx.graphics.getGL20()` or `Gdx.graphics.getGL30()` you are bypassing the profiler and that's why you should use `Gdx.gl20` or `Gdx.gl30` directly.*
 
