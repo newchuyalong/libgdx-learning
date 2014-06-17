@@ -14,7 +14,7 @@ Profiling the actual OpenGL calls that happen while your game is running is ofte
 
 To enable it you have to call the static method `GLProfiler.enable()`. Behind the scenes this will replace the original `GL20` and `GL30` instances with the profilers.
 
-Now those will be active and start to monitor the actual GL calls for you. One information you might be interested in, could be the amount of texture bindings that happen, which are costly and might slow down your game. To optimize this, you might start to use a `TextureAtlas`. To prove with actual numbers that the texture bindings become less, you can read the static field `GLProfiler.textureBindings` field from the profiler.
+Now those will be active and start to monitor the actual GL calls for you. One information you might be interested in, could be the amount of texture bindings that happen, which are costly and might slow down your game. To optimize this, you might start to use a `TextureAtlas`. To prove with actual numbers that the texture bindings become less, you can read the static field `GLProfiler.textureBindings` from the profiler.
 
 You might also implement something like view frustum culling to render only those things that are visible on the screen. The static field `GLProfiler.drawCalls` will show the results of these kind of optimizations.
 
