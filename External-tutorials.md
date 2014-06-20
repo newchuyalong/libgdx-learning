@@ -23,7 +23,7 @@ These are webpages where individuals or companies write about their experience w
 http://libgdxspain.blogspot.com
  * Libgdx tutorial series
 http://libgdxtutorialseries.blogspot.com
-
+ * Mets-Blog | Libgdx - http://www.mets-blog.com/category/libgdx/
 
 # Topic Specific Tutorials #
 
