@@ -288,7 +288,7 @@ compile "com.badlogicgames.gdx:gdx-controllers-gwt:$gdxVersion:sources"
 #### Tools Gradle
 **Core Dependency:**
 ```groovy
-compile "com.badlogicgames.gdx:gdx-tools:$gdxVersion"
+Dont put me in core!
 ```
 **Desktop Dependency:**
 ```groovy
