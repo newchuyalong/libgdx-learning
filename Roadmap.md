@@ -1,1 +1,0 @@
-![](http://freepages.genealogy.rootsweb.ancestry.com/~tqpeiffer/Documents/Ancestral%20Migration%20Archives/Migration%20Photo%20Galleries/(2)%20ROUTES%20VA,%20NC,%20SC,%20GA/GREAT%20WAGON%20ROAD/CarolinaRoadMap.JPG)
