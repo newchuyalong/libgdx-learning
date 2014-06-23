@@ -188,13 +188,6 @@ age: 31
 }
 ```
 
-**Android Note**
-If you are targeting Android and using ProGuard, remember to exclude your model objects. Otherwise the class members will be renamed which stops the deserializer from working:
-```
-# This class maps to JSON so cannot have its member names shortened  
--keepclassmembers class com.example.Person
-```
-
 To read the JSON as a DOM of maps, arrays, and values, the `JsonReader` class can be used:
 
 ```java
