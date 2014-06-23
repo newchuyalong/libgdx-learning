@@ -113,7 +113,7 @@ A Troll can be given the functionality of a FSM by adding a member variable `sta
 public class Troll {
 
     // An instance of the state machine class
-    public StateMachine<Elsa> stateMachine;
+    public StateMachine<Troll> stateMachine;
 
 	public Troll() {
         stateMachine = new DefaultStateMachine<Troll>(this, TrollState.SLEEP);
