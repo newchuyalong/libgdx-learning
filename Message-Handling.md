@@ -7,10 +7,10 @@ At a core level, a message is a number or an enumerated type. However, the key i
 At a higher level, a message is contained inside a data structure carrying some additional information such as a _sender_, a _recipient_, a _time stamp_, and possibly some extra data depending on the message itself. This data structure is called **telegram**.
 Basically, there are two types of telegrams: 
 - **Immediate Telegrams**: They are immediately sent to the recipient. There's not much to say about these messages since their use is rather intuitive.
-- **Delayed Telegrams**: They stores the time at which they should be delivered. That way the routing system that receives these message objects can retain them until it's time to be delivered, effectively creating timers. These message timers are best used when a game object sends a message to itself, at a later time, to create an internal **event timer**.
+- **Delayed Telegrams**: They store the time at which they should be delivered. That way the routing system that receives these message objects can retain them until it's time to be delivered, effectively creating timers. These message timers are best used when a game object sends a message to itself, at a later time, to create an internal **event timer**.
 
 The idea is that you can _send a telegram_ to any agent or system in your game.
-For example, if a character strikes an enemy, the message `Attacked` could be sent to that enemy and the enemy could respond appropriately to that message event. By having game objects communicate through messages, deep and responsive AI can be achieved fairly easily. Moreover, the technique of messages makes it easy to keep most behaviors event-driven, which is important for efficency reasons.
+For example, if a character strikes an enemy, the message `Attacked` could be sent to that enemy and the enemy could respond appropriately to that message event. By having game objects communicate through messages, deep and responsive AI can be achieved fairly easily. Moreover, the technique of messages makes it easy to keep most behaviors event-driven, which is important for efficiency reasons.
 
 
 ## Dispatching a Message ##
@@ -53,5 +53,5 @@ This method returns a boolean value indicating whether the message has been hand
 
 **IMPORTANT NOTE:**
 - **Pooling:**
-Keep in mind that telegrams are pooled so to limit garbage collection. Also any telegram is automatically released to the pool as soon as it has been dispatched and the handleMessage method of the recipient agent has returned. It means that **you should never keep a reference to the telegram**.
+Keep in mind that telegrams are pooled so to limit garbage collection. Also any telegram is automatically released to the pool as soon as it has been dispatched and the handleMessage method of the recipient agent has returned. This means that **you should never keep a reference to the telegram**.
 
