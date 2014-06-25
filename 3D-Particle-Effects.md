@@ -1,5 +1,7 @@
 Becomes of issues with perspective and depth, the 2D particle effects are not suitable for 3D applications.  Additionally, the 3d particle effects allow for particles to take full advantage of movement through 3d space, allowing a wide variety of dynamic graphical effects.
 
+![3D particles in action](http://www.pixelscientists.com/images/flamedemo.gif)
+
 ### Flame - 3D Particle Editor
 Much like their 2D cousins, 3D particle effects can be edited with a GUI editor included in libgdx.
 The editor is called flame, and is located in the non-core gdx-tools.jar.  If you have a clone of the libgdx repo, you can run the editor by using the following command from the **dist** directory:
@@ -20,53 +22,18 @@ There is also an externally maintained (probably out of date) stand-alone jar yo
 
 Run this jar with: `java -jar flame.jar`
 
-### Basic Usage Example
-```java
+### Particle Effect Types
+There are 3 different kinds of 3d particle effects:
+* Billboards
+* PointSprites
+* ModelInstance
+* TODO: ParticleController??
 
-PointSpriteParticleBatch pointSpriteBatch;
-BillboardParticleBatch billBatch;
-AssetManager assets;
-ParticleSystem particleSystem;
+**Billboards** are sprites that always face the camera (the Decal class in libgdx is essentially a billboard)
 
-public void initPFX() {
-	assets = new AssetManager();
-	//assets.load("particle/particle_prealpha_multiplied.png", Texture.class);
+**PointSprites** are simpler (more efficient, better performance) that billboards.  They are colored points with no textures.  The dust and explosion effects in the following video are done with PointSprites:
 
-	//emitters = new Array<ParticleController>();
-	boolean useGPU = false;
-	billBatch = new BillboardParticleBatch(ParticleShader.AlignMode.ViewPoint, useGPU, 100);
-	billBatch.setCamera(cam);
-	pointSpriteBatch = new PointSpriteParticleBatch();
-	pointSpriteBatch.setCamera(cam);
-	/*Array<ParticleBatch<?>> partBatches = new Array<>();
-	partBatches.add(billBatch);*/
-	particleSystem = ParticleSystem.get();
-	particleSystem.add(billBatch);
-	particleSystem.add(pointSpriteBatch);
+[3D Tank Battle video](https://www.youtube.com/watch?v=lt9kYDb9p78)
 
-	ParticleEffectLoader.ParticleEffectLoadParameter loadParam = new ParticleEffectLoader.ParticleEffectLoadParameter(particleSystem.getBatches());
-	ParticleEffectLoader loader = new ParticleEffectLoader(new InternalFileHandleResolver());
-	assets.setLoader(ParticleEffect.class, loader);
-	assets.load("particle/dust.pfx", ParticleEffect.class, loadParam);
-	assets.load("particle/explode.pfx", ParticleEffect.class, loadParam);
-	assets.finishLoading();
-}
+**ModelInstances** are familiar to you if you have done any 3D work in libgdx.  They are instances of 3D models.  Not surprisingly, this is the most taxing type of particle effect in terms of performance.
 
-public ParticleEffect createDustPFXCopy() {
-	ParticleEffect original = assets.get("particle/dust.pfx");
-	ParticleEffect dust = original.copy();
-	dust.init();
-	dust.start();
-	particleSystem.add(dust);
-	return dust;
-}
-
-public ParticleEffect createExplodePFXCopy() {
-	ParticleEffect original = assets.get("particle/explode.pfx");
-	ParticleEffect explode = original.copy();
-	particleSystem.add(explode);
-	explode.init();
-	return explode;
-}
-
-```
