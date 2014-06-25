@@ -40,7 +40,7 @@ There are 3 different kinds of 3D particle effects:
 -----------------
 
 # Using 3D Particle Effects
-The easiest way to use 3D particle effects is by taking advantage of the ParticleSystem class, which acts somewhat like a SpriteBatch or ModelBatch class, abstracting away various details and managing them for you. First we will create the batch of the type(s) we wish to use, then create the ParticleSystem.  In this case, we are going to use PointSprites
+The easiest way to use 3D particle effects is by taking advantage of the ParticleSystem class, abstracting away various details and managing them for you. First we will create the batch of the type(s) we wish to use, then create the ParticleSystem.  In this case, we are going to use PointSprites
 
 ### Step 1: Create Batches and ParticleSystem
 ```java
