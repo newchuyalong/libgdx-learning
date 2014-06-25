@@ -93,6 +93,7 @@
             * [[Material and environment]]
             * [[3D animations and skinning]]
             * [[Importing Blender models in LibGDX]]
+            * [[3D Particle Effects]]
             * Perspective Camera ??
             * Picking ??
     * [[Managing Your Assets]]
