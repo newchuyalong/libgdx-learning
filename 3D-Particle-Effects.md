@@ -1,10 +1,10 @@
-Becomes of issues with perspective and depth, the 2D particle effects are not suitable for 3D applications.  Additionally, the 3d particle effects allow for particles to take full advantage of movement through 3d space, allowing a wide variety of dynamic graphical effects.
+Because of issues with perspective and depth, the 2D particle effects are not suitable for 3D applications.  Additionally, the 3d particle effects take full advantage of movement through 3d space, allowing a wide variety of dynamic graphical effects.
 
 ![3D particles in action](http://www.pixelscientists.com/images/flamedemo.gif)
 
 ### Flame - 3D Particle Editor
 Much like their 2D cousins, 3D particle effects can be edited with a GUI editor included in libgdx.
-The editor is called flame, and is located in the non-core gdx-tools.jar.  If you have a clone of the libgdx repo, you can run the editor by using the following command from the **dist** directory:
+The editor is called Flame, and is located in the non-core gdx-tools.jar.  If you have a clone of the libgdx repo, you can run the editor by using the following command from the **dist** directory:
 
 Linux/Mac:
 ```
@@ -23,11 +23,11 @@ There is also an externally maintained (probably out of date) stand-alone jar yo
 Run this jar with: `java -jar flame.jar`
 
 ### Particle Effect Types
-There are 3 different kinds of 3d particle effects:
+There are 3 different kinds of 3D particle effects:
 * Billboards
 * PointSprites
 * ModelInstance
-* TODO: ParticleController??
+* ??TODO: ParticleController??
 
 **Billboards** are sprites that always face the camera (the Decal class in libgdx is essentially a billboard)
 
@@ -36,6 +36,8 @@ There are 3 different kinds of 3d particle effects:
 [3D Tank Battle video](https://www.youtube.com/watch?v=lt9kYDb9p78)
 
 **ModelInstances** are familiar to you if you have done any 3D work in libgdx.  They are instances of 3D models.  Not surprisingly, this is the most taxing type of particle effect in terms of performance.
+
+-----------------
 
 # Using 3D Particle Effects
 The easiest way to use 3D particle effects is by taking advantage of the ParticleSystem class, which acts somewhat like a SpriteBatch or ModelBatch class, abstracting away various details and managing them for you. First we will create the batch of the type(s) we wish to use, then create the ParticleSystem.  In this case, we are going to use PointSprites
