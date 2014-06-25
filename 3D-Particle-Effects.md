@@ -37,3 +37,25 @@ There are 3 different kinds of 3d particle effects:
 
 **ModelInstances** are familiar to you if you have done any 3D work in libgdx.  They are instances of 3D models.  Not surprisingly, this is the most taxing type of particle effect in terms of performance.
 
+# Using 3D Particle Effects
+The easiest way to use 3D particle effects is by taken advantage of the ParticleSystem class, which acts somewhat like a SpriteBatch or ModelBatch class, abstracting away various details and managing them for you.
+
+### Step 1: Create ParticleSystem
+ParticleSystem is a singleton class, we get the instance instead of creating a new object:
+```java
+ParticleSystem particleSystem = ParticleSystem.get();
+```
+
+### Step 2: Load Effects Using AssetManager
+Now we need to load our particle effects that we have created using the Flame GUI editor.
+First, create a ParticleEffectLoadParameter to pass to the asset manager when loading.
+Then the assets may be loaded.
+```java
+AssetManager assets = new AssetManager();
+ParticleEffectLoader.ParticleEffectLoadParameter loadParam = new ParticleEffectLoader.ParticleEffectLoadParameter(particleSystem.getBatches());
+		ParticleEffectLoader loader = new ParticleEffectLoader(new InternalFileHandleResolver());
+assets.setLoader(ParticleEffect.class, loader);
+assets.load("particle/dust.pfx", ParticleEffect.class, loadParam);
+assets.load("particle/explode.pfx", ParticleEffect.class, loadParam);
+assets.finishLoading()
+```
