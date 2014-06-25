@@ -38,7 +38,7 @@ There are 3 different kinds of 3d particle effects:
 **ModelInstances** are familiar to you if you have done any 3D work in libgdx.  They are instances of 3D models.  Not surprisingly, this is the most taxing type of particle effect in terms of performance.
 
 # Using 3D Particle Effects
-The easiest way to use 3D particle effects is by taken advantage of the ParticleSystem class, which acts somewhat like a SpriteBatch or ModelBatch class, abstracting away various details and managing them for you. First we will create the batch of the type(s) we wish to use, then create the ParticleSystem.  In this case, we are going to use PointSprites
+The easiest way to use 3D particle effects is by taking advantage of the ParticleSystem class, which acts somewhat like a SpriteBatch or ModelBatch class, abstracting away various details and managing them for you. First we will create the batch of the type(s) we wish to use, then create the ParticleSystem.  In this case, we are going to use PointSprites
 
 ### Step 1: Create Batches and ParticleSystem
 ```java
