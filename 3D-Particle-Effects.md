@@ -78,10 +78,10 @@ particleSystem.add(effect);
 A ParticleSystem must update and draw its own components, then be passed to a ModelBatch instance to be rendered to the scene.
 ```java
 private void renderParticleEffects() {
+        particleSystem.update(); // technically not necessary for rendering
 	particleSystem.begin();
 	particleSystem.draw();
 	particleSystem.end();
-	particleSystem.update();
 	modelBatch.render(particleSystem);
 }
 ```
