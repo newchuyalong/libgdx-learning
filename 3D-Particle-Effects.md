@@ -38,12 +38,16 @@ There are 3 different kinds of 3d particle effects:
 **ModelInstances** are familiar to you if you have done any 3D work in libgdx.  They are instances of 3D models.  Not surprisingly, this is the most taxing type of particle effect in terms of performance.
 
 # Using 3D Particle Effects
-The easiest way to use 3D particle effects is by taken advantage of the ParticleSystem class, which acts somewhat like a SpriteBatch or ModelBatch class, abstracting away various details and managing them for you.
+The easiest way to use 3D particle effects is by taken advantage of the ParticleSystem class, which acts somewhat like a SpriteBatch or ModelBatch class, abstracting away various details and managing them for you. First we will create the batch of the type(s) we wish to use, then create the ParticleSystem.  In this case, we are going to use PointSprites
 
-### Step 1: Create ParticleSystem
-ParticleSystem is a singleton class, we get the instance instead of creating a new object:
+### Step 1: Create Batches and ParticleSystem
 ```java
+// ParticleSystem is a singleton class, we get the instance instead of creating a new object:
 ParticleSystem particleSystem = ParticleSystem.get();
+PointSpriteParticleBatch pointSpriteBatch = new PointSpriteParticleBatch();
+pointSpriteBatch.setCamera(cam);
+particleSystem = ParticleSystem.get();
+particleSystem.add(pointSpriteBatch);
 ```
 
 ### Step 2: Load Effects Using AssetManager
@@ -55,7 +59,27 @@ AssetManager assets = new AssetManager();
 ParticleEffectLoader.ParticleEffectLoadParameter loadParam = new ParticleEffectLoader.ParticleEffectLoadParameter(particleSystem.getBatches());
 		ParticleEffectLoader loader = new ParticleEffectLoader(new InternalFileHandleResolver());
 assets.setLoader(ParticleEffect.class, loader);
-assets.load("particle/dust.pfx", ParticleEffect.class, loadParam);
 assets.load("particle/explode.pfx", ParticleEffect.class, loadParam);
 assets.finishLoading()
 ```
+
+### Step 3: Add Loaded ParticleEffects to the ParticleSystem
+```java
+ParticleEffect effect = assets.get("particle/dust.pfx");
+effect.init();
+effect.start();  // optional: particle will begin playing immediately
+particleSystem.add(effect);
+```
+
+### Step 4: Rendering our 3D Particles Using the ParticleSystem
+A ParticleSystem must update and draw its own components, then be passed to a ModelBatch instance to be rendered to the scene.
+```java
+private void renderParticleEffects() {
+	particleSystem.begin();
+	particleSystem.draw();
+	particleSystem.end();
+	particleSystem.update();
+	modelBatch.render(particleSystem);
+}
+```
+
