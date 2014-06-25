@@ -73,6 +73,12 @@ effect.init();
 effect.start();  // optional: particle will begin playing immediately
 particleSystem.add(effect);
 ```
+**IMPORTANT** this adds only one effect to the ParticleSystem.  If you wish to have multiple instances of the same effect, such as the dust effects in the Tank Battle video above, you must first create a copy of the effect:
+```java
+ParticleEffect effect = assets.get("particle/dust.pfx");
+ParticleEffect copyEffect = effect.copy();
+// ... same as above
+```
 
 ### Step 4: Rendering our 3D Particles Using the ParticleSystem
 A ParticleSystem must update and draw its own components, then be passed to a ModelBatch instance to be rendered to the scene.
