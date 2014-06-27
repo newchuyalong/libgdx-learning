@@ -176,6 +176,7 @@ Mavenized libgdx extensions ready to import from the `build.gradle` script inclu
 * [Controllers](#controllers-gradle)
 * [Tools] (#tools-gradle)
 * [Box2DLights] (#box2dlights-gradle)
+* [Ai] (#ai-gradle)
 
 #### Box2D Gradle
 **Core Dependency:**
@@ -321,7 +322,26 @@ compile "com.badlogicgames.box2dlights:box2dlights:1.2"
 compile "com.badlogicgames.box2dlights:box2dlights:1.2:sources"
 ```
 
+#### Ai Gradle
+
+**Core Dependency:**
+```groovy
+compile "com.badlogicgames.gdx:gdx-ai:1.2.0"
+```
+**Android Dependency:**
+```groovy
+compile "com.badlogicgames.gdx:gdx-ai:1.2.0"
+```
+**HTML Dependency:**
+```groovy
+compile "com.badlogicgames.gdx:gdx-ai:1.2.0:sources"
+```
+
 ***
+
+***
+
+
 
 ### External Dependencies
 #### Adding external repositories
