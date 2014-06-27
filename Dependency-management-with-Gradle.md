@@ -322,6 +322,8 @@ compile "com.badlogicgames.box2dlights:box2dlights:1.2"
 compile "com.badlogicgames.box2dlights:box2dlights:1.2:sources"
 ```
 
+***
+
 #### Ai Gradle
 
 **Core Dependency:**
@@ -336,8 +338,6 @@ compile "com.badlogicgames.gdx:gdx-ai:1.2.0"
 ```groovy
 compile "com.badlogicgames.gdx:gdx-ai:1.2.0:sources"
 ```
-
-***
 
 ***
 
