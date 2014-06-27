@@ -14,8 +14,8 @@
       * [[NetBeans|Gradle and NetBeans]]
       * [[Commandline|Gradle on the Commandline]]
       * [[Updating your libGDX version|Updating LibGDX]]
-      * [[Adding extensions and 3rd party libraries|Dependency management with Gradle]]   
-      * [[Improving your Gradle workflow|Improving-workflow-with-Gradle]]
+      * [[Adding extensions and 3rd party libraries|Dependency management with Gradle]]  
+      * [[Improving your Gradle workflow|Improving-workflow-with-Gradle]] 
     * Working from Source
       * [[Running Demos]]
       * [[Running Tests]]
@@ -69,7 +69,7 @@
               * [[Shaders]]
               * [[Frame Buffer Objects]]
       * 2D Graphics
-            * [[Spritebatch, Textureregions, and Sprites]]
+            * [[SpriteBatch, TextureRegions, and Sprites]]
             * [[2D Animation]]
             * [[Clipping, with the use of ScissorStack]]
             * [[Orthographic camera]]
@@ -86,6 +86,7 @@
             * [[Tile Maps]]
             * [[scene2d]]
               * [[scene2d.ui]]
+                  * [[Table]]
               * [[Skin]]
       * 3D Graphics
             * [[Quick Start]]
@@ -96,7 +97,6 @@
             * [[3D Particle Effects]]
             * Perspective Camera ??
             * Picking ??
-      * [[Viewports]] 
     * [[Managing Your Assets]]
     * [[Internationalization and Localization]]
     * Utilities
@@ -122,7 +122,7 @@
             * [[State Machine]]
       * [[gdx-freetype]]
       * [[Physics]]
-            * [[Box2D]]
+            * [[Box2D]]    
             * [[Bullet Physics]]
     * [[Using libgdx with other JVM languages]]
       * [[Using libgdx with Clojure]]
@@ -133,6 +133,8 @@
       * [[Swarm in Libgdx]]
       * [[NextPeer in Libgdx]]
       * [[Google Play Game Services in LibGDX]]
+      * [[ProGuard/DexGuard and libGDX]]
+      * [[Excelsior JET and libGDX]]
   * Articles
     * [[Getting Help]]
     * [[External Tutorials]]
