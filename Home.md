@@ -86,6 +86,7 @@
             * [[Tile Maps]]
             * [[scene2d]]
               * [[scene2d.ui]]
+                  * [[Table]]
               * [[Skin]]
       * 3D Graphics
             * [[Quick Start]]
