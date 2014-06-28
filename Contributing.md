@@ -2,7 +2,7 @@ Contributing to libgdx is easy:
 
   * Fork libgdx on http://github.com/libgdx/libgdx
   * Learn how to [[Work with the source | Running Demos & Tests]]
-  * Hack away and sent a pull request on Github!
+  * Hack away and send a pull request on Github!
 
 ### API Changes & Additions ###
 If you modify a public API, or add a new one, make sure to add these changes to the [CHANGES](https://github.com/libgdx/libgdx/blob/master/CHANGES) file in the root of the repository. In addition to the CHANGES file, such modifications are also published on the [blog](http://www.badlogicgames.com) and on [Twitter](http://www.twitter.com/badlogicgames) to reach all of the community.
