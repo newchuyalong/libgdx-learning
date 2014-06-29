@@ -39,7 +39,10 @@ If you believe your issue, error, or suspected bug is related to a specific back
 
 **For Android backend issues**
  - **Note:** Android issues can sometimes be more difficult do to device manufactures breaking things or buggy drivers.
- - Please have the device name and Android version in the bug report. Providing things won't be broken, we will make an attempt to fix the issue or implement a workaround for the device.
+
+- **Note 2:** LibGDX only works completely on the Android Runtime (ART) on devices running the Android L developer preview and higher. Some functions will not work on the ART builds in 4.4.x do to an issue in ART that was fixed and included in the L developer preview and on.
+
+- Please have the device name and Android version in the bug report. Providing things won't be broken, we will make an attempt to fix the issue or implement a workaround for the device.
 
 **For Desktop backend issues (jglfw, lwjgl)**
  - Please list the operating system and version, architecture, and if necessary OpenGL version.
