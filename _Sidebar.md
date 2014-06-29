@@ -132,6 +132,7 @@
       * [[Using libgdx with Scala]]
     * [[Third Party Services]]
       * [[AdMob in Libgdx]]
+      * [[Airpush in Libgdx]]
       * [[Swarm in Libgdx]]
       * [[NextPeer in Libgdx]]
       * [[Google Play Game Services in LibGDX]]
