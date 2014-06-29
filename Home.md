@@ -116,6 +116,7 @@
       * [[Texture Packer]]
       * [[Hiero]]
       * [[Particle Editor]]
+      * [[Path Editor]]
     * Extensions
       * [[Artificial Intelligence]]
             * [[Message Handling]]
