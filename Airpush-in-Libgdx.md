@@ -1,4 +1,14 @@
-This page will be updated in the folowing minutes, when its ready it will be added to the Table of Contents.
+# Summary #
+
+ * [Introduction](#introduction)
+ * [Step 1. Choose SDK.](#Step 1. Choose SDK.-)
+ * [Step 2. Create App in Airpush Dashboard.](#Step 2. Create App in Airpush Dashboard.-)
+ * [Step 3. Add Google Play Services Library.](#Step 3. Add Google Play Services Library.-)
+ * [Step 4. Adding the Airpush SDK.](#Step 4. Adding the Airpush SDK.-)
+ * [Step 5. Editing the Android Manifest.](#Step 5. Editing the Android Manifest.-)
+ * [Step 6. Adding dem Codes.](#Step 6. Adding dem Codes.-)
+
+# Introduction #
 
 This tutorial will guide you for all the steps to add Airpush adds in your Libgdx Powered Andriod Games. You will be able to add both Banner Ads, and Smartwall Ads. The basic structure is very like the [Admob Tutorial](https://github.com/libgdx/libgdx/wiki/Admob-in-libgdx). But there are several changes and it will be more straight forward with not much text. (If you want a very detailed explanation of why every step, feel free to read that tutorial first).
 
@@ -7,9 +17,9 @@ You need:
 1. A Libgdx Powered Android Game Project.
 2. And [Airpush](http://www.airpush.com/) Account.
 
-### Step 1. Choose SDK.-
+# Step 1. Choose SDK.- #
 
-Airpush has 2 SDKs that you will be able to use in Google Play. Standard and Bundle. Both have adantages and flaws.
+Airpush has 2 SDKs that you will be able to use in Google Play. Standard and Bundle. Both have advantages and flaws.
 
 **Bundle.-**
 
@@ -21,9 +31,9 @@ Support the most devices, but won't pay you for users accepting the EULA. Only A
 
 This tutorial will cover the 2 SDKs, any differences in their implementation will be noted.
 
-What SDK do I recommend?. Well I use both, I make an app that implements the standard SDK with certain Version Number, lets say 1. And then I implement the Bundle and make that with a higher Version Number, lets say 2. Then I upload the 2 APKs in the same app in Google Play Console (they have same package name, don't be confused). Then Google Play automatically will install the Bundle version if supported or the Standard if not supported. The reason Bundle support less devices is because a required permission.
+What SDK do I recommend?. Well I use both, I make an app that implements the standard SDK with certain Version Number, lets say 1. And then I implement the Bundle and make that with a higher Version Number, lets say 2. Then I upload the 2 APKs in the same app in Google Play Console (they have same package name, don't be confused). Then Google Play automatically will install the Bundle version if supported or the Standard if not supported. The reason Bundle support less devices is because required permissions.
 
-### Step 2. Create App in Airpush Dashboard.-
+# Step 2. Create App in Airpush Dashboard.- #
 
 Log in to your Airpush Account, you will be taken to the Dashboard. Click the Add Application button left of the screen.
 
@@ -41,7 +51,7 @@ Back in the Dashboard save your API Key and Your App ID. You will need these lat
 
 ![](http://2.bp.blogspot.com/-iUq5Q3kVa7g/U7BXGe4Vx2I/AAAAAAAAAfQ/7UX1yBkjeuE/s1600/aptuto3.png)
 
-### Step 3. Add Google Play Services Library.-
+# Step 3. Add Google Play Services Library.- #
 
 You must import Google Play Services Library and link it to your Android Libgdx Project.
 
@@ -49,23 +59,23 @@ First of all, install/update it. Open Android SDK Manager and install Google Pla
 
 ![](http://3.bp.blogspot.com/-DnUAsVulob4/U7Bb6iahLhI/AAAAAAAAAf0/_fsMFtqGgYs/s1600/aptuto5.png)
 
-Now go to your Android SDK Installation Folder -> extras -> google -> google_play_services -> libproject and copy "google-play-services_lib" folder to your workspace.
+Now go to your Android SDK Installation 'Folder -> extras -> google -> google_play_services -> libproject' and copy "google-play-services_lib" folder to your workspace.
 
-Now, import the project like this in eclipse: File -> import... -> Android -> Existing Android Code Into Workspace. You will end up with something like this:
+Now, import the project like this in eclipse: 'File -> import... -> Android -> Existing Android Code Into Workspace'. You will end up with something like this:
 
 ![](http://3.bp.blogspot.com/--EDisIcafoQ/U7BdeDRr8xI/AAAAAAAAAgA/j-cZKMUl5gE/s1600/aptuto6.png)
 
-Right click the Android Project, go to Properties -> Android and scroll down. Click the "Add..." button and choose the services project. Will end up like this:
+Right click the Android Project, go to 'Properties -> Android' and scroll down. Click the "Add..." button and choose the services project. Will end up like this:
 
 ![](http://4.bp.blogspot.com/-9McHVljjb2w/U7BeV-vEx5I/AAAAAAAAAgI/NZRvmOcbvJA/s1600/aptuto7.png)
 
-### Step 4. Adding the Airpush SDK.-
+# Step 4. Adding the Airpush SDK.- #
 
 Go to the Airpush Dashboard and download your SDK. Standard or Bundle. Now this is where gets tricky, every developer has a different SDK name and also SDK packages. So you must be aware you have to change these values when you are implementing them.
 
 Unzip the rar. And copy "mraid_attrs.xml" to your Android Project 'res- > values' folder. And copy the .jar file to your Android Project 'libs' folder.
 
-Right click your Android Project and choose 'Properties -> Java Build Path', go to 'Libraries' tab. And click 'Add JARs'. Choose the android project -> libs -> airpushsdk.jar (remember it has a different name for each developer). Now also add the Goggle Play Services jar, because even if its added as a library, android won't export the jar. click 'Add JARs' again, go to services project -> libs -> google-play-services.jar.
+Right click your Android Project and choose 'Properties -> Java Build Path', go to 'Libraries' tab. And click 'Add JARs'. Choose the 'android project -> libs -> airpushsdk.jar' (remember it has a different name for each developer). Now also add the Goggle Play Services jar, because even if its added as a library, android won't export the jar. click 'Add JARs' again, go to 'services project -> libs -> google-play-services.jar'.
 
 Switch to the 'Order and Export' tab and be sure to check both new jars. Will end up like this:
 
@@ -73,7 +83,7 @@ Switch to the 'Order and Export' tab and be sure to check both new jars. Will en
 
 Click Ok to finish.
 
-### Step 5. Editing the Android Manifest.-
+# Step 5. Editing the Android Manifest.- #
 
 Ad the following to your Android Manifest. Be aware this is different for Standard and Bundle SDKs.-
 
@@ -88,10 +98,10 @@ Permissions.-
 <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 ```
 
-Activity declatations.-
+Activity declarations.-
 
 ```java
- <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />
+<meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />
 <meta-data android:name="com.<sdkpackage>.APPID" android:value="<Your appId>" />
 <meta-data android:name="com.<sdkpackage>.APIKEY" android:value="android*<Your ApiKey>"/>
 <activity android:exported="false" android:name="com.<sdkpackage>.MainActivity"
@@ -122,10 +132,10 @@ Permissions.-
 ```
 (see why it supports less devices).
 
-Activity declatations.-
+Activity declarations.-
 
 ```java
- <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />
+<meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />
 <meta-data android:name="com.<sdkpackage>.APPID" android:value="<Your appId>" />
 <meta-data android:name="com.<sdkpackage>.APIKEY" android:value="android*<Your ApiKey>"/>
 <activity android:exported="false" android:name="com.<sdkpackage>.AdActivity"
@@ -151,7 +161,7 @@ Don't forget to change your `<sdkpackage>`, `<Your ApiKey>` and `<Your appId>` f
 <uses-sdk android:minSdkVersion="9" android:targetSdkVersion="19"/>
 ```
 
-### Step 6. Adding dem Codes.-
+# Step 6. Adding dem Codes.- #
 
 First make an Interface in your core project called "ActionResolver". And add the following 2 methods.
 ```java
@@ -161,7 +171,7 @@ public interface ActionResolver {
 }
 ```
 
-Make your ApplicationListener recieve an ActionResolver when created as a parameter. Like this:
+Make your ApplicationListener receive an ActionResolver when created as a parameter. Like this:
 ```java
 public class TheMonsterFree extends Game{
 
@@ -373,7 +383,7 @@ for `AdListener.MraidAdListener adlistener = new AdListener.MraidAdListener(){`
 
 Do `Ctrl+ Shift + O` for the correct imports to update.
 
-Thats it, now inside your core project you can show banner ads like this:
+Thats it, now inside your core project you can show Banner ads like this:
 ```java
 ar.showAds(true);
 ```
