@@ -1,12 +1,12 @@
 # Summary #
 
  * [Introduction](#introduction)
- * [Step 1. Choose SDK.](#Step 1. Choose SDK.-)
- * [Step 2. Create App in Airpush Dashboard.](#Step 2. Create App in Airpush Dashboard.-)
- * [Step 3. Add Google Play Services Library.](#Step 3. Add Google Play Services Library.-)
- * [Step 4. Adding the Airpush SDK.](#Step 4. Adding the Airpush SDK.-)
- * [Step 5. Editing the Android Manifest.](#Step 5. Editing the Android Manifest.-)
- * [Step 6. Adding dem Codes.](#Step 6. Adding dem Codes.-)
+ * [Step 1. Choose SDK.](#step-1-choose-sdk-)
+ * [Step 2. Create App in Airpush Dashboard.](#step-2-create-app-in-airpush-dashboard-)
+ * [Step 3. Add Google Play Services Library.](#step-3-add-google-play-services-Library-)
+ * [Step 4. Adding the Airpush SDK.](#step-4-adding-the-airpush-sdk-)
+ * [Step 5. Editing the Android Manifest.](#step-5-editing-the-android-manifest-)
+ * [Step 6. Adding dem Codes.](#step-6-adding-dem-codes-)
 
 # Introduction #
 
