@@ -143,3 +143,4 @@
     * [[Getting Help]]
     * [[External Tutorials]]
     * [[ Bundling a JRE]]
+    * [[Deploying as an Applet]]
