@@ -56,12 +56,7 @@ minFilter = TextureFilter.Nearest;
 magFilter = TextureFilter.Nearest;
 ```
 
-To enable the loading and retrieving of `FreeTypeFontGenerator` via the `AssetManager`, do the following:
-
-    assetManager.setLoader(FreeTypeFontGenerator.class, new FreeTypeFontGeneratorLoader(new InternalFileHandleResolver()))
-    assetManager.load("fonts/myfont.ttf", FreeTypeFontGenerator.class);
-    ...
-    FreeTypeFontGenerator generator = assetManager.get("fonts/myfont.ttf", FreeTypeFontGenerator.class);
+You can also load `BitmapFont`s generated via the FreeType extension using AssetManager. See [FreeTypeFontLoaderTest](https://github.com/libgdx/libgdx/blob/master/tests/gdx-tests/src/com/badlogic/gdx/tests/FreeTypeFontLoaderTest.java)
 
 ### latest info about caveats ###
 
