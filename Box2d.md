@@ -285,9 +285,10 @@ while (bi.hasNext()){
 Then render your sprites using a libgdx `SpriteBatch` as usual.
 
 ## Sensors ##
-Sensors are Bodies that do not produce automatic response when collide. This is interesting when is needed to be in complete control of what happens when two shapes overlap.
-To imagine that, we may think of a drone that has some kind of circular distance of sight. This body should follow the drone but shouldn't make physical reactions to it, and the other bodies. It should detect when some target is inside it's shape.
-Every body can be a Sensor, it just must have the 'isSensor' flag set to true. An example of this would be like this:
+Sensors are Bodies that do not produce automatic response during a collision (such as applying force). This is useful when one needs to be in complete control of what happens when two shapes collide.
+For example, think of a drone that has some kind of circular distance of sight. This body should follow the drone but shouldn't have a physical reaction to it, or any other bodies. It should detect when some target is inside it's shape.
+
+To configure a body to be a sensor, set the 'isSensor' flag to true. An example would be:
 
 ```java
 //At the definition of the Fixture
@@ -297,13 +298,13 @@ fixtureDef.isSensor = true;
 In order to listen to this sensor contact, we need to implement the ContactListener interface methods.
 
 ## Contact Listeners ##
-The Contact Listeners listen to a fixture who is colliding. This methods mainly contain a Contact object. The contact object contain information about the two bodies involved.
-The beginContact method is called when the object overlap the other. When the object moves out of this collision the endContact method is called.
+The Contact Listeners listen for collisions events on a specific fixture. The methods are passed a Contact object, which contain information about the two bodies involved.
+The beginContact method is called when the object overlap another. When the objects are no longer colliding, the endContact method is called.
 
 ```java
 public class ListenerClass implements ContactListener {
 			
-      @Override
+                        @Override
 			public void endContact(Contact contact) {
 				
 			}
