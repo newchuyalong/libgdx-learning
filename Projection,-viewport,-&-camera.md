@@ -224,7 +224,7 @@ The square's vertices are still located at the same (x, y) coordinates as before
 
 # Camera and Sprites
 
-We haven't dealt with sprites since the HelloWorld example, but it's important to note that the `SpriteBatch` class actually has an internal camera different than the one we constructed. Drawing a sprite at coordinate (0, 0), for example, will not necessarily result in the sprite overlapping the square we're created. To solve this issue, it's a simple matter of synchronizing the two cameras at the start the the rendering phase. The code is included below (look at the MeshColorTexture tutorial to remind yourself how to load assets for a texture).
+We haven't dealt with sprites since the HelloWorld example, but it's important to note that the `SpriteBatch` class actually has an internal camera different than the one we constructed. Drawing a sprite at coordinate (0, 0), for example, will not necessarily result in the sprite overlapping the square we're created. To solve this issue, it's a simple matter of synchronizing the two cameras at the start of the rendering phase. The code is included below (look at the MeshColorTexture tutorial to remind yourself how to load assets for a texture).
 
 ```java
 package com.example.projectionviewportcamera;
