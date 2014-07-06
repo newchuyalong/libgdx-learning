@@ -285,7 +285,7 @@ while (bi.hasNext()){
 Then render your sprites using a libgdx `SpriteBatch` as usual.
 
 ## Sensors ##
-Sensors are Bodies that do not produce automatic response during a collision (such as applying force). This is useful when one needs to be in complete control of what happens when two shapes collide.
+Sensors are Bodies that do not produce automatic responses during a collision (such as applying force). This is useful when one needs to be in complete control of what happens when two shapes collide.
 For example, think of a drone that has some kind of circular distance of sight. This body should follow the drone but shouldn't have a physical reaction to it, or any other bodies. It should detect when some target is inside it's shape.
 
 To configure a body to be a sensor, set the 'isSensor' flag to true. An example would be:
