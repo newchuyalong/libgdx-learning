@@ -166,7 +166,8 @@ project(":android") {
     }
 }
 ```
-And we are done, our android project now has the freetype dependency. Easy eh.
+And we are done, our android project now has the freetype dependency.
+After this you will need to refresh your dependencies. Easy eh.
 
 #### Libgdx Extensions
 Mavenized libgdx extensions ready to import from the `build.gradle` script include:
