@@ -32,7 +32,7 @@ public class AndroidStarter extends AndroidApplication {
 }
 ```
 
-These two classes usually live in separate projects, e.g. a desktop and an Android project. The [[Project Setup, Running & Debugging]] page describes the layout of these projects for Eclipse.
+These two classes usually live in separate projects, e.g., a desktop and an Android project. The [[Project Setup, Running & Debugging]] page describes the layout of these projects for Eclipse.
 
 The actual code of the application is located in a class that implements the [ApplicationListener](https://github.com/libgdx/libgdx/tree/master/gdx/src/com/badlogic/gdx/ApplicationListener.java) interface (MyGame in the above example). An instance of this class is passed to the respective initialization methods of each back-end's Application implementation (see above). The application will then call into the methods of the ApplicationListener at appropriate times (see [[The Life-Cycle]]).
 
@@ -41,11 +41,11 @@ See [[Starter Classes & Configuration]] for details on starter classes.
 ## Accessing Modules
 The modules described earlier can be accessed via static fields of the [Gdx class](https://github.com/libgdx/libgdx/tree/master/gdx/src/com/badlogic/gdx/Gdx.java). This is essentially a set of global variables that allows easy access to any module of libgdx. While generally viewed as very bad coding practice, we decided for using this mechanism to ease the pain usually associated with passing around references to things that are used often, at all kinds of places within the code base.
 
-To access e.g. the audio module one can simply write the following:
+To access, for example, the audio module one can simply write the following:
 
 ```java
 // creates a new AudioDevice to which 16-bit PCM samples can be written
 AudioDevice audioDevice = Gdx.audio.newAudioDevice(44100, false);
 ```
 
-`Gdx.audio` is a reference to the backend implementation that has been instantiated on application startup by the Application instance. Other modules are accessed in the same fashion, e.g. `Gdx.app` to get the Application, `Gdx.files` to access the Files implementation and so on.
+`Gdx.audio` is a reference to the backend implementation that has been instantiated on application startup by the Application instance. Other modules are accessed in the same fashion, e.g., `Gdx.app` to get the Application, `Gdx.files` to access the Files implementation and so on.
