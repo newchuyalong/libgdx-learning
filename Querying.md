@@ -25,7 +25,7 @@ On Android, one can also query the Android version the application is currently 
 int androidVersion = Gdx.app.getVersion();
 ```
 
-This will return the SDK level supported on the current device, e.g. 3 for Android 1.5.
+This will return the SDK level supported on the current device, e.g., 3 for Android 1.5.
 
 ### Memory Consumption ###
 For debugging and profiling purposes it is often necessary to know the memory consumption, for both the Java heap and the native heap:
