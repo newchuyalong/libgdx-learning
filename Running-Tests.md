@@ -11,7 +11,7 @@ cd libgdx
 ant -f fetch.xml
 ```
 
-This fetches all the source code from the git repository, then downloads the native files from the build server via the fetch.xml Ant script. The Git repository does not contain these native libraries to trim down it's size, hence the two steps.
+This fetches all the source code from the git repository, then downloads the native files from the build server via the fetch.xml Ant script. The Git repository does not contain these native libraries to trim down its size, hence the two steps.
 
 To stay up to date you can do the following from within the libgdx directory every now and then:
 
