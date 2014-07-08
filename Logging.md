@@ -5,7 +5,7 @@ A message can be a normal info message, an error message with an optional except
 ```java
 Gdx.app.log("MyTag", "my informative message");
 Gdx.app.error("MyTag", "my error message", exception);
-Gdx.app.debug("MyTag", "my error message");
+Gdx.app.debug("MyTag", "my debug message");
 ```
 
 Depending on the platform, the messages are logged to the console (desktop), LogCat (Android) or a GWT `TextArea` provided in the `GwtApplicationConfiguration` or created automatically (html5).
