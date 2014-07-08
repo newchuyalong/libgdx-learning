@@ -82,7 +82,7 @@ Sound instances are loaded into memory and can be played back any time. It is id
 
 Music instances on the other hand are streams from files on the disk (or SD card). Every time a file is played, it is streamed from the file to the audio device.
 
-The following code snippet plays a sound file, _myMusicFile.mp3_ , from the disk repeatedly with the volume half turned up:
+The following code snippet plays a sound file, _myMusicFile.mp3_, from disk repeatedly with the volume half turned up:
 ```java
 Music music = Gdx.audio.newMusic(Gdx.files.getFileHandle("data/myMusicFile.mp3", FileType.Internal));
 music.setVolume(0.5f);
