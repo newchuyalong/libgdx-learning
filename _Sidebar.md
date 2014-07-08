@@ -117,7 +117,7 @@
     * Tools
       * [[Texture Packer]]
       * [[Hiero]]
-      * [[Particle Editor]]
+      * [[2D Particle Editor]]
       * [[Path Editor]]
     * Extensions
       * [[Artificial Intelligence]]
