@@ -1,4 +1,4 @@
-See [this](Particle-editor) article on how to use the ParticleEditor.
+See [this](2D-Particle-Editor) article on how to use the ParticleEditor.
 
 Documentation is currently lacking for libgdx particles, sorry.
 
