@@ -1,10 +1,10 @@
 Here's a [forum discussion](http://www.badlogicgames.com/forum/viewtopic.php?f=11&t=9072&p=41323#p41323) on the matter, also including iOS specific things.
 
-Sometimes it is necessary to access platform specific APIs, e.g. adding advertisement services or leaderboard functionality provided by frameworks such as [Swarm](http://swarmconnect.com/).
+Sometimes it is necessary to access platform specific APIs, e.g., adding advertisement services or leaderboard functionality provided by frameworks such as [Swarm](http://swarmconnect.com/).
 
 This can be achieved by interfacing these APIs with a Facade, providing a platform-specific implementation for each target.
 
-The following example is pure fiction and assumes we want to use a very simple leaderboard API which is only available on Android. For other targets we simply want to log invocations or provide mock return values.
+The following example is pure fiction and assumes we want to use a very simple leaderboard API that is only available on Android. For other targets we simply want to log invocations or provide mock return values.
 
 The Android API looks like this:
 
@@ -81,7 +81,7 @@ public class MyGame implements ApplicationListener {
 }
 ```
 
-In each [[starter class | Starter classes & configuration]] we then simply instantiate `MyGame`, passing the corresponding Leaderboard implementation as an argument, e.g. on the desktop:
+In each [[starter class | Starter classes & configuration]] we then simply instantiate `MyGame`, passing the corresponding Leaderboard implementation as an argument, e.g., on the desktop:
 
 ```java
 public static void main(String[] argv) {
