@@ -37,7 +37,7 @@ Depending on the underlying hardware, the wrappers may be or may not be availabl
 
 The Graphics module also provides methods to generate Pixmaps and Textures.
 
-For example to obtain the OpenGL API 1.0 instance, the following code will be used:
+For example, to obtain the OpenGL API 1.0 instance, the following code will be used:
 ```java
 GL10 gl = Gdx.graphics.getGL10 ();
 ```
