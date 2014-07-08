@@ -1,7 +1,7 @@
 ## Modules ##
 At its core, libgdx consists of five interfaces that provide means to interact with the operating system. Each back-end implements these interfaces.
 
-  * *[Application](https://github.com/libgdx/libgdx/tree/master/gdx/src/com/badlogic/gdx/Application.java)*: runs the application and informs an API client about application level events, such as window resizing. Provides logging facilities and querying methods for e.g. memory usage.
+  * *[Application](https://github.com/libgdx/libgdx/tree/master/gdx/src/com/badlogic/gdx/Application.java)*: runs the application and informs an API client about application level events, such as window resizing. Provides logging facilities and querying methods, e.g., memory usage.
   * *[Files](https://github.com/libgdx/libgdx/tree/master/gdx/src/com/badlogic/gdx/Files.java)*: exposes the underlying file system(s) of the platform. Provides an abstraction over different types of file locations on top of a custom file handle system (which does not inter-operate with Java's File class).
   * *[Input](https://github.com/libgdx/libgdx/tree/master/gdx/src/com/badlogic/gdx/Input.java)*: informs the API client of user input such as mouse, keyboard, touch or accelerometer events. Both polling and event driven processing are supported.
   * *[Net](https://github.com/libgdx/libgdx/tree/master/gdx/src/com/badlogic/gdx/Net.java)**: provides means to access resources via HTTP/HTTPs in a cross-platform way, as well as create TCP server and client sockets.
