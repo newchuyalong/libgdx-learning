@@ -225,7 +225,7 @@ So, to describe both the bucket and raindrops we need to store their position an
    Rectangle bucket;
 ```
 
-In the `create()` method we instantiate the Rectangle and specify it's initial values. We want the bucket to be 20 pixels above the bottom edge of the screen, and centered horizontally.
+In the `create()` method we instantiate the Rectangle and specify its initial values. We want the bucket to be 20 pixels above the bottom edge of the screen, and centered horizontally.
 
 ```java
    bucket = new Rectangle();
@@ -254,7 +254,7 @@ Time to render our bucket. The first thing we want to do is to clear the screen 
 
 These two lines are the only things you need to know about OpenGL if you use the high-level classes such as `Texture` or `SpriteBatch`. The first call will set the clear color to the color blue. The arguments are the red, green, blue and alpha component of that color, each within the range [0, 1]. The next call instructs OpenGL to actually clear the screen.
 
-Next we need to tell our camera to make sure it is updated. Cameras use a mathematical entity called matrix that is responsible for setting up the coordinate system for rendering. These matrices need to be recomputed every time we change a property of the camera, like its position. We don't do this in our simple example, but it is generally a good practice to update the camera once per frame:
+Next we need to tell our camera to make sure it is updated. Cameras use a mathematical entity called a matrix that is responsible for setting up the coordinate system for rendering. These matrices need to be recomputed every time we change a property of the camera, like its position. We don't do this in our simple example, but it is generally a good practice to update the camera once per frame:
 
 ```java
    camera.update();
@@ -269,7 +269,7 @@ Now we can render our bucket:
    batch.end();
 ```
 
-The first line tells the `SpriteBatch` to use the coordinate system specified by the camera. As stated earlier, this is done with something called a matrix, to be more specific, a projection matrix. The `camera.combined` field is a such a matrix. From there on the `SpriteBatch` will render everything in the coordinate system described earlier.
+The first line tells the `SpriteBatch` to use the coordinate system specified by the camera. As stated earlier, this is done with something called a matrix, to be more specific, a projection matrix. The `camera.combined` field is such a matrix. From there on the `SpriteBatch` will render everything in the coordinate system described earlier.
 
 Next we tell the `SpriteBatch` to start a new batch. Why do we need this and what is a batch? OpenGL hates nothing more than telling it about individual images. It wants to be told about as many images to render as possible at once. 
 
@@ -291,7 +291,7 @@ First we ask the input module whether the screen is currently touched (or a mous
 
 `Gdx.input.getX()` and `Gdx.input.getY()` return the current touch/mouse position (libgdx also supports multi-touch, but that's a topic for a different article). To transform these coordinates to our camera's coordinate system, we need to call the `camera.unproject()` method, which requests a `Vector3`, a three dimensional vector. We create such a vector, set the current touch/mouse coordinates and call the method. The vector will now contain the touch/mouse coordinates in the coordinate system our bucket lives in. Finally we change the position of the bucket to be centered around the touch/mouse coordinates.
 
-*Note:* it is very, very bad to instantiate new object all the time, such as the Vector3 instance. The reason for this is the garbage collector which has to kick in frequently to collect these short-lived objects. On the desktop it's not such a big deal, but on Android the GC can cause pauses up to a few hundred milliseconds which results in stuttering. To solve this issue in this particular case, we can simple make `touchPos` a field of the `Drop` class instead of instantiating it all the time.
+*Note:* it is very, very bad to instantiate a new object all the time, such as the Vector3 instance. The reason for this is the garbage collector has to kick in frequently to collect these short-lived objects. On the desktop it's not such a big deal, but on Android the GC can cause pauses up to a few hundred milliseconds, which results in stuttering. To solve this issue in this particular case, we can simple make `touchPos` a field of the `Drop` class instead of instantiating it all the time.
 
 *Note #2:* `touchPos` is a three dimensional vector. You might wonder why that is if we only operate in 2D. `OrthographicCamera` is actually a 3D camera which takes into account z-coordinates as well. Think of CAD applications, they use 3D orthographic cameras as well. We simply abuse it to draw 2D graphics.
 
