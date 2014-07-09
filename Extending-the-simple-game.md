@@ -307,7 +307,7 @@ public class GameScreen implements Screen {
 
 This code is almost 95% the same as the original implementation, except now we use a constructor instead of the `create()` method of the `ApplicationListener`, and pass in a `Drop` object, like in the `MainMenuScreen` class. We also start playing the music as soon as the Screen is set to `GameScreen`. 
 
-We also added a string to the top left corner of the game, which tracks the amount of raindrops collected.
+We also added a string to the top left corner of the game, which tracks the number of raindrops collected.
 
 That's it, you have the complete game finished. That is all there is to know about the Screen interface and Game abstract Class, and all there is to creating multifaceted games with multiple states.
 
