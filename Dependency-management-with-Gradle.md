@@ -425,7 +425,7 @@ dependencies {
 This will include all the .jar files in the libs directory as dependencies.
 
 
-**NOTE**: "dir" is relative to the project root, if you add the dependencies to your android project, 'libs' would need to be in the android/ directory. If you added the dependencies in the core project, 'libs' would need to be in the core/directory.
+**NOTE**: "dir" is relative to the project root, if you add the dependencies to your android project, 'libs' would need to be in the android/ directory. If you added the dependencies in the core project, 'libs' would need to be in the core/ directory.
 
 An example with a more _complete_ script:
 ```groovy
@@ -477,7 +477,7 @@ project(":core") {
 **Finally** Refresh your Gradle project, either on command line or using your IDE plugin.
 
 #### Universal-Tween-Engine by locally mavenizing maven
-First, download and extract the tween-engine-api from it's repository \(https://code.google.com/p/java-universal-tween-engine/). To install this dependency and it's source files into your local maven repo, use these commands:
+First, download and extract the tween-engine-api from its repository \(https://code.google.com/p/java-universal-tween-engine/). To install this dependency and its source files into your local maven repo, use these commands:
 ```bash
 mvn install:install-file -Dfile=tween-engine-api.jar -DgroupId=aurelienribon -DartifactId=tweenengine -Dversion=6.3.3 -Dpackaging=jar
 
@@ -525,7 +525,7 @@ This is done in the `gwt.xml` files in the gwt sub directory. You will need to m
 	<set-configuration-property name="gdx.assetpath" value="../android/assets" />
 </module>
 ```
-We depend on the libgdx gwt backend, as well as the core project, so we have them defined in an <inherits> tag.  So when you add your dependency via methods above, you need to add it here too!
+We depend on the libgdx gwt backend, as well as the core project, so we have them defined in a <inherits> tag.  So when you add your dependency via methods above, you need to add it here too!
 
 #### Libgdx Extension Inherits
 These are the libgdx extensions that are supported in gwt
