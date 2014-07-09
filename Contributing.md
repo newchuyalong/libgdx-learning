@@ -41,7 +41,7 @@ If you create a new file, make sure to add the Apache file header, as seen [here
 
 If you create a new class, please add at least class documentation that explains the usage and scope of the class. You can omit Javadoc for methods that are self-explanatory.
 
-If your class is explicitly thread-safe, mention it in the Javadoc. The default assumption is that classes are not thread-safe, to reduce the amount of costly locks in the code base.
+If your class is explicitly thread-safe, mention it in the Javadoc. The default assumption is that classes are not thread-safe, to reduce the number of costly locks in the code base.
 
 ### Performance Considerations ###
 
@@ -59,7 +59,7 @@ A couple of guidelines:
 
 ### Git ###
 
-Most of the libdgx team members are Git novices, as such we are just learning the ropes ourself. To lower the risk of getting something wrong, we'd kindly ask you to keep your pull requests small if possible. A change-set of 3000 files is likely not to get merged.
+Most of the libdgx team members are Git novices, as such we are just learning the ropes ourselves. To lower the risk of getting something wrong, we'd kindly ask you to keep your pull requests small if possible. A change-set of 3000 files is likely not to get merged.
 
 We do open new branches for bigger API changes. If you help out with a new API, make sure your pull request targets that specific branch.
 
