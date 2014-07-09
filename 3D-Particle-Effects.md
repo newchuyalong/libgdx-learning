@@ -16,8 +16,6 @@ Windows:
 java -cp gdx.jar;gdx-natives.jar;gdx-backend-lwjgl.jar;gdx-backend-lwjgl-natives.jar;extensions/gdx-tools/gdx-tools.jar com.badlogic.gdx.tools.flame.FlameMain
 ```
 
-Run this jar with: `java -jar flame.jar`
-
 ### Particle Effect Types
 There are 3 different kinds of 3D particle effects:
 * Billboards
