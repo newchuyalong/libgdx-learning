@@ -16,10 +16,6 @@ Windows:
 java -cp gdx.jar;gdx-natives.jar;gdx-backend-lwjgl.jar;gdx-backend-lwjgl-natives.jar;extensions/gdx-tools/gdx-tools.jar com.badlogic.gdx.tools.flame.FlameMain
 ```
 
-There is also an externally maintained (probably out of date) stand-alone jar you can download here: 
-
-[http://www.pixelscientists.com/downloads/flame.jar](http://www.pixelscientists.com/downloads/flame.jar)
-
 Run this jar with: `java -jar flame.jar`
 
 ### Particle Effect Types
