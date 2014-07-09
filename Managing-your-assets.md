@@ -22,7 +22,7 @@ This sets up a standard AssetManager, with all the loaders libgdx has in store a
 
 ### Loading Assets ###
 
-To load assets, the AssetManager needs to know how to load a specific type of asset. This functionality is implemented via AssetLoaders. There's two variants, SynchronousAssetLoader and AsynchronousAssetLoader. The former loads everything on the rendering thread, the later loads parts of the asset on another thread, e.g. the Pixmap needed for a Texture, and then loads the OpenGL dependent part on the rendering thread. The following resources can be loaded out of the box with the AssetManager as constructed above.
+To load assets, the AssetManager needs to know how to load a specific type of asset. This functionality is implemented via AssetLoaders. There are two variants, SynchronousAssetLoader and AsynchronousAssetLoader. The former loads everything on the rendering thread, the latter loads parts of the asset on another thread, e.g., the Pixmap needed for a Texture, and then loads the OpenGL dependent part on the rendering thread. The following resources can be loaded out of the box with the AssetManager as constructed above.
 
 
   * Pixmaps via [PixmapLoader](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/assets/loaders/PixmapLoader.html) [(code)](https://github.com/libgdx/libgdx/blob/master/gdx/src/com/badlogic/gdx/assets/loaders/PixmapLoader.java)
@@ -79,7 +79,7 @@ If you want to block and make sure all assets are loaded you can call:
 manager.finishLoading();
 ```
 
-This will block until all the assets that have been queued are actually done loading. Kinda defeats the purpose of asynchronous loading, but sometimes one might need it (e.g. loading the assets needed to display the loading screen itself).
+This will block until all the assets that have been queued are actually done loading. Kinda defeats the purpose of asynchronous loading, but sometimes one might need it (e.g., loading the assets needed to display the loading screen itself).
 
 ### Getting Assets ###
 That's again easy:
@@ -145,7 +145,7 @@ AssetManager manager = new AssetManager(new ExternalFileHandleResolver());
 This will make sure all default loaders listed above will use that loader.
 
 ### Writing your own Loaders ###
-I can't anticipate which other types of resources you want to load, so at some point you might want to write your own loaders. There are two interfaces called SynchronousAssetLoader and AsynchronousAssetLoader you can implement. Use the former if your asset type is fast to load, use the later if you want your loading screen to be responsive. I suggest basing your loader on the code of one of the loaders listed above. Look into MusicLoader for a simple SynchronousAssetLoader, look into PixmapLoader for a simple AsynchronousAssetLoader. BitmapFontLoader is a good example of an asynchronous loader that also has dependencies that need to be loaded before the actual asset can be loaded (in that case it's the texture storing the glyphs). Again, you can do pretty much anything with this.
+I can't anticipate which other types of resources you want to load, so at some point you might want to write your own loaders. There are two interfaces called SynchronousAssetLoader and AsynchronousAssetLoader you can implement. Use the former if your asset type is fast to load, use the latter if you want your loading screen to be responsive. I suggest basing your loader on the code of one of the loaders listed above. Look into MusicLoader for a simple SynchronousAssetLoader, look into PixmapLoader for a simple AsynchronousAssetLoader. BitmapFontLoader is a good example of an asynchronous loader that also has dependencies that need to be loaded before the actual asset can be loaded (in that case it's the texture storing the glyphs). Again, you can do pretty much anything with this.
 
 Once you are done writing your loader, tell the AssetManager about it:
 
