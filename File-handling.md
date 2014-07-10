@@ -62,7 +62,7 @@ A file in libgdx is represented by an instance of the [FileHandle](https://githu
 Absolute and classpath files are mostly used for tools such as desktop editors, that have more complex file i/o requirements. For games these can be safely ignored. The order in which you should use the types is as follows:
 
   * **Internal Files**: all the assets (images, audio files, etc.) that are packaged with your application are internal files. If you use the Setup UI, just drop them in your Android project's `assets` folder.
-  * **Local Files**: if you need to write small files to e.g. save a game state, use local files. These are in general private to your application. If you want a key/value store instead, you can also look into [[Preferences]].
+  * **Local Files**: if you need to write small files, e.g. save a game state, use local files. These are in general private to your application. If you want a key/value store instead, you can also look into [[Preferences]].
   * **External Files**: if you need to write big files, e.g. screenshots, or download files from the web, they should go on the external storage. Note that the external storage is volatile, a user can remove it or delete the files you wrote.
 
 ## Checking Storage availability and paths ##
@@ -142,7 +142,7 @@ FileHandle child = Gdx.files.internal("data/sounds/").child("myaudiofile.mp3");
 
 There are many more methods in FileHandle that let you check for specific attributes of a file. Please refer to the Javadocs for detail.
 
-**Note**: These functions are mostly unimplemented in the HTML5 back-end at the moment. Try to not rely on them to much if HTML5 will be a target of your application.
+**Note**: These functions are mostly unimplemented in the HTML5 back-end at the moment. Try not to rely on them too much if HTML5 will be a target of your application.
 
 ## Error Handling ##
 Some operations on FileHandles can fail. We adopted `RuntimeExceptions` to signal errors instead of checked Exceptions. Our reasoning goes like this: 90% of the time we will access files that we know exist and are readable (e.g. internal files packaged with our application).
