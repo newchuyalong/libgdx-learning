@@ -1,4 +1,4 @@
-Our build infrastructure has the responsiblity of building libgdx for all supported platforms (Windows, Linux, Mac OS X, Android, iOS, HTML). On top of the boring old Java code, we also need to compile the native code for each platform and architecture (32-, 64-bit if available).
+Our build infrastructure has the responsibility of building libgdx for all supported platforms (Windows, Linux, Mac OS X, Android, iOS, HTML). On top of the boring old Java code, we also need to compile the native code for each platform and architecture (32-, 64-bit if available).
 
 We solve this issue by using cross-compilation on a Linux host to compile native code for Windows, Linux and Android. We additionally use a Mac to compile the iOS and Mac OS X native binaries.
 
@@ -79,7 +79,7 @@ The Mac job calls into the build-mac-ios.xml Ant script, then copies all the Mac
 * Click `Restrict where this project can be run` and enter the name of the Mac slave (`Mac`)
 * Under `Source Code Management`, select git and specify the libgdx repo URL `https://github.com/libgdx/libgdx.git`, leave the rest as is (branch master etc.)
 * Under `Build`, click `Add build step`, select `Invoke Ant`, set `Targets` to `-f build-mac-ios.xml -v`
-* Under `Post-build Actions`, click `Add post-build action`, select `Copy files back to the job's workspace on the master node`, and for `Files to copy` sepcify `**/*.a,**/*.dylib`. Uncheck `Run After Result Is Finalised?`. Click on `Advanced`, then check `Override destination folder` and set it to `/var/lib/jenkins/workspace/libgdx` or wherever your libgdx workspace lives on the Linux host. This will copy all the Mac and iOS native libraries back to the master node, which will pack it with the native libraries for the other platforms
+* Under `Post-build Actions`, click `Add post-build action`, select `Copy files back to the job's workspace on the master node`, and for `Files to copy` specify `**/*.a,**/*.dylib`. Uncheck `Run After Result Is Finalised?`. Click on `Advanced`, then check `Override destination folder` and set it to `/var/lib/jenkins/workspace/libgdx` or wherever your libgdx workspace lives on the Linux host. This will copy all the Mac and iOS native libraries back to the master node, which will pack it with the native libraries for the other platforms
 * Under `Post-build Actions`, click `Add post-build action`, select `E-mail Notification`, specify the recipients, use a space as a separator.
 
 ### Setting up the Jenkins libgdx Job
@@ -115,7 +115,7 @@ rm -rf /srv/www/libgdx.badlogicgames.com/public_html/nightlies/.svn
 ## CCACHE
 The native builds can take considerable time, as such we'd like to only build what changed. Our C/C++ build system is based on a custom set of Ant scripts which do not support incremental builds (but are super easy to setup, see [jnigen](https://github.com/libgdx/libgdx/wiki/jnigen). And even (C)Make builds don't necessarily help you with incremental builds. Also, you want to clear your build if you publish snapshots, so any incremental build you get from a proper C/C++ build tool doesn't really help.
 
-To solve this issue, we use [ccache](http://ccache.samba.org/) which caches compilation results (object files). Ccache acts as a proxy to C/C++, hashes any sourcecode file you push through it (epxanding preprocessor macros and includes), checking if it has a binary fitting that hash in it's cache. If it does, it can directly return the object file instead of having to invoke GCC. Which is nice, as it gives us sort of incremental builds even if we clean out any previous build results!
+To solve this issue, we use [ccache](http://ccache.samba.org/) which caches compilation results (object files). Ccache acts as a proxy to C/C++, hashes any source code file you push through it (expanding preprocessor macros and includes), checking if it has a binary fitting that hash in its cache. If it does, it can directly return the object file instead of having to invoke GCC. Which is nice, as it gives us sort of incremental builds even if we clean out any previous build results!
 
 Setting up ccache for cross-compilation is pretty simple.
 
