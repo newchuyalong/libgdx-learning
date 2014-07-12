@@ -2,9 +2,9 @@ This page gives a brief overview of how images are drawn using OpenGL and how li
 
 ## Drawing images ##
 
-An image that has been decoded from its original format (eg, PNG) and uploaded to the GPU is called a texture. To draw a texture, geometry is described and the texture is applied by specifying where each vertex in the geometry corresponds on the texture. For example, the geometry could be a rectangle and the texture could be applied so that each corner of the rectangle corresponds to a corner of the texture. A rectangle that is a subset off a texture is called a texture region.
+An image that has been decoded from its original format (e.g., PNG) and uploaded to the GPU is called a texture. To draw a texture, geometry is described and the texture is applied by specifying where each vertex in the geometry corresponds on the texture. For example, the geometry could be a rectangle and the texture could be applied so that each corner of the rectangle corresponds to a corner of the texture. A rectangle that is a subset of a texture is called a texture region.
 
-To do the actual drawing, first the texture is bound (ie, made the current texture), then the geometry is given to OpenGL to draw. The size and position on the screen that the texture is drawn is determined by both the geometry and how the [OpenGL viewport](http://www.badlogicgames.com/wordpress/?p=1550) is configured. Many 2D games configure the viewport to match the screen resolution. This means that the geometry is specified in pixels, which makes it easy to draw textures in the appropriate size and position on the screen.
+To do the actual drawing, first the texture is bound (i.e., made the current texture), then the geometry is given to OpenGL to draw. The size and position on the screen that the texture is drawn is determined by both the geometry and how the [OpenGL viewport](http://www.badlogicgames.com/wordpress/?p=1550) is configured. Many 2D games configure the viewport to match the screen resolution. This means that the geometry is specified in pixels, which makes it easy to draw textures in the appropriate size and position on the screen.
 
 It is very common to draw a texture mapped to rectangular geometry. It is also very common to draw the same texture or various regions of that texture many times. It would be inefficient to send each rectangle one at a time to the GPU to be drawn. Instead, many rectangles for the same texture can be described and sent to the GPU all at once. This is what the `SpriteBatch` class does.
 
@@ -147,7 +147,7 @@ This shows how to draw a texture, region, and sprite with a tint color. The colo
 
 Blending is enabled by default. This means that when a texture is drawn, translucent portions of the texture are merged with pixels already on the screen at that location.
 
-When blending is disabled, anything already on the screen at that location is replaced by the texture. This is more efficient, so blending should always be disabled unless it is needed. Eg, when drawing a large background image over the whole screen, a performance boost can be gained by first disabling blending:
+When blending is disabled, anything already on the screen at that location is replaced by the texture. This is more efficient, so blending should always be disabled unless it is needed. E.g., when drawing a large background image over the whole screen, a performance boost can be gained by first disabling blending:
 
 ```java
 Gdx.gl.glClear(GL10.GL_COLOR_BUFFER_BIT); // This cryptic line clears the screen.
@@ -174,4 +174,4 @@ _Note: Be sure to clear the screen each frame. If this is not done, a texture wi
 
 `SpriteBatch` has a public int field named `renderCalls`. After `end` is called, this field indicates how many times a batch of geometry was sent to the GPU between the last calls to `begin` and `end`. This occurs when a different texture must be bound, or when the `SpriteBatch` has cached enough sprites to be full. If the `SpriteBatch` is sized appropriately and `renderCalls` is large (more than maybe 15-20), it indicates that many texture binds are occurring.
 
-`SpriteBatch` has an additional constructor that takes a size and a number of buffers. This is an advanced feature that causes VBOs to be used rather than the usual VAs. A list of buffers is kept, and each render call uses the next buffer in the list (wrapping around). When `maxSpritesInBatch` is low and `renderCalls` is large, this may provide a small performance boost.
+`SpriteBatch` has an additional constructor that takes a size and a number of buffers. This is an advanced feature that causes vertex buffer objects (VBOs) to be used rather than the usual vertex arrays (VAs). A list of buffers is kept, and each render call uses the next buffer in the list (wrapping around). When `maxSpritesInBatch` is low and `renderCalls` is large, this may provide a small performance boost.
