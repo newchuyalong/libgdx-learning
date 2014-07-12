@@ -36,7 +36,7 @@ public class MyInputProcessor implements InputProcessor {
    }
 
    @Override
-   public boolean touchMoved (int x, int y) {
+   public boolean mouseMoved (int x, int y) {
       return false;
    }
 
@@ -58,7 +58,7 @@ The next three methods report mouse/touch events:
   * *touchDown()*: Called when a finger went down on the screen or a mouse button was pressed. Reports the coordinates as well as the pointer index and mouse button (always [Buttons.LEFT](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/Input.Buttons.html) for touch screens).
   * *touchUp()*: Called when a finger was lifted from the screen or a mouse button was released. Reports the last known coordinates as well as the pointer index and mouse button (always `Buttons.Left` for touch screens).
   * *touchDragged()*: Called when a finger is being dragged over the screen or the mouse is dragged while a button is pressed. Reports the coordinates and pointer index. The button is not reported as multiple buttons could be pressed while the mouse is being dragged. You can use `Gdx.input.isButtonPressed()` to check for a specific button.
-  * *touchMoved()*: Called when the mouse is moved over the screen without a mouse button being down. This event is only relevant on the desktop and will never occur on touch screen devices where you only get `touchDragged()` events.
+  * *mouseMoved()*: Called when the mouse is moved over the screen without a mouse button being down. This event is only relevant on the desktop and will never occur on touch screen devices where you only get `touchDragged()` events.
   * *scrolled()*: Called when the scroll wheel of the mouse was turned. Reports either -1 or 1 depending on the direction of spin. This will never be called for touch screen devices.
 
 Each of the methods returns a `boolean`. We'll look into why that is in the InputMultiplexer section below.
