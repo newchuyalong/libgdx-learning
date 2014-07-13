@@ -74,7 +74,7 @@ particleSystem.add(effect);
 A ParticleSystem must update and draw its own components, then be passed to a ModelBatch instance to be rendered to the scene.
 ```java
 private void renderParticleEffects() {
-        particleSystem.update(); // technically not necessary for rendering
+	particleSystem.update(); // technically not necessary for rendering
 	particleSystem.begin();
 	particleSystem.draw();
 	particleSystem.end();
@@ -82,3 +82,32 @@ private void renderParticleEffects() {
 }
 ```
 
+You can also translate and rotate the effect.  Depending on how your engine works you might want to use a specific matrix that is reset to identity on changes or only add the delta transformation/rotation.
+
+```java
+private void renderParticleEffects() {
+	targetMatrix.idt();
+	targetMatrix.translate(targetPos);
+	effect.setTransform(targetMatrix);
+	particleSystem.update(); // technically not necessary for rendering
+	particleSystem.begin();
+	particleSystem.draw();
+	particleSystem.end();
+	modelBatch.render(particleSystem);
+}
+```
+
+or
+
+```java
+private void renderParticleEffects() {
+	effect.translate(deltaPos);
+	particleSystem.update(); // technically not necessary for rendering
+	particleSystem.begin();
+	particleSystem.draw();
+	particleSystem.end();
+	modelBatch.render(particleSystem);
+}
+```
+# Full example
+You can find a full working example at (https://drive.google.com/file/d/0BwiuGlZ9rT-bRm9zQlJHbzFCWWs/edit?usp=sharing)
