@@ -25,7 +25,7 @@ There are 3 different kinds of 3D particle effects:
 
 **Billboards** are sprites that always face the camera (the Decal class in libgdx is essentially a billboard)
 
-**PointSprites** are simpler (more efficient, better performance) that billboards.  They are colored points with no textures.  The dust and explosion effects in the following video are done with PointSprites:
+**PointSprites** are simpler (more efficient, better performance) than billboards.  They are colored points with no textures.  The dust and explosion effects in the following video are done with PointSprites:
 
 [3D Tank Battle video](https://www.youtube.com/watch?v=lt9kYDb9p78)
 
