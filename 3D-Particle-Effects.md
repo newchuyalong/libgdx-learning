@@ -111,3 +111,5 @@ private void renderParticleEffects() {
 ```
 # Full example
 You can find a full working example at (https://drive.google.com/file/d/0BwiuGlZ9rT-bRm9zQlJHbzFCWWs/edit?usp=sharing)
+
+The main class is core/sbourges/game/gdxtest/GdxTest.java
