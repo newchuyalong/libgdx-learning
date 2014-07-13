@@ -152,10 +152,10 @@ Our first task is to load the assets and store references to them. Assets are us
 
 ```java
 public class Drop implements ApplicationListener {
-   Texture dropImage;
-   Texture bucketImage;
-   Sound dropSound;
-   Music rainMusic;
+   private Texture dropImage;
+   private Texture bucketImage;
+   private Sound dropSound;
+   private Music rainMusic;
    
    @Override
    public void create() {
@@ -191,8 +191,8 @@ Next we want to create a camera and a `SpriteBatch`. We'll use the former to ens
 We add two new fields to the class, let's call them camera and batch:
 
 ```java
-   OrthographicCamera camera;
-   SpriteBatch batch;
+   private OrthographicCamera camera;
+   private SpriteBatch batch;
 ```
 
 In the `create()` method we first create the camera like this:
@@ -222,7 +222,7 @@ The last bits that are missing are representations of our bucket and the raindro
 So, to describe both the bucket and raindrops we need to store their position and size. Libgdx provides a `Rectangle` class which we can use for this purpose. Let's start by creating a `Rectangle` that represents our bucket. We add a new field:
 
 ```java
-   Rectangle bucket;
+   private Rectangle bucket;
 ```
 
 In the `create()` method we instantiate the Rectangle and specify its initial values. We want the bucket to be 20 pixels above the bottom edge of the screen, and centered horizontally.
@@ -318,7 +318,7 @@ We also need to make sure our bucket stays within the screen limits:
 For the raindrops we keep a list of `Rectangle` instances, each keeping track of the position and size of a raindrop. Let's add that list as a field:
 
 ```java
-   Array<Rectangle> raindrops;
+   private Array<Rectangle> raindrops;
 ```
 
 The `Array` class is a libgdx utility class to be used instead of standard Java collections like `ArrayList`. The problem with the latter is that they produce garbage in various ways. The `Array` class tries to minimize garbage as much as possible. Libgdx offers other garbage collector aware collections such as hash-maps or sets as well.
@@ -326,7 +326,7 @@ The `Array` class is a libgdx utility class to be used instead of standard Java 
 We also need to keep track of the last time we spawned a raindrop, so we add another field:
 
 ```java
-   long lastDropTime;
+   private long lastDropTime;
 ```
 
 We'll store the time in nanoseconds, that's why we use a long.
@@ -444,15 +444,15 @@ import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.TimeUtils;
 
 public class Drop implements ApplicationListener {
-   Texture dropImage;
-   Texture bucketImage;
-   Sound dropSound;
-   Music rainMusic;
-   SpriteBatch batch;
-   OrthographicCamera camera;
-   Rectangle bucket;
-   Array<Rectangle> raindrops;
-   long lastDropTime;
+   private Texture dropImage;
+   private Texture bucketImage;
+   private Sound dropSound;
+   private Music rainMusic;
+   private SpriteBatch batch;
+   private OrthographicCamera camera;
+   private Rectangle bucket;
+   private Array<Rectangle> raindrops;
+   private long lastDropTime;
    
    @Override
    public void create() {
