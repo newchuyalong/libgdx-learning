@@ -108,8 +108,8 @@ To continuosly handle input, or to move a sprite, you could add a flag to your a
 ```java
 public class Bob
 {
-    boolean movingLeft;
-    boolean movingRight;
+    boolean leftMove;
+    boolean rightMove;
     ...
     updateMotion()
     {
