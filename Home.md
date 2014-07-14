@@ -92,6 +92,7 @@
             * [[Quick Start]]
             * [[Models]]
             * [[Material and environment]]
+            * [[ModelBuilder, MeshBuilder and MeshPartBuilder]]
             * [[3D animations and skinning]]
             * [[Importing Blender models in LibGDX]]
             * [[3D Particle Effects]]
