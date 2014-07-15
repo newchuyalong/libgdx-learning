@@ -42,7 +42,7 @@ I took the assets from the following sources:
 To make the assets available to the game, we have to put them in the Android project's `assets` folder. I named the 4 files: drop.wav, rain.mp3, droplet.png and bucket.png and put them in the `drop-android/assets/` folder. The desktop and HTML5 project have a link to that assets folder, so we only need to store the assets once.
 
 ## Configuring the Starter Classes ##
-Given our requirements we can now configure our different starter classes. We'll start with the desktop project. Open the `Main.java` class in `drop-desktop/`. We want a 800x480 window and set the title to "Drop". The code should look like this:
+Given our requirements we can now configure our different starter classes. We'll start with the desktop project. Open the `DesktopLauncher.java` class in `drop-desktop/`. We want a 800x480 window and set the title to "Drop". The code should look like this:
 
 ```java
 package com.badlogic.drop;
@@ -52,10 +52,10 @@ import com.badlogic.gdx.backends.lwjgl.LwjglApplicationConfiguration;
 
 public class Main {
    public static void main(String[] args) {
-      LwjglApplicationConfiguration cfg = new LwjglApplicationConfiguration();
-      cfg.title = "Drop";
-      cfg.width = 800;
-      cfg.height = 480;
+      LwjglApplicationConfiguration config= new LwjglApplicationConfiguration();
+      config.title = "Drop";
+      config.width = 800;
+      config.height = 480;
       new LwjglApplication(new Drop(), cfg);
    }
 }
@@ -93,7 +93,7 @@ Moving on to the Android project, we want the application to be run in landscape
 
 The setup tool already filled in the correct values for us, `android:screenOrientation` is set to "landscape". If we wanted to run the game in portrait mode we would have set that attribute to "portrait".
 
-We also want to conserve battery and disable the accelerometer and compass. We do this in the `MainActivity.java` file in the android project, which should look something like this:
+We also want to conserve battery and disable the accelerometer and compass. We do this in the `AndroidLauncher.java` file in the android project, which should look something like this:
 
 ```java
 package com.badlogic.drop;
@@ -103,30 +103,30 @@ import android.os.Bundle;
 import com.badlogic.gdx.backends.android.AndroidApplication;
 import com.badlogic.gdx.backends.android.AndroidApplicationConfiguration;
 
-public class MainActivity extends AndroidApplication {
+public class AndroidLauncher extends AndroidApplication {
    @Override
    public void onCreate(Bundle savedInstanceState) {
       super.onCreate(savedInstanceState);
         
-      AndroidApplicationConfiguration cfg = new AndroidApplicationConfiguration();
-      cfg.useAccelerometer = false;
-      cfg.useCompass = false;
+      AndroidApplicationConfiguration config= new AndroidApplicationConfiguration();
+      config.useAccelerometer = false;
+      config.useCompass = false;
         
-      initialize(new Drop(), cfg);
+      initialize(new Drop(), config);
    }
 }
 ```
 
 We cannot define the resolution of the `Activity`, as it is set by the Android operating system. As we defined earlier, we'll simply scale the 800x480 target resolution to whatever the resolution of the device is.
 
-Finally we want to make sure the HTML5 project also uses a 800x480 drawing area. For this we modify the `GwtLauncher.java` file in the html5 project:
+Finally we want to make sure the HTML5 project also uses a 800x480 drawing area. For this we modify the `HtmlLauncher.java` file in the html5 project:
 
 ```java
 package com.badlogic.drop.client;
 
 import com.badlogic.drop.Drop;
 
-public class GwtLauncher extends GwtApplication {
+public class HtmlLauncher extends GwtApplication {
    @Override
    public GwtApplicationConfiguration getConfig () {
       GwtApplicationConfiguration cfg = new GwtApplicationConfiguration(800, 480);
