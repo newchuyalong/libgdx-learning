@@ -1,12 +1,12 @@
 An accelerometer measures the acceleration of a device on three axes (at least on Android). From this acceleration one can derive the tilt or orientation of the device.
 
-Acceleration is measured in meters per second per second (m/s²). If an axis is pointing straight towards the center of the earth, it's acceleration will be roughly -10 m/s². If it is pointing in the opposite direction, the acceleration will be 10 m/s².
+Acceleration is measured in meters per second per second (m/s²). If an axis is pointing straight towards the center of the earth, its acceleration will be roughly -10 m/s². If it is pointing in the opposite direction, the acceleration will be 10 m/s².
 
 The axes in an Android device are setup as follows:
 
 [[images/accelerometer.png]]
 
-Sadly, this configuration is different for tablets. Android devices have a notion called default orientation. For phones, portrait mode (as in the image above) is the default orientation. For tablets, landscape mode is the default orientation. A default landscape orientation device has it's axes rotated, so that the y-axis points up the smaller side of the device and the x-axis points to the right of the wider side.
+Unfortunately, this configuration is different for tablets. Android devices have a notion called default orientation. For phones, portrait mode (as in the image above) is the default orientation. For tablets, landscape mode is the default orientation. A default landscape orientation device has its axes rotated, so that the y-axis points up the smaller side of the device and the x-axis points to the right of the wider side.
 
 Libgdx takes care of this and presents the accelerometer readings as shown in the image above, no matter the default orientation of the device (positive z-axis comes out of the screen, positive x-axis points to the right along the smaller side of the device, positive y-axis points upwards along the wider side of the device).
 
