@@ -14,9 +14,9 @@ modelBuilder.begin();
 Model model2 = modelBuilder.end();
 ```
 ## Managing resources
-Keep in mind that models contain one or more meshes and therefore [needs to be disposed](https://github.com/libgdx/libgdx/wiki/Models#managing-resources). A model build via ModelBuilder will always be responsible for disposing all meshes it contains, even if you provide the Mesh yourself. Do not share a Mesh along multiple Models.
+Keep in mind that models contain one or more meshes and therefore [needs to be disposed](https://github.com/libgdx/libgdx/wiki/Models#managing-resources). A model built via ModelBuilder will always be responsible for disposing all meshes it contains, even if you provide the Mesh yourself. Do not share a Mesh along multiple Models.
 
-A Model build via ModelBuilder will not be made responsible for disposing any textures or any other resources contained in the [materials](https://github.com/libgdx/libgdx/wiki/Material-and-environment). You can, however, use the `manage(disposable)` method to make the model responsible for disposing resources. For example:
+A Model built via ModelBuilder will not be made responsible for disposing any textures or any other resources contained in the [materials](https://github.com/libgdx/libgdx/wiki/Material-and-environment). You can, however, use the `manage(disposable)` method to make the model responsible for disposing those resources. For example:
 ```
 ModelBuilder modelBuilder = new ModelBuilder();
 modelBuilder.begin();
@@ -28,7 +28,7 @@ Model model = modelBuilder.end();
 model.dispose(); // this will dispose the texture as well
 ```
 ## Creating nodes
-To start building a new node inside the model you can use the `node()` method. This will add a new node and make it active for building. It will also return the `Node` so you can reference it for later use or for example set its `id`.
+A Model consists of one or more [nodes](https://github.com/libgdx/libgdx/wiki/Models#nodes). To start building a new node inside the model you can use the `node()` method. This will add a new node and make it active for building. It will also return the [`Node`](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/graphics/g3d/model/Node.html) so you can reference it for later use or for example set its `id`.
 ```
 ModelBuilder modelBuilder = new ModelBuilder();
 modelBuilder.begin();
@@ -41,7 +41,7 @@ node2.id = "node2";
 ...//build node2
 Model model = modelBuilder.end();
 ```
-Note that you don't have to keep a reference to the `Node`, a typical use-case would be:
+Note that node id's should unique within the model. A typical use-case would be:
 ```
 ModelBuilder modelBuilder = new ModelBuilder();
 modelBuilder.begin();
@@ -51,13 +51,20 @@ modelBuilder.node().id = "node2";
 ...//build node2
 Model model = modelBuilder.end();
 ```
-Using the `node()` for the first node is optional. For example, for models consisting of only a single node, you can immediately start building the node without having to call the `node()` method.
+Using the `node()` method for the first node is optional. For example, for models consisting of only a single node, you can immediately start creating the node parts without having to call the `node()` method.
+
+There can only be one `Node` active for building at a time. Calling the `node()` method will stop building the previous node (if any) and start building the newly created node.
+
 ## Creating node parts
-To add a `NodePart` to the current node you can use one of the `part(...)` methods. A NodePart is basically the combination of a `MeshPart` and `Material`. You must always supply the material. For the `MeshPart`, `ModelBuilder` allows you to specify the (part of the) mesh yourself, or to start building the `MeshPart` using a `MeshPartBuilder`.
+A `Node` can contain one or more [parts](https://github.com/libgdx/libgdx/wiki/Models#nodepart). Each part of a node will be rendered at the same location (the [node transformation](https://github.com/libgdx/libgdx/wiki/Models#node-transformation)), but can be made up of a different [material](https://github.com/libgdx/libgdx/wiki/Material-and-environment) (e.g. shader uniforms) and or mesh (e.g. shader (vertex) attributes).
+
+> A NodePart is the smallest renderable part of a Model. Every visible NodePart implies a render call (or "draw call" if you prefer). Reducing the number of render calls can help to decrease the time it takes to render the model. Therefore it is advised to try and combine multiple parts to a single part where possible.
+
+To add a [`NodePart`](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/graphics/g3d/model/NodePart.html) to the current node you can use one of the `part(...)` methods. A NodePart is basically the combination of a [`MeshPart`](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/graphics/g3d/model/MeshPart.html) and [`Material`](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/graphics/g3d/Material.html). You must always supply the material when calling one of the `part(...)` methods. For the `MeshPart`, however, `ModelBuilder` allows you to specify the (part of the) mesh yourself, or to start building the `MeshPart` using a `MeshPartBuilder`.
 
 > Keep in mind that the `Model` will always be made responsible for disposing the `Mesh`, regardless the method used to create part.
 
-A `MeshPartBuilder` is an interface (implemented by `MeshBuilder, see below) which contains various helper methods to create a mesh. If you use the `part(...)` method to construct the MeshPart using a MeshPartBuilder, then ModelBuilder will try to combine multiple parts into the same Mesh. This will in most cases reduce the number of Mesh binds. This is only possible if the parts are made up using the same vertex attributes. For example:
+A `MeshPartBuilder` is an interface (implemented by `MeshBuilder`, see below) which contains various helper methods to create a mesh. If you use the `part(...)` method to construct the MeshPart using a MeshPartBuilder, then ModelBuilder will try to combine multiple parts into the same Mesh. This will in most cases reduce the number of Mesh binds. This is only possible if the parts are made up using the same vertex attributes. For example:
 ```
 ModelBuilder modelBuilder = new ModelBuilder();
 modelBuilder.begin();
