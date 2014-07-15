@@ -53,14 +53,14 @@ Model model = modelBuilder.end();
 ```
 Using the `node()` method for the first node is optional. For example, for models consisting of only a single node, you can immediately start creating the node parts without having to call the `node()` method.
 
-There can only be one `Node` active for building at a time. Calling the `node()` method will stop building the previous node (if any) and start building the newly created node.
+There can only be one `Node` active for building at a time. Calling the `node()` method will stop building the previous node (if any) and start building the newly created node. The nodes will only be valid (complete), however, after the Model is completely built (the call to `end()` is made).
 
 ## Creating node parts
-A `Node` can contain one or more [parts](https://github.com/libgdx/libgdx/wiki/Models#nodepart). Each part of a node will be rendered at the same location (the [node transformation](https://github.com/libgdx/libgdx/wiki/Models#node-transformation)), but can be made up of a different [material](https://github.com/libgdx/libgdx/wiki/Material-and-environment) (e.g. shader uniforms) and or mesh (e.g. shader (vertex) attributes).
+A `Node` can contain one or more [parts](https://github.com/libgdx/libgdx/wiki/Models#nodepart). Each part of a node will be rendered at the same location (the [node transformation](https://github.com/libgdx/libgdx/wiki/Models#node-transformation)), but can be made up of a different [material](https://github.com/libgdx/libgdx/wiki/Material-and-environment) (e.g. shader uniforms) and/or mesh (e.g. shader (vertex) attributes).
 
-> A NodePart is the smallest renderable part of a Model. Every visible NodePart implies a render call (or "draw call" if you prefer). Reducing the number of render calls can help to decrease the time it takes to render the model. Therefore it is advised to try and combine multiple parts to a single part where possible.
+> A NodePart is the smallest renderable part of a Model. Every visible NodePart implies a render call (or "draw call" if you prefer). Reducing the number of render calls can help to decrease the time it takes to render the model. Therefore it is advised to try to combine multiple parts to a single part where possible.
 
-To add a [`NodePart`](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/graphics/g3d/model/NodePart.html) to the current node you can use one of the `part(...)` methods. A NodePart is basically the combination of a [`MeshPart`](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/graphics/g3d/model/MeshPart.html) and [`Material`](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/graphics/g3d/Material.html). You must always supply the material when calling one of the `part(...)` methods. For the `MeshPart`, however, `ModelBuilder` allows you to specify the (part of the) mesh yourself, or to start building the `MeshPart` using a `MeshPartBuilder`.
+To add a [`NodePart`](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/graphics/g3d/model/NodePart.html) to the current node you can use one of the `part(...)` methods. A NodePart is basically the combination of a [`MeshPart`](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/graphics/g3d/model/MeshPart.html) and [`Material`](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/graphics/g3d/Material.html). You must always supply the material when calling one of the `part(...)` methods. For the `MeshPart`, however, `ModelBuilder` allows you to either specify the (part of the) mesh yourself, or to start building the `MeshPart` using a `MeshPartBuilder`.
 
 > Keep in mind that the `Model` will always be made responsible for disposing the `Mesh`, regardless the method used to create part.
 
@@ -79,16 +79,20 @@ Model model = modelBuilder.end();
 ```
 This will create a model consisting of two nodes. Each node consisting of one part. The Mesh of both parts is shared, so there's only a single Mesh created for this Model. Note that in this example the vertex attributes are specified using a bit mask, which will cause `ModelBuilder` to create default (3D) `VertexAttributes`. You could also specify the [`VertexAttributes`](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/graphics/VertexAttributes.html) yourself. 
 
-> Because `ModelBuilder` reuses the `MeshPartBuilder` instances for multiple parts, you cannot build multiple parts at the same time. Per `ModelBuilder` you can only build one `Model`, `Node` and `MeshPart` at any given time.
+> Because `ModelBuilder` reuses the `MeshPartBuilder` instances for multiple parts, you cannot build multiple parts at the same time. Per `ModelBuilder` you can only build one `Model`, `Node` and `MeshPart` at any given time. **Calling the `part(...)` method will make the previous `MeshPartBuilder` invalid.**
 
 See the MeshPartBuilder section below for more information on how to use the `MeshPartBuilder` to create the shape of the part.
 # MeshBuilder
-[MeshBuilder](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/graphics/g3d/utils/MeshBuilder.html) [(code)](https://github.com/libgdx/libgdx/blob/master/gdx/src/com/badlogic/gdx/graphics/g3d/utils/MeshBuilder.java) is a utility class to construct one or more [meshes](https://github.com/libgdx/libgdx/wiki/Meshes), optionally consisting of one or more [MeshParts](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/graphics/g3d/model/MeshPart.html). While a `MeshBuilder` is typically constructed and maintained by the `ModelBuilder` using the `ModelBuilder#part(...)` method, it is possible to use `MeshBuilder` without using a `ModelBuilder`. For this, you can use the `begin(...)` method to start building a `Mesh`, after which you must call the `end()` method when you're done building the mesh. The begin methods accepts various arguments to indicate the vertex attributes and optionally primitive type (required when not using parts). The `end()` method will also return the newly created `Mesh`:
+[MeshBuilder](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/graphics/g3d/utils/MeshBuilder.html) [(code)](https://github.com/libgdx/libgdx/blob/master/gdx/src/com/badlogic/gdx/graphics/g3d/utils/MeshBuilder.java) is a utility class to create one or more [meshes](https://github.com/libgdx/libgdx/wiki/Meshes), optionally consisting of one or more [MeshParts](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/graphics/g3d/model/MeshPart.html). While a `MeshBuilder` is typically constructed and maintained by the `ModelBuilder` using the `ModelBuilder#part(...)` method, it is possible to use `MeshBuilder` without using a `ModelBuilder`. For this, you can use the `begin(...)` method to start building a mesh, after which you must call the `end()` method when you're done building the mesh. The begin methods accepts various arguments to specify the vertex attributes and optionally primitive type (required when not creating mesh part(s)). The `end()` method will return the newly created [`Mesh`](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/graphics/Mesh.html). You can build multiple meshes using the same `MeshBuilder` instance, but not at the same time:
 ```
 MeshBuilder meshBuilder = new MeshBuilder();
 meshBuilder.begin(Usage.Position | Usage.Normal, GL20.GL_TRIANGLES);
-...//build the mesh
-Mesh mesh = meshBuilder.end();
+...//build the first mesh
+Mesh mesh1 = meshBuilder.end();
+
+meshBuilder.begin(Usage.Position | Usage.Normal | Usage.ColorPacked, GL20.GL_TRIANGLES);
+...//build the second mesh
+Mesh mesh2 = meshBuilder.end();
 ```
 
 > Keep in mind that the `Mesh` must be disposed when you no longer need it.
@@ -103,12 +107,22 @@ MeshPart part2 = meshBuilder.part("part2", GL20.GL_TRIANGLES);
 ... // build the second part
 Mesh mesh = meshBuilder.end();
 ```
-While the `part(...)` method returns the `MeshPart` so you can reference it for later use, it will not be valid until the `end()` method is called.
+While the `part(...)` method returns the `MeshPart` so you can reference it for later use, it will not be valid until the `end()` method is called. You can only create one `MeshPart` at a time, calling the `part(...)` method will stop building the previous part and start building the new part.
+
+All parts of the same `Mesh` share the same `VertexAttributes`. The primitive type can vary among parts though. For example, the following snippet creates two parts each with a different primitive type, but sharing the same mesh:
+```
+meshBuilder.begin(Usage.Position | Usage.Normal);
+MeshPart part1 = meshBuilder.part("part1", GL20.GL_TRIANGLES);
+... // build the first part
+MeshPart part2 = meshBuilder.part("part2", GL20.GL_TRIANGLE_STRIP);
+... // build the second part
+Mesh mesh = meshBuilder.end();
+```
 
 `MeshBuilder` implements `MeshPartBuilder`. Creating the actual shape of the (part of the) mesh, is described in the MeshPartBuilder section.
 
 # MeshPartBuilder
-[MeshPartBuilder](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/graphics/g3d/utils/MeshPartBuilder.html) is a utility interface which supplies various methods for creating a (part of a) mesh. You can either use `ModelBuilder.part(...)` or construct a `MeshBuilder` to obtain a `MeshPartBuilder`. All methods of the `MeshPartBuilder` interface can only be called as long as the `MeshPart` is being build (most commonly between the call to the `part(...)` method and the call to the next `part(...)` or `end()` method of either `ModelBuilder` or `MeshBuilder`).
+[MeshPartBuilder](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/graphics/g3d/utils/MeshPartBuilder.html) ([code](https://github.com/libgdx/libgdx/blob/master/gdx/src/com/badlogic/gdx/graphics/g3d/utils/MeshPartBuilder.java)) is a utility interface which supplies various methods for creating a (part of a) mesh. You can either use `ModelBuilder.part(...)` or construct a `MeshBuilder` to obtain a `MeshPartBuilder`. All methods of the `MeshPartBuilder` interface can only be called as long as the `MeshPart` is being build (most commonly between the call to the `part(...)` method and the call to the next `part(...)` or `end()` method of either `ModelBuilder` or `MeshBuilder`).
 
 Use the `getMeshPart()` method to obtain the `MeshPart` currently being build.
 Use the `getAttributes()` method to obtain the `VertexAttributes` of the `Mesh` being build.
@@ -120,8 +134,10 @@ Most methods allow multiple signatures to specify the values for the vertex attr
 Use the `setColor(...)` method to specify the default color that will be used when the `VertexAttributes` contain a color `VertexAttribute`, but no color is set in e.g. the `VertexInfo`. For example:
 ```
 meshPartBuilder.setColor(Color.RED);
-VertexInfo v1 = new VertexInfo()v1.setPos(0, 0, 0).setNor(0, 0, 1).setCol(null).setUV(0, 0);
-// the same for v2, v3 and v4
+VertexInfo v1 = new VertexInfo().setPos(0, 0, 0).setNor(0, 0, 1).setCol(null).setUV(0.5f, 0.0f);
+VertexInfo v2 = new VertexInfo().setPos(3, 0, 0).setNor(0, 0, 1).setCol(null).setUV(0.0f, 0.0f);
+VertexInfo v3 = new VertexInfo().setPos(3, 3, 0).setNor(0, 0, 1).setCol(null).setUV(0.0f, 0.5f);
+VertexInfo v4 = new VertexInfo().setPos(0, 3, 0).setNor(0, 0, 1).setCol(null).setUV(0.5f, 0.5f);
 meshPartBuilder.rect(v1, v2, v3, v4);
 ```
 In this example, because the `VertexInfo` has no color set (`setCol(null)`), the default will be used which is set to a red color.
@@ -130,6 +146,6 @@ Use the `setUVRange` to specify the default texture coordinates range that will 
 ```
 meshPartBuilder.setColor(Color.RED);
 meshPartBuilder.setUVRange(0.5f, 0f, 0f, 0.5f);
-meshPartBuilder.rect(0,0,0, 1,0,0, 1,1,0, 0,1,0, 0,0,1); // the last three arguments specify the normal
+meshPartBuilder.rect(0,0,0, 3,0,0, 3,3,0, 0,3,0, 0,0,1); // the last three arguments specify the normal
 ```
-Use the `setVertexTransform` to supply a transformation matrix that should be applied to all vertices following after that call.
+Use the `setVertexTransform(...)` method to supply a transformation matrix that should be applied to all vertices following after that call.
