@@ -15,6 +15,10 @@ It is highly recommended to read or least skim the [[scene2d documentation|scene
  * [Layout widgets](#layout-widgets)
    * [Table](#table)
    * [Container](#container)
+   * [Stack](#stack)
+   * [ScrollPane](#scrollpane)
+   * [SplitPane](#splitpane)
+   * [Tree](#tree)
    * [VerticalGroup](#verticalgroup)
    * [HorizontalGroup](#horizontalgroup)
  * [Widgets](#widgets)
@@ -31,12 +35,8 @@ It is highly recommended to read or least skim the [[scene2d documentation|scene
    * [SelectBox](#selectbox)
    * [ProgressBar](#progressbar)
    * [Slider](#slider)
-   * [ScrollPane](#scrollpane)
-   * [SplitPane](#splitpane)
-   * [Stack](#stack)
    * [Window](#window)
    * [Touchpad](#touchpad)
-   * [Tree](#tree)
    * [Dialog](#dialog)
  * [Widgets without scene2d.ui](#widgets_without_scene2d.ui)
  * [Examples](#examples)
@@ -190,6 +190,24 @@ It is highly recommended to read the [Table documentation](Table) before buildin
 
 The Container class is equivalent to a Table with only a single child, but is more lightweight. Container has all of the constraints of a table cell and are useful for setting the size and alignment of a single widget.
 
+### <a id="Stack"></a>Stack ###
+
+Stack is a WidgetGroup that lays out each child to be the size of the stack. This is useful when it is necessary to have widgets stacked on top of each other. The first widget added to the stack is drawn on the bottom, and the last widget added is drawn on the top. 
+
+### <a id="ScrollPane"></a>ScrollPane ###
+
+ScrollPane scrolls a child widget using scrollbars and/or mouse or touch dragging. Scrolling is automatically enabled when the widget is larger than the scroll pane. If the widget is smaller than the scroll pane in one direction, it is sized to the scroll pane in that direction. ScrollPane has many settings for if and how touches control scrolling, fading scrollbars, etc. ScrollPane has drawables for the background, horizontal scrollbar and knob, and vertical scrollbar and knob. If touches are enabled (the default), all the drawables are optional.
+
+The ScrollPane preferred width 
+
+### <a id="SplitPane"></a>SplitPane ###
+
+SplitPane contains two widgets and is divided in two either horizontally or vertically. The user may resize the widgets with a draggable splitter. The child widgets are always sized to fill their half of the splitpane. SplitPane has a drawable for the draggable splitter.
+
+### <a id="Tree"></a>Tree ###
+
+Tree displays a hierarchy of nodes. Each node may have child nodes and can be expanded or collapsed. Each node has an actor, allowing complete flexibility over how each item is displayed. Tree has drawables for the plus and minus icons next to each node's actor.
+
 ### <a id="VerticalGroup"></a>VerticalGroup ###
 
 The VerticalGroup class is equivalent to a Table with only a single column, but is more lightweight. VerticalGroup allows widgets to be inserted in the middle and removed, while Table does not.
@@ -244,10 +262,6 @@ TextField is a single line text entry field. It has drawables for the background
 
 TextArea is similiar to a TextField, but allows multiple line text entry.
 
-### <a id="Stack"></a>Stack ###
-
-Stack is a WidgetGroup that lays out each child to be the size of the stack. This is useful when it is necessary to have widgets stacked on top of each other. The first widget added to the stack is drawn on the bottom, and the last widget added is drawn on the top. 
-
 ### <a id="List"></a>List ###
 
 List is a list box that displays textual items and highlights the selected item. List has a font, selected item background drawable, and a font color for selected and unselected items. A list does not scroll on its own, but is often put in a scrollpane.
@@ -268,15 +282,6 @@ Slider is a horizontal indicator that allows a user to set a value. The slider h
 
 A slider with touches disabled, a drawable before the knob, and without the knob can be used as a substitute for progress bar, as both widgets share the same codebase and use same visual style. Animation for changes to the slider value can be enabled to make the progress bar fill more smoothly.
 
-### <a id="ScrollPane"></a>ScrollPane ###
-
-ScrollPane scrolls a child widget using scrollbars and/or mouse or touch dragging. Scrolling is automatically enabled when the widget is larger than the scroll pane. If the widget is smaller than the scroll pane in one direction, it is sized to the scroll pane in that direction. ScrollPane has many settings for if and how touches control scrolling, fading scrollbars, etc. ScrollPane has drawables for the background, horizontal scrollbar and knob, and vertical scrollbar and knob. If touches are enabled (the default), all the drawables are optional.
-
-The ScrollPane preferred width 
-
-### <a id="SplitPane"></a>SplitPane ###
-
-SplitPane contains two widgets and is divided in two either horizontally or vertically. The user may resize the widgets with a draggable splitter. The child widgets are always sized to fill their half of the splitpane. SplitPane has a drawable for the draggable splitter.
 
 ### <a id="Window"></a>Window ###
 
@@ -285,10 +290,6 @@ Window is a table with a title bar area above the contents that displays a title
 ### <a id="Touchpad"></a>Touchpad ###
 
 Touchpad is an onscreen joystick that moves in a circular area. It has a background drawable and a drawable for the knob that the user drags around.
-
-### <a id="Tree"></a>Tree ###
-
-Tree displays a hierarchy of nodes. Each node may have child nodes and can be expanded or collapsed. Each node has an actor, allowing complete flexibility over how each item is displayed. Tree has drawables for the plus and minus icons next to each node's actor.
 
 ### <a id="Dialog"></a>Dialog ###
 
