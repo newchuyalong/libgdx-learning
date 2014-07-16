@@ -25,7 +25,7 @@ It also offers the means to register input processors to use an event based inpu
 The following code snippet gets the current touch coordinates if a touch (or mouse down on desktop) event is in progress:
 ```java
 if (Gdx.input.isTouched()) {
-  System.out.println("Input occurred at x=" + x + ", y=" + y); 
+  System.out.println("Input occurred at x=" + Gdx.input.getX() + ", y=" + Gdx.input.getY()); 
 }
 ```
 In similar fashion all the supported input means can be polled and handled.
