@@ -25,6 +25,7 @@ Table is a fork of [TableLayout](https://github.com/EsotericSoftware/tablelayout
 - [Values](#values)
 - [Overlapping widgets](#overlapping-widgets)
 - [Inserting cells](#inserting-cells)
+- [Notes](#notes)
 
 ## Quickstart
 
@@ -329,3 +330,8 @@ Table excels at sizing and positioning widgets that do not overlap. To layer wid
 Table allows a cell's widget to be changed or removed (by setting it to null), but Table currently does not allow cells to be inserted in the middle or removed. To do that, the Table needs to be rebuilt: call `clearChildren` to remove all children and cells, then add them all to the Table again.
 
 If inserting or removing cells is needed, [VerticalGroup](Scene2d.ui#verticalgroup) or [HorizontalGroup](Scene2d.ui#horizontalgroup) can be used.
+
+# Notes
+
+* By default, positions and sizes are rounded to integers. This may cause problems when using small values.
+  Use [Table#setRound(false)](https://github.com/libgdx/libgdx/blob/master/gdx/src/com/badlogic/gdx/scenes/scene2d/ui/Table.java#L669) to change it.  
