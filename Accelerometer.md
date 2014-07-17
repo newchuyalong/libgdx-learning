@@ -8,7 +8,7 @@ The axes in an Android device are setup as follows:
 
 Unfortunately, this configuration is different for tablets. Android devices have a notion called default orientation. For phones, portrait mode (as in the image above) is the default orientation. For tablets, landscape mode is the default orientation. A default landscape orientation device has its axes rotated, so that the y-axis points up the smaller side of the device and the x-axis points to the right of the wider side.
 
-Libgdx takes care of this and presents the accelerometer readings as shown in the image above, no matter the default orientation of the device (positive z-axis comes out of the screen, positive x-axis points to the right along the smaller side of the device, positive y-axis points upwards along the wider side of the device).
+Libgdx takes care of this and presents the accelerometer readings as shown in the image above, no matter the default orientation of the device (positive z-axis comes out of the screen, positive x-axis points to the right along the wider side of the device, positive y-axis points upwards along the smaller side of the device).
 
 ## Checking Availability ##
 Different Android devices have different hardware configurations. Checking whether the device has an accelerometer can be done as follows:
