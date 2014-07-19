@@ -129,6 +129,8 @@ for(FileHandle file: files) {
 }
 ```
 
+**WARNING**: If you don't specify a folder the list will be empty.
+
 **Note**: Listing of internal directories is not supported on Desktop.
 
 We can also ask for the parent directory of a file or create a FileHandle for a file in a directory (aka "child").
