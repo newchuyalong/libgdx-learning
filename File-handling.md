@@ -129,7 +129,7 @@ for(FileHandle file: files) {
 }
 ```
 
-**WARNING**: If you don't specify a folder the list will be empty.
+**WARNING**: If you don't specify a folder the list will be empty.  To retrieve the default Local path (working directory), pass in a single dot like so: FileHandle[] files = Gdx.files.local(".").list();
 
 **Note**: Listing of internal directories is not supported on Desktop.
 
