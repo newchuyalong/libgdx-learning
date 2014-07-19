@@ -5,6 +5,10 @@ All credits for this goes to Ludevik. He wrote up a wonderful tutorial over at s
 
 I though it would be better to have on the official wiki
 
+## DEPRECATED ##
+**OBSOLETE**
+This page is no longer valid for the current LibGDX build, see [Scene2d Actions section](https://github.com/libgdx/libgdx/wiki/Scene2d#actions) instead.
+
 ## Actions Overview ##
 There are various available actions in LibGDX ready for you. They are in com.badlogic.gdx.scenes.scene2d.actions package. I would say that there are 3 kinds of actions:
 
