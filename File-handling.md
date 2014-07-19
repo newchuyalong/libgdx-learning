@@ -73,16 +73,12 @@ boolean isExtAvailable = Gdx.files.isExternalStorageAvailable();
 boolean isLocAvailable = Gdx.files.isLocalStorageAvailable();
 ```
 
-**Note** On Desktop and Android, `Gdx.files.isLocalStorageAvailable()` always returns true.
-
 You can also query the root paths for external and local storage:
 
 ```java
 String extRoot = Gdx.files.getExternalStoragePath();
 String locRoot = Gdx.files.getLocalStoragePath();
 ```
-
-**Note** On Desktop, `Gdx.files.getLocalStoragePath()` always returns an empty string "".
 
 ## Obtaining FileHandles ##
 A `FileHandle` is obtained by using one of the aforementioned types directly from the *Files* module.
@@ -133,7 +129,7 @@ for(FileHandle file: files) {
 }
 ```
 
-**WARNING**: If you don't specify a folder the list will be empty.  To retrieve the default Local path (working directory), pass in a single dot like so: `FileHandle[] files = Gdx.files.local(".").list()`;
+**WARNING**: If you don't specify a folder the list will be empty.  To retrieve the default Local path (working directory), pass in a single dot like so: FileHandle[] files = Gdx.files.local(".").list();
 
 **Note**: Listing of internal directories is not supported on Desktop.
 
