@@ -39,7 +39,7 @@ Eclipse now imports all the projects from the libgdx directory. On first import,
 
 If you did not run 'ant -f fetch.xml' before this point, you will encounter many errors here due to missing backends.
 
-Also, if you are experiencing errors of the kind "The method <method name> of type <type name> must override a superclass method" and the suggested fix is to "Remove the @Override annotation" then you should go into the project settings and change the Java Compliance Level to something higher than 1.5 .
+Also, if you are experiencing errors of the kind "The method &ltmethod name&lt of type <type name> must override a superclass method" and the suggested fix is to "Remove the @Override annotation" then you should go into the project settings and change the Java Compliance Level to something higher than 1.5 .
 
 
 You are now ready to start the tests or run the demo games.
