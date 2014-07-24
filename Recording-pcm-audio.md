@@ -9,7 +9,7 @@ This will create an `AudioRecorder` with a sampling rate of 22.05khz, in mono mo
 Samples can be read as 16-bit signed PCM:
 
 ```java
-short[] shortPCM = new float[1024]; // 1024 samples
+short[] shortPCM = new short[1024]; // 1024 samples
 recorder.readSamples(shortPCM, 0, shortPCM.length);
 ```
 
