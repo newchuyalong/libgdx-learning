@@ -1,10 +1,10 @@
 ###  ###
 
-* [Forward](#Forward)
-* [Deploy to Windows/Linux/Mac](#Deploy_to_Windows/Linux/Mac)
-* [Deploy to Android](#Deploy_to_Android)
-* [Deploy to iOS](#Deploy_to_iOS)
-* [Deploy to HTML/JS](#Deploy_to_HTML/JS)
+* [Forward](#forward)
+* [Deploy to Windows/Linux/Mac](#deploy-to-windowslinuxmac-os-x)
+* [Deploy to Android](#deploy-to-android)
+* [Deploy to iOS](#Deploy-to-ios)
+* [Deploy to HTML/JS](#deploy-to-htmljs)
 
 
 ### <a id="Forward"></a>Forward ###
