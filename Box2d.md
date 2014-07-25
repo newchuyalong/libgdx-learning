@@ -90,7 +90,7 @@ The first argument is our Box2D world and the second argument is our libgdx came
 
 Now if you run your game it will be pretty boring as nothing happens. The world steps but we don’t see anything as we don’t have anything to interact with it. So now we’re going to add some objects.
 
-In Box2D our objects are called _bodies_, and each body is made up of one of more _fixtures_, which have a fixed position and orientation within the body. Our fixtures can be any shape you can imagine or you can combine a variety of different shaped fixtures to make the shape you want.
+In Box2D our objects are called _bodies_, and each body is made up of one or more _fixtures_, which have a fixed position and orientation within the body. Our fixtures can be any shape you can imagine or you can combine a variety of different shaped fixtures to make the shape you want.
 
 A fixture has a shape, density, friction and restitution attached to it. Shape is obvious. Density is the mass per square metre: a bowling ball is very dense, yet a balloon isn’t very dense at all as it is mainly filled with air. Friction is the amount of opposing force when the object rubs/slides along something: a block of ice would have a very low friction but a rubber ball would have a high friction. Restitution is how bouncy something is: a rock would have a very low restitution but a basketball would have a fairly high restitution. A body with a restitution of 0 will come to a halt as soon as it hits the ground, whereas a body with a restitution of 1 would bounce to the same height forever.
 
