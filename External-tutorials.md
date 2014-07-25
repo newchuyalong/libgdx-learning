@@ -143,3 +143,4 @@ These are interesting open-source projects found on the web that use libGDX. Thi
  * http://www.ludumdare.com/compo/ludum-dare-26/?action=preview&uid=7570 (Triangulum)
  * http://www.ludumdare.com/compo/ludum-dare-26/?action=preview&uid=8184 (Lack of Civilization)
  * https://github.com/EsotericSoftware/spine-superspineboy (Super Spineboy)
+ * https://github.com/pierotofy/snappyfrog (Snappy Frog)
