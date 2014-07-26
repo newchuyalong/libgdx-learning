@@ -17,3 +17,9 @@ The version you see may be higher than 1.0.0 already. Once you located that stri
 * **Command Line**: invoking any of the tasks will usually check for changes in dependency versions and redownlaod anything that changed.
 
 And that's it! No need to manually juggle JAR files, .so files or anything else. Just change a string in a file and update via your IDE or the command line.
+
+The [pom.xml](https://github.com/libgdx/libgdx/blob/master/pom.xml#L13) contains a version tag for com.badlogicgames.gdx with the string used for nightly builds. Change your gdxVersion to match the version found to switch to the most recent build.
+
+```Groovy
+  <version>1.2.1-SNAPSHOT</version>
+```
