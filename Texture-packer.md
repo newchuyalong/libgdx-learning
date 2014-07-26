@@ -1,12 +1,12 @@
  * [TexturePacker](#texturepacker)
-   * [Running TexturePacker](#running_texturepacker)
-   * [Directory structure](#directory_structure)
+   * [Running TexturePacker](#running-texturepacker)
+   * [Directory structure](#directory-structure)
    * [Configuration](#configuration)
    * [Settings](#settings)
    * [NinePatches](#ninePatches)
-   * [Indexes](#image_indexes)
+   * [Indexes](#image-indexes)
    * [Packing](#packing)
-   * [Automatic packing](#automatic_packing)
+   * [Automatic packing](#automatic-packing)
  * [TextureAtlas](#textureatlas)
 
 # <a id="TexturePacker"></a>TexturePacker #
