@@ -38,7 +38,7 @@ The easiest way to use 3D particle effects is by taking advantage of the Particl
 
 For a more in depth look at how to use 3d particles programattically, [take a look at the test class](https://github.com/libgdx/libgdx/blob/master/tests/gdx-tests/src/com/badlogic/gdx/tests/g3d/ParticleControllerTest.java):
 
-**IMPORTANT: ** When you import the **ParticleEffect** class into your IDE, make sure you do not accidentally import the 2D effect ParticleEffect class.  They share the same name, but have different import paths. You are looking for: **com.badlogic.gdx.graphics.g3d.particles.ParticleEffect**
+**IMPORTANT**: When you import the **ParticleEffect** class into your IDE, make sure you do not accidentally import the 2D effect ParticleEffect class.  They share the same name, but have different import paths. You are looking for: **com.badlogic.gdx.graphics.g3d.particles.ParticleEffect**
 
 ### Step 1: Create Batches and ParticleSystem
 ```java
