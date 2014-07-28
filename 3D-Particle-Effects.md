@@ -37,6 +37,9 @@ There are 3 different kinds of 3D particle effects:
 The easiest way to use 3D particle effects is by taking advantage of the ParticleSystem class, abstracting away various details and managing them for you. First we will create the batch of the type(s) we wish to use, then create the ParticleSystem.  In this case, we are going to use PointSprites
 
 For a more in depth look at how to use 3d particles programattically, [take a look at the test class](https://github.com/libgdx/libgdx/blob/master/tests/gdx-tests/src/com/badlogic/gdx/tests/g3d/ParticleControllerTest.java):
+
+**IMPORTANT: ** When you import the **ParticleEffect** class into your IDE, make sure you do not accidentally import the 2D effect ParticleEffect class.  They share the same name, but have different import paths. You are looking for: **com.badlogic.gdx.graphics.g3d.particles.ParticleEffect**
+
 ### Step 1: Create Batches and ParticleSystem
 ```java
 // ParticleSystem is a singleton class, we get the instance instead of creating a new object:
