@@ -135,6 +135,18 @@ private void renderParticleEffects() {
 	particleSystem.end();
 	modelBatch.render(particleSystem);
 }
+
+# Stop New Particle Emission, But Let Existing Particles Finish Playing
+It is a little bit more complicated to do this in the 3D Particle System:
+```java
+Emitter emitter = pfx.getControllers().first().emitter;
+		if (emitter instanceof RegularEmitter) {
+			RegularEmitter reg = (RegularEmitter) emitter;
+			reg.setEmissionMode(RegularEmitter.EmissionMode.EnabledUntilCycleEnd);
+		}
+```
+
+
 ```
 # Full example
 You can find a full working example at (https://drive.google.com/file/d/0BwiuGlZ9rT-bRm9zQlJHbzFCWWs/edit?usp=sharing)
