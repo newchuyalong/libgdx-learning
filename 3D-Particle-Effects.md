@@ -84,10 +84,9 @@ private static class PFXPool extends Pool<ParticleEffect> {
 	}
 
 	@Override
-	public ParticleEffect obtain() {
-		ParticleEffect pfx = super.obtain();
+	public void free(ParticleEffect pfx) {
 		pfx.reset();
-		return pfx;
+		super.free(pfx);
 	}
 
 	@Override
@@ -96,6 +95,7 @@ private static class PFXPool extends Pool<ParticleEffect> {
 	}
 }
 ```
+Note that we reset the particle when it is freed, not during obtain. This avoids a NullPointerException that occurs because of how the ParticleSystem works.
 
 ### Step 4: Rendering our 3D Particles Using the ParticleSystem
 A ParticleSystem must update and draw its own components, then be passed to a ModelBatch instance to be rendered to the scene.
