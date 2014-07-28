@@ -76,6 +76,7 @@ If you scroll back up and watch the 3D Tank Battle video, you will see that each
 
 Here is an example of a Pool:
 ```java
+private static class PFXPool extends Pool<ParticleEffect> {
 	private ParticleEffect sourceEffect;
 
 	public PFXPool(ParticleEffect sourceEffect) {
@@ -93,6 +94,7 @@ Here is an example of a Pool:
 	protected ParticleEffect newObject() {
 		return sourceEffect.copy();
 	}
+}
 ```
 
 ### Step 4: Rendering our 3D Particles Using the ParticleSystem
