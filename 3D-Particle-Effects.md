@@ -69,6 +69,8 @@ effect.start();  // optional: particle will begin playing immediately
 particleSystem.add(effect);
 ```
 
+If you scroll back up and watch the 3D Tank Battle video, you will see that each tank has its own dust effects.  That means each tank has it's own copy of the effect inside the system.  You really don't want to make a new copy of the particle effect each time you create an object or graphical effect that needs it.  Instead, you should use Pool the effects to avoid new object creation. You can read more about Pooling in this wiki or the libgdx Pool class documentation.
+
 ### Step 4: Rendering our 3D Particles Using the ParticleSystem
 A ParticleSystem must update and draw its own components, then be passed to a ModelBatch instance to be rendered to the scene.
 ```java
