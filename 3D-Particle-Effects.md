@@ -43,7 +43,6 @@ For a more in depth look at how to use 3d particles programattically, [take a lo
 ParticleSystem particleSystem = ParticleSystem.get();
 PointSpriteParticleBatch pointSpriteBatch = new PointSpriteParticleBatch();
 pointSpriteBatch.setCamera(cam);
-particleSystem = ParticleSystem.get();
 particleSystem.add(pointSpriteBatch);
 ```
 
