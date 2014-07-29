@@ -135,7 +135,7 @@ Bullet uses some classes also available in the libgdx core. While these bullet c
 | btTransform | Matrix4 |
 | btScalar | float |
 
-<sub>Note that the conversion from Matrix4 to btTransform might lose some information, because btTransform only contains an origin and rotation. In addition, note that float is a primitive type unlike btScalar.</sub>
+<sub>Note that the conversion from Matrix4 to btTransform might lose some information, because btTransform only contains an origin and rotation. In addition, note that btScalar is synonym for the primitive type float.</sub>
 
 To avoid creating objects for these common classes, the wrapper reuses the same instances. Therefore, be aware of the following two cases:
 
