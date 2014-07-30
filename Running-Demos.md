@@ -1,6 +1,6 @@
 Libgdx comes with a few demos that you can play around with to get a feeling for how to do things. Note that many of these demos have been created during game jams and may not necessarily reflect best practices.
 
-[Setup your development environment], then simple clone the repositories on Github (or click on the "Download ZIP" button of a project's site) and import the project into your favorite IDE as a Gradle project.
+[[Setup your development environment|Setting up your Development Environment (Eclipse, Intellij IDEA, NetBeans)]], then simple clone the repositories on Github (or click on the "Download ZIP" button of a project's site) and import the project into your favorite IDE as a Gradle project.
 
 * [Cuboc - a simple platformer with a twist](https://github.com/libgdx/libgdx-demo-cuboc)
 * [Gdx Invaders - a 3D space invaders clone](https://github.com/libgdx/libgdx-demo-invaders)
