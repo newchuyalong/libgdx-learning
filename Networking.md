@@ -46,6 +46,7 @@ There are various notes needed when working with networking on different platfor
 5. When targeting mobile devices: Be careful about how you implement networking. The wireless radios themselves are a big power drain when on. Also be careful about data limits that could be imposed on a 1G/2G/3G/4G LTE network. LibGDX has configuration optimizations done to allow low-latency, but still have the benefits of TCP.
 6. Supported networking configurations vary between backend and java implementation.
 7. Battery drain is more common when data is being sent and received due to the power needed by the radios.
+8. Be sure to set the `Content-Type` header for `POST` requests. Not all backends default to the same value (due to differences in the underlying implementations). The most common value for this header is `application/x-www-form-urlencoded`.
 
 **See Also**
 
