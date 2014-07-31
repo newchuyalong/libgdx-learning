@@ -98,4 +98,5 @@ e.g
 This will provide you with a stacktrace and give you a better idea of why gradle is failing.
 
 ### Common problems
+(Confirmed) AVG - When running gradlew desktop:dist antivirus will cause this to fail. Add an exception to your antivirus to allow access.
 ### Debugging Projects
