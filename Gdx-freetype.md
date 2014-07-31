@@ -21,6 +21,12 @@ You have to put it in your project manually.
 
 ## How to put gdx-freetype in your project ##
 
+**For Projects Using Gradle**
+
+See [Dependency management with Gradle](https://github.com/libgdx/libgdx/wiki/Dependency-management-with-Gradle#freetypefont-gradle).
+
+**For Projects NOT Using Gradle**
+
 In case you don't have it anymore, download the latest [nightly build](http://libgdx.badlogicgames.com/nightlies/).
 
 Open _libgdx-nightly-latest.zip/extensions/gdx-freetype_ and do the following:
