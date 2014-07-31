@@ -29,7 +29,7 @@ skin.addRegions(atlas);
 TextureRegion hero = skin.get("hero", TextureRegion.class);
 ```
 
-Resources can also be defined for a skin using JSON ([#skin-json see below]) or added using code:
+Resources can also be defined for a skin using JSON ([see below](#skin-json)) or added using code:
 
 ```java
 Skin skin = new Skin();
