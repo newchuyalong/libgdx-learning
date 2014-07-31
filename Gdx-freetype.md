@@ -16,14 +16,15 @@ The solution to your problem is the `gdx-freetype` extension:
 
 # Details #
 
-Since this is an extension, it is not included in your LibGDX project by default.
-You have to put it in your project manually.
+Since this is an extension, it is not included in your LibGDX project by default. How you add the extension differs based on the setup of your project.
 
 ## How to put gdx-freetype in your project ##
 
 **For Projects Using Gradle**
 
-See [Dependency management with Gradle](https://github.com/libgdx/libgdx/wiki/Dependency-management-with-Gradle#freetypefont-gradle).
+For new projects, simply select the Freetype option under the extensions in the [setup ui](https://github.com/libgdx/libgdx/wiki/Project-Setup-Gradle).
+
+To add to an existing Gradle project, see [Dependency management with Gradle](https://github.com/libgdx/libgdx/wiki/Dependency-management-with-Gradle#freetypefont-gradle).
 
 **For Projects NOT Using Gradle**
 
