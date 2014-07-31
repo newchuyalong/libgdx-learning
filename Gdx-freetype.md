@@ -22,7 +22,7 @@ Since this is an extension, it is not included in your LibGDX project by default
 
 **For Projects Using Gradle**
 
-For new projects, simply select the Freetype option under the extensions in the [setup ui](https://github.com/libgdx/libgdx/wiki/Project-Setup-Gradle).
+For new projects, simply select the Freetype option under extensions in the [setup ui](https://github.com/libgdx/libgdx/wiki/Project-Setup-Gradle).
 
 To add to an existing Gradle project, see [Dependency management with Gradle](https://github.com/libgdx/libgdx/wiki/Dependency-management-with-Gradle#freetypefont-gradle).
 
@@ -31,8 +31,9 @@ To add to an existing Gradle project, see [Dependency management with Gradle](ht
 In case you don't have it anymore, download the latest [nightly build](http://libgdx.badlogicgames.com/nightlies/).
 
 Open _libgdx-nightly-latest.zip/extensions/gdx-freetype_ and do the following:
-  * extract gdx-freetype.jar and gdx-freetype-natives.jar to your core project's libs folder
+  * extract gdx-freetype.jar to your core project's libs folder
   * link gdx-freetype.jar to your core, android and desktop project
+  * extract gdx-freetype-natives.jar to your desktop project's libs folder
   * link gdx-freetype-natives.jar to your desktop project
   * copy armeabi/libgdx-freetype.so to your android project's libs/armeabi folder
   * copy armeabi-v7a/libgdx-freetype.so to your android project's libs/armeabi-v7a folder
