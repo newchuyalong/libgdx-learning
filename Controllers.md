@@ -9,7 +9,7 @@ The goal of this extension is to provide the following functionality:
 We tried to keep the API as small as possible, with the potential for future additions. No initialization is necessary, the underlying backend will initialize automatically.
 
 ##Enumerating Controllers
-One or more controllers might be attached to your PC/device. The [Controllers](https://github.com/libgdx/libgdx/blob/master/extensions/gdx-controllers/gdx-controllers/src/com/badlogic/gdx/controllers/Controllers.java) class has methods to to query for currently connected devices:
+One or more controllers might be attached to your PC/device. The [Controllers](https://github.com/libgdx/libgdx/blob/master/extensions/gdx-controllers/gdx-controllers/src/com/badlogic/gdx/controllers/Controllers.java) class has methods to query for currently connected devices:
 
 ```java
 for (Controller controller : Controllers.getControllers()) {
