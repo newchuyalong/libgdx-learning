@@ -33,6 +33,10 @@ The Bullet physics extension is a Java wrapper for the C++ engine. This page pro
 
 Practical information and examples on how to use the bullet wrapper can also be found at the [Bullet tests](https://github.com/libgdx/libgdx/tree/master/tests/gdx-tests/src/com/badlogic/gdx/tests/bullet).
 
+These tutorials provide an introduction in using the Bullet wrapper:
+* [Part1: collision detection](http://blog.xoppa.com/using-the-libgdx-3d-physics-bullet-wrapper-part1)
+* [Part2: rigid body dynamics](http://blog.xoppa.com/using-the-libgdx-3d-physics-bullet-wrapper-part2)
+
 # <a id="Using_Bullet_in_your_project"></a>Using Bullet in your project #
 
 ## <a id="Setting_up_Bullet_with_libgdx"></a>Setting up Bullet with libgdx ##
@@ -42,7 +46,7 @@ For your desktop project you’ll need to add the gdx-bullet-natives.jar to the 
 
 For your android project you’ll need to copy the armeabi/libgdx-bullet.so and armeabi-v7a/libgdx-bullet.so files to the libs folder in your android project.
 
-Bullet isn’t supported for GWT at the moment.
+The Bullet wrapper doesn’t support GWT at the moment.
 
 ## <a id="Initializing_Bullet"></a>Initializing Bullet ##
 
