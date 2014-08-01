@@ -44,7 +44,24 @@ Deploying to Android takes some extra steps. This tutorial is done using Eclipse
 - LibGDX supports x86 Android devices starting with 0.9.9 and up. Make sure the x86 folder with libraries is in your project. Gdx-setup-ui should now generate your project with these. 
 
 ## <a id="Deploy_to_iOS"></a>Deploy to iOS ##
-TBD
+*This section assumes you're familiar with the basic deployment steps for iOS apps.*
+
+Prerequisites:
+ * An OSX machine with Xcode installed (or the equivalent Hackintosh) and an Apple developer license account all established and paid for
+ * Your app is configured in `itunesconnect.apple.com` and is in *Ready to Upload Binary* mode
+ * You have a matching distribution certificate set up at `developer.apple.com` per usual
+
+On your build machine, open Xcode, go to `Preferences -> Accounts`, provide your login and choose *View Details*. Tap the "Recycle" button at bottom left. This will download all necessary certificates to a place that the RoboVM Eclipse plugin expects to find them. Click *Done* and exit Xcode.
+
+> *Insert more here about tweaking the files: info.plist.xml, robovm.properties and robovm.xml.*
+
+Go into Eclipse, right click on your `projectname-ios` and choose `RoboVM Tools -> Package for App-Store/Adhoc Distribution`.  In the resulting dialog, pick a directory where you wish the IPA and associated files to be placed, choose your signing identity (usually your company, not your machine's identifier), and the provisioning profile for this app (from `developer.apple.com`).
+
+This will generate the `projectname.IPA` file. Now you are able to:
+
+ 1. use the TestFlightApp uploader to send it to [TestFlight](www.testflightapp.com) to most easily distribute beta releases to your users.  (This can also be a great way to shake out configuration problems with your IPA).
+ 2. use the `Application Loader` to locate your IPA and submit it to Apple for review and release to the App Store
+
 
 ## <a id="Deploy_to_HTML/JS"></a>Deploy to HTML/JS ##
 Deploying to HTML/JS is straightforward for most cases.
