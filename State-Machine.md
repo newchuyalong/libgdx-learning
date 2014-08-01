@@ -90,7 +90,7 @@ A FSM instance implements the following StateMachine interface.
 public interface StateMachine<A> {
 	public void update();
 	public void changeState(State<A> newState);
-	public void revertToPreviousState();
+	public boolean revertToPreviousState();
 	public void setInitialState(State<A> state);
 	public void setGlobalState(State<A> state);
 	public State<A> getCurrentState();
@@ -101,8 +101,14 @@ public interface StateMachine<A> {
 ````
 All an agent has to do is to own an instance of a StateMachine and implement a method to update the state machine to get full FSM functionality.
 
+### DefaultStateMachine ###
 The `DefaultStateMachine` class provided by the framework is the default implementation of the `StateMachine` interface.
 The `handleMessage` method of the `DefaultStateMachine` first routes the telegram to the current state. If the current state does not deal with the message, it's routed to the global state (if any). Especially, the boolean value returned by the `onMessage` method of the State interface indicates whether or not the message has been handled successfully and enables the state machine to route the message accordingly. This technique is rather interesting. For instance, what if you want a global event response to the message MSG_DEAD in every state but the state STATE_DEAD? The solution is to override the message response MSG_DEAD within STATE_DEAD. Since messages are sent first to the current state you can consume the message by returning true so to prevent it from being sent to the global state.
+
+### StackStateMachine ###
+The `StackStateMachine` is an alternative implementation. It actually inherits from `DefaultStateMachine` and mostly behaves the same. The only difference is the behaviour of `revertToPreviousState()`. While the default implementation will always change back and forth between the same two states when it is called multiple times, the `StackStateMachine` will instead keep track of all past states, store them in a stack-like manner and is able to revert to those past states in a "last in, first out" (LIFO) order. This is especially useful when using a state machine for hierarchical menu structures.
+
+Let's assume we have just a single `MenuScreen` to handle all menus. Each menu would be a State. For example `MainMenuState`, `OptionsMenuState`, `GraphicsOptionsMenuState` and `InputOptionsMenuState`. Usually the user would start with the main menu, then navigate to the options menu and choose the graphics options. When he is done, it is common to navigate this hierarchical menu structure backwards by just pressing ESC. With the stack implementation this can now easily be done by just calling `stateMachine.revertToPreviousState()`, whenever the ESC button is pressed. When there is no more "previous" state, the revert method will not change the state and return false.
 
 
 ## A Simple Example ##
