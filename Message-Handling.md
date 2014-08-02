@@ -28,6 +28,24 @@ Whenever an agent needs to send a message, it calls MessageDispatcher.dispatchMe
 ````
 where _delay_ is expressed in seconds. The MessageDispatcher uses this information to create a Telegram, which it either dispatches immediately (if the given delay is <= 0) or stores in a queue (when the given delay is > 0) ready to be dispatched at the correct time.
 
+### Multiple Recipients ###
+If you send a message without specifying the recipient the message will be dispatched to all the agents listening to that message type. Agents can register and unregister their interest in specific message types.
+The following methods allow you to manage agent's interest.
+````java
+// Lets the agent listent to msgType
+MessageDispatcher.getInstance().addListener(msgType, agent);
+
+// Removes msgType from the interests of the agent
+MessageDispatcher.getInstance().removeListener(msgType, agent);
+
+// Removes all the agents listening to msgType
+MessageDispatcher.getInstance().clearListener(msgType);
+
+// Removes all the agents listening to any message type
+MessageDispatcher.getInstance().clearListener();
+````
+
+### Time Granularity ###
 To prevent many similar telegrams bunching up in the queue and being delivered en masse, thus flooding an agent with identical messages, you can control **time granularity**.
 Delayed telegrams having the same sender, recipient and message type are considered identical when they belong to the same time slot. If time granularity is greater than 0 identical telegrams are not doubled into the queue.
 The following code sets the time granularity to 1 second.
@@ -38,6 +56,7 @@ Of course, the time granularity will vary according to your game. Games with lot
 The default granularity is 0.25, i.e. a quarter of a second.
 To eliminate time granularity just set it to 0.
 
+### Updating the Dispatcher ###
 The queued telegrams are examined each update step by the method MessageDispatcher.dispatchDelayedMessages() which checks the front of the message queue to see if any telegrams have expired time stamps. If so, they are dispatched to their recipient and removed from the queue.
 The following call
 ````java
