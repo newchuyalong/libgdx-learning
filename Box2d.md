@@ -73,6 +73,22 @@ The other two arguments are `velocityIterations` and `positionIterations`. For n
 
 Stepping your simulation is a topic unto itself. See [this article](http://gafferongames.com/game-physics/fix-your-timestep/) for an excellent discission on the use of variable time steps.
 
+The result might look similar to this:
+
+```java
+private float accumulator = 0;
+
+private void doPhysicsStep(float deltaTime) {
+    // fixed time step
+    // max frame time to avoid spiral of death (on slow devices)
+    float frameTime = Math.min(deltaTime, 0.25f);
+    accumulator += frameTime;
+    while (accumulator >= Constants.TIME_STEP) {
+        WorldManager.world.step(Constants.TIME_STEP, Constants.VELOCITY_ITERATIONS, Constants.POSITION_ITERATIONS);
+        accumulator -= Constants.TIME_STEP;
+    }
+}
+```
 
 ## Rendering ##
 
