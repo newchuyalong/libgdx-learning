@@ -264,11 +264,13 @@ Fixtures can also have user data set to them in the same way.
 To update all your actors/sprites you can loop through all the world's bodies easily in your game/render loop.
 
 ```java
-Iterator<Body> bi = world.getBodies();
+// Create an array to be filled with the bodies
+// (better don't create a new one every time though)
+Array<Body> bodies = new Array<Body>();
+// Now fill the array with all bodies
+world.getBodies(bodies);
         	   
-while (bi.hasNext()){
-    Body b = bi.next();
-
+for (Body b : bodies) {
     // Get the body's user data - in this example, our user 
     // data is an instance of the Entity class
     Entity e = (Entity) b.getUserData();
