@@ -45,9 +45,9 @@ public void resize (int width, int height) {
 	stage.getViewport().update(width, height, true);
 }
 
-public void render () {
+public void render (float delta) {
 	Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
-	stage.act(Gdx.graphics.getDeltaTime());
+	stage.act(delta);
 	stage.draw();
 }
 
