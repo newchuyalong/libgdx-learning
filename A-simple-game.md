@@ -16,7 +16,7 @@ Follow the steps in [[Project Setup, Running & Debugging]]. I used the following
   * Package name: com.badlogic.drop
   * Game class: Drop
 
-Once imported into Eclipse, you should have 4 projects: drop, drop-android, drop-desktop and drop-html5.
+Once imported into Eclipse, you should have 4 projects: drop, drop-android, drop-core,drop-desktop and drop-html5.
 
 ## The Game ##
 The game idea is very simple:
