@@ -11,8 +11,8 @@
  * [Common classes](#common-classes)
  * [Using arrays](#using-arrays)
  * [Using models](#using-models)
-     * [Using motion states](#Using-motion-states)
-     * [Create a collision object from a model](Create-a-collision-object-from-a-model)
+     * [Using motion states](#using-motion-states)
+     * [Create a collision object from a model](#create-a-collision-object-from-a-model)
  * [Contact Callbacks](#contact-callbacks)
      * [Contact Listeners](#contact-listeners)
      * [Contact Filtering](#contact-filtering)
@@ -244,7 +244,7 @@ For the case of a static model, the Bullet wrapper provides a convenient method 
 ```java
 btCollisionShape shape = Bullet.obtainStaticNodeShape(model.nodes);
 ```
-In this case the collision shape will share the same data (vertices) as the model.
+In this case the collision shape will share the same data (vertices) as the model. This will include [node transformation](https://github.com/libgdx/libgdx/wiki/Models#node-transformation) by using a `btCompoundShape` if needed, but will not include any scaling applied to nodes.
 
 ## <a id="Contact_Callbacks"></a>Contact Callbacks ##
 Contact callbacks allow you to be notified when a contact/collision on two objects occur ([more info and a performance related warning](http://bulletphysics.org/mediawiki-1.5.8/index.php/Collision_Callbacks_and_Triggers#Contact_Callbacks)).
