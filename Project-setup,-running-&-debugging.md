@@ -29,8 +29,8 @@ alt="Libgdx setup video" width="480" height="360" border="10" /></a>
 ## Using "Libgdx Setup" ##
 As of version 0.9.3, libgdx comes with an easy to use application called "Libgdx Setup" by [Aurelien Ribon](http://www.aurelienribon.com/blog/). The following steps will create everything needed to develop for the desktop, android, ios and html5.
 
-  * Download the gdx-setup-ui.jar from http://libgdx.badlogicgames.com/nightlies/dist/gdx-setup-ui.jar. The jar is also contained in all stable and nightly releases.
-  * Execute the jar by double clicking it or from the command line via `java -jar gdx-setup-ui.jar`
+  * Download the gdx-setup.jar from http://libgdx.badlogicgames.com/nightlies/dist/gdx-setup.jar. The jar is also contained in all stable and nightly releases.
+  * Execute the jar by double clicking it or from the command line via `java -jar gdx-setup.jar`
     * Specify your project's configuration (Configuration Panel)
     * Specify the libgdx stable/nightly release zip file or press one of the buttons to download the latest stable/nightly release (Library Selection Panel).
     * Hit the "Generate projects" button (Generation Panel)
