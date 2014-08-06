@@ -1,29 +1,30 @@
  * [About the Bullet Physics extension](#about-the-bullet-physics-extension)
  * [Setting up Bullet with libgdx](#setting-up-bullet-with-libgdx)
-    * [Initializing Bullet](#initializing-bullet)
-    * [Working with Bullet wrapper](#working-with-bullet-wrapper)
-    * [Callbacks](#callbacks)
-    * [Properties](#properties)
-    * [Creating and destroying objects](#creating-and-destroying-objects)
-    * [Referencing objects](#referencing-objects)
-    * [Extending classes](#extending-classes)
-    * [Comparing classes](#comparing-classes)
-    * [Common classes](#common-classes)
-    * [Using arrays](#using-arrays)
-    * [Contact Callbacks](#contact-callbacks)
-        * [Contact Listeners](#contact-listeners)
-        * [Contact Filtering](#contact-filtering)
-    * [Custom classes](#custom-classes)
-       * [btCollisionObject](#btcollisionobject)
-       * [ClosestNotMeRayResultCallback](#closestnotmerayresultcallback)
-       * [InternalTickCallback](#internaltickcallback)
-       * [btDefaultMotionState](#btdefaultmotionstate)
-       * [btCompoundShape](#btcompoundshape)
-       * [btIndexedMesh](#btindexedmesh)
-       * [btTriangleIndexVertexArray](#bttriangleindexvertexarray)
-       * [btBvhTriangleMeshShape](#btbvhtrianglemeshshape)
-       * [btConvexHullShape](#btconvexhullshape)
-       * [btBroadphasePairArray](#btbroadphasepairarray)
+ * [Initializing Bullet](#initializing-bullet)
+ * [Working with Bullet wrapper](#working-with-bullet-wrapper)
+ * [Callbacks](#callbacks)
+ * [Properties](#properties)
+ * [Creating and destroying objects](#creating-and-destroying-objects)
+ * [Referencing objects](#referencing-objects)
+ * [Extending classes](#extending-classes)
+ * [Comparing classes](#comparing-classes)
+ * [Common classes](#common-classes)
+ * [Using arrays](#using-arrays)
+ * [Using models](#using-models)
+ * [Contact Callbacks](#contact-callbacks)
+     * [Contact Listeners](#contact-listeners)
+     * [Contact Filtering](#contact-filtering)
+ * [Custom classes](#custom-classes)
+    * [btCollisionObject](#btcollisionobject)
+    * [ClosestNotMeRayResultCallback](#closestnotmerayresultcallback)
+    * [InternalTickCallback](#internaltickcallback)
+    * [btDefaultMotionState](#btdefaultmotionstate)
+    * [btCompoundShape](#btcompoundshape)
+    * [btIndexedMesh](#btindexedmesh)
+    * [btTriangleIndexVertexArray](#bttriangleindexvertexarray)
+    * [btBvhTriangleMeshShape](#btbvhtrianglemeshshape)
+    * [btConvexHullShape](#btconvexhullshape)
+    * [btBroadphasePairArray](#btbroadphasepairarray)
 
 
 # <a id="About_the_Bullet_Physics_extension"></a>About the Bullet Physics extension #
@@ -173,6 +174,57 @@ public void setWorldTransform (final Matrix4 worldTrans) {
 Where possible the wrapper uses direct ByteBuffer objects to pass arrays from Java to C++. This avoids copying the array on the call and allows you to share the same byte buffer for both OpenGL ES and Bullet. If needed you can create a new ByteByffer using `BufferUtils.newUnsafeByteBuffer`, which you should manually delete using `BufferUtils.disposeUnsafeByteBuffer`.
 
 In cases where ByteBuffer can't be used or is unwanted, a normal array is used. By default this means that the array is copied using iteration from Java to C++ at start of the method and copied back at the end of the method. To avoid this overhead the wrapper tries to use the Java array directly from within C++ where possible using critical arrays. During such method Java garbage collecting is blocked. An example of such method is `btBroadphasePairArray.getCollisionObjects`.
+
+## <a id="Using_models"></a>Using models ##
+[`Model`](https://github.com/libgdx/libgdx/wiki/Models) and `ModelInstance` are typically used for the visual representation of objects. `btCollisionObject` or `btRigidBody` are used for the physical representation of these objects.
+
+### <a id="Using_motion_states"></a>Using motion states ###
+To synchronize the location and orientation between a `ModelInstance` and `btRigidBody`, Bullet provides the `btMotionState` class that you can extend. A very basic example of such synchronization is:
+```java
+static class MyMotionState extends btMotionState {
+    Matrix4 transform;
+    @Override
+    public void getWorldTransform (Matrix4 worldTrans) {
+        worldTrans.set(transform);
+    }
+    @Override
+    public void setWorldTransform (Matrix4 worldTrans) {
+        transform.set(worldTrans);
+    }
+}
+```
+Which you can use as follows:
+```java
+btRigidBody body;
+ModelInstance instance;
+MyMotionState motionState;
+...
+motionState = new MyMotionState();
+motionState.transform = instance.transform;
+body.setMotionState(motionState);
+```
+Now the location and orientation of `ModelInstance` will be updated (by Bullet) whenever the `btRigidBody` moves. This approach is not restricted to `ModelInstance`, it will work for any object that contains a `Matrix4` transformation, like e.g. also `Renderable`. Moreover, it is possible to add simple logic to a motion state, for example:
+```java
+static class PlayerMotionState extends btMotionState {
+    final static Vector3 position = new Vector3();
+    Player player;
+    @Override
+    public void getWorldTransform (Matrix4 worldTrans) {
+        worldTrans.set(player.transform);
+    }
+    @Override
+    public void setWorldTransform (Matrix4 worldTrans) {
+        player.transform.set(worldTrans);
+        player.transform.getTranslation(position);
+        if (position.y < 0)
+            player.die();
+    }
+}
+```
+Note that the motion state has to be disposed when no longer needed: `motionState.dispose();`.
+
+### <a id=""></a>Create a collision object from a model ###
+
 
 ## <a id="Contact_Callbacks"></a>Contact Callbacks ##
 Contact callbacks allow you to be notified when a contact/collision on two objects occur ([more info and a performance related warning](http://bulletphysics.org/mediawiki-1.5.8/index.php/Collision_Callbacks_and_Triggers#Contact_Callbacks)).
