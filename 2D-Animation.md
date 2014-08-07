@@ -27,7 +27,7 @@ Looping animation means, that when the animation reached the last frame, it jump
 Using animations in libGdx is extremely simple. 
 One constraint regarding the size of the spritesheet needs to be remembered: when using OpenGL 1.x, the size of sprite sheet has to be power of two. (check Texture for more information).
 
-The following code snippet will create an [Animation](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/graphics/g2d/Animation.html) [(code)](https://github.com/libgdx/libgdx/blob/master/gdx/src/com/badlogic/gdx/graphics/g2d/Animation.java) using the animation_sheet.png sprite-sheet and renders the animation to the screen. It is a very basic ApplicationListener. How to create one and what exactly it is, look [[here for textures|Spritebatch, textureregions, and sprite]].
+The following code snippet will create an [Animation](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/graphics/g2d/Animation.html) [(code)](https://github.com/libgdx/libgdx/blob/master/gdx/src/com/badlogic/gdx/graphics/g2d/Animation.java) using the animation_sheet.png sprite-sheet and renders the animation to the screen. It is a very basic ApplicationListener. To see how to create one and what exactly it is, look [[here for textures|Spritebatch, textureregions, and sprite]].
 
 ```java
 public class Animator implements ApplicationListener {
