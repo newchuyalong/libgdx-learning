@@ -3,7 +3,7 @@
 LibGDX comprises several modules that provide services for each step of a typical game architecture. 
 
  * *[[Input | Input Handling]]* - Provides a unified input model and handler for all platforms. Supports keyboard, touchscreen, accelerometer and mouse where available. 
- * *[[Graphics | Graphics]]** - Enables the drawing of images to the screen using the the hardware provided OpenGL ES implementation.
+ * *[[Graphics | Graphics]]** - Enables the drawing of images to the screen using the hardware provided OpenGL ES implementation.
  * *[[Files | File Handling]]* - Abstracts file access on all platforms by providing convenient methods for read/write operations regardless of the media.
  * *[[Audio | Audio]]* - Facilitates sound recording and playback on all platforms.
  * *[[Networking | Networking]]* - Provides methods to perform networking operations, such as simple HTTP get and post requests, and TCP server/client socket communication.
