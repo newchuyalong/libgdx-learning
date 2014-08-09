@@ -34,12 +34,14 @@ A refresh and clean in eclipse probably wouldn't hurt at this point, so go ahead
 Ensure that the target in android project's project.properties file is at least 13, and the android:minSdkVersion in your AndroidManifest.xml is at least 9. Sadly this does mean users running ancient versions of Android will be excluded, but there's nothing we can do about this. There are very very VERY few devices still running versions below 2.3/API9, so at least you won't be excluding many users...
 
 Add these two lines as children of the 'application' element:
-<meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
-<activity android:name="com.google.android.gms.ads.AdActivity" android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"/>
+
+`<meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+<activity android:name="com.google.android.gms.ads.AdActivity" android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"/>`
 
 Add these two permissions as children of the 'manifest' element:
-<uses-permission android:name="android.permission.INTERNET"/>
-<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+
+`<uses-permission android:name="android.permission.INTERNET"/>
+<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>`
 
 Save changes, then refresh and clean in eclipse for good luck...
 
