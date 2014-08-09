@@ -3,12 +3,12 @@
 3. pull in the latest changes into your local libGDX repository
 4. pull in the latest nightlies via `ant -f fetch.xml`
 1. Make sure Version.java has the release version in it
+10. Modify DependencyBank.java, update the libgdx version (and snapshot version) to the latest (must match Version.java), 
 5. `mvn release:clean`, this should print `BUILD SUCCESSFUL`, if not, you've done something wrong
 6. `mvn release:prepare -DdryRun=true` to test the prepare, see http://www.jroller.com/robertburrelldonkin/entry/apache_using_dry_run_with
 7. `mvn release:prepare`, enter the release version number, then make sure the new snapshot version is x.y.z+1 or x.y+1.0 if you released an API breaking change
 8. `mvn release:perform`, pray that everything works
 9. Log into http://oss.sonatype.com (ask Mario for username:password) and do what's described at https://docs.sonatype.org/display/Repository/Sonatype+OSS+Maven+Repository+Usage+Guide#SonatypeOSSMavenRepositoryUsageGuide-8a.ReleaseIt
-10. Modify DependencyBank.java, update the libgdx version to the latest (must match Version.java), 
 11. Enable the libgdx project on the build server and wait for the libGDX to finish (this will also updated gdx-setup.jar on the server, which will use the latest libgdx version we just deployed to sonatype/maven central)
 12. Download nightly, rename to libgdx-x.y.z, upload to website /usr/share/nginx/html/releases
 13. Increase the libGDX version in Version.java to match the new snapshot version
