@@ -35,13 +35,13 @@ Ensure that the target in android project's project.properties file is at least 
 
 Add these two lines as children of the 'application' element:
 
-`<meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
-<activity android:name="com.google.android.gms.ads.AdActivity" android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"/>`
+`<meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>`   
+`<activity android:name="com.google.android.gms.ads.AdActivity" android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"/>`
 
 Add these two permissions as children of the 'manifest' element:
 
-`<uses-permission android:name="android.permission.INTERNET"/>
-<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>`
+`<uses-permission android:name="android.permission.INTERNET"/>`   
+`<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>`
 
 Save changes, then refresh and clean in eclipse for good luck...
 
