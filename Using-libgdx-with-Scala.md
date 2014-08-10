@@ -6,7 +6,7 @@ This tutorial assumes you have installed [g8](http://github.com/n8han/giter8) an
 
 ## Setting up a new project
 
-In your favorite shell type:
+In your favourite shell type:
 
     $ g8 ajhager/libgdx-sbt-project
 
@@ -14,7 +14,7 @@ After filling in some information about your project, you can start placing your
 
 ## Managing your project
 
-Update to the lastest libraries:
+Update to the latest libraries:
 
     $ sbt
     > update 
