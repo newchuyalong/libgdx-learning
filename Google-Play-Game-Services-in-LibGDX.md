@@ -8,15 +8,15 @@ Another in-depth LibGDX-based tutorial for adding Google Play Game Servics can b
 
 # Intellij Setup
 
-Install Google Play Service and Google Play Repository using and Android SDK
+* Install Google Play Service and Google Play Repository using and Android SDK
 
-Download BaseGameUtils sample project [here](https://github.com/playgameservices/android-basic-samples) and place it in your project root folder.
+* Download BaseGameUtils sample project [here](https://github.com/playgameservices/android-basic-samples) and place it in your project root folder.
 
-Edit settings.gradle 
+* Edit settings.gradle 
 ```
 include 'desktop', 'android', 'ios', 'html', 'core', "BaseGameUtils"
 ```
-Edit root build.gradle and add the below as android dependency: 
+* Edit root build.gradle and add the below as android dependency: 
 ```
 compile project(":BaseGameUtils")
 ```
