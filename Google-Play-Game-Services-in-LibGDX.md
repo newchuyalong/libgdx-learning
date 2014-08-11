@@ -6,12 +6,12 @@ The project is freely available on [GitHub](https://github.com/TheInvader360/lib
 
 Another in-depth LibGDX-based tutorial for adding Google Play Game Servics can be found [here](http://fortheloss.org/tutorial-set-up-google-services-with-libgdx/).
 
-# Intellij
+# Intellij Setup
 
-1. installed Google Play Service and Google Play repository using and SDK
+1. Install Google Play Service and Google Play Repository using and Android SDK
 
-2. download basegameutils sample project and place it in your project root folder.
+2. Download basegameutils sample project and place it in your project root folder.
 
-3. edit settings.gradle
+3. Edit settings.gradle
 `include 'desktop', 'android', 'ios', 'html', 'core', "BaseGameUtils"`
 
