@@ -16,7 +16,6 @@ Another in-depth LibGDX-based tutorial for adding Google Play Game Servics can b
 ```
 include 'desktop', 'android', 'ios', 'html', 'core', "BaseGameUtils"
 ```
-
 4. Edit root build.gradle and add the below as android dependency: 
 ```
 compile project(":BaseGameUtils")
