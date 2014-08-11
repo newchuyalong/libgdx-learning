@@ -1,3 +1,5 @@
+# ATTENTION: Not merged yet (see [PR2202](https://github.com/libgdx/libgdx/pull/2202))
+
 ## Introduction ##
 
 In the early 1990s, computer scientist [Craig Reynolds](http://www.red3d.com/cwr) developed algorithmic steering behaviors for autonomous agents.
