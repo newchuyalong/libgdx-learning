@@ -5,3 +5,13 @@ A [Super Jumper](https://github.com/libgdx/libgdx/tree/master/demos/superjumper)
 The project is freely available on [GitHub](https://github.com/TheInvader360/libgdx-gameservices-tutorial), and a companion tutorial is available [here](http://theinvader360.blogspot.co.uk/2013/10/google-play-game-services-tutorial-example.html).
 
 Another in-depth LibGDX-based tutorial for adding Google Play Game Servics can be found [here](http://fortheloss.org/tutorial-set-up-google-services-with-libgdx/).
+
+# Intellij
+
+1. installed Google Play Service and Google Play repository using and SDK
+
+2. download basegameutils sample project and place it in your project root folder.
+
+3. edit settings.gradle
+`include 'desktop', 'android', 'ios', 'html', 'core', "BaseGameUtils"`
+
