@@ -1,11 +1,27 @@
 # ATTENTION: Not merged yet (see [PR2202](https://github.com/libgdx/libgdx/pull/2202))
 
+- [Introduction](#introduction)
+- [Characters as Points](#characters-as-points)
+- [What the hell is 2.5D?](#what-the-hell-is-25d)
+- [Independent Facing](#independent-facing)
+- [The Jargon](#the-jargon)
+- [The Steering System API](#the-steering-system-api)
+- [Individual Behaviors](#individual-behaviors)
+- [Group Behaviors](#group-behaviors)
+- [Combining Steering Behaviors](#combining-steering-behaviors)
+
+
 ## Introduction ##
 
 In the early 1990s, computer scientist [Craig Reynolds](http://www.red3d.com/cwr) developed algorithmic steering behaviors for autonomous agents.
 These behaviors allowed individual elements to navigate their digital environments with strategies for seeking, fleeing, wandering, arriving, pursuing, evading, avoiding an obstacle, following a path, and so on.
 Actually these behaviors are fairly simple to understand and implement, but building a system of multiple characters that steer themselves according to simple, locally based rules, surprising levels of complexity emerge.
 The most famous example is Reynolds's "boids" model for flocking behavior.
+
+Notice that each steering behavior isn't trying to do everything. There is no behavior to avoid
+obstacles while chasing a character and making detours via nearby power-ups. Each algorithm
+does a single thing and only takes the input needed to do that. To get more complicated behaviors,
+we will use algorithms to combine the steering behaviors and make them work together.
 
 Steering behaviors produce steering forces that describe where and how an agent should move.
 Although steering behaviors are fairly simple to implement, they can bring new problems to deal with.
@@ -17,6 +33,15 @@ each other out. There are means and ways around most of these problems though (e
 to get familiar with steering behaviors and their parameters. Especially, play with parameter values and see
 what happens. Such experimentation really speaks more than 1000 words.**
 
+## Characters as Points ##
+
+Although a character consists of a 2D sprite or a 3D model that occupies some space in the game world, many movement algorithms assume that the character can be treated as
+a single point. Collision detection, obstacle avoidance, and some other algorithms use the size of the character to influence their results, but movement itself assumes
+the character is at a single point.
+
+This is a process similar to that used by physics programmers who treat objects in the game as a "rigid body" located at its center of mass.
+Collision detection and other forces can be applied to anywhere on the object, but the algorithm that determines the movement of the object converts
+them so it can deal only with the center of mass.
 
 ## What the hell is 2.5D? ##
 
@@ -29,7 +54,6 @@ The simplified math of 2.5D is worth the decreased flexibility in most 3D games.
 optimal solution.
 
 However, most steering behaviors work for full 3D too, excluded those behaviors that explicitly have an angular component, such as `ReachOrientation`, `Face`, `LookWhereYouAreGoing` and `Wander`. The other behaviors only work linearly, so none of them requires any modification for full 3D because the equations work unaltered.
-
 
 ## Independent Facing ##
 
@@ -65,7 +89,7 @@ There are two other classes that are heavily used by the steering system:
 - [SteeringAcceleration](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/ai/steer/behaviors/SteeringAcceleration.html) is a movement requested by the steering system. It is made up of two components, linear and angular acceleration.
 - [SteeringBehavior](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/ai/steer/behaviors/SteeringBehavior.html) calculates the linear and/or angular accelerations to be applied to its owner.
 
-In short, each SteeringBehavior has a Steerable and some behavior-specific parameters. When the [calculateSteering](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/ai/steer/behaviors/SteeringBehavior.html#calculateSteering) method
+In short, each SteeringBehavior takes as input a Steerable and some behavior-specific parameters. When the [calculateSteering](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/ai/steer/behaviors/SteeringBehavior.html#calculateSteering) method
 of the SteeringBehavior is invoked a SteeringAcceleration is returned. It is important to understand that the acceleration just produced is simply a movement request.
 To make the character move you have to apply the accelerations either by using the methods provided by the underlying physics engine or by executing the correct formulas if you're using scene2d or any other non-physics engine.
 
@@ -86,7 +110,23 @@ public class SteeringAgent implements Steerable<Vector2> {
 	boolean independentFacing;
 	SteeringBehavior<Vector2> steeringBehavior;
 
-	/* Here you should implement the methods inherited from Steerable */
+	/* Here you should implement missing methods inherited from Steerable */
+
+	// Actual implementation depends on your coordinate system.
+	// Here we assume the y-axis is pointing upwards.
+	@Override
+	public float vectorToAngle (Vector2 vector) {
+		return (float)Math.atan2(-vector.x, vector.y);
+	}
+
+	// Actual implementation depends on your coordinate system.
+	// Here we assume the y-axis is pointing upwards.
+	@Override
+	public Vector2 angleToVector (Vector2 outVector, float angle) {
+		outVector.x = -(float)Math.sin(angle);
+		outVector.y = (float)Math.cos(angle);
+		return outVector;
+	}
 
 	public void update (float delta) {
 		if (steeringBehavior != null && steeringBehavior.isEnabled()) {
@@ -123,7 +163,9 @@ It updates position, linear velocity, orientation and angular velocity of the st
 
 ## Individual Behaviors ##
 
-T.B.D.
+Unlike group behaviors, which we'll see later, individual behaviors take into account a very limited number of target agents, typically just one ore even none.
+For instance, Wander and LookWhereYouAreGoing behaviors have no explicit target, while Interpose has two targets.
+All other behaviors have a single target. 
 
 ### Seek and Flee ###
 
@@ -286,6 +328,49 @@ required to travel the distance.
 Using the time T, the agents' positions are extrapolated into the future. The target position in between of these
 predicted positions is determined and finally the owner uses the Arrive behavior to steer toward that point.
 
+## Group Behaviors ##
+
+Group behaviors are steering behaviors that take into consideration some or all of the other objects in the game world.
+The flocking behavior is the typical example of a group behavior. In fact, flocking is a combination of three group
+behaviors all working together: separation, alignment, and cohesion.
+
+To determine the steering acceleration for a group behavior, a character will consider all (or some) other characters
+within its immediate area, also known as [Proximity](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/ai/steer/behaviors/Proximity.html).
+
+### Separation ###
+
+[Separation](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/ai/steer/behaviors/Separation.html)
+is a group behavior producing a steering acceleration repelling from the other neighbors which are the agents within the
+immediate area defined by the given [Proximity](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/ai/steer/Proximity.html).
+The acceleration is calculated by iterating through all the neighbors, examining each one. The vector to each agent under
+consideration is normalized, divided by the distance to the neighbor, and accumulated.
+
+### Alignment ###
+
+[Alignment](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/ai/steer/behaviors/Alignment.html)
+is a group behavior producing a linear acceleration that attempts to keep the owner aligned with the agents in its
+immediate area defined by the given [Proximity](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/ai/steer/Proximity.html).
+The acceleration is calculated by first iterating through all the neighbors and averaging their normalized linear
+velocity vectors. This value is the desired direction, so we just subtract the owner's normalized linear velocity
+to get the steering output.
+
+Cars moving along roads demonstrate Alignment type behavior. They also demonstrate Separation as they try to
+keep a minimum distance from each other.
+
+### Cohesion ###
+
+[Cohesion](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/ai/steer/behaviors/Cohesion.html)
+is a group behavior producing a linear acceleration that attempts to move the agent towards the center of mass
+of the agents in its immediate area defined by the given [Proximity](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/ai/steer/Proximity.html).
+The acceleration is calculated by first iterating through all the neighbors and averaging their position vectors.
+This gives us the center of mass of the neighbors, the place the agents wants to get to, so it seeks to that position.
+
+Also, the implementation always returns a normalized linear acceleration (or zero). This is not a problem since usually
+you blend it with other group behaviors like Separation and Alignment so you can give it a proper weight, see
+WeightedBlender.
+
+A sheep running after its flock is demonstrating cohesive behavior. Use this behavior to keep a group of agents together.
+
 ### Hide ###
 
 [Hide](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/ai/steer/behaviors/Hide.html) behavior
@@ -372,49 +457,6 @@ detected by other rays are ignored for a while.
 
 It seems that the most practical solution is to use adaptive fan angles, with one long ray cast and two shorter whiskers.
 
-## Group Behaviors ##
-
-Group behaviors are steering behaviors that take into consideration some or all of the other objects in the game world.
-The flocking behavior is a the typical example of a group behavior. In fact, flocking is a combination of three group
-behaviors all working together: separation alignment, and cohesion.
-
-To determine the steering acceleration for a group behavior, a character will consider all (or some) other characters
-within its immediate area, also know as [Proximity](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/ai/steer/behaviors/Proximity.html).
-
-### Separation ###
-
-[Separation](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/ai/steer/behaviors/Separation.html)
-is a group behavior producing a steering acceleration repelling from the other neighbors which are the agents within the
-immediate area defined by the given [Proximity](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/ai/steer/Proximity.html).
-The acceleration is calculated by iterating through all the neighbors, examining each one. The vector to each agent under
-consideration is normalized, divided by the distance to the neighbor, and accumulated.
-
-### Alignment ###
-
-[Alignment](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/ai/steer/behaviors/Alignment.html)
-is a group behavior producing a linear acceleration that attempts to keep the owner aligned with the agents in its
-immediate area defined by the given [Proximity](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/ai/steer/Proximity.html).
-The acceleration is calculated by first iterating through all the neighbors and averaging their normalized linear
-velocity vectors. This value is the desired direction, so we just subtract the owner's normalized linear velocity
-to get the steering output.
-
-Cars moving along roads demonstrate Alignment type behavior. They also demonstrate Separation as they try to
-keep a minimum distance from each other.
-
-### Cohesion ###
-
-[Cohesion](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/ai/steer/behaviors/Cohesion.html)
-is a group behavior producing a linear acceleration that attempts to move the agent towards the center of mass
-of the agents in its immediate area defined by the given [Proximity](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/ai/steer/Proximity.html).
-The acceleration is calculated by first iterating through all the neighbors and averaging their position vectors.
-This gives us the center of mass of the neighbors, the place the agents wants to get to, so it seeks to that position.
-
-Also, the implementation always returns a normalized linear acceleration (or zero). This is not a problem since usually
-you blend it with other group behaviors like Separation and Alignment so you can give it a proper weight, see
-WeightedBlender.
-
-A sheep running after its flock is demonstrating cohesive behavior. Use this behavior to keep a group of agents together.
-
 
 ## Combining Steering Behaviors ##
 
@@ -425,7 +467,7 @@ difficult to get when working with other behaviors. In addition, some complex st
 and formation motion (not implemented yet), can only be accomplished when more than one steering behavior is active
 at once. This section explains you how to accomplish this combination.
 
-### WeightedBlender ###
+### Weighted Blender ###
 
 [WeightedBlender](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/ai/steer/behaviors/WeightedBlender.html)
 is a combination behavior that simply sums up all the active behaviors, applies their weights, and truncates the result before
@@ -444,7 +486,7 @@ force from the wall and the agent can end up being pushed through the wall bound
 favorable. Sure you can make the weights for the wall avoidance huge, but then your agent may behave strangely next time it
 finds itself alone and next to a wall.
 
-### PrioritySteering ###
+### Priority Steering ###
 
 [PrioritySteering](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/ai/steer/behaviors/PrioritySteering.html)
 behavior iterates through the active behaviors and returns the first non zero steering. It makes
