@@ -108,7 +108,7 @@ Often executable examples need some resources, such as an image or sound file. I
 
 The easiest way to write an executable example is to paste one of the barebones applications below into the `gdx-tests-lwjgl` project and then modify it to show your problem, using only the [test resources](https://github.com/libgdx/libgdx/tree/master/tests/gdx-tests-android/assets). Note the test resources are pulled in by `gdx-tests-lwjgl` from the `gdx-tests-android` project.
 
-### <a id="barebones_Application"></a>barebones Application ###
+### <a id="barebones_Application"></a>Barebones Application ###
 
 Below is a simple, barebones, executable application. This can be used as a base for creating your own executable example code.
 
@@ -133,7 +133,7 @@ public class Barebones extends ApplicationAdapter {
 }
 ```
 
-### <a id="barebones_SpriteBatch"></a>barebones SpriteBatch ###
+### <a id="barebones_SpriteBatch"></a>Barebones SpriteBatch ###
 
 This barebones application uses SpriteBatch to draw an image from the `gdx-tests-lwjgl` project.
 
