@@ -4,6 +4,7 @@ Sound effects can be stored in various formats. Libgdx supports MP3, OGG and WAV
 RoboVM (iOS) currently does not support OGG files.
 
 ***note:*** On Android, a Sound instance can not be over 1mb in size. If you have a bigger file, use  [[Music|Streaming music]]
+
 Sound effects are represented by the [Sound](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/audio/Sound.html) interface. Loading a sound effect works as follows:
 
 ```java
