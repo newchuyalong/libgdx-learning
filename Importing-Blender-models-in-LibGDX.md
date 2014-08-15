@@ -1,5 +1,10 @@
 Blender is an open source modeling application you can use to create 3D models, scenes and animations. You can get Blender at [blender.org](http://www.blender.org/). If you are new to creating 3D models using Blender, you can checkout the [blender tutorials](http://www.blender.org/education-help/tutorials/). This page provides practical tips on preparing and converting your Blender model for use in LibGDX.
 
+### Blender considerations
+As Blender is a multi-purpose tool, there are certain pitfalls you can stumble into that will make your model ill suited for game development. One such mistake is using the Rigify plugin to animate your model: it will add so much stuff that your model will grow in size to at the very least 3mb (per animated model), and possibly even more, so use that with great care.
+
+Another size consideration may be (depending on type and amount of animations) to set your key frame interpolation to linear (from the default bezier interpolation). This may drastically improve your g3db file size (but it may also change how your animations look, so check before you hit save). To change keyframe interpolation in blender, switch to the animation perspective, select all your keyframe nodes with the A key in the Dope Sheet, press T and select "Linear".
+
 ### Exporting to FBX and converting to G3DB
 The default (preferred) method is to export to FBX. Make sure you select all and only those options (e.g. nodes and animations) you want to actually include. Don't include your camera, lights, etc. Next download the latest version of [fbx-conv](https://github.com/libgdx/fbx-conv) and convert the FBX file to G3DB. You'll need to flip texture coordinates by using the `-f` commandline option.
 `fbx-conv -f file.fbx`
