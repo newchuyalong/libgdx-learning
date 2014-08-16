@@ -14,7 +14,7 @@ The version you see may be higher than 1.0.0 already. Once you located that stri
 * **Eclipse**: Select all your projects in the package explorer, right click, then click `Gradle -> Refresh All`. This will download the libGDX version you specified in build.gradle and wire up the JAR files with your projects correctly.
 * **Intellij IDEA**: will usually detect that your build.gradle has been updated and show a refresh button. Just click it and IDEA will update libGDX to the version you specified in build.gradle.
 * **Netbeans**: TBD, probably similar to IDEA
-* **Command Line**: invoking any of the tasks will usually check for changes in dependency versions and redownlaod anything that changed.
+* **Command Line**: invoking any of the tasks will usually check for changes in dependency versions and redownload anything that changed.
 
 And that's it! No need to manually juggle JAR files, .so files or anything else. Just change a string in a file and update via your IDE or the command line.
 
