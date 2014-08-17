@@ -329,15 +329,15 @@ compile "com.badlogicgames.box2dlights:box2dlights:1.2:sources"
 
 **Core Dependency:**
 ```groovy
-compile "com.badlogicgames.gdx:gdx-ai:1.2.0"
+compile "com.badlogicgames.gdx:gdx-ai:$gdxVersion"
 ```
 **Android Dependency:**
 ```groovy
-compile "com.badlogicgames.gdx:gdx-ai:1.2.0"
+compile "com.badlogicgames.gdx:gdx-ai:$gdxVersion"
 ```
 **HTML Dependency:**
 ```groovy
-compile "com.badlogicgames.gdx:gdx-ai:1.2.0:sources"
+compile "com.badlogicgames.gdx:gdx-ai:$gdxVersion:sources"
 ```
 
 ***
