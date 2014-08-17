@@ -339,6 +339,7 @@ compile "com.badlogicgames.gdx:gdx-ai:$gdxVersion"
 ```groovy
 compile "com.badlogicgames.gdx:gdx-ai:$gdxVersion:sources"
 ```
+and in `./html/src/yourgamedomain/GdxDefinition*.gwt.xml` add `<inherits name="com.badlogic.gdx.ai"/>`
 
 ***
 
