@@ -38,7 +38,7 @@ It is highly recommended to read or least skim the [[scene2d documentation|scene
    * [Window](#window)
    * [Touchpad](#touchpad)
    * [Dialog](#dialog)
- * [Widgets without scene2d.ui](#widgets_without_scene2d.ui)
+ * [Widgets without scene2d.ui](#widgets_without_scene2dui)
  * [Examples](#examples)
 
 # <a id="Widget_and_WidgetGroup"></a>Widget and WidgetGroup #
