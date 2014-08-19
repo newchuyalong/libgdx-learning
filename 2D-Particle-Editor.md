@@ -19,6 +19,9 @@ java -cp gdx.jar:gdx-natives.jar:gdx-backend-lwjgl.jar:gdx-backend-lwjgl-natives
 ```
 
 ### ...in IntelliJ ###
+
+Ensure that you have gdx-tools listed as a dependency in the desktop section of your libgdx project. Open the Navigate menu (Cmd-N on OSX) and type ParticleEditor, and IntelliJ should find the ParticleEditor.java file. It has a .main() method that is used to launch the file.
+
 Right-click and select "Run ParticleEditor.main()" and IntelliJ will open the run configuration dialog box. In the "Use classpath of module:" dropdown, select your desktop project, and then click Run. This will create a run configuration that you can use later to launch the particle editor easily.
 
 Here is a download link for the JWS, though this is not as up to date as running from source or from gdx-tools.jar:
