@@ -1,26 +1,29 @@
 The libgdx 2D Particle Editor is a powerful tool for making particle effects. See the video and documentation below. The Java API works (the editor is built using it) but could use some clean up and definitely some documentation. There is a [runnable example](https://github.com/libgdx/libgdx/blob/master/tests/gdx-tests/src/com/badlogic/gdx/tests/ParticleEmitterTest.java), though unfortunately it isn't the simplest or typical usage. Improvements to particles is planned, but will be some time until we can get to it.
 
+[[images/particle-editor.png]]
+
 ## Running the 2D Particle Editor ##
 
 To run the editor, you can check out libgdx and run it [[from source | Running Demos & Tests]]. The editor is in the gdx-tools project. Alternatively, you can download the [nightly build](http://libgdx.badlogicgames.com/nightlies/) and run the particle editor from the gdx-tools JAR:
 
-Windows:
+### ...on Windows ###
 
 ```
 java -cp gdx.jar;gdx-natives.jar;gdx-backend-lwjgl.jar;gdx-backend-lwjgl-natives.jar;extensions\gdx-tools\gdx-tools.jar com.badlogic.gdx.tools.particleeditor.ParticleEditor
 ```
 
-Linux or Mac:
+### ...on Linux or Mac ###
 
 ```
 java -cp gdx.jar:gdx-natives.jar:gdx-backend-lwjgl.jar:gdx-backend-lwjgl-natives.jar:extensions/gdx-tools/gdx-tools.jar com.badlogic.gdx.tools.particleeditor.ParticleEditor
 ```
 
-Click this image for the JWS, though this is not as up to date as running from source or from gdx-tools.jar:
+### ...in IntelliJ ###
+Right-click and select "Run ParticleEditor.main()" and IntelliJ will open the run configuration dialog box. In the "Use classpath of module:" dropdown, select your desktop project, and then click Run. This will create a run configuration that you can use later to launch the particle editor easily.
 
-[[images/particle-editor.png]]
+Here is a download link for the JWS, though this is not as up to date as running from source or from gdx-tools.jar:
 
-[download](http://wiki.libgdx.googlecode.com/git/jws/particle-editor.jnlp)
+[Download](http://wiki.libgdx.googlecode.com/git/jws/particle-editor.jnlp)
 
 ## Using the Particle Editor ##
 
