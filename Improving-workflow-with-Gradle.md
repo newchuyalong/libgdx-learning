@@ -23,8 +23,8 @@ You can try a few things to get running more efficiently:
 ### Gradle daemon
 The Gradle daemon aims to lower execution time and startup time of tasks especially where tasks are executed frequently. 
 
-How to run with the Gradle daemon
-You can run tasks adding the flag `--daemon`
+You can run tasks by adding the flag `--daemon`
+
 You can also add the option to run on all tasks by editing a `gradle.properties` file that resides in the root directory of your project.
 Add the line; `org.gradle.daemon=true`
 
