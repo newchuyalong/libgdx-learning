@@ -89,11 +89,13 @@ There are two other classes that are heavily used by the steering system:
 - [SteeringAcceleration](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/ai/steer/behaviors/SteeringAcceleration.html) is a movement requested by the steering system. It is made up of two components, linear and angular acceleration.
 - [SteeringBehavior](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/ai/steer/behaviors/SteeringBehavior.html) calculates the linear and/or angular accelerations to be applied to its owner.
 
-In short, each SteeringBehavior takes as input a Steerable and some behavior-specific parameters. When the [calculateSteering](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/ai/steer/behaviors/SteeringBehavior.html#calculateSteering) method
-of the SteeringBehavior is invoked a SteeringAcceleration is returned. It is important to understand that the acceleration just produced is simply a movement request.
+In short, each SteeringBehavior takes as input a Steerable and some behavior-specific parameters. When the [steer](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/ai/steer/behaviors/SteeringBehavior.html#steer) method
+of the SteeringBehavior is invoked a SteeringAcceleration is returned. Notice that only enabled behaviors can return a non-zero acceleration.
+
+It is important to understand that the acceleration just produced is simply a movement request.
 To make the character move you have to apply the accelerations either by using the methods provided by the underlying physics engine or by executing the correct formulas if you're using scene2d or any other non-physics engine.
 
-For example, assuming you aren't using any physics engine, you can code a SteeringAgent implementing Steerable along those lines:
+For example, assuming you aren't using any particular engine, you can code a SteeringAgent implementing Steerable along those lines:
 ````java
 // A simple steering agent for 2D.
 // Of course, for 3D (well, actually for 2.5D) you have to replace all occurrences of Vector2 with  Vector3.
@@ -129,9 +131,9 @@ public class SteeringAgent implements Steerable<Vector2> {
 	}
 
 	public void update (float delta) {
-		if (steeringBehavior != null && steeringBehavior.isEnabled()) {
+		if (steeringBehavior != null) {
 			// Calculate steering acceleration
-			steeringBehavior.calculateSteering(steeringOutput);
+			steeringBehavior.steer(steeringOutput);
 
 			// Apply steering acceleration to move this agent
 			applySteering(steeringOutput, delta);
@@ -256,6 +258,8 @@ current orientation. We have no preference in this situation for any orientation
 designed to produce a steering acceleration that will give the impression of a random walk through
 the agent's environment. You'll often find it a useful ingredient when creating an agent's behavior.
 
+![wander](https://cloud.githubusercontent.com/assets/2366334/3997408/1e029448-293f-11e4-8ab7-f35f2d3ce002.png)
+
 There is a circle in front of the owner (where front is determined by its current facing direction) on which the target is
 constrained. Each time the behavior is run, we move the target around the circle a little, by a random amount. Now there are 2
 ways to implement wander behavior:
@@ -313,6 +317,9 @@ be what you want if, for example, the path represents a patrol route.
 [Interpose](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/ai/steer/behaviors/Interpose.html) behavior
 produces a steering force that moves the owner to a point along the imaginary line connecting two other agents. A bodyguard
 taking a bullet for his employer or a soccer player intercepting a pass are examples of this type of behavior.
+
+![interpose](https://cloud.githubusercontent.com/assets/2366334/3997417/2f2c26ee-293f-11e4-84b8-8f1376d88085.png)
+
 Like Pursue, the owner must estimate where the two agents are going to be located at a time T in the
 future. It can then steer toward that position using the [Arrive](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/ai/steer/behaviors/Arrive.html)
 behavior. But how do we know what the best value of T is to use? The answer is, we don't, so we make a calculated guess instead.
@@ -337,6 +344,9 @@ behaviors all working together: separation, alignment, and cohesion.
 To determine the steering acceleration for a group behavior, a character will consider all (or some) other characters
 within its immediate area, also known as [Proximity](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/ai/steer/behaviors/Proximity.html).
 
+![proximity](https://cloud.githubusercontent.com/assets/2366334/3997424/46684950-293f-11e4-92b7-c94f6cc10dd8.png)
+
+
 ### Separation ###
 
 [Separation](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/ai/steer/behaviors/Separation.html)
@@ -344,6 +354,9 @@ is a group behavior producing a steering acceleration repelling from the other n
 immediate area defined by the given [Proximity](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/ai/steer/Proximity.html).
 The acceleration is calculated by iterating through all the neighbors, examining each one. The vector to each agent under
 consideration is normalized, divided by the distance to the neighbor, and accumulated.
+
+![separation](https://cloud.githubusercontent.com/assets/2366334/3997438/5f2a0adc-293f-11e4-833b-a9ad4439ad91.png)
+
 
 ### Alignment ###
 
@@ -353,6 +366,8 @@ immediate area defined by the given [Proximity](http://libgdx.badlogicgames.com/
 The acceleration is calculated by first iterating through all the neighbors and averaging their normalized linear
 velocity vectors. This value is the desired direction, so we just subtract the owner's normalized linear velocity
 to get the steering output.
+
+![alignment](https://cloud.githubusercontent.com/assets/2366334/3997427/4fd47edc-293f-11e4-8df1-8f60d2311ce1.png)
 
 Cars moving along roads demonstrate Alignment type behavior. They also demonstrate Separation as they try to
 keep a minimum distance from each other.
@@ -367,7 +382,9 @@ This gives us the center of mass of the neighbors, the place the agents wants to
 
 Also, the implementation always returns a normalized linear acceleration (or zero). This is not a problem since usually
 you blend it with other group behaviors like Separation and Alignment so you can give it a proper weight, see
-WeightedBlender.
+BlendedSteering.
+
+![cohesion](https://cloud.githubusercontent.com/assets/2366334/3997430/57ea14ce-293f-11e4-82fe-e6170c66b6f2.png)
 
 A sheep running after its flock is demonstrating cohesive behavior. Use this behavior to keep a group of agents together.
 
@@ -377,6 +394,8 @@ A sheep running after its flock is demonstrating cohesive behavior. Use this beh
 attempts to position a owner so that an obstacle is always between itself and the agent (the hunter) it's trying
 to hide from. First the distance to each of these obstacles is determined. Then the owner uses the arrive behavior to steer
 toward the closest one. If no appropriate obstacles can be found, no steering is returned.
+
+![hide](https://cloud.githubusercontent.com/assets/2366334/3997420/36a31180-293f-11e4-9816-31cb27a6b629.png)
 
 You can use this behavior not only for situations where you require a non-player character (NPC) to hide from the player, like
 find cover when fired at, but also in situations where you would like an NPC to sneak up on a player. For example, you can
@@ -423,6 +442,8 @@ the moving agent (the owner) casts one or more rays out in the direction of its 
 then a target is created that will avoid the collision, and the owner does a basic seek on this target. Typically, the rays
 extend a short distance ahead of the character (usually a distance corresponding to a few seconds of movement).
 
+![raycastobstacleavoidance](https://cloud.githubusercontent.com/assets/2366334/3997628/fc884af4-2940-11e4-9b7a-58a023c511cc.png)
+
 This behavior is especially suitable for large-scale obstacles like walls.
 
 You should use the [RayConfiguration](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/ai/steer/behaviors/RaycastObstacleAvoidance#RayConfiguration.html)
@@ -437,11 +458,14 @@ areas where corners are highly obtuse but is very susceptible to the corner trap
 
 #### The corner trap ####
 All the basic configurations for multi-ray obstacle avoidance can suffer from a crippling problem
-with acute angled corners (any convex corner, in fact, but it is more prevalent with acute angles). Consider a character with
-two parallel rays that is going towards a corner. As soon as its left ray is colliding with the wall near the corner, the
-steering behavior will turn it to the left to avoid the collision. Immediately, the right ray will then be colliding the other
-side of the corner, and the steering behavior will turn the character to the right. The character will repeatedly collide both
-sides of the corner in rapid succession. It will appear to home into the corner directly, until it slams into the wall. It will
+with acute angled corners (any convex corner, in fact, but it is more prevalent with acute angles). 
+
+![cornertrap](https://cloud.githubusercontent.com/assets/2366334/3997720/bda7848e-2941-11e4-92aa-7e5f230dcfcb.png)
+
+Consider the above character with two rays that is going towards a corner. As soon as its left ray is colliding with the wall near
+the corner, the steering behavior will turn it to the left to avoid the collision. Immediately, the right ray will then be colliding
+the other side of the corner, and the steering behavior will turn the character to the right. The character will repeatedly collide
+both sides of the corner in rapid succession. It will appear to home into the corner directly, until it slams into the wall. It will
 be unable to free itself from the trap.
 
 The fan structure, with a wide enough fan angle, alleviates this problem. Often, there is a trade-off, however, between
@@ -467,14 +491,14 @@ difficult to get when working with other behaviors. In addition, some complex st
 and formation motion (not implemented yet), can only be accomplished when more than one steering behavior is active
 at once. This section explains you how to accomplish this combination.
 
-### Weighted Blender ###
+### Blended Steering ###
 
-[WeightedBlender](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/ai/steer/behaviors/WeightedBlender.html)
+[BlendedSteering](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/ai/steer/behaviors/BlendedSteering.html)
 is a combination behavior that simply sums up all the active behaviors, applies their weights, and truncates the result before
 returning. There are no constraints on the blending weights; they don't have to sum to one, for example, and rarely do. Don't
-think of it as a weighted mean.
+think of BlendedSteering as a weighted mean, because it's not.
 
-With WeightedBlender you can combine multiple behaviors to get a more complex behavior. It can work fine, but the
+With BlendedSteering you can combine multiple behaviors to get a more complex behavior. It can work fine, but the
 trade-off is that it comes with a few problems:
 - Since every active behavior is calculated every time step, it can be a costly method to process.
 - Behavior weights can be difficult to tweak. There have been research projects that have tried to evolve the steering
@@ -495,7 +519,7 @@ Evade, which always produce an acceleration, RaycastObstacleAvoidance, Collision
 suggest no acceleration in many cases. But when these behaviors do suggest an acceleration, it is unwise to ignore it.
 An obstacle avoidance behavior, for example, should be honored immediately to avoid the crash.
 
-Typically the behaviors of a PrioritySteering are arranged in groups with regular blending weights (see WeightedBlender).
+Typically the behaviors of a PrioritySteering are arranged in groups with regular blending weights, see BlendedSteering.
 These groups are then placed in priority order to let the steering system consider each group in turn.
 It blends the steering behaviors in the current group together. If the total result is very small (less than some small,
 but adjustable, parameter), then it is ignored and the next group is considered. It is best not to check against zero directly,
