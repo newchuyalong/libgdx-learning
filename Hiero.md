@@ -6,7 +6,7 @@ If you are using Gradle, you can easily run Hiero from your IDE.
 
 Example for IntelliJ IDEA: Go to the Hiero class, right click and select `Run Hiero.main()`. On the `Run configurations` popup that will appear, select the `Desktop` module, and click `Run`.
 
-Hiero can also be run from source or from the [nightly build](http://libgdx.badlogicgames.com/nightlies/):
+Hiero can also be run from source or from the [nightly build](http://libgdx.badlogicgames.com/nightlies/). Therefore navigate into the folder where libGDX, especially the gdx.jar is:
 
 On Windows
 ```
