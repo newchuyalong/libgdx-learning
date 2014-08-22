@@ -63,7 +63,6 @@ public class OrthographicCameraController implements ApplicationListener {
 				(int) glViewport.width, (int) glViewport.height);
 		
 		cam.update();
-		cam.apply(gl);
 
 		// Texturing --------------------- /
 		gl.glActiveTexture(GL10.GL_TEXTURE0);
