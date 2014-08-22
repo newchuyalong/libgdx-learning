@@ -300,4 +300,3 @@ Most of the time, one should not need to access the internals of a camera as the
 | `translate(float x, float y, float z)` | Moves the camera by the given amount on each axis. - Note that z is ignored for the OrthographicCamera |
 | `rotate(float angle, float axisX, float axisY, float axisZ)` | Rotates the direction and up vector of this camera by the given angle around the given axis. The direction and up vector will not be orthogonalized. The angle is persisted so the camera will be rotated by `angle` relative to its previous rotation.|
 | `update()` |  Recalculates the projection and view matrix of the camera and the frustum planes |
-| `apply(GL10 gl)` | Sets the current projection and model-view matrix of this camera. It needs to be called after `update()` and it takes the OpenGL (1.0 or 1.1) instance as a parameter. It works only with version 1.x. Currently there is no support for version 2.0. |
