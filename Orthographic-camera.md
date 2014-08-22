@@ -15,7 +15,7 @@ Using the camera is the easy way to move around a game world without having to m
 
 The following little app demonstrates the use of a simple `OrthographicCamera` to move around a flat world. To represent the world (map), a simple `Mesh` representing a square plane was used with a map texture on top of it. The map is a huge square (1024x1024 pixels) and the viewport is 480x320 pixels.
 
-The viewport is the rectangular area visible at any given time from the whole world. If we zoom in, the smaller the rectangular area gets. Because the screen size does not change, the viewport is scaled up to the actual resolution. (This manual approach is a bit outdated. One would usually use a [`Viewport`](https://github.com/libgdx/libgdx/wiki/Viewports) nowadays.
+The viewport is the rectangular area visible at any given time from the whole world. If we zoom in, the smaller the rectangular area gets. Because the screen size does not change, the viewport is scaled up to the actual resolution. (This manual approach is a bit outdated. One would usually use a [`Viewport`](https://github.com/libgdx/libgdx/wiki/Viewports) nowadays.)
 
 ```java
 
