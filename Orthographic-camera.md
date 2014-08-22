@@ -210,14 +210,13 @@ public void render() {
 		(int) glViewport.width, (int) glViewport.height);	// #4
 		
 	cam.update();			// #5
-	cam.apply(gl);			// #6
 
 	// Texturing --------------------- /
-	gl.glActiveTexture(GL10.GL_TEXTURE0); 	// #7
-	gl.glEnable(GL10.GL_TEXTURE_2D);	// #8
-	texture.bind();				// #9
+	gl.glActiveTexture(GL10.GL_TEXTURE0); 	// #6
+	gl.glEnable(GL10.GL_TEXTURE_2D);	// #7
+	texture.bind();				// #8
 		
-	mesh.render(GL10.GL_TRIANGLES);		// #10
+	mesh.render(GL10.GL_TRIANGLES);		// #9
 
 }
 ```
@@ -232,11 +231,9 @@ public void render() {
 
 *#5* - *Updates the camera* - Very important step. As the projection matrix was modified in the `handleInput` method, this simply tells the camera to recalculate the projection matrix and the frustum for this camera. This method needs to be called every time the camera has been changed.
 
-*#6* - *Sets the current projection and model-view matrix of the camera.* It is called *after* update.
+*#6 - #8* - Activates the texture and binds it to the context.
 
-*#7 - #9* - Activates the texture and binds it to the context.
-
-*#10* - Renders the mesh, which is the map.
+*#9* - Renders the mesh, which is the map.
 
 ```java
 	private void handleInput() {
