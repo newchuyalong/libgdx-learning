@@ -6,7 +6,7 @@ You can find an in depth guide [HERE.](http://www.toxsickproductions.com/libgdx/
 
   * [Java Development Kit 7+ (JDK) (6 will not work!)](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
   * [Eclipse](http://www.eclipse.org/downloads/), the "Eclipse IDE for Java Developers" is usually sufficient.
-  * [Android SDK](http://developer.android.com/sdk/installing.html), you only need the SDK, not the ADT bundle, which includes Eclipse. Install all platforms via the SDK Manager!
+  * [Android SDK](http://developer.android.com/sdk/installing.html), you only need the SDK, not the ADT bundle, which includes Eclipse. Install the latest stable platforms via the SDK Manager.
   * [Android Development Tools for Eclipse](http://developer.android.com/tools/sdk/eclipse-adt.html), aka ADT Plugin. Use this update site: https://dl-ssl.google.com/android/eclipse/
   * [Eclipse Integration Gradle](https://github.com/spring-projects/eclipse-integration-gradle/), use this update site: http://dist.springsource.com/release/TOOLS/gradle
 
@@ -23,7 +23,7 @@ To develop your application via Intellij IDEA, you need to install the following
 
   * [Java Development Kit 7+ (JDK) (6 will not work!)](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
   * [Intellij IDEA 13.0.2+](http://www.jetbrains.com/idea/download/), the Community edition is sufficient
-  * [Android SDK](http://developer.android.com/sdk/installing.html), you only need the SDK, not the ADT bundle, which includes Eclipse. Install all platforms via the SDK Manager! You also have to create an environment variable called ANDROID_HOME, which points at your Android SDK installation directory!
+  * [Android SDK](http://developer.android.com/sdk/installing.html), you only need the SDK, not the ADT bundle, which includes Eclipse. Install the latest stable platform via the SDK Manager. You also have to create an environment variable called ANDROID_HOME, which points at your Android SDK installation directory!
 
 To additionally target iOS
 
@@ -37,7 +37,7 @@ To develop your application via NetBeans, you need to install the following piec
 
   * [Java Development Kit 7+ (JDK) (6 will not work!)](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
   * [NetBeans 7.3+](https://netbeans.org/downloads/), the "Java SE" is sufficient
-  * [Android SDK](http://developer.android.com/sdk/installing.html), you only need the SDK, not the ADT bundle, which includes Eclipse. Install all platforms via the SDK Manager! You also have to create an environment variable called ANDROID_HOME, which points at your Android SDK installation directory!
+  * [Android SDK](http://developer.android.com/sdk/installing.html), you only need the SDK, not the ADT bundle, which includes Eclipse. Install the latest stable platform via the SDK Manager. You also have to create an environment variable called ANDROID_HOME, which points at your Android SDK installation directory!
   * [NBAndroid](http://www.nbandroid.org), use this update center: http://nbandroid.org/updates/updates.xml
   * [Gradle Support for NetBeans](https://github.com/kelemen/netbeans-gradle-project), use the NetBeans IDE Update Center.
 
