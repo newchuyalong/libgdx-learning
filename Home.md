@@ -128,11 +128,11 @@
       * [[Physics]]
             * [[Box2D]]    
             * [[Bullet Physics]]
-              * [Setup](../Bullet Wrapper: Setup)
-              * [Using the wrapper](../Bullet Wrapper: Using the wrapper)
-              * [Using models](../Bullet Wrapper: Using models)
-              * [Contact callbacks](../Bullet Wrapper: Contact callbacks)
-              * [Custom classes](../Bullet Wrapper: Custom classes)
+              * [Setup](./Bullet Wrapper: Setup)
+              * [Using the wrapper](./Bullet Wrapper: Using the wrapper)
+              * [Using models](./Bullet Wrapper: Using models)
+              * [Contact callbacks](./Bullet Wrapper: Contact callbacks)
+              * [Custom classes](./Bullet Wrapper: Custom classes)
     * [[Using libgdx with other JVM languages]]
       * [[Using libgdx with Clojure]]
       * [[Using libgdx with Python]]
