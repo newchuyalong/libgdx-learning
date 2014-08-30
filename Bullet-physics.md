@@ -10,7 +10,7 @@ These tutorials provide an introduction in using the Bullet wrapper:
 
 # <a id="Using_Bullet_in_your_project"></a>Using Bullet in your project #
 * [Setup](../Bullet Wrapper: Setup)
-* [Using the wrapper](../Bullet Wrapper: Using the wrapper)
-* [Using models](../Bullet Wrapper: Using models)
-* [Contact callbacks](../Bullet Wrapper: Contact callbacks)
-* [Custom classes](../Bullet Wrapper: Custom classes)
+* [Using the wrapper](./Bullet Wrapper: Using the wrapper)
+* [Using models](./Bullet Wrapper: Using models)
+* [Contact callbacks](./Bullet Wrapper: Contact callbacks)
+* [Custom classes](./Bullet Wrapper: Custom classes)
