@@ -19,7 +19,7 @@ uniform mat4 u_projectionViewMatrix;
 
 void main()
 {
-    gl_Position = a_position * u_projectionViewMatrix;
+    gl_Position =  u_projectionViewMatrix * a_position;
 } 
 ```
 
