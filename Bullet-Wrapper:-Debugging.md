@@ -60,3 +60,9 @@ Usually to load the natives to run bullet it is necessary to call `Bullet.init()
 		}
 		Gdx.app.log("Bullet", "Version = " + LinearMath.btGetVersion());
 	}
+
+### Attaching the debugger ###
+Now it's time to start your app and attach the C++ debugger. First, we need to start the Java app. It is a nice way to set a breakpoint at the startup of your app and then run it in debug mode. That way we'll have a lot of time to attach the C++ debugger. To do that, we switch to Visual Studio and Select `Debug -> Attach to Process...`. Then select the correct `javaw.exe` process of your app and attach the debugger.
+
+### Debugging ###
+For testing if this setup works one might add a breakpoint to `btDiscreteDynamicsWorld.stepSimulation`. The file containing this code is in `gdxBullet -> Source Files -> BulletDynamics -> Dynamics -> btDiscreteDynamicsWorld.cpp`. Search for `int btDiscreteDynamicsWorld::stepSimulation( btScalar timeStep,int maxSubSteps, btScalar fixedTimeStep)` and add a breakpoint via a doubleclick left of any code within this method. In case you stopped in a breakpoint on the Java side of the application, it is now time to remove that and resume the process. As soon as your Java code will call `btDiscreteDynamicsWorld.stepSimulation` you should now be able to switch to Visual Studio and see that the debugger kicked in and you are able to step through the code.
