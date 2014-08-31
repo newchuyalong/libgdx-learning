@@ -1,3 +1,5 @@
+> Make sure to use the latest nightly (not stable) or to work directly with the latest libGDX code (also make sure to manually update natives in the latter case). The issue you're having might already be solved.
+
 If you encounter a problem when using the Bullet Wrapper, it can be sometimes difficult to find the cause of the problem. For example, you might see an error like:
 ```
 # A fatal error has been detected by the Java Runtime Environment:
@@ -25,7 +27,7 @@ If you look at the log file it generated, then you will see that it contains a b
 
 It is possible to compile the Bullet Wrapper with debug information and even trace into the C++ wrapper and bullet code. For most problems, however, this is not necessary. The cause of most common problems can be found by inspecting the java code.
 
-> The most common problem with the Bullet wrapper is caused by not properly maintaining references when you actually still need it. This will cause the garbage collector to destroy the native (C++) object and you application to crash. Because you can't control the garbage collector, this problem might appear more frequently on different devices. See the [creating and destroying objects](https://github.com/libgdx/libgdx/wiki/Bullet%20Wrapper:%20Using%20the%20wrapper#creating-and-destroying-objects) section for more information.
+> The most common problem with the Bullet wrapper is caused by not properly maintaining references when you actually still need it. This will cause the garbage collector to destroy the native (C++) object and your application to crash. Because you can't control the garbage collector, this problem might appear more frequently on different devices. See the [creating and destroying objects](https://github.com/libgdx/libgdx/wiki/Bullet%20Wrapper:%20Using%20the%20wrapper#creating-and-destroying-objects) section for more information.
 
 Debugging on Windows
 -----
@@ -49,13 +51,13 @@ Now right-click the `gdxBullet` project in the solution exporer and hit "Build".
 ![Build gdxBullet](http://i.imgur.com/jdxPRUJ.png)
 
 ### Loading the correct DLL ###
-Usually to load the natives to run bullet it is necessary to call `Bullet.init()`, which will do exactly that. Since we do not want to load the default natives without debug information included, we have to manually load our newly created `gdxBullet.dll` ourselves. You can use the following code snipped to do so. Just replace the `customDesktopLib` string with the actual path. The static block will make sure that it is loaded exactly once, when the class it is in is loaded.
+Usually to load the natives to run bullet it is necessary to call `Bullet.init()`, which will do exactly that. Since we do not want to load the default natives without debug information included, we have to manually load our newly created `gdxBullet.dll` ourselves. You can use the following code snipped to do so. Just replace the `customDesktopLib` string with the actual path. Then call the `initBullet()` method where you'd normally call the `Bullet.init()` method (e.g. in the `create` method).
 
 	// Set this to the path of the lib to use it on desktop instead of the default lib.
 	private final static String customDesktopLib = "C:\\......\\libgdx\\extensions\\gdx-bullet\\jni\\vs\\gdxBullet\\x64\\Debug\\gdxBullet.dll";
 	private final static boolean debugBullet = true;
 
-	static {
+	static void initBullet() {
 		// Need to initialize bullet before using it.
 		if (Gdx.app.getType() == ApplicationType.Desktop && debugBullet) {
 			System.load(customDesktopLib);
