@@ -39,3 +39,7 @@ Furthermore we need an IDE for the debugging as well as the compiler to build th
 
 ### Building the debug .dll ###
 This is really easy as you will find a Visual Studio Project (.sln "Solution") in the sources which should be able to work out of the box. You can find it in the libgdx repository at `libgdx\extensions\gdx-bullet\jni\vs\gdxBullet\gdxBullet.sln`.
+
+After opening the solution with Visual Studio there should 6 projects visible. The most important one is `gdxBullet`. In the toolbar at the top you need to select the correct build configurations. Make sure to select `Debug` and either `Win32` or `x64`. The platform does not depend on your Windows version, but on the version of the JVM which you are going to use to run your application. On a 64bit Windows system it is still possible (and quite common) to run a 32bit Java version.
+
+Now right-click the `gdxBullet` project in the solution exporer and hit "Build". This will build the `gdxBullet.dll`, which might take a few minutes.
