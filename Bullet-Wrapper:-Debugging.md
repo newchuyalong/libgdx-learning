@@ -43,3 +43,20 @@ This is really easy as you will find a Visual Studio Project (.sln "Solution") i
 After opening the solution with Visual Studio there should 6 projects visible. The most important one is `gdxBullet`. In the toolbar at the top you need to select the correct build configurations. Make sure to select `Debug` and either `Win32` or `x64`. The platform does not depend on your Windows version, but on the version of the JVM which you are going to use to run your application. On a 64bit Windows system it is still possible (and quite common) to run a 32bit Java version.
 
 Now right-click the `gdxBullet` project in the solution exporer and hit "Build". This will build the `gdxBullet.dll`, which might take a few minutes.
+
+### Loading the correct DLL ###
+Usually to load the natives to run bullet it is necessary to call `Bullet.init()`, which will do exactly that. Since we do not want to load the default natives without debug information included, we have to manually load our newly created `gdxBullet.dll` ourselves. You can use the following code snipped to do so. Just replace the `customDesktopLib` string with the actual path. The static block will make sure that it is loaded exactly once, when the class it is in is loaded.
+
+	// Set this to the path of the lib to use it on desktop instead of the default lib.
+	private final static String customDesktopLib = "C:\\......\\libgdx\\extensions\\gdx-bullet\\jni\\vs\\gdxBullet\\x64\\Debug\\gdxBullet.dll";
+	private final static boolean debugBullet = true;
+
+	static {
+		// Need to initialize bullet before using it.
+		if (Gdx.app.getType() == ApplicationType.Desktop && debugBullet) {
+			System.load(customDesktopLib);
+		} else {
+			Bullet.init();
+		}
+		Gdx.app.log("Bullet", "Version = " + LinearMath.btGetVersion());
+	}
