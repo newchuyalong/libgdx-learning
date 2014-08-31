@@ -133,6 +133,7 @@
               * [Using models](./Bullet Wrapper: Using models)
               * [Contact callbacks](./Bullet Wrapper: Contact callbacks)
               * [Custom classes](./Bullet Wrapper: Custom classes)
+              * [Debugging](./Bullet Wrapper: Debugging)
     * [[Using libgdx with other JVM languages]]
       * [[Using libgdx with Clojure]]
       * [[Using libgdx with Python]]
