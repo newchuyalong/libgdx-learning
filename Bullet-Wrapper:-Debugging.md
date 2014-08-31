@@ -40,9 +40,13 @@ Furthermore we need an IDE for the debugging as well as the compiler to build th
 ### Building the debug .dll ###
 This is really easy as you will find a Visual Studio Project (.sln "Solution") in the sources which should be able to work out of the box. You can find it in the libgdx repository at `libgdx\extensions\gdx-bullet\jni\vs\gdxBullet\gdxBullet.sln`.
 
+![Solution file](http://i.imgur.com/Iqyi9kf.png)
+
 After opening the solution with Visual Studio there should 6 projects visible. The most important one is `gdxBullet`. In the toolbar at the top you need to select the correct build configurations. Make sure to select `Debug` and either `Win32` or `x64`. The platform does not depend on your Windows version, but on the version of the JVM which you are going to use to run your application. On a 64bit Windows system it is still possible (and quite common) to run a 32bit Java version.
 
 Now right-click the `gdxBullet` project in the solution exporer and hit "Build". This will build the `gdxBullet.dll`, which might take a few minutes.
+
+![Build gdxBullet](http://i.imgur.com/jdxPRUJ.png)
 
 ### Loading the correct DLL ###
 Usually to load the natives to run bullet it is necessary to call `Bullet.init()`, which will do exactly that. Since we do not want to load the default natives without debug information included, we have to manually load our newly created `gdxBullet.dll` ourselves. You can use the following code snipped to do so. Just replace the `customDesktopLib` string with the actual path. The static block will make sure that it is loaded exactly once, when the class it is in is loaded.
@@ -62,7 +66,19 @@ Usually to load the natives to run bullet it is necessary to call `Bullet.init()
 	}
 
 ### Attaching the debugger ###
-Now it's time to start your app and attach the C++ debugger. First, we need to start the Java app. It is a nice way to set a breakpoint at the startup of your app and then run it in debug mode. That way we'll have a lot of time to attach the C++ debugger. To do that, we switch to Visual Studio and Select `Debug -> Attach to Process...`. Then select the correct `javaw.exe` process of your app and attach the debugger.
+Now it's time to start your app and attach the C++ debugger. First, we need to start the Java app. It is a nice way to set a breakpoint at the startup of your app and then run it in debug mode. That way we'll have a lot of time to attach the C++ debugger. To do that, we switch to Visual Studio and Select `Debug -> Attach to Process...`.
+
+![Attach To Process](http://i.imgur.com/MrB0AYF.png)
+
+Then select the correct `javaw.exe` process of your app in the list of available processes and attach the debugger with the "Attach" button.
 
 ### Debugging ###
-For testing if this setup works one might add a breakpoint to `btDiscreteDynamicsWorld.stepSimulation`. The file containing this code is in `gdxBullet -> Source Files -> BulletDynamics -> Dynamics -> btDiscreteDynamicsWorld.cpp`. Search for `int btDiscreteDynamicsWorld::stepSimulation( btScalar timeStep,int maxSubSteps, btScalar fixedTimeStep)` and add a breakpoint via a doubleclick left of any code within this method. In case you stopped in a breakpoint on the Java side of the application, it is now time to remove that and resume the process. As soon as your Java code will call `btDiscreteDynamicsWorld.stepSimulation` you should now be able to switch to Visual Studio and see that the debugger kicked in and you are able to step through the code.
+For testing if this setup works one might add a breakpoint to `btDiscreteDynamicsWorld.stepSimulation`. The file containing this code is in `gdxBullet -> Source Files -> BulletDynamics -> Dynamics -> btDiscreteDynamicsWorld.cpp`.
+
+![btDiscreteDynamicsWorld](http://i.imgur.com/Z5sAvDh.png)
+
+Search for `int btDiscreteDynamicsWorld::stepSimulation( btScalar timeStep,int maxSubSteps, btScalar fixedTimeStep)` and add a breakpoint via a doubleclick left of any code within this method.
+
+![Breakpoint](http://i.imgur.com/uzMOe53.png)
+
+In case you stopped in a breakpoint on the Java side of the application, it is now time to remove that and resume the process. As soon as your Java code will call `btDiscreteDynamicsWorld.stepSimulation` you should now be able to switch to Visual Studio and see that the debugger kicked in and you are able to step through the code.
