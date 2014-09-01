@@ -13,276 +13,362 @@ The Camera class operates as a very simple real world camera. It is possible to
 
 Using the camera is the easy way to move around a game world without having to manually operate on the matrices. All the projection and view matrix operations are hidden in the implementation.
 
-The following little app demonstrates the use of a simple `OrthographicCamera` to move around a flat world. To represent the world (map), a simple `Mesh` representing a square plane was used with a map texture on top of it. The map is a huge square (1024x1024 pixels) and the viewport is 480x320 pixels.
+The following little app demonstrates the use of a simple `OrthographicCamera` to move around a flat world.  
 
-The viewport is the rectangular area visible at any given time from the whole world. If we zoom in, the smaller the rectangular area gets. Because the screen size does not change, the viewport is scaled up to the actual resolution. (This manual approach is a bit outdated. One would usually use a [`Viewport`](https://github.com/libgdx/libgdx/wiki/Viewports) nowadays.)
 
 ```java
+import com.badlogic.gdx.ApplicationListener;
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Input;
+import com.badlogic.gdx.backends.lwjgl.LwjglApplication;
+import com.badlogic.gdx.graphics.GL20;
+import com.badlogic.gdx.graphics.OrthographicCamera;
+import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.Sprite;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.math.MathUtils;
 
-public class OrthographicCameraController implements ApplicationListener {
+public class OrthographicCameraExample implements ApplicationListener {
 
-	static final int WIDTH 	= 480;
-	static final int HEIGHT = 320;
+	static final int WORLD_WIDTH = 100;
+	static final int WORLD_HEIGHT = 100;
 
-	private OrthographicCamera 	cam;
-	private Texture 			texture;
-	private Mesh				mesh;
-	private Rectangle 			glViewport;
-	private float				rotationSpeed;
+	private OrthographicCamera cam;
+	private SpriteBatch batch;
+
+	private Sprite mapSprite;
+	private float rotationSpeed;
 
 	@Override
 	public void create() {
 		rotationSpeed = 0.5f;
-		mesh = new Mesh(true, 4, 6,
-				new VertexAttribute(VertexAttributes.Usage.Position, 3,"attr_Position"),
-				new VertexAttribute(Usage.TextureCoordinates, 2, "attr_texCoords"));
-		texture = new Texture(Gdx.files.internal("data/sc_map.png"));
-		mesh.setVertices(new float[] { 
-			          0,      0, 0, 0, 1,
-			      1024f,      0, 0, 1, 1,
-			      1024f,  1024f, 0, 1, 0,
-			          0,  1024f, 0, 0, 0
-		});
-		mesh.setIndices(new short[] { 0, 1, 2, 2, 3, 0 });
 
-		cam = new OrthographicCamera(WIDTH, HEIGHT);		
-		cam.position.set(WIDTH / 2, HEIGHT / 2, 0);
+		mapSprite = new Sprite(new Texture(Gdx.files.internal("sc_map.png")));
+		mapSprite.setPosition(0, 0);
+		mapSprite.setSize(WORLD_WIDTH, WORLD_HEIGHT);
 
-		glViewport = new Rectangle(0, 0, WIDTH, HEIGHT);
-	
+		float w = Gdx.graphics.getWidth();
+		float h = Gdx.graphics.getHeight();
+		cam = new OrthographicCamera(30, 30 * (h / w));
+		cam.position.set(cam.viewportWidth / 2f, cam.viewportHeight / 2f, 0);
+		cam.update();
+
+		batch = new SpriteBatch();
 	}
 
 	@Override
 	public void render() {
 		handleInput();
-		GL10 gl = Gdx.graphics.getGL10();
-		
-		// Camera --------------------- /
-		gl.glClear(GL10.GL_COLOR_BUFFER_BIT);
-		gl.glViewport((int) glViewport.x, (int) glViewport.y,
-				(int) glViewport.width, (int) glViewport.height);
-		
 		cam.update();
+		batch.setProjectionMatrix(cam.combined);
 
-		// Texturing --------------------- /
-		gl.glActiveTexture(GL10.GL_TEXTURE0);
-		gl.glEnable(GL10.GL_TEXTURE_2D);
-		texture.bind();
-		
-		mesh.render(GL10.GL_TRIANGLES);
+		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 
+		batch.begin();
+		mapSprite.draw(batch);
+		batch.end();
 	}
 
 	private void handleInput() {
-		if(Gdx.input.isKeyPressed(Input.Keys.A)) {
+		if (Gdx.input.isKeyPressed(Input.Keys.A)) {
 			cam.zoom += 0.02;
 		}
-		if(Gdx.input.isKeyPressed(Input.Keys.Q)) {
+		if (Gdx.input.isKeyPressed(Input.Keys.Q)) {
 			cam.zoom -= 0.02;
 		}
-		if(Gdx.input.isKeyPressed(Input.Keys.LEFT)) {
-			if (cam.position.x > WIDTH / 2)
-				cam.translate(-3, 0, 0);
+		if (Gdx.input.isKeyPressed(Input.Keys.LEFT)) {
+			cam.translate(-3, 0, 0);
 		}
-		if(Gdx.input.isKeyPressed(Input.Keys.RIGHT)) {
-			if (cam.position.x < 1024 - WIDTH / 2)
-				cam.translate(3, 0, 0);
+		if (Gdx.input.isKeyPressed(Input.Keys.RIGHT)) {
+			cam.translate(3, 0, 0);
 		}
-		if(Gdx.input.isKeyPressed(Input.Keys.DOWN)) {
-			if (cam.position.y > HEIGHT / 2)
-				cam.translate(0, -3, 0);
+		if (Gdx.input.isKeyPressed(Input.Keys.DOWN)) {
+			cam.translate(0, -3, 0);
 		}
-		if(Gdx.input.isKeyPressed(Input.Keys.UP)) {
-			if (cam.position.y < 1024 - HEIGHT / 2)
-				cam.translate(0, 3, 0);
+		if (Gdx.input.isKeyPressed(Input.Keys.UP)) {
+			cam.translate(0, 3, 0);
 		}
-		if(Gdx.input.isKeyPressed(Input.Keys.W)) {
+		if (Gdx.input.isKeyPressed(Input.Keys.W)) {
 			cam.rotate(-rotationSpeed, 0, 0, 1);
 		}
-		if(Gdx.input.isKeyPressed(Input.Keys.E)) {
+		if (Gdx.input.isKeyPressed(Input.Keys.E)) {
 			cam.rotate(rotationSpeed, 0, 0, 1);
 		}
+
+		float effectiveViewportWidth = cam.viewportWidth * cam.zoom;
+		float effectiveViewportHeight = cam.viewportHeight * cam.zoom;
+
+		cam.zoom = MathUtils.clamp(cam.zoom, 0.1f, 100/cam.viewportWidth);
+		cam.position.x = MathUtils.clamp(cam.position.x, effectiveViewportWidth / 2f, 100 - effectiveViewportWidth / 2f);
+		cam.position.y = MathUtils.clamp(cam.position.y, effectiveViewportHeight / 2f, 100 - effectiveViewportHeight / 2f);
 	}
 
 	@Override
 	public void resize(int width, int height) {
-		// TODO Auto-generated method stub
+		cam.viewportWidth = 30f;
+		cam.viewportHeight = 30f * height/width;
+		cam.update();
 	}
 
 	@Override
 	public void resume() {
-		// TODO Auto-generated method stub
 	}
 
 	@Override
 	public void dispose() {
-		// TODO Auto-generated method stub
+		mapSprite.getTexture().dispose();
+		batch.dispose();
 	}
 
 	@Override
 	public void pause() {
-		// TODO Auto-generated method stub
+	}
+
+	public static void main(String[] args) {
+		new LwjglApplication(new OrthographicCameraExample());
 	}
 }
+
 ```
 
-The above class is the libGDX application that will use the orthographic camera to move around the world. Again, the world is a 1024x1024 pixel square. To represent it, a textured square plane of the same size was used. The orthographic camera makes it easy to work in pixels, even if OpenGL doesn't like it. Because there is no Z axis, we can safely define our world as 1024 units wide and long. If the image used for the texture is 1024x1024 and the mesh is also 1024x1024 units wide and long, we use a pixel perfect projection.
+The above class is the LibGDX application that will use the orthographic camera to move around the world. Our world size is in arbitrary units that we can define however we want to. In this specific case, our world is 100x100 units.  
 
 ```java
-static final int WIDTH 	= 480;
-static final int HEIGHT = 320;
+    static final int WORLD_WIDTH = 100;
+    static final int WORLD_HEIGHT = 100;
 ```
 
-Hardcoded the width and height to be used for the viewport.
+Many people make the mistake of thinking in pixels when it comes to their world, and this is something that you should avoid doing.  It leads to unnecessary multiplying and dividing by constants, having weird "Pixel per unit" ratios dotted around your code, poor understanding of the pipeline and it confuses you!  There are many other problems, which can be easily avoided when you stop "thinking" in pixels.
+
+
+What are these units though? What do they mean? How will I know what size to make objects? How many units are displayed on the screen?  We will get to that shortly! Stick tight.
+
+
+
 
 ```java
-private OrthographicCamera 	cam;					// #1
-private Texture 			texture;			// #2	
-private Mesh				mesh;				// #3
-private Rectangle 			glViewport;			// #4
-private float				rotationSpeed;			// #5
+	private OrthographicCamera cam;  #1
+	private SpriteBatch batch;       #2
+ 
+	private Sprite mapSprite;        #3
+	private float rotationSpeed;     #4
 ```
 
-*#1* - The `OrthographicCamera` instance we will control to look at the world.
 
-*#2* - The texture image we will display as the map (world).
 
-*#3* - The Mesh the texture will be applied to. A simple square.
+**#1** - The `OrthographicCamera` instance we will control to look at the world.
 
-*#4* - Rectangle representing the viewport.
+**#2** - The `SpriteBatch` instance we will use to render out world
 
-*#5* - The speed in angles with which the camera is rotated with every render call.
+**#3** - A `Sprite` that we will use to draw our world map
+
+**#4** - Rotation speed for rotating our camera
+
+
+
+***
+
 
 ```java
+	@Override
+	public void create() {
+		rotationSpeed = 0.5f;                                                    #1
 
+		mapSprite = new Sprite(new Texture(Gdx.files.internal("sc_map.png")));   #2
+		mapSprite.setPosition(0, 0);                                             #3
+		mapSprite.setSize(WORLD_WIDTH, WORLD_HEIGHT);                            #4
+
+		float w = Gdx.graphics.getWidth();                                       #5
+		float h = Gdx.graphics.getHeight();                                      #6
+		cam = new OrthographicCamera(30, 30 * (h / w));                          #7
+		cam.position.set(cam.viewportWidth / 2f, cam.viewportHeight / 2f, 0);    #8
+		cam.update();                                                            #9
+
+		batch = new SpriteBatch();                                               #10
+	}
+```
+
+
+The `create` method is called when we create a new instance of our ApplicationListener, and it is where we initialize our variables
+
+**#1** - Sets the current rotation speed to 0.5 degree.
+
+**#2** - Creates our `Sprite`, from a new Texture that uses the file: `sc_map.png` Download the file [here](http://libgdx.googlecode.com/svn/wiki/assets/sc_map.png) and place it in the `assets/` directory.
+
+**#3** - We set the position of our `mapSprite` to `0,0`.  (This isn't strictly required as the Sprite has default x,y of `0,0` anyway.)
+
+**#4** - We set the size of `mapSprite`, with width of `WORLD_WIDTH` and height of `WORLD_HEIGHT`. So our sprite now has dimensions of 100x100, or the size of our world.
+
+**#5** - We create a local variable that has the value of the current `width` of our application display. (This is in pixels)
+
+**#6** - We create a local variable that has the value of the current `height` of our application display. (This is in pixels)
+
+**#7** - We Create the `OrthographicCamera`. The 2 parameters specify the width and height of the viewport that will be created.  These values determine how much of our world we can see in each axis.
+
+In our example, we use `30` for our viewport width, and `30 * (h / w)` for our viewport height.  The width is trivial, we can see 30 units in the X axis.  For the viewport height we use `30` multiplied by the `aspect ratio` of our display.  This is so we see objects we draw in correct proportions.  Imagine if we ignored the aspect ratio, and just went with viewport width and height of 30,  unless we have a square display, which we most likely don't, when we render an object that has dimensions of 30x30 for example, it would show as a squished rectangle with the same shape as our display.  How can an object that is 30x30 not be a square?  This is because we assumed 30 viewport width and 30 viewport height, which doesn't match the aspect ratio of our device.
+
+
+```
+Some examples - 
+
+If we created our camera with viewport width of 100 and viewport height of 100 ('new OrthographicCamera(100, 100)') and centered it correctly, we would be able to see the 'whole' map, our 'whole' world at once.
+
+If we created our camera with viewport width of 100 and viewport height of 50 ('new OrthographicCamera(100, 50)') we would be able to see 'half' of the map at any given time
+
+If we created our camera with viewport width of 50 and viewport height of 50 ('new OrthographicCamera(50, 50)') we would be able to see a 'quarter' of the map at any given time
+```
+
+
+**#8** - Setting the camera's initial position to the bottom left of the map. But... the camera's position is in the center of the camera.
+
+So we need to offset the camera's position by +half viewport width and +half viewport height so that the bottom left of our camera is actually at 0,0.
+
+
+**#9** - Update our camera! This step is vital to call whenever we have manipulated our camera as it updates all the matrices under the hood.
+
+**#10** - Create our `SpriteBatch` instance.
+
+And we are setup! So let’s get rendering and manipulating the camera.
+
+
+***
+
+
+```java
 @Override
-public void create() {
-	rotationSpeed = 0.5f;							// #1
-	mesh = new Mesh(true, 4, 6,
-			new VertexAttribute(VertexAttributes.Usage.Position, 3,"attr_Position"),
-			new VertexAttribute(Usage.TextureCoordinates, 2, "attr_texCoords"));	// #2
-	texture = new Texture(Gdx.files.internal("img/sc_map.png"));		// #3
-	mesh.setVertices(new float[] { 
-			      0,      0, 0, 0, 1,
-			  1024f,      0, 0, 1, 1,
-			  1024f,  1024f, 0, 1, 0,
-			      0,  1024f, 0, 0, 0
-	});									// #4
-	mesh.setIndices(new short[] { 0, 1, 2, 2, 3, 0 });			// #5		
-	cam = new OrthographicCamera(WIDTH, HEIGHT);				// #6
-	cam.position.set(WIDTH / 2, HEIGHT / 2, 0);				// #7
-	glViewport = new Rectangle(0, 0, WIDTH, HEIGHT);			// #8
-}
+	@Override
+	public void render() {
+		handleInput();                             #1
+		cam.update();                              #2                             
+		batch.setProjectionMatrix(cam.combined);   #3
+
+		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);  #4
+
+		batch.begin();                             #5
+		mapSprite.draw(batch);                     #6
+		batch.end();                               #7
+	}
 ```
 
-The `onCreate` method sets everything up.
 
-*#1* - Sets the current rotation speed to 0.5 degree.
 
-*#2* - Creates the square mesh. The first attribute tells libgdx to make the mesh static. The second parameter tells that the mesh will hold 4 vertices (it is a square). The 3rd parameter is the number of indices to be used. A square is composed of 2 triangles and each triangle has 3 vertices, thus 2*3 = 6. 
-The 4th parameter tells the Mesh that the position is described by 3 values (x, y, z).
-The 5th parameter sets 2 for the texture position attribute.
+**#1** - Controls the camera by updating its position, zooming, rotation based on different keys being pressed.
 
-*#3* - Create the texture from the `sc_map.png` file. Download the file [here](http://libgdx.googlecode.com/svn/wiki/assets/sc_map.png) and add it to the `assets/src` directory.
+**#2** - Updates our `OrthographicCamera`, we have just manipulated it with `handleInput()` method, so we must remember to call the `update()` method.
 
-*#4* - Sets the vertex array for the mesh. The first 3 elements are the x, y, z coordinates, while the following 2 describe the texture coordinates for that vertex. Note that the z coordinate is 0 as we are in 2D. There are 4 vertices (the 4 rows).
+**#3** - Updates our `SpriteBatch` instance with our Camera's view and projection matrices. 
 
-*#5* - Setting the indices for the vertices to result in a square.
+**#4** - Clears the screen (actually the colour buffer).
 
-*#6* - *Create the `OrthographicCamera`. The 2 parameters specify the width and height of the viewport that will be created. We will use the window size.*
+**#5** - Begin our `SpriteBatch`
 
-*#7* - Setting the camera's initial position to point to the middle of the screen. Remember that (0,0) is in the bottom left corner so the camera's initial position will be the bottom left part of the world.
+**#6** - Draw our mapSprite!
 
-*#8* - Create a rectangle with the bottom left at (0,0) having the width and height specified by the constants (equal to the window size).
+**#7** - End our `SpriteBatch`
 
-The setup has been done. The camera has been created and positioned (pointed) to the bottom left corner of the world.
 
-```java
-@Override
-public void render() {
-	handleInput();				// #1
-	GL10 gl = Gdx.graphics.getGL10();	// #2
-		
-	// Camera --------------------- /
-	gl.glClear(GL10.GL_COLOR_BUFFER_BIT);	// #3
-	gl.glViewport((int) glViewport.x, (int) glViewport.y,
-		(int) glViewport.width, (int) glViewport.height);	// #4
-		
-	cam.update();			// #5
+***
 
-	// Texturing --------------------- /
-	gl.glActiveTexture(GL10.GL_TEXTURE0); 	// #6
-	gl.glEnable(GL10.GL_TEXTURE_2D);	// #7
-	texture.bind();				// #8
-		
-	mesh.render(GL10.GL_TRIANGLES);		// #9
 
-}
-```
-
-*#1* - Controls the camera by updating its position, zooming, rotation based on different keys being pressed.
-
-*#2* - Obtains the OpenGL instance. It has to be version 1 as version 2 is not supported for `OrthographicCamera`.
-
-*#3* - Clears the screen (actually the colour buffer).
-
-*#4* - Sets the viewport for the OpenGL context to be the viewport we defined at creation time. We are not handling resizing currently.
-
-*#5* - *Updates the camera* - Very important step. As the projection matrix was modified in the `handleInput` method, this simply tells the camera to recalculate the projection matrix and the frustum for this camera. This method needs to be called every time the camera has been changed.
-
-*#6 - #8* - Activates the texture and binds it to the context.
-
-*#9* - Renders the mesh, which is the map.
+Let’s take a deeper look at controlling our camera, which is all handled in our `handleInput()` method.
 
 ```java
 	private void handleInput() {
-		if(Gdx.input.isKeyPressed(Input.Keys.A)) {
+		if (Gdx.input.isKeyPressed(Input.Keys.A)) {
 			cam.zoom += 0.02;
+			//If the A Key is pressed, add 0.02 to the Camera's Zoom
 		}
-		if(Gdx.input.isKeyPressed(Input.Keys.Q)) {
+		if (Gdx.input.isKeyPressed(Input.Keys.Q)) {
 			cam.zoom -= 0.02;
+			//If the Q Key is pressed, subtract 0.02 from the Camera's Zoom
 		}
-		if(Gdx.input.isKeyPressed(Input.Keys.LEFT)) {
-			if (cam.position.x > WIDTH / 2)
-				cam.translate(-3, 0, 0);
+		if (Gdx.input.isKeyPressed(Input.Keys.LEFT)) {
+			cam.translate(-3, 0, 0);
+			//If the LEFT Key is pressed, translate the camera -3 units in the X-Axis
 		}
-		if(Gdx.input.isKeyPressed(Input.Keys.RIGHT)) {
-			if (cam.position.x < 1024 - WIDTH / 2)
-				cam.translate(3, 0, 0);
+		if (Gdx.input.isKeyPressed(Input.Keys.RIGHT)) {
+			cam.translate(3, 0, 0);
+			//If the RIGHT Key is pressed, translate the camera 3 units in the X-Axis
 		}
-		if(Gdx.input.isKeyPressed(Input.Keys.DOWN)) {
-			if (cam.position.y > HEIGHT / 2)
-				cam.translate(0, -3, 0);
+		if (Gdx.input.isKeyPressed(Input.Keys.DOWN)) {
+			cam.translate(0, -3, 0);
+			//If the DOWN Key is pressed, translate the camera -3 units in the Y-Axis
 		}
-		if(Gdx.input.isKeyPressed(Input.Keys.UP)) {
-			if (cam.position.y < 1024 - HEIGHT / 2)
-				cam.translate(0, 3, 0);
+		if (Gdx.input.isKeyPressed(Input.Keys.UP)) {
+			cam.translate(0, 3, 0);
+			//If the UP Key is pressed, translate the camera 3 units in the Y-Axis
 		}
-		if(Gdx.input.isKeyPressed(Input.Keys.W)) {
+		if (Gdx.input.isKeyPressed(Input.Keys.W)) {
 			cam.rotate(-rotationSpeed, 0, 0, 1);
+			//If the W Key is pressed, rotate the camera by -rotationSpeed around the Z-Axis
 		}
-		if(Gdx.input.isKeyPressed(Input.Keys.E)) {
+		if (Gdx.input.isKeyPressed(Input.Keys.E)) {
 			cam.rotate(rotationSpeed, 0, 0, 1);
+			//If the E Key is pressed, rotate the camera by rotationSpeed around the Z-Axis
 		}
+
+		float effectiveViewportWidth = cam.viewportWidth * cam.zoom;
+		float effectiveViewportHeight = cam.viewportHeight * cam.zoom;
+
+		cam.zoom = MathUtils.clamp(cam.zoom, 0.1f, 100/cam.viewportWidth);
+		cam.position.x = MathUtils.clamp(cam.position.x, effectiveViewportWidth / 2f, 100 - effectiveViewportWidth / 2f);
+		cam.position.y = MathUtils.clamp(cam.position.y, effectiveViewportHeight / 2f, 100 - effectiveViewportHeight / 2f);
 	}
 ```
 
-The `handleInput()` method simply polls the input and if certain keys were pressed, it modifies the camera accordingly.
+So we can see that this method polls Keys, if a certain key is pressed, we do something to the camera.  
 
-The *Arrows* move the camera, *Q* and *A* zoom in respectively out, and *W* & *E* rotate the camera.
-There are a few guards to not allow the camera to leave the world.
+The last 5 lines are responsible for keeping the camera within the bounds of our world.
+
+We need to make sure the camera's zoom does not grow or shrink to values that would invert our world, or show too much of our world.  To do this, we can calculate the `effectiveViewportWidth` and `effectiveViewportHeight`, which are just the viewportWidth/height * zoom (this gives us what we can see in the world given the current zoom).  We can then `clamp` the value of the camera's zoom to values we require.  `0.1f` to prevent being too zoomed in. `100/cam.viewportWidth` to prevent us being able to see more than the world wentire width.
+
+The last two lines are responsible for making sure we can’t translate out of the world boundaries. < 0, or more than 100 in either Axis.
+
+
+***
+
+
+What to do when the application changes size?  This is when you implement different strategies for handling devices with different resolutions/aspect ratios. I will include a few basic strategies to give you the basic idea. 
+
+If you want a slightly higher level method of handling this, you should use viewports -> [Wiki Article on Viewports](https://github.com/libgdx/libgdx/wiki/Viewports)
+
+
+*The following resize strategy will ensure that you will always see 30 units in the x axis no matter what pixel-width your device has.*
+```java
+	@Override
+	public void resize(int width, int height) {
+		cam.viewportWidth = 30f;                 // Viewport of 30 units!
+		cam.viewportHeight = 30f * height/width; // Lets keep things in proportion.
+		cam.update();
+	}
+
+```
+
+*The following resize strategy will show less/more of the world depending on the resolution*
+```java
+	@Override
+	public void resize(int width, int height) {
+		cam.viewportWidth = width/32f;  //We will see width/32f units!
+		cam.viewportHeight = cam.viewportWidth * height/width;
+		cam.update();
+	}
+
+```
+
+
+
+***
+
 
 The main application to bootstrap the listener is a simple LWJGL application.
-
 ```java
-
-public class DesktopCameraController {
-
 	public static void main(String[] args) {
-		new LwjglApplication(new OrthographicCameraController(), "2D Camera", 480, 320, false);
+		new LwjglApplication(new OrthographicCameraExample());
 	}
-}
 ```
+
+
+***
 
 The result is the following application:
 
