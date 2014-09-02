@@ -21,5 +21,5 @@ And that's it! No need to manually juggle JAR files, .so files or anything else.
 The [pom.xml](https://github.com/libgdx/libgdx/blob/master/pom.xml#L13) contains a version tag for com.badlogicgames.gdx with the string used for nightly builds. Change your gdxVersion to match the version found to switch to the most recent build.
 
 ```Groovy
-  <version>1.2.1-SNAPSHOT</version>
+  <version>1.3.1-SNAPSHOT</version>
 ```
