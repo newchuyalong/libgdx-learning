@@ -1,4 +1,4 @@
-This article introduce NinePatch images, how the can be created and how they
+This article introduce NinePatch images, how they can be created and how they
 are used in a Libgdx context.
 
 ## Before you start ##
