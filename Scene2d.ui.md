@@ -65,14 +65,19 @@ Here is an example of the most basic scene2d.ui application with a root table:
 
 ```java
 private Stage stage;
+private Table table;
+// For debug drawing
+private ShapeRenderer shapeRenderer;
 
 public void create () {
 	stage = new Stage();
 	Gdx.input.setInputProcessor(stage);
 
-	Table table = new Table();
+	table = new Table();
 	table.setFillParent(true);
 	stage.addActor(table);
+
+	shapeRenderer = new ShapeRenderer();
 
 	// Add widgets to the table here.
 }
@@ -86,11 +91,12 @@ public void render () {
 	stage.act(Gdx.graphics.getDeltaTime());
 	stage.draw();
 
-	Table.drawDebug(stage); // This is optional, but enables debug lines for tables.
+	table.drawDebug(shapeRenderer); // This is optional, but enables debug lines for tables.
 }
 
 public void dispose() {
 	stage.dispose();
+	shapeRenderer.dispose();
 }
 ```
 
