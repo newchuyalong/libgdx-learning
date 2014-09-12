@@ -79,6 +79,7 @@ public class Bullet implements Poolable {
      * Callback method when the object is freed. It is automatically called by Pool.free()
      * Must reset every meaningful field of this bullet.
      */
+    @Override
     public void reset() {
         position.set(0,0);
         alive = false;
