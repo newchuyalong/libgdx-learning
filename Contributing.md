@@ -43,6 +43,14 @@ If you create a new class, please add at least class documentation that explains
 
 If your class is explicitly thread-safe, mention it in the Javadoc. The default assumption is that classes are not thread-safe, to reduce the number of costly locks in the code base.
 
+### Cross-platform compatibility ###
+
+The GWT backend [doesn't support](http://www.gwtproject.org/doc/latest/DevGuideCodingBasicsCompatibility.html) all Java features. When writing generic code, please be aware of some common limitations:
+  * Formatting. String.format() is unavailable, use StringBuilder instead or concatenate Strings directly.
+  * Regular expressions. A basic emulation of [Pattern](https://github.com/libgdx/libgdx/blob/master/backends/gdx-backends-gwt/src/com/badlogic/gdx/backends/gwt/emu/java/util/regex/Pattern.java) and [Matcher](https://github.com/libgdx/libgdx/blob/master/backends/gdx-backends-gwt/src/com/badlogic/gdx/backends/gwt/emu/java/util/regex/Matcher.java) is provided.
+  * Reflection. Use the utilities in [com.badlogic.gdx.utils.reflect](https://github.com/libgdx/libgdx/tree/master/gdx/src/com/badlogic/gdx/utils/reflect) package instead.
+  * Multithreading. There is only support for [Timers](https://github.com/libgdx/libgdx/tree/master/gdx/src/com/badlogic/gdx/utils/Timer.java).
+
 ### Performance Considerations ###
 
 Libgdx is meant to run on both desktop and mobile platforms, including browsers (JavaScript!). While the desktop HotSpot VM can take quite a beating in terms of unnecessary allocations, Dalvik and consorts don't.
