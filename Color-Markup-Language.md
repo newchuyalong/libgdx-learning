@@ -1,6 +1,6 @@
 The `BitmapFontCache` class supports in-string colored text through a simple markup language.
 
-Markup is disabled by default. Use the method [BitmapFont.setMarkupEnabled()](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/graphics/g2d/BitmapFont.html#setMarkupEnabled(boolean)) to turn it on/off.
+Markup is disabled by default. Use the method [BitmapFont.setMarkupEnabled()](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/graphics/g2d/BitmapFont.html#setMarkupEnabled-boolean-) to turn it on/off.
 
 The markup syntax is really simple but still versatile:
 - **[name]** Sets the color by name. There are a few predefined colors, see the [Colors.reset()](https://github.com/libgdx/libgdx/blob/master/gdx/src/com/badlogic/gdx/graphics/Colors.java) method for an exhaustive list. Users can define their own colors through the methods of the [Colors](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/graphics/Colors.html) class.
