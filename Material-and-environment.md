@@ -60,20 +60,19 @@ It is possible to use a standard attribute class for a new custom type. For exam
 Because of step 2 and 3, you must extend the Attribute class to add a custom attribute type:
 
 ```java
-public class MyColorAttribute extends ColorAttribute {
-    public final static String MyColorAlias = "myColor"; // step 1: name the type
-    public final static long MyColor = register(MyColorAlias); // step 2: register the type
+public class CustomColorTypes extends ColorAttribute {
+    public final static String AlbedoColorAlias = "myColor"; // step 1: name the type
+    public final static long AlbedoColor = register(AlbedoColorAlias); // step 2: register the type
     static {
-        Mask |= MyColor; // step 3: Make ColorAttribute accept the type
+        Mask |= AlbedoColor; // step 3: Make ColorAttribute accept the type
     }
 }
-
 ```
 
 You can then create the custom attribute type using:
 
 ```java
-Attribute attribute = new ColorAttribute(MyColorAttribute.MyColor, Color.RED);
+Attribute attribute = new ColorAttribute(CustomColorTypes.AlbedoColor, Color.RED);
 ```
 
 ### Custom attributes
@@ -93,20 +92,39 @@ public class DoubleAttribute extends Attribute {
 
     public double value;
 
-    public DoubleAttribute(final long type) {
+    public DoubleAttribute (final long type) {
         super(type);
         if (!is(type))
             throw new GdxRuntimeException("Invalid type specified");
     }
 
-    public DoubleAttribute(final long type, final double value) {
+    public DoubleAttribute (final long type, final double value) {
         this(type);
         this.value = value;
     }
-}
 
+    @Override
+    public Attribute copy () {
+        return new DoubleAttribute(type, value);
+    }
+
+    @Override
+    public int hashCode () {
+        final int prime = /* pick a prime number and use it here */;
+        final long v = NumberUtils.doubleToLongBits(value);
+        int result = (int)type;
+        result = prime * result + (int)(v^(v>>>32));
+        return result;
+    }
+}
 ```
 Of course `MyDouble1Alias`, `MyDouble1`, `"myDouble1"`, `MyDouble2Alias`, `MyDouble2` and `"myDouble2"` should be replaced by a more meaningful description.
+
+Note that the `copy()` method is for example called when creating a `ModelInstance` of a `Model`. It should return an identical instance of the attribute which can be modified independently of the attribute being copied.
+
+The `hashCode()` method should be implemented because it is used for comparing attributes and materials. For example, two materials are considered to be the same if they contain the same attributes (types) and the `equals()` method returns true for each pair of attribute types. By default, the `equals()` method of the `Attribute` class compares the `hashCode()` of both attributes for this.
+
+> Attribute classes should be kept small and self contained, therefore it is best to always directly extend the `Attribute` class. Try to avoid extending a subclass of the Attribute class to add additional information.
 
 ## Available attributes
 Like stated above its possible to create custom attributes. However, there are a few attributes already included, which are listed below.
