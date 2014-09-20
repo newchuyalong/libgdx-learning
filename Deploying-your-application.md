@@ -21,7 +21,7 @@ The easiest way to deploy to Windows/Linux/Mac is to create a runnable JAR in Ec
 
 <img src="http://libgdx.badlogicgames.com/uploads/Screen%20Shot%202013-08-23%20at%2011.16.10-0STXrLHoAH.png" width="400"></img>
 
-This will package all code and your assets into a single JAR file. To run the JAR file, a user can just double click it, provided she has Java installed.
+This will package all code and your assets into a single JAR file. To run the JAR file, a user can just double click it, provided she/he has Java installed.
 
 A project worth mentioning is [JarWrapper](https://github.com/stbachmann/JarWrapper), a tool to bundle a JRE with your desktop jar file in a cross platform manner. this tool is in development.
 
