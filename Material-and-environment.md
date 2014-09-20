@@ -121,9 +121,7 @@ public class DoubleAttribute extends Attribute {
     public int hashCode () {
         final int prime = /* pick a prime number and use it here */;
         final long v = NumberUtils.doubleToLongBits(value);
-        int result = (int)type;
-        result = prime * result + (int)(v^(v>>>32));
-        return result;
+        return prime * Long.numberOfTrailingZeros(type) + (int)(v^(v>>>32));
     }
 }
 ```
@@ -164,7 +162,7 @@ To pass a `Cubemap` to the shader the `CubemapAttribute` can be used. It's value
 
 ### DepthTestAttribute ###
 Just like the `BlendingAttribute`, does the `DepthTestAttribute` not require an attribute type. It is always `DepthTestAttribute.Type`. The `DepthTestAttribute` can be used to specify depth testing and writing, using the following properties:
-* `depthFunc` The depth test function, or 0 (or GL_NONE) to disable depth test, by default it is GL10.GL_LEQUAL.
+* `depthFunc` The depth test function, or 0 (or GL_NONE) to disable depth test, by default it is GL20.GL_LEQUAL.
 * `depthRangeNear` Mapping of near clipping plane to window coordinates, by default 0.0
 * `depthRangeFar` Mapping of far clipping plane to window coordinates, by default 1.0
 * `depthMask` Whether or not to write to the depth buffer, enabled by default.
