@@ -61,7 +61,7 @@ Because of step 2 and 3, you must extend the Attribute class to add a custom att
 
 ```java
 public class CustomColorTypes extends ColorAttribute {
-    public final static String AlbedoColorAlias = "myColor"; // step 1: name the type
+    public final static String AlbedoColorAlias = "AlbedoColor"; // step 1: name the type
     public final static long AlbedoColor = register(AlbedoColorAlias); // step 2: register the type
     static {
         Mask |= AlbedoColor; // step 3: Make ColorAttribute accept the type
