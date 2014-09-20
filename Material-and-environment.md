@@ -66,6 +66,10 @@ public class CustomColorTypes extends ColorAttribute {
     static {
         Mask |= AlbedoColor; // step 3: Make ColorAttribute accept the type
     }
+    /** Prevent instantiating this class */
+    private CustomColorTypes() {
+        super(0);
+    }
 }
 ```
 
