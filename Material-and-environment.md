@@ -121,7 +121,7 @@ public class DoubleAttribute extends Attribute {
     public int hashCode () {
         final int prime = /* pick a prime number and use it here */;
         final long v = NumberUtils.doubleToLongBits(value);
-        return prime * Long.numberOfTrailingZeros(type) + (int)(v^(v>>>32));
+        return prime * super.hashCode() + (int)(v^(v>>>32));
     }
 }
 ```
