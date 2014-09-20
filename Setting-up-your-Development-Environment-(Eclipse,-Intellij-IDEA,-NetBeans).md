@@ -1,4 +1,4 @@
-Libgdx projects use [Gradle](http://www.gradle.org/) to manage dependencies, the build process, and IDE integation. This allows you to develop your app with whatever development environment you prefer. Best of all: your team mates can use a different dev environment while working on the same project! Just don't commit your IDE specific files to your source control. The `.gitignore` file contained in libgdx projects will take care of that if you use Git.
+Libgdx projects use [Gradle](http://www.gradle.org/) to manage dependencies, the build process, and IDE integration. This allows you to develop your app with whatever development environment you prefer. Best of all: your team mates can use a different dev environment while working on the same project! Just don't commit your IDE specific files to your source control. The `.gitignore` file contained in libgdx projects will take care of that if you use Git.
 
 ### Setting up Eclipse 
 To develop your application via Eclipse, you need to install the following pieces of software.
