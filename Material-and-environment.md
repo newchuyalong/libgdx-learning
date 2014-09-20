@@ -103,9 +103,14 @@ public class DoubleAttribute extends Attribute {
         this.value = value;
     }
 
+    /** copy constructor */
+    public DoubleAttribute (DoubleAttribute other) {
+        this(other.type, other.value);
+    }
+
     @Override
     public Attribute copy () {
-        return new DoubleAttribute(type, value);
+        return new DoubleAttribute(this);
     }
 
     @Override
@@ -120,7 +125,7 @@ public class DoubleAttribute extends Attribute {
 ```
 Of course `MyDouble1Alias`, `MyDouble1`, `"myDouble1"`, `MyDouble2Alias`, `MyDouble2` and `"myDouble2"` should be replaced by a more meaningful description.
 
-Note that the `copy()` method is for example called when creating a `ModelInstance` of a `Model`. It should return an identical instance of the attribute which can be modified independently of the attribute being copied.
+Note that the `copy()` method is for example called when creating a `ModelInstance` of a `Model`. It should return an identical instance of the attribute which can be modified independently of the attribute being copied. While not required, a *copy constructor* is typically a good method to implement this.
 
 The `hashCode()` method should be implemented because it is used for comparing attributes and materials. For example, two materials are considered to be the same if they contain the same attributes (types) and the `equals()` method returns true for each pair of attribute types. By default, the `equals()` method of the `Attribute` class compares the `hashCode()` of both attributes for this.
 
@@ -170,7 +175,7 @@ Similar to the `FloatAttribute` class, the `IntAttribute` allows you to pass an 
 * `IntAttribute.CullFace` OpenGL enum to specify face culling, either GL_NONE (no culling), GL_FRONT (only render back faces) or GL_BACK (only render front faces). The default depends on the shader, the default shader uses GL_BACK by default.
 
 ### TextureAttribute ###
-`TextureAttribute` can be used to pass a `Texture` to the shader. Just like the `CubemapAttribute` it has a `textureDescription` member which allows you to set the `Texture` amongst some texture related values like repeat and filter. The `TextureAttribute` requires an attribute type, which by default can be one of the following:
+`TextureAttribute` can be used to pass a `Texture` to the shader. Just like the `CubemapAttribute` it has a `textureDescription` member which allows you to set the `Texture` amongst some texture related values like repeat and filter. Additionally it contains the `offsetU`, `offsetV`, `scaleU` and `scaleY` members, which can be used to specify the region (texture coordinates transformation) of the texture to use. The `TextureAttribute` requires an attribute type, which by default can be one of the following:
 * `TextureAttribute.Diffuse`
 * `TextureAttribute.Specular`
 * `TextureAttribute.Bump`
