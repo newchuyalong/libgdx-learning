@@ -14,3 +14,4 @@ These tutorials provide an introduction in using the Bullet wrapper:
 * [Using models](./Bullet Wrapper: Using models)
 * [Contact callbacks](./Bullet Wrapper: Contact callbacks)
 * [Custom classes](./Bullet Wrapper: Custom classes)
+* [Debugging](./Bullet Wrapper: Debugging)
