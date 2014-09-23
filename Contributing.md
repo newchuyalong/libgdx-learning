@@ -51,6 +51,10 @@ The GWT backend [doesn't support](http://www.gwtproject.org/doc/latest/DevGuideC
   * Reflection. Use the utilities in [com.badlogic.gdx.utils.reflect](https://github.com/libgdx/libgdx/tree/master/gdx/src/com/badlogic/gdx/utils/reflect) package instead.
   * Multithreading. There is only support for [Timers](https://github.com/libgdx/libgdx/tree/master/gdx/src/com/badlogic/gdx/utils/Timer.java).
 
+If you add any new classes, determine if they are compatible with GWT and add either include or exclude elements to the [GWT module](https://github.com/libgdx/libgdx/blob/master/gdx/src/com/badlogic/gdx.gwt.xml).
+
+Some classes (such as Matrix4 or BufferUtils) are emulated in the GWT backend due to certain compatibility requirements or native code. If you modify any these classes, please make sure that your changes get ported to the emulated version.
+
 ### Performance Considerations ###
 
 Libgdx is meant to run on both desktop and mobile platforms, including browsers (JavaScript!). While the desktop HotSpot VM can take quite a beating in terms of unnecessary allocations, Dalvik and consorts don't.
