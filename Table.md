@@ -61,18 +61,11 @@ In libgdx the `setFillParent` method can be used to easily size the root table t
 
 ## Debugging
 
-Table can draw debug lines to visualize what is happening in the layout. Follow these steps:
-
-Add in your class:
-```java
-private ShapeRenderer shapeRenderer;
-```
-Enable debug drawing in `create()` method:
+Table can draw debug lines to visualize what is happening in the layout. It is enabled following way:
 ```java
 table.debug();      // turn on all debug lines (table, cell, and widget)
 table.debugTable(); // OR turn on only table lines
 ```
-Don't forget to `dispose()` shapeRenderer.
 
 ## Adding cells
 
