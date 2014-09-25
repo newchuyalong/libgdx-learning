@@ -47,3 +47,5 @@ You can also exclude classes of packages (for example when you include a package
   * You must specify the fully qualified name of the class or package.
   * You must specify each class or package in its own `extend-configuration-property` element.
   * Any classes referenced by those classes you include will automatically be included, so you need only include your own classes.
+  * Nested classes cannot be included directly. If, e.g., you want to have `CustomActor$CustomActorStyle` available for reflection (maybe to be used in uiskin.json), just include the parent class (i.e. CustomActor in this example)
+  * Visibility restrictions may cause the compiler to not include your class in the IReflectionCache. Public visibility is therefore recommended.
