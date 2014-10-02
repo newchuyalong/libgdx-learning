@@ -55,7 +55,7 @@ For the tests the following steps are used to start the apps
   * Select Run As -> Web Application for the html5 project. You might be asked for a WAR directory.  Use the gdx-tests-gwt/war. A new view opens up, click the URL that's presented to you. You might get prompted to install the GWT plugin for your browser of choice (hint: use Chrome). Note that the app runs in development mode, which means it will be terribly slow. For full speed you have to compile the HTML project, then deploy it to a web server.
   * Select Run As -> iOS Simulator|Device App for the iOS RoboVM project.
 
-For a more in-depth description of the project setup as well as how to run and debug a libgdx project see [[Creating, Running, Debugging and Packaging your Project]] and follow the links for your preferred IDE.
+For a more in-depth description of the project setup as well as how to run and debug a libgdx project see [[Project Setup Gradle]] and follow the links for your preferred IDE.
 
 ##Creating New Tests
 
