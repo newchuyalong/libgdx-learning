@@ -10,6 +10,7 @@ Since libgdx [1.0 release](http://www.badlogicgames.com/wordpress/?p=3412) Box2D
 
 ## Table of Contents ##
 
+  * [Initialization](box2d#initialization)
   * [Creating a World](box2d#creating-a-world)
   * [Debug Renderer](box2d#debug-renderer)
   * [Stepping the simulation](box2d#stepping-the-simulation)
@@ -28,8 +29,9 @@ Since libgdx [1.0 release](http://www.badlogicgames.com/wordpress/?p=3412) Box2D
   * [Resources](box2d#resources)
   * [Tools](box2d#tools)
 
+## Initializtion ##
 
-
+To initialize Box2D it is necessary to call `Box2D.init()`. For backwards compatibility, creating a `World` for the first time will have the same effect, but using `Box2D` should be preferred.
 
 ## Creating a World ##
 
