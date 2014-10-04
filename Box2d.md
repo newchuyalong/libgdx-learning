@@ -31,7 +31,7 @@ Since libgdx [1.0 release](http://www.badlogicgames.com/wordpress/?p=3412) Box2D
 
 ## Initialization ##
 
-To initialize Box2D it is necessary to call `Box2D.init()`. For backwards compatibility, creating a `World` for the first time will have the same effect, but using `Box2D` should be preferred.
+To initialize Box2D it is necessary to call `Box2D.init()`. For backwards compatibility, creating a `World` for the first time will have the same effect, but using the `Box2D` class should be preferred.
 
 ## Creating a World ##
 
