@@ -6,9 +6,9 @@ Before you can start using RealSense with libGDX you have to [register with Inte
 
 The RealSense SDK only supports Windows 8+ and requires a [supported camera](https://software.intel.com/en-us/realsense/integrated-camera-and-supported-systems).
 
-[Setting up your libGDX RealSense project]
+## Setting up your libGDX RealSense project]
 
-[Distributing your libGDX RealSense project]
+## Distributing your libGDX RealSense project]
 The RealSense SDK comes with a set of runtime installers in the `runtime` directory. You have to distribute the `intel_rs_sdk_runtime_<version>.exe` file to your users and have them install the runtime.
 
 Once installed, you end users can simply open your libGDX desktop application.
