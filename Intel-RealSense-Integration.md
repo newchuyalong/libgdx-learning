@@ -6,6 +6,8 @@ Before you can start using RealSense with libGDX you have to [register with Inte
 
 The RealSense SDK only supports Windows 8+ and requires a [supported camera](https://software.intel.com/en-us/realsense/integrated-camera-and-supported-systems).
 
+The shared library wrapping the native RealSense SDK is compiled for 64-bit systems. Your end users and yourself will require a 64-bit Java VM on their system.
+
 ## Setting up your libGDX RealSense project
 
 ## Distributing your libGDX RealSense project
