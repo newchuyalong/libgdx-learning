@@ -8,7 +8,7 @@ This tutorial assumes you have installed [g8](http://github.com/n8han/giter8) an
 
 In your favourite shell type:
 
-    $ g8 ajhager/libgdx-sbt-project
+    $ g8 ajhager/libgdx-sbt-project.g8
 
 After filling in some information about your project, you can start placing your game's source files and assets in common/src/main/scala and common/src/main/resources, respectively.
 
