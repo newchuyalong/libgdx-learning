@@ -8,6 +8,7 @@
  * [Adding Repositories] (#adding-external-repositories)
  * [Mavenizing Local Dependencies] (#mavenizing-local-dependencies)
  * [File Dependencies] (#file-dependencies)
+   * [Android pitfall] (#android-pitfall)
  * [Examples] (#external-dependencies-examples)
    * [Jar example] (#universal-tween-engine-by-jar)
     * [Mavenize locally] (universal-tween-engine-by-locally-mavenizing-maven)
@@ -452,6 +453,30 @@ project(":android") {
 ```
 
 It is worth nothing that these file dependencies are not included in the published dependency descriptor for your project, but they are included in transitive project dependencies within the same build.
+
+##### Android Pitfall
+When adding `flat file` dependencies to a project, for example the core project, you need to duplicate the dependency declaration for the android project.  The Android Gradle plugin can't handle transitive `flat file` dependencies.
+
+For example, if you were to add the all the jars in your `libs` directory as dependencies for your project, you would need to do the following.
+
+```groovy
+project(":core") {
+   ...
+   compile fileTree(dir: '../libs', include: '*.jar')
+   ...
+}
+
+// And also
+
+project(":android") {
+   ...
+   compile fileTree(dir: '../libs', include: '*.jar')
+   ...
+}
+```
+
+This is only required for the android project, all other projects inherit `flat file` dependencies OK. 
+
 
 ### External Dependencies Examples
 #### Universal-Tween-Engine by jar
