@@ -455,7 +455,7 @@ project(":android") {
 It is worth nothing that these file dependencies are not included in the published dependency descriptor for your project, but they are included in transitive project dependencies within the same build.
 
 ##### Android Pitfall
-When adding `flat file` dependencies to a project, for example the core project, you need to duplicate the dependency declaration for the android project.  The Android Gradle plugin can't handle transitive `flat file` dependencies.
+When adding `flat file` dependencies to a project, for example the core project, you would need to duplicate the dependency declaration for the android project.  This is because the Android Gradle plugin can't handle transitive `flat file` dependencies.
 
 For example, if you were to add the all the jars in your `libs` directory as dependencies for your project, you would need to do the following.
 
