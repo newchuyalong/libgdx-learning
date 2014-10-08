@@ -69,7 +69,7 @@ To update our simulation we need to tell our world to step. Stepping basically u
 world.step(1/60f, 6, 2);
 ```
 
-The first argument is the time-step, or the amount of time you want your world to simulate. In most cases you want this to be a fixed time step. libgdx recommends `1/45f` (which is 1/45th of a second) for mobile phones or `1/300f` (1/300th of a second). 
+The first argument is the time-step, or the amount of time you want your world to simulate. In most cases you want this to be a fixed time step. libgdx recommends using either `1/45f` (which is 1/45th of a second) or `1/300f` (1/300th of a second). 
 
 The other two arguments are `velocityIterations` and `positionIterations`. For now we will leave these at `6` and `2`, but you can read more about them in the Box2D documentation.
 
@@ -224,7 +224,7 @@ dynamicBody.applyForceToCenter(1.0f, 0.0f, true);
 
 **Applying Impulse**
 
-Impulses are just like Forces with the exception that they immediately modify the velocity of a body. As such if the impulse is not applied at the center of a body, it will create torque which modifies angular velocity. Impulses are applied in Newton-seconds or kg-m/s.
+Impulses are just like Forces with the exception that they immediately modify the velocity of a body. As with forces, if the impulse is not applied at the center of a body, it will create torque which modifies angular velocity. Impulses are applied in Newton-seconds or kg-m/s.
 
 ```java
 // Immediately set the X-velocity to 1 meter per second causing the body to move right quickly
@@ -279,6 +279,10 @@ This can be set to any Java object. It is also good to create your own game acto
 
 Fixtures can also have user data set to them in the same way.
 
+```java
+fixture.setUserData(Object);
+```
+
 To update all your actors/sprites you can loop through all the world's bodies easily in your game/render loop.
 
 ```java
@@ -323,17 +327,16 @@ The beginContact method is called when the object overlap another. When the obje
 
 ```java
 public class ListenerClass implements ContactListener {
-			
-                        @Override
-			public void endContact(Contact contact) {
+		@Override
+		public void endContact(Contact contact) {
 				
-			}
+		}
+		
+		@Override
+		public void beginContact(Contact contact) {
 			
-			@Override
-			public void beginContact(Contact contact) {
-				
-			}
-		};
+		}
+	};
 ```
 
 This class needs to be set as the world's contact listener in the screen's show() or init() method.
@@ -343,7 +346,7 @@ world.setContactListener(ListenerClass);
 ```
 
 We might get information about the bodies from the contact fixtures.
-Depending of the application design, the Entity class should be referenced in the Body or Fixture user data, so we can use it from the contact and make some changes (e.g. change the player health).
+Depending on the application design, the Entity class should be referenced in the Body or Fixture user data, so we can use it from the Contact and make some changes (e.g. change the player health).
 
 ## Code Snippets ##
 
