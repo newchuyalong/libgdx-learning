@@ -1,4 +1,4 @@
-## [Check the latest version of libGDX and all dependencies](http://libgdx.badlogicgames.com/versions.html)
+#### [Check the latest version of libGDX and all dependencies](http://libgdx.badlogicgames.com/versions.html)
 
 libGDX's Gradle based projects make it very easy to switch between libGDX versions. In general you'll be interested in two types of libGDX builds:
 
