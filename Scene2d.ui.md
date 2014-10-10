@@ -11,7 +11,7 @@ It is highly recommended to read or least skim the [[scene2d documentation|scene
  * [Drawable](#drawable)
  * [ChangeEvents](#changeevents)
  * [Clipping](#clipping)
- * [Rotation and scale](#rotation_and_scale)
+ * [Rotation and scale](#rotation-and-scale)
  * [Layout widgets](#layout-widgets)
    * [Table](#table)
    * [Container](#container)
