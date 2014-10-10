@@ -1,3 +1,5 @@
+## [Check the latest version of libGDX and all dependencies](http://libgdx.badlogicgames.com/versions.html)
+
 libGDX's Gradle based projects make it very easy to switch between libGDX versions. In general you'll be interested in two types of libGDX builds:
 
 * Release builds: these are considered stable. You can see the available release versions on [Maven Central](http://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22com.badlogicgames.gdx%22%20AND%20a%3A%22gdx%22).
@@ -17,5 +19,3 @@ The version you see may be higher than 1.4.1 already. Once you located that stri
 * **Command Line**: invoking any of the tasks will usually check for changes in dependency versions and redownload anything that changed.
 
 And that's it! No need to manually juggle JAR files, .so files or anything else. Just change a string in a file and update via your IDE or the command line.
-
-You can find the latest versions of all the tools and libGDX here: http://libgdx.badlogicgames.com/versions.html
