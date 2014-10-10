@@ -39,6 +39,9 @@ renders the following:
 [Texture](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/graphics/Texture.html)
 [(code)](https://github.com/libgdx/libgdx/tree/master/gdx/src/com/badlogic/gdx/graphics/Texture.java) 
 
+Don't use non-alphabetic characters in Wiki page names, because not all operating systems can handle
+them when cloning Wiki as Git repository (for example, Windows doesn't support ":").
+
 ### Notes on Doc Links ###
 
 * Please note that there should be a space in between `ClassName (Code)` style formatting, in order to differentiate the two.
