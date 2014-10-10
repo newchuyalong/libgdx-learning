@@ -6,10 +6,10 @@ libGDX's Gradle based projects make it very easy to switch between libGDX versio
 Your Gradle based project makes it very easy to switch between releases and nightly builds. Open up the `build.gradle` file in the root of your project, and locate the following line:
 
 ```Groovy
- gdxVersion = "1.0.0"
+ gdxVersion = "1.4.1"
 ```
 
-The version you see may be higher than 1.0.0 already. Once you located that string, you can simply change it to the latest release (or an older release) or to the current SNAPSHOT version. Save the file. The next step is dependend on your IDE:
+The version you see may be higher than 1.4.1 already. Once you located that string, you can simply change it to the latest release (or an older release) or to the current SNAPSHOT version. Save the file. The next step is dependend on your IDE:
 
 * **Eclipse**: Select all your projects in the package explorer, right click, then click `Gradle -> Refresh All`. This will download the libGDX version you specified in build.gradle and wire up the JAR files with your projects correctly.
 * **Intellij IDEA**: will usually detect that your build.gradle has been updated and show a refresh button. Just click it and IDEA will update libGDX to the version you specified in build.gradle.
@@ -18,8 +18,4 @@ The version you see may be higher than 1.0.0 already. Once you located that stri
 
 And that's it! No need to manually juggle JAR files, .so files or anything else. Just change a string in a file and update via your IDE or the command line.
 
-The [pom.xml](https://github.com/libgdx/libgdx/blob/master/pom.xml#L13) contains a version tag for com.badlogicgames.gdx with the string used for nightly builds. Change your gdxVersion to match the version found to switch to the most recent build.
-
-```Groovy
-  <version>1.3.1-SNAPSHOT</version>
-```
+You can find the latest versions of all the tools and libGDX here: http://libgdx.badlogicgames.com/versions.html
