@@ -94,6 +94,7 @@
             * [[Quick Start]]
             * [[Models]]
             * [[Material and environment]]
+            * [[ModelBatch]]
             * [[ModelBuilder, MeshBuilder and MeshPartBuilder]]
             * [[3D animations and skinning]]
             * [[Importing Blender models in LibGDX]]
