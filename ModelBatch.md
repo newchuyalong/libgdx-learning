@@ -71,6 +71,11 @@ public void getRenderables (Array<Renderable> renderables, Pool<Renderable> pool
 ```
 This is a very open API (e.g. it gives you access to the `Array` of all previously added `Renderable`s), but you should restrict your usage to only adding elements to the array. The pool can optionally be used to avoid allocation. You're free to ignore it or to use it for any dynamic `Renderable` needed. Any `Renderable` you `obtain()` from it, will be automatically be free'd by the `ModelBatch`, you don't have to take care for that.
 
+## ShaderProvider
+A [`Shader`](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/graphics/g3d/Shader.html) ([code](https://github.com/libgdx/libgdx/blob/master/gdx/src/com/badlogic/gdx/graphics/g3d/Shader.java)) is used to execute each render call. It will literally send the render call (specified by the `Renderable`) to the gpu. Independent of how the actual rendering is performed, the ModelBatch needs one `Shader` per `Renderable`. For this is uses the [`ShaderProvider`](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/graphics/g3d/utils/ShaderProvider.html) ([code](https://github.com/libgdx/libgdx/blob/master/gdx/src/com/badlogic/gdx/graphics/g3d/utils/ShaderProvider.java)). For every `Renderable` added to the batch (even if it contains a shader), the `getShader` of the `ShaderProvider` will be called to fetch to shader to render it.
+
+By default the [DefaultShaderProvider](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/graphics/g3d/utils/DefaultShaderProvider.html) ([code](https://github.com/libgdx/libgdx/blob/master/gdx/src/com/badlogic/gdx/graphics/g3d/utils/DefaultShaderProvider.java)) is used, which will create a [DefaultShader](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/graphics/g3d/shaders/DefaultShader.html) whenever a previous created shader can't be reused. You can, however, customize this by supplying your own `ShaderProvider`.
+
 ## Sorting render calls
 If render calls would be executed in a random order, then it would cause strange and less performing result. For example, if a transparent object would be rendered prior to an object that's behind it then you won't see the object behind it. This is because the depth buffer will prevent the object further away from being rendered. Sorting the render calls helps to solve this.
 
@@ -81,3 +86,8 @@ Customizing sorting can help increase performance. For example, sorting based on
 public void sort (Camera camera, Array<Renderable> renderables);
 ```
 This method provides all information the `ModelBatch` has just before the actually rendering. It is also a very open API, you are allowed to modify the array as needed. This makes it possible to perform any last-minute actions (that might not be even related to sorting, like frustum culling) in this interface. The order of the `renderables` after this method completes, will be the order in which the render calls will be actually executed.
+
+## The RenderContext
+When not specified as argument, `ModelBatch` will create and manage a [`RenderContext`](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/graphics/g3d/utils/RenderContext.html) for you. A RenderContext is used to minimize the overhead of OpenGL ES calls. For example, when a `Shader` requires backface culling and a previous shader enabled backface culling, then the redundant call isn't made.
+
+By default, ModelBatch will reset this RenderContext on both the `begin()` and `end()` method. However, you can specify your own `RenderContext` (which doesn't have to be a custom implementation of it). When you specify your own RenderContext then you're responsible for calling the `context.begin()` and `context.end()` methods. This allows you use the same context for multiple ModelBatch instances.
