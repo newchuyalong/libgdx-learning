@@ -87,6 +87,22 @@ By default the [DefaultShaderProvider](http://libgdx.badlogicgames.com/nightlies
 
 `ModelBatch` delegates managing `Shader`'s to the `ShaderProviders`. Because a `Shader` typically uses a `ShaderProgram`, they need to be disposed. When `modelBatch.dispose();` is called, `ModelBatch` will call the `dispose()` method the `ShaderProvider`.
 
+To help managing and reusing shaders, libGDX offers the abstract [`BaseShaderProvider`](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/graphics/g3d/utils/BaseShaderProvider.html) ([code](https://github.com/libgdx/libgdx/blob/master/gdx/src/com/badlogic/gdx/graphics/g3d/utils/BaseShaderProvider.java)). This class keeps track of all shaders created, reuses them if possible and disposes them when no longer needed. If you extend this class, it will call the `createShader(Renderable)` method when it hasn't got a shader it can reuse. Whether a `Shader` can be reused, is determined by the call to [`shader.canRender(Renderable)`](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/graphics/g3d/Shader.html#canRender-com.badlogic.gdx.graphics.g3d.Renderable-).
+
+A typical use-case is to extend `DefaultShaderProvider` (which extends BaseShaderProvider) and provide a custom shader when needed, while falling back to the DefaultShader when you can't use your custom shader.
+```java
+public static class MyShaderProvider extends DefaultShaderProvider {
+	@Override
+	protected Shader createShader (Renderable renderable) {
+		if (renderable.material.has(CustomColorTypes.AlbedoColor))
+			return new MyShader(renderable);
+		else
+			return super.createShader(renderable);
+	}
+}
+```
+Here the [[Material | Material-and-environment]] is used to decide whether the custom shader should be used. This is the preferred and easiest method. However, you can use any value, including the generic [`renderable.userData`](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/graphics/g3d/Renderable.html#userData) to decide which shader to use, as long as its `shader.canRender(renderable)` method returns true for the given renderable.
+
 # Sorting render calls
 If render calls would be executed in a random order, then it would cause strange and less performing result. For example, if a transparent object would be rendered prior to an object that's behind it then you won't see the object behind it. This is because the depth buffer will prevent the object further away from being rendered. Sorting the render calls helps to solve this.
 
