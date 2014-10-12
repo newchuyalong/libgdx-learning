@@ -122,7 +122,7 @@ The [`RenderContext`](http://libgdx.badlogicgames.com/nightlies/docs/api/com/bad
 
 **Caution:** Obviously this will only work if all `Shader` implementations use the `RenderContext` instead of directly making GL calls. You should always use the `RenderContext` if possible, instead of directly calling the corresponding GL call.
 
-For example: When depth testing is enabled using the RenderContext, then it will enable depth testing again. Now when you use e.g. SpriteBatch, that disables depth testing but doesn't update the RenderContext. This will lead to unexpected results. To avoid this, by default (when you don't specify a RenderContext yourself) ModelBatch will _reset_ the RenderContext on both the `begin()` and `end()` methods, by calling the same methods on the RenderContext. This is to make sure that context switches outside the ModelBatch don't interfere with the rendering. 
+For example: When depth testing is enabled using the RenderContext, then it will enable depth testing for you. Now when you use e.g. SpriteBatch then that disables depth testing but doesn't update the RenderContext. This will lead to unexpected results. To avoid this, by default (when you don't specify a RenderContext yourself) ModelBatch will _reset_ the RenderContext on both the `begin()` and `end()` methods, by calling the same named methods on the RenderContext. This is to make sure that context switches outside the ModelBatch don't interfere with the rendering. 
 
 However, when you specify your own `RenderContext` (which doesn't have to be a custom implementation of it) then you're responsible for calling the `context.begin()` and `context.end()` methods. This allows you use the same context for multiple ModelBatch instances or even avoid having to reset the context all together.
 
@@ -131,21 +131,23 @@ However, when you specify your own `RenderContext` (which doesn't have to be a c
 ## TextureBinder
 To keep track of the textures currently being bound, RenderContext contains a [textureBinder](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/graphics/g3d/utils/RenderContext.html#textureBinder) member. [`TextureBinder`](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/graphics/g3d/utils/TextureBinder.html) ([code](https://github.com/libgdx/libgdx/blob/master/gdx/src/com/badlogic/gdx/graphics/g3d/utils/TextureBinder.java)) is an interface used to keep track of texture binds, as well as texture context (e.g. the minification/magnification filters). By default the [`DefaultTextureBinder`](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/graphics/g3d/utils/DefaultTextureBinder.html) ([code](https://github.com/libgdx/libgdx/blob/master/gdx/src/com/badlogic/gdx/graphics/g3d/utils/DefaultTextureBinder.java)) is used. Although you can specify your own implementation, this is rarely required.
 
-The DefaultTextureBinder uses every available texture unit (within the specified range) to avoid unneeded texture binds. A typical modern mobile GPU offers around 16 or 32 texture units to which textures can be bound. OpenGL ES limit the number of units to 32. You can specify the range to use when constructing the DefaultTextureBinder using the `offset` and `count` arguments. If you don't specify an offset, then 0 is assumed. If you don't specify a count then all available remaining units will be used. ModelBatch will by exclude texture unit 0 from the range, because this is often used by SpriteBatch. So by default, texture unit `1` to `31` will be used, unless the GPU supports less texture units.
+The DefaultTextureBinder uses every available texture unit (within the specified range) to avoid unneeded texture binds. A typical modern mobile GPU offers around 16 or 32 texture units to which textures can be bound. OpenGL ES limits the number of units to 32. You can specify the range to use when constructing the DefaultTextureBinder, using the `offset` and `count` arguments. If you don't specify an offset, then 0 is assumed. If you don't specify a count then all available remaining units will be used. ModelBatch will, by default, exclude texture unit 0 from the range, because this is often used for GUI. So by default, texture unit `1` to `31` will be used, unless the GPU supports less texture units.
 
 `DefaultTextureBinder` supports two methods:
 * **ROUNDROBIN:** When a texture is already bound, then it is reused. Otherwise the first texture is bound to the first available unit, the next texture is bound to the next available unit, and so on. When all available units are used, then binding restarts at the first available unit, overwriting the previous bound texture.
 * **WEIGHTED:** Weights the textures by counting the number of times a texture is used or not. Often reused textures are less likely to be overwritten, while less reused textures are more likely to be overwritten.
+
 By default ModelBatch will use the _WEIGHTED_ method.
 
-You can bind a texture using `TextureBinder` by call the `bind(...)` method. This method will return the unit the texture is bound to. So, practically, you can bind a texture in your `Shader` to _uniform_ like this:
+You can bind a texture using `TextureBinder` by calling the `bind(...)` method. This method will return the unit the texture is bound to. So, practically, you can bind a texture in your `Shader` to an _uniform_ like this:
 ```java
 program.setUniformi(uniformLocation, context.textureBinder.bind(texture));
 ```
 
 ### TextureDescriptor
-The api uses a `TextureDescriptor` when specifying a texture. This is because you might want to use a texture but do want to change it's context properties. These properties currently include the minification and magnification filters, as well as the horizontal wrapping and vertical wrapping. Therefor the TextureDescriptor is also used by e.g. the [[TextureAttribute | Material-and-environment#textureattribute]] and [[CubemapAttribute | Material-and-environment#cubemapattribute]]. For convenience, TextureBinder allows you to directly specify a TextureDescriptor:
+The api often uses a `TextureDescriptor` when specifying a texture. This is because you might want to use a texture but do require specific context properties. These properties currently include the minification and magnification filters, as well as the horizontal wrapping and vertical wrapping. Therefor the TextureDescriptor is also used by e.g. the [[TextureAttribute | Material-and-environment#textureattribute]] and [[CubemapAttribute | Material-and-environment#cubemapattribute]]. For convenience, TextureBinder allows you to directly specify a TextureDescriptor:
 ```java
 program.setUniformi(uniformLocation, context.textureBinder.bind(
-    (TextureAttribute)(renderable.material.get(TextureAttribute.Diffuse))).textureDescription));
+    (TextureAttribute)(renderable.material.get(TextureAttribute.Diffuse)))
+        .textureDescription));
 ```
