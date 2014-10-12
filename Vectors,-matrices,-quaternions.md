@@ -30,11 +30,6 @@ vec.sub( x1, y1, z1 );                    // subtract point (x1, y1, z1)
 vec.nor();                                // normalize result
 ```
 
-## Temporary Vectors ##
-
-The `tmp()` functions return a reference to a static vector useful for temporary calculations where instantiation of a new vector would be unnecessary. New object instantiation can be costly and is especially discouraged on mobile platforms such as Android, where too much object instantiation can provoke unnecessary garbage collection and interrupt the user experience. *Use care with this temporary vector and never keep a reference to it as it is static and therefore shared across all vector instances.*
-
-
 ----
 
 # Matrices #
