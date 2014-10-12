@@ -118,24 +118,25 @@ public class MyActor extends Actor {
 }
 ```
 
-This `draw` method draws a region using the position, origin, size, scale, and rotation of the actor. The SpriteBatch passed to draw is configured to draw in the parent's coordinates, so 0,0 is the bottom left corner of the parent. This makes drawing simple, even if the parent is rotated and scaled. SpriteBatch begin has already been called. If the parentAlpha is combined with this actor's alpha as shown, child actors will be influenced by the parent's translucency. Note the color of the SpriteBatch may be changed by other actors and should be set by each actor before it draws.
+This `draw` method draws a region using the position, origin, size, scale, and rotation of the actor. The Batch passed to draw is configured to draw in the parent's coordinates, so 0,0 is the bottom left corner of the parent. This makes drawing simple, even if the parent is rotated and scaled. Batch begin has already been called. If the parentAlpha is combined with this actor's alpha as shown, child actors will be influenced by the parent's translucency. Note the color of the Batch may be changed by other actors and should be set by each actor before it draws.
 
 If `setVisible(false)` is called on an actor, its draw method will not be called. It will also not receive input events.
 
 If an actor needs to perform drawing differently, such as with a 
-ShapeRenderer, the SpriteBatch should be ended and then begun again at the end of the method. Of course, this causes the batch to be flushed, so should be used judiciously. The transformation and projection matrices from the SpriteBatch can be used:
+ShapeRenderer, the Batch should be ended and then begun again at the end of the method. Of course, this causes the batch to be flushed, so should be used judiciously. The transformation and projection matrices from the Batch can be used:
 
 ```java
-private ShapeRenderer renderer;
+private ShapeRenderer renderer = new ShapeRenderer();
 
-public void draw (SpriteBatch batch, float parentAlpha) {
+public void draw (Batch batch, float parentAlpha) {
 	batch.end();
 
 	renderer.setProjectionMatrix(batch.getProjectionMatrix());
 	renderer.setTransformMatrix(batch.getTransformMatrix());
 	renderer.translate(getX(), getY(), 0);
 
-	renderer.begin(ShapeType.Rectangle);
+	renderer.begin(ShapeType.Filled);
+	renderer.setColor(Color.BLUE);
 	renderer.rect(0, 0, getWidth(), getHeight());
 	renderer.end();
 
@@ -145,7 +146,7 @@ public void draw (SpriteBatch batch, float parentAlpha) {
 
 ### Group transform ###
 
-When a group is rotated or scaled, the children draw as normal and the SpriteBatch's transform draws them correctly rotated or scaled. Before a group draws, the SpriteBatch is flushed so the transform can be set. This flush may become a performance bottleneck if there are many dozens of groups. If the actors in a group are not rotated or scaled, then `setTransform(false)` can be used for the group. When this is done, each child's position will be offset by the group's position for drawing, causing the children to appear in the correct location even though the SpriteBatch has not been transformed. This cannot be used for a group that has rotation or scale.
+When a group is rotated or scaled, the children draw as normal and the Batch's transform draws them correctly rotated or scaled. Before a group draws, the Batch is flushed so the transform can be set. This flush may become a performance bottleneck if there are many dozens of groups. If the actors in a group are not rotated or scaled, then `setTransform(false)` can be used for the group. When this is done, each child's position will be offset by the group's position for drawing, causing the children to appear in the correct location even though the Batch has not been transformed. This cannot be used for a group that has rotation or scale.
 
 ## Hit detection ##
 
