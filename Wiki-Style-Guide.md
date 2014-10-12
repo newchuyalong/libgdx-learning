@@ -23,9 +23,9 @@ Also, after headers, leave a line of white space please.
 
 * Wiki links are made using `[ [` and `] ]` (without the spaces) with a `|` (pipe) to separate text from link. For example:
 
-[ [link text to simple game | A simple game] ] \(without the spaces in between the outer brackets) renders this: [[link text to simple game | A simple game]]  
+`[[link text to simple game | A simple game]]` renders this: [[link text to simple game | A simple game]]  
 
-Do NOT use conventional \[]() syntax for wiki-links.
+***Do NOT use conventional \[]() syntax for wiki-links.***
 
 ## Linking to code/docs ##
 Links are done as follows: `[ClassName](link to docs) [(code)](link to code)` for example:
