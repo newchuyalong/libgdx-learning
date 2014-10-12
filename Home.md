@@ -1,5 +1,5 @@
 # Table of Contents
-[[Wiki Style Guide]]
+## [[Wiki Style Guide]] ##
 
   * **Developer's Guide**
     * [[Introduction|Introduction]]
