@@ -123,8 +123,6 @@
       * [[Path Editor]]
     * Extensions
       * [[Artificial Intelligence]]
-            * [[Message Handling]]
-            * [[State Machine]]
       * [[gdx-freetype]]
       * [[Physics]]
             * [[Box2D]]    
