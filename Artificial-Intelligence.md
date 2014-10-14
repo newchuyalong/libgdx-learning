@@ -1,8 +1,6 @@
-The gdx-ai extension is intended to contain common techniques and algorithms involving Artificial Intelligence for games. The ai extension has no actual AI at this point and is currently under development.
+Since libGDX 1.4.1 the [gdx-ai](https://github.com/libgdx/gdx-ai) extension has been moved to a separate repository under the libGDX umbrella. This allows us to have independent life-cycles. Besides offering some benefits in terms of project maintenance and visibility, this means that from now on the two projects will have distinct version numbers.
 
-The features currently supported are as follows:
-* [[Message Handling]]
-* [[State Machine]]
+Please, refer to the [official gdx-ai wiki](https://github.com/libgdx/gdx-ai/wiki).
 
-Hopefully new contributions and additions will come soon.
+Have fun designing intelligent agents!!! :video_game: 
 
