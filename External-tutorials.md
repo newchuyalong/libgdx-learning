@@ -91,6 +91,7 @@ This websites will let you play with WebGL (provided your browser supports it) a
  * Tutorial on how to speed up map editing in Tiled and testing the map: http://siondream.com/blog/games/exploit-tileds-command-tool/
 * Video tutorial series on creating a tile game prototype: https://www.youtube.com/playlist?list=PLXY8okVWvwZ0qmqSBhOtqYRjzWtUCWylb
 * gdx-tiled-preprocessor video tutorial: http://youtu.be/q5D-TzlCRPM (Warning: the gdx-tiled-preprocessor was merged into gdx-tools)
+* Tiled + Box2d (En español): http://tutoriales.tiarsoft.com/2014/10/tiled-box2d-parte-1.html
 
 
 # External Tools & Frameworks #
