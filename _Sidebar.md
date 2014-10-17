@@ -101,6 +101,7 @@
             * [[3D Particle Effects]]
             * Perspective Camera ??
             * Picking ??
+            * [[Decals]]
     * [[Managing Your Assets]]
     * [[Internationalization and Localization]]
     * Utilities
