@@ -37,16 +37,16 @@ Depending on the underlying hardware, the wrappers may be or may not be availabl
 
 The Graphics module also provides methods to generate Pixmaps and Textures.
 
-For example, to obtain the OpenGL API 1.0 instance, the following code will be used:
+For example, to obtain the OpenGL API 2.0 instance, the following code will be used:
 ```java
-GL10 gl = Gdx.graphics.getGL10 ();
+GL20 gl = Gdx.graphics.getGL20 ();
 ```
-The method will return an instance that can be used to draw onto the screen. In case the hardware configuration does not support OpenGL ES v1.0, null is returned.
+The method will return an instance that can be used to draw onto the screen. In case the hardware configuration does not support OpenGL ES v2.0, null is returned.
 
 The following snippet clears the screen and paints it with red.
 ```java
 gl.glClearColor(0.1f, 0.0f, 0.0f, 1);
-gl.glClear(GL10.GL_COLOR_BUFFER_BIT);
+gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 ```
 It always returns the specific implementation of the API (lwjgl, jogl or android), so the main application doesn’t need to know specifics and will work across the whole range of platforms if supported.
 
@@ -54,9 +54,9 @@ The following API versions are supported:
 
 |*GL Version* | *Method to access* |
 |:---------:|:-----------------:|
-|1.0 | `Gdx.graphics.getGL10();`|
-|1.1 |`Gdx.graphics.getGL11();`|
-|2.0 |`Gdx.graphics.getGL20();`|
+|2.0 | `Gdx.graphics.getGL20();`|
+|3.0 |`Gdx.graphics.getGL30();`|
+
 
 To learn more about the Graphics module check its documentation [[here|Graphics Module]].
 
