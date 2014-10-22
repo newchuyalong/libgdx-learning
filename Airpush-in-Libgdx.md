@@ -10,7 +10,7 @@
 
 # Introduction #
 
-This tutorial will guide you for all the steps to add Airpush adds in your Libgdx Powered Andriod Games. You will be able to add both Banner Ads, and Smartwall Ads. The basic structure is very like the [Admob Tutorial](https://github.com/libgdx/libgdx/wiki/Admob-in-libgdx). But there are several changes and it will be more straight forward with not much text. (If you want a very detailed explanation of why every step, feel free to read that tutorial first).
+This tutorial will guide you for all the steps to add Airpush adds in your Libgdx Powered Android Games. You will be able to add both Banner Ads, and Smartwall Ads. The basic structure is very like the [Admob Tutorial](https://github.com/libgdx/libgdx/wiki/Admob-in-libgdx). But there are several changes and it will be more straight forward with not much text. (If you want a very detailed explanation of why every step, feel free to read that tutorial first).
 
 You need:
 
