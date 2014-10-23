@@ -177,7 +177,9 @@ Similar to the `FloatAttribute` class, the `IntAttribute` allows you to pass an 
 * `IntAttribute.CullFace` OpenGL enum to specify face culling, either GL_NONE (no culling), GL_FRONT (only render back faces) or GL_BACK (only render front faces). The default depends on the shader, the default shader uses GL_BACK by default.
 
 ### TextureAttribute ###
-`TextureAttribute` can be used to pass a `Texture` to the shader. Just like the `CubemapAttribute` it has a `textureDescription` member which allows you to set the `Texture` amongst some texture related values like repeat and filter. Additionally it contains the `offsetU`, `offsetV`, `scaleU` and `scaleY` members, which can be used to specify the region (texture coordinates transformation) of the texture to use. The `TextureAttribute` requires an attribute type, which by default can be one of the following:
+`TextureAttribute` can be used to pass a `Texture` to the shader. Just like the `CubemapAttribute` it has a `textureDescription` member which allows you to set the `Texture` amongst some texture related values like repeat and filter. Additionally it contains the `offsetU`, `offsetV`, `scaleU` and `scaleY` members, which can be used to specify the region (texture coordinates transformation) of the texture to use. It also has an `uvIndex` member (defaults to 0) which can be used to specify which texture coordinates should be used. Note that the default shader currently ignores this uvIndex member and always uses the first texture coordinates.
+
+The `TextureAttribute` requires an attribute type, which by default can be one of the following:
 * `TextureAttribute.Diffuse`
 * `TextureAttribute.Specular`
 * `TextureAttribute.Bump`
