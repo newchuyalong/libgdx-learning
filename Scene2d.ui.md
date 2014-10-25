@@ -87,7 +87,7 @@ public void resize (int width, int height) {
 }
 
 public void render () {
-	Gdx.gl.glClear(GL10.GL_COLOR_BUFFER_BIT);
+	Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 	stage.act(Gdx.graphics.getDeltaTime());
 	stage.draw();
 
