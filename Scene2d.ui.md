@@ -188,39 +188,39 @@ Widgets that perform clipping, such as ScrollPane, use `glScissor` which uses a 
 
 ### <a id="Table"></a>Table ###
 
-The Table class sizes and positions its children using a logical table, similar to HTML tables. Tables are intended to be used extensively in scene2d.ui to layout widgets, as they are easy to use and much more powerful than manually sizing and positioning widgets. Table-based layouts don't rely on absolute positioning and therefore automatically adjust to different widget sizes and screen resolutions.
+[The Table class](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/scenes/scene2d/ui/Table.html) ([code](https://github.com/libgdx/libgdx/blob/master/gdx/src/com/badlogic/gdx/scenes/scene2d/ui/Table.java)) sizes and positions its children using a logical table, similar to HTML tables. Tables are intended to be used extensively in scene2d.ui to layout widgets, as they are easy to use and much more powerful than manually sizing and positioning widgets. Table-based layouts don't rely on absolute positioning and therefore automatically adjust to different widget sizes and screen resolutions.
 
 It is highly recommended to read the [Table documentation](Table) before building a UI using scene2d.ui.
 
 ### <a id="Container"></a>Container ###
 
-The Container class is equivalent to a Table with only a single child, but is more lightweight. Container has all of the constraints of a table cell and are useful for setting the size and alignment of a single widget.
+[The Container class](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/scenes/scene2d/ui/Container.html) ([code](https://github.com/libgdx/libgdx/blob/master/gdx/src/com/badlogic/gdx/scenes/scene2d/ui/Container.java)) is equivalent to a Table with only a single child, but is more lightweight. Container has all of the constraints of a table cell and are useful for setting the size and alignment of a single widget.
 
 ### <a id="Stack"></a>Stack ###
 
-Stack is a WidgetGroup that lays out each child to be the size of the stack. This is useful when it is necessary to have widgets stacked on top of each other. The first widget added to the stack is drawn on the bottom, and the last widget added is drawn on the top. 
+[Stack](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/scenes/scene2d/ui/Stack.html) ([code](https://github.com/libgdx/libgdx/blob/master/gdx/src/com/badlogic/gdx/scenes/scene2d/ui/Stack.java)) is a WidgetGroup that lays out each child to be the size of the stack. This is useful when it is necessary to have widgets stacked on top of each other. The first widget added to the stack is drawn on the bottom, and the last widget added is drawn on the top. 
 
 ### <a id="ScrollPane"></a>ScrollPane ###
 
-ScrollPane scrolls a child widget using scrollbars and/or mouse or touch dragging. Scrolling is automatically enabled when the widget is larger than the scroll pane. If the widget is smaller than the scroll pane in one direction, it is sized to the scroll pane in that direction. ScrollPane has many settings for if and how touches control scrolling, fading scrollbars, etc. ScrollPane has drawables for the background, horizontal scrollbar and knob, and vertical scrollbar and knob. If touches are enabled (the default), all the drawables are optional.
+[ScrollPane](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/scenes/scene2d/ui/ScrollPane.html) ([code](https://github.com/libgdx/libgdx/blob/master/gdx/src/com/badlogic/gdx/scenes/scene2d/ui/ScrollPane.java)) scrolls a child widget using scrollbars and/or mouse or touch dragging. Scrolling is automatically enabled when the widget is larger than the scroll pane. If the widget is smaller than the scroll pane in one direction, it is sized to the scroll pane in that direction. ScrollPane has many settings for if and how touches control scrolling, fading scrollbars, etc. ScrollPane has drawables for the background, horizontal scrollbar and knob, and vertical scrollbar and knob. If touches are enabled (the default), all the drawables are optional.
 
 The ScrollPane preferred width 
 
 ### <a id="SplitPane"></a>SplitPane ###
 
-SplitPane contains two widgets and is divided in two either horizontally or vertically. The user may resize the widgets with a draggable splitter. The child widgets are always sized to fill their half of the splitpane. SplitPane has a drawable for the draggable splitter.
+[SplitPane](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/scenes/scene2d/ui/SplitPane.html) ([code](https://github.com/libgdx/libgdx/blob/master/gdx/src/com/badlogic/gdx/scenes/scene2d/ui/SplitPane.java)) contains two widgets and is divided in two either horizontally or vertically. The user may resize the widgets with a draggable splitter. The child widgets are always sized to fill their half of the splitpane. SplitPane has a drawable for the draggable splitter.
 
 ### <a id="Tree"></a>Tree ###
 
-Tree displays a hierarchy of nodes. Each node may have child nodes and can be expanded or collapsed. Each node has an actor, allowing complete flexibility over how each item is displayed. Tree has drawables for the plus and minus icons next to each node's actor.
+[Tree](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/scenes/scene2d/ui/Tree.html) ([code](https://github.com/libgdx/libgdx/blob/master/gdx/src/com/badlogic/gdx/scenes/scene2d/ui/Tree.java)) displays a hierarchy of nodes. Each node may have child nodes and can be expanded or collapsed. Each node has an actor, allowing complete flexibility over how each item is displayed. Tree has drawables for the plus and minus icons next to each node's actor.
 
 ### <a id="VerticalGroup"></a>VerticalGroup ###
 
-The VerticalGroup class is equivalent to a Table with only a single column, but is more lightweight. VerticalGroup allows widgets to be inserted in the middle and removed, while Table does not.
+A [VerticalGroup](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/scenes/scene2d/ui/VerticalGroup.html) ([code](https://github.com/libgdx/libgdx/blob/master/gdx/src/com/badlogic/gdx/scenes/scene2d/ui/VerticalGroup.java)) is equivalent to a Table with only a single column, but is more lightweight. VerticalGroup allows widgets to be inserted in the middle and removed, while Table does not.
 
 ### <a id="HorizontalGroup"></a>HorizontalGroup ###
 
-The HorizontalGroup class is equivalent to a Table with only a single row, but is more lightweight. HorizontalGroup allows widgets to be inserted in the middle and removed, while Table does not.
+A [HorizontalGroup](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/scenes/scene2d/ui/HorizontalGroup.html) ([code](https://github.com/libgdx/libgdx/blob/master/gdx/src/com/badlogic/gdx/scenes/scene2d/ui/HorizontalGroup.java)) is equivalent to a Table with only a single row, but is more lightweight. HorizontalGroup allows widgets to be inserted in the middle and removed, while Table does not.
 
 ## <a id="Widgets"></a>Widgets ##
 
