@@ -38,7 +38,7 @@ All `SpriteBatch` drawing calls must be made between the `begin` and `end` metho
 
 ##Texture ##
 
-The `Texture` class decodes an image file and loads it into GPU memory. The image file should be placed in the "assets" folder. The image's dimensions must be a power of two (16x16, 64x256, etc).
+The `Texture` class decodes an image file and loads it into GPU memory. The image file should be placed in the "assets" folder. The image's dimensions should be powers of two (16x16, 64x256, etc) for compatibility and performance reasons.
 
 ```java
 private Texture texture;
