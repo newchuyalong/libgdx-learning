@@ -1,6 +1,6 @@
 When dealing with different screens it is often necessary to decide for a certain strategy how those different screen sizes and aspect ratios should be handled. Camera and Stage support different viewport strategies, for example when doing picking via `Camera.project(vec, viewportX, viewportY, viewportWidth, viewportHeight)`.
 
-LibGDX provides a more convenient way of dealing with this problem, namely via [`Viewport`s](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/utils/viewport/Viewport.html) ([source](https://github.com/libgdx/libgdx/blob/master/gdx/src/com/badlogic/gdx/utils/viewport/Viewport.java)).
+LibGDX provides a more convenient way of dealing with this problem, namely via a [`Viewport`](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/utils/viewport/Viewport.html) ([source](https://github.com/libgdx/libgdx/blob/master/gdx/src/com/badlogic/gdx/utils/viewport/Viewport.java)).
 
 ### StretchViewport ###
 The [`StretchViewport`](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/utils/viewport/StretchViewport.html) ([source](https://github.com/libgdx/libgdx/blob/master/gdx/src/com/badlogic/gdx/utils/viewport/StretchViewport.java))  supports working with a virtual screen size. That means one can assume that a screen is always of the size `virtualWidth x virtualHeight`. This virtual viewport will then always be stretched to fit the screen. There are no black bars, but the aspect ratio may not be the same after the scaling took place.
