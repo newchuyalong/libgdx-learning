@@ -38,9 +38,9 @@ Otherwise, if you wish to post on the [forum](http://www.badlogicgames.com/forum
 If you believe your issue, error, or suspected bug is related to a specific backend, please present the following information with your issue. If you are on IRC have the following information on hand.
 
 **For Android backend issues**
- - **Note:** Android issues can sometimes be more difficult do to device manufactures breaking things or buggy drivers.
+ - **Note:** Android issues can sometimes be more difficult due to device manufactures breaking things or buggy drivers.
 
-- **Note 2:** LibGDX only works completely on the Android Runtime (ART) on devices running the Android L developer preview and higher. Some functions will not work on the ART builds in 4.4.x do to an issue in ART that was fixed and included in the L developer preview and on.
+- **Note 2:** LibGDX only works completely on the Android Runtime (ART) on devices running the Android L developer preview and higher. Some functions will not work on the ART builds in 4.4.x due to an issue in ART that was fixed and included in the L developer preview.
 
 - Please have the device name and Android version in the bug report. Providing things won't be broken, we will make an attempt to fix the issue or implement a workaround for the device.
 
