@@ -51,7 +51,7 @@ Now right-click the `gdxBullet` project in the solution exporer and hit "Build".
 ![Build gdxBullet](http://i.imgur.com/jdxPRUJ.png)
 
 ### Loading the correct DLL ###
-Usually to load the natives to run bullet it is necessary to call `Bullet.init()`, which will do exactly that. Since we do not want to load the default natives without debug information included, we have to manually load our newly created `gdxBullet.dll` ourselves. You can use the following code snipped to do so. Just replace the `customDesktopLib` string with the actual path. Then call the `initBullet()` method where you'd normally call the `Bullet.init()` method (e.g. in the `create` method).
+Usually to load the natives to run bullet it is necessary to call `Bullet.init()`, which will do exactly that. Since we do not want to load the default natives without debug information included, we have to manually load our newly created `gdxBullet.dll` ourselves. You can use the following code snippet to do so. Just replace the `customDesktopLib` string with the actual path. Then call the `initBullet()` method where you'd normally call the `Bullet.init()` method (e.g. in the `create` method).
 
 	// Set this to the path of the lib to use it on desktop instead of the default lib.
 	private final static String customDesktopLib = "C:\\......\\libgdx\\extensions\\gdx-bullet\\jni\\vs\\gdxBullet\\x64\\Debug\\gdxBullet.dll";
