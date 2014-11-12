@@ -74,6 +74,8 @@ Now it's time to start your app and attach the C++ debugger. First, we need to s
 
 Then select the correct `javaw.exe` process of your app in the list of available processes and attach the debugger with the "Attach" button.
 
+*Note: with MS VC++ 2010 you'll have to first enable Tools->Settings->Expert Settings to get an option to attach to process.*
+
 ### Debugging ###
 For testing if this setup works one might add a breakpoint to `btDiscreteDynamicsWorld.stepSimulation`. The file containing this code is in `gdxBullet -> Source Files -> BulletDynamics -> Dynamics -> btDiscreteDynamicsWorld.cpp`.
 
