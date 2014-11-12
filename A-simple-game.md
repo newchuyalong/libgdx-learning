@@ -10,7 +10,7 @@ We'll look at:
   * Playing sound effects
 
 ## Project Setup ##
-Follow the steps in [[Project Setup, Running & Debugging]]. I used the following names:
+Follow the steps in [[Project Setup Gradle]]. I used the following names:
 
   * Application name: drop
   * Package name: com.badlogic.drop
