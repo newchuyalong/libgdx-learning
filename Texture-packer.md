@@ -3,7 +3,7 @@
    * [Directory structure](#directory-structure)
    * [Configuration](#configuration)
    * [Settings](#settings)
-   * [NinePatches](#ninePatches)
+   * [NinePatches](#ninepatches)
    * [Indexes](#image-indexes)
    * [Packing](#packing)
    * [Automatic packing](#automatic-packing)
