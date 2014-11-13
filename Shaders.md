@@ -30,7 +30,7 @@ Next you have the `u_projectionViewMatrix`. This is a 4x4 matrix that holds the 
 Inside the main method we execute the operations on the vertex. In this case all the shader does is multiply the vertex position with the matrix and assigns it to gl_Position. gl_Position is a predefined keyword by OpenGL and can't be used for anything else but passing through the processed vertex.
 
 ## Fragment shaders ##
-A fragment shader functions in a very similar way to a vertex shader. But instead of processing it on a vertex it processes it once for each fragment. For simplicity's sake think of a fragment as one pixel. Now, the quick thinker will realize that this is a very significant difference.
+A fragment shader functions in a very similar way to a vertex shader. But instead of processing it on a vertex it processes it once for each fragment. For simplicity's sake think of a fragment as one pixel. Now, you might notice that this is a very significant difference.
 
 Let's say a triangle covers an area of 300 pixels. The vertex shader for this triangle would be executed 3 times. The fragment shader though would be executed 300 times. So when writing shaders, keep this in mind. Everything done in the fragment shader will be exponentially more expensive!
 
