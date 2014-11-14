@@ -73,7 +73,6 @@ The Android SDK has introduced an API to create controllers for specific parts o
 
 ```@Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        Plane plane = (Plane) getArguments().get(ARGS_PLANE);
         return initializeForView(new MyGdxGame());
     }
 ```
