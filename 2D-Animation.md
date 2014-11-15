@@ -32,16 +32,16 @@ The following code snippet will create an [Animation](http://libgdx.badlogicgame
 ```java
 public class Animator implements ApplicationListener {
 
-	private static final int	FRAME_COLS = 6;		// #1
-	private static final int	FRAME_ROWS = 5;		// #2
+	private static final int        FRAME_COLS = 6;         // #1
+	private static final int        FRAME_ROWS = 5;         // #2
 	
-	Animation 			walkAnimation;		// #3
-	Texture 			walkSheet;		// #4
-	TextureRegion[]			walkFrames;		// #5
-	SpriteBatch			spriteBatch;		// #6
-	TextureRegion			currentFrame;		// #7
+	Animation                       walkAnimation;          // #3
+	Texture                         walkSheet;              // #4
+	TextureRegion[]                 walkFrames;             // #5
+	SpriteBatch                     spriteBatch;            // #6
+	TextureRegion                   currentFrame;           // #7
 	
-	float stateTime;					// #8
+	float stateTime;                                        // #8
 	
 	@Override
 	public void create() {
