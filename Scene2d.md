@@ -16,7 +16,13 @@ scene2d is well equipped for laying out, drawing, and handling input for game me
 
 Scene graphs have the drawback that they couple model and view. Actors store data that is often considered model data in games, such as their size and position. Actors are also the view, as they know how to draw themselves. This coupling makes MVC separation difficult. When used solely for UIs or for apps that don't care about MVC, the coupling is not an issue.
 
-scene2d has three class at its core. The Actor class is a node in the graph which has a position, rectangular size, origin, scale, rotation, and color. The Group class is an actor that may have child actors. The Stage class has a camera, SpriteBatch, and a root group and handles drawing the actors and distributing input events.
+scene2d has three classes at its core:
+
+1. The Actor class is a node in the graph which has a position, rectangular size, origin, scale, rotation, and color.
+
+1. The Group class is an actor that may have child actors.
+
+1. The Stage class has a camera, SpriteBatch, and a root group and handles drawing the actors and distributing input events.
 
 ### Stage ###
 
