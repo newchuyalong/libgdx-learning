@@ -12,7 +12,10 @@ Specify your application name, your Java package name, the name of your main cla
   * [[NetBeans|Gradle and NetBeans]]
   * [[Commandline|Gradle on the Commandline]]
 
+Note that the Advanced button lets you set the project generation to generate Eclipse and/or IDEA projects **without** Gradle integration, as described in more detail in the wiki article about [workflow without Gradle](Improving-workflow-with-Gradle#how-to-remove-gradle-ide-integration-from-your-project), as well as options to use an alternative repository to Maven Central and to not force downloading dependencies.
+
 ![setup ui](http://144.76.220.132/uploads/Screen%20Shot%202014-04-16%20at%2023.59.48-qVxlZr2zxk.png)
+
 
 ### Creating a libgdx project on the command line
 IF you run it from the command line, specify the following arguments.
