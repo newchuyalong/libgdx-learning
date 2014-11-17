@@ -19,8 +19,6 @@ If continuous rendering is set to false, the render() method will be called only
 
 ----
 
-**iOS Note**: iOS will currently always continuously render, regardless of this setting. See [this issue](https://github.com/libgdx/libgdx/issues/1674) for the latest status.
-
 Good article about this topic: http://bitiotic.com/blog/2012/10/01/enabling-non-continuous-rendering-in-libgdx
 
 Official libgdx blog post: http://www.badlogicgames.com/wordpress/?p=2289
