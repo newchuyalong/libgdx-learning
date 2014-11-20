@@ -88,7 +88,7 @@ Here the `20, 20, 50, 50` describes the portion of the texture, which is then dr
 
 ## Sprite ##
 
-The [`Sprite` class](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/graphics/g2d/Sprite.html) [(source)](https://github.com/libgdx/libgdx/blob/master/gdx/src/com/badlogic/gdx/graphics/g2d/Sprite.java describes both a texture region, the geometry where it will be drawn, and the color it will be drawn.
+The [`Sprite` class](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/graphics/g2d/Sprite.html) [(source)](https://github.com/libgdx/libgdx/blob/master/gdx/src/com/badlogic/gdx/graphics/g2d/Sprite.java) describes both a texture region, the geometry where it will be drawn, and the color it will be drawn.
 
 ```java
 private Sprite sprite;
