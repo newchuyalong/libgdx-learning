@@ -25,7 +25,7 @@ http://libgdxspain.blogspot.com
 http://libgdxtutorialseries.blogspot.com
  * Mets-Blog | Libgdx - http://www.mets-blog.com/category/libgdx/
  * Xoppa's blog - http://blog.xoppa.com/category/libgdx/
- * libgdx.cn - http://www.libgdx.cn
+ * libgdx.cn - http://www.libgdx.cn (Chinese)
 
 # Topic Specific Tutorials #
 
