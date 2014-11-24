@@ -88,7 +88,7 @@ android {
    buildTypes {
        release {
            runProguard true
-// use minifyEnabled instead of runProguard if your gradle plugin version in 0.14+
+// use minifyEnabled instead of runProguard if your gradle plugin version is 0.14+
            proguardFile getDefaultProguardFile('proguard-android-optimize.txt')
            proguardFile 'proguard-project.txt'
        }
