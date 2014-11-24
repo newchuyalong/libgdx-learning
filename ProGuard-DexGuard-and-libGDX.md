@@ -51,6 +51,8 @@ Note that you will also have to keep any classes that you access via reflection 
 
 To apply ProGuard/DexGuard to your Android project, you can use the following `build.gradle` file (the on in the `android/` folder of your project, not the root `build.gradle`)
 
+Note that in gradle pluging version 0.14+ the property **runProguard** has been changed to **minifyEnabled**.
+
 ```groovy
 android {
    buildToolsVersion "19.0.3"
