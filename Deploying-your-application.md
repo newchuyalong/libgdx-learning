@@ -3,7 +3,7 @@
 * [Forward](#forward)
 * [Deploy to Windows/Linux/Mac](#deploy-to-windowslinuxmac-os-x)
 * [Deploy to Android](#deploy-to-android)
-* [Deploy to iOS](#Deploy-to-ios)
+* [Deploy to iOS](#deploy-to-ios)
 * [Deploy to HTML/JS](#deploy-to-htmljs)
 
 
