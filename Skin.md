@@ -165,7 +165,7 @@ Skin files from the [libgdx tests](https://github.com/libgdx/libgdx/tree/master/
 
 ### <a id="Color"></a>Color ###
 
-Colors are defined in JSON as shown above. If the `r`, `g`, or `b` properties are not omitted, 0 is used. If `a` is omitted, 1 is used.
+Colors are defined in JSON as shown above. If the `r`, `g`, or `b` properties are omitted, 0 is used. If `a` is omitted, 1 is used.
 
 ### <a id="BitmapFont"></a>BitmapFont ###
 
