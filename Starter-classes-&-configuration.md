@@ -12,7 +12,7 @@ For each target platform, a starter class has to be written. This class instanti
 This article assumes you have followed the instruction in [[Project Setup, Running & Debugging]] and have imported the generated core, desktop, Android and HTML5 projects into Eclipse.
 
 # Desktop (LWJGL) #
-Open the `DesktopLauncher.java` class in `/desktop/src/<package-name>` (where `<package-name>` is your package name e.g. `com/me/mygdxgame`):
+Opening the `Main.java` class in `my-gdx-game` shows the following:
 
 ```java
 package com.me.mygdxgame;
