@@ -69,12 +69,52 @@ Android applications can have multiple activities. Libgdx games should usually o
 
 ## Fragment based libgdx ##
 
-The Android SDK has introduced an API to create controllers for specific parts of a screen, that can be easily re-used on multiple screens. This API is called the [Fragments API](http://developer.android.com/guide/components/fragments.html). Libgdx can now also be used as a part of a larger screen, inside a Fragment. To create a Libgdx fragment, subclass `AndroidFragmentApplication` and implement the `onCreateView()` with the following initialization;
-
+The Android SDK has introduced an API to create controllers for specific parts of a screen, that can be easily re-used on multiple screens. This API is called the [Fragments API](http://developer.android.com/guide/components/fragments.html). Libgdx can now also be used as a part of a larger screen, inside a Fragment. To create a Libgdx fragment, subclass `AndroidFragmentApplication` and implement the `onCreateView()` with the following initialization:
 ```@Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         return initializeForView(new MyGdxGame());
     }
+```
+
+That code depends on some other changes to the -android project:
+* 1. [Add Android V4 Support Library to the -android project and its build path](https://developer.android.com/tools/support-library/setup.html#libs-without-res) if you haven't already added it. This is needed in order to Extend FragmentActivity later
+* 2. Change AndroidLauncher activity to extend FragmentActivity, not AndroidApplication
+* 3. Implement AndroidFragmentApplication.Callbacks on the AndroidLauncher activity
+* 4. Create a Class that extends AndroidFragmentApplication which is the Fragment implementation for Libgdx.
+* 5. Add the initializeForView() code in the Fragment's onCreateView method.
+* 6. Finally, replace the AndroidLauncher activity content with the Libgdx Fragment.
+
+For example:
+```
+// 2. Change AndroidLauncher activity to extend FragmentActivity, not AndroidApplication
+// 3. Implement AndroidFragmentApplication.Callbacks on the AndroidLauncher activity
+public class AndroidLauncher extends FragmentActivity implements AndroidFragmentApplication.Callbacks
+{
+   @Override
+   protected void onCreate (Bundle savedInstanceState)
+   {
+      super.onCreate(savedInstanceState);
+
+      // 6. Finally, replace the AndroidLauncher activity content with the Libgdx Fragment.
+      GameFragment fragment = new GameFragment();
+      FragmentTransaction trans = getSupportFragmentManager().beginTransaction();
+      trans.replace(android.R.id.content, fragment);
+      trans.commit();
+   }
+
+   // 4. Create a Class that extends AndroidFragmentApplication which is the Fragment implementation for Libgdx.
+   private class GameFragment extends AndroidFragmentApplication
+   {
+      // 5. Add the initializeForView() code in the Fragment's onCreateView method.
+      @Override
+      public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
+      {  return initializeForView(new MyGdxGame());   }
+   }
+
+
+   @Override
+   public void exit() {}
+}
 ```
 
 ### The AndroidManifest.xml File ###
