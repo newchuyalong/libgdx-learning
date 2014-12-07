@@ -19,7 +19,7 @@ java -cp gdx.jar:gdx-natives.jar:gdx-backend-lwjgl.jar:gdx-backend-lwjgl-natives
 ```
 
 It can also be run via JWS, though this is a slightly out of date version:
-[Hiero Java WebStart](http://wiki.libgdx.googlecode.com/git/jws/hiero.jnlp). But this version is not able to create [distant field font](https://github.com/libgdx/libgdx/wiki/Distance-field-fonts)s, therefore use a newer version on you own computer as described above.
+[Hiero Java WebStart](http://wiki.libgdx.googlecode.com/git/jws/hiero.jnlp). But this version is not able to create [distant field fonts](https://github.com/libgdx/libgdx/wiki/Distance-field-fonts), therefore use a newer version on you own computer as described above.
 
 ## Rasterization ##
 
