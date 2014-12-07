@@ -10,6 +10,8 @@
 ### <a id="Forward"></a>Forward ###
 The mechanism to deploy your game differs between platforms. This article aims to articulate what is necessary to deploy to each platform that Libgdx officially supports.
 
+**_Note: if using gradle you may prefer following the guidelines provided on [this page](https://github.com/libgdx/libgdx/wiki/Gradle-on-the-Commandline#packaging-the-project)._**
+
 ## <a id="Deploy_to_Windows/Linux/Mac"></a>Deploy to Windows/Linux/Mac OS X ##
 The easiest way to deploy to Windows/Linux/Mac is to create a runnable JAR in Eclipse, which includes all of your code, the code of libgdx and any extensions, and your assets. To create a runnable JAR:
 
