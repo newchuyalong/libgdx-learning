@@ -2,7 +2,9 @@ Hiero is a bitmap font packing tool. It saves in the [Angel Code font](http://ww
 
 ## Running Hiero ##
 
-If you are using Gradle and you added "Tools" extension to your project, you can easily run Hiero from your IDE.
+You can download the .jar file [here](https://code.google.com/p/libgdx/downloads/detail?name=hiero.jar&can=2&q=) (9MB). Make it executable (if you are on a UNIX-like operating system) and then run it.
+
+If you are using Gradle and you added "Tools" extension to your project, you can easily run Hiero from your IDE, otherwise look at Downloading Hiero.
 
 Example for IntelliJ IDEA: Go to the Hiero class, right click and select `Run Hiero.main()`. On the `Run configurations` popup that will appear, select the `Desktop` module, and click `Run`.
 
