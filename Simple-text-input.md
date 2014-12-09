@@ -4,7 +4,7 @@ On the desktop a Swing dialog will be opened, prompting the user to enter a stri
 
 On Android a standard Android dialog will be opened, again prompting the user for input.
 
-To receive the input or a notification that the user canceled the input one has to implement the `TextInputListener` interface:
+To receive the input or a notification that the user canceled the input, one has to implement the `TextInputListener` interface:
 
 ```java
 public class MyTextInputListener implements TextInputListener {
@@ -18,7 +18,7 @@ public class MyTextInputListener implements TextInputListener {
 }
 ```
 
-The `input()` method will be called when the user entered a text string. The `canceled()` method will be called if the user closed the dialog on the desktop or pressed the back button on Android.
+The `input()` method will be called when the user enters a text string. The `canceled()` method will be called if the user closed the dialog on the desktop or pressed the back button on Android.
 
 To bring up the dialog, simple invoke the following method with your listener:
 
