@@ -6,7 +6,7 @@ As Blender is a multi-purpose tool, there are certain pitfalls you can stumble i
 Another size consideration may be (depending on type and amount of animations) to set your key frame interpolation to linear (from the default bezier interpolation). This may drastically improve your g3db file size (but it may also change how your animations look, so check before you hit save). To change keyframe interpolation in blender, switch to the animation perspective, select all your keyframe nodes with the A key in the Dope Sheet, press T and select "Linear".
 
 ### Blender Animation
-Make sure to use the Action Editor for you animation of your models. The name you provide for the animation in blender is the animation ID you can use in your code. Don't forget to hit that little F to ensure the action is saved!
+Make sure to use the Action Editor for you animation of your models. The name you provide for the animation dropsheet in blender is the animation ID you can use in your code. In the below snapshot, CubeAction would be the name. Don't forget to hit that little F to ensure the action is saved!
 ![Action Editor](http://wiki.blender.org/uploads/thumb/b/b2/Doc26-actionEditor.png/800px-Doc26-actionEditor.png)
 
 ### Exporting to FBX and converting to G3DB
