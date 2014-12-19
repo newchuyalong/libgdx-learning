@@ -22,7 +22,7 @@ Once all of these tools are installed, proceed to [[creating your project|Projec
 To develop your application via Intellij IDEA, you need to install the following pieces of software.
 
   * [Java Development Kit 7+ (JDK) (6 will not work!)](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
-  * [Intellij IDEA 14.+](http://www.jetbrains.com/idea/download/), the Community edition is sufficient
+  * [Intellij IDEA 14.+](http://www.jetbrains.com/idea/download/), the Community edition is sufficient. On Mac OS X, as of December 2014, JetBrains still recommends running Intellij IDEA under [Apple JRE 6](http://support.apple.com/kb/DL1572) (you have to install it in addition to the JDK above), due to [unresolved issues](https://intellij-support.jetbrains.com/entries/27854363-IDE-doesn-t-start-after-updating-to-Mac-OS-Yosemite-or-Mavericks) with Oracle JRE/JDK 7+.
   * [Android SDK](http://developer.android.com/sdk/installing.html), you only need the SDK, not the ADT bundle, which includes Eclipse. Install the latest stable platform via the SDK Manager. You also have to create an environment variable called ANDROID_HOME, which points at your Android SDK installation directory!
 
 To additionally target iOS
