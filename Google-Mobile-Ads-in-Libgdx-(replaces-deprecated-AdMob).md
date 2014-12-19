@@ -48,7 +48,7 @@ Save changes, then refresh and clean in eclipse for good luck...
 
 **Banner Ad**
 
-[See this version of the adnroid project's MainActivity class](https://github.com/TheInvader360/tutorial-libgdx-google-ads/blob/9a4c9342d98c02e3c44e0b62fcfaa153d257130a/tutorial-libgdx-google-ads-android/src/com/theinvader360/tutorial/libgdx/google/ads/MainActivity.java) for a reasonably straightforward banner ad implementation.
+[See this version of the android project's MainActivity class](https://github.com/TheInvader360/tutorial-libgdx-google-ads/blob/9a4c9342d98c02e3c44e0b62fcfaa153d257130a/tutorial-libgdx-google-ads-android/src/com/theinvader360/tutorial/libgdx/google/ads/MainActivity.java) for a reasonably straightforward banner ad implementation.
 
 
 **Interstitial Ad**
