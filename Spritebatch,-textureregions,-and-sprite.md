@@ -1,6 +1,6 @@
 This page gives a brief overview of how images are drawn using OpenGL and how libgdx simplifies and optimizes the task through the SpriteBatch class.
 
-Drawing images
+## Drawing images
 
 An image that has been decoded from its original format (eg, PNG) and uploaded to the GPU is called a texture. To draw a texture, geometry is described and the texture is applied by specifying where each vertex in the geometry corresponds on the texture. For example, the geometry could be a rectangle and the texture could be applied so that each corner of the rectangle corresponds to a corner of the texture. A rectangle that is a subset off a texture is called a texture region.
 
@@ -12,7 +12,7 @@ SpriteBatch is given a texture and coordinates for each rectangle to be drawn. I
 
 Changing textures every few rectangles that are drawn prevents SpriteBatch from batching much geometry. Also, binding a texture is a somewhat expensive operation. For these reasons, it is common to store many smaller images in a larger image and then draw regions of the larger image to both maximize geometry batching and avoid texture changes. See TexturePacker for more information.
 
-SpriteBatch
+## SpriteBatch
 
 Using SpriteBatch in an application looks like this:
 
@@ -40,7 +40,7 @@ public class Game implements ApplicationListener {
 }
 All SpriteBatch drawing calls must be made between the begin and end methods. Non-SpriteBatch drawing cannot occur between begin and end.
 
-Texture
+## Texture
 
 The Texture class decodes an image file and loads it into GPU memory. The image file should be placed in the "assets" folder, as described in Manual project setup (Asset folder setup). The image's dimensions must be a power of two (16x16, 64x256, etc).
 
@@ -112,7 +112,7 @@ Note that Sprite mixes model information (position, rotation, etc) with view inf
 
 Also note that there is no Sprite constructor that is related to the position of the Sprite. calling Sprite(Texture, int, int, int, int) does not edit the position. It is necessary to call Sprite#setPosition(float,float) or else the sprite will be drawn at the default position of 0,0.
 
-Tinting
+## Tinting
 
 When a texture is drawn, it can be tinted a color:
 
@@ -135,7 +135,7 @@ sprite.draw(batch);
 batch.end();
 This shows how to draw a texture, region, and sprite with a tint color. The color values here are described using RGBA values between 1 and 0. Alpha is ignored if blending is disabled.
 
-Blending
+## Blending
 
 Blending is enabled by default. This means that when a texture is drawn, translucent portions of the texture are merged with pixels already on the screen at that location.
 
@@ -150,11 +150,11 @@ batch.enableBlending();
 batch.end();
 Note: Be sure to clear the screen each frame. If this is not done, a texture with alpha can be drawn on top of itself hundreds of times, making it appear opaque. Also, some GPU architectures perform better when the screen is cleared each frame, even if opaque images are being drawn over the entire screen.
 
-Viewport
+## Viewport
 
 SpriteBatch manages its own projection and transformation matrixes. When a SpriteBatch is created, it uses the current application size to setup an orthographic projection using a y-up coordinate system. When begin is called, it sets up the viewport.
 
-Performance tuning
+## Performance tuning
 
 SpriteBatch has a constructor that sets the maximum number of sprites that can be buffered before sending to the GPU. If this is too low, it will cause extra calls to the GPU. If this is too high, the SpriteBatch will be using more memory than is necessary.
 
