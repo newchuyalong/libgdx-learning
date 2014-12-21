@@ -6,7 +6,7 @@ Before going into details, there are 2 types of compression to be aware of ;
 - compression used to store the texture on disk (zip, png, jpg,...), which is useful to reduce the size of your package,
 - compression used to store the texture in memory (ETC1, ETC2, S3TC,...), which improves your game performance and minimizes the memory footprint of your application at runtime (hence reducing the risk that Android performs an App restart on resume).
 
-OpenGL ES 2.0 has only one mandatory texture compression format : ETC1. It allows to decrease the size of any RGB8 image by a 6x factor. The main drawback is that it is a lossy compression format. The other is that it is limited to RGB8: to support alpha channel, you have to to store alpha separately :
+OpenGL ES 2.0 has only one mandatory texture compression format : ETC1. It allows to decrease the size of any RGB8 image by a 6x factor. The main drawback is that it is a lossy compression format. The other is that it is limited to RGB8. To support alpha channel, you have to to store alpha separately :
 - either in another texture which can be ETC1 compressed as well,
 - or in the same texture, putting the color part of your image in the top, and the alpha part in the bottom.
 
