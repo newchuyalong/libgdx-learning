@@ -14,7 +14,7 @@ The video memory savings will then drops from 6x to 4x, but are still worth the 
 
 ## ETC1 File Format ##
 
-ETC1 file format is a very simple format specific to LibGdx (see http://www.badlogicgames.com/wordpress/?p=2104). It gives a straight forward way to support 2D texture ETC1 compressed. The drawback is that it won't give you the ability to use mipmaps or cubemaps.
+ETC1 file format is a very simple format specific to LibGdx (see [this blog post] (http://www.badlogicgames.com/wordpress/?p=2104)). It gives a straight forward way to support 2D texture ETC1 compressed. The drawback is that it won't give you the ability to use mipmaps or cubemaps.
 
 ### Compression ###
 Compressing a Pixmap loaded from a file and writing it to our custom ETC1 file format is pretty simple:
