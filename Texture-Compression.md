@@ -1,4 +1,6 @@
-If you need texture compression, offline mipmap generation, or cubemaps, the default texture formats like PNG won't be sufficient. Luckily LibGDX provides 2 options for this ETC1 files and KTX/ZKTX textures. 
+If you need texture compression, offline mipmap generation, or cubemaps, the default texture formats like PNG won't be sufficient. Luckily LibGDX provides 2 options for this ETC1 files and KTX/ZKTX textures.
+
+Note that for the **GWT** backend ETC1 and KTX/ZKTX is currently **not supported**.
 
 Before going into details, there are 2 types of compression to be aware of ;
 - compression used to store the texture on disk (zip, png, jpg,...), which is useful to reduce the size of your package,
