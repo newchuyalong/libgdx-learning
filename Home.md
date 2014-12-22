@@ -84,6 +84,7 @@
             * [[Pixmaps]]
             * [[Packing Atlases Offline]]
             * [[Packing Atlases at Runtime]]
+            * [[Texture Compression]]
             * [[2D Particle Effects]]
             * [[Tile Maps]]
             * [[scene2d]]
