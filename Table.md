@@ -31,9 +31,9 @@ Table is a fork of [TableLayout](https://github.com/EsotericSoftware/tablelayout
 
 ```java
     Label nameLabel = new Label("Name:", skin);
-    TextField nameText = new TextField(skin);
+    TextField nameText = new TextField("", skin);
     Label addressLabel = new Label("Address:", skin);
-    TextField addressText = new TextField(skin);
+    TextField addressText = new TextField("", skin);
     
     Table table = new Table();
     table.add(nameLabel);
