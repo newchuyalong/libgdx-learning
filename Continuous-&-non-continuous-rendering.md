@@ -17,6 +17,11 @@ If continuous rendering is set to false, the render() method will be called only
   * Gdx.graphics.requestRendering() is called
   * Gdx.app.postRunnable() is called
 
+**UI Actions**: Many Actions, such as the default fade-in and fade-out of dialogs, have a duration in which they need rendering to occur.  You can enable this automatically with a single call:
+
+```java
+Stage.setActionsRequestRendering(true);
+```
 ----
 
 Good article about this topic: http://bitiotic.com/blog/2012/10/01/enabling-non-continuous-rendering-in-libgdx
