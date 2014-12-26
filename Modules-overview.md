@@ -45,7 +45,7 @@ The method will return an instance that can be used to draw onto the screen. In 
 
 The following snippet clears the screen and paints it with red.
 ```java
-gl.glClearColor(0.1f, 0.0f, 0.0f, 1);
+gl.glClearColor(1f, 0.0f, 0.0f, 1);
 gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 ```
 It always returns the specific implementation of the API (lwjgl, jogl or android), so the main application doesn’t need to know specifics and will work across the whole range of platforms if supported.
