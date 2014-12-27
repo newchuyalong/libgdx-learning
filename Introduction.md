@@ -15,7 +15,6 @@ Libgdx aims to be a framework rather than an engine, acknowledging that there is
 Libgdx ties in a lot of third party libraries to provide its functionality:
 
 
-<a href="http://www.lwjgl.org"><img src="http://lwjgl.org/_gfx/logo.png"></a> | 
 <a href="http://www.opengl.org"><img src="http://www.opengl.org/img/opengl_logo.jpg"></a> |
 <a href="http://nothings.org"><img src="http://nothings.org/images/juggle.gif"></a>
 
@@ -26,6 +25,7 @@ Libgdx ties in a lot of third party libraries to provide its functionality:
 <a href="http://www.surina.net/soundtouch"><img src="http://www.surina.net/soundtouch/soundtouch.jpg"></a> |
 <a href="http://www.box2d.org"><img src="http://box2d.org/images/icon.gif"></a>
 
+[LWJGL](http://www.lwjgl.org")
 [OpenAL](http://en.wikipedia.org/wiki/OpenAL)
 
 [KissFFT](http://sourceforge.net/projects/kissfft)
