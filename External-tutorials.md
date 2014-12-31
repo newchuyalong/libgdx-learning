@@ -26,6 +26,7 @@ http://libgdxtutorialseries.blogspot.com
  * Mets-Blog | Libgdx - http://www.mets-blog.com/category/libgdx/
  * Xoppa's blog - http://blog.xoppa.com/category/libgdx/
  * libgdx.cn - http://www.libgdx.cn (Chinese)
+ * Martian Run! Multi-part tutorial - http://williammora.com/a-running-game-with-libgdx-part-1/
 
 # Topic Specific Tutorials #
 
@@ -147,3 +148,4 @@ These are interesting open-source projects found on the web that use libGDX. Thi
  * https://github.com/EsotericSoftware/spine-superspineboy (Super Spineboy)
  * https://github.com/pierotofy/snappyfrog (Snappy Frog)
  * https://github.com/rpgboss/rpgboss (RPG game editor based on libgdx)
+ * https://github.com/wmora/martianrun (2D running game. Uses AdMob and Google Play Game Services)
