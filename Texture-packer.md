@@ -150,7 +150,7 @@ If an image file name ends with underscore and then a number (eg animation_23.pn
 
 ## <a id="Packing"></a>Packing ##
 
-The TexturePacker class is in `gdx-tools.jar`, which is in the extensions directory of the nightlies/releases zip files. You only need TexturePacker as a tool to process your image files for your application, you don't need it as a dependency to run your application. To run the packer you need both `gdx.jar` and `gdx-tools.jar`.
+The TexturePacker class is in `gdx-tools.jar`, which is in the extensions directory of the nightlies/releases zip files. You only need TexturePacker as a tool to process your image files for your application, you don't need it as a dependency to run your application. To run the packer you need both `gdx.jar` and `gdx-tools.jar`. **Note: gdx.jar must be in the same directory as gdx-tools.jar, for it to run without exceptions**
 
 ```
 //*NIX (OS X/Linux)
