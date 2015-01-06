@@ -11,7 +11,9 @@ Your Gradle based project makes it very easy to switch between releases and nigh
  gdxVersion = "1.4.1"
 ```
 
-The version you see may be higher than 1.4.1 already. Once you located that string, you can simply change it to the latest release (or an older release) or to the current SNAPSHOT version. Save the file. The next step is dependend on your IDE:
+The version you see may be higher than 1.4.1 already. Once you've located that string, you can simply change it to the latest release (or an older release) or to the current SNAPSHOT version. You may also have to update other modules in that same section of the build.gradle file, based on the [versions listing](http://libgdx.badlogicgames.com/versions.html). Once edited, save the build.gradle file.
+
+The next step is dependent on your IDE:
 
 * **Eclipse**: Select all your projects in the package explorer, right click, then click `Gradle -> Refresh All`. This will download the libGDX version you specified in build.gradle and wire up the JAR files with your projects correctly.
 * **Intellij IDEA**: will usually detect that your build.gradle has been updated and show a refresh button. Just click it and IDEA will update libGDX to the version you specified in build.gradle.
