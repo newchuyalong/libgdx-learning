@@ -184,6 +184,8 @@ Note that scene2d.ui groups that perform layout, such as Table, will use the uns
 
 Widgets that perform clipping, such as ScrollPane, use `glScissor` which uses a screen aligned rectangle. These widgets cannot be rotated.
 
+If excessive batch flushes are occurring due to transform being enabled on many groups, `CpuSpriteBatch` can be used for the stage. This avoids does transformations using the CPU to avoid flushing the batch.
+
 ## <a id="Layout_Widgets"></a>Layout widgets ##
 
 ### <a id="Table"></a>Table ###
