@@ -8,10 +8,10 @@ libGDX's Gradle based projects make it very easy to switch between libGDX versio
 Your Gradle based project makes it very easy to switch between releases and nightly builds. Open up the `build.gradle` file in the root of your project, and locate the following line:
 
 ```Groovy
- gdxVersion = "1.4.1"
+ gdxVersion = "1.5.2"
 ```
 
-The version you see may be higher than 1.4.1 already. Once you've located that string, you can simply change it to the latest release (or an older release) or to the current SNAPSHOT version. You may also have to update other modules in that same section of the build.gradle file, based on the [versions listing](http://libgdx.badlogicgames.com/versions.html). Once edited, save the build.gradle file.
+The version you see may be higher than 1.5.2 already. Once you've located that string, you can simply change it to the latest release (or an older release) or to the current SNAPSHOT version. You may also have to update other modules in that same section of the build.gradle file, based on the [versions listing](http://libgdx.badlogicgames.com/versions.html). Once edited, save the build.gradle file.
 
 The next step is dependent on your IDE:
 
