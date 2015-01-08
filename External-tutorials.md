@@ -38,6 +38,10 @@ http://libgdxtutorialseries.blogspot.com
 
  * http://helios.hud.ac.uk/u1070589/blog/?p=202
 
+## AdMob integration for LibGDX Android projects ##
+
+ * http://norakomi.com/tutorial_admob_introduction.php
+
 ## Setup ##
  * Gradle setup - http://duckseason.mobi/how-to-setup-gradle-for-existing-libgdx-multi-project-using-the-google-android-plug-in-2/
 
