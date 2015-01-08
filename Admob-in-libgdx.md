@@ -15,6 +15,9 @@ I should note that this isn't the only way to make this work. But it's one appro
 
 Please note that Google have deprecated 6.4.1 and earlier SDKs. For notes on how to use the new Google Mobile Ads approach, please see [[Google Mobile Ads | Google Mobile Ads in Libgdx (replaces deprecated AdMob)]]. Thankfully the changes are very minimal from a developer/implementation point of view.
 
+For an extensive step-by-step tutorial on how to integrate AdMob ads you can also follow this link:
+ * [AdMob integration for LibGDX projects](http://norakomi.com/tutorial_admob_introduction.php#scroll_introduction)
+
 # Background #
 
 Let's look at the libgdx HelloWorld example and understand what it's doing. There's a HelloWorld class (in HelloWorld.java) that does all the libgdx stuff. There's a HelloWorldDesktop class that creates and runs a HelloWorld on the desktop. And finally, there's a HelloWorldAndroid class that creates and runs a HelloWorld on Android. Here's what they look like:
