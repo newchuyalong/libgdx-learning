@@ -16,6 +16,7 @@ Class Explanation:
 * [ServerSocketHints.java](https://github.com/libgdx/libgdx/blob/master/gdx/src/com/badlogic/gdx/net/ServerSocketHints.java) is a class used to configure TCP server sockets.
 * [HttpStatus.java](https://github.com/libgdx/libgdx/blob/master/gdx/src/com/badlogic/gdx/net/HttpStatus.java) is a class used to give an easy way to see what the status code returned is.
 * [HttpParameterUtils.java](https://github.com/libgdx/libgdx/blob/master/gdx/src/com/badlogic/gdx/net/HttpParametersUtils.java) is a class used to provide utility methods for HTTP requests.
+* [HttpRequestBuilder](https://github.com/libgdx/libgdx/blob/master/gdx/src/com/badlogic/gdx/net/HttpRequestBuilder.java) is a class to help with creating `HttpRequests`.
 
 To create a TCP client socket use this little piece of code:
 ```
@@ -29,7 +30,9 @@ ServerSocket server = Gdx.net.newServerSocket(Protocol protocol, int port, Serve
 
 To send an HTTP Request use this:
 ```
-Gdx.net.sendHttpRequest(HttpRequest httpRequest, HttpResponseListener httpResponseListener);
+HttpRequestBuilder requestBuilder = new HttpRequestBuilder();
+HttpRequest httpRequest = requestBuilder.newRequest().method(HttpMethods.GET).url("http://www.google.de").build();
+Gdx.net.sendHttpRequest(httpRequest, httpResponseListener);
 ```
 
 To open the system browser use this:
