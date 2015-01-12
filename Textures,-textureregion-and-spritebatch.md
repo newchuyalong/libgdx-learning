@@ -198,7 +198,7 @@ public class TextureFun implements ApplicationListener {
 4. Cuts out a region from `texture` using normalized device coordinates. The parameters have the same meaning as at *3.* but use a different coordinate system. In _normalized device coordinate system_, the width of the texture is 1.0. 0.5 means the half of the width. In this case, 0.5 length means 64 pixels (width = 128 pixels).
 5. & 6. cut out the remaining 2 regions.
 7. draws the original `texture` scaled to 64 pixels wide and high at the bottom left corner. Remember that SpriteBatch’s default viewport’s coordinate system has the origin at `0,0`.
-8. draws each region at 11 pixels distance from each other horizontally.
+8. draws each region at 75 pixels distance from each other horizontally.
 
 The result is the following image:
 
