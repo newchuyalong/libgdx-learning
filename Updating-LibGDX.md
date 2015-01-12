@@ -17,7 +17,7 @@ The next step is dependent on your IDE:
 
 * **Eclipse**: Select all your projects in the package explorer, right click, then click `Gradle -> Refresh All`. This will download the libGDX version you specified in build.gradle and wire up the JAR files with your projects correctly.
 * **Intellij IDEA**: will usually detect that your build.gradle has been updated and show a refresh button. Just click it and IDEA will update libGDX to the version you specified in build.gradle.
-* **Netbeans**: in the "Projects" view, right-click the top-most project node and select "Reload Project".  All sub-projects will also be reloaded with the new files.
+* **Netbeans**: in the "Projects" view, right-click the top-most project node and select "Reload Project".  All sub-projects will also be reloaded with the new files. NOTE: for me this didn't happen, but going into gradle tasks and (project)->buildDependents seemed to get it downloading the new versions.
 * **Command Line**: invoking any of the tasks will usually check for changes in dependency versions and redownload anything that changed.
 
 And that's it! No need to manually juggle JAR files, .so files or anything else. Just change a string in a file and update via your IDE or the command line.
