@@ -56,7 +56,7 @@ You can listen to Pollfish listeners by implementing them in your AndroidLaunche
 import com.pollfish.interfaces.PollfishSurveyCompletedListener;
 ```
 ```java
-public class AndroidLauncher extends AndroidApplication implements PollfishSurveyReceivedListener{
+public class AndroidLauncher extends AndroidApplication implements PollfishSurveyCompletedListener{
 ```
 
 ```java
