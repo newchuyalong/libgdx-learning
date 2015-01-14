@@ -43,6 +43,7 @@ public class AndroidLauncher extends AndroidApplication{
 }
 ```
 
+With this simple implementation you should be able to see Pollfish surveys within your app within a few minutes.
 
 ## Optional Steps
 
@@ -71,7 +72,7 @@ public void onPollfishSurveyCompleted(boolean playfulSurveys , int surveyPrice) 
 
 You can manually show or hide Pollfish in your Android App with a simple implementation as the following one:
 
-In your and in your AndroidLauncher.java file: 
+In your and in your `AndroidLauncher.java` file: 
 
 ```java
 
@@ -122,7 +123,7 @@ public class AndroidLauncher extends AndroidApplication implements MyGdxGame.MyP
 }
 ```
 
-and in your MyGdxGame.java file: 
+and in your `MyGdxGame.java` file: 
 
 ```java
 package com.mygdx.game;
