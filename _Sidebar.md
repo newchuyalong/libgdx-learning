@@ -140,6 +140,7 @@
       * [[Using libgdx with Python]]
       * [[Using libgdx with Scala]]
     * [[Third Party Services]]
+      * [[Pollfish in libgdx]]
       * [[AdMob in Libgdx]]
       * [[Airpush in Libgdx]]
       * [[Swarm in Libgdx]]
