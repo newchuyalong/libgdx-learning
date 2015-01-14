@@ -68,7 +68,7 @@ public void onPollfishSurveyCompleted(boolean playfulSurveys , int surveyPrice) 
 }
 ```
 
-**2.Manually show or hide Pollfish (optional)**
+**2. Manually show or hide Pollfish (optional)**
 
 You can manually show or hide Pollfish in your Android App with a simple implementation as the following one:
 
