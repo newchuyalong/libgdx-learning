@@ -71,6 +71,8 @@ public void onPollfishSurveyCompleted(boolean playfulSurveys , int surveyPrice) 
 
 You can manually show or hide Pollfish in your Android App with a simple implementation as the following one:
 
+In your and in your AndroidLauncher.java file: 
+
 ```java
 
 package com.mygdx.game.android;
@@ -119,6 +121,8 @@ public class AndroidLauncher extends AndroidApplication implements MyGdxGame.MyP
 
 }
 ```
+
+and in your MyGdxGame.java file: 
 
 ```java
 package com.mygdx.game;
@@ -191,8 +195,8 @@ public class MyGdxGame extends ApplicationAdapter {
             }
         });
 
-        stage.addActor(button);
-        stage.addActor(button2);
+        stage.addActor(showBtn);
+        stage.addActor(hideBtn);
 
         Gdx.input.setInputProcessor(stage);
     }
