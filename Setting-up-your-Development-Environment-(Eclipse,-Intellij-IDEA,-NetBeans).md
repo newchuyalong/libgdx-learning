@@ -15,9 +15,11 @@ To additionally target iOS
   * The latest XCode, which you can get from the Mac OS X App Store for free
   * [RoboVM](http://www.robovm.com/docs#robovm-for-eclipse), simply install the Eclipse plugin. Make sure to update the plugin frequently!
 
-Once all of these tools are installed, proceed to [[creating your project|Project Setup Gradle]]
 
-You can find a step by step walkthrough [HERE.](http://www.toxsickproductions.com/libgdx/how-to-setup-your-libgdx-project/)
+You can find a step by step walkthrough by toxsickproductions [HERE.](http://www.toxsickproductions.com/libgdx/how-to-setup-your-libgdx-project/)
+
+
+Once all of these tools are installed, proceed to [[creating your project|Project Setup Gradle]]
 
 ### Setting up Intellij IDEA
 To develop your application via Intellij IDEA, you need to install the following pieces of software.
