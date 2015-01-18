@@ -2,7 +2,6 @@ Libgdx projects use [Gradle](http://www.gradle.org/) to manage dependencies, the
 
 ### Setting up Eclipse 
 To develop your application via Eclipse, you need to install the following pieces of software.
-You can find an in depth guide [HERE.](http://www.toxsickproductions.com/libgdx/how-to-setup-your-libgdx-project/)
 
   * [Java Development Kit 7+ (JDK) (6 will not work!)](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
   * [Eclipse](http://www.eclipse.org/downloads/), the "Eclipse IDE for Java Developers" is usually sufficient.
@@ -17,6 +16,8 @@ To additionally target iOS
   * [RoboVM](http://www.robovm.com/docs#robovm-for-eclipse), simply install the Eclipse plugin. Make sure to update the plugin frequently!
 
 Once all of these tools are installed, proceed to [[creating your project|Project Setup Gradle]]
+
+You can find a step by step walkthrough [HERE.](http://www.toxsickproductions.com/libgdx/how-to-setup-your-libgdx-project/)
 
 ### Setting up Intellij IDEA
 To develop your application via Intellij IDEA, you need to install the following pieces of software.
