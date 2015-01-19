@@ -5,7 +5,6 @@
 
 These are webpages where individuals or companies write about their experience with libGDX from a technical perspective. Some of the tutorials present in these pages are also referenced below in more topic specific sections but if you're just looking to some websites where people talk about their general experiences with libGDX you should start here.
 
- * ThachPhamMinh's Blog - http://thachphamminh.blogspot.com/2015/01/doccument-to-create-simple-car-racing.html
  * Aurelien's Blog - http://www.aurelienribon.com/blog/
  * MoribitoTechX's website - http://moribitotechx.blogspot.pt/p/tutorial-series-libgdx-mtx.html
  * Gemserk's blog - http://blog.gemserk.com/
