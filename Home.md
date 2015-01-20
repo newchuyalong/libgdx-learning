@@ -125,7 +125,7 @@
     * Extensions
       * [[Artificial Intelligence]]
       * [[gdx-freetype]]
-      * [[gdx-pay]: cross-platform In-App-Purchasing API]
+      * [[gdx-pay]]: cross-platform In-App-Purchasing API
       * [[Physics]]
             * [[Box2D]]    
             * [[Bullet Physics]]
