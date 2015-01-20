@@ -16,6 +16,7 @@ This article will show you how you can run your application from the command lin
  * [Gradle tasks failing] (#gradle-tasks-are-failing)
  * [Common problems] (#common-problems)
  * [Debugging projects] (#debugging-projects)
+* [**Tweaking**](#tweaking)
 
 ***
 
@@ -100,3 +101,25 @@ This will provide you with a stacktrace and give you a better idea of why gradle
 ### Common problems
 (Confirmed) AVG - When running gradlew desktop:dist antivirus will cause this to fail. Add an exception to your antivirus to allow access.
 ### Debugging Projects
+
+## Tweaking
+
+You may be like me and wish to have the output jar from the dist task. Gradle seems to name it as the name of the directory and a version number, which is in my case, desktop-1.0. You may also wish to have each build have a unique version/build date of some kind, do as follows:
+
+In the root project build.gradle, add:
+
+    def getDate() {
+        def date = new Date()
+        def formattedDate = date.format('yyyyMMddHHmmss')
+        return formattedDate
+    }
+
+(at top level)
+
+Within allprojects{}, add: 'version = "0.1-build-" + getDate()'
+
+Within the desktop target add this within task dist(type: Jar) { }...
+
+'baseName = "myproject"'
+
+I'm sure there are better ways, but it took me a while to get together that info and then get it to work/figure out where to put it. You will now have a jar file in your desktop/libs, named something like 'project-0.1-build-20150120033412.jar' which makes distribution a lot easier and more trackable, less conflicts etc.
