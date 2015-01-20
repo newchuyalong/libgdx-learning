@@ -125,6 +125,7 @@
     * Extensions
       * [[Artificial Intelligence]]
       * [[gdx-freetype]]
+      * [[gdx-pay]]
       * [[Physics]]
             * [[Box2D]]    
             * [[Bullet Physics]]
