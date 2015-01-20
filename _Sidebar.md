@@ -125,7 +125,7 @@
       * [[Path Editor]]
     * Extensions
       * [[Artificial Intelligence]]
-
+      * [[gdx-pay]]: In-App-Purchasing
       * [[gdx-freetype]]
       * [[Physics]]
             * [[Box2D]]    
