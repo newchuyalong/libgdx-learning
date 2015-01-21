@@ -39,6 +39,7 @@ It is highly recommended to read or least skim the [[scene2d documentation|scene
    * [Touchpad](#touchpad)
    * [Dialog](#dialog)
  * [Widgets without scene2d.ui](#widgets-without-scene2dui)
+ * [Drag and Drop](#draganddrop)
  * [Examples](#examples)
 
 # <a id="Widget_and_WidgetGroup"></a>Widget and WidgetGroup #
@@ -308,6 +309,9 @@ A slider with touches disabled, a drawable before the knob, and without the knob
 Widgets can be used as simple actors in scene2d, without using tables or the rest of scene2d.ui. Widgets have a default size and can be positioned absolutely, the same as any actor. If a widget's size is changed, the `invalidate` Widget method must be called so the widget will relayout at the new size.
 
 Some widgets, such as Table, don't have a default size after construction because their preferred size is based on the widgets they will contain. After the widgets have been added, the `pack` method can be used to set the width and height of the widget to its preferred width and height. This method also calls `invalidate` if the widget's size was changed, and then calls `validate` so that the widget adjusts itself to the new size.
+
+## <a id="DragAndDrop"></a>Drag and Drop (DragAndDrop class) ##
+It should be noted that to make a drag start/source actor, a table and to have that table and all of its contents trigger a drag, one must enable Table.setTouchable(Enabled). It is set to ChildrenOnly by default. 
 
 ## <a id="Examples"></a>Examples ##
 
