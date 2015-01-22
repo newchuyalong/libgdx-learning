@@ -86,6 +86,6 @@ In each [[starter class | Starter classes & configuration]] we then simply insta
 ```java
 public static void main(String[] argv) {
    LwjglApplicationConfiguration config = new LwjglApplicationConfiguration();
-   new LwjglApplication(new MyGame(new DesktopLoaderboard()), config);
+   new LwjglApplication(new MyGame(new DesktopLeaderboard()), config);
 }
 ```
