@@ -7,7 +7,6 @@ These are webpages where individuals or companies write about their experience w
 
  * Aurelien's Blog - http://www.aurelienribon.com/blog/
  * MoribitoTechX's website - http://moribitotechx.blogspot.pt/p/tutorial-series-libgdx-mtx.html
- * Car Racing Game Tutorial - http://thachphamminh.blogspot.com/2015/01/doccument-to-create-simple-car-racing.html
  * Gemserk's blog - http://blog.gemserk.com/
  * Gustavo Steigert's personal blog - http://steigert.blogspot.pt/
  * Rotating Canvas, an indie developers group webpage - http://rotatingcanvas.com/category/tutorials/
@@ -28,6 +27,7 @@ http://libgdxtutorialseries.blogspot.com
  * Xoppa's blog - http://blog.xoppa.com/category/libgdx/
  * libgdx.cn - http://www.libgdx.cn (Chinese)
  * Martian Run! Multi-part tutorial - http://williammora.com/a-running-game-with-libgdx-part-1/
+ * Car Racing Game Tutorial - http://thachphamminh.blogspot.com/2015/01/doccument-to-create-simple-car-racing.html
 
 # Topic Specific Tutorials #
 
