@@ -7,6 +7,7 @@ These are webpages where individuals or companies write about their experience w
 
  * Aurelien's Blog - http://www.aurelienribon.com/blog/
  * MoribitoTechX's website - http://moribitotechx.blogspot.pt/p/tutorial-series-libgdx-mtx.html
+ * Car Racing Game Tutorial - http://thachphamminh.blogspot.com/2015/01/doccument-to-create-simple-car-racing.html
  * Gemserk's blog - http://blog.gemserk.com/
  * Gustavo Steigert's personal blog - http://steigert.blogspot.pt/
  * Rotating Canvas, an indie developers group webpage - http://rotatingcanvas.com/category/tutorials/
@@ -115,7 +116,6 @@ This websites will let you play with WebGL (provided your browser supports it) a
 
 These are interesting open-source projects found on the web that use libGDX. This list is intentionally kept as clean and interesting as possible (you won't see repeated projects nor _Hello-World kind-of-games_ here).
 
- * https://github.com/ThachPhamMinh/SimpleCarGame-libgdx ( A simple Car Racing Game )
  * https://github.com/gunmetal313/gdx-skineditor (A skin editor for libGDX,fork by gunmetal)
  * https://github.com/antionio/Dodge-The-Cars
  * https://github.com/sandeel/Bushido-Blocks
