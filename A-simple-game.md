@@ -39,7 +39,7 @@ I took the assets from the following sources:
   * droplet sprite by mvdv, see https://www.box.com/s/peqrdkwjl6guhpm48nit
   * bucket sprite by mvdv, see https://www.box.com/s/605bvdlwuqubtutbyf4x
 
-To make the assets available to the game, we have to put them in the Android project's `assets` folder. I named the 4 files: drop.wav, rain.mp3, droplet.png and bucket.png and put them in the `drop-android/assets/` folder. The desktop and HTML5 project have a link to that assets folder, so we only need to store the assets once.
+To make the assets available to the game, we have to put them in the Android project's `assets` folder. I named the 4 files: drop.wav, rain.mp3, droplet.png and bucket.png and put them in the `drop-android/assets/` folder. The desktop and HTML5 project have a link to that assets folder, so we only need to store the assets once. After that, we need to refresh the android file on Eclipse (right click -> Refresh) to make the new files known, otherwise we may get a 'file not found' runtime exception.
 
 ## Configuring the Starter Classes ##
 Given our requirements we can now configure our different starter classes. We'll start with the desktop project. Open the `DesktopLauncher.java` class in `drop-desktop/`. We want a 800x480 window and set the title to "Drop". The code should look like this:
