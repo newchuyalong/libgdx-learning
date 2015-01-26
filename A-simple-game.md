@@ -129,8 +129,7 @@ import com.badlogic.drop.Drop;
 public class HtmlLauncher extends GwtApplication {
    @Override
    public GwtApplicationConfiguration getConfig () {
-      GwtApplicationConfiguration cfg = new GwtApplicationConfiguration(800, 480);
-      return cfg;
+      return new GwtApplicationConfiguration(800, 480);
    }
 
    @Override
