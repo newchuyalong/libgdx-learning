@@ -130,7 +130,7 @@
       * [[Physics]]
             * [[Box2D]]    
             * [[Bullet Physics]]
-              * [Setup](../Bullet Wrapper - Setup)
+              * [Setup](../wiki/Bullet Wrapper - Setup)
               * [Using the wrapper](../Bullet Wrapper - Using the wrapper)
               * [Using models](../Bullet Wrapper - Using models)
               * [Contact callbacks](../Bullet Wrapper - Contact callbacks)
