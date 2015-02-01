@@ -1,4 +1,4 @@
-The libgdx 2D Particle Editor is a powerful tool for making particle effects. See the video and documentation below. The Java API works (the editor is built using it) but could use some clean up and definitely some documentation. There is a [runnable example](https://github.com/libgdx/libgdx/blob/master/tests/gdx-tests/src/com/badlogic/gdx/tests/ParticleEmitterTest.java), though unfortunately it isn't the simplest or typical usage. Improvements to particles is planned, but will be some time until we can get to it.
+The libgdx 2D Particle Editor is a powerful tool for making particle effects. See the video and documentation below. The Java API works (the editor is built using it) but could use some clean up and definitely some documentation. There is a [runnable example](https://github.com/libgdx/libgdx/blob/master/tests/gdx-tests/src/com/badlogic/gdx/tests/ParticleEmitterTest.java), though unfortunately it isn't the simplest for typical usage. Improvements to particles is planned, but will be some time until we can get to it.
 
 [[images/particle-editor.png]]
 
