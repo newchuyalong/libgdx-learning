@@ -27,7 +27,6 @@ http://libgdxtutorialseries.blogspot.com
  * Xoppa's blog - http://blog.xoppa.com/category/libgdx/
  * libgdx.cn - http://www.libgdx.cn (Chinese)
  * Martian Run! Multi-part tutorial - http://williammora.com/a-running-game-with-libgdx-part-1/
- * Car Racing Game Tutorial - http://thachphamminh.blogspot.com/2015/01/doccument-to-create-simple-car-racing.html
 
 # Topic Specific Tutorials #
 
