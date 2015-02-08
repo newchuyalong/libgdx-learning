@@ -98,7 +98,7 @@ You can ensure that the shader compiled properly via `shader.isCompiled()`. A co
 We also create a matching mesh and load the texture:
 
 ```java
-mesh = new Mesh(true, 4, 6, VertexAttribute.Position(), VertexAttribute.  ColorUnpacked(), VertexAttribute.TexCoords(0));
+mesh = new Mesh(true, 4, 6, VertexAttribute.Position(), VertexAttribute.ColorUnpacked(), VertexAttribute.TexCoords(0));
 mesh.setVertices(new float[] 
 {-0.5f, -0.5f, 0, 1, 1, 1, 1, 0, 1,
 0.5f, -0.5f, 0, 1, 1, 1, 1, 1, 1,
