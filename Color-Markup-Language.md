@@ -10,5 +10,7 @@ The markup syntax is really simple but still versatile:
 
 Notice that color names are case-sensitive, cannot be empty, cannot start with neither `#` nor `[`, and cannot contain `]`. Also, any occurrence of `[` in the color name must not be escaped.
 
+Unknown colors, illegal hex codes and unclosed tags are silently ignored and treated as normal text.
+
 For a sample code see the test class [BitmapFontTest](https://github.com/libgdx/libgdx/blob/master/tests/gdx-tests/src/com/badlogic/gdx/tests/BitmapFontTest.java).
 
