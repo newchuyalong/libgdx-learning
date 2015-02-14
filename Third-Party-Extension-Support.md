@@ -8,7 +8,7 @@ The LibGDX setup includes a section for 3rd party extensions, these are extensio
 ### Requirements
 * [A living breathing extension](#am-i-an-extension)
 * [Approval by the LibGDX core development team](#approval)
-* [Extension definition in the LibGDX setup repository](#extension-defintion)
+* [Extension definition in the LibGDX setup repository](#extension-definition)
   
 ----
   
