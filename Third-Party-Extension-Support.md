@@ -15,10 +15,10 @@ The LibGDX setup includes a section for 3rd party extensions, these are extensio
 ### Am I an extension?
 As much as you may try... no you are not (Unless you are an advanced AI extension, in which case, citation needed), but you may be developing one! 
 
-Does your project aim to extend LibGDX with a specific goal in mind?
-Is your project useful to LibGDX users? 
-Is your project well established?
-Is your project being pushed to Maven central?
+Does your project aim to extend LibGDX with a specific goal in mind?  
+Is your project useful to LibGDX users?  
+Is your project well established?  
+Is your project being pushed to Maven central?  
 
 Congratulations! It's an extension!
 
