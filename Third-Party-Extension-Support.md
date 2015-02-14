@@ -24,9 +24,11 @@ Congratulations! It's an extension!
 
  
 ### Approval
-To get your beautiful extension in the setup, you must sneak past/bribe/bewitch the LibGDX developers into thinking that your extension belongs in the setup. 
+To get your beautiful extension in the setup, you must sneak past/bribe/bewitch the LibGDX developers into thinking that your extension belongs in the setup. To do this, make sure:
 
-TODO: What is required for approval
+* Your project is open source, for security issues
+* Your project is well established
+* Your project is well maintained, (we will remove it if it becomes unsupported/not maintained!)
 
 ### Extension definition
 We use a simple xml file in the LibGDX core repository to define external extensions.  
@@ -38,26 +40,56 @@ An example of this file:
 <?xml version="1.0" encoding="UTF-8"?>
 <extensions>
     <extension>
-       <name>My Extension</name> //Extension name
-       <description>What my extension does</description> //Short description of your extension
-       <package>my.package.cheeky</package> //Package name
-       <version>0.0.1</version>             //Current release version of your extension
-       <compatibility>1.5.3</compatibility> //Latest version of LibGDX your extension is compatible with
-       <website>http://mywebsite.com</website>  //Url of your extension, either your extension website/github
+       <name>My Extension</name> <!-- Extension name -->
+       <description>What my extension does</description> <!-- Short description of your extension-->
+       <package>my.package.cheeky</package> <!-- Package name-->
+       <version>0.0.1</version>             <!-- Current release version of your extension-->
+       <compatibility>1.5.3</compatibility> <!-- Latest version of LibGDX your extension is compatible with-->
+       <website>http://mywebsite.com</website>  <!-- Url of your extension, either your extension website/github-->
        <projects>
-           <core>                                 //All dependencies for the core project
-               <dependency>groupId:artifactId</dependency> //A single dependency
+           <core>                                 <!-- All dependencies for the core project-->
+               <dependency>groupId:artifactId</dependency> <!--A single dependency-->
            </core>
            <desktop>
-               <dependency>groupId:artifactId:classifier</dependency> //A single dependency
-           </desktop>                                          //All dependencies for the desktop project
-           <android></android>                                //All dependencies for the android project
-           <ios>null</ios>                                    //All dependencies for the ios project
-           <html>groupId:artifactIdTwo:classifierTwo</html>   //All dependencies for the html project
+               <dependency>groupId:artifactId:classifier</dependency> <!--Multiple dependencies -->
+               <dependency>groupId:artifactIdTwo:classifierTwo</dependency> <!--Multiple dependencies -->
+           </desktop>                                          <!--All dependencies for the desktop project-->
+           <android></android>                                <!--All dependencies for the android project-->
+           <ios>null</ios>                                    <!--All dependencies for the ios project-->
+           <html>groupId:artifactIdTwo:classifierTwo</html>   <!--All dependencies for the html project-->
        </projects>
     </extension>
 </extensions>
+```  
+
+# How dependencies are declared in the extensions.xml file
+Under the <projects> tag are all the LibGDX supported platforms. Core/Desktop/ios/Android/HTML.  In each of these project tags, you can include the dependency deceleration/s for each platform.  
+
+----
+In the above example, there is a dependency for the core project on the artifact: `groupId:artifactId`
+This means that when the project is generated with the extension ticked, we end up with:
+```groovy
+compile "groupId:artifactId:0.0.1"
 ```
+In our core project dependency section.  
+
+We also have two dependencies for the desktop platform, `groupId:artifactId:classifier` and `groupId:artifactIdTwo:classifierTwo`.
+This would result in:
+```groovy
+compile "groupId:artifactId:0.0.1:classifier"
+compile "groupId:artifactIdTwo:0.0.1:classifierTwo"
+```
+In our desktop project dependency section.  
+
+---
+
+This is the same for all platorms.  
+A few notes:
+
+* If you don't support a platform, you must put null like in the __ios__ project above.
+* If you don't have any extras dependencies for platform, (as they are inherited from core for example) leave the section clear, like __android__ in the example above.
+* Html projects require the source of dependencies! Make sure you push this source artifact and declare it in the extensions.xml!
+
 
 This provides all the information required to display your extension and add it to user's projects in the setup.  
 
