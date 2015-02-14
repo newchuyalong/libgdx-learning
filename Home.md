@@ -14,7 +14,8 @@
       * [[NetBeans|Gradle and NetBeans]]
       * [[Commandline|Gradle on the Commandline]]
       * [[Updating your libGDX version|Updating LibGDX]]
-      * [[Adding extensions and 3rd party libraries|Dependency management with Gradle]]  
+      * [[Adding extensions and 3rd party libraries|Dependency management with Gradle]] 
+      * [Publishing your own extensions via the setup applications](https://github.com/libgdx/libgdx/wiki/Third-Party-Extension-Support) 
       * [[Improving your Gradle workflow|Improving-workflow-with-Gradle]] 
     * Working from Source
       * [[Running Demos]]
