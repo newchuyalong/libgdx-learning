@@ -62,7 +62,7 @@ An example of this file:
 </extensions>
 ```  
 
-# How dependencies are declared in the extensions.xml file
+### How dependencies are declared in the extensions.xml file
 Under the <projects> tag are all the LibGDX supported platforms. Core/Desktop/ios/Android/HTML.  In each of these project tags, you can include the dependency deceleration/s for each platform.  
 
 ----
