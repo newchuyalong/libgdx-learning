@@ -93,6 +93,7 @@ A few notes:
 
 This provides all the information required to display your extension and add it to user's projects in the setup.  
 
+
 You __must__ provide all the data shown above, appended to the extensions.xml file and submit your addition as a PR.
 
 
