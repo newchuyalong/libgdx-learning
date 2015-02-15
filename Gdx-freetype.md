@@ -87,6 +87,20 @@ public TextureFilter minFilter = TextureFilter.Nearest;
 public TextureFilter magFilter = TextureFilter.Nearest;
 ```
 
+Examples:
+```java
+parameter.borderColor = Color.BLACK;
+parameter.borderWidth = 3;
+```
+![](https://raw.githubusercontent.com/wiki/mkiss/test/border.png)
+
+```java
+parameter.shadowColor = Color.BLACK;
+parameter.shadowOffsetX = 3;
+parameter.shadowOffsetY = 3;
+```
+![](https://raw.githubusercontent.com/wiki/mkiss/test/shadow.png)
+
 You can also load `BitmapFont`s generated via the FreeType extension using AssetManager. See [FreeTypeFontLoaderTest](https://github.com/libgdx/libgdx/blob/master/tests/gdx-tests/src/com/badlogic/gdx/tests/FreeTypeFontLoaderTest.java)
 
 ### latest info about caveats ###
