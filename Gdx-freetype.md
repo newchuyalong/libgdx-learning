@@ -55,13 +55,36 @@ generator.dispose(); // don't forget to dispose to avoid memory leaks!
 
 The defaults for the [FreeTypeFontParameter](https://github.com/libgdx/libgdx/blob/master/extensions/gdx-freetype/src/com/badlogic/gdx/graphics/g2d/freetype/FreeTypeFontGenerator.java):
 ```java
-size = 16;
-characters = FreeTypeFontGenerator.DEFAULT_CHARS;
-packer = null;
-flip = false;
-genMipMaps = false;
-minFilter = TextureFilter.Nearest;
-magFilter = TextureFilter.Nearest;
+/** The size in pixels */
+public int size = 16;
+/** Foreground color (required for non-black borders) */
+public Color color = Color.WHITE;
+/** Border width in pixels, 0 to disable */
+public float borderWidth = 0;
+/** Border color; only used if borderWidth > 0 */
+public Color borderColor = Color.BLACK;
+/** true for straight (mitered), false for rounded borders */
+public boolean borderStraight = false;
+/** Offset of text shadow on X axis in pixels, 0 to disable */
+public int shadowOffsetX = 0;
+/** Offset of text shadow on Y axis in pixels, 0 to disable */
+public int shadowOffsetY = 0;
+/** Shadow color; only used if shadowOffset > 0 */
+public Color shadowColor = new Color(0, 0, 0, 0.75f);
+/** The characters the font should contain */
+public String characters = DEFAULT_CHARS;
+/** Whether the font should include kerning */
+public boolean kerning = true;
+/** The optional PixmapPacker to use */
+public PixmapPacker packer = null;
+/** Whether to flip the font vertically */
+public boolean flip = false;
+/** Whether or not to generate mip maps for the resulting texture */
+public boolean genMipMaps = false;
+/** Minification filter */
+public TextureFilter minFilter = TextureFilter.Nearest;
+/** Magnification filter */
+public TextureFilter magFilter = TextureFilter.Nearest;
 ```
 
 You can also load `BitmapFont`s generated via the FreeType extension using AssetManager. See [FreeTypeFontLoaderTest](https://github.com/libgdx/libgdx/blob/master/tests/gdx-tests/src/com/badlogic/gdx/tests/FreeTypeFontLoaderTest.java)
