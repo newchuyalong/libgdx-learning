@@ -96,7 +96,7 @@ For example, if the animation is a 30FPS one, then the state change needs to hap
 
 *#10* - *#11* - Using the split convenience method on the texture, we obtain a two dimensional array of the frames from the texture. Bear in mind that this works only if the frames are of equal size. Then with the help of a temporary variable, the walkFrames array is populated. This is necessary, as the Animation works with one dimensional arrays only. 
 
-The walkFrames can be populated in any way that suits you, for example by loading each frame from different files, however this is not adivseable because of performance issues.
+The walkFrames can be populated in any way that suits you, for example by loading each frame from different files, however this is not advisable because of performance issues.
 
 *#11* - This is where the Animation is created. The first parameter tells the animation, how much time is allocated for each frame. This is expressed in seconds. The more frames an animation has, the smaller the time it will be and the smoother it will look. It consumes more memory though. 
 The second parameter is the array containing all the frames. The first element is the first frame and so on.
