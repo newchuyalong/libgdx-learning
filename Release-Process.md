@@ -12,7 +12,7 @@
 11. Enable the libgdx project on the build server and wait for the libGDX to finish (this will also updated gdx-setup.jar on the server, which will use the latest libgdx version we just deployed to sonatype/maven central)
 12. Download nightly, rename to libgdx-x.y.z, upload to website /usr/share/nginx/html/releases
 13. Increase the libGDX version in Version.java to match the new snapshot version
-14. Update the latest libGDX release version in forum for user registration
+14. **Update the latest libGDX release version in forum for user registration**
 
 ### If something fails
 #### If `mvn release:prepare` fails
