@@ -71,7 +71,7 @@ TiledDrawable tiled = skin.getTiledDrawable("logo");
 Drawable drawable = skin.getDrawable("logo");
 ```
 
-A texture can be retrieved as a region, ninepatch, sprite, tiled drawable or drawable. A texture region can be retrieved as a ninepatch, sprite, tiled drawable, or drawable. The first time a conversion is made, a new object is allocated and stored in the skin. Subsequent retrievals will return the stored object.
+A texture region can be retrieved as a ninepatch, sprite, tiled drawable, or drawable. The first time a conversion is made, a new object is allocated and stored in the skin. Subsequent retrievals will return the stored object.
 
 When converting a texture region to a drawable, the skin will choose the most appropriate drawable for that region. If the region is an AtlasRegion with ninepatch split information, then a NinePatchDrawable is returned. If the region is an AtlasRegion that has been rotated or whitespace stripped, then a SpriteDrawable is returned so the region will be drawn correctly. Otherwise, a TextureRegionDrawable is returned.
 
