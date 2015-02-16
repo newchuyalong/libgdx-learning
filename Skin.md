@@ -67,7 +67,7 @@ Texture texture = skin.get("logo", Texture.class);
 TextureRegion region = skin.getRegion("logo");
 NinePatch patch = skin.getPatch("logo");
 Sprite sprite = skin.getSprite("logo");
-TiledDrawable tiled = skin.getTiledDrawable("pattern");
+TiledDrawable tiled = skin.getTiledDrawable("logo");
 Drawable drawable = skin.getDrawable("logo");
 ```
 
