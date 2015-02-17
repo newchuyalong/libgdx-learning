@@ -74,7 +74,7 @@ LibGDX only supports shader skinning, which requires at least Open GL ES 2.0. If
 
 Skinning can require some tweaking to get the best and optimal result. By default fbx-conv will include 4 bone weights per vertex (each vertex can be influenced by at most four nodes). Also by default, fbx-conv will group vertices that share the same bones and split the mesh into multiple parts when the total number of bones influencing the vertices is more than 12.
 
-Splitting the mesh is done because the shader is limited in the amount of variables it can use. However, this will result in multiple [[render calls|ModelBatch#what-are-render-calls]] which might impact performance. For more information about this, have a look at [http://badlogicgames.com/forum/viewtopic.php?f=11&t=12910&p=57297#p57250](this post).
+Splitting the mesh is done because the shader is limited in the amount of variables it can use. However, this will result in multiple [[render calls|ModelBatch#what-are-render-calls]] which might impact performance. For more information about this, have a look at [this post](http://badlogicgames.com/forum/viewtopic.php?f=11&t=12910&p=57297#p57250).
 
 You can change the default values of fbx-conv by using the command line option `-w` and `-b`. The `-w` command allows you to specify the amount of bones that can influence one vertex. Which must be in the range between 1 and 8 (the default shader does not support more than 8 bone weights). You typically should try to keep this as low as possible.
 ```
