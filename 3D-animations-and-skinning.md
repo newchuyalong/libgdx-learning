@@ -69,4 +69,26 @@ So in practice, when using skinning, your model has an invisible skeleton part (
 
 This is accomplished by using blend weights (also called bone weights) which are vertex attributes of the visible nodes. Each blend weight has an index (of the specific bone/node) and a weight (how much it is influenced by that bone/node). Each visible node (NodePart) has a reference to it's bones (nodes of the skeleton).
 
+## Loading skinning
 LibGDX only supports shader skinning, which requires at least Open GL ES 2.0. If you created your skinned model using a modeling application, exported it to FBX and converted it to G3DB/G3DJ, then skinning should seamlessly work. Just keep in mind that you need to export both the visible and invisible (skeleton) nodes along with the animations themselves.
+
+Skinning can require some tweaking to get the best and optimal result. By default fbx-conv will include 4 bone weights per vertex (each vertex can be influenced by at most four nodes). Also by default, fbx-conv will group vertices that share the same bones and split the mesh into multiple parts when the total number of bones influencing the vertices is more than 12.
+
+Splitting the mesh is done because the shader is limited in the amount of variables it can use. However, this will result in multiple [[render calls|ModelBatch#what-are-render-calls]] which might impact performance. For more information about this, have a look at [http://badlogicgames.com/forum/viewtopic.php?f=11&t=12910&p=57297#p57250](this post).
+
+You can change the default values of fbx-conv by using the command line option `-w` and `-b`. The `-w` command allows you to specify the amount of bones that can influence one vertex. Which must be in the range between 1 and 8 (the default shader does not support more than 8 bone weights). You typically should try to keep this as low as possible.
+```
+fbx-conv -w 3 inputfile.fbx
+```
+
+The `-b` command allows you to specify the total amount of bones allowed before fbx-conv starts splitting the mesh. This value must be more than zero and has no hard limit. You typically should not set it below three times the number specified with the `-w` command. You can increase the value to avoid splitting the mesh, but at the cost of shader uniforms.
+```
+fbx-conv -b 16 inputfile.fbx
+```
+
+If you do use the `-b` command line option to change the maximum number of bones, you should also change the shader to use that same amount. This can be done using the [`Config#numBones`](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/graphics/g3d/shaders/DefaultShader.Config.html#numBones) member when creating the [ShaderProvider](https://github.com/libgdx/libgdx/wiki/ModelBatch#shaderprovider) for ModelBatch. For example:
+```java
+DefaultShader.Config config = new DefaultShader.Config();
+config.numBones = 16;
+modelBatch = new ModelBatch(new DefaultShaderProvider(config));
+```
