@@ -41,7 +41,7 @@ Files can also be stored on the [internal storage](http://developer.android.com/
 Finally, files can be stored on the [external storage](http://developer.android.com/guide/topics/data/data-storage.html#filesExternal), such as an SD-card. External storage might not always be available, e.g. the user could pull out the SD-card. Files in this storage location should thus be considered volatile. You will need to add a permission to your AndroidManifest.xml file to be allowed to write to the external storage, see [Permissions](https://github.com/libgdx/libgdx/wiki/Starter-classes-%26-configuration#permissions)
 
 ### iOS ###
-On iOS all file types are available. Note that (at least as of libGDX 1.5.5 & RoboVM 1.0.0-alpha4) you'll probably have to store your data under `data` subdir of `assets` to have it accessible on iOS.
+On iOS all file types are available. 
 
 ### Javascript/WebGL ###
 A raw Javascript/WebGL application doesn't have a traditional filesystem concept. Instead, assets like images are referenced by URLs pointing to files on one or more servers. Modern browsers also support [Local Storage](http://diveintohtml5.info/storage.html) which comes close to a traditional read/write filesystem.
