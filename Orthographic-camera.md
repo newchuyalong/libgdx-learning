@@ -95,10 +95,11 @@ public class OrthographicCameraExample implements ApplicationListener {
 			cam.rotate(rotationSpeed, 0, 0, 1);
 		}
 
+		cam.zoom = MathUtils.clamp(cam.zoom, 0.1f, 100/cam.viewportWidth);
+
 		float effectiveViewportWidth = cam.viewportWidth * cam.zoom;
 		float effectiveViewportHeight = cam.viewportHeight * cam.zoom;
 
-		cam.zoom = MathUtils.clamp(cam.zoom, 0.1f, 100/cam.viewportWidth);
 		cam.position.x = MathUtils.clamp(cam.position.x, effectiveViewportWidth / 2f, 100 - effectiveViewportWidth / 2f);
 		cam.position.y = MathUtils.clamp(cam.position.y, effectiveViewportHeight / 2f, 100 - effectiveViewportHeight / 2f);
 	}
@@ -321,7 +322,7 @@ So we can see that this method polls Keys, if a certain key is pressed, we do so
 
 The last 5 lines are responsible for keeping the camera within the bounds of our world.
 
-We need to make sure the camera's zoom does not grow or shrink to values that would invert our world, or show too much of our world.  To do this, we can calculate the `effectiveViewportWidth` and `effectiveViewportHeight`, which are just the viewportWidth/height * zoom (this gives us what we can see in the world given the current zoom).  We can then `clamp` the value of the camera's zoom to values we require.  `0.1f` to prevent being too zoomed in. `100/cam.viewportWidth` to prevent us being able to see more than the world wentire width.
+We need to make sure the camera's zoom does not grow or shrink to values that would invert our world, or show too much of our world.  To do this, we can calculate the `effectiveViewportWidth` and `effectiveViewportHeight`, which are just the viewportWidth/height * zoom (this gives us what we can see in the world given the current zoom).  We can then `clamp` the value of the camera's zoom to values we require.  `0.1f` to prevent being too zoomed in. `100/cam.viewportWidth` to prevent us being able to see more than the world's entire width.
 
 The last two lines are responsible for making sure we can’t translate out of the world boundaries. < 0, or more than 100 in either Axis.
 
