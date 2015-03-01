@@ -96,6 +96,19 @@ mvn install:install-file -Dfile=tween-engine-api-sources.jar -DgroupId=aurelienr
       }
   }
   ```
+7. Make sure gradle is configured to read from your local repo. 
+    ```groovy
+allprojects {
+   ...
+    repositories {
+        mavenLocal();
+        mavenCentral()
+        maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
+        maven { url "https://oss.sonatype.org/content/repositories/releases/" }
+    }
+}
+
+  ```
 7. **Required for HTML Projects**
   * Add the following line to **GdxDefinition.gwt.xml** and **GdxDefinitionSuperdev.gwt.xml**
     * they are located in &lt;my-project-dir&gt;/html/src/your/package/name
