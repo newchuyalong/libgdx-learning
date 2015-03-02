@@ -101,7 +101,7 @@ The walkFrames can be populated in any way that suits you, for example by loadin
 *#11* - This is where the Animation is created. The first parameter tells the animation, how much time is allocated for each frame. This is expressed in seconds. The more frames an animation has, the smaller the time it will be and the smoother it will look. It consumes more memory though. 
 The second parameter is the array containing all the frames. The first element is the first frame and so on.
 
-*#12* - Initialises the SpriteBacth which will draw the frame.
+*#12* - Initialises the SpriteBatch which will draw the frame.
 
 *#13* - Resets the stateTime to 0. It will start accumulating the time each render call.
 
