@@ -89,7 +89,6 @@ The commands are executed in the order they are batched (issued), so if the seco
 
 The result of the above code.
 
-<img src="http://libgdx.googlecode.com/svn/wiki/img/textures_regions_batch_result_2.png" />
 ![](http://libgdx.googlecode.com/svn/wiki/img/textures_regions_batch_result_2.png)
 
 The following code draws the textures on top of each other:
