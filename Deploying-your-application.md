@@ -25,7 +25,7 @@ The easiest way to deploy to Windows/Linux/Mac is to create a runnable JAR in Ec
 
 This will package all code and your assets into a single JAR file. To run the JAR file, a user can just double click it, provided she/he has Java installed.
 
-A project worth mentioning is [JarWrapper](https://github.com/stbachmann/JarWrapper), a tool to bundle a JRE with your desktop jar file in a cross platform manner. this tool is in development.
+[packr](https://github.com/libgdx/packr) is a tool to bundle a JRE with your desktop jar file in a cross platform manner. this tool is in development.
 
 ## <a id="Deploy_to_Android"></a>Deploy to Android ##
 Deploying to Android takes some extra steps. This tutorial is done using Eclipse and the Android ADT plugin.
