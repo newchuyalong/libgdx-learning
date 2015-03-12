@@ -9,7 +9,7 @@ Go to `File -> Import -> Gradle -> Gradle Project`, click Browse and navigate to
 Your Eclipse workspace folder must not be the same as your project's root folder (see this [issue](https://github.com/libgdx/libgdx/issues/1537)).
 
 If you run into problems due to a missing validation-api:1.0.0.GA artifact, delete your Maven cache at `C:\Users\username\.m2` or `/Users/username/.m2` or `/home/username/.m2`.
-![missing artifact](http://i.imgur.com/URxvrYe.png)
+[[images/URxvrYe.png]]
 
 When importing your first project you receive the error:
 `com/github/jtakakura/gradle/plugins/robovm/RoboVMPlugin : Unsupported major.minor version 51.0`
@@ -29,7 +29,7 @@ Follow the steps for running the project, but instead of launching via `Run as`,
 
 Run the superDev run configuration as before. Go to [http://localhost:8080/html](http://localhost:8080/html), click the `SuperDev Refresh`button. In Chrome, press `F12` to bring up the developer tools, go to the sources tab and find the Java file you want to debug. Set breakpoints, step and inspect variables using the power of source maps! Click the `SuperDev Refresh` button in case you changed code or assets (leave the server process running!).
 
-![super dev mode](http://libgdx.badlogicgames.com/uploads/Screen%20Shot%202014-03-23%20at%2019.11.27-BkaIpjttPQ.png)
+[[images/Screen%20Shot%202014-03-23%20at%2019.11.27-BkaIpjttPQ.png]]
 
 ## Packaging Your Project
 It's easiest to package your application from the command line, or using the Gradle tasks from within Eclipse. To see the relevant Gradle tasks, check the [[Gradle command line documentation|Gradle on the Commandline]].

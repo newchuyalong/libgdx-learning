@@ -77,7 +77,7 @@ public class ProjectionViewportCamera implements ApplicationListener {
 
 It's very similar to the class described in the MyFirstTriangleTutorial except that it has two triangles instead of one. The two triangles are positioned to form a square, with corners at position (x, y) coordinates (-0.5, -0.5), (0.5, -0.5), (0.5, 0.5), and (0.5, -0.5). When you run the desktop app it should look like this:
 
-![](http://libgdx.googlecode.com/svn/wiki/img/projection_viewport_camera_rectangle.png)
+[[images/projection_viewport_camera_rectangle.png]]
 
 Obviously, even though we specified the coordinates of a square, the resulting shape turned out to be a wide rectangle. Before tackling this issue, I will digress for a moment and offer a rendering optimzation for this square.
 
@@ -140,15 +140,15 @@ The two triangles have been combined in a single mesh with four vertices and fou
 
 Back to the issue of the stretched square. By default the viewport reveals a rectangular area with a left edge at x = -1, right edge at x = 1, top edge at y = 1, and bottom edge at y = -1. Here's a picture of what a blank area like that would look like if we were to create mockup:
 
-![](http://libgdx.googlecode.com/svn/wiki/img/projection_viewport_camera_normal_canvas.png)
+[[images/projection_viewport_camera_normal_canvas.png]]
 
 When we place out red square onto that area, the result looks like this:
 
-![](http://libgdx.googlecode.com/svn/wiki/img/projection_viewport_camera_normal_square.png)
+[[images/projection_viewport_camera_normal_square.png]]
 
 However, the viewport itself is wider than a square. In order to fill up the extra space on the sides, the area is stretched. Imagine a painter stretching a square canvas to fit a rectangular frame. The result looks like what we see in the MeshColorTexture tutorial:
 
-![](http://libgdx.googlecode.com/svn/wiki/img/projection_viewport_camera_stretched_view.png)
+[[images/projection_viewport_camera_stretched_view.png]]
 
 # Camera
 
@@ -214,11 +214,11 @@ public class ProjectionViewportCamera implements ApplicationListener {
 
 In `resize()`, we construct a new instance of `OrthographicCamera`, specifiying the area we want to display. In this example, we tell the camera to display an area two units tall, with a width that is determined by the shape of the viewport. In `render()`, we call simply call `update()` and `apply()` on the `Camera` instance. Here's how it looks when we run the app:
 
-![](http://libgdx.googlecode.com/svn/wiki/img/projection_viewport_camera_corrected_view.png)
+[[images/projection_viewport_camera_corrected_view.png]]
 
 The desktop viewport in our tutorials have been 480 pixels wide and 320 pixels high. These are the numbers are passed into `resize()` when the app launches and when the screen rotates. The width of the screen is then calculated using the ratio of these numbers. In our example, width = 2 ˟ 480 / 320 = 3. Here's how the app looks with these coordinates overlayed:
 
-![](http://libgdx.googlecode.com/svn/wiki/img/projection_viewport_camera_corrected_coordinate.png)
+[[images/projection_viewport_camera_corrected_coordinate.png]]
 
 The square's vertices are still located at the same (x, y) coordinates as before. Now, we corrected its previous distortion by using a camera that projects the scene differently.
 
@@ -299,7 +299,7 @@ public class ProjectionViewportCamera implements ApplicationListener {
 
 In `render()`, right after we update our regular camera, we provide the camera's projection information to the `SpriteBatch` instance we use to draw our sprite (we'll talk more about projection later). The result should look something like this:
 
-![](http://libgdx.googlecode.com/svn/wiki/img/projection_viewport_camera_sprite.png)
+[[images/projection_viewport_camera_sprite.png]]
 
 It's important to note that drawing a sprite changes the projection of the entire scene to the sprite's projection. If you don't set the sprite's projection to the same as the rest of your scene, the simple act of drawing that sprite might change how the rest of your scene looks. This could be the desired effect, in which case it might be clearer to create a second camera, just for your `SpriteBatch` instance.
 
@@ -387,7 +387,7 @@ public class ProjectionViewportCamera implements ApplicationListener {
 The new square is just another mesh, with a different color than the first. The red square is moved a bit further in the positive x direction, and the new square sits left of it. Here's how it should look:
 
 
-![](http://libgdx.googlecode.com/svn/wiki/img/projection_viewport_camera_two_squares.png)
+[[images/projection_viewport_camera_two_squares.png]]
 
 One other thing we changed is the z position of the squares. Notice that the red square is positioned further in the negative z direction (ie. further away from the viewer) and that the new blue square sits between the red square and the viewer. You can't tell any of this by the screenshot however, because we're using the orthographic camera, which basically ignores the z coordinate. Change the `resize()` method to use the `PerspectiveCamera`:
 
@@ -400,7 +400,7 @@ One other thing we changed is the z position of the squares. Notice that the red
 
 Now the true distance between the squares and the user becomes obvious:
 
-![](http://libgdx.googlecode.com/svn/wiki/img/projection_viewport_camera_perspective.png)
+[[images/projection_viewport_camera_perspective.png]]
 
 The only difference between the constructor of the `PerspectiveCamera` and that of the `OrthographicCamera` is that we now have to provide a field of view parameter, in this case `67`. The human field of view is roughly around 60 to 70 degrees, so 67 provides a pretty normal perspective. Note that by default, the `PerspectiveCamera` clips anything closer than one unit away from it. If you place an object too close to the camera, it will disappear. It also has a default far clipping pane one hundred units in front of itself, so objects too far away will not be rendered either. 
 
@@ -434,7 +434,7 @@ We use the camera's `rotate()` and `translate()` methods to move the camera arou
 
 Follow the steps of the MyFirstTriangle tutorial and set up the Android portion of this libgdx app. Remember to reference the necessary libraries, reference the desktop project, and add the necessary assets. When you run the app, however, you'll notice that everything appears very big:
 
-![](http://libgdx.googlecode.com/svn/wiki/img/projection_viewport_camera_portrait.png)
+[[images/projection_viewport_camera_portrait.png]]
 
 This is the result of us locking the vertical viewable area to two units high. Since by default, the Android emulator is taller than it is wide, our horizontal viewable area is much smaller than three units wide, making it very different than the desktop version of this app. The simplest way to make the Android and desktop version appear similar is by locking the Android app to landscape orientation. Modify your manifest and set the `android:screenOrientation` property to `landscape` (read more about the property at the [Android developer site](http://developer.android.com/guide/topics/manifest/activity-element.html)). Here's an example of a modified `activity` element in the manifest:
 
@@ -450,9 +450,9 @@ This is the result of us locking the vertical viewable area to two units high. S
 
 Here're screen shots of our app locked in landscape orientation. You can change the emulator orientation by pressing `Ctrl-F11` or `Ctrl-F12`.  
 
-![](http://libgdx.googlecode.com/svn/wiki/img/projection_viewport_camera_locked_portrait.png)
+[[images/projection_viewport_camera_locked_portrait.png]]
 
-![](http://libgdx.googlecode.com/svn/wiki/img/projection_viewport_camera_locked_landscape.png)
+[[images/projection_viewport_camera_locked_landscape.png]]
 
 Since Android devices have so many different screen sizes, locking the screen is not enough, you'll need to test your game with different aspect ratios. The easiest way to do that is through the desktop project. In your desktop project's launch class, instead of creating a viewport with our tutorial's 480 x 320 resolution, try other aspect ratios to get a sense of how your game feels like on diffferent devices.
 

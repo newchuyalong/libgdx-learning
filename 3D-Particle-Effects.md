@@ -1,6 +1,6 @@
 Because of issues with perspective and depth, the 2D particle effects are not suitable for 3D applications.  Additionally, the 3d particle effects take full advantage of movement through 3d space, allowing a wide variety of dynamic graphical effects.
 
-![3D particles in action](http://www.pixelscientists.com/images/flamedemo.gif)
+[[images/flamedemo.gif]]
 
 ### Flame - 3D Particle Editor
 Much like their 2D cousins, 3D particle effects can be edited with a GUI editor included in libgdx.

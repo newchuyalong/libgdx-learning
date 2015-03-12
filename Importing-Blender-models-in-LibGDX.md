@@ -7,7 +7,7 @@ Another size consideration may be (depending on type and amount of animations) t
 
 ### Blender Animation
 Make sure to use the Action Editor for you animation of your models. The name you provide for the animation dropsheet in blender is the animation ID you can use in your code. In the below snapshot, CubeAction would be the name. Don't forget to hit that little F to ensure the action is saved!
-![Action Editor](http://wiki.blender.org/uploads/thumb/b/b2/Doc26-actionEditor.png/800px-Doc26-actionEditor.png)
+[[images/800px-Doc26-actionEditor.png]]
 
 ### Exporting to FBX and converting to G3DB
 The default (preferred) method is to export to FBX. Make sure you select all and only those options (e.g. nodes and animations) you want to actually include. Don't include your camera, lights, etc. Next download the latest version of [fbx-conv](https://github.com/libgdx/fbx-conv) and convert the FBX file to G3DB. You'll need to flip texture coordinates by using the `-f` commandline option.

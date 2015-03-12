@@ -65,11 +65,11 @@ public class TextureFunDesktop {
 	}
 }
 ```
-![](http://libgdx.googlecode.com/svn/wiki/img/textures_regions_batch_result_1.png)
+[[images/textures_regions_batch_result_1.png]]
 
 The following image explains the coordinate system and the texture borders.
 
-![](http://libgdx.googlecode.com/svn/wiki/img/textures_regions_batch_explanation.png)
+[[images/textures_regions_batch_explanation.png]]
 
 Multiple commands can be issued to the `SpriteBatch` by including them between the `begin()` and the `end()` calls.
 
@@ -89,7 +89,7 @@ The commands are executed in the order they are batched (issued), so if the seco
 
 The result of the above code.
 
-![](http://libgdx.googlecode.com/svn/wiki/img/textures_regions_batch_result_2.png)
+[[images/textures_regions_batch_result_2.png]]
 
 The following code draws the textures on top of each other:
 
@@ -103,7 +103,7 @@ public void render() {
 }
 ```
 
-![](http://libgdx.googlecode.com/svn/wiki/img/textures_regions_batch_overlap.png)
+[[images/textures_regions_batch_overlap.png]]
 
 Besides drawing, there are a few other methods that can change the behaviour of 'SpriteBatch', like enabling blending, setting the colour for tinting and setting the transformation matrix directly. However the transformation matrix has to be set before the 'SpriteBatch' is in the state where it accepts commands.
 
@@ -135,7 +135,7 @@ public void render() {
 }
 ```
 
-![](http://libgdx.googlecode.com/svn/wiki/img/textures_regions_batch_draw_methods_comparison.png)
+[[images/textures_regions_batch_draw_methods_comparison.png]]
 
 The two draw methods draw the same texture differently. The second draw method modifies to the resulting image quite a lot.
 
@@ -152,7 +152,7 @@ The following image shows a sprite sheet and how it is cut up into regions. A si
 
 _Note: the size of the texture has to be POT (power of two), but the sizes of the regions can be anything._
 
-![](http://libgdx.googlecode.com/svn/wiki/img/textures_regions_batch_txregions_2.png)
+[[images/textures_regions_batch_txregions_2.png]]
 
 The following code creates and draws the 4 regions from the big texture. It also draws the scaled down texture at 0,0 coordinate for reference.
 
@@ -201,7 +201,7 @@ public class TextureFun implements ApplicationListener {
 
 The result is the following image:
 
-![](http://libgdx.googlecode.com/svn/wiki/img/textures_regions_batch_regions_result.png)
+[[images/textures_regions_batch_regions_result.png]]
 
 Texture regions can be created by using `TextureRegion's` `split` convenience method too. It is very easy if the sprite-sheet consists of regions of the same size with no padding.
 

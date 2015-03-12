@@ -176,7 +176,7 @@ BuildExecutor.executeAnt("jni/build.xml", "-v pack-natives");
 
 A video of Mario showing off jnigen:
 
-[![](http://i.imgur.com/lxCnueL.png)](http://www.youtube.com/watch?v=N2EE_jlDfrM)
+[[[images/lxCnueL.png]]](http://www.youtube.com/watch?v=N2EE_jlDfrM)
 
 [Jglfw](https://github.com/badlogic/jglfw/blob/master/jglfw/src/com/badlogic/jglfw/Glfw.java#L268) makes extensive use of jnigen and shows how easy it can be to wrap a native API for use in Java. Note the `/*JNI` comment is used to define includes, statics, and functions.
 

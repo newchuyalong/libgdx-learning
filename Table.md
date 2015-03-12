@@ -43,7 +43,7 @@ Table is a fork of [TableLayout](https://github.com/EsotericSoftware/tablelayout
     table.add(addressText).width(100);
 ```
 
-![](http://table-layout.googlecode.com/svn/wiki/home/quickstart.png)
+[[images/quickstart.png]]
 
 This code adds 4 cells to the table which are arranged in two columns and two rows. The `add` method returns a Cell, which has methods to control layout. The table sizes and positions its children, so setting the width of the text fields to 100 is done on the table cell, not on the text fields themselves.
 
@@ -88,7 +88,7 @@ The `add` method returns a Cell, which has properties that control the layout. E
 
 The cells make up a logical table, but it is not sized to the table widget.
 
-![](http://table-layout.googlecode.com/svn/wiki/home/logicaltable.png)
+[[images/logicaltable.png]]
 
 The outer blue rectangle shows the size of the table widget. The inner blue rectangle shows the size of the logical table, which is aligned to center by default. The alignment can be changed using methods on the table. The table methods return the table, so can be chained just like the cell methods.
 
@@ -96,7 +96,7 @@ The outer blue rectangle shows the size of the table widget. The inner blue rect
     table.right().bottom();
 ```
 
-![](http://table-layout.googlecode.com/svn/wiki/home/tablealign.png)
+[[images/tablealign.png]]
 
 ## Cell properties
 
@@ -112,7 +112,7 @@ To make the logical table take up the entire size of the table widget, TableLayo
     table.add(addressText).width(100);
 ```
 
-![](http://table-layout.googlecode.com/svn/wiki/home/expand.png)
+[[images/expand.png]]
 
 The red lines show the cell bounds and the green lines show the widget bounds. Note that the left column has received all of the extra space in the x direction. Only one cell needs to have expand to cause the entire column or row to expand. If multiple columns expand, the extra space is distributed evenly.
 
@@ -124,7 +124,7 @@ The red lines show the cell bounds and the green lines show the widget bounds. N
     table.add(addressText).width(100);
 ```
 
-![](http://table-layout.googlecode.com/svn/wiki/home/expandmultiple.png)
+[[images/expandmultiple.png]]
 
 Expand also works in the y direction via the `expandY` method. The `expand` method causes expand to happen in both directions.
 
@@ -136,7 +136,7 @@ Expand also works in the y direction via the `expandY` method. The `expand` meth
     table.add(addressText).width(100);
 ```
 
-![](http://table-layout.googlecode.com/svn/wiki/home/expandboth.png)
+[[images/expandboth.png]]
 
 ### Alignment
 
@@ -150,7 +150,7 @@ Similar to aligning the logical table, a widget can be aligned inside the cell.
     table.add(addressText).width(100);
 ```
 
-![](http://table-layout.googlecode.com/svn/wiki/home/align.png)
+[[images/align.png]]
 
 ### Fill
 
@@ -164,7 +164,7 @@ The `fill` method causes a widget to be sized to the cell. Like expand, there ar
     table.add(addressText).width(100);
 ```
 
-![](http://table-layout.googlecode.com/svn/wiki/home/fill.png)
+[[images/fill.png]]
 
 Note the red cell lines are drawn on top of the green widget lines.
 
@@ -184,7 +184,7 @@ Widgets do not provide setters for their preferred, minimum, or maximum size. Th
     table.add(addressText).prefWidth(999);
 ```
 
-![](http://table-layout.googlecode.com/svn/wiki/home/size.png)
+[[images/size.png]]
 
 Here the `prefWidth` of 999 is larger than the table, so it is sized down to fit.
 
@@ -202,7 +202,7 @@ Padding is extra space around the edges of a cell.
     table.add(addressText).width(100).pad(10);
 ```
 
-![](http://table-layout.googlecode.com/svn/wiki/home/pad.png)
+[[images/pad.png]]
 
 Note that padding between cells combines, so there are 20 pixels between the text fields. The debug lines don't necessarily show which cell the padding comes from, since it is not important for the layout of the table.
 
@@ -224,7 +224,7 @@ Like padding, spacing is extra space around the edges of a cell. However, spacin
     table.add(addressText).width(100).space(10);
 ```
 
-![](http://table-layout.googlecode.com/svn/wiki/home/space.png)
+[[images/space.png]]
 
 Note that the spacing between cells doesn't combine, so there are 10 pixels between the text fields. Also note that there is no spacing under the bottom text field because spacing isn't applied around the edge of the table.
 
@@ -239,7 +239,7 @@ A cell can span multiple columns.
     table.add(addressLabel).colspan(2);
 ```
 
-![](http://table-layout.googlecode.com/svn/wiki/home/colspan.png)
+[[images/colspan.png]]
 
 Note that there is no rowspan. To acheive this, use a nested table.
 
@@ -255,7 +255,7 @@ Cells with `uniform` set to true will be the same size.
     table.add(addressText).width(100);
 ```
 
-![](http://table-layout.googlecode.com/svn/wiki/home/uniform.png)
+[[images/uniform.png]]
 
 ## Defaults
 
@@ -272,7 +272,7 @@ Often many cells have the same properties, so setting the default properties for
     table.add(addressText);
 ```
 
-![](http://table-layout.googlecode.com/svn/wiki/home/defaults.png)
+[[images/defaults.png]]
 
 ### Column defaults
 
@@ -287,7 +287,7 @@ The `columnDefaults` method on the table returns a cell whose properties are the
     table.add(addressText);
 ```
 
-![](http://table-layout.googlecode.com/svn/wiki/home/columndefaults.png)
+[[images/columndefaults.png]]
 
 ### Row defaults
 
@@ -302,7 +302,7 @@ When the `row` method is called, it returns a cell whose properties are the defa
     table.add(addressText);
 ```
 
-![](http://table-layout.googlecode.com/svn/wiki/home/rowdefaults.png)
+[[images/rowdefaults.png]]
 
 ## Values
 

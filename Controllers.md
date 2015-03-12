@@ -31,7 +31,7 @@ Once you have a [Controller](https://github.com/libgdx/libgdx/blob/master/extens
 
 A classic controller example is the XBox 360 controller:
 
-![XBox 360 Controller](http://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Xbox-360-S-Controller.png/300px-Xbox-360-S-Controller.png)
+[[images/300px-Xbox-360-S-Controller.png]]
 
 It has a left and a right analogue stick, each with an x- and a y-axis, triggers on the back, each representing a single axis and various buttons and a d-pad, which might either be reported as buttons or as axes.
 

@@ -59,7 +59,7 @@ There are several more issues, e.g. a model typically contains more detail than 
 
 There are several ways to work around these problems, ranging from approximating a model using primitive shapes to using a dedicated model or sharing vertices between visual model and physics shape. The [Bullet manual](https://github.com/erwincoumans/bullet2/blob/master/Bullet_User_Manual.pdf?raw=true)
 provides a decision chart to help you decide which method you should choose:
-![](http://blog.xoppa.com/wp-content/uploads/2014/08/bullet_shape_decision.png)
+[[images/bullet_shape_decision.png]]
 
 For the case of a static model, the Bullet wrapper provides a convenient method to create a collision shape of it:
 ```java
