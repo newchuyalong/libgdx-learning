@@ -139,8 +139,6 @@ public class HtmlLauncher extends GwtApplication {
 }
 ```
 
-*Note:* we don't need to specify which OpenGL version to use for this platform, as it only supports OpenGL 2.0. 
-
 All our starter classes are now correctly configured, let's move on to implementing this fabulous game.
 
 ## The Code ##
