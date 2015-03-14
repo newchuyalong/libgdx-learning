@@ -18,8 +18,16 @@ Pooled effect example:
 ParticleEffectPool bombEffectPool;
 Array<PooledEffect> effects = new Array();
 ...
+//Set up the particle effect that will act as a template for the pool to create more
 ParticleEffect bombEffect = new ParticleEffect();
 bombEffect.load(Gdx.files.internal("particles/bomb.p"), atlas);
+
+//If your particle effect includes additive or pre-multiplied particle emitters
+//you can turn off blend function clean-up to save a lot of draw calls, but
+//remember to switch the Batch back to GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA
+//before drawing "regular" sprites or your Stage.
+bombEffect.setEmittersCleanUpBlendFunction(false);
+
 bombEffectPool = new ParticleEffectPool(bombEffect, 1, 2);
 ...
 // Create effect:
