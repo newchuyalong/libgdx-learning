@@ -17,8 +17,10 @@ Pooled effect example:
 ```java
 ParticleEffectPool bombEffectPool;
 Array<PooledEffect> effects = new Array();
+
 ...
-//Set up the particle effect that will act as a template for the pool to create more
+
+//Set up the particle effect that will act as the pool's template
 ParticleEffect bombEffect = new ParticleEffect();
 bombEffect.load(Gdx.files.internal("particles/bomb.p"), atlas);
 
@@ -29,12 +31,16 @@ bombEffect.load(Gdx.files.internal("particles/bomb.p"), atlas);
 bombEffect.setEmittersCleanUpBlendFunction(false);
 
 bombEffectPool = new ParticleEffectPool(bombEffect, 1, 2);
+
 ...
+
 // Create effect:
 PooledEffect effect = bombEffectPool.obtain();
 effect.setPosition(x, y);
 effects.add(effect);
+
 ...
+
 // Update and draw effects:
 for (int i = effects.size - 1; i >= 0; i--) {
 	PooledEffect effect = effects.get(i);
@@ -44,9 +50,10 @@ for (int i = effects.size - 1; i >= 0; i--) {
 		effects.removeIndex(i);
 	}
 }
+
 ...
+
 // Reset all effects:
 for (int i = effects.size - 1; i >= 0; i--)
     effects.get(i).free();
 effects.clear();
-```
