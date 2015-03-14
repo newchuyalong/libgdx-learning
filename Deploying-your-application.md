@@ -50,7 +50,7 @@ Deploying to Android takes some extra steps. This tutorial is done using Eclipse
 
 Prerequisites:
  * An OSX machine with Xcode installed (or the equivalent Hackintosh) and an Apple developer license account all established and paid for
- * Your app is configured in `itunesconnect.apple.com` and is in *Ready to Upload Binary* mode
+ * Your app is configured in `itunesconnect.apple.com` with a version number that matches your `ios/robovm.properties` file
  * You have a matching distribution certificate set up at `developer.apple.com` per usual
 
 On your build machine, open Xcode, go to `Preferences -> Accounts`, provide your login and choose *View Details*. Tap the "Recycle" button at bottom left. This will download all necessary certificates to a place that the RoboVM Eclipse plugin expects to find them. Click *Done* and exit Xcode.
@@ -59,10 +59,7 @@ On your build machine, open Xcode, go to `Preferences -> Accounts`, provide your
 
 Go into Eclipse, right click on your `projectname-ios` and choose `RoboVM Tools -> Package for App-Store/Adhoc Distribution`.  In the resulting dialog, pick a directory where you wish the IPA and associated files to be placed, choose your signing identity (usually your company, not your machine's identifier), and the provisioning profile for this app (from `developer.apple.com`).
 
-This will generate the `projectname.IPA` file. Now you are able to:
-
- 1. use the TestFlightApp uploader to send it to [TestFlight](www.testflightapp.com) to most easily distribute beta releases to your users.  (This can also be a great way to shake out configuration problems with your IPA).
- 2. use the `Application Loader` to locate your IPA and submit it to Apple for review and release to the App Store
+This will generate the `projectname.IPA` file. Now you are able to use the `Application Loader` to locate your IPA and submit it to iTunesConnect. It will appear under the Prerelease tab for your app, per usual. Then you can distribute to your TestFlight testers etc., per the usual Apple procedure.
 
 
 ## <a id="Deploy_to_HTML/JS"></a>Deploy to HTML/JS ##
