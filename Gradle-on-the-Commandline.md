@@ -85,11 +85,13 @@ This will create an IPA in the `ios/build/robovm` folder that you distribute to 
 
 This will compile your your app to Javascript and place the resulting Javascript, HTML and asset files in the `html/build/dist/` folder. The contents of this folder have to be served up by a web server, e.g. Apache or Nginx. Just treat the contents like you'd treat any other static HTML/Javascript site. There is no Java or Java Applets involved!
 
-If you have Python installed, you can test your distribution by executing the following in the `html/build/dist` folder:
+With Python installed, you can test your distribution by executing the following in the `html/build/dist` folder:
 
 `python -m SimpleHTTPServer`
 
 You can then open a browser to [http://localhost:8000](http://localhost:8000) and see your project in action.
+
+With Node.js `npm install http-server -g` then `http-server html/build/dist` and browse at <http://localhost:8080>. [docs](https://github.com/indexzero/http-server)
 
 ## Debugging and common problems
 ### Gradle tasks are failing
