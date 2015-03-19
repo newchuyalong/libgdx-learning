@@ -46,6 +46,9 @@ An example of this file:
        <version>0.0.1</version>             <!-- Current release version of your extension-->
        <compatibility>1.5.3</compatibility> <!-- Latest version of LibGDX your extension is compatible with-->
        <website>http://mywebsite.com</website>  <!-- Url of your extension, either your extension website/github-->
+       <gwtInherits>
+              <inherit>cheeky</inherit>     <!-- GWT module of your extension, for the HTML project -->
+       </gwtInherits>
        <projects>
            <core>                                 <!-- All dependencies for the core project-->
                <dependency>groupId:artifactId</dependency> <!--A single dependency-->
@@ -89,7 +92,6 @@ A few notes:
 * If you don't support a platform, you must put null like in the __ios__ project above.
 * If you don't have any extras dependencies for platform, (as they are inherited from core for example) leave the section clear, like __android__ in the example above.
 * Html projects require the source of dependencies! Make sure you push this source artifact and declare it in the extensions.xml!
-
 
 This provides all the information required to display your extension and add it to user's projects in the setup.  
 
