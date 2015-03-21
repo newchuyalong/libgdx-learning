@@ -128,8 +128,15 @@ There are all sorts of additional tricks you can do based on the `distance` vari
 # Using distance fields for arbitrary images #
 
 The generator used by Hiero can also be used as a stand-alone command line tool, to process pre-existing black and white images. Run it from an unzipped libgdx distribution directory as follows:
+
+Windows:
 ```shell
 java -cp gdx.jar;gdx-natives.jar;gdx-backend-lwjgl.jar;gdx-backend-lwjgl-natives.jar;extensions\gdx-tools\gdx-tools.jar com.badlogic.gdx.tools.distancefield.DistanceFieldGenerator
+```
+
+Linux:
+```shell
+java -cp gdx.jar:gdx-natives.jar:gdx-backend-lwjgl.jar:gdx-backend-lwjgl-natives.jar:extensions/gdx-tools/gdx-tools.jar com.badlogic.gdx.tools.distancefield.DistanceFieldGenerator
 ```
 
 This will print usage instructions:
