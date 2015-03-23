@@ -1,5 +1,5 @@
 # Table of Contents
-[[Wiki Style Guide]]
+# [[Wiki Style Guide]] #
 
   * **Developer's Guide**
     * [[Introduction|Introduction]]
@@ -14,8 +14,8 @@
       * [[NetBeans|Gradle and NetBeans]]
       * [[Commandline|Gradle on the Commandline]]
       * [[Updating your libGDX version|Updating LibGDX]]
-      * [[Adding extensions and 3rd party libraries|Dependency management with Gradle]]  
-      * [Publishing your own extensions via the setup application](https://github.com/libgdx/libgdx/wiki/Third-Party-Extension-Support)
+      * [[Adding extensions and 3rd party libraries|Dependency management with Gradle]]
+      * [[Publishing your own extensions via the setup applications | Third Party Extension Support]] 
       * [[Improving your Gradle workflow|Improving-workflow-with-Gradle]] 
     * Working from Source
       * [[Running Demos]]
@@ -103,7 +103,6 @@
             * [[3D Particle Effects]]
             * Perspective Camera ??
             * Picking ??
-            * [[Decals]]
     * [[Managing Your Assets]]
     * [[Internationalization and Localization]]
     * Utilities
@@ -126,8 +125,8 @@
       * [[Path Editor]]
     * Extensions
       * [[Artificial Intelligence]]
-      * [[gdx-pay]]: In-App-Purchasing
       * [[gdx-freetype]]
+      * [[gdx-pay]]: cross-platform In-App-Purchasing API
       * [[Physics]]
             * [[Box2D]]    
             * [[Bullet Physics]]
@@ -142,7 +141,6 @@
       * [[Using libgdx with Python]]
       * [[Using libgdx with Scala]]
     * [[Third Party Services]]
-      * [[Pollfish in libgdx]]
       * [[AdMob in Libgdx]]
       * [[Airpush in Libgdx]]
       * [[Swarm in Libgdx]]
