@@ -30,7 +30,23 @@ public class MyPacker {
 
 If you use gradle and the `TexturePacker` class is not found, add gdx-tools to your [build.gradle](https://github.com/libgdx/libgdx/wiki/Dependency-management-with-Gradle#tools-gradle) file.
 
-It can also be run from the [nightly build](http://libgdx.badlogicgames.com/nightlies/):
+
+You can also run `texturePacker` as a gradle task if you add the following to your build.gradle:
+
+```
+import com.badlogic.gdx.tools.texturepacker.TexturePacker
+task texturePacker << {
+  if (project.ext.has('texturePacker')) {
+    logger.info "Calling TexturePacker: "+texturePacker
+    TexturePacker.process(texturePacker[0], texturePacker[1], texturePacker[2])
+  }
+}
+```
+
+In this way, running `./gradlew texturePacker desktop:run` will perform the texture packing before the desktop:run task is started. And if the textures have not changed, then all one has to do is omit the texturePacker argument.
+
+
+TexturePacker can also be run from the [nightly build](http://libgdx.badlogicgames.com/nightlies/):
 
 ```
 // OS X / Linux
