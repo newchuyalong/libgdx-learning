@@ -77,7 +77,6 @@
             * [[Clipping, with the use of ScissorStack]]
             * [[Orthographic camera]]
             * Mapping Touch Coordinates ??
-            * [[NinePatches]]
             * [[Bitmap Fonts]]
               * [[Distance field fonts]]
               * [[Color Markup Language]]
@@ -92,6 +91,7 @@
               * [[scene2d.ui]]
                   * [[Table]]
               * [[Skin]]
+            * [[NinePatches]]
       * 3D Graphics
             * [[Quick Start]]
             * [[Models]]
