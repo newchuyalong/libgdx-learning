@@ -2,6 +2,8 @@ This will walk you through step by step on how to setup a separate project to ma
 
 The only downside I've found is that unless you modify each project's builder to check for updates to your Assets Project, you will have to refresh (F5) the project before clicking Run, as Eclipse won't auto-detect changes to most files in the separate Assets Project. No big deal.
 
+**Note to Gradle Builders:** This may not work for your build unless you modify the gradle script to pull in the assets.
+
 
 Lets assume that you have a project named MyGame that was created using the setup tool and the project structures are how they usually are in a bare bones Eclipse scenario.
 
