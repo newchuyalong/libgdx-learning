@@ -16,7 +16,8 @@
       * [[Updating your libGDX version|Updating LibGDX]]
       * [[Adding extensions and 3rd party libraries|Dependency management with Gradle]]
       * [[Publishing your own extensions via the setup applications | Third Party Extension Support]] 
-      * [[Improving your Gradle workflow|Improving-workflow-with-Gradle]] 
+      * [[Improving your Gradle workflow|Improving-workflow-with-Gradle]]
+      * [[Creating Asset Project in Eclipse|Creating-a-Separate-Assets-Project-in-Eclipse]] 
     * Working from Source
       * [[Running Demos]]
       * [[Running Tests]]
