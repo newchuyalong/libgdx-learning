@@ -7,6 +7,7 @@ The only downside I've found is that unless you modify each project's builder to
 
 Lets assume that you have a project named MyGame that was created using the setup tool and the project structures are how they usually are in a bare bones Eclipse scenario.
 
+
 1. In Eclipse, create a new General Project. (File > New > Project...)
 2. Name this project MyGame-Assets or something useful
 3. Go to the MyGame-Assets project, and add a new Folder named “assets”
@@ -27,12 +28,13 @@ Lets assume that you have a project named MyGame that was created using the setu
 18. Go to the “Java Build Path”, and select the “Source” tab
 19. Click the “Add Folder...” button on the right side of the dialog
 20. In the tree that comes up, your new “assets” subfolder should be displayed. Check that bad boy and click “OK”.
-21. Click “OK” on the Properties for... window. You'll notice now that the icons for the assets subfolders should have changed from the usual folder icon to the Java package icon.
-22. Are you assets in the MyGame-Assets project in the correct folder structure?
-23. Click your MyGame-Android project, and press F5. Or clean. Whatever.
-24. Run the MyGame-Android project and verify that it builds and your game art is present.
-25. If you setup a Desktop or iOS project, repeat the steps to modify each project similarly to use a linked folder named “assets”.
-26. Bask in the glow of your new organizational bliss and wonder if the setup tool will do this for you at some point in the future.
+21. Select the “Order and Export” tab. Ensure that the new assets folder is checked.
+22. Click “OK” on the Properties for... window. You'll notice now that the icons for the assets subfolders should have changed from the usual folder icon to the Java package icon.
+23. Are you assets in the MyGame-Assets project in the correct folder structure?
+24. Click your MyGame-Android project, and press F5. Or clean. Whatever.
+25. Run the MyGame-Android project and verify that it builds and your game art is present.
+26. If you setup a Desktop or iOS project, repeat the steps to modify each project similarly to use a linked folder named “assets”.
+27. Bask in the glow of your new organizational bliss and wonder if the setup tool will do this for you at some point in the future.
 
 
 My MyGame-Assets projects usually look like the following tree, with organized subfolders in each, depending on what suites the particular game best. If you setup a builder, or have artwork per device... No problem. Organize your MyGame-Assets project and recreate the linked folder.
