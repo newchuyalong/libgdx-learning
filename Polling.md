@@ -1,6 +1,6 @@
 Polling refers to checking the current state of an input device, e.g. is a specific key pressed, where is the first finger on the screen and so on. It's a quick and easy way to process user input and will suffice for most arcade games.
 
-*Caution:* If you rely on polling, you might miss events, e.g. a fast paced key down/key up. If you need to make sure a specific sequence of input action was completed, use event handling instead.
+*Caution:* If you rely on polling, you might miss events, e.g. a fast paced key down/key up. If you need to make sure a specific sequence of input action was completed, use [[event handling]] instead.
 
 ## Polling the Keyboard ##
 
