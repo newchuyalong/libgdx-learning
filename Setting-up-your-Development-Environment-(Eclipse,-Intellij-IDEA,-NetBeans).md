@@ -16,7 +16,7 @@ To additionally target iOS
   * [RoboVM](http://www.robovm.com/docs#robovm-for-eclipse), simply install the Eclipse plugin. Make sure to update the plugin frequently!
 
 
-You can find a step by step walkthrough by toxsickproductions [HERE.](http://www.toxsickproductions.com/libgdx/how-to-setup-your-libgdx-project/)
+You can find a step by step walkthrough by toxsickproductions [HERE.](http://libgdx.toxsickproductions.com/libgdx/how-to-setup-your-libgdx-project/)
 
 
 Once all of these tools are installed, proceed to [[creating your project|Project Setup Gradle]]
