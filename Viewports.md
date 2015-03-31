@@ -1,38 +1,6 @@
 When dealing with different screens it is often necessary to decide for a certain strategy how those different screen sizes and aspect ratios should be handled. Camera and Stage support different viewport strategies, for example when doing picking via `Camera.project(vec, viewportX, viewportY, viewportWidth, viewportHeight)`.
 
-LibGDX provides a more convenient way of dealing with this problem, namely via a [`Viewport`](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/utils/viewport/Viewport.html) ([source](https://github.com/libgdx/libgdx/blob/master/gdx/src/com/badlogic/gdx/utils/viewport/Viewport.java)).
-
-### StretchViewport ###
-The [`StretchViewport`](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/utils/viewport/StretchViewport.html) ([source](https://github.com/libgdx/libgdx/blob/master/gdx/src/com/badlogic/gdx/utils/viewport/StretchViewport.java))  supports working with a virtual screen size. That means one can assume that a screen is always of the size `virtualWidth x virtualHeight`. This virtual viewport will then always be stretched to fit the screen. There are no black bars, but the aspect ratio may not be the same after the scaling took place.
-
-[[images/oheUy0y.png]]
-
-### FitViewport ###
-A [`FitViewport`](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/utils/viewport/FitViewport.html) ([source](https://github.com/libgdx/libgdx/blob/master/gdx/src/com/badlogic/gdx/utils/viewport/FitViewport.java)) also supports a virtual screen size. The difference to StretchViewport is that it will always maintain the aspect ratio of the virtual screen size (virtual viewport), while scaling it as much as possible to fit the screen. One disadvantage with this strategy is that there may appear black bars.
-
-[[images/Kv2wB94.png]]
-
-### FillViewport ###
-A [`FillViewport`](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/utils/viewport/FillViewport.html) ([source](https://github.com/libgdx/libgdx/blob/master/gdx/src/com/badlogic/gdx/utils/viewport/FillViewport.java)) also keeps the aspect ratio of the virtual screen size, but in contrast to FitViewport, it will always fill the whole screen which might result in parts of the viewport being cut off.
-
-### ScreenViewport ###
-The [`ScreenViewport`](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/utils/viewport/ScreenViewport.html) ([source](https://github.com/libgdx/libgdx/blob/master/gdx/src/com/badlogic/gdx/utils/viewport/ScreenViewport.java)) does not have a constant virtual screen size; it will always match the window size which means that no scaling happens and no black bars appear. As a disadvantage this means that the gameplay might change, because a player with a bigger screen might see more of the game, than a player with a smaller screen size.
-
-[[images/qtOytdq.png]]
-
-### ExtendViewport ###
-The [`ExtendViewport`](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/utils/viewport/ExtendViewport.html) ([source](https://github.com/libgdx/libgdx/blob/master/gdx/src/com/badlogic/gdx/utils/viewport/ExtendViewport.java)) keeps the world aspect ratio without black bars by extending the world in one direction. The world is first scaled to fit within the viewport, then the shorter dimension is lengthened to fill the viewport.
-
-[[images/HX6QS8r.png]]
-
-A maximum set of dimensions can be supplied to `ExtendViewport`, in which case, black bars will be added when the aspect ratio falls out of the supported range.
-
-[[images/vQeRKPY.png]]
-
-### CustomViewport ###
-Different strategies may be implemented by doing `CustomViewport extends Viewport` and implementing `calculateViewport(width, height)`. Another approach is use the generic `ScalingViewport` and supplying another Scaling which is not yet covered by any other Viewport. One example could be to supply `Scaling.none` to it, which will result in a completely "StaticViewport", which always keeps the same size. It might look like this:
-
-[[images/8F697TX.png]]
+LibGDX provides a more convenient way of dealing with this problem: [`Viewport`](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/utils/viewport/Viewport.html) ([source](https://github.com/libgdx/libgdx/blob/master/gdx/src/com/badlogic/gdx/utils/viewport/Viewport.java)).
 
 ### Usage ###
 A viewport always manages a Camera's viewportWidth and viewportHeight. Thus a camera needs to be supplied to the constructors.
@@ -71,6 +39,54 @@ When Stage is used, the Stage's viewport needs to be updated when a resize event
         stage.getViewport().update(width, height, false);
     }
 
+### Multiple viewports
+
+When using multiple viewports that have different screen sizes (or you use other code that sets `glViewport`), you will need to apply the viewport before drawing so the `glViewport` is set for that viewport.
+
+    viewport1.apply();
+    // draw
+    viewport2.apply();
+    // draw
+
+When using multiple Stages:
+
+        stage1.getViewport().apply();
+        stage1.draw();
+        stage2.getViewport().apply();
+        stage2.draw();
+
 ### Examples
 
 To see the viewports in action, have a look at the tests here: [ViewportTest1](https://github.com/libgdx/libgdx/blob/master/tests/gdx-tests/src/com/badlogic/gdx/tests/ViewportTest1.java), [ViewportTest2](https://github.com/libgdx/libgdx/blob/master/tests/gdx-tests/src/com/badlogic/gdx/tests/ViewportTest2.java) and [ViewportTest3](https://github.com/libgdx/libgdx/blob/master/tests/gdx-tests/src/com/badlogic/gdx/tests/ViewportTest3.java).
+
+### StretchViewport ###
+The [`StretchViewport`](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/utils/viewport/StretchViewport.html) ([source](https://github.com/libgdx/libgdx/blob/master/gdx/src/com/badlogic/gdx/utils/viewport/StretchViewport.java))  supports working with a virtual screen size. That means one can assume that a screen is always of the size `virtualWidth x virtualHeight`. This virtual viewport will then always be stretched to fit the screen. There are no black bars, but the aspect ratio may not be the same after the scaling took place.
+
+[[images/oheUy0y.png]]
+
+### FitViewport ###
+A [`FitViewport`](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/utils/viewport/FitViewport.html) ([source](https://github.com/libgdx/libgdx/blob/master/gdx/src/com/badlogic/gdx/utils/viewport/FitViewport.java)) also supports a virtual screen size. The difference to StretchViewport is that it will always maintain the aspect ratio of the virtual screen size (virtual viewport), while scaling it as much as possible to fit the screen. One disadvantage with this strategy is that there may appear black bars.
+
+[[images/Kv2wB94.png]]
+
+### FillViewport ###
+A [`FillViewport`](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/utils/viewport/FillViewport.html) ([source](https://github.com/libgdx/libgdx/blob/master/gdx/src/com/badlogic/gdx/utils/viewport/FillViewport.java)) also keeps the aspect ratio of the virtual screen size, but in contrast to FitViewport, it will always fill the whole screen which might result in parts of the viewport being cut off.
+
+### ScreenViewport ###
+The [`ScreenViewport`](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/utils/viewport/ScreenViewport.html) ([source](https://github.com/libgdx/libgdx/blob/master/gdx/src/com/badlogic/gdx/utils/viewport/ScreenViewport.java)) does not have a constant virtual screen size; it will always match the window size which means that no scaling happens and no black bars appear. As a disadvantage this means that the gameplay might change, because a player with a bigger screen might see more of the game, than a player with a smaller screen size.
+
+[[images/qtOytdq.png]]
+
+### ExtendViewport ###
+The [`ExtendViewport`](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/utils/viewport/ExtendViewport.html) ([source](https://github.com/libgdx/libgdx/blob/master/gdx/src/com/badlogic/gdx/utils/viewport/ExtendViewport.java)) keeps the world aspect ratio without black bars by extending the world in one direction. The world is first scaled to fit within the viewport, then the shorter dimension is lengthened to fill the viewport.
+
+[[images/HX6QS8r.png]]
+
+A maximum set of dimensions can be supplied to `ExtendViewport`, in which case, black bars will be added when the aspect ratio falls out of the supported range.
+
+[[images/vQeRKPY.png]]
+
+### CustomViewport ###
+Different strategies may be implemented by doing `CustomViewport extends Viewport` and implementing `calculateViewport(width, height)`. Another approach is use the generic `ScalingViewport` and supplying another Scaling which is not yet covered by any other Viewport. One example could be to supply `Scaling.none` to it, which will result in a completely "StaticViewport", which always keeps the same size. It might look like this:
+
+[[images/8F697TX.png]]
