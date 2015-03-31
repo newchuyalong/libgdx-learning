@@ -50,10 +50,10 @@ When using multiple viewports that have different screen sizes (or you use other
 
 When using multiple Stages:
 
-        stage1.getViewport().apply();
-        stage1.draw();
-        stage2.getViewport().apply();
-        stage2.draw();
+    stage1.getViewport().apply();
+    stage1.draw();
+    stage2.getViewport().apply();
+    stage2.draw();
 
 ### Examples
 
