@@ -123,6 +123,13 @@ public class DoubleAttribute extends Attribute {
         final long v = NumberUtils.doubleToLongBits(value);
         return prime * super.hashCode() + (int)(v^(v>>>32));
     }
+
+    @Override
+    public int compareTo (Attribute o) {
+        if (type != o.type) return type < o.type ? -1 : 1;
+        double otherValue = ((DoubleAttribute)o).value;
+        return value == otherValue ? 0 : (value < otherValue ? -1 : 1);
+    }
 }
 ```
 Of course `MyDouble1Alias`, `MyDouble1`, `"myDouble1"`, `MyDouble2Alias`, `MyDouble2` and `"myDouble2"` should be replaced by a more meaningful description.
@@ -130,6 +137,9 @@ Of course `MyDouble1Alias`, `MyDouble1`, `"myDouble1"`, `MyDouble2Alias`, `MyDou
 Note that the `copy()` method is for example called when creating a `ModelInstance` of a `Model`. It should return an identical instance of the attribute which can be modified independently of the attribute being copied. While not required, a *copy constructor* is typically a good method to implement this.
 
 The `hashCode()` method should be implemented because it is used for comparing attributes and materials. For example, two materials are considered to be the same if they contain the same attributes (types) and the `equals()` method returns true for each pair of attribute types. By default, the `equals()` method of the `Attribute` class compares the `hashCode()` of both attributes for this.
+
+The `compareTo(Attribute)` method must be implemented for sorting render calls based on the material. This implementation should typically always start with the line:
+`if (type != o.type) return type < o.type ? -1 : 1;` to assure that it's comparing attributes of the same type.
 
 > Attribute classes should be kept small and self contained, therefore it is best to always directly extend the `Attribute` class. Try to avoid extending a subclass of the Attribute class to add additional information.
 
