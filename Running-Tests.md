@@ -1,6 +1,8 @@
 Libgdx comes with a ton of small [test examples](https://github.com/libgdx/libgdx/tree/master/tests/gdx-tests/src/com/badlogic/gdx/tests). To run and easily analyze these, you need to work directly from the libgdx source.
 
-Running the tests is currently limited to Eclipse, so [[make sure you have Eclipse setup properly|Setting up your Development Environment (Eclipse, Intellij IDEA, NetBeans)]]. In addition to this, you will also need [Ant](http://ant.apache.org/) installed and available in your `PATH` environment variable so you can execute it on the command line.
+Running the tests is currently limited to **Eclipse**, so [[make sure you have Eclipse setup properly|Setting up your Development Environment (Eclipse, Intellij IDEA, NetBeans)]]. In addition to this, you will also need:
+* [Ant](http://ant.apache.org/) installed and available in your `PATH` environment variable so you can execute it on the command line
+* [GWT Plugin](https://developers.google.com/eclipse/docs/download) for Eclipse - follow the instructions on the page and install only required and GWT stuff
 
 ## Getting the Source ##
 To get the sources and all the native libraries for all platforms, perform the following on the command line. You can do the cloning with a Git GUI as well of course:
