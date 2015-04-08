@@ -313,15 +313,15 @@ Not compatible!
 
 **Core Dependency:**
 ```groovy
-compile "com.badlogicgames.box2dlights:box2dlights:1.2"
+compile "com.badlogicgames.box2dlights:box2dlights:1.3"
 ```
 **Android Dependency:**
 ```groovy
-compile "com.badlogicgames.box2dlights:box2dlights:1.2"
+compile "com.badlogicgames.box2dlights:box2dlights:1.3"
 ```
 **HTML Dependency:**
 ```groovy
-compile "com.badlogicgames.box2dlights:box2dlights:1.2:sources"
+compile "com.badlogicgames.box2dlights:box2dlights:1.3:sources"
 ```
 
 ***
