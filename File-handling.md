@@ -190,7 +190,7 @@ These operations are again only possible for writable file types (local, externa
 
 ```java
 FileHandle from = Gdx.files.internal("myresource.txt");
-from.copyTo(Gdx.files.external("myexternalcopy.txt");
+from.copyTo(Gdx.files.external("myexternalcopy.txt"));
 
 Gdx.files.external("myexternalcopy.txt").rename("mycopy.txt");
 Gdx.files.external("mycopy.txt").moveTo(Gdx.files.local("mylocalcopy.txt"));
