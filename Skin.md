@@ -167,6 +167,13 @@ Skin files from the [libgdx tests](https://github.com/libgdx/libgdx/tree/master/
 
 Colors are defined in JSON as shown above. If the `r`, `g`, or `b` properties are omitted, 0 is used. If `a` is omitted, 1 is used.
 
+Alternatively, you can specify the color by hex value:
+```
+com.badlogic.gdx.graphics.Color: {
+	skyblue: { hex: 489affff }
+}
+```
+
 ### <a id="BitmapFont"></a>BitmapFont ###
 
 A bitmap font is declared in the JSON like this:
