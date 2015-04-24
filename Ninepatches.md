@@ -8,7 +8,7 @@ This guide was intended for the old scene2d and the skinpacker (the versions bef
 ## Introduction ##
 
 A NinePatch image is an image with defined "stretchable" areas. With this
-property one can create images that repeates either to very small
+property one can create images that repeats either to very small
 regions, or scale to very big regions. Since the areas are pre-defined,
 the image won't look stretched (given that it has been created with
 scaling in mind). The corresponding NinePatch class in libgdx is located [here](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/graphics/g2d/NinePatch.html)
@@ -101,7 +101,7 @@ In the following picture, I have defined what area the content will be
 placed in (in other words, what will be scaled), and what areas I don't
 want to scale. Again, this is achieved by padding with a 1 pixel border
 in the image. You see that the tool previews the content (pink area),
-and that the pre-views scales much better (in the right side of the
+and that the previews scales much better (in the right side of the
 screenshot).
 
 [[images/ninepatches5.png]]
@@ -143,4 +143,4 @@ When this is the only picture from the _export_-folder run in the SkinPacker the
 }
 ```
 
-We see that the packer actually defined nine patches (somebody should be mind blown by now!). One huge advantage with this is that we are no longer constrained to the 1 square for each region (as opposed to instantiate ninepatches manually). We can now define more fine-grained nine patches. In addition to this, its much easier to just alter an image and run it through the packer, and it will define regions.
+We see that the packer actually defined nine patches (somebody should be mind blown by now!). One huge advantage with this is that we are no longer constrained to the 1 square for each region (as opposed to instantiate Ninepatches manually). We can now define more fine-grained nine patches. In addition to this, its much easier to just alter an image and run it through the packer, and it will define regions.
