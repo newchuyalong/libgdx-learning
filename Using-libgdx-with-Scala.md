@@ -1,4 +1,4 @@
-**Note: The method listed here does not support Libgdx add-ons such as Box2D, HTML5 Play and such. The compile time is also greatly increased and dealing with android is extremely painful. For these reasons using scala with Libgdx is not recommended.*
+**Note: The method listed here does not support Libgdx add-ons such as Box2D, HTML5 Play and such. The compile time is also greatly increased and dealing with android is extremely painful. For these reasons using scala with Libgdx is not recommended.**
 
 Scala is a functional, object-oriented programming language for the JVM that works seamlessly with Java libraries, frameworks, and tools. It has a concise syntax and a REPL, which makes it feel like a scripting language, but it is being used in mission critical server software at companies like Twitter and LinkedIn.
 
