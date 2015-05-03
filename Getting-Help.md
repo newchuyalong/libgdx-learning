@@ -32,7 +32,7 @@ Please go through this short checklist to be sure you haven't missed an easy to 
 
 If you still have a problem, often the fastest way to get help is the libgdx chat room. Usually it has ~100 people, any one of which could answer your question right now. The chat room is [#libgdx on irc.freenode.net](irc://irc.freenode.net/libgdx).
 
-Otherwise, if you wish to post on the [forum](http://www.badlogicgames.com/forum/) or post a new issue on the [tracker](https://github.com/libgdx/libgdx/issues), keep reading.
+Otherwise, if you wish to post on the [forum](http://www.badlogicgames.com/forum/) or [post a new issue](https://github.com/libgdx/libgdx/blob/master/CONTRIBUTING.md) on the [tracker](https://github.com/libgdx/libgdx/issues), keep reading.
 
 ## <a id="Help_us_help_you"></a>Help Us Help You ##
 If you believe your issue, error, or suspected bug is related to a specific backend, please present the following information with your issue. If you are on IRC have the following information on hand.
