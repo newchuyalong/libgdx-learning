@@ -52,15 +52,15 @@ There are some common elements that appear in several of the properties panels.
 
 Properties with an "Active" toggle button can be turned off, which can minimize some of the work that needs to be done at run-time.
 
-#### Number / range ####
+#### Number / number range ####
 
-Some of the number fields have a `>` button beside them. Clicking this button changes the number into a number range, where at runtime, a random number is selected from between the two specified numbers, every time the number is referenced. For example, if a range of 1-2 is selected for the Life property, each new particle will have some random length life between 1 and 2 seconds.
+Some of the number fields have a `>` button beside them. Clicking this button changes the number into a number range, where at runtime, a random value is selected from between the two specified values, every time the number is referenced. For example, if a range of 1-2 is selected for the Life property, each new particle will have some random length life between 1 and 2 seconds.
 
 #### Chart ####
 
 A chart is used to control the value of a property over time. The word "Duration" or "Life" in the middle of the chart indicates whether the horizontal timeline of the chart is relative to the duration of the emitter, or the lifetime of each single particle. 
 
-The "High" and "Low" number fields indicate the vertical value extents of the the chart. Like other number fields, they can be expanded into a range with the `>` button. The random number in the range is chosen when the effect starts for a “Duration” chart, and when a particle is spawned for a “Life” chart.
+The "High" and "Low" number fields indicate the values that correspond with the top and bottom of the chart. Like other number fields, they can be expanded into a range with the `>` button. The random number in the range is chosen when the effect starts for a “Duration” chart, and when a particle is spawned for a “Life” chart.
 
 Within the chart itself:
 * To add nodes, click anywhere in the chart.
