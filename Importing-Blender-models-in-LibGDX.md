@@ -1,3 +1,5 @@
+**Note:** _while this page uses Blender for practical examples, most of it applies to **other modeling applications** as well._
+
 Blender is an open source modeling application you can use to create 3D models, scenes and animations. You can get Blender at [blender.org](http://www.blender.org/). If you are new to creating 3D models using Blender, you can checkout the [blender tutorials](http://www.blender.org/education-help/tutorials/). This page provides practical tips on preparing and converting your Blender model for use in LibGDX.
 
 ### Blender considerations
@@ -39,6 +41,18 @@ Additionally test that your lighting/color is configured in a way which will ill
 
 If you have used Blender's FBX export script, please ensure your textures were assigned to a UV map, as the export script only supports texface textures, go to edit mode, in UV/Texture editor select the texture/image that you want to export with the object.
 
-
 ### RrSs warning
 When using the Blender FBX exporter, you might receive a RrSs warning when converting the FBX file. This is due to the Blender FBX exporter wrongfully exporting the transformations. The fbx-conv utility will correct this and you can safely ignore the warning.
+
+### Maximum vertices
+A model (g3dj or g3db file) can contain multiple meshes. These meshes are indexed. The indices used by libGDX are `short` values. Java's maximum `short` value is 32,767. In other words: you practically can't use more than 32767 vertices within a single mesh. Therefor you should make sure that your meshes never exceeds this limitation.
+
+By default, `fbx-conv` warns you when you try to convert a mesh that contains more than 32767 _indices_. While this doesn't have to mean that it will also result in more than 32767 _vertices_, it is a good indication that your mesh it is too ["high-poly"](http://en.wikipedia.org/wiki/Low_poly) and might cause issues. In this case you should consider lowering the polygon count or splitting the mesh into multiple parts.
+
+If your model contains multiple similar meshes with less than 32767 vertices, then `fbx-conv` will try to combine these into a single mesh. When it combines meshes it will never exceed the maximum number of vertices of 32767. You can change this maximum using the `-m` command line option.
+
+**Warning:** increasing the maximum number of vertices used by `fbx-conv` **will not** increase java's maximum `short` value.
+
+**`fbx-conv` will never split your mesh**, unless your mesh is skinned and exceeds the maximum number amount of bones specified. Simply because it doesn't have enough information to do so.
+
+> Note that in contrast to java, both fbx-conv and opengl support `unsigned` indices. Therefor you might not notice issues between 32767 and 65535 vertices in some cases and devices. You should not rely on this though.
