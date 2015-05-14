@@ -35,6 +35,13 @@ HttpRequest httpRequest = requestBuilder.newRequest().method(HttpMethods.GET).ur
 Gdx.net.sendHttpRequest(httpRequest, httpResponseListener);
 ```
 
+To send a GET HTTP Request with arguments use this:
+```
+HttpRequestBuilder requestBuilder = new HttpRequestBuilder();
+HttpRequest httpRequest = requestBuilder.newRequest().method(HttpMethods.GET).url("http://www.google.de").content("q=libgdx&example=example").build();
+Gdx.net.sendHttpRequest(httpRequest, httpResponseListener);
+```
+
 To open the system browser use this:
 ```
 Gdx.net.openURI(String URI)
