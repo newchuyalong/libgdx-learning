@@ -49,7 +49,6 @@ This is often done at loading time, where you load the data set, calculates the 
     Vector2[] points = new Vector2[k];
 /*init()*/
     CatmullRomSpline<Vector2> myCatmull = new CatmullRomSpline<Vector2>(dataSet, true);
-    Vector2 out = new Vector2();
     for(int i = 0; i < k; ++i)
     {
         points[i] = new Vector2();
@@ -102,14 +101,25 @@ This way uses a LERP through the cached points. It looks roughly sometimes but i
 /*members*/
     float speed = 0.15f;
     float current = 0;
+    int k = 100; //increase k for more fidelity to the spline
+    Vector2[] points = new Vector2[k];
+
 /*render()*/
     current += Gdx.graphics.getDeltaTime() * speed;
     if(current >= 1)
         current -= 1;
     float place = current * k;
-    Vector2 first = points[(int)k];
-    Vector2 second = points[(int)k+1];
-    float t = k - ((int)k);
+    Vector2 first = points[(int)place];
+    Vector2 second;
+    if(((int)place+1) < k)
+    {
+        second = points[(int)place+1];
+    }
+    else
+    {
+        second = points[0]; //or finish, in case it does not loop.
+    }
+    float t = place - ((int)place); //the decimal part of place
     batch.draw(sprite, first.x + (second.x - first.x) * t, first.y + (second.y - first.y) * t);
 ```
 
@@ -136,7 +146,6 @@ The angle can be found when applying the atan2 function to the normalised tangen
 
 ```java
     myCatmull.derivativeAt(out, current);
-    out.nor();
     float angle = out.angle();
 ```
 
