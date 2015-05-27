@@ -14,19 +14,13 @@ Libgdx aims to be a framework rather than an engine, acknowledging that there is
 
 Libgdx ties in a lot of third party libraries to provide its functionality:
 
-
-<a href="http://www.opengl.org"><img src="http://www.opengl.org/img/opengl_logo.jpg"></a> |
-<a href="http://nothings.org"><img src="http://nothings.org/images/juggle.gif"></a>
-
-<a href="http://www.freetype.org"><img src=http://www.h-online.com/imgs/43/5/4/3/6/9/6/FreeType-logo-c9a716fd19af562a.png></a> |
-<a href="http://www.mpg123.de"><img src="http://www.mpg123.de/pics/logo-current.png"></a> |
-<a href="http://www.xiph.org/vorbis"><img src="http://xiph.org/images/logos/fish_xiph_org.png"></a>
-
-<a href="http://www.surina.net/soundtouch"><img src="http://www.surina.net/soundtouch/soundtouch.jpg"></a> |
-<a href="http://www.box2d.org"><img src="http://box2d.org/images/icon.gif"></a>
-
-[LWJGL](http://www.lwjgl.org)
-
-[OpenAL](http://en.wikipedia.org/wiki/OpenAL)
-
-[KissFFT](http://sourceforge.net/projects/kissfft)
+- [nothings.org](http://nothings.org) 
+- [OpenGL](http://www.opengl.org)
+- [FreeType](http://www.freetype.org)
+- [mpg123](http://www.mpg123.de)
+- [xiph.org](http://www.xiph.org/vorbis)
+- [soundtouch](http://www.surina.net/soundtouch)
+- [box2d](http://www.box2d.org)
+- [LWJGL](http://www.lwjgl.org)
+- [OpenAL](http://en.wikipedia.org/wiki/OpenAL)
+- [KissFFT](http://sourceforge.net/projects/kissfft)
