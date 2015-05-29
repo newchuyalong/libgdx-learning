@@ -24,7 +24,7 @@ http://libgdxspain.blogspot.com
  * Libgdx tutorial series
 http://libgdxtutorialseries.blogspot.com
  * Mets-Blog | Libgdx - http://www.mets-blog.com/category/libgdx/
- * Xoppa's blog - http://blog.xoppa.com/category/libgdx/
+ * Xoppa's blog - http://blog.xoppa.com
  * libgdx.cn - http://www.libgdx.cn (Chinese)
  * Martian Run! Multi-part tutorial - http://williammora.com/a-running-game-with-libgdx-part-1/
 
