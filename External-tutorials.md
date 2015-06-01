@@ -12,7 +12,6 @@ These are webpages where individuals or companies write about their experience w
  * Rotating Canvas, an indie developers group webpage - http://rotatingcanvas.com/category/tutorials/
  * Impaler's personal webpage - http://obviam.net
  * Group of students from Sweden - http://www.dagger.se/#home
- * Collection of articles - http://libgdxgaming.com/
  * LibGDX video tutorials 1 - http://www.youtube.com/dermetfan
  * LibGDX video tutorials 2 - https://www.youtube.com/ForeignGuyMike
  * LibGDX Tutorial series - http://www.gamefromscratch.com/page/LibGDX-Tutorial-series.aspx
