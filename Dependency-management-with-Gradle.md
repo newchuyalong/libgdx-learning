@@ -253,7 +253,7 @@ natives "com.badlogicgames.gdx:gdx-freetype-platform:$gdxVersion:natives-x86"
 ```
 **iOS Dependency version 1.6.1+:**
 ```groovy
-compile "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-ios"
+compile "com.badlogicgames.gdx:gdx-freetype-platform:$gdxVersion:natives-ios"
 ```
 **iOS Dependency (Old version):**
 ```groovy
