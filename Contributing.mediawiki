@@ -76,3 +76,5 @@ Most of the libdgx team members are Git novices, as such we are just learning th
 We do open new branches for bigger API changes. If you help out with a new API, make sure your pull request targets that specific branch.
 
 Pull requests for the master repository will be checked by multiple core contributors before inclusion. We may reject your pull requests to master if we do not deem them to be ready or fitting. Please don't take offense in that case. Libgdx is used by thousands of projects around the world, we need to make sure things stay somewhat sane and stable.
+
+LibGDX uses a forked public project methodology. [Here is a concise tutorial](https://git-scm.com/book/en/v2/Distributed-Git-Contributing-to-a-Project#Forked-Public-Project) to help you get aquainted with the relevant Git commands for this project type. 
