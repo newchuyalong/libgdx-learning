@@ -15,6 +15,7 @@ The iterator returned by `iterator()` is always the same instance, allowing the 
   * [CharArray](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/utils/CharArray.html)
 [(code)](https://github.com/libgdx/libgdx/blob/master/gdx/src/com/badlogic/gdx/utils/CharArray.java)
   * [LongArray](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/utils/LongArray.html) [(code)](https://github.com/libgdx/libgdx/blob/master/gdx/src/com/badlogic/gdx/utils/LongArray.java)
+  * [ByteArray](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/utils/ByteArray.html) [(code)](https://github.com/libgdx/libgdx/blob/master/gdx/src/com/badlogic/gdx/utils/ByteArray.java)
   
 These are identical to Array except they use primitive types instead of objects. This avoids boxing and unboxing.
 
