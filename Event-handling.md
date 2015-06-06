@@ -70,11 +70,13 @@ From this point on, all new input events will be pushed to the `MyInputProcessor
 
 ```java
 Gdx.input.setInputProcessor(new InputAdapter () {
+   @Override
    public boolean touchDown (int x, int y, int pointer, int button) {
       // your touch down code here
       return true; // return true to indicate the event was handled
    }
 
+   @Override
    public boolean touchUp (int x, int y, int pointer, int button) {
       // your touch up code here
       return true; // return true to indicate the event was handled
