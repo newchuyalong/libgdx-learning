@@ -73,7 +73,7 @@ The first argument is the time-step, or the amount of time you want your world t
 
 The other two arguments are `velocityIterations` and `positionIterations`. For now we will leave these at `6` and `2`, but you can read more about them in the Box2D documentation.
 
-Stepping your simulation is a topic unto itself. See [this article](http://gafferongames.com/game-physics/fix-your-timestep/) for an excellent discission on the use of variable time steps.
+Stepping your simulation is a topic unto itself. See [this article](http://gafferongames.com/game-physics/fix-your-timestep/) for an excellent discussion on the use of variable time steps.
 
 The result might look similar to this:
 
