@@ -87,7 +87,10 @@ This will compile your your app to Javascript and place the resulting Javascript
 
 With Python installed, you can test your distribution by executing the following in the `html/build/dist` folder:
 
+**Python 2.x**
 `python -m SimpleHTTPServer`
+**Python 3.x**
+python -m http.server 8000
 
 You can then open a browser to [http://localhost:8000](http://localhost:8000) and see your project in action.
 
