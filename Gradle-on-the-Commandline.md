@@ -89,6 +89,7 @@ With Python installed, you can test your distribution by executing the following
 
 **Python 2.x**
 `python -m SimpleHTTPServer`
+
 **Python 3.x**
 python -m http.server 8000
 
