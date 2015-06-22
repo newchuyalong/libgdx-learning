@@ -2,7 +2,7 @@
 [ModelBuilder](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/graphics/g3d/utils/ModelBuilder.html) [(code)](https://github.com/libgdx/libgdx/blob/master/gdx/src/com/badlogic/gdx/graphics/g3d/utils/ModelBuilder.java) is a utility class to create one or more [models](https://github.com/libgdx/libgdx/wiki/Models) on code. It allows you to include one or more [nodes](https://github.com/libgdx/libgdx/wiki/Models#nodes), each node consisting of one or more [parts](https://github.com/libgdx/libgdx/wiki/Models#nodepart). It does, however, not support building a node hierarchy (child nodes). Be aware that building a model on code can be a costly operation and might trigger the garbage collector.
 ## Building one or more models
 To start building a model use the `begin()` method, after which you must call the `end()` when you're done building the model. The `end()` method will return the newly created model. You can build multiple models using the same ModelBuilder, but not at the same time. For example:
-```
+```java
 ModelBuilder modelBuilder = new ModelBuilder();
 
 modelBuilder.begin();
@@ -17,7 +17,7 @@ Model model2 = modelBuilder.end();
 Keep in mind that models contain one or more meshes and therefore [needs to be disposed](https://github.com/libgdx/libgdx/wiki/Models#managing-resources). A model built via ModelBuilder will always be responsible for disposing all meshes it contains, even if you provide the Mesh yourself. Do not share a Mesh along multiple Models.
 
 A Model built via ModelBuilder will not be made responsible for disposing any textures or any other resources contained in the [materials](https://github.com/libgdx/libgdx/wiki/Material-and-environment). You can, however, use the `manage(disposable)` method to make the model responsible for disposing those resources. For example:
-```
+```java
 ModelBuilder modelBuilder = new ModelBuilder();
 modelBuilder.begin();
 Texture texture = new Texture(...);
@@ -29,7 +29,7 @@ model.dispose(); // this will dispose the texture as well
 ```
 ## Creating nodes
 A Model consists of one or more [nodes](https://github.com/libgdx/libgdx/wiki/Models#nodes). To start building a new node inside the model you can use the `node()` method. This will add a new node and make it active for building. It will also return the [`Node`](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/graphics/g3d/model/Node.html) so you can reference it for later use or for example set its `id`.
-```
+```java
 ModelBuilder modelBuilder = new ModelBuilder();
 modelBuilder.begin();
 Node node1 = modelBuilder.node();
@@ -42,7 +42,7 @@ node2.id = "node2";
 Model model = modelBuilder.end();
 ```
 Note that node id's should unique within the model. A typical use-case would be:
-```
+```java
 ModelBuilder modelBuilder = new ModelBuilder();
 modelBuilder.begin();
 modelBuilder.node().id = "node1";
@@ -65,7 +65,7 @@ To add a [`NodePart`](http://libgdx.badlogicgames.com/nightlies/docs/api/com/bad
 > Keep in mind that the `Model` will always be made responsible for disposing the `Mesh`, regardless the method used to create part.
 
 A `MeshPartBuilder` is an interface (implemented by `MeshBuilder`, see below) which contains various helper methods to create a mesh. If you use the `part(...)` method to construct the MeshPart using a MeshPartBuilder, then ModelBuilder will try to combine multiple parts into the same Mesh. This will in most cases reduce the number of Mesh binds. This is only possible if the parts are made up using the same vertex attributes. For example:
-```
+```java
 ModelBuilder modelBuilder = new ModelBuilder();
 modelBuilder.begin();
 MeshPartBuilder meshBuilder;
@@ -84,7 +84,7 @@ This will create a model consisting of two nodes. Each node consisting of one pa
 See the MeshPartBuilder section below for more information on how to use the `MeshPartBuilder` to create the shape of the part.
 # MeshBuilder
 [MeshBuilder](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/graphics/g3d/utils/MeshBuilder.html) [(code)](https://github.com/libgdx/libgdx/blob/master/gdx/src/com/badlogic/gdx/graphics/g3d/utils/MeshBuilder.java) is a utility class to create one or more [meshes](https://github.com/libgdx/libgdx/wiki/Meshes), optionally consisting of one or more [MeshParts](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/graphics/g3d/model/MeshPart.html). While a `MeshBuilder` is typically constructed and maintained by the `ModelBuilder` using the `ModelBuilder#part(...)` method, it is possible to use `MeshBuilder` without using a `ModelBuilder`. For this, you can use the `begin(...)` method to start building a mesh, after which you must call the `end()` method when you're done building the mesh. The begin methods accepts various arguments to specify the vertex attributes and optionally primitive type (required when not creating mesh part(s)). The `end()` method will return the newly created [`Mesh`](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/graphics/Mesh.html). You can build multiple meshes using the same `MeshBuilder` instance, but not at the same time:
-```
+```java
 MeshBuilder meshBuilder = new MeshBuilder();
 meshBuilder.begin(Usage.Position | Usage.Normal, GL20.GL_TRIANGLES);
 ...//build the first mesh
@@ -98,7 +98,7 @@ Mesh mesh2 = meshBuilder.end();
 > Keep in mind that the `Mesh` must be disposed when you no longer need it.
 
 Use the `part(...)` method to create a Mesh consisting of multiple parts. This will create a new `MeshPart` and set it active for building.
-```
+```java
 MeshBuilder meshBuilder = new MeshBuilder();
 meshBuilder.begin(Usage.Position | Usage.Normal);
 MeshPart part1 = meshBuilder.part("part1", GL20.GL_TRIANGLES);
@@ -110,7 +110,7 @@ Mesh mesh = meshBuilder.end();
 While the `part(...)` method returns the `MeshPart` so you can reference it for later use, it will not be valid until the `end()` method is called. You can only create one `MeshPart` at a time, calling the `part(...)` method will stop building the previous part and start building the new part.
 
 All parts of the same `Mesh` share the same `VertexAttributes`. The primitive type can vary among parts though. For example, the following snippet creates two parts each with a different primitive type, but sharing the same mesh:
-```
+```java
 meshBuilder.begin(Usage.Position | Usage.Normal);
 MeshPart part1 = meshBuilder.part("part1", GL20.GL_TRIANGLES);
 ... // build the first part
@@ -132,7 +132,7 @@ A `VertexAttribute` of `Usage.Position` (either 2D or 3D) is required. There are
 Most methods allow multiple signatures to specify the values for the vertex attributes. A little helper class `VertexInfo` is used to specify these on a per vertex basis. For example the `rect(...)` method accepts a `VertexInfo` for each corner, instead of using a method with all possible combinations or arguments for the vertex values of each corner. Be aware that the `VertexInfo` keeps track of whether a specific value has been set, therefor you should always use the setXXX methods. Use `null` in case you want to unset a value.
 
 Use the `setColor(...)` method to specify the default color that will be used when the `VertexAttributes` contain a color `VertexAttribute`, but no color is set in e.g. the `VertexInfo`. For example:
-```
+```java
 meshPartBuilder.setColor(Color.RED);
 VertexInfo v1 = new VertexInfo().setPos(0, 0, 0).setNor(0, 0, 1).setCol(null).setUV(0.5f, 0.0f);
 VertexInfo v2 = new VertexInfo().setPos(3, 0, 0).setNor(0, 0, 1).setCol(null).setUV(0.0f, 0.0f);
@@ -143,7 +143,7 @@ meshPartBuilder.rect(v1, v2, v3, v4);
 In this example, because the `VertexInfo` has no color set (`setCol(null)`), the default will be used which is set to a red color.
 
 Use the `setUVRange` to specify the default texture coordinates range that will be used when no texture coordinates are specified. Along with the default color, this is especially useful for simple shapes where only positions are needed and other vertex information can be derived from the shape. For example:
-```
+```java
 meshPartBuilder.setColor(Color.RED);
 meshPartBuilder.setUVRange(0.5f, 0f, 0f, 0.5f);
 meshPartBuilder.rect(0,0,0, 3,0,0, 3,3,0, 0,3,0, 0,0,1); // the last three arguments specify the normal
