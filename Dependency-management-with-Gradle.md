@@ -347,6 +347,8 @@ compile "com.badlogicgames.gdx:gdx-ai:$gdxVersion:sources"
 ```
 and in `./html/src/yourgamedomain/GdxDefinition*.gwt.xml` add `<inherits name="com.badlogic.gdx.ai"/>`
 
+Note: Latest version of the AI package on repos is currently 1.5.0.  If your build fails when attempting to pull in the matching $gdxVersion, try replacing $gdxVersion with the number from latest version found here: https://repo1.maven.org/maven2/com/badlogicgames/gdx/gdx-ai/
+
 ***
 
 
