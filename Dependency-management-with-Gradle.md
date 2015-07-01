@@ -335,19 +335,19 @@ compile "com.badlogicgames.box2dlights:box2dlights:1.3:sources"
 
 **Core Dependency:**
 ```groovy
-compile "com.badlogicgames.gdx:gdx-ai:$gdxVersion"
+compile "com.badlogicgames.gdx:gdx-ai:1.5.0"
 ```
 **Android Dependency:**
 ```groovy
-compile "com.badlogicgames.gdx:gdx-ai:$gdxVersion"
+compile "com.badlogicgames.gdx:gdx-ai:1.5.0"
 ```
 **HTML Dependency:**
 ```groovy
-compile "com.badlogicgames.gdx:gdx-ai:$gdxVersion:sources"
+compile "com.badlogicgames.gdx:gdx-ai:1.5.0:sources"
 ```
 and in `./html/src/yourgamedomain/GdxDefinition*.gwt.xml` add `<inherits name="com.badlogic.gdx.ai"/>`
 
-Note: Latest version of the AI package on repos is currently 1.5.0.  If your build fails when attempting to pull in the matching $gdxVersion, try replacing $gdxVersion with the number from latest version found here: https://repo1.maven.org/maven2/com/badlogicgames/gdx/gdx-ai/
+Note: Latest version of the AI package on repos is currently 1.5.0.  If you want to pull in a new or different version, check: https://repo1.maven.org/maven2/com/badlogicgames/gdx/gdx-ai/
 
 ***
 
