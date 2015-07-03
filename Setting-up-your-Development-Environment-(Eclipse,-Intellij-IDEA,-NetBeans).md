@@ -39,7 +39,7 @@ Once all of these tools are installed, proceed to [[creating your project|Projec
 To develop your application via Android Studio, you need to install the following pieces of software.
 
   * [Java Development Kit 7+ (JDK) (6 will not work!)](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
-  * [Android Studio] (https://developer.android.com/sdk/index.html) Android Studio already comes packaged with the Android SDK so that's a difference with Eclipse or Intellij IDEA
+  * [Android Studio] (https://developer.android.com/sdk/index.html) Android Studio already comes packaged with the Android SDK so contrary to Eclipse or Intellij IDEA you do not need to install this component.
 
 To additionally target iOS
 
