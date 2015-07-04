@@ -8,7 +8,7 @@ Libgdx comes with a file called `gdx-setup.jar` which is an executable UI and co
 Specify your application name, your Java package name, the name of your main class, the output directory, and the path to your android sdk. Next, you can select what platforms you want to support. **Note: once chosen, you'll have to add new platforms manually!**. Finally, you can select extensions to be included in your app. Some may not work on all platforms, for which you'll get a warning. When you've set everything, click "Generate". **Now you are ready to import the project into your IDE, run, debug and package it!**
 
   * [[Eclipse|Gradle and Eclipse]]
-  * [[Intellij IDEA|Gradle and Intellij IDEA]]
+  * [[Intellij IDEA and Android studio|Gradle and Intellij IDEA]]
   * [[NetBeans|Gradle and NetBeans]]
   * [[Commandline|Gradle on the Commandline]]
 
