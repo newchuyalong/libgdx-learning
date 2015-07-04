@@ -42,10 +42,9 @@ To develop your application via Android Studio, you need to install the followin
   * [Android Studio] (https://developer.android.com/sdk/index.html) Android Studio already comes packaged with the Android SDK so contrary to Eclipse or Intellij IDEA you do not need to install this component.
 
 Check the versions of the “Android Build Tool” and “Android SDK” [Versions supported by libGDX](http://libgdx.badlogicgames.com/versions.html)
-To install those: open Android Studio, Access the SDK Manager. (do that click Configure->SDK Manager when you open Android Studio)
-
+To install those: open Android Studio, Access the SDK Manager. (do that click Configure->SDK Manager when you open Android Studio).
 Within the Android SDK Manager:
-* You will find the list of Android SDK versions under “Tool”
+* Look for  and install the Android SDK version under “Tool” 
 * Install the SDK Platform component corresponding to version you are looking for. E.g.: if LibGDX latest supported version for the Android Build Tool is 20, Find the version of the API 20 which is “Android 4.4W.2 (API 20)” and select the SDK Platform.
 
 
