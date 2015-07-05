@@ -10,7 +10,7 @@ The [[JSON | Reading & Writing JSON]] class can automatically convert Java objec
 
 Kryo can handle most POJOs and other classes, but some classes need special handling. Below are a few serializers for libgdx classes. 
 
-Note that classes like Texture should not be serialized in most cases. It would be better to not have a string instead of a Texture object in your object graph. After serializing you would process the objects and look up the texture using the string path.
+Note that classes like Texture should not be serialized in most cases. It would be better to have a String instead of a Texture object in your object graph. After serializing you would process the objects and look up the texture using the string path.
 
 ```java
 kryo.register(Array.class, new Serializer<Array>() {
