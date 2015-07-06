@@ -47,6 +47,8 @@ Within the Android SDK Manager:
 * Look for  and install the Android SDK version under “Tool” 
 * Install the SDK Platform component corresponding to version you are looking for. E.g.: if LibGDX latest supported version for the Android Build Tool is 20, Find the version of the API 20 which is “Android 4.4W.2 (API 20)” and select the SDK Platform.
 
+Here is a good [tutorial](http://www.todroid.com/android-gdx-game-creation-part-i-setting-up-up-android-studio-for-creating-games/) on how to install libGDX using a tool provided by Bad Logic.
+
 
 To additionally target iOS
 
