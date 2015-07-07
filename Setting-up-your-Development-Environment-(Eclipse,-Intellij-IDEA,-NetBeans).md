@@ -41,12 +41,6 @@ To develop your application via Android Studio, you need to install the followin
   * [Java Development Kit 7+ (JDK) (6 will not work!)](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
   * [Android Studio] (https://developer.android.com/sdk/index.html) Android Studio already comes packaged with the Android SDK so contrary to Eclipse or Intellij IDEA you do not need to install this component.
 
-Check the versions of the “Android Build Tool” and “Android SDK” [Versions supported by libGDX](http://libgdx.badlogicgames.com/versions.html)
-To install those: open Android Studio, Access the SDK Manager. (do that click Configure->SDK Manager when you open Android Studio).
-Within the Android SDK Manager:
-* Look for  and install the Android SDK version under “Tool” 
-* Install the SDK Platform component corresponding to version you are looking for. E.g.: if LibGDX latest supported version for the Android Build Tool is 20, Find the version of the API 20 which is “Android 4.4W.2 (API 20)” and select the SDK Platform.
-
 Here is a good [tutorial](http://www.todroid.com/android-gdx-game-creation-part-i-setting-up-up-android-studio-for-creating-games/) on how to install libGDX using a tool provided by Bad Logic.
 
 
