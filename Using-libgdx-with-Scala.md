@@ -1,8 +1,58 @@
-**Note: The method listed here does not support Libgdx add-ons such as Box2D, HTML5 Play and such. The compile time is also greatly increased and dealing with android is extremely painful. For these reasons using scala with Libgdx is not recommended.**
 
 Scala is a functional, object-oriented programming language for the JVM that works seamlessly with Java libraries, frameworks, and tools. It has a concise syntax and a REPL, which makes it feel like a scripting language, but it is being used in mission critical server software at companies like Twitter and LinkedIn.
 
-Although Scala and Java code can be freely mixed, the standard tooling for working with Scala is quite different than what Java developers will be used to. There is a project, [libgdx-sbt-project](https://github.com/ajhager/libgdx-sbt-project.g8), that provides a simple path for getting started with libgdx and Scala using standard build tools and best practices.
+*Do to how GWT works you will not be able to use the HTML5 target with Scala*
+
+# Using libGDX and Scala with Gradle
+
+The default build created by the gdx-setup.jar tool is the best place to start when going the Gradle route. A repo with the required modifications to the default "blank" gdx project can be found here: [gdx-scala-demo](https://github.com/LOFI/gdx-scala-demo). These changes have been outlined below.
+
+In order to support Scala compilation you need to update the build with a couple of additions:
+
+- <root>/gradle.properties
+    - Increase the heap used by gradle (otherwise you might have trouble compiling for iOS).
+- <root>/build.gradle
+    - Add the Scala plugin to the `project(":core")` section: `apply plugin: scala`
+    - In the dependencies include the scala library: `compile "org.scala-lang:scala-library:2.11.7"`
+- <root>/core/build.gradle
+    - Apply the scala plugin at the top of this file.
+    - Set the src directory for scala files: `sourceSets.main.scala.srcDirs = [ "src/" ]`
+- <root>/android/build.gradle
+    - In the `android` section (top of the file) you need to add the following:
+        ```groovy
+        lintOptions {
+            abortOnError false // make sure you're paying attention to the linter output!
+        }
+
+        // FIXME: How can we apply this simply for all builds? Copy-pasta makes me sad.
+        buildTypes {
+            release {
+                minifyEnabled true
+                proguardFile getDefaultProguardFile('proguard-android-optimize.txt')
+                proguardFile 'proguard-project.txt'
+            }
+            debug {
+                minifyEnabled true
+                proguardFile getDefaultProguardFile('proguard-android-optimize.txt')
+                proguardFile 'proguard-project.txt'
+            }
+        }
+        ```
+- <root>/android/proguard-project.txt
+    - In order for Proguard to work you need to add the following lines:
+
+        ```
+        -dontwarn sun.misc.*
+        -dontwarn java.lang.management.**
+        -dontwarn java.beans.**
+        ```
+    - It might also be required to then change the line `-dontwarn com.badlogic.gdx.jnigen.BuildTarget*` to `-dontwarn com.badlogic.gdx.jnigen.*`
+
+With all of these changes in-place you should be able to use Gradle exactly as you would otherwise from the shell or your favorite IDE.
+
+# Using libGDX and Scala with SBT
+
+The standard tooling for working with Scala is quite different than what Java developers will be used to. There is a project, [libgdx-sbt-project](https://github.com/ajhager/libgdx-sbt-project.g8), that provides a simple path for getting started with libgdx and Scala using standard build tools and best practices.
 
 This tutorial assumes you have installed [g8](http://github.com/n8han/giter8) and [sbt](https://github.com/sbt/sbt) 0.12, which are used in the Scala community for generating and interacting with projects.
 
