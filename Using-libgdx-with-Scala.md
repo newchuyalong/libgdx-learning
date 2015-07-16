@@ -16,7 +16,7 @@ In order to support Scala compilation you need to update the build with a couple
     - In the dependencies include the scala library: `compile "org.scala-lang:scala-library:2.11.7"`
 - <root>/core/build.gradle
     - Apply the scala plugin at the top of this file.
-    - Set the src directory for scala files: `sourceSets.main.scala.srcDirs = [ "src/" ]`
+    - **optional** Set the src directory for scala files: `sourceSets.main.scala.srcDirs = [ "src/" ]`
 - <root>/android/build.gradle
     - In the `android` section (top of the file) you need to add the following:
         ```groovy
