@@ -32,6 +32,7 @@ public class ScreenshotFactory {
 			}
 			pixels.clear();
 			pixels.put(lines);
+			pixels.clear();
 		}
 
 		return pixmap;
