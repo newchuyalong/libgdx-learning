@@ -2,6 +2,15 @@ LibGdx makes use of bitmap files (pngs) to render fonts.  Each glyph in the font
 
 [BitmapFont class](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/graphics/g2d/BitmapFont.html) [code](https://github.com/libgdx/libgdx/blob/master/gdx/src/com/badlogic/gdx/graphics/g2d/BitmapFont.java)
 
+## File format specifications for the font file
+
+References point to bmFont being originally created by Andreas Jönsson over at [AngleCode](http://www.angelcode.com/)
+
+[BMFont](http://www.angelcode.com/products/bmfont/doc/file_format.html) - the original specification for the file format.
+
+[Glyph Designer](https://71squared.com/blog/bitmap-font-file-format) - Details about output, include a binary format.
+
+
 ## Tools for Creating Bitmaps
 
 [[Hiero]] - a utility for converting a system font to a bitmap
@@ -9,6 +18,13 @@ LibGdx makes use of bitmap files (pngs) to render fonts.  Each glyph in the font
 [Glyph Designer](http://71squared.com/en/glyphdesigner) - a commercial bitmap font tool with a wide variety of options for shadows, gradients, stroke, etc.
 
 [Glyphite.com](http://www.glyphite.com) - a browser-based Bitmap font generator that can create detailed Bitmap fonts in seconds and export them in most major formats.
+
+**Issues with Glyphite font output:**
+```
+*.fnt files should use spaces to separate key/value pair entries, not tabs.
+Kerning amount should be in int values, not float.
+```
+
 
 ## Other Tools
 
