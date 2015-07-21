@@ -1,4 +1,4 @@
-Libgdx comes with a ton of small [test examples](https://github.com/libgdx/libgdx/tree/master/tests/gdx-tests/src/com/badlogic/gdx/tests). To run and easily analyze these, you need to work directly from the libgdx source.
+LibGDX comes with a ton of small [test examples](https://github.com/libgdx/libgdx/tree/master/tests/gdx-tests/src/com/badlogic/gdx/tests). To run and easily analyze these, you need to work directly from the libGDX source.
 
 Running the tests is currently limited to **Eclipse**, so [[make sure you have Eclipse setup properly|Setting up your Development Environment (Eclipse, Intellij IDEA, NetBeans)]]. In addition to this, you will also need:
 * [Ant](http://ant.apache.org/) installed and available in your `PATH` environment variable so you can execute it on the command line
@@ -69,3 +69,11 @@ To add a test:
 * Add your class to gdx-tests/src/com/badlogic/gdx/tests/utils/GdxTests#tests, it's a long list of Class instances. Try to keep it in alphabetical order! This will automatically add your test to the desktop and Android test runners (E.g. LwjglTestStarter)
 * INCLUDE FOR GWT: Add your test to GwtTestWrapper, through creating an Instancer. Your test needs to specify that it needs GL20 for it to work with the GWT test harness.
 * EXCLUDE FROM GWT: Add a line to GdxTests.gwt.xml excluding your test and giving a short explanation for why it has been excluded in an xml comment.
+
+##Running Unit Tests
+There are some unit tests ([junit](http://junit.org)) in `gdx/test` directory. To run these, use command:
+```
+cd gdx
+mvn test
+```
+You must have [Maven](https://maven.apache.org) installed.
