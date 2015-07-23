@@ -2,7 +2,7 @@
 
 Box2D is a 2D physics library. It is one of the most popular physics libraries for 2D games and has been ported to many languages and many different engines, including libgdx.
 
-The Box2D implementation in libgdx is a thin Java wrapper about the C++ engine. Therefore, the excellent [official Box2D manual (PDF)](http://box2d.org/manual.pdf) may also come in handy.
+The Box2D implementation in libgdx is a thin Java wrapper around the C++ engine. Therefore, the excellent [official Box2D manual (PDF)](http://box2d.org/manual.pdf) may also come in handy.
 
 For more documentation related to Box2D, please visit [box2d.org](http://box2d.org/). Any Box2D questions not related to libgdx specifically can best be asked on their forum.
 
