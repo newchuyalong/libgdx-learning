@@ -14,7 +14,7 @@ Specify your application name, your Java package name, the name of your main cla
 
 Note that the Advanced button lets you set the project generation to generate Eclipse and/or IDEA projects **without** Gradle integration, as described in more detail in the wiki article about [workflow without Gradle](Improving-workflow-with-Gradle#how-to-remove-gradle-ide-integration-from-your-project), as well as options to use an alternative repository to Maven Central and to not force downloading dependencies.
 
-[[images/GradleScreenShot.png]]
+![screen capture of gdx-setup.jar](http://i.imgur.com/mCToniB.png)
 
 
 ### Creating a libgdx project on the command line
