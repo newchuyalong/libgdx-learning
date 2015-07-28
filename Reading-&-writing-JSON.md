@@ -57,6 +57,8 @@ System.out.println(json.toJson(person));
 {numbers:[{class:com.example.PhoneNumber,number:"206-555-1234",name:Home},{class:com.example.PhoneNumber,number:"425-555-4321",name:Work}],name:Nate,age:31}
 ```
 
+Note: If you need to serialize a top-level class's initial field value you must call `json.setUsePrototypes(false);`
+
 That is compact, but hardly legible. The `prettyPrint` method can be used:
 
 ```
