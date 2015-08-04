@@ -28,7 +28,7 @@ To handle these issues, libgdx relies on the following Maven plugins:
 To ease all of this, we supply a Maven archetype that will generate a multi-module Maven project.
 
 ## Maven Archetype ##
-The Maven archetype is currently not found in any repository. You can get it at https://github.com/libgdx/libgdx-maven-archetype and compile and install it yourself to your local Maven repository like this form your shell:
+The Maven archetype is currently not found in any repository. You can get it at https://github.com/libgdx/libgdx-maven-archetype and compile and install it yourself to your local Maven repository like this from your shell:
 
 ```
 git clone git://github.com/libgdx/libgdx-maven-archetype.git
