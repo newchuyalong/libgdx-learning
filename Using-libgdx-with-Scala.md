@@ -1,7 +1,7 @@
 
 Scala is a functional, object-oriented programming language for the JVM that works seamlessly with Java libraries, frameworks, and tools. It has a concise syntax and a REPL, which makes it feel like a scripting language, but it is being used in mission critical server software at companies like Twitter and LinkedIn.
 
-*Do to how GWT works you will not be able to use the HTML5 target with Scala*
+*Due to how GWT works you will not be able to use the HTML5 target with Scala*
 
 # Using libGDX and Scala with Gradle
 
