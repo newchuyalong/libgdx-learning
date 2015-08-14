@@ -20,6 +20,14 @@ AssetManager manager = new AssetManager();
 
 This sets up a standard AssetManager, with all the loaders libgdx has in store at the moment. Let's see how the loading mechanism works.
 
+**Caution:** don't make your `AssetManager` or any other resources (like `Texture`, etc.) `static`, unless you properly manage them. E.g. the following code:
+
+```java
+public static AssetManager assets = new AssetManager();
+```
+
+This will cause problems on Android, because the life-cycle of the static variable is not necessarily the same as the life-cycle of your application. Therefor the `AssetManager` instance of a previous instance of your application might be used for the next instance, while the resources are no longer valid. This typically would cause black/missing textures or incorrect assets.
+
 ### Loading Assets ###
 
 To load assets, the AssetManager needs to know how to load a specific type of asset. This functionality is implemented via AssetLoaders. There are two variants, SynchronousAssetLoader and AsynchronousAssetLoader. The former loads everything on the rendering thread, the latter loads parts of the asset on another thread, e.g., the Pixmap needed for a Texture, and then loads the OpenGL dependent part on the rendering thread. The following resources can be loaded out of the box with the AssetManager as constructed above.
