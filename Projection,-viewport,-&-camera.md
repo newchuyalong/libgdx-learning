@@ -6,7 +6,7 @@
 Learn about a viewport's proportions, how to specify a projection, and to use Camera
 
 # Introduction
-In the [MyFirstTriangle](My-first-triangle) and [ColorMeshTexture](Mesh%2C-color-%26-texture) tutorials, we learned the basics of setting up and rendering meshes. Did you notice, however, that the triangles we created appear stretched? Lets start with an example that will make this issue clear.
+In the [MyFirstTriangle](My-First-Triangle-(Example)) and [ColorMeshTexture](Mesh%2C-color-%26-texture) tutorials, we learned the basics of setting up and rendering meshes. Did you notice, however, that the triangles we created appear stretched? Lets start with an example that will make this issue clear.
 
 # Creating a Square
 
