@@ -32,7 +32,7 @@ Eclipse can also show you the javadoc documention for the libgdx classes and met
 
 Now we can create a class that will draw our triangle. Expand the my-first-triangle folder, right-click on the `src` source directory and select New -> Package. Name it anything you want, in this example we'll use `com.test.myfirsttriangle`. Right-click on the new package, and select New -> Class, use the name `MyFirstTriangle`. In the Interfaces section, add the `com.badlogic.gdx.ApplicationListener` interface. Your new class should look something like this:
 
-```
+```java
 package com.test.myfirsttriangle;
 
 import com.badlogic.gdx.ApplicationListener;
@@ -80,7 +80,7 @@ public class MyFirstTriangle implements ApplicationListener {
 
 We will soon add logic to `MyFirstTriangle` to draw a triangle. It will be capable of being run in either the desktop or Android environment. Lets create the desktop entry point now. In the same package as the `MyFirstTriangle` class, create another class, this time named `MyFirstTriangleDesktop`. Put a `main` method in the class so that it looks like this:
 
-```
+```java
 package com.test.myfirsttriangle;
 
 import com.badlogic.gdx.backends.jogl.JoglApplication;
@@ -100,7 +100,7 @@ You can run the application right now by right-clicking on the `MyFirstTriangleD
 
 The application shows a blank screen because our `MyFirstTriangle` class contains no rendering logic. Now it's time to finally create the code to draw a triangle. Replace the contents of the `MyFirstTriangle` class with this:
 
-```
+```java
 package com.test.myfirsttriangle;
 
 import com.badlogic.gdx.ApplicationListener;
@@ -172,7 +172,7 @@ We need to be able to reference the libgdx classes and also our previous project
 
 The last task remaining is to modify our Activity to act as the Android entry point into the game code we wrote earlier. In the Package Explorer view, go into the `MyFirstTriangleAndroid` class and replace the contents with the following:
 
-```
+```java
 package com.test.myfirsttriangle;
 
 import android.os.Bundle;
