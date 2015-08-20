@@ -128,7 +128,6 @@ These are interesting open-source projects found on the web that use libGDX. Thi
  * https://bitbucket.org/dermetfan/libgdx-utils (support library with some Box2D classes)
  * https://github.com/aspic/libgdx-utils
  * https://github.com/iluwatar/TicTactoe
- * https://github.com/adketuri/onlinerpg (Herous of Umbra - http://heroesofumbra.com/ , uses Kryonet)
  * https://github.com/gemserk/libgdx-test-apps (has iOS component)
  * https://github.com/krustnic/HorizontalSlidingPane (Angry-bird like side scrolling menu)
  * https://github.com/Sgawrys/TechRTS
