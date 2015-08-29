@@ -102,7 +102,7 @@ We currently have the [codes for the Ouya controller buttons and axes](https://g
 if(controller.getName().equals(Ouya.ID)) {
    // we know it's an Ouya controller, so we can use the Ouya codes
    float leftXAxis = controller.getAxis(Ouya.AXIS_LEFT_X);
-   boolean oButton = controller.getAxis(Ouya.BUTTON_O);
+   boolean oButton = controller.getButton(Ouya.BUTTON_O);
 }
 ```
 
