@@ -9,8 +9,10 @@ Note that catching the cursor only works reliably in the Lwjgl back-end. The Jog
 
 Cursor catching and positioning is only available on the desktop.
 
-Similarly, changing the cursor image is available on the desktop and can be done as follows:
+Similarly, changing the cursor image is available on the desktop and on gwt if the browser supports the "cursor:url()" syntax and also supports the png format as cursor.
+It can be done as follows:
 
 ```java
-Gdx.input.setCursorImage(new Pixmap(Gdx.files.internal("cursor.png")), hotspotX, hotspotY);
+Cursor customCursor = Gdx.graphics.newCursor(new Pixmap(Gdx.files.internal("cursor.png")), hotspotX, hotspotY);
+Gdx.graphics.setCursor(customCursor);
 ```
