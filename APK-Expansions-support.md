@@ -4,7 +4,7 @@ LibGDX now has built-in support for detecting and reading assets from expansion 
 
 The Android application then has to call from [AndroidFiles](https://github.com/libgdx/libgdx/blob/master/backends/gdx-backend-android/src/com/badlogic/gdx/backends/android/AndroidFiles.java) the function `setAPKExpansion()` like this:  
 `((AndroidFiles)Gdx.files).setAPKExpansion(1, 0)`  
-where the return value of the function can be used to check whether the expansion file(s) was opened successfully. The parameters are the version numbers of the __main__ respectively __patch__ files which on Google Play have to match the APK version against which these files were uploaded.
+where the return value of the function can be used to check whether the expansion file(s) was opened successfully. The parameters are the version numbers of the _main_ respectively _patch_ files which on Google Play have to match the APK version against which these files were uploaded.
 
 Afterwards your assets can be accessed using:  
 `Gdx.files.internal("assetname.ext")`  
