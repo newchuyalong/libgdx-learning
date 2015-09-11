@@ -39,7 +39,7 @@ It is preferred that you do the second way, since it's the only way guaranteed b
 
 # Snippets
 
-* Caching a spline
+### Caching a spline
 
 This is often done at loading time, where you load the data set, calculates the spline and stores the points calculated. So you only evaluates the spline once. Trading memory for CPU time. (You usually should always cache if drawing static things)
 
@@ -56,7 +56,7 @@ This is often done at loading time, where you load the data set, calculates the 
     }
 ```
 
-* Rendering cached spline
+### Rendering cached spline
 
 How to render the spline previously cached
 
@@ -74,7 +74,7 @@ How to render the spline previously cached
     shaper.end();
 ```
 
-* Calculating on the fly
+### Calculating on the fly
 
 Do everything at render stage
 
@@ -93,7 +93,7 @@ Do everything at render stage
     shaper.end();
 ```
 
-* Make sprite traverse through the cached path
+### Make sprite traverse through the cached path
 
 This way uses a LERP through the cached points. It looks roughly sometimes but is very fast.
 
@@ -123,7 +123,7 @@ This way uses a LERP through the cached points. It looks roughly sometimes but i
     batch.draw(sprite, first.x + (second.x - first.x) * t, first.y + (second.y - first.y) * t);
 ```
 
-* Make sprite traverse through path calculated on the fly
+### Make sprite traverse through path calculated on the fly
 
 Calculate sprite position on the path every frame, so it looks much more pleasant (you usually should always calculate on the fly if drawing dynamic things)
 
@@ -140,7 +140,7 @@ Calculate sprite position on the path every frame, so it looks much more pleasan
     batch.draw(sprite, out.x, out.y);
 ```
 
-* Make sprite look at the direction of the spline
+### Make sprite look at the direction of the spline
 
 The angle can be found when applying the atan2 function to the normalised tangent(derivative) of the curve.
 
@@ -149,7 +149,7 @@ The angle can be found when applying the atan2 function to the normalised tangen
     float angle = out.angle();
 ```
 
-* Make the sprite traverse at constant speed
+### Make the sprite traverse at constant speed
 
 As the arc-length of the spline through the dataSet points is not constant, when going from 0 to 1 you may notice that the sprite sometimes goes faster or slower, depending on some factors. To cancel this, we will change the rate of change of the time variable.
 We can easily do this by dividing the speed by the length of the rate of change.
