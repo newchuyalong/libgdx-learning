@@ -2,7 +2,7 @@ Whenever the assets of a game exceed a certain size, in order to release the gam
 ##How to use the feature##
 LibGDX now has built-in support for detecting and reading assets from expansion files. The expansion file format accepted by LibGDX is uncompressed (stored) zip file. Simply move some or all of your assets from android/assets into the zip file. Usually the file will be automatically downloaded from Google Play however if you want to test you will have to copy the file on the device manually.
 
-The Android application then has to call from [AndroidFiles](https://github.com/libgdx/libgdx/blob/master/backends/gdx-backend-android/src/com/badlogic/gdx/backends/android/AndroidFiles.java) the function `setAPKExpansion()` like this:
+The Android application then has to call from [AndroidFiles](https://github.com/libgdx/libgdx/blob/master/backends/gdx-backend-android/src/com/badlogic/gdx/backends/android/AndroidFiles.java) the function `setAPKExpansion()` like this:  
 `((AndroidFiles)Gdx.files).setAPKExpansion(1, 0)`  
 where the return value of the function can be used to check whether the expansion file(s) was opened successfully.
 
