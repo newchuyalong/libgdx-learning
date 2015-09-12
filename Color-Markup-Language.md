@@ -14,3 +14,4 @@ Unknown colors, illegal hex codes and unclosed tags are silently ignored and tre
 
 For a sample code see the test class [BitmapFontTest](https://github.com/libgdx/libgdx/blob/master/tests/gdx-tests/src/com/badlogic/gdx/tests/BitmapFontTest.java).
 
+**Note:** When using with Scene2D you have to remove the **fontColor** property from **LabelStyle** definition in the **skin.json** file to have markup coloring work with a Label. 
