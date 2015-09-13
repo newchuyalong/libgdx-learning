@@ -76,7 +76,7 @@ public void create () {
 	table.setFillParent(true);
 	stage.addActor(table);
 
-        table.setDebug(true); // This is optional, but enables debug lines for tables.
+	table.setDebug(true); // This is optional, but enables debug lines for tables.
 
 	// Add widgets to the table here.
 }
