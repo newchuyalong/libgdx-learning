@@ -65,7 +65,7 @@ Libgdx offers official support for [[Internationalization and Localization]] sin
 
  * Texture Packer - http://www.badlogicgames.com/wordpress/?p=2495 (also https://en.wikipedia.org/wiki/Texture_atlas)
  * Image Formats - http://gamedev.stackexchange.com/questions/48304/which-image-format-is-more-memory-efficient-png-jpeg-or-gif
- * Loading resources or do heavy process after showing first Screen - http://duckseason.mobi/heavy-background-processes-libgdxwhile-showing-splash-screen/
+ * Loading resources or do heavy stuff after showing first Screen - http://duckseason.mobi/heavy-background-processes-libgdxwhile-showing-splash-screen/
 
 ## Post-Processing ##
 
