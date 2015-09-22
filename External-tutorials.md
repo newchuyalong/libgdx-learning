@@ -20,8 +20,6 @@ These are webpages where individuals or companies write about their experience w
  * Libgdx y Box2D Tutoriales (en español) - http://tutoriales.tiarsoft.com
  * LibGdx en español (spanish) 
 http://libgdxspain.blogspot.com
- * Libgdx tutorial series
-http://libgdxtutorialseries.blogspot.com
  * Mets-Blog | Libgdx - http://www.mets-blog.com/category/libgdx/
  * Xoppa's blog - http://blog.xoppa.com
  * libgdx.cn - http://www.libgdx.cn (Chinese)
