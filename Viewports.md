@@ -87,6 +87,6 @@ A maximum set of dimensions can be supplied to `ExtendViewport`, in which case, 
 [[images/vQeRKPY.png]]
 
 ### CustomViewport ###
-Different strategies may be implemented by doing `CustomViewport extends Viewport` and implementing `calculateViewport(width, height)`. Another approach is use the generic `ScalingViewport` and supplying another Scaling which is not yet covered by any other Viewport. One example could be to supply `Scaling.none` to it, which will result in a completely "StaticViewport", which always keeps the same size. It might look like this:
+Different strategies may be implemented by doing `CustomViewport extends Viewport` and overriding `update(width, height)`. Another approach is use the generic `ScalingViewport` and supplying another Scaling which is not yet covered by any other Viewport. One example could be to supply `Scaling.none` to it, which will result in a completely "StaticViewport", which always keeps the same size. It might look like this:
 
 [[images/8F697TX.png]]
