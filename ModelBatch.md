@@ -103,6 +103,67 @@ public static class MyShaderProvider extends DefaultShaderProvider {
 ```
 Here the [[Material | Material-and-environment]] is used to decide whether the custom shader should be used. This is the preferred and easiest method. However, you can use any value, including the generic [`renderable.userData`](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/graphics/g3d/Renderable.html#userData) to decide which shader to use, as long as its `shader.canRender(renderable)` method returns true for the given renderable.
 
+## Default shader
+When you don't specify a custom `ShaderProvider`, then `ModelBatch` will use the `DefaultShaderProvider`. This provider creates a new [`DefaultShader`](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/graphics/g3d/shaders/DefaultShader.html) instance when needed. 
+
+The `DefaultShader` class provides a default implementation of most of the standard [material and environment attributes](https://github.com/libgdx/libgdx/wiki/Material-and-environment), including lighting, normal maps, reflection cubemaps, etc. That is: it binds the attribute values to the corresponding `uniform`s. [A list of uniform names can be found here]
+
+> **NOTE: by default, the shader program (the glsl files) use per-vertex lighting ([Gouraud shading](https://en.wikipedia.org/wiki/Gouraud_shading)), normal mapping, reflection etc. is not applied by default.**
+
+(https://github.com/libgdx/libgdx/blob/1.7.0/gdx/src/com/badlogic/gdx/graphics/g3d/shaders/DefaultShader.java#L81-L120). The behavior of this class is configurable by supplying a [`DefaultShader.Config`](https://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/graphics/g3d/shaders/DefaultShader.Config.html) instance to the `DefaultShaderProvider`.
+
+```java
+DefaultShader.Config config = new DefaultShader.Confg();
+config.numDirectionalLights = 1;
+config.numPointLights = 0;
+config.numBones = 16;
+modelBatch = new ModelBatch(new DefaultShaderProvider(config));
+```
+
+> **NOTE:** the default configuration is rarely the most optimal for each use-case. For example it uses 5 point lights and 2 directional lights, even if you're only using 1 direction and 1 point light. Make sure to adjust it to your specific use-case to get the most out of it. [If you're using skinning, then the number of bones must match the number of bones the model is created with.](https://github.com/libgdx/libgdx/wiki/3D-animations-and-skinning#loading-skinning)
+
+The [GPU shader](https://github.com/libgdx/libgdx/wiki/Shaders) (the vertex and fragment shader) to be used is also configurable using this config. Because this shader can be used for various combinations of attributes, it typically is a so-called *ubershader*. This is shader glsl code of which parts are enabled or disabled based on the `Renderable` by using [pre-processor macro directives](https://www.opengl.org/wiki/Core_Language_(GLSL)#Preprocessor_directives). For example:
+
+```glsl
+#ifdef blendedFlag
+	gl_FragColor.a = diffuse.a * v_opacity;
+	#ifdef alphaTestFlag
+		if (gl_FragColor.a <= v_alphaTest)
+			discard;
+	#endif
+#else
+	gl_FragColor.a = 1.0;
+#endif
+```
+
+In this snippet, the actual code used for the shader depends on whether `blendedFlag` and/or `alphaTestFlag` are defined. [The `DefaultShader` class defines these based on the values of the `Renderable`.](https://github.com/libgdx/libgdx/blob/1.7.0/gdx/src/com/badlogic/gdx/graphics/g3d/shaders/DefaultShader.java#L631-L702)
+
+If you don't specify a custom ubershader, then the default ubershader will be used (see the source of the: [https://github.com/libgdx/libgdx/blob/1.7.0/gdx/src/com/badlogic/gdx/graphics/g3d/shaders/default.vertex.glsl](vertex shader) and [https://github.com/libgdx/libgdx/blob/1.7.0/gdx/src/com/badlogic/gdx/graphics/g3d/shaders/default.fragment.glsl](fragment shader)). Although this shader supports most basic attributes (like skinning, diffuse and specular per-vertex lighting etc.), it is very generic and cannot support every possible combination of attributes.
+
+> If you want to have per-fragment lighting, normal mapping, reflection then you can use [this "unofficial" shader](https://gist.github.com/xoppa/9766698). But, please note that this shader adds this functionality at the cost of e.g. being restricted to a single directional light.
+
+If you look at the source of the default ubershader, then you'll probably notice that it is huge and almost impossible to read, let alone maintain it. Luckily you don't have to support every possible combination of attributes and as we've seen in the previous paragraph you can extend the `DefaultShaderProvider` and break it into multiple shaders to make it easier to maintain. For example:
+
+```java
+public static class MyShaderProvider extends DefaultShaderProvider {
+	DefaultShader.Config albedoConfig;
+
+	public MyShaderProvder(DefaultShader.Config defaultConfig) {
+		super(defaultConfig);
+		albedoConfig = new DefaultShader.Config();
+		albedoConfig.vertexShader = Gdx.files.internal("data/albedo.vertex.glsl").readString();
+		albedoConfig.fragmentShader = Gdx.files.internal("data/albedo.fragment.glsl").readString();
+	}
+	@Override
+	protected Shader createShader (Renderable renderable) {
+		if (renderable.material.has(CustomColorTypes.AlbedoColor))
+			return new DefaultShader(renderable, albedoConfig);
+		else
+			return super.createShader(renderable);
+	}
+}
+```
+
 # Sorting render calls
 If render calls would be executed in a random order, then it would cause strange and less performing result. For example, if a transparent object would be rendered prior to an object that's behind it then you won't see the object behind it. This is because the depth buffer will prevent the object further away from being rendered. Sorting the render calls helps to solve this.
 
