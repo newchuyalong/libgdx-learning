@@ -24,7 +24,7 @@ Mouse and touch input can either be [[polled | Polling]] or processed via [[Even
 
 To get correct world position of touch point or mouse cursor it is necessary to unproject the raw screen position coordinates with camera that operate in world space. Below is self contained example of doing just that.
 
-
+```java
 	public class SimplerTouchTest extends ApplicationAdapter implements InputProcessor {
 		// we will use 32px/unit in world
 		public final static float SCALE = 32f;
@@ -118,3 +118,4 @@ To get correct world position of touch point or mouse cursor it is necessary to 
 			new LwjglApplication(new SimplerTouchTest(), config);
 		}
 	}
+```
