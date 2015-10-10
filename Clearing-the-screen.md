@@ -6,8 +6,8 @@ The following example accesses the context in an OpenGL ES2 application to clear
 @Override
 public void render() {
 
-  Gdx.graphics.getGL20().glClearColor( 1, 0, 0, 1 );
-  Gdx.graphics.getGL20().glClear( GL20.GL_COLOR_BUFFER_BIT | GL20.GL_DEPTH_BUFFER_BIT );
+  Gdx.gl.glClearColor( 1, 0, 0, 1 );
+  Gdx.gl.glClear( GL20.GL_COLOR_BUFFER_BIT | GL20.GL_DEPTH_BUFFER_BIT );
 
   // scene render code...
 }
