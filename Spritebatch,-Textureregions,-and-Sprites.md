@@ -36,6 +36,12 @@ public class Game implements ApplicationAdapter {
 
 All `SpriteBatch` drawing calls must be made between the `begin` and `end` methods. Non-`SpriteBatch` drawing cannot occur between `begin` and `end`.
 
+`SpriteBatch` assumes the active texture unit is 0. When using custom shaders and binding textures yourself, you can reset this with the following code:
+
+```java
+Gdx.gl.glActiveTexture(GL20.GL_TEXTURE0);
+```
+
 ##Texture ##
 
 The `Texture` class decodes an image file and loads it into GPU memory. The image file should be placed in the "assets" folder. The image's dimensions should be powers of two (16x16, 64x256, etc) for compatibility and performance reasons.
