@@ -9,3 +9,5 @@ where the return value of the function can be used to check whether the expansio
 Afterwards your assets can be accessed using:  
 `Gdx.files.internal("assetname.ext")`  
 just like you would normally.
+
+Keep in mind that on lots of small files this can be inefficient because [AndroidFiles](https://github.com/libgdx/libgdx/blob/master/backends/gdx-backend-android/src/com/badlogic/gdx/backends/android/AndroidFiles.java) first checks if a file exists in the assets and only afterwards it creates an [AndroidZipFileHandle](https://github.com/libgdx/libgdx/blob/master/backends/gdx-backend-android/src/com/badlogic/gdx/backends/android/AndroidZipFileHandle.java). If you want to optimize loading time use a FileHandleResolver like the [ZipFileHandleResolver](https://github.com/libgdx/libgdx/blob/master/tests/gdx-tests-android/src/com/badlogic/gdx/tests/android/ZipFileHandleResolver.java).
