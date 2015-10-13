@@ -22,7 +22,7 @@ The first time you run your application on the simulator or the device, RoboVM h
 
   **IMPORTANT** The port `9876` is used when doing normal GWT development. Therefore, trying to access the game in any other way than using the port `8080` will not launch your project.
 
-Once this [bug in the Gradle tooling API](http://issues.gradle.org/browse/GRADLE-1539) is fixed, we can simplify running the HTML5 by using the Gradle integration. At the moment, the Gradle process will run forever even if canceled.
+~~Once this [bug in the Gradle tooling API](http://issues.gradle.org/browse/GRADLE-1539) is fixed, we can simplify running the HTML5 by using the Gradle integration. At the moment, the Gradle process will run forever even if canceled.~~
 ## Debugging Your Project
 Follow the steps for running the project, but instead of launching via the run (Play) button, launch your configuration via the debug (bug) button. Note that RoboVM currently does not support debugging. Debugging of the html build can be done in the browser as follows:
 
