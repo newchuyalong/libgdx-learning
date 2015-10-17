@@ -83,7 +83,7 @@ This will create an IPA in the `ios/build/robovm` folder that you distribute to 
 ### Packaging for the Web
 `gradlew html:dist`
 
-This will compile your your app to Javascript and place the resulting Javascript, HTML and asset files in the `html/build/dist/` folder. The contents of this folder have to be served up by a web server, e.g. Apache or Nginx. Just treat the contents like you'd treat any other static HTML/Javascript site. There is no Java or Java Applets involved!
+This will compile your app to Javascript and place the resulting Javascript, HTML and asset files in the `html/build/dist/` folder. The contents of this folder have to be served up by a web server, e.g. Apache or Nginx. Just treat the contents like you'd treat any other static HTML/Javascript site. There is no Java or Java Applets involved!
 
 With Python installed, you can test your distribution by executing the following in the `html/build/dist` folder:
 
