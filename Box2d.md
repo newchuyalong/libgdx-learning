@@ -259,9 +259,9 @@ if (Gdx.input.isKeyPressed(Keys.D) && vel.x < MAX_VELOCITY) {
 
 ## <a id="joints_and_gears"></a>Joints and Gears ##
 
-Every joint requires to have definition created before initializing. Later on in needs to be created by box2d world.
+Every joint requires to have definition set up before creating it by box2d world. Using *initalize* helps with ensuring that all joint parameters are set.
 
-Also note that destroying the joint after the body will cause crash.
+Note that destroying the joint after the body will cause crash. Destroying the body also destroys joints connected to it.
 
 ```java
 DistanceJointDef defJoint = new DistanceJointDef ();
@@ -272,6 +272,7 @@ DistanceJoint joint = (DistanceJoint) world.createJoint(defJoints); // Returns s
 ```
 
 ### DistanceJoint
+
 Distance joint makes length between bodies constant.
 
 Distance joint definition requires defining an anchor point on both bodies and the non-zero length of the distance joint.
@@ -300,17 +301,24 @@ jointDef.initialize(bodyA, bodyB, anchor);
 ```
 
 ### GearJoint
-A gear joint is used to connect two joints together. Either joint can be a revolute or prismatic joint. You specify a gear ratio to bind the motions together: coordinate1 + ratio * coordinate2 = constant The ratio can be negative or positive. If one joint is a revolute joint and the other joint is a prismatic joint, then the ratio will have units of length or units of 1/length.
-```java
-JointDef jointDef = new JointDef ();
 
+A gear joint is used to connect two joints together. Either joint can be a revolute or prismatic joint. You specify a gear ratio to bind the motions together: coordinate1 + ratio * coordinate2 = constant The ratio can be negative or positive. If one joint is a revolute joint and the other joint is a prismatic joint, then the ratio will have units of length or units of 1/length.
+
+```java
+GearJointDef jointDef = new GearJointDef (); // has no initialize
 ```
 
 ### MotorJoint
+A motor joint is used to control the relative motion between two bodies. A typical usage is to control the movement of a dynamic body with respect to the ground.
 
 ```java
-JointDef jointDef = new JointDef ();
-
+MotorJointDef jointDef = new MotorJointDef ();
+jointDef.angularOffset = 0f;
+jointDef.collideConnected = false;
+jointDef.correctionFactor = 0f;
+jointDef.maxForce = 1f;
+jointDef.maxTorque = 1f;
+jointDef.initialize(bodyA, bodyB);
 ```
 
 ### MouseJoint
@@ -369,6 +377,7 @@ jointDef.motorSpeed = 0.0f;
 ```
 
 ### RopeJoint
+
 A rope joint enforces a maximum distance between two points on two bodies. It has no other effect. Warning: if you attempt to change the maximum length during the simulation you will get some non-physical behavior. A model that would allow you to dynamically modify the length would have some sponginess, so I chose not to implement it that way. See b2DistanceJoint if you want to dynamically control length.
 
 ```java
