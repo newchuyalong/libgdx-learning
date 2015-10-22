@@ -259,7 +259,146 @@ if (Gdx.input.isKeyPressed(Keys.D) && vel.x < MAX_VELOCITY) {
 
 ## <a id="joints_and_gears"></a>Joints and Gears ##
 
-Coming soon
+Every joint requires to have definition created before initializing. Later on in needs to be created by box2d world.
+
+Also note that destroying the joint after the body will cause crash.
+
+```java
+DistanceJointDef defJoint = new DistanceJointDef ();
+defJoint.length = 0;
+defJoint.initialize(bodyA, bodyB, new Vector2(0,0), new Vector2(128, 0));
+
+DistanceJoint joint = (DistanceJoint) world.createJoint(defJoints); // Returns subclass Joint.
+```
+
+### DistanceJoint
+Distance joint makes length between bodies constant.
+
+Distance joint definition requires defining an anchor point on both bodies and the non-zero length of the distance joint.
+
+The definition uses local anchor points so that the initial configuration can violate the constraint slightly. This helps when saving and loading a game.
+
+**Do not use a zero or short length!**
+
+```java
+// DistanceJointDef.initialize (Body bodyA, Body bodyB, Vector2 anchorA, Vector2 anchorB)
+
+DistanceJointDef defJoint = new DistanceJointDef ();
+defJoint.length = 0;
+defJoint.initialize(bodyA, bodyB, new Vector2(0,0), new Vector2(128, 0));
+```
+
+### FrictionJoint
+
+Friction joint is used for top-down friction. It provides 2D translational friction and angular friction.
+
+```java
+FrictionJointDef jointDef = new FrictionJointDef ();
+jointDef.maxForce = 1f;
+jointDef.maxTorque = 1f;
+jointDef.initialize(bodyA, bodyB, anchor);
+```
+
+### GearJoint
+A gear joint is used to connect two joints together. Either joint can be a revolute or prismatic joint. You specify a gear ratio to bind the motions together: coordinate1 + ratio * coordinate2 = constant The ratio can be negative or positive. If one joint is a revolute joint and the other joint is a prismatic joint, then the ratio will have units of length or units of 1/length.
+```java
+JointDef jointDef = new JointDef ();
+
+```
+
+### MotorJoint
+
+```java
+JointDef jointDef = new JointDef ();
+
+```
+
+### MouseJoint
+The mouse joint is used in the testbed to manipulate bodies with the mouse. It attempts to drive a point on a body towards the current position of the cursor. There is no restriction on rotation.
+
+```java
+MouseJointDef jointDef = new MouseJointDef();
+jointDef.target = new Vector2(Gdx.input.getX(), Gdx.input.getY());
+
+MouseJoint joint = (MouseJoint) world.createJoint(jointDef);
+joint.setTarget(new Vector2(Gdx.input.getX(), Gdx.input.getY()));
+```
+
+### PrismaticJoint
+
+A prismatic joint allows for relative translation of two bodies along a specified axis. A prismatic joint prevents relative rotation. Therefore, a prismatic joint has a single degree of freedom.
+
+```java
+PrismaticJointDef jointDef = new PrismaticJointDef ();
+jointDef.lowerTranslation = -5.0f;
+jointDef.upperTranslation = 2.5f;
+
+jointDef.enableLimit = true;
+jointDef.enableMotor = true;
+
+jointDef.maxMotorForce = 1.0f;
+jointDef.motorSpeed = 0.0f;
+```
+
+### PulleyJoint
+
+A pulley is used to create an idealized pulley. The pulley connects two bodies to ground and to each other. As one body goes up, the other goes down. The total length of the pulley rope is conserved according to the initial configuration.
+
+```java
+JointDef jointDef = new JointDef ();
+float ratio = 1.0f;
+jointDef.Initialize(myBody1, myBody2, groundAnchor1, groundAnchor2, anchor1, anchor2, ratio);
+```
+
+### RevoluteJoint
+
+A revolute joint forces two bodies to share a common anchor point, often called a hinge point. The revolute joint has a single degree of freedom: the relative rotation of the two bodies. This is called the joint angle
+
+```java
+RevoluteJointDef jointDef = new RevoluteJoint();
+jointDef.initialize(bodyA, bodyB, new Vector2(0,0), new Vector2(128, 0));
+
+jointDef.lowerAngle = -0.5f * b2_pi; // -90 degrees
+jointDef.upperAngle = 0.25f * b2_pi; // 45 degrees
+
+jointDef.enableLimit = true;
+jointDef.enableMotor = true;
+
+jointDef.maxMotorTorque = 10.0f;
+jointDef.motorSpeed = 0.0f;
+```
+
+### RopeJoint
+A rope joint enforces a maximum distance between two points on two bodies. It has no other effect. Warning: if you attempt to change the maximum length during the simulation you will get some non-physical behavior. A model that would allow you to dynamically modify the length would have some sponginess, so I chose not to implement it that way. See b2DistanceJoint if you want to dynamically control length.
+
+```java
+RopeJointDef jointDef = new RopeJointDef (); // has no initialize
+```
+
+### WeldJoint
+
+A weld joint essentially glues two bodies together. A weld joint may distort somewhat because the island constraint solver is approximate.
+
+```java
+WeldJointDef jointDef = new WeldJointDef ();
+jointDef.initialize(bodyA, bodyB, anchor);
+```
+
+### WheelJoint
+
+A wheel joint. This joint provides two degrees of freedom: translation along an axis fixed in bodyA and rotation in the plane. You can use a joint limit to restrict the range of motion and a joint motor to drive the rotation or to model rotational friction. This joint is designed for vehicle suspensions.
+
+```java
+WheelJointDef jointDef = new WheelJointDef();
+jointDef.maxMotorTorque = 1f;
+jointDef.motorSpeed = 0f;
+jointDef.dampingRatio = 1f;
+jointDef.initialize(bodyA, bodyB, anchor, axis); // axis is Vector2(1,1)
+
+WheelJoint joint = (WheelJoint) physics.createJoint(jointDef);
+joint.setMotorSpeed(1f);
+```
+
 
 ## Fixture Shapes ##
 
