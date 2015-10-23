@@ -66,8 +66,9 @@ Keys may only be in one of three locations in the backing array, allowing this m
   * [IntMap](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/utils/IntMap.html) [(code)](https://github.com/libgdx/libgdx/blob/master/gdx/src/com/badlogic/gdx/utils/IntMap.java)
   * [LongMap](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/utils/LongMap.html) [(code)](https://github.com/libgdx/libgdx/blob/master/gdx/src/com/badlogic/gdx/utils/LongMap.java)
   * [ObjectIntMap](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/utils/ObjectIntMap.html) [(code)](https://github.com/libgdx/libgdx/blob/master/gdx/src/com/badlogic/gdx/utils/ObjectIntMap.java)
+* [ObjectFloatMap](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/utils/ObjectFloatMap.html) [(code)](https://github.com/libgdx/libgdx/blob/master/gdx/src/com/badlogic/gdx/utils/ObjectFloatMap.java)
 
-These maps are identical to !ObjectMap except they use primitive types for the keys, except !ObjectIntMap which uses primitive values. This avoids boxing and unboxing.
+These maps are identical to ObjectMap except they use primitive types for the keys, except ObjectIntMapand ObjectFloatMap which use primitive values. This avoids boxing and unboxing.
 
 ## Specialized maps ##
 
