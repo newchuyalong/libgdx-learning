@@ -97,6 +97,7 @@
             * [[Models]]
             * [[Material and Environment]]
             * [[ModelBatch]]
+            * [[ModelCache]]
             * [[ModelBuilder, MeshBuilder and MeshPartBuilder]]
             * [[3D Animations and Skinning]]
             * [[Importing Blender Models in libGDX]]
