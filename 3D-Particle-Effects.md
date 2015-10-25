@@ -29,6 +29,8 @@ There are 3 different kinds of 3D particle effects:
 
 [3D Tank Battle video](https://www.youtube.com/watch?v=lt9kYDb9p78)
 
+More information about point sprites in OpenGL: http://www.informit.com/articles/article.aspx?p=770639&seqNum=7
+
 **ModelInstances** are familiar to you if you have done any 3D work in libgdx.  They are instances of 3D models.  Not surprisingly, this is the most taxing type of particle effect in terms of performance.
 
 -----------------
