@@ -4,7 +4,7 @@ LibGdx makes use of bitmap files (pngs) to render fonts.  Each glyph in the font
 
 ## File format specifications for the font file
 
-References point to bmFont being originally created by Andreas Jönsson over at [AngleCode](http://www.angelcode.com/)
+References point to bmFont being originally created by Andreas Jönsson over at [AngelCode](http://www.angelcode.com/)
 
 [BMFont](http://www.angelcode.com/products/bmfont/doc/file_format.html) - the original specification for the file format.
 
