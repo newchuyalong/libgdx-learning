@@ -16,17 +16,17 @@ With your RoboVM indie key you can develop as many games as you want, commercial
 
 Depending on your development environment, you can activate the key as follows:
 
-#### Gradle
+**Gradle**
 In your project's root directory, execute the following in the terminal:
 
 ```
 ./gradlew :activateLicense -Probovm.licenseKey=your-key-here
 ```
 
-#### Eclipse
+**Eclipse**
 After installing the [RoboVM Eclipse plugin](http://docs.robovm.com/getting-started/eclipse.html), go to `RoboVM -> License Manager` and enter your key.
 
-#### IntelliJ IDEA/Android Studio
+**IntelliJ IDEA/Android Studio**
 After installing the [RoboVM IDEA plugin](http://docs.robovm.com/getting-started/intellij.html), go to `RoboVM -> License Manager` and enter your key.
 
 ### Setting up Eclipse 
