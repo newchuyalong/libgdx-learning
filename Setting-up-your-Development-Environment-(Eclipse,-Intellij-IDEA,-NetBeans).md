@@ -14,7 +14,7 @@ The RoboVM trial key will be valid for 30 days, so you can start developing imme
 
 With your RoboVM indie key you can develop as many games as you want, commercial and non-commercial. The key will be valid [forever](http://www.gamefromscratch.com/image.axd?picture=image_thumb_2403.png). If you are a team, just have everyone sign up for a key separately. If your indie team is larger than 3 devs, contact [hello@robovm.com](mailto:hello@robovm.com). RoboVM just wants to check that you aren't a AAA studio trying to exploit the indie program. Those AAA studios will have to pay for a license, indie teams of any size get licenses for free.
 
-Depending on your development environment, you can activate the key as follows:
+Depending on your development environment, you can activate the key as outlined below. **Note:** you can only activate your license key on Mac OS X, just like you can only compile for iOS on Mac OS X.
 
 **Gradle**
 In your project's root directory, execute the following in the terminal:
