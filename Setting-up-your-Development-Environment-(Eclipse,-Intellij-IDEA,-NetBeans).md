@@ -12,7 +12,7 @@ Regardless of your development environment of choice, here's what you'll need fo
 
 The RoboVM trial key will be valid for 30 days, so you can start developing immediately. Once you applied for the free indie program, your trial key will be upgraded to a full indie license within 30 days. You will receive an e-mail once that happens.
 
-With your RoboVM indie key you can develop as many games as you want, commercial and non-commercial. The key will be valid [forever](http://www.gamefromscratch.com/image.axd?picture=image_thumb_2403.png). If your indie team is larger than 3 devs, contact [hello@robovm.com](mailto:hello@robovm.com). RoboVM just wants to check that you aren't a AAA studio trying to exploit the indie program.
+With your RoboVM indie key you can develop as many games as you want, commercial and non-commercial. The key will be valid [forever](http://www.gamefromscratch.com/image.axd?picture=image_thumb_2403.png). If you are a team, just have everyone sign up for a key separately. If your indie team is larger than 3 devs, contact [hello@robovm.com](mailto:hello@robovm.com). RoboVM just wants to check that you aren't a AAA studio trying to exploit the indie program. Those AAA studios will have to pay for a license, indie teams of any size get licenses for free.
 
 Depending on your development environment, you can activate the key as follows:
 
