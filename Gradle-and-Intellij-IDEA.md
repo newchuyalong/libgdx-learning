@@ -28,7 +28,7 @@ Follow the steps for running the project, but instead of launching via the run (
 
 Run the superDev Gradle task as before. Go to [http://localhost:8080/html](http://localhost:8080/html), click on the `SuperDev Refresh` button and hit `Compile`. In Chrome, press `F12` to bring up the developer tools, go to the sources tab and find the Java file you want to debug. Set breakpoints, step and inspect variables using the power of source maps!
 
-[[https://libgdx.badlogicgames.com/images/Screen%20Shot%202014-03-23%20at%2019.11.27-BkaIpjttPQ.png]]
+[[https://libgdx.badlogicgames.com/uploads/Screen%20Shot%202014-03-23%20at%2019.11.27-BkaIpjttPQ.png]]
 
 ## Packaging your Project
 It's easiest to package your application from the command line, or using the Gradle task within Intellij IDEA. To see the relevant Gradle tasks, check the [[Gradle command line documentation|Gradle on the Commandline]].
