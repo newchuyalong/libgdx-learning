@@ -26,7 +26,9 @@ This sets up a standard AssetManager, with all the loaders libgdx has in store a
 public static AssetManager assets = new AssetManager();
 ```
 
-This will cause problems on Android, because the life-cycle of the static variable is not necessarily the same as the life-cycle of your application. Therefor the `AssetManager` instance of a previous instance of your application might be used for the next instance, while the resources are no longer valid. This typically would cause black/missing textures or incorrect assets.
+This will cause problems on Android, because the life-cycle of the static variable is not necessarily the same as the life-cycle of your application. Therefore the `AssetManager` instance of a previous instance of your application might be used for the next instance, while the resources are no longer valid. This typically would cause black/missing textures or incorrect assets.
+
+On Android, it is even possible for multiple instances of your Activity to be active at the same time, so do not think you're safe even if you handle life-cycle methods properly! (See [this StackOverflow question](http://stackoverflow.com/q/4341600/14637) for details.)
 
 ### Loading Assets ###
 
