@@ -14,6 +14,21 @@ The RoboVM trial key will be valid for 30 days, so you can start developing imme
 
 With your RoboVM indie key you can develop as many games as you want, commercial and non-commercial. The key will be valid [forever](http://www.gamefromscratch.com/image.axd?picture=image_thumb_2403.png). If your indie team is larger than 3 devs, contact [hello@robovm.com](mailto:hello@robovm.com). RoboVM just wants to check that you aren't a AAA studio trying to exploit the indie program.
 
+Depending on your development environment, you can activate the key as follows:
+
+#### Gradle
+In your project's root directory, execute the following in the terminal:
+
+```
+./gradlew :activateLicense -Probovm.licenseKey=your-key-here
+```
+
+#### Eclipse
+After installing the [RoboVM Eclipse plugin](http://docs.robovm.com/getting-started/eclipse.html), go to `RoboVM -> License Manager` and enter your key.
+
+#### IntelliJ IDEA/Android Studio
+After installing the [RoboVM IDEA plugin](http://docs.robovm.com/getting-started/intellij.html), go to `RoboVM -> License Manager` and enter your key.
+
 ### Setting up Eclipse 
 To develop your application via Eclipse, you need to install the following pieces of software.
 
