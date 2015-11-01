@@ -45,7 +45,7 @@ This compiles your core and desktop project, and runs the desktop starter. The w
 This task will create a debug APK of your application, install it on the first connected emulator or device and start the main activity. The process is split into two tasks because the Android Gradle plugin lets you create multiple flavors of your app (e.g. debug as above, release, ...). You can find more information on the [Android Gradle Plugin site](http://tools.android.com/tech-docs/new-build-system/user-guide).
 
 ### Running the iOS project
-Before you run on an iOS simulator or device, make sure you have [activated your free RoboVM key](https://github.com/libgdx/libgdx/wiki/Setting-up-your-Development-Environment-(Eclipse,-Intellij-IDEA,-NetBeans)#setup-for-ios-development).
+Before you run on an iOS simulator or device, make sure you have [activated your free RoboVM key](https://github.com/libgdx/libgdx/wiki/Setting-up-your-Development-Environment-(Eclipse,-Intellij-IDEA,-NetBeans)#setup-for-ios-development). If you run on a device, you need to [provision](http://docs.robovm.com/getting-started/provisioning.html) it to be able to deploy to it!
 
 `gradlew ios:launchIPhoneSimulator`
 
