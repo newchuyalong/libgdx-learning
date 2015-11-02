@@ -156,5 +156,4 @@ You can find a full working example at (https://drive.google.com/file/d/0BwiuGlZ
 The main class is core/sbourges/game/gdxtest/GdxTest.java
 
 ### Simple examples
-A simplified example of the above GdxTest.java can be found here:
-https://github.com/SeanFelipe/SimpleParticles3d/blob/master/java/core/src/sbourges/game/gdxtest/GdxTest.java
+A simplified example of the above GdxTest.java can be found [here](https://github.com/SeanFelipe/SimpleParticles3d/blob/master/java/core/src/sbourges/game/gdxtest/GdxTest.java).
