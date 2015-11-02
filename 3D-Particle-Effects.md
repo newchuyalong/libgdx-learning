@@ -154,6 +154,3 @@ Emitter emitter = pfx.getControllers().first().emitter;
 You can find a full working example at (https://drive.google.com/file/d/0BwiuGlZ9rT-bRm9zQlJHbzFCWWs/edit?usp=sharing)
 
 The main class is core/sbourges/game/gdxtest/GdxTest.java
-
-### Simple example
-A simple 3d effects implementation in Scala. You'll need Scala and SBT, or you can adapt the code to your Java project. (https://github.com/SeanFelipe/SimpleParticles3d/blob/master/core/src/main/scala/ParticlesLearning.scala)
