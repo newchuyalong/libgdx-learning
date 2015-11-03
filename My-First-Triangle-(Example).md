@@ -148,7 +148,7 @@ public class MyFirstTriangle implements ApplicationListener {
 
 Run the project again. The application should now have a white triangle rendered in the middle of the screen:
 
-![Triangle Desktop](http://libgdx.googlecode.com/svn/wiki/img/my_first_triangle_desktop.png)
+![Triangle Desktop](http://i.imgur.com/3Qi1ORl.png)
 
 Lets look at the changes we made. `create()` is called when the the rendering surface is created. We create a `Mesh`, which represents an object that will be drawn onscreen. Its constructor takes several parameters, but for now just take note of the `VertexAttribute` object we pass in. `VertexAttribe`s are passed into the constructor to indicate what type of information the resulting mesh will contain. A mesh can potentially contain information regarding an object's position, color, texture, and more, but right now we'll only assign positional information. Since this mesh is a triangle, its position (and shape) is made up of three *vertices*, each denoted by three values (x, y, z) in the Cartesian coordiante. The three vertices for this mesh are located at (-0.5f, -0.5f, 0), (0.5f, -0.5f, 0), and (0, 0.5f, 0). We then set the mesh's *indices*, which is the order of the vertices, sort of like the order in a game of connecting the dots. In a simple shape like a triangle, the order doesn't matter because no matter which order you connect the vertices, it will always form a triangle. With more vertices, the order will greatly affect the final shape of the object.
 
@@ -190,7 +190,7 @@ public class MyFirstTriangleAndroid extends AndroidApplication {
 
 Similar to our desktop entry point in the `MyFirstTirangleDesktop` class, all this code does is to create an instance of `MyFirstTriangle` to manage the rendering process. Run the application by right-clicking on the my-first-triangle-android folder and selecting Run As -> Android Application. The application is then installed on the device or compatible simulator. After the simulator is finished loading, the application should start automatically. If it doesn't, find and click on the my-first-triangle-android application icon. The application should look like this:
 
-![Triangle Android](http://libgdx.googlecode.com/svn/wiki/img/my_first_triangle_android.png)
+![Triangle Android](http://i.imgur.com/xYU6Mjf.png)
 
 # What's Next
 
