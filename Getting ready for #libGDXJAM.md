@@ -112,18 +112,74 @@ Free game art:
 
 ### Team structure
 
+Gather your quest party and put your specialist hats on!
+
+#### Programmers
+
+* Do the programmy bits
+* Split taks among them: graphics, controls, physics, UI
+* The less code overlap, the easier!
+* Need to tell the artists what formats they need
+* Need to define how level designers create content
+
+#### Graphics and audio artists
+
+* Do the artsy bits
+* Need to spit up tasks among them: UI, background, characters, effects...
+* Agree on a consistent style
+* May need to create placeholder art early on
+
+#### Game and Level designer
+
+* Does the content bits
+* Needs to define the game mechanics
+* Needs to define the game progression
+* Needs to create levels
+* Needs to playtest and give feedback to programmers and artists
+
+#### Coordinator
+
+* Makes sure everyone knows what to do
+* Keeps track of things to be done
+* Keeps track of dependencies between members
+* Keeps track of time
+* Keeps track of human needs (food, sleep)
+
+**Note**: depending on your actual team, some roles could be blurred or shared.
+* No artists? Use pre-existing art.
+* No designers? Everybody becomes a games designer.
+* No coordinator? Pick one person.
+* Alone? You do everything!
+
+### The 5 phases of Jamming
+
+Now let's get onto it!
+
+#### Brainstorming
+
+Goals:
+* Consider the set theme.
+* Get a high-level understanding of your game: genre, mechanics, setting, story, art style...
+* Take time limits into account. FPS, MMO and RTS games might not be your best choices.
+* Think outside the box.
+
+To-do:
+1. Gather ideas from everyone.
+2. Pick the most promising ones via vote.
+3. Define genre and mechanics using pen and paper.
+4. Define setting and story.
+5. Define art style, artist could draw quick mockups.
+
+#### Setup
+
+Goals:
+* Get a detailed understanding of your game:
+  * What will programmers have to do?
+  * What will artists have to do?
+  * What will game designers have to do?
+
+#### Implementation
 
 
-### Brainstorming
 
-
-
-### Setup
-
-
-
-### Implementation
-
-
-
-### Finishing up!
+#### Finishing up!
