@@ -164,11 +164,11 @@ Goals:
 * Think outside the box.
 
 To-do:
-1. Gather ideas from everyone.
-2. Pick the most promising ones via vote.
-3. Define genre and mechanics using pen and paper.
-4. Define setting and story.
-5. Define art style, artist could draw quick mockups.
+  1. Gather ideas from everyone.
+  2. Pick the most promising ones via vote.
+  3. Define genre and mechanics using pen and paper.
+  4. Define setting and story.
+  5. Define art style, artist could draw quick mockups.
 
 #### Setup
 
