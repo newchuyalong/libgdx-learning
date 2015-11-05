@@ -5,10 +5,11 @@ In this article I (as the creator of Overlpa2D) will try to provide as much info
 # Getting Started
 
 ### Prerequisites
-1 Make sure you have JDK 1.8 (It's required for Overlap2D to run)
-2 Download the Editor itself from our [website](http://overlap2d.com/)
-3 Make yourself a nice cozy folder to work in
-4 Get some test assets (png sprites) later you can substitute that with your own.
+
+1. Make sure you have JDK 1.8 (It's required for Overlap2D to run)
+2. Download the Editor itself from our [website](http://overlap2d.com/)
+3. Make yourself a nice cozy folder to work in
+4. Get some test assets (png sprites) later you can substitute that with your own.
 
 ### Working with Overlap2d
 
