@@ -31,7 +31,7 @@ Important things to know:
 
 # What game are you making?
 
-How to best use the editor depends on what kind of game are you making, so I'll try to cover some of them:
+Let's figure out what you plan to make, to help you most.
 
 ### Side scroller or runner
 
