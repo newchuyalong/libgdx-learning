@@ -26,7 +26,7 @@ Now I can write a lot and bore you to death. Or, you can just watch me do all th
 Important things to know:
 * When using setup app, click on Third Party Extensions and select overlap2d from the list, also make sure to have freetype and box2d checkboxes selected.
 * For the JAM better use latest runtime, which is 0.1.2-SNAPSHOT (make sure to set that in build.gralde file, because it's not default value)
-* When creating your o2d project, don't think about multiple resolutions and huge textures. This is just a JAM. I would go with a small world size (say 800x480 or similar), and pixel per world unit somewhere between 1-4.
+* When creating your o2d project, don't think about multiple resolutions and huge textures. This is just a JAM. I would go with a small camera-world size (say 800x480 or similar), and pixel per world unit somewhere between 1-4.
 
 
 # What game are you making?
@@ -45,6 +45,11 @@ Decide on images you want to use as tiles (make sure they are same size and squa
 player can or cannot walk through them. Of course later you need to write a System in your code, to use this tags accordingly. There is a sample "Tower defense" project I made you can take a look at as an example  
 [here](https://github.com/azakhary/thm)
 
+### I need it for UI
+
+Okay so your game itself is kind of different and does not need a predefined scene data. Maybe you generate all stuff with code, and that's fine. But you want to make your menus, dialogs and buttons with overlap2d?
+That's cool too! You can make buttons in overlap2d easily. just chose button assets, and right click convert to button. This will create a composite with some predefined layers. Make sure to go in, and put things in correct places (pressed layer and so on) You can test your button directly in the editor. 
+To make some dialogs uses 9patch images for background (actually same for buttons) If you do not have a 9patch images, you can make one directly from the editor. Just right click on regular image, and choose "Convert to 9patch" this will open a dialog to set it up. You can later convert all the buttons and texts to composite items, and put that dialog into library. Then later form your code create a CompositeActor from that library data.
 
 
 # Tips and Tricks
