@@ -59,3 +59,4 @@ To make some dialogs uses 9patch images for background (actually same for button
 * If you have one unique object that needs logic (like for example player) just give it a unique id, and then make an IScript for it. Overlap2D has a System for iScripts, and you can attach IScript to an item using ItemWrapper class.
 * You can render your UI using entity enine as well, by just putting your UI on the scene. But if you need your camera to zoom out and move, then maybe it's a better idea to create a separate stage for your UI, and use CompositeActor's for it.
 * When programming systems, to monitor user inputs, use Gdx.input, it has all you may ever need. No need for ye-olde event listeners.
+* So you have this composite inside a composite inside a composite, and then there is different physics shapes and bodies inside, and they all behave wrong - yeah... don't do that. Keep it simple, and it'll work :-P
