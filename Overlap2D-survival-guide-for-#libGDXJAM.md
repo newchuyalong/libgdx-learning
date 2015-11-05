@@ -45,6 +45,10 @@ Decide on images you want to use as tiles (make sure they are same size and squa
 player can or cannot walk through them. Of course later you need to write a System in your code, to use this tags accordingly. There is a sample "Tower defense" project I made you can take a look at as an example  
 [here](https://github.com/azakhary/thm)
 
+### Dynamic world generation
+
+So you don't want to have entire map made up, because it has to be random each time. For this you can make a predefined world "chunks" conevrt them into composite items, put them into library, and then randomly load from library and stitch together.
+
 ### I need it for UI
 
 Okay so your game itself is kind of different and does not need a predefined scene data. Maybe you generate all stuff with code, and that's fine. But you want to make your menus, dialogs and buttons with overlap2d?
