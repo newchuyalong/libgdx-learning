@@ -53,3 +53,9 @@ To make some dialogs uses 9patch images for background (actually same for button
 
 
 # Tips and Tricks
+
+* If you need to navigate through nested items, best way to do it is use helper class ItemWrapper. Just wrap an entity into it, and then use methods like getChild to navigate.
+* If you have many objects that need to behave in same way (for example moving clouds) best thing to do is, give all clouds on scene a same tag. Then from use sceneLoader.addComponentsByTagName method to add a cloud component to all clouds. Then you can create a System that manages that family of components to have one class that does your "cloud" logic
+* If you have one unique object that needs logic (like for example player) just give it a unique id, and then make an IScript for it. Overlap2D has a System for iScripts, and you can attach IScript to an item using ItemWrapper class.
+* You can render your UI using entity enine as well, by just putting your UI on the scene. But if you need your camera to zoom out and move, then maybe it's a better idea to create a separate stage for your UI, and use CompositeActor's for it.
+* When programming systems, to monitor user inputs, use Gdx.input, it has all you may ever need. No need for ye-olde event listeners.
