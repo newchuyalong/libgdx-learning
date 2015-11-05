@@ -2,3 +2,10 @@ So you are planning to join #libGDXJAM and you are considering (or already decid
 
 In this article I (as the creator of Overlpa2D) will try to provide as much information as possible on how to be friends with O2D and use it wisely!
 
+#Getting Started
+
+
+#What game are you making?
+
+
+#Tips and Tricks
