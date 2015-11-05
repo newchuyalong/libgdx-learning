@@ -10,6 +10,7 @@ In this article I (as the creator of Overlpa2D) will try to provide as much info
   2. Download the Editor itself from our [website](http://overlap2d.com/)
   3. Make yourself a nice cozy folder to work in
   4. Get some test assets (png sprites) later you can substitute that with your own.
+  5. Learn more about [Ashley](https://github.com/libgdx/ashley/wiki) (our runtime uses that architecture)
 
 ### Working with Overlap2d
 
@@ -29,6 +30,21 @@ Important things to know:
 
 
 # What game are you making?
+
+How to best use the editor depends on what kind of game are you making, so I'll try to cover some of them:
+
+### Side scroller or runner
+
+So you are making a side scroller or a runner, meaning you have this character that walks or runs on this background from left to right. That is perfect candidate for Overlap2D. You can make several layers, like background, foreground. Combine things like trees and mountains into groups, position things behind. Then have your main character (probably an animation) be in front. Give it a unique identifier, And so on.
+There is even tutorial series on how to do it in our [documentation](http://overlap2d.com/documentation/)
+
+### Tiled view from above
+
+Could be tower defense or strategy or dungeon kind of thing. In this case you want your world to have tiles. 
+Decide on images you want to use as tiles (make sure they are same size and square) and put them lined up somewhere on the scene. give each of them tag "tile". In upper panel find grid size, and set it to your tile size (this way things will snap to grid) Now you can just copy paste your initial tiles, and put them where they fit. You can then give them additional tags like "wall" or "turret" to mention their behaviour or if 
+player can or cannot walk through them. Of course later you need to write a System in your code, to use this tags accordingly. There is a sample "Tower defense" project I made you can take a look at as an example  
+[here](https://github.com/azakhary/thm)
+
 
 
 # Tips and Tricks
