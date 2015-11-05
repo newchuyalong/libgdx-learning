@@ -177,9 +177,66 @@ Goals:
   * What will programmers have to do?
   * What will artists have to do?
   * What will game designers have to do?
+* Define interfaces between all team members
+  * How do programmers work with each other?
+  * How do artists get their art into the game?
+  * How do game designers create game content?
+* Define tasks and their order for every team member!
+  * The coordinator is responsible for keeping track of tasks
+
+To-do
+  1. Programmers agree on platform and tools
+  2. Artists agree on style
+  3. Programmers and artists agree on how to get art into the game
+  4. Programmers and game designers agree on how to create content
+  5. Each subteam defines their initial task
+  6. Coodinator keeps track of things
+
+A super lightweight [Kanban](https://en.wikipedia.org/wiki/Kanban)-like board can help, such as [Trello](https://trello.com/).
 
 #### Implementation
 
+Goals:
+* Get the damned game done!
+* Ensure to have a playable prototype early
+  * Prioritize tasks accordingly
+  * Game mechanics first to see if they are fun!
+* Realize you'll likely not get everything done!
+  * Which is why you should have something playable at all times
+  * Cut corners, kill features, focus on the core of your game
+
+To-do
+  1. Every sub-team works on their task
+  2. Coordinator keeps track of progress
+  3. Sub-teams talk whenever they need to re-define or prioritize new tasks
+  4. Goto 1
+
+**Have something playable early on**
+
+Tips for programmers:
+  * Use source control (git, SVN...), do not use shared drives, zip files nor e-mail
+  * Don't code for re-use
+  * Don't optimize
+  * Try to create a modular-design so people don't depend on each other too much
+  * Make sure the game designer can create content as early as possible
+  * Make sure artists export to easy to use formats
+  * Make sure artists and game designers understand limitations
+
+Tips for artists:
+  * Make it easy to export your art into the proper format
+  * Make sure everyone uses the same coordinate system/resolution
+  * Use descriptive names for files
+  * Have one shared folder (Dropbox, Google Drive) containing assets ready to integrate into the game
+    * Don't put multiple versions of the same thing there
+    * Have whatever local folder structure for work in progress assets
+
+Tips for game designers
+  * Talk to the developers about what's possible and what not
+  * Focus on simple mechanics but try to put in a twist
+  * Favor simple level-design over brainy or complex levels, they take too long to design!
+  * If you have down-time, try to help or be the coordinator
+  
 
 
 #### Finishing up!
+
