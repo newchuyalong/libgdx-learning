@@ -110,7 +110,7 @@ Free game art:
 
 [[images/overlap2d.png]]
 
-[BDX](https://github.com/GoranM/bdx/wiki): Open source 3D game engine integrated with Blender.
+[BDX](https://github.com/GoranM/bdx): Open source 3D game engine integrated with Blender.
 
 ![](https://lh5.googleusercontent.com/-66Li4J9maL4/VP8ICZcGAxI/AAAAAAAABIo/Mth2R1Qo81w/w1038-h586-no/BlenderWithBDX2.png)
 
