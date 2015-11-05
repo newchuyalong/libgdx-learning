@@ -121,7 +121,7 @@ Gather your quest party and put your specialist hats on!
 #### Programmers
 
 * Do the programmy bits
-* Split taks among them: graphics, controls, physics, UI
+* Split tasks among them: graphics, controls, physics, UI
 * The less code overlap, the easier!
 * Need to tell the artists what formats they need
 * Need to define how level designers create content
