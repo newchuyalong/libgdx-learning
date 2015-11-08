@@ -106,7 +106,7 @@ Free game art:
 
 [[images/tiled.png]]
 
-[Overlap2D](http://overlap2d.com/): open source game editor.
+[Overlap2D](http://overlap2d.com/): open source game editor. Make sure to check the [[Overlap2D survival guide for #libGDXJAM]].
 
 [[images/overlap2d.png]]
 
