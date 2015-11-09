@@ -88,7 +88,7 @@ https://bitbucket.org/Thotep/gdx-shaders/wiki/Home
 This websites will let you play with WebGL (provided your browser supports it) and see the code behind it.
 
  * http://glsl.heroku.com/
- * http://www.iquilezles.org/apps/shadertoy/
+ * https://www.shadertoy.com/
 
 ## Tile based games ##
 
