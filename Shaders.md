@@ -25,7 +25,7 @@ void main()
 
 That doesn't look to bad, now does it? First you have a vertex attribute called a_position. This attribute is a vec4 which means it's a vector with 4 dimensions. In this sample it holds the position information of the vertex.
 
-Next you have the `u_projectionViewMatrix`. This is a 4x4 matrix that holds the view and projection transform data. If those terms sound fuzzy to you I'd recommend reading up on those topics (Here: http://db-in.com/blog/2011/04/cameras-on-opengl-es-2-x/). It's incredibly useful to understand it.
+Next you have the `u_projectionViewMatrix`. This is a 4x4 matrix that holds the view and projection transform data. If those terms sound fuzzy to you I'd recommend reading up on those topics (Here: http://blog.db-in.com/cameras-on-opengl-es-2-x/). It's incredibly useful to understand it.
 
 Inside the main method we execute the operations on the vertex. In this case all the shader does is multiply the vertex position with the matrix and assigns it to gl_Position. gl_Position is a predefined keyword by OpenGL and can't be used for anything else but passing through the processed vertex.
 
