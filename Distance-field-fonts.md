@@ -12,7 +12,7 @@ Using a distance field font lets you render text that remains crisp even under r
 
 The same technique can also be used to draw symbols, logos, anything. The major drawback is that it works only for monochrome images; it is not possible to use this technique for arbitrary color images.
 
-There is an example of rendering in the libgdx source code. Check out `com.badlogic.gdx.tests.BitmapFontDistanceFieldTest` in the `gdx-tests` project. It was used to produce the above screenshot.
+There is an example of rendering in the libgdx source code. Check out `com.badlogic.gdx.tests.BitmapFontDistanceFieldTest` in the `gdx-tests` project. It was used to produce the above screenshot. There's also com.badlogic.gdx.graphics.g2d.DistanceFieldFont.java class if you want to jump directly to usage.
 
 # How does it work? #
 
