@@ -15,7 +15,7 @@ These are webpages where individuals or companies write about their experience w
  * Group of students from Sweden - http://www.dagger.se/#home
  * LibGDX video tutorials 1 - http://www.youtube.com/dermetfan
  * LibGDX video tutorials 2 - https://www.youtube.com/ForeignGuyMike
- * LibGDX Tutorial series - http://www.gamefromscratch.com/page/LibGDX-Tutorial-series.aspx
+ * GameFromScratch LibGDX Video Tutorial series - http://www.gamefromscratch.com/page/LibGDX-Video-Tutorial-Series.aspx
  * bitowl's tutorials - http://bitowl.de/tag/tutorial/
  * Zombie Bird - http://www.kilobolt.com/zombie-bird-tutorial-flappy-bird-remake.html
  * Libgdx y Box2D Tutoriales (en español) - http://tutoriales.tiarsoft.com
