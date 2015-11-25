@@ -2,34 +2,50 @@ The Libgdx community is organizing [#libGDXJAM](https://twitter.com/hashtag/libG
 
 This article will take you through the rules and help you get ready to jam!
 
-## Rules
+## The 10 Rules of Jamming
 
-**Note**: The following rules are not final, stay up to date on the [rules discussions](http://www.badlogicgames.com/forum/viewtopic.php?f=11&t=20974).
+The jam will be held from December 18th to January 18th. Here are the rules:
 
-### Duration
-The game jam will last 4 weeks. This is to allow developers with day jobs and other responsibilities to participate and be able to submit a typical 48h jam quality game.
+1. You must use libGDX to create a game that fits the theme.
+2. You may work alone or in a team. Only one submission per person/team is allowed.
+3. You may use pre-existing code, e.g. libraries like Ashley, or your own code libraries.
+4. You may use pre-existing art, e.g. assets from OpenGameArt, or your own art.
+5. You may use external tools like Tiled or Overlap2D.
+6. You must not re-skin an already existing game or prototype!
+7. You must submit your game before the end of the 18th of January via the jam’s site on itch.io (to be made public).
+8. You must publish the source of your game, e.g. to GitHub.
+9. You must submit your game to the itch.io libGDX Jam page before the end of day January 18th, UTC-12!
+10. If you want to win one of the sponsored prizes, you must tweet about your game and document its development, using the hashtag [#libGDXJam](https://twitter.com/search?f=tweets&vertical=default&q=%23libGDXJam&src=tyah) and the handles [@robovm](https://twitter.com/robovm) and [@robotality](https://twitter.com/robotality).
 
-### Theme
-Submissions must meet the theme that the community will chose from. We are currently crowdsourcing a [list of ideas](https://docs.google.com/spreadsheets/d/1-wDLMLVjh4mpnoBIv6i2MxV4NCW6VOIhQ0-bghS869Q/edit). The best 5 themes from the list will be selected and the community will vote on the final theme one week before the jam starts.
+First of all, you can participate in the jam without following these rules! In that case, you will not qualify for the prizes though.
 
-### Assets
-Use whatever you can find, be it something you created from scratch, or something from the interwebs. Make sure you are respecting the license though.
+Documenting your progress is a great way of sharing your experience, and an invaluable tool for others to learn. Making a bit of noise on Twitter is also a great way to give back to our sponsors. Chaining those 2 things together via rule 9 is my evil overlord plan to make everyone happy.
 
-### Code
-Use of libraries like gdx-ai, gdx-pay, Ashley or other 3rd party libs is absolutely allowed. Use of tools like Tiled, Overlap2D, etc. is absolutely allowed. Code you've written before is allowed.
+Here are a few examples of tweets:
 
-What is NOT allowed is re-skinning an existing game!
+> Progress screenshot of my #libGDXJam entry <url> @robovm @robotality
 
-### Prizes & Voting
+> New dev log entry for my #libGDXJam game <url> @robovm @robotality
 
-[RoboVM](https://robovm.com/) and [Robotality](http://robotality.com/blog/) are sponsoring prices. The former will sponsor devices (Mac Mini, iPad and iPod Touch) whilst the latter will sponsor 20 Steam keys for [Halfway](http://halfwaygame.com/). Our partner [itch.io](http://itch.io/) is providing us with a super fancy game jam system that allows voting, which is a lot of work on their end already.
+For the dev logs, we want quality first and foremost! Progress screenshots, descriptions of problems you ran into and their solutions, streaming and so on is what we want to see! Just mindless spamming will not get you anywhere.
 
-After the jam period of 4 weeks, we'll have 1 week of voting on itch.io. The winner of that community vote will get the Mac Mini. The iPad and iPod Touch will be awarded to the participants that 1) submitted an entry and 2) documented their development the most in a dev log and on Twitter, using tags that promote our sponsors (RoboVM, Robotality and itch.io). The dev logs will all be gathered in a single thread here on the forum. The tweets should be of the following form:
+## Prizes & Judging
 
-* *New screeny of my #libGDXJam game. Progress! @robotality @robovm*.
-* *New dev log entry for my #libGDXJam game @robovm @robotality*.
+We are happy to have [RoboVM](https://robovm.com/) and [Robotality](http://robotality.com/blog/) as sponsors for the following prizes:
 
-The Halfway keys will be awarded to 20 random submissions.
+* Grand Prize: Mac Mini, sponsored by RoboVM.
+* Silver: iPad, sponsored by RoboVM.
+* Bronze: iPod Touch, sponsored by RoboVM.
+* For 20 random submissions: Steam keys for Halfway, sponsored by Robotality.
+* For another 5 random submissions: libGDX Jam t-shirt.
+
+To qualify for any of the prizes, you'll need to follow rule 10 as outlined above. Judging works as follows:
+
+* The community can vote on itch.io from the 19th of January to the 2nd of February.
+* The Grand Prize will be awarded to the entry with the highest community votes on itch.io. This way the highest quality entry will win!
+* The Silver and Bronze prizes will be awarded to the entries with the best mixture of dev logs and tweets and community votes. * Our sponsors and the libGDX core team will pick these entries. This should motivate people to make some noise on the web and document their progress for the greater good of the community!
+* The random awards guarantee that everyone has a chance to win a prize!
+* The winners will be announced on the 3rd of February!
 
 ## Survival guide
 
