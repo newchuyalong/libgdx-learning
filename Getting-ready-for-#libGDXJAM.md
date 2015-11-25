@@ -47,6 +47,13 @@ To qualify for any of the prizes, you'll need to follow rule 10 as outlined abov
 * The random awards guarantee that everyone has a chance to win a prize!
 * The winners will be announced on the 3rd of February!
 
+## Timetable
+
+* Theme Voting round 1: Nov. 22nd – Dec. 11th
+* Final Theme Voting: Dec. 11th – Dec. 18th
+* Jam: Dec. 18th – Jan. 18th
+* Judging: Jan 19th – Feb. 2nd
+
 ## Survival guide
 
 All hail ye who are brave enough to take up on the #libGDXJam challenge, have you done all the preparations prior the competition?
@@ -122,13 +129,9 @@ Free game art:
 
 [[images/tiled.png]]
 
-[Overlap2D](http://overlap2d.com/): open source game editor.
+[Overlap2D](http://overlap2d.com/): open source game editor. Make sure to check the [[Overlap2D survival guide for #libGDXJAM]].
 
 [[images/overlap2d.png]]
-
-[BDX](https://github.com/GoranM/bdx): Open source 3D game engine integrated with Blender.
-
-![](https://lh5.googleusercontent.com/-66Li4J9maL4/VP8ICZcGAxI/AAAAAAAABIo/Mth2R1Qo81w/w1038-h586-no/BlenderWithBDX2.png)
 
 ### Team structure
 
@@ -137,7 +140,7 @@ Gather your quest party and put your specialist hats on!
 #### Programmers
 
 * Do the programmy bits
-* Split tasks among them: graphics, controls, physics, UI
+* Split taks among them: graphics, controls, physics, UI
 * The less code overlap, the easier!
 * Need to tell the artists what formats they need
 * Need to define how level designers create content
@@ -233,7 +236,7 @@ To-do
 
 **Have something playable early on**
 
-Tips for programmers:
+##### Tips for programmers:
   * Use source control (git, SVN...), do not use shared drives, zip files nor e-mail
   * Don't code for re-use
   * Don't optimize
@@ -242,7 +245,7 @@ Tips for programmers:
   * Make sure artists export to easy to use formats
   * Make sure artists and game designers understand limitations
 
-Tips for artists:
+##### Tips for artists:
   * Make it easy to export your art into the proper format
   * Make sure everyone uses the same coordinate system/resolution
   * Use descriptive names for files
@@ -250,12 +253,26 @@ Tips for artists:
     * Don't put multiple versions of the same thing there
     * Have whatever local folder structure for work in progress assets
 
-Tips for game designers
+##### Tips for game designers
   * Talk to the developers about what's possible and what not
   * Focus on simple mechanics but try to put in a twist
   * Favor simple level-design over brainy or complex levels, they take too long to design!
   * If you have down-time, try to help or be the coordinator
-  
+
+##### Tips for coordinators
+  * Ensure that everyone can stay busy, gather them to discuss/re-prioritize current tasks
+  * Check on progress regularly, if something takes too long, ask the team to kill the feature
+  * Make sure everybody is reminded they are human. They need to take breaks, sleep and eat
+  * If you have down time, pick a task you can do!
 
 
 #### Finishing up!
+
+Goals:
+  * Submit a playable game before the deadline!
+
+To-do:
+  1. Feature freeze 2-3 hours before the deadline
+  2. Create a build for submission
+  3. Get the team together and decide what to polish in the remaining hours
+  4. If polish works out, create a new build for submission
