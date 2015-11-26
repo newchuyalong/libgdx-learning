@@ -8,7 +8,7 @@ On this page the various coordinate systems are listed. It is highly recommended
  * Units: pixels
  * System: y-down
  * Type: integer, can't be fractional
- * Range: [0,0] (upper left corner) to [`Gdx.graphics.getWidth()-1`, `Gdx.graphics.getHeight()-1`] (lower right corner)
+ * Range: (0,0) (upper left corner) to (`Gdx.graphics.getWidth()-1`, `Gdx.graphics.getHeight()-1`) (lower right corner)
  * Usage: touch/mouse coordinates
  * Dependence: device specific
 
@@ -24,7 +24,7 @@ Whenever working with [mouse or touch](https://github.com/libgdx/libgdx/wiki/Mou
  * Units: pixels
  * System: y-up
  * Type: integer, can't be fractional
- * Range: [0,0] (lower left corner) to [`Gdx.graphics.getWidth()-1`, `Gdx.graphics.getHeight()-1`] (upper right corner)
+ * Range: (0,0) (lower left corner) to (`Gdx.graphics.getWidth()-1`, `Gdx.graphics.getHeight()-1`) (upper right corner)
  * Usage: viewport, scissors and pixmap
  * Dependence: device/resource/asset specific
 
@@ -50,7 +50,7 @@ To compensate for this up-side-down texture, `SpriteBatch` flips the texture (UV
  * Units: one
  * System: y-up
  * Type: floating point
- * Range: [-1,-1] (lower left corner) to [+1,+1] (upper right corner)
+ * Range: (-1,-1) (lower left corner) to (+1,+1) (upper right corner)
  * Usage: shaders
  * Dependence: none
 
@@ -66,7 +66,7 @@ The coordinates are floating point and no longer indexers. The device (GPU) will
  * Units: one
  * System: y-up
  * Type: floating point
- * Range: [0,0] (lower left corner) to [1,1] (upper right corner)
+ * Range: (0,0) (lower left corner) to (1,1) (upper right corner)
  * Usage: shaders, mesh, texture region, sprite
  * Dependence: none
 
