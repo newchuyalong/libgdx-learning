@@ -4,6 +4,15 @@ When working with libGDX (or any other OpenGL based system), you will have to de
 
 On this page the various coordinate systems are listed. It is highly recommended to first get familiar with the [Cartesian coordinate system](https://en.wikipedia.org/wiki/Cartesian_coordinate_system), which is the most widely used coordinate system.
 
+ * [Touch coordinates](#touch-coordinates)
+ * [Screen or image coordinates](#screen-or-image-coordinates)
+  * [Pixmap and texture coordinates](#pixmap-and-texture-coordinates)
+ * [Normalized render coordinates](#normalized-render-coordinates)
+ * [Normalized texture (UV) coordinates](#normalized-texture-(UV)-coordinates)
+ * [World coordinates](#world-coordinates)
+  * [GUI/HUD coordinates](#guihud-coordinates)
+  * [Game coordinates](#game-coordinates)
+
 ## Touch coordinates
  * Units: pixels
  * System: y-down
