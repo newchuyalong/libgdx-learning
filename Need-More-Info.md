@@ -1,4 +1,4 @@
-If you have been sent to this page it is because you failed to provide enough information for us to take action on your issue. We handle thousands of issues and cannot waste our time explaining how to properly post an issue. Instead we send you here, which explains what you need to do.
+If you have been sent to this page it is because you failed to provide enough information for us to take action on your issue. We handle thousands of issues and cannot burn our time explaining to each person how to properly post an issue. Instead we send you here, which explains what you need to do.
 
 ## What do I do now? ##
 
