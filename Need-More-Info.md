@@ -14,4 +14,4 @@ You may think you posted enough information for us to work on your issue. You ar
 
 ## Indignation, resentment, exasperation, and friends ##
 
-libgdx is a community-based open source project. If you are not able to contribute a fix for your issue then we are happy to help, but we do require you to provide enough information so that we can be productive when we spend our time on your issue.
+libgdx is a community-based open source project. If you are not able to contribute a fix for your issue then we are happy to help, but we do require you to provide enough information so that we can be productive when we spend our time on your issue. Please respect our time.
