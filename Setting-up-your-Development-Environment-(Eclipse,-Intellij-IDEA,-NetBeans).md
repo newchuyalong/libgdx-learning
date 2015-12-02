@@ -86,7 +86,7 @@ To develop your application via NetBeans, you need to install the following piec
   * [Java Development Kit 7+ (JDK) (6 will not work!)](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
   * [NetBeans 7.3+](https://netbeans.org/downloads/), the "Java SE" is sufficient
   * [Android SDK](http://developer.android.com/sdk/installing.html), you only need the SDK, not the ADT bundle, which includes Eclipse. Install the latest stable platform via the SDK Manager. You also have to create an environment variable called ANDROID_HOME, which points at your Android SDK installation directory!
-  * [NBAndroid](http://www.nbandroid.org), use this update center: http://nbandroid.org/updates/updates.xml
+  * [NBAndroid](http://www.nbandroid.org), use this update center: http://nbandroid.org/updates/updates.xml (if you have NetBeans 8.1 or higher, use http://nbandroid.org/release81/updates/updates.xml ).
   * [Gradle Support for NetBeans](https://github.com/kelemen/netbeans-gradle-project), use the NetBeans IDE Update Center.
 
 To additionally target iOS
