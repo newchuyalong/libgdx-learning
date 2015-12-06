@@ -34,6 +34,7 @@ Now, to update it you can simply enter the gradle version you'd like to create t
 If you're used to Maven, you are probably familiar with this already. The Gradle versions plugin allows one to run 'gradle dependencyUpdates' and it will return a list of dependencies you are using that need updating, and what the newest version is (configurable). The output can either be text/stdout, json, xml...etc.
 
 For more info, see: https://github.com/ben-manes/gradle-versions-plugin
+
 ## Tips to speed up Gradle if you still want IDE integration
 
 You can try a few things to get running more efficiently:
