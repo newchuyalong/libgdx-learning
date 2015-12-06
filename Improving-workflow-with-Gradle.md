@@ -2,7 +2,7 @@
 
 * [**Introduction**] (#introduction)
 * [**Gradle Wrapper and Updating it**] (#gradle-wrapper-and-updating-it)
-* [**Gradle Versions Plugin and Updating Your Dependencies**] (#gradle-version-plugin-and-updating-your-dependencies)
+* [**Gradle Versions Plugin and Updating Your Dependencies**] (#gradle-versions-plugin-and-updating-your-dependencies)
 * [**Optimizing Gradle integration in your IDE and on the command line**] (#tips-to-speed-up-gradle-if-you-still-want-ide-integration)
  * [**Gradle Daemon**] (#gradle-daemon)
  * [**Configuration on Demand**] (#configuration-on-demand)
