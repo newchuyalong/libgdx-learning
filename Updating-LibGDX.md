@@ -1,7 +1,7 @@
-#### [Check the latest version of libGDX and all dependencies](http://libgdx.badlogicgames.com/versions.html)
 * [**Gradle Wrapper and Updating it**] (#gradle-wrapper-and-updating-it)
 * [**Gradle Versions Plugin and Updating Your Dependencies**] (#gradle-versions-plugin-and-updating-your-dependencies)
 
+# Switching libgdx Versions
 libGDX's Gradle based projects make it very easy to switch between libGDX versions. In general you'll be interested in two types of libGDX builds:
 
 * Release builds: these are considered stable. You can see the available release versions on [Maven Central](http://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22com.badlogicgames.gdx%22%20AND%20a%3A%22gdx%22).
@@ -13,7 +13,7 @@ Your Gradle based project makes it very easy to switch between releases and nigh
  gdxVersion = "1.5.2"
 ```
 
-The version you see may be higher than 1.5.2 already. Once you've located that string, you can simply change it to the latest release (or an older release) or to the current SNAPSHOT version. You may also have to update other modules in that same section of the build.gradle file, based on the [versions listing](http://libgdx.badlogicgames.com/versions.html). Once edited, save the build.gradle file.
+The version you see may be higher than 1.5.2 already. Once you've located that string, you can simply change it to the latest release (or an older release) or to the current SNAPSHOT version. You may also have to update other modules in that same section of the build.gradle file, based on the [versions listing](http://libgdx.badlogicgames.com/versions.html). Once edited, save the build.gradle file. For a much easier way to update your dependencies (automatically find the newest version of each), see [gradle versions plugin](#gradle-versions-plugin-and-updating-your-dependencies)
 
 The next step is dependent on your IDE:
 
