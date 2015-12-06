@@ -1,3 +1,4 @@
+* [**Switching libgdx Versions**] (#switching-libgdx-versions)
 * [**Gradle Wrapper and Updating it**] (#gradle-wrapper-and-updating-it)
 * [**Gradle Versions Plugin and Updating Your Dependencies**] (#gradle-versions-plugin-and-updating-your-dependencies)
 
