@@ -2,7 +2,7 @@
 
 * [**Introduction**] (#introduction)
 * [**Gradle Wrapper and Updating it**] (#gradle-wrapper-and-updating-it)
-* [**Gradle Versions Plugin**] (#gradle-version-plugin)
+* [**Gradle Versions Plugin and Updating Your Dependencies**] (#gradle-version-plugin)
 * [**Optimizing Gradle integration in your IDE and on the command line**] (#tips-to-speed-up-gradle-if-you-still-want-ide-integration)
  * [**Gradle Daemon**] (#gradle-daemon)
  * [**Configuration on Demand**] (#configuration-on-demand)
@@ -29,7 +29,7 @@ Though, gradle releases new versions quite steadily, so over the months/years, t
 
 Now, to update it you can simply enter the gradle version you'd like to create the wrapper for, and run the new gradle task (will show up in your IDE, if you hit refresh, or it automatically does). Then just click the 'createWrapper' task. You can also run it from the command line, './gradlew createWrapper'. Then add the appropriate new/updated files to your project's version control (yes, even the gradle jar file. it's small so shouldn't be an issue). This is all how it is typically done, to ease the process of people getting started on your project.
 
-## Gradle Versions Plugin
+## Gradle Versions Plugin And Updating Your Dependencies
 
 If you're used to Maven, you are probably familiar with this already. The Gradle versions plugin allows one to run 'gradle dependencyUpdates' and it will return a list of dependencies you are using that need updating, and what the newest version is (configurable). The output can either be text/stdout, json, xml...etc.
 
