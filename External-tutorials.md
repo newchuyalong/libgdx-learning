@@ -107,7 +107,7 @@ This websites will let you play with WebGL (provided your browser supports it) a
  * https://github.com/gemserk/animation4j (Animation 4J)
  * https://code.google.com/p/java-universal-tween-engine/ (Tween Engine)
  * https://github.com/cvayer/RubeLoader (Load RUBE scenes)
- * https://code.google.com/p/kryonet/ (Kryonet)
+ * https://github.com/EsotericSoftware/kryonet (Kryonet)
  * http://www.mapeditor.org/ (Tiled)
 
 
