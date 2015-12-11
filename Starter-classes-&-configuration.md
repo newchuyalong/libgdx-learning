@@ -85,7 +85,7 @@ That code depends on some other changes to the -android project:
 * 6. Finally, replace the AndroidLauncher activity content with the Libgdx Fragment.
 
 For example:
-```
+```java
 // 2. Change AndroidLauncher activity to extend FragmentActivity, not AndroidApplication
 // 3. Implement AndroidFragmentApplication.Callbacks on the AndroidLauncher activity
 public class AndroidLauncher extends FragmentActivity implements AndroidFragmentApplication.Callbacks
@@ -220,7 +220,7 @@ This defines the thumbnail to be displayed for your LWP in the picker, the descr
 
 Finally, you'll need to add things to your `AndroidManifest.xml` files. Here's an example for an LWP with a simple settings Activity:
 
-```java
+```xml
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
       package="com.mypackage"
