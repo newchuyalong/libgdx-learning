@@ -17,6 +17,7 @@
       * [[Publishing Your Own Extensions Via the Setup Application|Third Party Extension Support]] 
       * [[Improving Your Gradle Workflow|Improving-workflow-with-Gradle]]
       * [[Creating Asset Project in Eclipse|Creating-a-Separate-Assets-Project-in-Eclipse]] 
+      * [[Deploying your application]]
     * Working From Source
       * [[Running Demos]]
       * [[Running Tests]]
