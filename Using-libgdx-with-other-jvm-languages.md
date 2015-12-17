@@ -2,7 +2,7 @@ LibGDX is mainly a Java-based framework. However, because Java produces Java byt
 
 ## Interoperability ##
 
-* [Ceylon](http://ceylon-lang.org/documentation/1.1/tour/interop/)
+* [Ceylon](http://ceylon-lang.org/documentation/1.2/tour/interop/)
 * [Clojure](http://clojure.org/java_interop)
 * [Kotlin](http://confluence.jetbrains.com/display/Kotlin/Java+interoperability)
 * [Python](http://www.jython.org/jythonbook/en/1.0/JythonAndJavaIntegration.html)
