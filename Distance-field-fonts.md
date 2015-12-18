@@ -60,7 +60,7 @@ Then create the font:
 BitmapFont font = new BitmapFont(Gdx.files.internal("myfont.fnt"), new TextureRegion(texture), false);
 ```
 
-*Note*: If you're replacing a "regular" font by a distance field font, be aware that the font metrics are not the same. In particular, the extra padding causes the baseline to shift downwards, so you'll need to compensate by drawing your text higher.
+*Note*: Before LibGDX 1.6.0 (May 2015), if you're replacing a "regular" font by a distance field font, be aware that the font metrics are not the same. In particular, the extra padding causes the baseline to shift downwards, so you'll need to compensate by drawing your text higher. As of [commit c976f463](https://github.com/libgdx/libgdx/commit/c976f463c3686f6a3a615f2358dc31c25f60ce0d), padding should be compensated for automatically.
 
 # Rendering with a shader #
 
