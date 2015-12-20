@@ -44,3 +44,6 @@ The following diagram illustrates the life-cycle visually:
 
 ## Where is the main loop? ##
 Libgdx is event driven by nature, mostly due to the way Android and JavaScript work. An explicit main loop does not exist, however, the `ApplicationListener.render()` method can be regarded as the body of such a main loop.
+
+
+[[Prev|The application framework]] | [[Next|Modules overview]]
