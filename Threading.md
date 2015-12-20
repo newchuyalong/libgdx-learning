@@ -23,7 +23,7 @@ new Thread(new Runnable() {
 ```
 
 ## Which libgdx classes are Thread-safe? ##
-No class in libgdx is thread-safe unless **explicitely marked** as thread-safe in the class documentation.
+No class in libgdx is thread-safe unless **explicitly marked** as thread-safe in the class documentation.
 
 You should never perform multi-threaded operations on anything that is graphics or audio related, e.g. use scene2D components from multiple threads.
 
