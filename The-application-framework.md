@@ -49,3 +49,6 @@ AudioDevice audioDevice = Gdx.audio.newAudioDevice(44100, false);
 ```
 
 `Gdx.audio` is a reference to the backend implementation that has been instantiated on application startup by the Application instance. Other modules are accessed in the same fashion, e.g., `Gdx.app` to get the Application, `Gdx.files` to access the Files implementation and so on.
+
+
+[[Next|The life cycle]]
