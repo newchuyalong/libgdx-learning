@@ -88,7 +88,7 @@ Do everything at render stage
     shaper.begin(ShapeType.Line);
     for(int i = 0; i < k-1; ++i)
     {
-        shaper.line(myCatmull.valueAt(points[i], ((float)i)/((float)k-1)), myCatmull.valueAt(points[i+1], ((float)i)/((float)k-1)));
+        shaper.line(myCatmull.valueAt(points[i], ((float)i)/((float)k-1)), myCatmull.valueAt(points[i+1], ((float)(i+1))/((float)k-1)));
     }
     shaper.end();
 ```
