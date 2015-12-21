@@ -41,7 +41,7 @@ BitmapFontWriter is a class in gdx-tools which can write BMFont files from a Bit
 
 Usage can look like this:
 
-```
+```java
 new LwjglApplication(new ApplicationAdapter() {
 	public void create () {
 		FontInfo info = new FontInfo();
