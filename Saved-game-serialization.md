@@ -27,7 +27,10 @@ kryo.register(Array.class, new Serializer<Array>() {
 	public void write (Kryo kryo, Output output, Array array) {
 		int length = array.size;
 		output.writeInt(length, true);
-		if (length == 0) return;
+		if (length == 0) {
+			genericType = null;
+			return;
+		}
 		if (genericType != null) {
 			Serializer serializer = kryo.getSerializer(genericType);
 			genericType = null;
