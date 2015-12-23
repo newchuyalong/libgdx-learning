@@ -1,5 +1,3 @@
-# ParticleEffects
-
 * [Efficiently using ParticleEffects](#efficiency)
 
 * [Examples](#Examples)
