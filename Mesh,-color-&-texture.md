@@ -1,6 +1,7 @@
-# No Op: not translating
+# No Op: Not translating
 
-#summary Going more indepth into Mesh, including colors and textures
+# Summary
+Going more indepth into Mesh, including colors and textures
 
 ## Introduction ##
 
