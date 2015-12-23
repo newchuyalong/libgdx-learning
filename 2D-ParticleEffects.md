@@ -1,9 +1,26 @@
-* [Efficiently using ParticleEffects](#efficiency)
+ParticleEffects
 
+* [Basic ParticleEffect usage](#basic-particleeffect-usage)
+* [Efficiently using ParticleEffects](#efficiency)
 * [Examples](#Examples)
   * [Pooled Effect example](#Pooled-Effect-Example)
   * [Batched Effect example](#Batched-Effect-Example)
 * [Video example](#video-example)
+
+# Basic ParticleEffect usage
+Using Particle effects is easy, load up your particle that has been generated in the [ParticleEditor](https://github.com/libgdx/libgdx/wiki/2D-Particle-Editor)
+```java
+TextureAtlas particleAtlas; //<-load some atlas with your particle assets in
+ParticleEffect effect = new ParticleEffect(Gdx.files.internal("myparticle.p", particleAtlas));
+
+//Setting the position of the ParticleEffect
+effect.setPosition(x, y);
+
+//Updating and Drawing the particle effect
+//Delta being the time to progress the particle effect by, usually you pass in Gdx.graphics.getDeltaTime();
+effect.draw(batch, delta);
+
+```
 
 # Efficiency
 Rendering particles is great, rendering lots of particles is even better, here is how you do it without melting your users devices.
