@@ -1,8 +1,8 @@
 * [Basic ParticleEffect usage](#basic-particleeffect-usage)
 * [Efficiently using ParticleEffects](#efficiency)
-* [Examples](#Examples)
-  * [Pooled Effect example](#Pooled-Effect-Example)
-  * [Batched Effect example](#Batched-Effect-Example)
+* [Examples](#examples)
+  * [Pooled Effect example](#pooled-effect-Example)
+  * [Batched Effect example](#batched-effect-Example)
 * [Video example](#video-example)
 
 # Basic ParticleEffect usage
@@ -36,7 +36,7 @@ ParticleEffects are no different than Sprites, in fact they [ARE](https://github
 
  In simple terms, grab a new object from the Pool, use it, when you are finished, return it so you can use it again.
 
- See [the example below](#Pooled-effect-example) for how to implement pooling.
+ See [the example below](#pooled-effect-example) for how to implement pooling.
  
 * Batch your effects
   Draw all your ParticleEffects that have the same Textures/blend modes together.  We don't want to interrupt the Batch, which means no texture swapping, no blend state changing. This gets the most out of our Batch, and keeps our device happy.
@@ -44,7 +44,7 @@ ParticleEffects are no different than Sprites, in fact they [ARE](https://github
   If you have ParticleEffects that have different blending, for example some may have Additive, and others dont, group them together when you draw so you only swap the blend mode once.
 
   This also applies to ParticleEffects that may have a `Sprite` that belongs to a different `Texture` than another effect.  Draw all your instances that use the same Texture first, then the rest.  If you interleave these ParticleEffects with different Textures, you will be causing lots of draw calls.
-  See [the example below](#Batched-effect-example) for how to implement batching.
+  See [the example below](#batched-effect-example) for how to implement batching.
 
 * Clean up the blend modes yourself
   Particles that have Additive Blending will change the state of the `Batch`. By default the ParticleEffect returns the Batch's state to the original state it was in, so the following draws are not effected by the ParticleEffect's blend mode.  This is great, apart from if you want to draw multiple ParticleEffect instances, as this will change the blend mode after EACH instance is drawn, resulting in a draw call.
