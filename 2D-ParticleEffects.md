@@ -1,8 +1,8 @@
 * [Basic ParticleEffect usage](#basic-particleeffect-usage)
 * [Efficiently using ParticleEffects](#efficiency)
 * [Examples](#examples)
-  * [Pooled Effect example](#pooled-effect-Example)
-  * [Batched Effect example](#batched-effect-Example)
+  * [Pooled Effect example](#pooled-effect-example)
+  * [Batched Effect example](#batched-effect-example)
 * [Video example](#video-example)
 
 # Basic ParticleEffect usage
