@@ -1,4 +1,4 @@
-ParticleEffects
+# ParticleEffects
 
 * [Efficiently using ParticleEffects](#efficiency)
 
