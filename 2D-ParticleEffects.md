@@ -1,5 +1,3 @@
-ParticleEffects
-
 * [Basic ParticleEffect usage](#basic-particleeffect-usage)
 * [Efficiently using ParticleEffects](#efficiency)
 * [Examples](#Examples)
