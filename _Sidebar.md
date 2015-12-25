@@ -87,7 +87,7 @@
             * [[Packing Atlases Offline]]
             * [[Packing Atlases at Runtime]]
             * [[Texture Compression]]
-            * [[2D Particle Effects]]
+            * [[2D ParticleEffects]]
             * [[Tile Maps]]
             * [[scene2d]]
               * [[scene2d.ui]]
