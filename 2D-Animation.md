@@ -1,5 +1,7 @@
 2D Animation is the technique used to create the illusion of movement using static images. This article describes how to create animations with libGdx.
 
+**EDIT: You can use the [Animation Class](https://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/graphics/g2d/Animation.html).**
+
 ## Details ##
 
 An animation consists of multiple frames which are shown in a sequence at set intervals. An animation of a running man can be achieved by taking pictures of him while running and playing those images back infinitely.
