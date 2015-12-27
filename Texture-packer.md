@@ -3,6 +3,7 @@
    * [Directory structure](#directory-structure)
    * [Configuration](#configuration)
    * [Settings](#settings)
+   * [Texture filter options](#TextureFilters)
    * [NinePatches](#ninepatches)
    * [Indexes](#image-indexes)
    * [Packing](#packing)
@@ -155,6 +156,16 @@ Note that this is libgdx's "minimal" JSON format, so double quotes are optional 
 | `grid` | If true, images are packed in a uniform grid, in order. | false |
 | `scale` | For each scale, the images are scaled and an entire atlas is output. | `[1]` |
 | `scaleSuffix` | For each scale, the suffix to use for the output files. If omitted, files for multiple scales will be output with the same name to a subdirectory for each scale. | `[""]` |
+
+## <a id="TextureFilters"></a> Texture filter options ##
+
+Texture packer use the filters specified in the [Texture.TextureFilter](https://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/graphics/Texture.TextureFilter.html) enum. The options for filterMin and filterMag are as following:
+Nearest: no filtering, no mipmaps
+Linear: filtering, no mipmaps
+MipMap & MipMapLinearLinear: filtering, smooth transition between mipmaps
+MipMapNearestNearest: no filtering, sharp switching between mipmaps
+MipMapLinearNearest: filtering, sharp switching between mipmaps
+MipMapNearestLinear: no filtering, smooth transition between mipmaps
 
 ## <a id="NinePatches"></a>NinePatches ##
 
