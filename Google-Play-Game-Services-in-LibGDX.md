@@ -6,6 +6,8 @@ The project is freely available on [GitHub](https://github.com/TheInvader360/lib
 
 Another in-depth LibGDX-based tutorial for adding Google Play Game Servics can be found [here](http://fortheloss.org/tutorial-set-up-google-services-with-libgdx/).
 
+Latest tutorial using Android Studio can be found [here](https://chandruscm.wordpress.com/2015/12/30/how-to-setup-google-play-game-services-in-libgdx-using-android-studio/)
+
 For getting started with code in iOS via RoboVM, check [here](https://github.com/BlueRiverInteractive/robovm-ios-bindings/blob/master/google-play-game-services/src/org/robovm/bindings/gpgs/sample/Sample.java).
 
 # Intellij Setup
