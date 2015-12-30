@@ -10,7 +10,7 @@ If your issue has been closed, don't take it personal or be offended. Instead, r
 
 A problem must be reproducible in order to 1) test and identify the problem, 2) implement a fix, and 3) verify the fix works. If we can't reproduce your problem, we can't fix it. We do not blindly implement fixes and hope they work.
 
-You may think you posted enough information for us to work on your issue. You are wrong. We sent you to this page because there really is not enough information. You almost certainly did not include an [executable example](https://github.com/libgdx/libgdx/wiki/Getting-Help#executable-example-code).
+If you think you posted enough information for us to work on your issue, you are wrong. Either your post lacks required information or it requires too much effort for us to figure out what you are talking about. You almost certainly did not include an [executable example](https://github.com/libgdx/libgdx/wiki/Getting-Help#executable-example-code).
 
 ## Indignation, resentment, exasperation, and friends ##
 
