@@ -31,7 +31,7 @@ Essentially, the gradle wrapper (./gradlew) is pretty standard for gradle projec
 Though, gradle releases new versions quite steadily, so over the months/years, the version that is embedded (and stored in your repository), is old. A recommended way of making updating this trivial, is adding the following custom gradle task to your top-level build.gradle:
 
 `task createWrapper(type: Wrapper) {`
-    `gradleVersion = "2.9"`
+    `gradleVersion = "2.10"`
 `}`
 
 Now, to update it you can simply enter the gradle version you'd like to create the wrapper for, and run the new gradle task (will show up in your IDE, if you hit refresh, or it automatically does). Then just click the 'createWrapper' task. You can also run it from the command line, './gradlew createWrapper'. Then add the appropriate new/updated files to your project's version control (yes, even the gradle jar file. it's small so shouldn't be an issue). This is all how it is typically done, to ease the process of people getting started on your project.
