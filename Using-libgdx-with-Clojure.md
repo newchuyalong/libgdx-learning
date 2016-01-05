@@ -6,7 +6,7 @@ The [play-clj](https://github.com/oakes/play-clj) library provides a Clojure wra
 
     lein new play-clj hello-world
 
-A directory called `hello-world` should appear, and inside you'll find directories for `android`, `desktop`, and `ios`. Inside the `desktop` directory, you'll find a `src-common` directory, which contains the game code that all three projects will read from. Navigate inside of it to find `core.clj`, which looks like this:
+A directory called `hello-world` should appear, and inside you'll find directories for `android` and `desktop`. Inside the `desktop` directory, you'll find a `src-common` directory, which contains the game code that both projects will read from. Navigate inside of it to find `core.clj`, which looks like this:
 
 ```clojure
 (ns hello-world.core
