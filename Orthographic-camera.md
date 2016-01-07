@@ -49,7 +49,11 @@ public class OrthographicCameraExample implements ApplicationListener {
 
 		float w = Gdx.graphics.getWidth();
 		float h = Gdx.graphics.getHeight();
+
+		// Constructs a new OrthographicCamera, using the given viewport width and height
+		// Height is multiplied by aspect ratio.
 		cam = new OrthographicCamera(30, 30 * (h / w));
+
 		cam.position.set(cam.viewportWidth / 2f, cam.viewportHeight / 2f, 0);
 		cam.update();
 
