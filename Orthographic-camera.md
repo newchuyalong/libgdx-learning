@@ -1,4 +1,4 @@
-This page presents the `OrthographicCamera` class and usage. 
+This page presents the [OrthographicCamera](https://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/graphics/OrthographicCamera.html) class and usage. 
 The orthographic camera is to be used in 2D environments only as it implements a parallel (orthographic) projection and there will be no scale factor for the final image regardless where the objects are placed in the world.
 
 
