@@ -23,13 +23,13 @@ java -cp gdx.jar:gdx-natives.jar:gdx-backend-lwjgl.jar:gdx-backend-lwjgl-natives
 ```
 
 It can also be run via JWS, though this is an out of date version:
-[Hiero Java WebStart](http://wiki.libgdx.googlecode.com/git/jws/hiero.jnlp). This version cannot use !FreeType and is not able to create [distant field fonts](https://github.com/libgdx/libgdx/wiki/Distance-field-fonts).
+[Hiero Java WebStart](http://wiki.libgdx.googlecode.com/git/jws/hiero.jnlp). This version cannot use FreeType and is not able to create [distant field fonts](https://github.com/libgdx/libgdx/wiki/Distance-field-fonts).
 
 ## Rasterization ##
 
 Hiero has multiple options for rasterizing fonts:
 
- * !FreeType is typically the highest quality. It makes good use of hinting, which means that small fonts are rendered nicely. The `gamma` setting controls how much antialiasing is done. The `mono` setting disables all font smooth. No other effects are supported, though glyphs can be rendered with padding and effects applied via Photoshop or other tools. Hiero uses gdx-freetype, so generated bitmap fonts will exactly match those rendered on the fly by gdx-freetype.
+ * FreeType is typically the highest quality. It makes good use of hinting, which means that small fonts are rendered nicely. The `gamma` setting controls how much antialiasing is done. The `mono` setting disables all font smooth. No other effects are supported, though glyphs can be rendered with padding and effects applied via Photoshop or other tools. Hiero uses gdx-freetype, so generated bitmap fonts will exactly match those rendered on the fly by gdx-freetype.
  * Java's font rendering provides the vector outline for the glyphs which allows various effects to be applied, such as a drop shadow, outline, etc. Output is often blurry at small sizes, but larger sizes are good quality.
  * OS native rendering is the most simplistic. It does not provide tightly fitting bounds, so glyphs take up more atlas space.
 
@@ -76,7 +76,7 @@ new LwjglApplication(new ApplicationAdapter() {
 
 ### BMFont ###
 
-The [BMFont](http://www.angelcode.com/products/bmfont/) tool uses !FreeType. It has additional supersampling features for smoother glyphs. BMFont does not support effects like drop-shadows or outlines, but glyphs can be output with padding and effects applied with Paint.NET, Photoshop, etc. Typical export settings are [here](http://wiki.libgdx.googlecode.com/git/img/bmfont-export.png).
+The [BMFont](http://www.angelcode.com/products/bmfont/) tool uses FreeType. It has additional supersampling features for smoother glyphs. BMFont does not support effects like drop-shadows or outlines, but glyphs can be output with padding and effects applied with Paint.NET, Photoshop, etc. Typical export settings are [here](http://wiki.libgdx.googlecode.com/git/img/bmfont-export.png).
 
 BMFont is Windows only but can be run using [Wine](http://www.winehq.org/). There are reports that it hangs if the space character is exported. The space character can be added manually, eg:
 ```
@@ -86,7 +86,7 @@ Change the xadvance as needed, this is the number of pixels for a space characte
 
 ### TWL Theme Editor ###
 
-The [TWL](http://twl.l33tlabs.org/) Theme Editor has a font tool that also uses !FreeType. It doesn't support the supersampling. [Theme Editor JWS](http://twl.l33tlabs.org/themer/themer.jnlp).
+The [TWL](http://twl.l33tlabs.org/) Theme Editor has a font tool that also uses FreeType. It doesn't support the supersampling. [Theme Editor JWS](http://twl.l33tlabs.org/themer/themer.jnlp).
 
 ### gdx-fontpack ###
 
