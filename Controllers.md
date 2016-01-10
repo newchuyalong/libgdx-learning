@@ -130,3 +130,5 @@ The core API is found in gdx-controllers.jar, add this to all your Eclipse proje
 
 ## Tests & Demos
 I wrote a new little test that lets you display the currently connected controllers and event data, called [ControllersTest](https://github.com/libgdx/libgdx/blob/master/tests/gdx-tests/src/com/badlogic/gdx/tests/extensions/ControllersTest.java). I also augmented the gdx-invaders demo to support Ouya controllers. Note that the integration is a quick and dirty affair which doesn’t handle disconnects or provides any configuration options.
+
+[[Prev|Event Handling]] | [[Next|Gesture Detection]]
