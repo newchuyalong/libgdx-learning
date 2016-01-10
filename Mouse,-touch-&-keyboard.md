@@ -118,3 +118,5 @@ public class SimplerTouchTest extends ApplicationAdapter implements InputProcess
 	}
 }
 ```
+
+[[Prev|Configuration & Querying]] | [[Next|Polling]]
