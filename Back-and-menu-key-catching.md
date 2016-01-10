@@ -13,3 +13,5 @@ Another key that might need to be caught is the menu key. If uncaught, it will b
 ```java
 Gdx.input.setCatchMenuKey(true);
 ```
+
+[[Prev|Cursor Visibility & Catching]] | [[Next|On-Screen Keyboard]]
