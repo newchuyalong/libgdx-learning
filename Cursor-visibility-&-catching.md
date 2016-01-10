@@ -16,3 +16,5 @@ It can be done as follows:
 Cursor customCursor = Gdx.graphics.newCursor(new Pixmap(Gdx.files.internal("cursor.png")), hotspotX, hotspotY);
 Gdx.graphics.setCursor(customCursor);
 ```
+
+[[Prev|Vibrator]] | [[Next|Back and Menu Key Catching]]
