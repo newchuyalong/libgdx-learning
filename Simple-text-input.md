@@ -28,3 +28,5 @@ Gdx.input.getTextInput(listener, "Dialog Title", "Initial Textfield Value");
 ```
 
 The methods of the listener will be called on the rendering thread, right before the `ApplicationListener.render()` method is called.
+
+[[Prev|Gesture Detection]] | [[Next|Accelerometer]]
