@@ -148,7 +148,7 @@ Blending is enabled by default. This means that when a texture is drawn, translu
 When blending is disabled, anything already on the screen at that location is replaced by the texture. This is more efficient, so blending should always be disabled unless it is needed. E.g., when drawing a large background image over the whole screen, a performance boost can be gained by first disabling blending:
 
 ```java
-Gdx.gl.glClear(GL10.GL_COLOR_BUFFER_BIT); // This cryptic line clears the screen.
+Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT); // This cryptic line clears the screen.
 batch.begin();
 batch.disableBlending();
 backgroundSprite.draw(batch);
