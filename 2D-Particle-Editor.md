@@ -118,6 +118,3 @@ Effect settings saved with the particle editor are written to a text file, which
 
 Most effects can be simplified to use just a few images. My most complex effects that use 4 or more emitters typically only need 15 or so total particles alive at once. See ParticleEmitterTest in gdx-tests if you'd like to test how many particles your device can handle. However, the performance varies greatly with the particle image size.
 
-## Loading Particle Effects in your game ##
-
-see [2d-particle-effects](2d-particle-effects)
