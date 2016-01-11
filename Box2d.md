@@ -151,7 +151,7 @@ Fixture fixture = body.createFixture(fixtureDef);
 circle.dispose();
 ```
 
-Now we have create a ball like object and added it to our world. If you run the game now you should see a ball fall down the screen. This is still fairly boring though, as it has nothing to interact with. So let's create a floor for our ball to bounce on.
+Now we have created a ball like object and added it to our world. If you run the game now you should see a ball fall down the screen. This is still fairly boring though, as it has nothing to interact with. So let's create a floor for our ball to bounce on.
 
 
 
