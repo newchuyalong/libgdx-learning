@@ -27,7 +27,7 @@ ParticleEffects are no different than Sprites, in fact they [ARE](https://github
 
  * Use an atlas!
  
- If your particle effect sprite shares a texture with all of your other gameplay assets, or at least the ones that are being batched together, you want have to switch
+ If your particle effect sprite shares a texture with all of your other gameplay assets, or at least the ones that are being batched together, you wont have to switch
  textures, which causes the Batch to flush.  You don't want the batch to flush too often as its an expensive operation, and you won't get the most out of your Batch.
 
  * Pool your effects
