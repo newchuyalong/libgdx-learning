@@ -34,6 +34,11 @@ Gdx.graphics.setDisplayMode(1280, 720, true);
 // set resolution to default and set full-screen to true
 Gdx.graphics.setDisplayMode(Gdx.graphics.getDesktopDisplayMode().width, Gdx.graphics.getDesktopDisplayMode().height, true);
 ```
+But in 1.8.0,since api is updated, you need to use
+```java
+Gdx.graphics.setFullscreenMode(Gdx.graphics.getDisplayMode());
+```
+
 
 To enable/disable vSync at any given time, use
 ```java
