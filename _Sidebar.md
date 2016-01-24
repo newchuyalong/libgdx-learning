@@ -56,7 +56,7 @@
       * [[Playing PCM Audio]]
       * [[Recording PCM Audio]]
     * [[Graphics]]
-      * Configuration & Querying Graphics ??
+      * [[Configuring & Querying Monitors and Display Modes]]
       * [[Fullscreen & VSync]]
       * [[Continuous & Non-Continuous Rendering]]
       * [[Clearing the Screen]]
