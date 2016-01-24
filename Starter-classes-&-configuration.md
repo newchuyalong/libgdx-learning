@@ -172,11 +172,11 @@ Users are generally suspicious of applications with many permissions, so chose t
 For wake locking to work, `AndroidApplicationConfiguration.useWakeLock` needs to be set to true. 
 
 If a game doesn't need accelerometer or compass access it is advised to disable these by setting the 
-* `useAccelerometer` 
-* `useCompass` 
-* `useGyroscope` 
+`useAccelerometer` and `useCompass` fields of `AndroidApplicationConfiguration` to false.
+ 
+If your game needs the gyroscope sensor, you have to set `useGyroscope` to true in `AndroidApplicationConfiguration` (It's disabled by default, to save energy).
 
-fields of `AndroidApplicationConfiguration` to false. 
+
 
 Please refer to the [Android Developer's Guide](http://developer.android.com/guide/index.html) for more information on how to set other attributes like icons for your application.
 
