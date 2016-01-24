@@ -21,6 +21,21 @@ public class MyGameActivity extends AndroidApplication {
 
 Both the accelerometer and the compass are enabled by default. The above code disables them and will thus preserve some precious battery.
 
+## Enabling Gyroscope (Android only) ##
+The gyroscope is disabled by default to preserve battery, you can enable it as follows:
+
+```java
+public class MyGameActivity extends AndroidApplication {
+   @Override
+   public void onCreate (Bundle savedInstanceState) {
+      super.onCreate(savedInstanceState);
+      AndroidApplicationConfiguration config = new AndroidApplicationConfiguration();
+      config.useGyroscope = true;
+      initialize(new MyGame(), config);
+   }
+}
+```
+
 ## Querying Available Input Devices ##
 To check whether a specific input device is available on the platform the application currently runs, you can use the `Input.isPeripheralAvailable()` method.
 
@@ -32,5 +47,3 @@ To check whether a specific input device is available on the platform the applic
 Please refer to the [Peripheral](https://github.com/libgdx/libgdx/blob/master/gdx/src/com/badlogic/gdx/Input.java#L560) enumeration to see the rest of the available constants.
 
 Note that only a few Android devices have a hardware keyboard. Even if the keyboard is physically present, the user might not have slid it out. The method shown above will return false in this case.
-
-[[Prev|Input Handling]] | [[Next|Mouse, touch & keyboard]]
