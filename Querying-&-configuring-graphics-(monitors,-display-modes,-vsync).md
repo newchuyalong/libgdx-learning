@@ -190,7 +190,7 @@ new Lwjgl3ApplicationConfiguration(new MyMainWindowListener(), config);
 ```
 
 In this example, the window is driven by `MyMainWindowListener`, a standard `ApplicationListener`. libGDX does not report events like iconification or focus loss directly. For this, the LWJGL 3 backend introduces a desktop specific interface called `Lwjgl3WindowListener`. You can provide an implementation of this interface to receive and react to such events:
-'''java
+```java
 config.setWindowListener(new Lwjgl3WindowListener() {
    @Override
    public void iconified() {
@@ -226,7 +226,7 @@ config.setWindowListener(new Lwjgl3WindowListener() {
          return true;
       }
 });
-'''
+```
 
 The LWJGL 3 backend does not report pause and resume events if the window loses focus. It will only report pause and resume events in case the app is iconfified/deiconified, or if the app is being closed.
 
