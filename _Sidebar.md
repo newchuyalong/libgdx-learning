@@ -45,6 +45,7 @@
       * [[Simple Text Input]]
       * [[Accelerometer]]
       * [[Compass]]
+      * [[Gyroscope]]
       * [[Vibrator]]
       * [[Cursor Visibility & Catching]]
       * [[Back and Menu Key Catching]]
