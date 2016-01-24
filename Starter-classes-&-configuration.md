@@ -1,9 +1,10 @@
 * [Desktop (LWJGL)](#desktop-lwjgl)
+* [Desktop (LWJGL3)](#desktop-lwjgl3)
 * [Android](#android)
   - [Fragment based libgdx](#fragment-based-libgdx)
   - [Live Wallpapers](#live-wallpapers)
   - [Daydreams](#daydreams)
-* [iOS Xamarin (Deprecated!)](#ios-xamarin-deprecated)
+* [iOS/Robovm](#iosrobovm)
 * [HTML5/GWT](#html5gwt)
 
 
@@ -33,12 +34,13 @@ public class Main {
 }
 ```
 
-First an [LwjglApplicationConfiguration](https://github.com/libgdx/libgdx/tree/master/backends/gdx-backend-lwjgl/src/com/badlogic/gdx/backends/lwjgl/LwjglApplicationConfiguration.java) is instantiated. This class lets one specify various configuration settings, such as the initial screen resolution, whether to use OpenGL ES 1.x or 2.0 and so on. Refer to the Javadocs of this class for more information.
+First an [LwjglApplicationConfiguration](https://github.com/libgdx/libgdx/tree/master/backends/gdx-backend-lwjgl/src/com/badlogic/gdx/backends/lwjgl/LwjglApplicationConfiguration.java) is instantiated. This class lets one specify various configuration settings, such as the initial screen resolution, whether to use OpenGL ES 2.0 or 3.0 (Experimental) and so on. Refer to the Javadocs of this class for more information.
 
 Once the configuration object is set, an `LwjglApplication` is instantiated. The `MyGdxGame()` class is the ApplicationListener implementing the game logic. 
 
 From there on a window is created and the ApplicationListener is invoked as described in [[The Life-Cycle]]
-
+# Desktop (LWJGL3) #
+To come...
 # Android #
 Android applications do not use a `main()` method as the entry-point, but instead require an Activity. Open the `MainActivity.java` class in the `my-gdx-game-android` project:
 
@@ -56,7 +58,6 @@ public class MainActivity extends AndroidApplication {
         super.onCreate(savedInstanceState);
         
         AndroidApplicationConfiguration cfg = new AndroidApplicationConfiguration();
-        cfg.useGL20 = false;
         
         initialize(new MyGdxGame(), cfg);
     }
@@ -127,7 +128,7 @@ Besides the `AndroidApplicationConfiguration`, an Android application is also co
     android:versionCode="1"
     android:versionName="1.0" >
 
-    <uses-sdk android:minSdkVersion="5" android:targetSdkVersion="15" />
+    <uses-sdk android:minSdkVersion="8" android:targetSdkVersion="15" />
 
     <application
         android:icon="@drawable/ic_launcher"
@@ -148,7 +149,7 @@ Besides the `AndroidApplicationConfiguration`, an Android application is also co
 ```
 
 #### Target Sdk Version ####
-It is crucial to specify the `targetSdkVersion` to a value >= 6 if the application is supposed to run on Android versions higher than 1.5. If this attribute is not set, higher Android versions will run the application in legacy mode. The resolution of the drawing area will be smaller than the actual screen resolution, an undesirable circumstance.
+Set this to the version of Android you want to target.
 
 #### Screen Orientation & Configuration Changes ####
 In addition to the targetSdkVersion, the `screenOrientation` and `configChanges` attributes of the activity element should always be set.
@@ -170,7 +171,12 @@ Users are generally suspicious of applications with many permissions, so chose t
 
 For wake locking to work, `AndroidApplicationConfiguration.useWakeLock` needs to be set to true. 
 
-If a game doesn't need accelerometer or compass access it is advised to disable these by setting the `useAccelerometer` and `useCompass` fields of `AndroidApplicationConfiguration` to false. 
+If a game doesn't need accelerometer or compass access it is advised to disable these by setting the 
+* `useAccelerometer` 
+* `useCompass` 
+* `useGyroscope` 
+
+fields of `AndroidApplicationConfiguration` to false. 
 
 Please refer to the [Android Developer's Guide](http://developer.android.com/guide/index.html) for more information on how to set other attributes like icons for your application.
 
@@ -283,7 +289,6 @@ public class Daydream extends AndroidDaydream {
 	  setInteractive(false);
 
       AndroidApplicationConfiguration cfg = new AndroidApplicationConfiguration();
-      cfg.useGL20 = true;
       ApplicationListener app = new MeshShaderTest();
       initialize(app, cfg);
    }
@@ -326,98 +331,8 @@ Finally, add a section for the settings activity in the AndroidManifest.xml as u
 	   android:resource="@xml/daydream" />
 </service>
 ```
-
-# iOS Xamarin (Deprecated!) #
-
-The iOS backend relies on using Xamarin's [MonoDevelop](http://xamarin.com/monotouch) IDE for development and a Monotouch license for deployment.  The entry-point for a Monotouch application is the AppDelegate found in the Main.cs file of the project.  An example of this is below:
-
-```csharp
-using System;
-using System.Collections.Generic;
-using System.Linq;
-
-using MonoTouch.Foundation;
-using MonoTouch.UIKit;
-using com.badlogic.gdx.backends.ios;
-using com.me.mygdxgame;
-
-namespace com.me.mygdxgame
-{		
-	public class Application
-	{
-		[Register ("AppDelegate")]
-		public partial class AppDelegate : IOSApplication {
-			public AppDelegate(): base(new MyGdxGame(), getConfig()) {
-
-			}
-
-			internal static IOSApplicationConfiguration getConfig() {
-				IOSApplicationConfiguration config = new IOSApplicationConfiguration();
-				config.orientationLandscape = true;
-				config.orientationPortrait = false;
-				config.useAccelerometer = true;
-				config.useMonotouchOpenTK = true;
-				config.useObjectAL = true;
-				return config;
-			}
-		}
-		
-		static void Main (string[] args)
-		{
-			UIApplication.Main (args, null, "AppDelegate");
-		}
-	}
-}
-```
-
-### Info.plist ###
-
-The Info.plist file contains the configuration information about your application: screen orientation, minimal OS version, optional parameters, screen shots, etc.  This is an XML file that is best edited via MonoDevelop.
-
-```xml
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-	<key>CFBundleDisplayName</key>
-	<string>my-gdx-game</string>
-	<key>MinimumOSVersion</key>
-	<string>3.2</string>
-	<key>UIDeviceFamily</key>
-	<array>
-		<integer>2</integer>
-		<integer>1</integer>
-	</array>
-	<key>UIStatusBarHidden</key>
-	<true/>
-	<key>UISupportedInterfaceOrientations</key>
-	<array>
-		<string>UIInterfaceOrientationPortrait</string>
-		<string>UIInterfaceOrientationPortraitUpsideDown</string>
-	</array>
-	<key>UISupportedInterfaceOrientations~ipad</key>
-	<array>
-		<string>UIInterfaceOrientationLandscapeLeft</string>
-		<string>UIInterfaceOrientationLandscapeRight</string>
-	</array>
-</dict>
-</plist>
-```
-
-### convert.properties ###
-
-A conversion process is required in order to create the assemblies needed by Monotouch for the iOS platform.  This processing is done as part of the pre-build step when you issue the build operation in MonoDevelop.  If you are using third party libraries or have non-standard locations defined for some of your source, you will need to update the convert.properties file accordingly.  An example file is below:
-
-```
-SRC =       ../my-gdx-game/src/
-CLASSPATH = ../my-gdx-game/libs/gdx.jar
-EXCLUDE   =
-IN        = -r:libs/ios/gdx.dll -recurse:target/*.class
-OUT       = target/my-gdx-game.dll
-```
-
-This file specifies the input files that comprise the my-gdx-game.dll assembly.
-
+# iOS/Robovm #
+To come..
 # HTML5/GWT #
 The main entry-point for an HTML5/GWT application is a `GwtApplication`. Open `GwtLauncher.java` in the my-gdx-game-html5 project:
 
