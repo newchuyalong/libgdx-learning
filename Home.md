@@ -61,7 +61,7 @@
       * [[Querying & configuring graphics (monitors, display modes, vsync)]]
       * [[Continuous & Non-Continuous Rendering]]
       * [[Clearing the Screen]]
-      * [[Take a Screenshot]]
+      * [[Taking a Screenshot]]
       * [[Profiling]]
       * [[Viewports]]
       * [[OpenGL ES Support]]
