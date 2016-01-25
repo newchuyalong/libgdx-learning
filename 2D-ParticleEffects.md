@@ -9,7 +9,8 @@
 Using Particle effects is easy, load up your particle that has been generated in the [ParticleEditor](https://github.com/libgdx/libgdx/wiki/2D-Particle-Editor)
 ```java
 TextureAtlas particleAtlas; //<-load some atlas with your particle assets in
-ParticleEffect effect = new ParticleEffect(Gdx.files.internal("myparticle.p", particleAtlas));
+ParticleEffect effect = new ParticleEffect();
+effect.load(Gdx.files.internal("myparticle.p", particleAtlas));
 
 //Setting the position of the ParticleEffect
 effect.setPosition(x, y);
