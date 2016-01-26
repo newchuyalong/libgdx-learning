@@ -352,13 +352,13 @@ public class GwtLauncher extends GwtApplication {
    }
 
    @Override
-   public ApplicationListener getApplicationListener () {
+   public ApplicationListener createApplicationListener () {
       return new MyGdxGame();
    }
 }
 ```
 
-The main entry-point is composed of two methods, `GwtApplication.getConfig()` and `GwtApplication.getApplicationListener()`. The former has to return a [GwtApplicationConfiguration](https://github.com/libgdx/libgdx/tree/master/backends/gdx-backends-gwt/src/com/badlogic/gdx/backends/gwt/GwtApplicationConfiguration.java) instance, which specifies various configuration settings for the HTML5 application. The `GwtApplication.getApplicatonListener()` method returns the `ApplicationListener` to run.
+The main entry-point is composed of two methods, `GwtApplication.getConfig()` and `GwtApplication.createApplicationListener()`. The former has to return a [GwtApplicationConfiguration](https://github.com/libgdx/libgdx/tree/master/backends/gdx-backends-gwt/src/com/badlogic/gdx/backends/gwt/GwtApplicationConfiguration.java) instance, which specifies various configuration settings for the HTML5 application. The `GwtApplication.createApplicatonListener()` method returns the `ApplicationListener` to run.
 
 ### Module Files ###
 GWT needs the actual Java code for each jar/project that is referenced. Additionally, each of these jars/projects needs to have one module definition file, having the suffix gwt.xml. 
