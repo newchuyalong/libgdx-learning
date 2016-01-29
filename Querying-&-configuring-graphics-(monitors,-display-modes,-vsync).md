@@ -126,7 +126,7 @@ Only a subset of platforms supports display mode changes. Notably, Android and i
 if(Gdx.graphics.supportsDisplayModeChange()) {
    // change display mode if necessary
 }
-
+```
 Note that all display mode related functions in `Graphics` will simply not do anything on platforms that don't support display mode changes.
 
 ### Querying monitors
