@@ -19,7 +19,7 @@ ETC1 file format is a very simple format specific to LibGdx (see [this blog post
 ### Compression ###
 Compressing a Pixmap loaded from a file and writing it to our custom ETC1 file format is pretty simple:
 ```java
-Pixmap pixmap = new Pixmap(Gdx.files.absolute("image.png");
+Pixmap pixmap = new Pixmap(Gdx.files.absolute("image.png"));
 ETC1.encodeImagePKM(pixmap).write(Gdx.files.absolute("image.etc1"));
 ```    
 You can also use the ETC1Compressor tool in the gdx-tools project which can convert entire directory hierarchies.
