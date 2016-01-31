@@ -153,7 +153,7 @@ TiledMapTileLayer layer = (TiledMapTileLayer)tiledMap.getLayers().get(0); // ass
 
 A TiledMapTileLayer has all the same attributes as the generic MapLayer, e.g. properties, objects and so on. 
 
-In addition to those, the TiledMapTileLayer also has a two dimensional array or [TiledMapTileLayer.Cell](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/maps/tiled/TiledMapTileLayer.Cell.html) [(code)](https://github.com/libgdx/libgdx/blob/master/gdx/src/com/badlogic/gdx/maps/tiled/TiledMapTileLayer.java#L89) instances. 
+In addition to those, the TiledMapTileLayer also has a two dimensional array of [TiledMapTileLayer.Cell](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/maps/tiled/TiledMapTileLayer.Cell.html) [(code)](https://github.com/libgdx/libgdx/blob/master/gdx/src/com/badlogic/gdx/maps/tiled/TiledMapTileLayer.java#L89) instances. 
 
 To access a cell, you can ask the tile layer to hand it out like this:
 
