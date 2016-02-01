@@ -142,6 +142,7 @@
       * [[Using libGDX With Clojure]]
       * [[Using libGDX With Python]]
       * [[Using libGDX With Scala]]
+    * [[Third Party Extensions]]
     * [[Third Party Services]]
       * [[AdMob in libGDX]]
       * [[Airpush in libGDX]]
