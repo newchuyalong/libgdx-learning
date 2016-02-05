@@ -1,3 +1,0 @@
-# Primary Palette
-
-# Accent Palette
