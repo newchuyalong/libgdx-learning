@@ -108,7 +108,7 @@ When you don't specify a custom `ShaderProvider`, then `ModelBatch` will use the
 
 The `DefaultShader` class provides a default implementation of most of the standard [material and environment attributes](https://github.com/libgdx/libgdx/wiki/Material-and-environment), including lighting, normal maps, reflection cubemaps, etc. That is: it binds the attribute values to the corresponding `uniform`s. [A list of uniform names can be found here](https://github.com/libgdx/libgdx/blob/1.7.0/gdx/src/com/badlogic/gdx/graphics/g3d/shaders/DefaultShader.java#L81-L120).
 
-> **NOTE: by default, the shader program (the glsl files) use per-vertex lighting ([Gouraud shading](https://en.wikipedia.org/wiki/Gouraud_shading)), normal mapping, reflection etc. is not applied by default.**
+> **NOTE: by default, the shader program (the glsl files) use per-vertex lighting ([Gouraud shading](https://en.wikipedia.org/wiki/Gouraud_shading)).Normal mapping, reflection etc. is not applied by default.**
 
 The behavior of this class is configurable by supplying a [`DefaultShader.Config`](https://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/graphics/g3d/shaders/DefaultShader.Config.html) instance to the `DefaultShaderProvider`.
 
