@@ -13,10 +13,16 @@ Note that gdx-jnigen is a Java project. It has a blank AndroidManifest.xml becau
 
 ###Linux###
 
-(unverified)
+  * Ubuntu and other Debian-based systems (unverified)
 
 ```bash
 sudo apt-get install g++-mingw-w64-i686 g++-mingw-w64-x86-64
+```
+
+  * Arch Linux (this installs a compiler for both 32-bit and 64-bit; [read more](https://wiki.archlinux.org/index.php/MinGW_package_guidelines))
+
+```bash
+sudo pacman -S mingw-w64-gcc
 ```
 
 ## Quickstart ##
@@ -141,7 +147,7 @@ You specify the source folder, the folder containing the compiled .class files o
 
 #### Build script generation ####
 
-Once the native code files have been generated, we also want to create build scripts for all supported platforms. This currently includes Windows (32-/64-bit), Linux (32-/64-bit), Mac OS X (x86, 32-/64-bit), Android (arm6/arm7) and iOS (i386, arm7). The build script generator of jnigen has template Ant script files that can be parametrized for each platform. The parameters are specified via a [BuiltTarget](https://github.com/libgdx/libgdx/blob/master/extensions/gdx-jnigen/src/com/badlogic/gdx/jnigen/BuildTarget.java). You can create a BuildTarget for a specific platform like this:
+Once the native code files have been generated, we also want to create build scripts for all supported platforms. This currently includes Windows (32-/64-bit), Linux (32-/64-bit), Mac OS X (x86, 32-/64-bit), Android (arm6/arm7) and iOS (i386, arm7). The build script generator of jnigen has template Ant script files that can be parametrized for each platform. The parameters are specified via a [BuildTarget](https://github.com/libgdx/libgdx/blob/master/extensions/gdx-jnigen/src/com/badlogic/gdx/jnigen/BuildTarget.java). You can create a BuildTarget for a specific platform like this:
 
 ```java
 BuildTarget linux32 = BuildTarget.newDefaultTarget(TargetOS.Linux, false);
