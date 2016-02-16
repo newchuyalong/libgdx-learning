@@ -49,7 +49,7 @@ The following configuration file will make your libGDX app work with ProGuard:
 
 Note that you will also have to keep any classes that you access via reflection yourself! Please refer to the ProGuard/DexGuard documentation for more details.
 
-To apply ProGuard/DexGuard to your Android project, you can use the following `build.gradle` file (the on in the `android/` folder of your project, not the root `build.gradle`)
+To apply ProGuard/DexGuard to your Android project, you can use the following `build.gradle` file (the one in the `android/` folder of your project, not the root `build.gradle`)
 
 Note that in gradle plugin version 0.14+ the property **runProguard** has been changed to **minifyEnabled**.
 
