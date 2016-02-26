@@ -157,7 +157,7 @@ FileHandle file = Gdx.files.internal("myfile.txt");
 String text = file.readString();
 ```
 
-If you have binary data, you can easily load the file into a {{{byte[]}}} array:
+If you have binary data, you can easily load the file into a byte array:
 
 ```java
 FileHandle file = Gdx.files.internal("myblob.bin");
