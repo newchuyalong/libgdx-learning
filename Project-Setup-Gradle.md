@@ -25,10 +25,12 @@ IF you run it from the command line, specify the following arguments.
 * **package**: the Java package under which your code will live, e.g. com.badlogic.mygame
 * **mainClass**: the name of the main ApplicationListener of your app, e.g. MyGame
 * **sdkLocation**: the location of your android sdk, Intellij uses this if ANDROID_HOME is not set
+* **excludeModules**: the modules to exclude (Desktop; Android; iOS; HTML) separated by ';' and not case sensitive, e.g. Android;ios. Optional. Default it includes all the modules
+* **extensions**: the extensions to include (same name as in GUI: Bullet; Freetype; Tools; Controllers; Box2d; Box2dlights; Ashley; Ai) separated by ';' and not case sensitive, e.g. box2d;box2dlights;Ai. Optional
 
 Putting it all together, you can run the project generator on the command line as follows:
 
-`java -jar gdx-setup.jar --dir mygame --name mygame --package com.badlogic.mygame --mainClass MyGame --sdkLocation mySdkLocation`
+`java -jar gdx-setup.jar --dir mygame --name mygame --package com.badlogic.mygame --mainClass MyGame --sdkLocation mySdkLocation [--excludeModules <modules>] [--extensions <extensions>]`
 
 ### Project layout
 This will create a directory called `mygame`with the following layout:
