@@ -400,13 +400,13 @@ The raindrops need to be rendered. We'll add that to the `SpriteBatch` rendering
 One final adjustment: if a raindrop hits the bucket, we want to playback our drop sound and remove the raindrop from the array. We simply add the following lines to the raindrop update loop:
 
 ```java
-      if(raindrop.overlaps(bucket)) {
+      if(raindrop.intersects(bucket)) {
          dropSound.play();
          iter.remove();
       }
 ```
 
-The `Rectangle.overlaps()` method checks if this rectangle overlaps with another rectangle. In our case, we tell the drop sound effect to play itself and remove the raindrop from the array.
+The `Rectangle.intersects()` method checks if this rectangle overlaps with another rectangle. In our case, we tell the drop sound effect to play itself and remove the raindrop from the array.
 
 ## Cleaning Up ##
 A user can close the application at any time. For this simple example there's nothing that needs to be done. However, it is in general a good idea to help out the operating system a little and clean up the mess we created.
