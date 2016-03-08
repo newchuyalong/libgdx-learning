@@ -21,7 +21,8 @@ kryo.register(Array.class, new Serializer<Array>() {
 	private Class genericType;
 
 	public void setGenerics (Kryo kryo, Class[] generics) {
-		if (kryo.isFinal(generics[0])) genericType = generics[0];
+		if (generics != null && kryo.isFinal(generics[0])) genericType = generics[0];
+		else genericType = null;
 	}
 
 	public void write (Kryo kryo, Output output, Array array) {
