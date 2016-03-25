@@ -159,4 +159,3 @@
     * [[Deploying as an Applet]]
     * [[Getting ready for #libGDXJAM]]
     * [[Coordinate systems]]
-    * abc
