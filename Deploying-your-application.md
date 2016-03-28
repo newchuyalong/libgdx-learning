@@ -86,3 +86,5 @@ The result will be placed in the `html/build/dist` folder. You can symlink your 
 When running the result, you might encounter errors like `Couldn't find Type for class ...`. To fix this, please see our wiki page [Reflection](https://github.com/libgdx/libgdx/wiki/Reflection) and include the needed classes/packages.
 
 Make sure you only add classes/packages you really need, because the more packages you include, the slower the build process gets. 
+
+See more at [Gradle on the Commandline](https://github.com/libgdx/libgdx/wiki/Gradle-on-the-Commandline#packaging-for-the-web)
