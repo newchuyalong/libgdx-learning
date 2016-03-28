@@ -5,7 +5,8 @@
 * [Deploy to Android](#deploy-to-android)
 * [Deploy to iOS](#deploy-to-ios)
 * [Deploy to HTML/JS](#deploy-to-htmljs)
-
+    + [Deploy to HTML/JS Eclipse method](#deploy-to-htmljs-eclipse)
+    + [Deploy to HTML/JS Other IDEs / Gradle method](#deploy-to-htmljs-gradle)
 
 ### <a id="Forward"></a>Forward ###
 The mechanism to deploy your game differs between platforms. This article aims to articulate what is necessary to deploy to each platform that Libgdx officially supports.
@@ -63,7 +64,7 @@ This will generate the `projectname.IPA` file. Now you are able to use the `Appl
 
 
 ## <a id="Deploy_to_HTML/JS"></a>Deploy to HTML/JS##
-#### <a id="Deploy_to_HTML/JS_Eclipse"></a>Eclipse
+#### <a id="Deploy_to_HTML/JS_Eclipse"></a>Deploy to HTML/JS Eclipse method
 Deploying to HTML/JS is straightforward for most cases.
   1. Right click your HTML project and select "Google -> GWT Compile"
   2. Keep the default settings and click compile
@@ -77,7 +78,7 @@ Once the compile is complete everything you need to run your game on the web wil
 Notes:
   * If you are using server-side operations in your code, you will need to install Tomcat or similar software on your web server and place the full contents of your project's WAR directory in the "webapp" directory. More details [here.](https://tomcat.apache.org/tomcat-6.0-doc/appdev/deployment.html)  
 
-#### <a id="Deploy_to_HTML/JS_Gradle"></a>Other IDEs / Gradle method
+#### <a id="Deploy_to_HTML/JS_Gradle"></a>Deploy to HTML/JS Other IDEs / Gradle method
 In your project root, run the command `./gradlew html:dist` (Unix) or `gradlew.bat html:dist` (Windows) to build.
 
 The result will be placed in the `html/build/dist` folder. You can symlink your webroot to this directory, or just copy/paste all the files into your webroot instead.
