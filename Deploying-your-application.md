@@ -5,8 +5,8 @@
 * [Deploy to Android](#deploy-to-android)
 * [Deploy to iOS](#deploy-to-ios)
 * [Deploy to HTML/JS](#deploy-to-htmljs)
-    + [Deploy to HTML/JS Eclipse method](#deploy-to-htmljs-eclipse)
-    + [Deploy to HTML/JS Other IDEs / Gradle method](#deploy-to-htmljs-gradle)
+    + [Deploy to HTML/JS Eclipse method](#deploy-to-htmljs-eclipse-method)
+    + [Deploy to HTML/JS Other IDEs / Gradle method](#deploy-to-htmljs-other-ides--gradle-method)
 
 ### <a id="Forward"></a>Forward ###
 The mechanism to deploy your game differs between platforms. This article aims to articulate what is necessary to deploy to each platform that Libgdx officially supports.
