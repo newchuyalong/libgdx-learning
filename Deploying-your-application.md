@@ -62,7 +62,8 @@ Go into Eclipse, right click on your `projectname-ios` and choose `RoboVM Tools 
 This will generate the `projectname.IPA` file. Now you are able to use the `Application Loader` to locate your IPA and submit it to iTunesConnect. It will appear under the Prerelease tab for your app, per usual. Then you can distribute to your TestFlight testers etc., per the usual Apple procedure.
 
 
-## <a id="Deploy_to_HTML/JS"></a>Deploy to HTML/JS ##
+## <a id="Deploy_to_HTML/JS"></a>Deploy to HTML/JS##
+#### <a id="Deploy_to_HTML/JS_Eclipse"></a>Eclipse
 Deploying to HTML/JS is straightforward for most cases.
   1. Right click your HTML project and select "Google -> GWT Compile"
   2. Keep the default settings and click compile
@@ -75,3 +76,12 @@ Once the compile is complete everything you need to run your game on the web wil
 
 Notes:
   * If you are using server-side operations in your code, you will need to install Tomcat or similar software on your web server and place the full contents of your project's WAR directory in the "webapp" directory. More details [here.](https://tomcat.apache.org/tomcat-6.0-doc/appdev/deployment.html)  
+
+#### <a id="Deploy_to_HTML/JS_Gradle"></a>Other IDEs / Gradle method
+In your project root, run the command `./gradlew html:dist` (Unix) or `gradlew.bat html:dist` (Windows) to build.
+
+The result will be placed in the `html/build/dist` folder. You can symlink your webroot to this directory, or just copy/paste all the files into your webroot instead.
+
+When running the result, you might encounter errors like `Couldn't find Type for class ...`. To fix this, please see our wiki page [Reflection](https://github.com/libgdx/libgdx/wiki/Reflection) and include the needed classes/packages.
+
+Make sure you only add classes/packages you really need, because the more packages you include, the slower the build process gets. 
