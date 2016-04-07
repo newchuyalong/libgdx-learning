@@ -35,5 +35,4 @@ This will display a label on the bottom left corner, which you can see by runnin
 ## Links ##
 
 * The [play-clj tutorial](https://github.com/oakes/play-clj/blob/master/TUTORIAL.md) provides a more in-depth walk-through on how to use the library.
-* The [Nightcode](https://sekao.net/nightcode/) IDE allows you to create and run a play-clj project without installing Leiningen. You simply click the "New Project" button, give it a name, and choose the Game template.
 * The [Nightmod](https://sekao.net/nightmod/) game tool provides an easier way to use play-clj by integrating the game and the text editor together so you can see instant results when you save your code.
