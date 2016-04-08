@@ -23,6 +23,8 @@ On this page the various coordinate systems are listed. It is highly recommended
 
 Starts at the upper left *pixel* of the (application portion of the) physical screen and has the size of the (application portion of the) physical screens width and height in pixels.
 
+[[images/screenpixels.png]]
+
 Each coordinate is an index in the 2D array of this grid, representing a physical pixel on the screen. Therefor these coordinates are always represented as integers, they can't be fractional.
 
 This coordinate system is based on the classic representation of the display, which is usually also closest to the device/OS specific implementation. If you're familiar with canvas graphics or basic image editors, then you are probably already familiar with these coordinates. You might even lean towards using these as your default/favorite, which you shouldn't.
@@ -65,6 +67,8 @@ To compensate for this up-side-down texture, `SpriteBatch` flips the texture (UV
 
 The above coordinate systems have one big issue in common: they are device specific. To solve that, OpenGL allows you to use a device independent coordinate system which is automatically mapped to screen coordinates when rendering. This coordinate system is normalized in the range [-1,-1] and [+1,+1] with (0,0) exactly in the center of the screen or framebuffer (the render target).
 
+[[images/normalizedcoordinates.png]]
+
 The *vertex shader* outputs (`gl_Position`) its coordinates in this coordinate system. But other than that, you should never have to use this coordinate system in a practical use-case. It is sometimes used in tutorials and such, though, to show the basics.
 
 It might be worth to note that the normalization does not respect the aspect ratio. That is: the scale in the X direction does not have to match the scale in the Y direction. They are both within the range of `-1` to `+1`, regardless aspect ratio. It is up to the application to decide how to deal with various aspect ratios (see world units, below).
@@ -80,6 +84,8 @@ The coordinates are floating point and no longer indexers. The device (GPU) will
  * Dependence: none
 
 Likewise to the normalized render coordinates, OpenGL also uses normalized texture coordinates. The only difference is that these ranges from [0,0] to [1,1]. Depending on the specified wrap function, values outside that range will be mapped within that range.
+
+[[images/texturecoordinates.png]]
 
 These coordinates are also called **UV coordinates**. In many use cases you don't have to deal with them. Typically these values are stored in the mesh or `TextureRegion`.
 
@@ -97,7 +103,9 @@ When rendering, the GPU converts the UV coordinates to a [texel](https://en.wiki
 
 Typically, your game logic should use a coordinate system which best fits the game logic. It should not depend on device or asset size. For example, a commonly used unit is meters.
 
-The world coordinates are converted, in the vertex shader, to normalized render coordinates. The Camera or [Viewport](https://github.com/libgdx/libgdx/wiki/Viewports) is used to define the strategy on how to do that. For example, to maintain aspect ratio, black bars can be added. The camera is used to calculate the view matrix, which translates your world coordinates into coordinates relative to the camera, by taking in consideration the location and rotation of the camera. It also calculates the projection matrix, which converts the world coordinates to the normalized render coordinates in the range [-1,-1] to [+1,+1]. In 2D games, you mostly dont need the distinction between these two matrices and only need the combined transformation matrix instead. You can pass this matrix to the shader, for example, by calling `spriteBatch.setProjectionMatrix(camera.combined);`
+The world coordinates are converted, in the vertex shader, to normalized render coordinates. The [Camera](http://www.badlogicgames.com/wordpress/?p=1550) or [Viewport](https://github.com/libgdx/libgdx/wiki/Viewports) is used to define the strategy on how to do that. For example, to maintain aspect ratio, black bars can be added. The camera is used to calculate the view matrix, which translates your world coordinates into coordinates relative to the camera, by taking in consideration the location and rotation of the camera. It also calculates the projection matrix, which converts the world coordinates to the normalized render coordinates in the range [-1,-1] to [+1,+1]. In 2D games, you mostly dont need the distinction between these two matrices and only need the combined transformation matrix instead. You can pass this matrix to the shader, for example, by calling `spriteBatch.setProjectionMatrix(camera.combined);`
+
+[[images/projection.png]]
 
 You can have multiple camera's or viewports and likewise, you can also have multiple world coordinate systems. A typical game has at least two of those, namely:
 
