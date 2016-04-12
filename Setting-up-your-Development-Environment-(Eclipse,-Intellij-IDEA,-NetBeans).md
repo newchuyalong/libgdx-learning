@@ -51,7 +51,7 @@ Once all of these tools are installed, proceed to [[creating your project|Projec
 To develop your application via Intellij IDEA, you need to install the following pieces of software.
 
   * [Java Development Kit 7+ (JDK) (6 will not work!)](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
-  * [Intellij IDEA](http://www.jetbrains.com/idea/download/), the Community edition is sufficient. Note that the current version (15.0.2) has an issue with 'run configurations' if your project targets both Android _and_ other environments, see [this topic](http://www.badlogicgames.com/forum/viewtopic.php?p=87771&sid=007f72ddbc7f4acf7477522b6dd58c6d#p87771) for workarounds.
+  * [Intellij IDEA](http://www.jetbrains.com/idea/download/), the Community edition is sufficient.
   * [Android SDK](http://developer.android.com/sdk/index.html), you only need the SDK (available at the bottom of the page in the 'command line tools' section), not the whole Android Studio package which is a customized version of Intellij bundled with the Android SDK. Install the latest stable platform via the [SDK Manager](http://developer.android.com/tools/help/sdk-manager.html). You also have to create an environment variable called ANDROID_HOME, which points at your Android SDK installation directory!
 
 To additionally target iOS
