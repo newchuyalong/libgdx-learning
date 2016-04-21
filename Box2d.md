@@ -97,7 +97,9 @@ private void doPhysicsStep(float deltaTime) {
 It is recommended that you render all your graphics before you do your physics step, otherwise it will be out of sync. To do this with our debug renderer we do the following:
 
 ```java
+batch.begin()
 debugRenderer.render(world, camera.combined);
+batch.end()
 ```
 
 The first argument is our Box2D world and the second argument is our libgdx camera.
