@@ -39,7 +39,7 @@ It is highly recommended to read or least skim the [[scene2d documentation|scene
    * [Touchpad](#touchpad)
    * [Dialog](#dialog)
  * [Widgets without scene2d.ui](#widgets-without-scene2dui)
- * [Drag and Drop](#draganddrop)
+ * [Drag and Drop](#drag-and-drop-draganddrop-class)
  * [Examples](#examples)
 
 # <a id="Widget_and_WidgetGroup"></a>Widget and WidgetGroup #
