@@ -124,7 +124,6 @@
       * [[Texture Packer]]
       * [[Hiero]]
       * [[2D Particle Editor]]
-      * [[Path Editor]]
     * Extensions
       * [[Artificial Intelligence]]
       * [[gdx-freetype]]
