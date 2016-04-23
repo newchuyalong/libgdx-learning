@@ -150,7 +150,7 @@
       * [[gdx-facebook]]
       * [[gdx-dialogs]]
       * [[gdx-kiwi]]
-      * [[gdx-iml]]
+      * [[gdx-lml]]
     * [[Third Party Services]]
       * [[AdMob in libGDX]]
       * [[Airpush in libGDX]]
