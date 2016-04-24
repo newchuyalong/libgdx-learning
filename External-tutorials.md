@@ -26,6 +26,7 @@ http://libgdxspain.blogspot.com
  * libgdx.cn - http://www.libgdx.cn (Chinese)
  * Martian Run! Multi-part tutorial - http://williammora.com/a-running-game-with-libgdx-part-1/
  * Fighting Kitten blog (LibGDX, gdxAI) - http://fightingkitten.webcindario.com/
+ * Libgdx tutorials on specific topics - libgdx.heerbann.com
 
 # Topic Specific Tutorials #
 
