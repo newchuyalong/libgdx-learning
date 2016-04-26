@@ -166,7 +166,7 @@ What are these units though? What do they mean? How will I know what size to mak
 
 **#1** - The `OrthographicCamera` instance we will control to look at the world.
 
-**#2** - The `SpriteBatch` instance we will use to render out world
+**#2** - The `SpriteBatch` instance we will use to render our world
 
 **#3** - A `Sprite` that we will use to draw our world map
 
