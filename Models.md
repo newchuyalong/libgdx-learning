@@ -7,10 +7,12 @@ A model is a hierarchical representation of nodes. In practice this means that a
 
 Nodes are exclusive per model and modelinstance. Meaning that the Node only exists in a single Model or a single ModelInstance and is never shared amongst multiple Models or ModelInstances. Modifications to a Node of a ModelInstance will therefor only affect that particular ModelInstance. Modifcations to a Node of a Model will affect that Model and all ModelInstances created from it after the modifications, but previously created ModelInstances from that Model remain unchanged.
 
-### Node transformation
+### Node and Model Transformation
 Nodes can be transformed (translate, rotate and/or scale), causing all child nodes to be also transformed. This transformation can be set while loading the model and/or changed programmatically. To change the transformation the node has a `translation` and `scale` vector and a `rotation` quaternion. When these values are changed the transformation (including all children) must be updated to reflect the changes. This can be done using the `model.calculateTransforms();` method (also available for the ModelInstance class).
 
 When the Node transformations are (re)calculated, they are stored in the `localTransform` and `globalTransform` matrices. The `localTransform` matrix represents the transformation of the node relative to its parent node. The `globalTransform` matrix represents the transformation of the node relative to the model or modelinstance. In other words: the `globalTransform` of a Node is the `globalTransform` of its parent node multiplied by the node's `localTransform`.
+
+Transformations to the ModelInstance are separate from transformations to the Node objects that a ModelInstance contains. In cases where the rendered object should inherit characteristics from a parent node, the ModelInstance's nodes should be transformed directly. 
 
 When an animation is applied to a ModelInstance, the `isAnimated` value is set to true. This will cause the `translation`, `scale` and `rotation` values not to be used when recalculating the transforms.
 
