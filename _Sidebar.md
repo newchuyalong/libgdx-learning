@@ -139,6 +139,7 @@
               * [[Debugging|Bullet Wrapper - Debugging]]
     * [[Using libGDX With Other JVM Languages]]
       * [[Using libGDX With Clojure]]
+      * [[Using libGDX With Kotlin]]
       * [[Using libGDX With Python]]
       * [[Using libGDX With Scala]]
     * [[Third Party Extensions]]
