@@ -5,29 +5,18 @@ Regardless of your development environment of choice, here's what you'll need fo
 
   * A Mac with Mac OS X and Xcode 7
   * An [Apple developer account](https://developer.apple.com/membercenter/index.action) if you want to test on device or deploy to the App Store. Please direct all hatred towards Apple.
-  * [A free RoboVM license](http://www.badlogicgames.com/wordpress/?p=3762)
-     * [Sign-up for a RoboVM trial key](https://account.robovm.com/#/register)
-     * Activate your trial key (see below)
-     * [Apply for the free indie program](https://docs.google.com/forms/d/1wbne7JNXDz4ea2I6GFfIIyjHyHofaKLvCwYiqboBpKw)
 
-The RoboVM trial key will be valid for 30 days, so you can start developing immediately. Once you applied for the free indie program, your trial key will be upgraded to a full indie license within 30 days. You will receive an e-mail once that happens.
+#### Setting up RoboVM for iOS development
+As the official RoboVM has been shut down Microsoft, libGDX has since switched to a fork of RoboVM, maintained by the libGDX core contributors. It's known as [MobiDevelop's RoboVM fork](https://robovm.mobidevelop.com).
 
-With your RoboVM indie key you can develop as many games as you want, commercial and non-commercial. The key will be valid [forever](http://www.gamefromscratch.com/image.axd?picture=image_thumb_2403.png). If you are a team, just have everyone sign up for a key separately. If your indie team is larger than 3 devs, contact [hello@robovm.com](mailto:hello@robovm.com). RoboVM just wants to check that you aren't a AAA studio trying to exploit the indie program. Those AAA studios will have to pay for a license, indie teams of any size get licenses for free.
+For Eclipse, check what is the latest release version of the (RoboVM Eclipse plugin](http://robovm.mobidevelop.com/downloads/releases/eclipse/). The update URL should look like this: `http://robovm.mobidevelop.com/downloads/releases/eclipse/2.1.0/site`. Just replace the version string with the latest release' version string.
 
-Depending on your development environment, you can activate the key as outlined below. **Note:** you can only activate your license key on Mac OS X, just like you can only compile for iOS on Mac OS X.
+For IntelliJ IDEA and Android Studio, download the latest [RoboVM IntelliJ IDEA plugin from MobiDevelop's site](http://robovm.mobidevelop.com/downloads/releases/idea/). To install it, run IntelliJ IDEA/Android Studio, hit `CMD+;`, go to `Plugins`, then select `Install from disk...`. Select the `.jar` you downloaded and restart IntelliJ IDEA.
 
-**Gradle**
-In your project's root directory, execute the following in the terminal:
+For Gradle, everything is already setup for you. The RoboVM Gradle plugin will be automatically downloaded and used by your Gradle build.
 
-```
-./gradlew :activateLicense -Probovm.licenseKey=your-key-here
-```
-
-**Eclipse**
-After installing the [RoboVM Eclipse plugin](http://docs.robovm.com/getting-started/eclipse.html), go to `RoboVM -> License Manager` and enter your key.
-
-**IntelliJ IDEA/Android Studio**
-After installing the [RoboVM IDEA plugin](http://docs.robovm.com/getting-started/intellij.html), go to `RoboVM -> License Manager` and enter your key.
+#### Setting up Intel Multi-OS Engine
+As an alternative to MobiDevelop's RoboVM fork, libGDX also provides a backend for Intel's Multi-OS Engine. You can download it [here](https://registrationcenter.intel.com/en/forms/?productid=2586). During installation you can install a plugin for IntelliJ IDEA or Android Studio. Intel MOE currently doesn't support Eclipse.
 
 ### Setting up Eclipse 
 To develop your application via Eclipse, you need to install the following pieces of software.
@@ -42,7 +31,7 @@ To additionally target iOS
 
   * A Mac, iOS Development does not work on Windows/Linux thanks to Apple.
   * The latest XCode, which you can get from the Mac OS X App Store for free
-  * [RoboVM Eclipse plugin](http://docs.robovm.com/getting-started/eclipse.html), simply install the Eclipse plugin. Make sure to update the plugin frequently!
+  * The RoboVM Eclipse plugin as described above.
 
 
 Once all of these tools are installed, proceed to [[creating your project|Project Setup Gradle]]
@@ -58,7 +47,7 @@ To additionally target iOS
 
   * A Mac, iOS Development does not work on Windows/Linux thanks to Apple.
   * The latest XCode, which you can get from the Mac OS X App Store for free
-  * [RoboVM IntelliJ IDEA/Android Studio plugin](http://docs.robovm.com/getting-started/intellij.html)
+  * The RoboVM IntelliJ IDEA plugin or Intel Multi-OS Engine as described above
 
 Once all of these tools are installed, proceed to [[creating your project|Project Setup Gradle]]
 
@@ -75,7 +64,7 @@ To additionally target iOS
 
   * A Mac, iOS Development does not work on Windows/Linux thanks to Apple.
   * The latest XCode, which you can get from the Mac OS X App Store for free
-  * [RoboVM IntelliJ IDEA/Android Studio plugin](http://docs.robovm.com/getting-started/intellij.html)
+  * The RoboVM IntelliJ IDEA plugin or Intel Multi-OS Engine as described above
 
 Once all of these tools are installed, proceed to [[creating your project|Project Setup Gradle]]
 
