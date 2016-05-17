@@ -181,7 +181,10 @@ A bitmap font is declared in the JSON like this:
 ```
 {
 	com.badlogic.gdx.graphics.g2d.BitmapFont: {
-		medium: { file: medium.fnt }
+		medium: { file: medium.fnt,
+                  scaledSize: -1, //integer height of capital letters, default -1 for unscaled
+                  markupEnabled: false,
+                  flip : false}
 	}
 }
 ```
