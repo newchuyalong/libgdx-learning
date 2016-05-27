@@ -34,7 +34,7 @@ The following classes need to be disposed of manually (might not be complete):
 
 Resources should be disposed of as soon as they are no longer needed, freeing up memory associated with them. Accessing a disposed resource will result in undefined errors, so make sure to clear out all references you have to a disposed resource.
 
-When in doubt about whether a specific class needs to be disposed of, check if it has a `disposed()` method. If it does, you are now working with a native resource.
+When in doubt about whether a specific class needs to be disposed of, check if it has a `dispose()` method. If it does, you are now working with a native resource.
 
 ### Object pooling ###
 
