@@ -136,7 +136,7 @@ public class OrthographicCameraExample implements ApplicationListener {
 
 ```
 
-Image download: [sc_map.png](http://libgdx.googlecode.com/svn/wiki/assets/sc_map.png)
+Image download: sc_map.png
 
 
 The above class is the LibGDX application that will use the orthographic camera to move around the world. Our world size is in arbitrary units that we can define however we want to. In this specific case, our world is 100x100 units.  
