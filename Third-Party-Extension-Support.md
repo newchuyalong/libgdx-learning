@@ -59,6 +59,7 @@ An example of this file:
            </desktop>                                          <!--All dependencies for the desktop project-->
            <android></android>                                <!--All dependencies for the android project-->
            <ios>null</ios>                                    <!--All dependencies for the ios project-->
+           <ios-moe>null</ios-moe>                            <!--All dependencies for the ios-moe project-->
            <html>groupId:artifactIdTwo:classifierTwo</html>   <!--All dependencies for the html project-->
        </projects>
     </extension>
