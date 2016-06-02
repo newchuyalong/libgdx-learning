@@ -1,4 +1,4 @@
-[Kotlin](https://kotlinlang.org) is a modern statically typed JVM language from [JetBrains](https://www.jetbrains.com), the creators of [IntelliJ IDEA](https://www.jetbrains.com/idea/).
+[Kotlin](https://kotlinlang.org) is a modern statically typed JVM language from [JetBrains](https://www.jetbrains.com), the creators of [IntelliJ IDEA](https://www.jetbrains.com/idea/). Features such as null safe types, higher order functions, lambdas, cleaner syntax than Java, ...
 
 This guide describes how to migrate an existing LibGDX project to Kotlin. You can also start with a [fresh application](https://github.com/libgdx/libgdx/wiki/Project-Setup-Gradle).
 
@@ -51,3 +51,10 @@ Open any Java file, e.g. your `DesktopLauncher` and select _Code -> Convert Java
 # Build and run
 
 That's it. You successfully enabled Kotlin in your LibGDX application. Build and run your project to verify that everything works.
+
+# Examples of libgdx projects using Kotlin
+These are some examples of projects that are using Kotlin, to help give you ideas on how to structure, take advantage of language features, as well as simple stuff such as build system.
+
+* [Ore Infinium](https://github.com/sreich/ore-infinium)
+
+TODO: add more real life project examples of Kotlin being used for libgdx projects.
