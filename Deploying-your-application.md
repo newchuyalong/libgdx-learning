@@ -2,6 +2,7 @@
 
 * [Forward](#forward)
 * [Deploy to Windows/Linux/Mac](#deploy-to-windowslinuxmac-os-x)
+ * [Users Java (JRE) is not installed or out of date] (#java-jre-is-not-installed-or-out-of-date)
 * [Deploy to Android](#deploy-to-android)
 * [Deploy to iOS](#deploy-to-ios)
 * [Deploy to HTML/JS](#deploy-to-htmljs)
@@ -24,9 +25,15 @@ The easiest way to deploy to Windows/Linux/Mac is to create a runnable JAR in Ec
 
 <img src="http://libgdx.badlogicgames.com/uploads/Screen%20Shot%202013-08-23%20at%2011.16.10-0STXrLHoAH.png" width="400"></img>
 
-This will package all code and your assets into a single JAR file. To run the JAR file, a user can just double click it, provided she/he has Java installed.
+This will package all code and your assets into a single JAR file. To run the JAR file, a user can just double click it, provided she/he has Java (the JRE) installed and their version satisfies your target java byte code version. See below.
 
-[packr](https://github.com/libgdx/packr) is a tool to bundle a JRE with your desktop jar file in a cross platform manner. this tool is in development.
+### Users Java (JRE) is not installed or out of date
+
+Some users may not have the right version of JRE installed and would encounter issues/be unable to even launch your game. Additionally, perhaps you want to use Java 8 features, but some of your users only have JRE 7 or JRE 6, or not at all. One may also want to "hide" the fact that it's a Java app.
+
+In such cases, a JRE can be bundled with your application, all in one. This will enable a single file to include everything any system can use to run the game.
+
+See: [Bundling a JRE](https://github.com/libgdx/libgdx/wiki/Bundling-a-JRE)
 
 ## <a id="Deploy_to_Android"></a>Deploy to Android ##
 Deploying to Android takes some extra steps. This tutorial is done using Eclipse and the Android ADT plugin.
