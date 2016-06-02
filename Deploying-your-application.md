@@ -2,7 +2,7 @@
 
 * [Forward](#forward)
 * [Deploy to Windows/Linux/Mac](#deploy-to-windowslinuxmac-os-x)
- * [Users Java (JRE) is not installed or out of date] (#java-jre-is-not-installed-or-out-of-date)
+ * [Users Java (JRE) is not installed or out of date] (#users-java-jre-is-not-installed-or-out-of-date)
 * [Deploy to Android](#deploy-to-android)
 * [Deploy to iOS](#deploy-to-ios)
 * [Deploy to HTML/JS](#deploy-to-htmljs)
