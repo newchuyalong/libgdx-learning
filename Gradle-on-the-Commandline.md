@@ -37,7 +37,7 @@ Gradle let's you easily run a project from the commandline. Just use the gradlew
 ### Running the desktop project
 `gradlew desktop:run`
 
-This compiles your core and desktop project, and runs the desktop starter. The working directory is the android project's assets folder!
+This compiles your core and desktop project, and runs the desktop starter. The working directory is the project's assets folder!
 
 ### Running the Android project
 `gradlew android:installDebug android:run`
