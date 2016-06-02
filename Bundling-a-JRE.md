@@ -1,6 +1,8 @@
 Java apps need a Java Runtime Environment to run. Typically this is installed by the user and hopefully already available when they go to run your app. Unfortunately users may not have Java installed and there are differences between JREs that can cause problems with your app, especially between Java 6 and 7 on Mac. These can be difficult for users to explain and worse, difficult for them to fix themselves. Also, you may require, as a minimum, a certain JRE version.
 
-The solution is to bundle a JRE with your app. This way you know exactly what users will be running and users will have fewer problems.
+The solution is to bundle a JRE with your app. This way you know exactly what users will be running and users will have fewer problems and they will not have to install a JVM. 
+
+This however will come at the expense of about 23-30mb bigger download sizes per platform.**
 
 ## Contents
 
