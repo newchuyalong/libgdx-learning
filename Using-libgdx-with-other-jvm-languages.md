@@ -2,12 +2,16 @@ LibGDX is mainly a Java-based framework. However, because Java produces Java byt
 
 ## Interoperability ##
 
-* [Ceylon](http://ceylon-lang.org/documentation/1.2/tour/interop/)
 * [Clojure](http://clojure.org/java_interop)
+ * [Using libgdx with Clojure] (https://github.com/libgdx/libgdx/wiki/Using-libgdx-with-Clojure)
 * [Kotlin](http://confluence.jetbrains.com/display/Kotlin/Java+interoperability)
+ * [Using libgdx with Kotlin] (https://github.com/libgdx/libgdx/wiki/Using-libgdx-with-Kotlin)
 * [Python](http://www.jython.org/jythonbook/en/1.0/JythonAndJavaIntegration.html)
-* [Ruby](https://github.com/jruby/jruby/wiki/CallingJavaFromJRuby)
+ * [Using libgdx with Python] (https://github.com/libgdx/libgdx/wiki/Using-libgdx-with-Python)
 * [Scala](http://www.scala-lang.org/old/faq/4)
+ * [Using libgdx with Scala] (https://github.com/libgdx/libgdx/wiki/Using-libgdx-with-Scala)
+* [Ruby](https://github.com/jruby/jruby/wiki/CallingJavaFromJRuby)
+* [Ceylon](http://ceylon-lang.org/documentation/1.2/tour/interop/)
 
 ## Desktop ##
 
