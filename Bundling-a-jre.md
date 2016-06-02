@@ -1,4 +1,4 @@
-Java apps need a Java Runtime Environment to run. Typically this is installed by the user and hopefully already available when they go to run your app. Unfortunately users may not have Java installed and there are differences between JREs that can cause problems with your app, especially between Java 6 and 7 on Mac. These can be difficult for users to explain and worse, difficult for them to fix themselves.
+Java apps need a Java Runtime Environment to run. Typically this is installed by the user and hopefully already available when they go to run your app. Unfortunately users may not have Java installed and there are differences between JREs that can cause problems with your app, especially between Java 6 and 7 on Mac. These can be difficult for users to explain and worse, difficult for them to fix themselves. Also, you may require, as a minimum, a certain JRE version.
 
 The solution is to bundle a JRE with your app. This way you know exactly what users will be running and users will have fewer problems.
 
@@ -70,8 +70,13 @@ This list reduces the JRE size to about 36MB. Note that for faster start up the 
 
 ## Packaging ##
 
-On Windows, [launch4j](http://launch4j.sourceforge.net/) can be used to create an EXE that starts the embedded JRE.
+There are a few options for bundling a JRE. One is [launch4j](http://launch4j.sourceforge.net/)
+
+On Windows, launch4j can be used to create an EXE that starts the embedded JRE.
 
 Mac uses a specific folder structure that will appear as an application in OSX. A shell script is invoked when the app is run. The app files should be packaged in a DMG so that execute flags are preserved, otherwise some ZIP extractors don't give the resulting files permission to execute.
 
 Linux uses a shell script.
+
+A gradle plugin that performs similar actions, is:
+https://github.com/mini2Dx/parcl
