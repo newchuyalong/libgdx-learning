@@ -3,11 +3,33 @@ Java apps need a Java Runtime Environment to run. Typically this is installed by
 The solution is to bundle a JRE with your app. This way you know exactly what users will be running and users will have fewer problems.
 
 ## Contents
-* [**Using the OpenJDK**](#openjdk) 
+
 * [**Packaging**](#packaging) 
  * [**launch4j**](#launch4j) 
  * [**Parcl**](#parcl) 
  * [**packr**](#packr) 
+* [**Manually, using the OpenJDK**](#openjdk) 
+
+## Packaging ##
+There are a few tools/plugins for helping the process of bundling a JRE, in no specific order... 
+
+### Launch4J
+
+[launch4j](http://launch4j.sourceforge.net/)
+
+On Windows, launch4j can be used to create an EXE that starts the embedded JRE.
+
+Mac uses a specific folder structure that will appear as an application in OSX. A shell script is invoked when the app is run. The app files should be packaged in a DMG so that execute flags are preserved, otherwise some ZIP extractors don't give the resulting files permission to execute.
+
+Linux uses a shell script.
+
+### Parcl
+A gradle plugin that performs similar actions as launch4j:
+https://github.com/mini2Dx/parcl
+
+### Packr
+Tool created/maintained by the libgdx team.
+https://github.com/libgdx/packr
 
 ## OpenJDK ##
 
@@ -74,24 +96,3 @@ lib\jsse.jar\sun\security\ssl\
 To make this list I went through the files and JARs sorting by largest size first. I then deleted the largest files that looked like that were not needed and ran my app to make sure everything still works.
 
 This list reduces the JRE size to about 36MB. Note that for faster start up the JRE JARs are not compressed. After zipping the entire JRE, the size is reduced to about 13.5MB. If Swing packages are also removed from rt.jar, the zipped size goes down to about 9.8MB.
-
-## Packaging ##
-There are a few tools/plugins for helping the process of bundling a JRE, in no specific order... 
-
-### Launch4J
-
-[launch4j](http://launch4j.sourceforge.net/)
-
-On Windows, launch4j can be used to create an EXE that starts the embedded JRE.
-
-Mac uses a specific folder structure that will appear as an application in OSX. A shell script is invoked when the app is run. The app files should be packaged in a DMG so that execute flags are preserved, otherwise some ZIP extractors don't give the resulting files permission to execute.
-
-Linux uses a shell script.
-
-### Parcl
-A gradle plugin that performs similar actions as launch4j:
-https://github.com/mini2Dx/parcl
-
-### Packr
-Tool created/maintained by the libgdx team.
-https://github.com/libgdx/packr
