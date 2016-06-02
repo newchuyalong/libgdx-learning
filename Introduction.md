@@ -1,6 +1,6 @@
 Libgdx is a cross-platform game and visualization development framework. It currently supports Windows, Linux, Mac OS X, Android, Blackberry, iOS, and HTML5 as target platforms. 
 
-Libgdx allows you to write your code once and deploy it to multiple platforms without modification. Instead of waiting for your latest modifications to be deployed to your device or to be compiled to HTML5, you can benefit from an extremely fast iteration cycle by coding your application mainly in a desktop environment. You can use all the tools of the Java ecosystem to be as productive as you can be.
+Libgdx allows you to write your code once and deploy it to multiple platforms without modification. Instead of waiting for your latest modifications to be deployed to your device or to be compiled to HTML5, you can benefit from an extremely fast iteration cycle by coding your application mainly in a desktop environment. You can use all the tools of the Java ecosystem to be as productive as you can be. Because it is on the JVM, you can also feel free to [use other awesome and popular non-Java languages (Kotlin, Scala, Clojure, etc)](Using-libgdx-with-other-jvm-languages)
 
 Libgdx lets you go as low-level as you want, giving you direct access to file systems, input devices, audio devices and OpenGL via a unified OpenGL ES 2.0 and 3.0 interface. 
 
