@@ -2,7 +2,7 @@ Java apps need a Java Runtime Environment to run. Typically this is installed by
 
 The solution is to bundle a JRE with your app. This way you know exactly what users will be running and users will have fewer problems and they will not have to install a JVM. 
 
-This however will come at the expense of about 23-30mb bigger download sizes per platform.**
+This however will come at the expense of about 23-30mb bigger download sizes per platform. This may improve when the modularity of the runtime improves, with JRE 9 (slated for march 2017 [countdown ] (http://www.java9countdown.xyz/))
 
 ## Contents
 
