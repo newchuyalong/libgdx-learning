@@ -70,7 +70,7 @@ Every platform has a different kind of distribution format. In this section we'l
 
 This will create a runnable JAR file located in the `desktop/build/libs/` folder. It contains all necessary code as well as all your art assets from the android/assets folder and can be run either by double clicking or on the command line via `java -jar jar-file-name.jar`. Your audience must have a JVM installed for this to work. The JAR will work on Windows, Linux and Mac OS X!
 
-**If you want to package your JAR with a JVM for distribution (bundling), see [Bundling a JRE](https://github.com/libgdx/libgdx/wiki/Bundling-a-JRE)
+**If you want to package your JAR with a JVM for distribution (bundling), see [Bundling a JRE](https://github.com/libgdx/libgdx/wiki/Bundling-a-JRE)**
 
 ### Packaging for Android
 `gradlew android:assembleRelease`
