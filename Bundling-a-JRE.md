@@ -2,6 +2,12 @@ Java apps need a Java Runtime Environment to run. Typically this is installed by
 
 The solution is to bundle a JRE with your app. This way you know exactly what users will be running and users will have fewer problems.
 
+## Contents
+* [**Using the OpenJDK**](#openjdk) 
+* [**Packaging**](#packaging) 
+ * [**launch4j**](#launch4j) 
+ * [**Parcl**](#parcl) 
+
 ## OpenJDK ##
 
 OpenJDK builds can be found here:
@@ -69,8 +75,11 @@ To make this list I went through the files and JARs sorting by largest size firs
 This list reduces the JRE size to about 36MB. Note that for faster start up the JRE JARs are not compressed. After zipping the entire JRE, the size is reduced to about 13.5MB. If Swing packages are also removed from rt.jar, the zipped size goes down to about 9.8MB.
 
 ## Packaging ##
+There are a few tools/plugins for helping the process of bundling a JRE. 
 
-There are a few options for bundling a JRE. One is [launch4j](http://launch4j.sourceforge.net/)
+### Launch4J
+
+[launch4j](http://launch4j.sourceforge.net/)
 
 On Windows, launch4j can be used to create an EXE that starts the embedded JRE.
 
@@ -78,5 +87,6 @@ Mac uses a specific folder structure that will appear as an application in OSX. 
 
 Linux uses a shell script.
 
-A gradle plugin that performs similar actions, is:
+### Parcl
+A gradle plugin that performs similar actions as launch4j:
 https://github.com/mini2Dx/parcl
