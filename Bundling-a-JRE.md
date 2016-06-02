@@ -7,6 +7,7 @@ The solution is to bundle a JRE with your app. This way you know exactly what us
 * [**Packaging**](#packaging) 
  * [**launch4j**](#launch4j) 
  * [**Parcl**](#parcl) 
+ * [**packr**](#packr) 
 
 ## OpenJDK ##
 
@@ -75,7 +76,7 @@ To make this list I went through the files and JARs sorting by largest size firs
 This list reduces the JRE size to about 36MB. Note that for faster start up the JRE JARs are not compressed. After zipping the entire JRE, the size is reduced to about 13.5MB. If Swing packages are also removed from rt.jar, the zipped size goes down to about 9.8MB.
 
 ## Packaging ##
-There are a few tools/plugins for helping the process of bundling a JRE. 
+There are a few tools/plugins for helping the process of bundling a JRE, in no specific order... 
 
 ### Launch4J
 
@@ -90,3 +91,7 @@ Linux uses a shell script.
 ### Parcl
 A gradle plugin that performs similar actions as launch4j:
 https://github.com/mini2Dx/parcl
+
+### Packr
+Tool created/maintained by the libgdx team.
+https://github.com/libgdx/packr
