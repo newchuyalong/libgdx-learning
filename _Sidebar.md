@@ -1,7 +1,6 @@
 # Table of Contents
   * **[[Wiki Style Guide]]**
   * **Developer's Guide**
-xxx
     * [[Introduction]]
       * [[Goals & Features]]
       * [[Community & Support]]
