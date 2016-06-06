@@ -151,9 +151,11 @@ project(":android") {
     dependencies {
         compile project(":core")
         compile "com.badlogicgames.gdx:gdx-backend-android:$gdxVersion"
-        natives "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-x86"
         natives "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-armeabi"
         natives "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-armeabi-v7a"
+        natives "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-arm64-v8a"
+        natives "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-x86"
+        natives "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-x86_64"
     }
 }
 ```
@@ -179,9 +181,11 @@ project(":android") {
     dependencies {
         compile project(":core")
         compile "com.badlogicgames.gdx:gdx-backend-android:$gdxVersion"
-        natives "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-x86"
         natives "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-armeabi"
         natives "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-armeabi-v7a"
+        natives "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-arm64-v8a"
+        natives "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-x86"
+        natives "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-x86_64"
    
         compile "com.badlogicgames.gdx:gdx-freetype:$gdxVersion"
         natives "com.badlogicgames.gdx:gdx-freetype-platform:$gdxVersion:natives-armeabi"
@@ -203,7 +207,8 @@ Mavenized libgdx extensions ready to import from the `build.gradle` script inclu
 * [Controllers](#controllers-gradle)
 * [Tools] (#tools-gradle)
 * [Box2DLights] (#box2dlights-gradle)
-* [Ai] (#ai-gradle)
+* [Ashley] (#ashley-gradle)
+* [AI] (#ai-gradle)
 
 #### Box2D Gradle
 **Core Dependency:**
@@ -219,18 +224,20 @@ compile "com.badlogicgames.gdx:gdx-box2d-platform:$gdxVersion:natives-desktop"
 compile "com.badlogicgames.gdx:gdx-box2d:$gdxVersion"
 natives "com.badlogicgames.gdx:gdx-box2d-platform:$gdxVersion:natives-armeabi"
 natives "com.badlogicgames.gdx:gdx-box2d-platform:$gdxVersion:natives-armeabi-v7a"
+natives "com.badlogicgames.gdx:gdx-box2d-platform:$gdxVersion:natives-arm64-v8a"
 natives "com.badlogicgames.gdx:gdx-box2d-platform:$gdxVersion:natives-x86"
+natives "com.badlogicgames.gdx:gdx-box2d-platform:$gdxVersion:natives-x86_64"
 ```
 **iOS Dependency:**
 ```groovy
-compile "com.badlogicgames.gdx:gdx-box2d:$gdxVersion"
 natives "com.badlogicgames.gdx:gdx-box2d-platform:$gdxVersion:natives-ios"
 ```
 **HTML Dependency:**
 ```groovy
-compile "com.badlogicgames.gdx:gdx-box2d-gwt:$gdxVersion:sources"
 compile "com.badlogicgames.gdx:gdx-box2d:$gdxVersion:sources"
+compile "com.badlogicgames.gdx:gdx-box2d-gwt:$gdxVersion:sources"
 ```
+and in `./html/src/yourgamedomain/GdxDefinition*.gwt.xml` add `<inherits name="com.badlogic.gdx.physics.box2d.box2d-gwt"/>`
 
 ***
 
@@ -248,12 +255,13 @@ compile "com.badlogicgames.gdx:gdx-bullet-platform:$gdxVersion:natives-desktop"
 compile "com.badlogicgames.gdx:gdx-bullet:$gdxVersion"
 natives "com.badlogicgames.gdx:gdx-bullet-platform:$gdxVersion:natives-armeabi"
 natives "com.badlogicgames.gdx:gdx-bullet-platform:$gdxVersion:natives-armeabi-v7a"
+natives "com.badlogicgames.gdx:gdx-bullet-platform:$gdxVersion:natives-arm64-v8a"
 natives "com.badlogicgames.gdx:gdx-bullet-platform:$gdxVersion:natives-x86"
+natives "com.badlogicgames.gdx:gdx-bullet-platform:$gdxVersion:natives-x86_64"
 ```
 **iOS Dependency:**
 ```groovy
-compile "com.badlogicgames.gdx:gdx-bullet:$gdxVersion"
-natives "com.badlogicgames.gdx:gdx-bullet-platform:$gdxVersion:natives-ios"
+compile "com.badlogicgames.gdx:gdx-bullet-platform:$gdxVersion:natives-ios"
 ```
 **HTML Dependency:**
 Not compatible!
@@ -278,16 +286,10 @@ natives "com.badlogicgames.gdx:gdx-freetype-platform:$gdxVersion:natives-arm64-v
 natives "com.badlogicgames.gdx:gdx-freetype-platform:$gdxVersion:natives-x86"
 natives "com.badlogicgames.gdx:gdx-freetype-platform:$gdxVersion:natives-x86_64"
 ```
-**iOS Dependency version 1.6.1+:**
+**iOS Dependency:**
 ```groovy
 compile "com.badlogicgames.gdx:gdx-freetype-platform:$gdxVersion:natives-ios"
 ```
-**iOS Dependency (Old version):**
-```groovy
-compile "com.badlogicgames.gdx:gdx-freetype:$gdxVersion"
-natives "com.badlogicgames.gdx:gdx-freetype-platform:$gdxVersion:natives-ios"
-```
-
 **HTML Dependency:**
 Not compatible!
 
@@ -317,14 +319,14 @@ compile "com.badlogicgames.gdx:gdx-controllers:$gdxVersion:sources"
 compile "com.badlogicgames.gdx:gdx-controllers-gwt:$gdxVersion"
 compile "com.badlogicgames.gdx:gdx-controllers-gwt:$gdxVersion:sources"
 ```
+and in `./html/src/yourgamedomain/GdxDefinition*.gwt.xml` add `<inherits name="com.badlogic.gdx.controllers.controllers-gwt"/>`
 
 ***
 
 #### Tools Gradle
 **Core Dependency:**
-```groovy
-Dont put me in core!
-```
+Don't put me in core!
+
 **Desktop Dependency:**
 ```groovy
 compile "com.badlogicgames.gdx:gdx-tools:$gdxVersion"
@@ -345,36 +347,57 @@ Not compatible!
 
 **Core Dependency:**
 ```groovy
-compile "com.badlogicgames.box2dlights:box2dlights:1.3"
+compile "com.badlogicgames.box2dlights:box2dlights:$box2DLightsVersion"
 ```
 **Android Dependency:**
 ```groovy
-compile "com.badlogicgames.box2dlights:box2dlights:1.3"
+compile "com.badlogicgames.box2dlights:box2dlights:$box2DLightsVersion"
 ```
 **HTML Dependency:**
 ```groovy
-compile "com.badlogicgames.box2dlights:box2dlights:1.3:sources"
+compile "com.badlogicgames.box2dlights:box2dlights:$box2DLightsVersion:sources"
 ```
+and in `./html/src/yourgamedomain/GdxDefinition*.gwt.xml` add `<inherits name="Box2DLights"/>`
 
 ***
 
-#### Ai Gradle
+#### Ashley Gradle
+
+* **Note:** This extension release cycle is not dependent on the main libGDX library, and so it is not unusual to have a new version published between two libGDX releases. If you want to pull in a new (or different) version, check https://repo1.maven.org/maven2/com/badlogicgames/ashley/ashley/ and change the `ashleyVersion` value in the `ext` section.
 
 **Core Dependency:**
 ```groovy
-compile "com.badlogicgames.gdx:gdx-ai:1.5.0"
+compile "com.badlogicgames.ashley:ashley:$ashleyVersion"
 ```
 **Android Dependency:**
 ```groovy
-compile "com.badlogicgames.gdx:gdx-ai:1.5.0"
+compile "com.badlogicgames.ashley:ashley:$ashleyVersion"
 ```
 **HTML Dependency:**
 ```groovy
-compile "com.badlogicgames.gdx:gdx-ai:1.5.0:sources"
+compile "com.badlogicgames.ashley:ashley:$ashleyVersion:sources"
 ```
-and in `./html/src/yourgamedomain/GdxDefinition*.gwt.xml` add `<inherits name="com.badlogic.gdx.ai"/>`
+and in `./html/src/yourgamedomain/GdxDefinition*.gwt.xml` add `<inherits name='com.badlogic.ashley_gwt' />`
 
-Note: Latest version of the AI package on repos is currently 1.5.0.  If you want to pull in a new or different version, check: https://repo1.maven.org/maven2/com/badlogicgames/gdx/gdx-ai/
+***
+
+#### AI Gradle
+
+* **Note:** This extension release cycle is not dependent on the main libGDX library, and so it is not unusual to have a new version published between two libGDX releases. If you want to pull in a new (or different) version, check https://repo1.maven.org/maven2/com/badlogicgames/gdx/gdx-ai/ and change the `aiVersion` value in the `ext` section.
+
+**Core Dependency:**
+```groovy
+compile "com.badlogicgames.gdx:gdx-ai:$aiVersion"
+```
+**Android Dependency:**
+```groovy
+compile "com.badlogicgames.gdx:gdx-ai:$aiVersion"
+```
+**HTML Dependency:**
+```groovy
+compile "com.badlogicgames.gdx:gdx-ai:$aiVersion:sources"
+```
+and in `./html/src/yourgamedomain/GdxDefinition*.gwt.xml` add `<inherits name='com.badlogic.gdx.ai' />`
 
 ***
 
@@ -473,9 +496,11 @@ project(":android") {
     dependencies {
         compile project(":core")
         compile "com.badlogicgames.gdx:gdx-backend-android:$gdxVersion"
-        natives "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-x86"
         natives "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-armeabi"
         natives "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-armeabi-v7a"
+        natives "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-arm64-v8a"
+        natives "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-x86"
+        natives "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-x86_64"
    
         compile "com.badlogicgames.gdx:gdx-freetype:$gdxVersion"
         natives "com.badlogicgames.gdx:gdx-freetype-platform:$gdxVersion:natives-armeabi"
@@ -581,8 +606,8 @@ This is done in the `gwt.xml` files in the gwt sub directory. You will need to m
 <!DOCTYPE module PUBLIC "-//Google Inc.//DTD Google Web Toolkit trunk//EN" "http://google-web-toolkit.googlecode.com/svn/trunk/distro-source/core/src/gwt-module.dtd">
 <module rename-to="html">
 	<inherits name='com.badlogic.gdx.backends.gdx_backends_gwt' />
-	<inherits name='com.badlogic.mygame.MyGame' />
-	<entry-point class='com.badlogic.mygame.client.GwtLauncher' />
+	<inherits name='MyGameName' />
+	<entry-point class='com.badlogic.mygame.client.HtmlLauncher' />
 	
 	<set-configuration-property name="gdx.assetpath" value="../android/assets" />
 </module>
@@ -594,8 +619,10 @@ These are the libgdx extensions that are supported in gwt
 
 * Libgdx Core - `<inherits name='com.badlogic.gdx.backends.gdx_backends_gwt' />`
 * Box2d       - `<inherits name='com.badlogic.gdx.physics.box2d.box2d-gwt' />`
-* Box2dLights       - `<inherits name='Box2DLights' />`
+* Box2dLights - `<inherits name='Box2DLights' />`
 * Controllers - `<inherits name='com.badlogic.gdx.controllers.controllers-gwt' />`
+* Ashley      - `<inherits name='com.badlogic.ashley_gwt' />`
+* AI          - `<inherits name='com.badlogic.gdx.ai' />`
 
 **An example: The Universal Tween Engine**
 ```xml
