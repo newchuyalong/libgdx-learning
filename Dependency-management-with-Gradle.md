@@ -31,75 +31,97 @@ Here is a small section of the _default_ buildscript that is generated from the 
 
 _Full script you will see will differ slightly depending on what other modules you have_
 ```groovy
+//Configuration for the script itself (aka, listing the dependencies of the script that lists dependencies - InSCRIPTion!)
 buildscript {
-    //Defines the repositories that are required by this script, e.g. android plugin
+    //Defines the repositories required by this script, e.g. hosting the android plugin
     repositories {
+        //local maven repository (advanced use)
+        mavenLocal()
         //maven central repository, needed for the android plugin
         mavenCentral()
-        //repository for libgdx artifacts
+        //snapshot repository (in case this script depends on a snapshot/prerelease artifact)
         maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
     }
-    //
+    //Defines the artifacts this script depends on, e.g. the android plugin
     dependencies {
         //Adds the android gradle plugin as a dependency of this buildscript
-        classpath 'com.android.tools.build:gradle:0.9+'
+        classpath 'com.android.tools.build:gradle:1.5.0'
     }
 }
 
+//Configuration common to all projects (:core, :desktop and :android in this example)
 allprojects {
+    //Defines gradle plugins used by all projects.
+    //A plugin extends gradle with additional tasks, configurations, etc., with defaults set according to conventions.
     apply plugin: "eclipse"
     apply plugin: "idea"
-    
+
+    //Version of your game
     version = "1.0"
+    //Defines 'extra' (custom) properties for all projects
     ext {
-        appName = "%APP_NAME%"
-        gdxVersion = "1.0-SNAPSHOT"
-        roboVMVersion = "0.0.10"
+        appName = "the-name-of-your-game"
+        //Versions of the libgdx dependencies (used further below on those 'compile' lines)
+        gdxVersion = "1.9.3"
+        roboVMVersion = '2.1.0'
+        box2DLightsVersion = '1.4'
+        ashleyVersion = '1.7.0'
+        aiVersion = '1.8.0'
     }
-    
+
+    //Defines all repositories needed for all projects
     repositories {
-        //Defines all repositories needed for all projects
         mavenLocal();
         mavenCentral()
         maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
+        maven { url "https://oss.sonatype.org/content/repositories/releases/" }
     }
 }
 
-project(":core") {
-    apply plugin: "java"
-    
-    dependencies {
-        //Defines dependencies for the :core project, in this example the gdx depdendency
-        compile "com.badlogicgames.gdx:gdx:$gdxVersion"
-    }
-}
-
+//Configuration for the desktop project
 project(":desktop") {
+    //Uses the java plugin (provides compiling, execution, etc.).
+    //That one is bundled with gradle, so we didn’t have to define it in the buildscript section.
     apply plugin: "java"
-    
+
+    //Defines dependencies for the :desktop project
     dependencies {
-    //Defines dependencies for the :desktop project, adds dependency on the :core project as well as 
-    //The gdx lwjgl backend and native dependencies
+        //Adds dependency on the :core project as well as the gdx lwjgl backend and native dependencies
         compile project(":core")
         compile "com.badlogicgames.gdx:gdx-backend-lwjgl:$gdxVersion"
         compile "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-desktop"
     }
 }
 
+//Configuration for the android project
 project(":android") {
+    //Uses the android gradle plugin (provides compiling, copying on device, etc.)
     apply plugin: "android"
 
     configurations { natives }
 
+    //Defines dependencies for the :android project
     dependencies {
-        //defines dependencies for the :android project, depends on the :core project,
-        //and also the android backends and all platform natives. Note the 'natives' classifier
-        //in this project
+        //Adds dependencies on the :core project, as well as the android backends and all platform natives.
+        //Note the 'natives' classifier in this project.
         compile project(":core")
         compile "com.badlogicgames.gdx:gdx-backend-android:$gdxVersion"        
-        natives "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-x86"
         natives "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-armeabi"
         natives "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-armeabi-v7a"
+        natives "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-arm64-v8a"
+        natives "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-x86"
+        natives "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-x86_64"
+    }
+}
+
+//Defines the configuration of the core project
+project(":core") {
+    //Uses the java gradle plugin
+    apply plugin: "java"
+
+    dependencies {
+        //Defines dependencies for the :core project, in this example the gdx dependency
+        compile "com.badlogicgames.gdx:gdx:$gdxVersion"
     }
 }
 
