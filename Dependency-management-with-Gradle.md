@@ -29,8 +29,7 @@ The root directory, and each sub directory contains a `build.gradle` file, for c
 
 Here is a small section of the _default_ buildscript that is generated from the setup:
 
-_Full script you will see will differ slightly depending on what other modules you have, 
-see [here](https://github.com/libgdx/libgdx/blob/master/extensions/gdx-setup/src/com/badlogic/gdx/setup/resources/core/build.gradle)_
+_Full script you will see will differ slightly depending on what other modules you have_
 ```groovy
 buildscript {
     //Defines the repositories that are required by this script, e.g. android plugin
