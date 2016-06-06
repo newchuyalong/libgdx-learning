@@ -39,7 +39,7 @@ buildscript {
         mavenLocal()
         //maven central repository, needed for the android plugin
         mavenCentral()
-        //snapshot repository (in case this script depends on a snapshot/prerelease artifact)
+        //snapshot repository (in case this script depends on snapshot/prerelease artifacts)
         maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
     }
     //Defines the artifacts this script depends on, e.g. the android plugin
@@ -78,7 +78,7 @@ allprojects {
     }
 }
 
-//Configuration for the desktop project
+//Configuration for the :desktop project
 project(":desktop") {
     //Uses the java plugin (provides compiling, execution, etc.).
     //That one is bundled with gradle, so we didn’t have to define it in the buildscript section.
@@ -93,7 +93,7 @@ project(":desktop") {
     }
 }
 
-//Configuration for the android project
+//Configuration for the :android project
 project(":android") {
     //Uses the android gradle plugin (provides compiling, copying on device, etc.)
     apply plugin: "android"
@@ -102,7 +102,7 @@ project(":android") {
 
     //Defines dependencies for the :android project
     dependencies {
-        //Adds dependencies on the :core project, as well as the android backends and all platform natives.
+        //Adds dependencies on the :core project as well as the android backends and all platform natives.
         //Note the 'natives' classifier in this project.
         compile project(":core")
         compile "com.badlogicgames.gdx:gdx-backend-android:$gdxVersion"        
@@ -114,7 +114,7 @@ project(":android") {
     }
 }
 
-//Defines the configuration of the core project
+//Configuration for the :core project
 project(":core") {
     //Uses the java gradle plugin
     apply plugin: "java"
