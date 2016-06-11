@@ -25,7 +25,7 @@ Some examples:
 
 * [Lein-droid for Clojure](https://github.com/clojure-android/lein-droid/wiki/Tutorial)
 * [SBT-Android for Scala](http://fxthomas.github.io/android-plugin/)
-* [Kotlin on android using the Kotlin plugin of IntelliJ IDEA](http://blog.jetbrains.com/kotlin/2013/08/working-with-kotlin-in-android-studio/)
+* [Kotlin on android using the Kotlin plugin of IntelliJ IDEA](http://blog.jetbrains.com/kotlin/2013/08/working-with-kotlin-in-android-studio/) Kotlin has full support of android and Java 6, with the same codebase/featureset.
 
 ## iOS-ROBOVM ##
 
