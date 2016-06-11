@@ -41,7 +41,7 @@ Many people have used LibGDX in their JVM language of choice. Here are some exam
 
 * [Scala](https://github.com/ajhager/libgdx-sbt-project.g8) 
 * [Ruby](https://github.com/kabbotta/LibGDX-and-Ruby)
-* [Kotlin](#examples-of-libgdx-projects-using-kotlin)
+* [Kotlin](https://github.com/libgdx/libgdx/wiki/Using-libgdx-with-Kotlin#examples-of-libgdx-projects-using-kotlin)
 
 TODO (find some recent examples, would love contributions!)
 
