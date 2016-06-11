@@ -6,6 +6,8 @@ It also does not force much of anything upon you like some other languages. That
 
 It's also 100% interoperable with your Java libraries, and even other Java source files in your project. Seamlessly.
 
+**See [Kotlin Language Reference Docs](https://kotlinlang.org/docs/reference/) for learning**
+
 This guide describes how to migrate an existing LibGDX project to Kotlin. You can also start with a [fresh application](https://github.com/libgdx/libgdx/wiki/Project-Setup-Gradle).
 
 * [Configure Gradle](#configure-gradle)
