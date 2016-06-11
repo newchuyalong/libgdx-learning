@@ -1,4 +1,8 @@
-[Kotlin](https://kotlinlang.org) is a modern statically typed JVM language from [JetBrains](https://www.jetbrains.com), the creators of [IntelliJ IDEA](https://www.jetbrains.com/idea/). Features such as null safe types, higher order functions, lambdas, cleaner syntax than Java, and so on. It also enables you to target Java 6 without the same loss of features like you get in Java. This makes it especially attractive for Android. It also does not force much of anything upon you like some other languages. That is, you can create Kotlin code that is much like the same Java code (without lambdas, no higher order functions, same class/OOP design, etc). It's a more pragmatic language, rather than academic/forceful.
+[Kotlin](https://kotlinlang.org) is a modern statically typed JVM language from [JetBrains](https://www.jetbrains.com), the creators of [IntelliJ IDEA](https://www.jetbrains.com/idea/). Features such as null safe types, higher order functions, lambdas, cleaner syntax than Java, and so on. It also enables you to target Java 6 without the same loss of features like you get in Java. 
+
+This makes it especially attractive for Android. 
+
+It also does not force much of anything upon you like some other languages. That is, you can create Kotlin code that is much like the same Java code (without lambdas, no higher order functions, same class/OOP design, etc). It's a more pragmatic language, rather than academic/forceful.
 
 This guide describes how to migrate an existing LibGDX project to Kotlin. You can also start with a [fresh application](https://github.com/libgdx/libgdx/wiki/Project-Setup-Gradle).
 
