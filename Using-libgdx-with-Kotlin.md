@@ -4,6 +4,8 @@ This makes it especially attractive for Android.
 
 It also does not force much of anything upon you like some other languages. That is, you can create Kotlin code that is much like the same Java code (without lambdas, no higher order functions, same class/OOP design, etc). It's a more pragmatic language, rather than academic/forceful.
 
+It's also 100% interoperable with your Java libraries, and even other Java source files in your project. Seamlessly.
+
 This guide describes how to migrate an existing LibGDX project to Kotlin. You can also start with a [fresh application](https://github.com/libgdx/libgdx/wiki/Project-Setup-Gradle).
 
 * [Configure Gradle](#configure-gradle)
