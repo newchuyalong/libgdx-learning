@@ -10,6 +10,8 @@ Notable Features:
 * Operator overloading
 * Target Java 6 transparently, without the same loss of features like you get in Java. This makes it especially attractive for Android. 
 * 100% interoperable with your Java libraries, and even other Java source files in your project. Seamlessly. Has a button to convert existing Java code to Kotlin too.
+* Properties
+* Ranges and range operator: if (x in 0..10) println("in range!")
 * ...many more
 
 
