@@ -1,17 +1,19 @@
-[Kotlin](https://kotlinlang.org) is a modern statically typed JVM language from [JetBrains](https://www.jetbrains.com), the creators of [IntelliJ IDEA](https://www.jetbrains.com/idea/) (they support Eclipse too). C# users will feel more at home as it has many features it has as well as features C# can never have. 
+[Kotlin](https://kotlinlang.org) is a modern statically typed JVM language from [JetBrains](https://www.jetbrains.com), the creators of [IntelliJ IDEA](https://www.jetbrains.com/idea/) (they support Eclipse too). If you're a C# user or appreciate its features, you will feel more at home as Kotlin has many features C# has as well as features C# can never have(null safety).
 
 Notable Features:
 * Null safe types(more compile time errors instead of always runtime ones)
 * Higher order functions
 * Lambdas that work well (closures, Java doesn't really have)
 * Cleaner syntax than Java (semi-colons are optional, 'new' keyword isn't there, because it's unnecessary)
-* Extension functions, so you can extend with static methods and create e.g. myString.myCustomFunction()
+* Extension functions(like C# has), so you can extend with static methods and create e.g. myString.myCustomFunction()
+* String interpolation: println("size is ${list.size} out of $maxElements")
+* Operator overloading
 * Target Java 6 transparently, without the same loss of features like you get in Java. This makes it especially attractive for Android. 
 * 100% interoperable with your Java libraries, and even other Java source files in your project. Seamlessly. Has a button to convert existing Java code to Kotlin too.
+* ...many more
+
 
 It also does not force much of anything upon you like some other languages. That is, you can create Kotlin code that is much like the same Java code (without lambdas, no higher order functions, same class/OOP design, etc). It's a more pragmatic language, rather than academic/forceful.
-
-
 
 **See [Kotlin Language Reference Docs](https://kotlinlang.org/docs/reference/) for learning/deciding on the language**
 
