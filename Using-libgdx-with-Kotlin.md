@@ -1,4 +1,4 @@
-[Kotlin](https://kotlinlang.org) is a modern statically typed JVM language from [JetBrains](https://www.jetbrains.com), the creators of [IntelliJ IDEA](https://www.jetbrains.com/idea/). Features such as null safe types, higher order functions, lambdas, cleaner syntax than Java, and so on. It also enables you to target Java 6 without the same loss of features like you get in Java. 
+[Kotlin](https://kotlinlang.org) is a modern statically typed JVM language from [JetBrains](https://www.jetbrains.com), the creators of [IntelliJ IDEA](https://www.jetbrains.com/idea/) (they support Eclipse too). Features such as null safe types, higher order functions, lambdas, cleaner syntax than Java, and so on. It also enables you to target Java 6 without the same loss of features like you get in Java. 
 
 This makes it especially attractive for Android. 
 
