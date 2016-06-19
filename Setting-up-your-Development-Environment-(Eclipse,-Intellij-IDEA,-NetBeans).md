@@ -7,7 +7,7 @@ Regardless of your development environment of choice, here's what you'll need fo
   * An [Apple developer account](https://developer.apple.com/membercenter/index.action) if you want to test on device or deploy to the App Store. Please direct all hatred towards Apple.
 
 #### Setting up RoboVM for iOS development
-As the official RoboVM has been shut down Microsoft, libGDX has since switched to a fork of RoboVM, maintained by the libGDX core contributors. It's known as [MobiDevelop's RoboVM fork](https://robovm.mobidevelop.com).
+As the official RoboVM has been shut down Microsoft, libGDX has since switched to a fork of RoboVM, maintained by the libGDX core contributors. It's known as [MobiDevelop's RoboVM fork](http://robovm.mobidevelop.com).
 
 For Eclipse, check what is the latest release version of the (RoboVM Eclipse plugin](http://robovm.mobidevelop.com/downloads/releases/eclipse/). The update URL should look like this: `http://robovm.mobidevelop.com/downloads/releases/eclipse/2.1.0/site`. Just replace the version string with the latest release' version string.
 
