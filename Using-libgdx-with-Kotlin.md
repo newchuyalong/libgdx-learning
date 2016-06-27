@@ -1,4 +1,4 @@
-[Kotlin](https://kotlinlang.org) is a modern statically typed JVM language from [JetBrains](https://www.jetbrains.com), the creators of [IntelliJ IDEA](https://www.jetbrains.com/idea/) (they support Eclipse too). If you're a C# user or appreciate its features, you will feel more at home as Kotlin has many features C# has as well as features C# can never have(null safety).
+[Kotlin](https://kotlinlang.org) is a modern statically typed JVM language from [JetBrains](https://www.jetbrains.com), the creators of [IntelliJ IDEA](https://www.jetbrains.com/idea/) (Kotlin supports Eclipse too). If you're a C# user or appreciate its features, you will feel more at home as Kotlin has many features C# has as well as features C# can never have(null safety).
 
 Notable Features:
 * Null safe types(more compile time errors instead of always runtime ones)
