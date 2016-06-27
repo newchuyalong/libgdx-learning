@@ -1,6 +1,6 @@
 [Kotlin](https://kotlinlang.org) is a modern statically typed JVM language from [JetBrains](https://www.jetbrains.com), the creators of [IntelliJ IDEA](https://www.jetbrains.com/idea/) (Kotlin supports Eclipse too). If you’re a C# user or appreciate its features, you will feel more at home as Kotlin has many features C# has, as well as features C# can never have (null safety).
 
-*Due to how GWT works, you will not be able to use the HTML5 target with Kotlin.*
+*Due to how GWT works, you will not be able to use the HTML5 target with Kotlin. This could be fixed in the future by using Kotlin’s JavaScript back-end.*
 
 # About the Kotlin language
 
