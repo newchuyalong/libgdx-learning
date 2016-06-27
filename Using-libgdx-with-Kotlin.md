@@ -1,21 +1,22 @@
-[Kotlin](https://kotlinlang.org) is a modern statically typed JVM language from [JetBrains](https://www.jetbrains.com), the creators of [IntelliJ IDEA](https://www.jetbrains.com/idea/) (Kotlin supports Eclipse too). If you're a C# user or appreciate its features, you will feel more at home as Kotlin has many features C# has as well as features C# can never have(null safety).
+[Kotlin](https://kotlinlang.org) is a modern statically typed JVM language from [JetBrains](https://www.jetbrains.com), the creators of [IntelliJ IDEA](https://www.jetbrains.com/idea/) (Kotlin supports Eclipse too). If you’re a C# user or appreciate its features, you will feel more at home as Kotlin has many features C# has, as well as features C# can never have (null safety).
 
-Notable Features:
-* Null safe types(more compile time errors instead of always runtime ones)
-* Higher order functions
-* Lambdas that work well (closures, Java doesn't really have)
-* Cleaner syntax than Java (semi-colons are optional, 'new' keyword isn't there, because it's unnecessary)
-* Extension functions(like C# has), so you can extend with static methods and create e.g. myString.myCustomFunction()
-* String interpolation: println("size is ${list.size} out of $maxElements")
+Notable features:
+
+* Null-safe types (more compile-time errors instead of always runtime ones)
+* Higher-order functions
+* Lambdas that work well (closures, which Java doesn’t really have)
+* Cleaner syntax than Java (semi-colons are optional; `new` keyword isn't there, because it’s unnecessary)
+* Extension functions (like C# has), so you can extend with static methods and create e.g. `"a string".myCustomFunction()`
+* String interpolation: `println("size is ${list.size} out of $maxElements")`
 * Operator overloading
-* Target Java 6 transparently, without the same loss of features like you get in Java. This makes it especially attractive for Android. 
+* Target Java 6 transparently, without the same loss of features like you get in Java. This makes it especially attractive for Android.
 * 100% interoperable with your Java libraries, and even other Java source files in your project. Seamlessly. Has a button to convert existing Java code to Kotlin too.
 * Properties
-* Ranges and range operator: if (x in 0..10) println("in range!")
-* ...many more
+* Ranges and range operator: `if (x in 0..10) println("in range!")`
+* … many more
 
 
-It also does not force much of anything upon you like some other languages. That is, you can create Kotlin code that is much like the same Java code (without lambdas, no higher order functions, same class/OOP design, etc). It's a more pragmatic language, rather than academic/forceful.
+It also does not force much of anything upon you like some other languages. That is, you can create Kotlin code that is much like the same Java code (without lambdas, no higher order functions, same class/OOP design, etc). It’s a more pragmatic language, rather than academic/forceful.
 
 **See [Kotlin Language Reference Docs](https://kotlinlang.org/docs/reference/) for learning/deciding on the language**
 
@@ -37,7 +38,7 @@ This step basically includes following the [instructions from the official Kotli
 
 ## Set up the kotlin-gradle plugin
 
-Add the following to your parent project's `build.gradle`:
+Add the following to your parent project’s `build.gradle`:
 
     buildscript {
         ext.kotlinVersion = '<version to use>'
@@ -57,13 +58,13 @@ In the android sub-project, add `apply plugin: "kotlin-android"` after the `appl
 
 ## Configuring Dependencies
 
-Add Kotlin's stdlib to your core project's dependencies list:
+Add Kotlin’s stdlib to your core project's dependencies list:
 
     dependencies {
         compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion"
     }
 
-If you intend to use Kotlin's reflection capabilities as well, add the respective library too:
+If you intend to use Kotlin’s reflection capabilities as well, add the respective library too:
 
     dependencies {
         compile "org.jetbrains.kotlin:kotlin-reflect:$kotlinVersion"
@@ -75,15 +76,16 @@ You do not need to migrate all or any of your Java code right away. Both languag
 
 However, if you decide to migrate your Java code to Kotlin, IntelliJ IDEA has a handy function for that.
 
-Open any Java file, e.g. your `DesktopLauncher` and select _Code -> Convert Java File to Kotlin File_ from the menu. Repeat this process for every file you want to migrate.
+Open any Java file, e.g. your `DesktopLauncher` and select *Code → Convert Java File to Kotlin File* from the menu. Repeat this process for every file you want to migrate.
 
 # Build and run
 
-That's it. You successfully enabled Kotlin in your LibGDX application. Build and run your project to verify that everything works.
+That’s it. You successfully enabled Kotlin in your libGDX application. Build and run your project to verify that everything works.
 
-# Examples of libgdx projects using Kotlin
+# Examples of libGDX projects using Kotlin
+
 These are some examples of projects that are using Kotlin, to help give you ideas on how to structure, take advantage of language features, as well as simple stuff such as build system.
 
 * [Ore Infinium](https://github.com/sreich/ore-infinium) (desktop, moderate size, MIT license)
 
-TODO: add more real life project examples of Kotlin being used for libgdx projects.
+*TODO:* add more real life project examples of Kotlin being used for libgdx projects.
