@@ -35,7 +35,7 @@ Some examples:
 
 The ROBOVM backend is a JVM on iOS which executes Java bytecode. This should work, but has not been tested!
 
-### GWT/HTML
+### HTML/GWT
 
 Because libGDX uses GWT, JVM languages other than Java **cannot use the HTML5 target** of libGDX. GWT [transpiles](http://en.wikipedia.org/wiki/Source-to-source_compiler) Java to JavaScript, as opposed to Java bytecode (`.class` files) to JavaScript code. There are a few reasons for this, quickly outlined by a Google employee [here](https://groups.google.com/d/msg/google-web-toolkit/SIUZRZyvEPg/OaCGAfNAzzEJ).
 
