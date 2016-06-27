@@ -1,21 +1,21 @@
-LibGDX is mainly a Java-based framework. However, because Java produces Java bytecodes, and the virtual machine runs these bytecodes, it is possible to run LibGDX in any JVM language with proper Java interoperability.
+libGDX is mainly a Java-based framework. However, because Java produces Java bytecodes, and the virtual machine runs these bytecodes, it is possible to run libGDX in any JVM language with proper Java interoperability.
 
 ## Interoperability ##
 
 * [Clojure](http://clojure.org/java_interop)
- * [Using libgdx with Clojure] (https://github.com/libgdx/libgdx/wiki/Using-libgdx-with-Clojure)
+    * [Using libGDX with Clojure] (https://github.com/libgdx/libgdx/wiki/Using-libgdx-with-Clojure)
 * [Kotlin](http://confluence.jetbrains.com/display/Kotlin/Java+interoperability)
- * [Using libgdx with Kotlin] (https://github.com/libgdx/libgdx/wiki/Using-libgdx-with-Kotlin)
+    * [Using libGDX with Kotlin] (https://github.com/libgdx/libgdx/wiki/Using-libGDX-with-Kotlin)
 * [Python](http://www.jython.org/jythonbook/en/1.0/JythonAndJavaIntegration.html)
- * [Using libgdx with Python] (https://github.com/libgdx/libgdx/wiki/Using-libgdx-with-Python)
+    * [Using libGDX with Python] (https://github.com/libgdx/libgdx/wiki/Using-libgdx-with-Python)
 * [Scala](http://www.scala-lang.org/old/faq/4)
- * [Using libgdx with Scala] (https://github.com/libgdx/libgdx/wiki/Using-libgdx-with-Scala)
+    * [Using libGDX with Scala] (https://github.com/libgdx/libgdx/wiki/Using-libgdx-with-Scala)
 * [Ruby](https://github.com/jruby/jruby/wiki/CallingJavaFromJRuby)
 * [Ceylon](http://ceylon-lang.org/documentation/1.2/tour/interop/)
 
 ## Desktop ##
 
-This works out of the box, as the desktop LibGDX back-end uses the JVM that you have installed on your computer, which is most likely either OpenJDK or Oracle JDK. Both of these JVMs support polyglot code, as they run on .class files, not Java source code.
+This works out of the box, as the desktop libGDX back-end uses the JVM that you have installed on your computer, which is most likely either OpenJDK or Oracle JDK. Both of these JVMs support polyglot code, as they run on `.class` files, not Java source code.
 
 ## Android ##
 
@@ -25,7 +25,7 @@ Some examples:
 
 * [Lein-droid for Clojure](https://github.com/clojure-android/lein-droid/wiki/Tutorial)
 * [SBT-Android for Scala](http://fxthomas.github.io/android-plugin/)
-* [Kotlin on android using the Kotlin plugin of IntelliJ IDEA](http://blog.jetbrains.com/kotlin/2013/08/working-with-kotlin-in-android-studio/) Kotlin has full support of android and Java 6, with the same codebase/featureset.
+* [Kotlin on Android using the Kotlin plugin of IntelliJ IDEA](http://blog.jetbrains.com/kotlin/2013/08/working-with-kotlin-in-android-studio/) Kotlin has full support for Android and Java 6, with the same codebase/featureset.
 
 ## iOS-ROBOVM ##
 
@@ -33,15 +33,17 @@ The ROBOVM backend is a JVM on iOS which executes Java bytecode. This should wor
 
 ## GWT/HTML ##
 
-GWT [transpiles](http://en.wikipedia.org/wiki/Source-to-source_compiler) Java to JavaScript. As opposed to Java bytecodes (.class files) to JavaScript code. There are a few reasons, quickly outlined by a Google employee [here](https://groups.google.com/d/msg/google-web-toolkit/SIUZRZyvEPg/OaCGAfNAzzEJ).
+Because libGDX uses GWT, JVM languages other than Java **cannot use the HTML5 target** of libGDX. GWT [transpiles](http://en.wikipedia.org/wiki/Source-to-source_compiler) Java to JavaScript, as opposed to Java bytecode (`.class` files) to JavaScript code. There are a few reasons for this, quickly outlined by a Google employee [here](https://groups.google.com/d/msg/google-web-toolkit/SIUZRZyvEPg/OaCGAfNAzzEJ).
+
+This could theoretically be fixed for JVM languages that have their own JavaScript back-ends, such as [Scala](https://www.scala-js.org/) and [Kotlin](https://kotlinlang.org/docs/tutorials/create-library-js.html). Your libGDX project’s build system would have to be changed to integrate with those back-ends instead of with GWT.
 
 ## Examples ##
 
-Many people have used LibGDX in their JVM language of choice. Here are some examples.
+Many people have used libGDX in their JVM language of choice. Here are some examples.
 
 * [Scala](https://github.com/ajhager/libgdx-sbt-project.g8) 
 * [Ruby](https://github.com/kabbotta/LibGDX-and-Ruby)
-* [Kotlin](https://github.com/libgdx/libgdx/wiki/Using-libgdx-with-Kotlin#examples-of-libgdx-projects-using-kotlin)
+* [Kotlin](https://github.com/libgdx/libgdx/wiki/Using-libGDX-with-Kotlin#examples-of-libGDX-projects-using-kotlin)
 
 TODO (find some recent examples, would love contributions!)
 
