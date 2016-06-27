@@ -2,6 +2,8 @@
 
 *Due to how GWT works, you will not be able to use the HTML5 target with Kotlin.*
 
+# About the Kotlin language
+
 Notable features:
 
 * Null-safe types (more compile-time errors instead of always runtime ones)
@@ -19,11 +21,11 @@ Notable features:
 
 It also does not force much of anything upon you like some other languages. That is, you can create Kotlin code that is much like the same Java code (without lambdas, no higher order functions, same class/OOP design, etc). It’s a more pragmatic language, rather than academic/forceful.
 
-**See [Kotlin Language Reference Docs](https://kotlinlang.org/docs/reference/) for learning/deciding on the language**
+See the [Kotlin Language Reference Docs](https://kotlinlang.org/docs/reference/) for deciding on and learning the language. You can also read the [Kotlin comparison to Java](https://kotlinlang.org/docs/reference/comparison-to-java.html).
 
-[Kotlin comparison to Java](https://kotlinlang.org/docs/reference/comparison-to-java.html)
+# Migrating an existing project to Kotlin
 
-This guide describes how to migrate an existing LibGDX project to Kotlin. You can also start with a [fresh application](https://github.com/libgdx/libgdx/wiki/Project-Setup-Gradle).
+This guide describes how to migrate an existing libGDX project to Kotlin. You can also start with a [fresh application](https://github.com/libgdx/libgdx/wiki/Project-Setup-Gradle).
 
 * [Configure Gradle](#configure-gradle)
   * [Setup the Kotlin Gradle plugin](#set-up-the-kotlin-gradle-plugin)
@@ -31,13 +33,13 @@ This guide describes how to migrate an existing LibGDX project to Kotlin. You ca
   * [Configuring Dependencies](#configuring-dependencies)
 * [Convert Your Code From Java to Kotlin](#convert-your-code-from-java-to-kotlin)
 * [Build and Run](#build-and-run)
-* [Examples of libgdx projects using Kotlin](#examples-of-libgdx-projects-using-kotlin)
+* [Examples of libGDX projects using Kotlin](#examples-of-libgdx-projects-using-kotlin)
 
-# Configure Gradle
+## Configure Gradle
 
 This step basically includes following the [instructions from the official Kotlin manual](https://kotlinlang.org/docs/reference/using-gradle.html).
 
-## Set up the kotlin-gradle plugin
+### Set up the kotlin-gradle plugin
 
 Add the following to your parent project’s `build.gradle`:
 
@@ -51,13 +53,13 @@ Add the following to your parent project’s `build.gradle`:
 
 Since most likely you already got the `buildscript` block in your Gradle config, make sure to only add the sub-items accordingly.
 
-## Apply the kotlin-gradle plugin
+### Apply the kotlin-gradle plugin
 
 Replace all occurrences of `apply plugin: "java"` with `apply plugin: "kotlin"`. Check your parent project's `build.gradle` as well as your sub-projects (core, desktop, ios, android).
 
 In the android sub-project, add `apply plugin: "kotlin-android"` after the `apply plugin: "android"` line.
 
-## Configuring Dependencies
+### Configuring Dependencies
 
 Add Kotlin’s stdlib to your core project's dependencies list:
 
@@ -71,7 +73,7 @@ If you intend to use Kotlin’s reflection capabilities as well, add the respect
         compile "org.jetbrains.kotlin:kotlin-reflect:$kotlinVersion"
     }
 
-# Convert your code from Java to Kotlin
+## Convert your code from Java to Kotlin
 
 You do not need to migrate all or any of your Java code right away. Both languages are fully interoperable with each other.
 
@@ -79,7 +81,7 @@ However, if you decide to migrate your Java code to Kotlin, IntelliJ IDEA has a 
 
 Open any Java file, e.g. your `DesktopLauncher` and select *Code → Convert Java File to Kotlin File* from the menu. Repeat this process for every file you want to migrate.
 
-# Build and run
+## Build and run
 
 That’s it. You successfully enabled Kotlin in your libGDX application. Build and run your project to verify that everything works.
 
@@ -89,4 +91,4 @@ These are some examples of projects that are using Kotlin, to help give you idea
 
 * [Ore Infinium](https://github.com/sreich/ore-infinium) (desktop, moderate size, MIT license)
 
-*TODO:* add more real life project examples of Kotlin being used for libgdx projects.
+*TODO:* add more real life project examples of Kotlin being used for libGDX projects.
