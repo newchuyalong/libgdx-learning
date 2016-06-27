@@ -1,5 +1,7 @@
 [Kotlin](https://kotlinlang.org) is a modern statically typed JVM language from [JetBrains](https://www.jetbrains.com), the creators of [IntelliJ IDEA](https://www.jetbrains.com/idea/) (Kotlin supports Eclipse too). If you’re a C# user or appreciate its features, you will feel more at home as Kotlin has many features C# has, as well as features C# can never have (null safety).
 
+*Due to how GWT works, you will not be able to use the HTML5 target with Kotlin.*
+
 Notable features:
 
 * Null-safe types (more compile-time errors instead of always runtime ones)
@@ -14,7 +16,6 @@ Notable features:
 * Properties
 * Ranges and range operator: `if (x in 0..10) println("in range!")`
 * … many more
-
 
 It also does not force much of anything upon you like some other languages. That is, you can create Kotlin code that is much like the same Java code (without lambdas, no higher order functions, same class/OOP design, etc). It’s a more pragmatic language, rather than academic/forceful.
 
