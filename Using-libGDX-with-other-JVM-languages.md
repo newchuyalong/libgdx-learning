@@ -1,5 +1,7 @@
 libGDX is mainly a Java-based framework. However, because Java produces Java bytecodes, and the virtual machine runs these bytecodes, it is possible to run libGDX in any JVM language with proper Java interoperability.
 
+Some target platforms can’t run Java bytecodes directly, and so have more specific compilation requirements. Using a language other than Java may affect support for these platforms.
+
 ## Language interoperability guides
 
 * [Clojure](http://clojure.org/java_interop)
