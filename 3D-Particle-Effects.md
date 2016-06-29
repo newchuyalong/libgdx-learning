@@ -24,8 +24,7 @@ There are 3 different kinds of 3D particle effects:
 
 **Billboards** are sprites that always face the camera (the Decal class in libgdx is essentially a billboard).
 
-**PointSprites** draw a sprite to a single 3d point.  They are simpler than billboards, but more efficient. The dust and explosion effects in the following video are done with PointSprites: [3D Tank Battle video](https://www.youtube.com/watch?v=lt9kYDb9p78).
-More information about point sprites in OpenGL: http://www.informit.com/articles/article.aspx?p=770639&seqNum=7
+**PointSprites** draw a sprite to a single 3d point.  They are simpler than billboards, but more efficient. The dust and explosion effects in the following video are done with PointSprites: [3D Tank Battle video](https://www.youtube.com/watch?v=lt9kYDb9p78). More information about point sprites in OpenGL: http://www.informit.com/articles/article.aspx?p=770639&seqNum=7
 
 **ModelInstances** are familiar to you if you have done any 3D work in libgdx.  They are instances of 3D models.  Not surprisingly, this is the most taxing type of particle effect in terms of performance.
 
