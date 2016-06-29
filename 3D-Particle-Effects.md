@@ -21,24 +21,22 @@ There are 3 different kinds of 3D particle effects:
 * Billboards
 * PointSprites
 * ModelInstance
-* ??TODO: ParticleController??
 
-**Billboards** are sprites that always face the camera (the Decal class in libgdx is essentially a billboard)
+**Billboards** are sprites that always face the camera (the Decal class in libgdx is essentially a billboard).
 
-**PointSprites** draw a sprite to a single 3d point.  They are simpler than billboards, but more efficient. The dust and explosion effects in the following video are done with PointSprites:
-
-[3D Tank Battle video](https://www.youtube.com/watch?v=lt9kYDb9p78)
-
+**PointSprites** draw a sprite to a single 3d point.  They are simpler than billboards, but more efficient. The dust and explosion effects in the following video are done with PointSprites: [3D Tank Battle video](https://www.youtube.com/watch?v=lt9kYDb9p78).
 More information about point sprites in OpenGL: http://www.informit.com/articles/article.aspx?p=770639&seqNum=7
 
 **ModelInstances** are familiar to you if you have done any 3D work in libgdx.  They are instances of 3D models.  Not surprisingly, this is the most taxing type of particle effect in terms of performance.
 
+Due to those differences, each particle effect type has its own dedicated batch renderer: [BillboardParticleBatch](https://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/graphics/g3d/particles/batches/BillboardParticleBatch.html), [PointSpriteParticleBatch](https://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/graphics/g3d/particles/batches/PointSpriteParticleBatch.html), [ModelInstanceParticleBatch](https://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/graphics/g3d/particles/batches/ModelInstanceParticleBatch.html).
+
 -----------------
 
 # Using 3D Particle Effects
-The easiest way to use 3D particle effects is by taking advantage of the ParticleSystem class, abstracting away various details and managing them for you. First we will create the batch of the type(s) we wish to use, then create the ParticleSystem.  In this case, we are going to use PointSprites
+The easiest way to use 3D particle effects is by taking advantage of the ParticleSystem class, abstracting away various details and managing them for you. First we will create the batch of the type(s) we wish to use, then create the ParticleSystem.  In this case, we are going to use PointSprites.
 
-For a more in depth look at how to use 3d particles programmatically, [take a look at the test class](https://github.com/libgdx/libgdx/blob/master/tests/gdx-tests/src/com/badlogic/gdx/tests/g3d/ParticleControllerTest.java):
+For a more in depth look at how to use 3d particles programmatically, [take a look at the test class](https://github.com/libgdx/libgdx/blob/master/tests/gdx-tests/src/com/badlogic/gdx/tests/g3d/ParticleControllerTest.java).
 
 **IMPORTANT**: When you import the **ParticleEffect** class into your IDE, make sure you do not accidentally import the 2D effect ParticleEffect class.  They share the same name, but have different import paths. You are looking for: **com.badlogic.gdx.graphics.g3d.particles.ParticleEffect**
 
@@ -46,6 +44,7 @@ For a more in depth look at how to use 3d particles programmatically, [take a lo
 ```java
 // ParticleSystem is a singleton class, we get the instance instead of creating a new object:
 ParticleSystem particleSystem = ParticleSystem.get();
+// Since our particle effects are PointSprites, we create a PointSpriteParticleBatch
 PointSpriteParticleBatch pointSpriteBatch = new PointSpriteParticleBatch();
 pointSpriteBatch.setCamera(cam);
 particleSystem.add(pointSpriteBatch);
