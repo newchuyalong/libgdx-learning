@@ -163,7 +163,7 @@ Let's go ahead and create our floor as a static body. This is much like creating
 
 ```java
 // Create our body definition
-BodyDef groundBodyDef =new BodyDef();  
+BodyDef groundBodyDef = new BodyDef();  
 // Set its world position
 groundBodyDef.position.set(new Vector2(0, 10));  
 
