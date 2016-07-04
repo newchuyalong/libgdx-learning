@@ -51,7 +51,7 @@ parameter.size = 12;
 BitmapFont font12 = generator.generateFont(parameter); // font size 12 pixels
 generator.dispose(); // don't forget to dispose to avoid memory leaks!
 ```
-In order to make the above code run properly you will have to create a new folder named fonts inside your project's assets folder, and then place your font file in that folder.
+A much simpler way to display your font is by placing your font file in project's assets folder. You will have to modify the first line of the above code and mention just your font file name in the parameters.
 
 The defaults for the [FreeTypeFontParameter](https://github.com/libgdx/libgdx/blob/master/extensions/gdx-freetype/src/com/badlogic/gdx/graphics/g2d/freetype/FreeTypeFontGenerator.java):
 ```java
