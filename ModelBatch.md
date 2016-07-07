@@ -2,6 +2,22 @@
 
 **Caution:** because ModelBatch manages the render calls and therefore the rendering context, you should not try to manually modify the render context (e.g. bind shaders, texture or meshes, or call any function starting with `gl`) in between the `ModelBatch.begin()` and `ModelBatch.end()` calls. This will not work and might cause unpredictable behavior. Instead use the customization options that ModelBatch offers.
 
+* [Common misconceptions](#common-misconceptions)
+* [Overview](#overview)
+* [Using ModelBatch](#using-modelbatch)
+* [Gather render calls](#gather-render-calls)
+  * [What are render calls?](#what-are-render-calls)
+  * [RenderableProvider](#renderableprovider)
+* [Gather Shaders](#gather-shaders)
+  * [What is a shader?](#what-is-a-shader)
+  * [ShaderProvider](#shaderprovider)
+  * [Default shader](#default-shader)
+* [Sorting render calls](#sorting-render-calls)
+* [Managing the render context](#managing-the-render-context)
+  * [RenderContext](#rendercontext)
+  * [TextureBinder](#texturebinder)
+    * [TextureDescriptor](#texturedescriptor)
+
 # Common misconceptions
 * ModelBatch is often compared to [SpriteBatch](https://github.com/libgdx/libgdx/wiki/Spritebatch%2C-Textureregions%2C-and-Sprites). While this might be understandable from an API view, there are some very big differences making them less comparable. The main difference is that SpriteBatch merges multiple sprites into a single draw call, while ModelBatch doesn't combine render calls. This does have performance implications, so be aware to merge any render calls before sending them to the ModelBatch.
 * ModelBatch does not perform (frustum) culling. It simply hasn't enough information to do this using the best performing method. By default, every call to `ModelBatch.render()` will at least lead to one actual render call. ModelBatch does allow you to customize this though and perform frustum culling prior to actually rendering. However, typically, you should perform (frustum) culling prior to calling `ModelBatch.render()`.
