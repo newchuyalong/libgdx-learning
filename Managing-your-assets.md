@@ -71,7 +71,6 @@ So far we only queued assets to be loaded. The AssetManager does not yet load an
 public MyAppListener implements ApplicationListener {
 
    public void render() {
-      super.render(); // DO NOT FORGET!!!
       if(manager.update()) {
          // we are done loading, let's move to another screen!
       }
