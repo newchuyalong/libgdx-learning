@@ -115,7 +115,7 @@ texture.bind();
 shader.begin();
 shader.setUniformMatrix("u_worldView", matrix);
 shader.setUniformi("u_texture", 0);
-mesh.render(shader, GL10.GL_TRIANGLES);
+mesh.render(shader, GL20.GL_TRIANGLES);
 shader.end();
 ```
 
