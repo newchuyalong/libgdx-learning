@@ -27,6 +27,7 @@ http://libgdxspain.blogspot.com
  * Martian Run! Multi-part tutorial - http://williammora.com/a-running-game-with-libgdx-part-1/
  * Fighting Kitten blog (LibGDX, gdxAI) - http://fightingkitten.webcindario.com/
  * Libgdx tutorials on specific topics - http://libgdx.heerbann.com
+ * Guide to creating a Libgdx game, step by step http://tutorials.boondog.xyz/
 
 # Topic Specific Tutorials #
 
@@ -99,6 +100,7 @@ This websites will let you play with WebGL (provided your browser supports it) a
 * Video tutorial series on creating a tile game prototype: https://www.youtube.com/playlist?list=PLXY8okVWvwZ0qmqSBhOtqYRjzWtUCWylb
 * gdx-tiled-preprocessor video tutorial: http://youtu.be/q5D-TzlCRPM (Warning: the gdx-tiled-preprocessor was merged into gdx-tools)
 * Tiled + Box2d (En español): http://tutoriales.tiarsoft.com/2014/10/tiled-box2d-parte-1.html
+* Generating random tiled maps http://tutorials.boondog.xyz/2016/07/17/generating-random-maps/
 
 
 # External Tools & Frameworks #
