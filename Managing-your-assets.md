@@ -1,6 +1,6 @@
 ### Why would I want to use the AssetManager ###
 
-[AssetManager](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/assets/AssetManager.html) [(code)](https://github.com/libgdx/libgdx/blob/master/gdx/src/com/badlogic/gdx/assets/AssetManager.java) helps you load and manage your assets. It has the following nice behaviors:
+[AssetManager](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/assets/AssetManager.html) [(code)](https://github.com/libgdx/libgdx/blob/master/gdx/src/com/badlogic/gdx/assets/AssetManager.java) helps you load and manage your assets. It is the recommended way to load your assets, due to the following nice behaviors:
 
   * Loading of most resources is done asynchronously, so you can display a reactive loading screen while things load
   * Assets are reference counted. If two assets A and B both depend on another asset C, C won't be disposed until A and B have been disposed. This also means that if you load an asset multiple times, it will actually be shared and only take up memory once!
