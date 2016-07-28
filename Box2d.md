@@ -513,3 +513,4 @@ The following is a list of tools for use with box2d and libgdx:
 
    * <a href="https://www.iforce2d.net/rube">RUBE</a> editor for creating box2d worlds.  Use <a href="https://github.com/tescott/RubeLoader">RubeLoader</a> for loading RUBE data into libgdx.
    * Obli's <a href="http://www.aurelienribon.com/blog/projects/physics-body-editor/">Physics Body Editor</a>
+   * <a href="https://www.codeandweb.com/physicseditor">PhysicsEditor</a>
