@@ -111,7 +111,7 @@ The following code enables blending and sets the algorithms to be used when perf
 ```java
 ...
 batch.enableBlending();
-batch.setBlendFunction(GL11.GL_SRC_ALPHA, GL11.GL_ONE_MINUS_SRC_ALPHA);
+batch.setBlendFunction(GL20.GL_SRC_ALPHA, GL20.GL_ONE_MINUS_SRC_ALPHA);
 ...
 ```
 
