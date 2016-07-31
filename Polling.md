@@ -71,7 +71,7 @@ boolean leftPressed = Gdx.input.isButtonPressed(Input.Buttons.LEFT);
 boolean rightPressed = Gdx.input.isButtonPressed(Input.Buttons.RIGHT);
 ```
 
-See the [Buttons](http://libgdx.badlogicgames.com/nightlies/docs/api/index.html?com/badlogic/gdx/Input.Keys.html) class for more constants.
+See the [Buttons](http://libgdx.badlogicgames.com/nightlies/docs/api/index.html?com/badlogic/gdx/Input.Buttons.html) class for more constants.
 
 Note that on Android we only emulate the left mouse button. Any touch event will be interpreted as if it was issued with a left mouse button press. Touch screens obviously don't have a notion of left, right and middle button.
 
