@@ -4,7 +4,7 @@ LibGDX provides a more convenient way of dealing with this problem: [`Viewport`]
 
 ### Usage ###
 A viewport always manages a Camera's viewportWidth and viewportHeight. Thus a camera needs to be supplied to the constructors.
-
+```java
     private Viewport viewport;
     private Camera camera;
 
@@ -12,13 +12,13 @@ A viewport always manages a Camera's viewportWidth and viewportHeight. Thus a ca
         camera = new PerspectiveCamera();
         viewport = new FitViewport(800, 480, camera);
     }
-
+```
 Whenever a resize event occurs, the viewport needs to be informed about it and updated. This will automatically recalculate the viewport parameters and update the camera:
-
+```java
     public void resize(int width, int height) {
         viewport.update(width, height);
     }
-
+```
 Furthermore it will change the OpenGL Viewport via glViewport, which may add black bars if necessary, making it impossible to render in the area of the black bars. In case black bars appear with a certain viewport strategy, the OpenGL viewport may be reset to it's standard size and the viewport can be queried for the size of the bars via `Viewport.getLeftGutterWidth()` etc. For an example of how to do so, see [this test](https://github.com/libgdx/libgdx/blob/master/tests/gdx-tests/src/com/badlogic/gdx/tests/ViewportTest2.java). This might look like the following (probably with a more appropriate border picture...)
 
 [[images/OVamVTh.png]]
@@ -26,7 +26,7 @@ Furthermore it will change the OpenGL Viewport via glViewport, which may add bla
 In case picking needs to be done, Viewport offers convenient `project/unproject/getPickRay` methods, which uses the current viewport to do the correct picking. This is how you convert to and from screen and world coordinates.
 
 When Stage is used, the Stage's viewport needs to be updated when a resize event happens.
-
+```java
     private Stage stage;
 
     public void create() {
@@ -38,23 +38,23 @@ When Stage is used, the Stage's viewport needs to be updated when a resize event
         // that's what you probably want in case of a UI
         stage.getViewport().update(width, height, false);
     }
-
+```
 ### Multiple viewports
 
 When using multiple viewports that have different screen sizes (or you use other code that sets `glViewport`), you will need to apply the viewport before drawing so the `glViewport` is set for that viewport.
-
+```java
     viewport1.apply();
     // draw
     viewport2.apply();
     // draw
-
+```
 When using multiple Stages:
-
+```java
     stage1.getViewport().apply();
     stage1.draw();
     stage2.getViewport().apply();
     stage2.draw();
-
+```
 ### Examples
 
 To see the viewports in action, have a look at the tests here: [ViewportTest1](https://github.com/libgdx/libgdx/blob/master/tests/gdx-tests/src/com/badlogic/gdx/tests/ViewportTest1.java), [ViewportTest2](https://github.com/libgdx/libgdx/blob/master/tests/gdx-tests/src/com/badlogic/gdx/tests/ViewportTest2.java) and [ViewportTest3](https://github.com/libgdx/libgdx/blob/master/tests/gdx-tests/src/com/badlogic/gdx/tests/ViewportTest3.java).
