@@ -178,22 +178,22 @@ What are these units though? What do they mean? How will I know what size to mak
 
 
 ```java
-	@Override
-	public void create() {
-		rotationSpeed = 0.5f;                                                    #1
+@Override
+public void create() {
+	rotationSpeed = 0.5f;                                                    #1
 
-		mapSprite = new Sprite(new Texture(Gdx.files.internal("sc_map.png")));   #2
-		mapSprite.setPosition(0, 0);                                             #3
-		mapSprite.setSize(WORLD_WIDTH, WORLD_HEIGHT);                            #4
+	mapSprite = new Sprite(new Texture(Gdx.files.internal("sc_map.png")));   #2
+	mapSprite.setPosition(0, 0);                                             #3
+	mapSprite.setSize(WORLD_WIDTH, WORLD_HEIGHT);                            #4
 
-		float w = Gdx.graphics.getWidth();                                       #5
-		float h = Gdx.graphics.getHeight();                                      #6
-		cam = new OrthographicCamera(30, 30 * (h / w));                          #7
-		cam.position.set(cam.viewportWidth / 2f, cam.viewportHeight / 2f, 0);    #8
-		cam.update();                                                            #9
+	float w = Gdx.graphics.getWidth();                                       #5
+	float h = Gdx.graphics.getHeight();                                      #6
+	cam = new OrthographicCamera(30, 30 * (h / w));                          #7
+	cam.position.set(cam.viewportWidth / 2f, cam.viewportHeight / 2f, 0);    #8
+	cam.update();                                                            #9
 
-		batch = new SpriteBatch();                                               #10
-	}
+	batch = new SpriteBatch();                                               #10
+}
 ```
 
 
