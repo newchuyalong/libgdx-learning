@@ -244,18 +244,17 @@ And we are setup! So let’s get rendering and manipulating the camera.
 
 ```java
 @Override
-	@Override
-	public void render() {
-		handleInput();                             #1
-		cam.update();                              #2                             
-		batch.setProjectionMatrix(cam.combined);   #3
+public void render() {
+	handleInput();                             #1
+	cam.update();                              #2                             
+	batch.setProjectionMatrix(cam.combined);   #3
 
-		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);  #4
+	Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);  #4
 
-		batch.begin();                             #5
-		mapSprite.draw(batch);                     #6
-		batch.end();                               #7
-	}
+	batch.begin();                             #5
+	mapSprite.draw(batch);                     #6
+	batch.end();                               #7
+}
 ```
 
 
