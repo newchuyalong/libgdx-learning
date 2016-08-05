@@ -44,7 +44,6 @@ Examples
 	parameter.characters = "한국어/조선�?";
 
 	BitmapFont koreanFont = generator.generateFont(parameter);
-	generator.dispose();
 
 	parameter.characters = FreeTypeFontGenerator.DEFAULT_CHARS;
 	generator = new FreeTypeFontGenerator(Gdx.files.internal("data/russkij.ttf"));
