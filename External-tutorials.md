@@ -7,7 +7,7 @@ These are webpages where individuals or companies write about their experience w
 
  * GameFromScratch.com Complete LibGDX Tutorial Series - http://www.gamefromscratch.com/page/LibGDX-Tutorial-series.aspx
  * Aurelien's Blog - http://www.aurelienribon.com/blog/
- * MoribitoTechX's website - http://moribitotechx.blogspot.pt/p/tutorial-series-libgdx-mtx.html
+ * MoribitoTechX's website - http://moribitotechx.blogspot.pt/p/tutorial-series-libgdx-mtx.html (this blog only open to invited readers)
  * Gemserk's blog - http://blog.gemserk.com/
  * Gustavo Steigert's personal blog - http://steigert.blogspot.pt/
  * Rotating Canvas, an indie developers group webpage - http://rotatingcanvas.com/category/tutorials/
