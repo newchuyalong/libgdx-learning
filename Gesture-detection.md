@@ -64,7 +64,7 @@ public class MyGestureListener implements GestureListener{
 	   		
 	   return false;
    	}
-        @Override
+   	@Override
 	public void pinchStop () {
 	}
 }
