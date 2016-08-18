@@ -34,7 +34,7 @@ On a desktop OS, the filesystem is one big chunk of memory. Files can be referen
 ### Android
 On Android the situation is a little bit more complex. Files can be stored inside the application's [APK](http://en.wikipedia.org/wiki/APK_(file_format)) either as resources or as assets. These files are read-only. Libgdx only uses the [assets mechanism](http://developer.android.com/reference/android/content/res/AssetManager.html), as it provides raw access to the byte streams and more closely resembles a traditional filesystem. [Resources](http://developer.android.com/guide/topics/resources/index.html) better lend themselves to normal Android applications but introduce problems when used in games. Android manipulates them at load time, e.g. it automatically resizes images.
 
-Assets are stored in your Android project's `assets` directory and will be packaged with your APK automatically when you deploy your application. No other application can access these files. 
+Assets are stored in your Android project's `assets` directory and will be packaged with your APK automatically when you deploy your application. No other application on the Android system can access these files. 
 
 Files can also be stored on the [internal storage](http://developer.android.com/guide/topics/data/data-storage.html#filesInternal), where they are readable and writable. Each installed application has a dedicated internal storage directory. This directory is again only accessible by that application. One can think of this storage as a private working area for the application.
 
