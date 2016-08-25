@@ -16,7 +16,7 @@ libgdx can perform automatic object to JSON serialization and JSON to object des
 
 To use these classes outside of libgdx, see the [JsonBeans](https://github.com/EsotericSoftware/jsonbeans/) project.
 
-Used to the default Android json.org library? Get started with
+Used to the default Android json.org library? Get started with !THE LINK IS BAD!
 [this great tutorial](http://jackyjjc.com/2013/10/07/parsing-json-in-libgdx-tutorial/).
 
 ## <a id="writing-object-graphs"></a>Writing Object Graphs ##
