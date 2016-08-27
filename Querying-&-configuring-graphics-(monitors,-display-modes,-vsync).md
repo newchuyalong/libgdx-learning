@@ -160,7 +160,7 @@ To get the current display mode, use this method:
 DisplayMode currMode = Gdx.graphics.getDisplayMode(monitor);
 ```
 
-### Switching to full-scree mode
+### Switching to full-screen mode
 With a `DisplayMode` from a specific `Monitor`, you can switch to full-screen as follows:
 ```java
 Monitor currMonitor = Gdx.graphics.getMonitor();
