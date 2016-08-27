@@ -1,6 +1,6 @@
 [Kotlin](https://kotlinlang.org) is a modern statically typed JVM language from [JetBrains](https://www.jetbrains.com), the creators of [IntelliJ IDEA](https://www.jetbrains.com/idea/) (Kotlin supports Eclipse too). If you’re a C# user or appreciate its features, you will feel more at home as Kotlin has many features C# has, as well as features C# can never have (null safety).
 
-*Due to how GWT works, you will not be able to use the HTML5 target with Kotlin. This could be fixed in the future by using Kotlin’s JavaScript back-end.*
+*Due to how GWT works, you will not be able to use the HTML5 target with Kotlin. This could be fixed in the future by using Kotlin’s JavaScript back-end.* It might be possible to utilize [TeaVM](https://github.com/konsoletyper/teavm) as a replacement for GWT, though.
 
 # About the Kotlin language
 
@@ -79,7 +79,7 @@ You do not need to migrate all or any of your Java code right away. Both languag
 
 However, if you decide to migrate your Java code to Kotlin, IntelliJ IDEA has a handy function for that.
 
-Open any Java file, e.g. your `DesktopLauncher` and select *Code → Convert Java File to Kotlin File* from the menu. Repeat this process for every file you want to migrate.
+Open any Java file, e.g. your `DesktopLauncher` and select *Code → Convert Java File to Kotlin File* from the menu. Repeat this process for every file you want to migrate. While it is still in its infancy so it won't be error proof, but it will help you come up with more idiomatic ways of coding your project. There will be some errors, specifically with some Class<> usage, and Java code that it could not deduce null safety (because that information is lacking from Java).
 
 ## Build and run
 
@@ -89,6 +89,6 @@ That’s it. You successfully enabled Kotlin in your libGDX application. Build a
 
 These are some examples of projects that are using Kotlin, to help give you ideas on how to structure, take advantage of language features, as well as simple stuff such as build system.
 
-* [Ore Infinium](https://github.com/sreich/ore-infinium) (desktop, moderate size, MIT license)
+* [Ore Infinium](https://github.com/sreich/ore-infinium) (desktop, moderate size, MIT license. lots of helper/wrapper code to make use of libGDX, artemis-odb, kryonet easier and more idiomatic)
 
 *TODO:* add more real life project examples of Kotlin being used for libGDX projects.
