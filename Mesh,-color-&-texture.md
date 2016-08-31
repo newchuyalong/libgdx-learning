@@ -95,7 +95,7 @@ After creating a mesh, we specify its vertices using a float array. The first th
 
 Vertex 1 is located at 0.5(x), -0.5(y), 0(z). To visualize where this point is on the screen, imagine that the center of the screen is at 0(x), 0(y), 0(z). The left edge of the screen is at -1(x), the right edge 1(x). The bottom of the screen is at -1(y), the top 1(y). Here's an image of the concept:
 
-http://libgdx.googlecode.com/svn/wiki/img/mesh_color_texture_coordinate_system.png
+![Image of Coordinate System](http://i.imgur.com/yLnMRu5.png)
 
 ```java
 public void render() {
@@ -123,15 +123,15 @@ mesh.setIndices(new short[] { 0, 1, 2 });
 
 In the mesh construction, we added a `VertexAttribute` for color. It contains 4 components (R, G, B, Alpha) and we give it the alias `a_color`. We then add color information to the float array. When we run the app, it should look like this:
 
-http://libgdx.googlecode.com/svn/wiki/img/mesh_color_texture_colored.png
+![Image of Mesh Color Texture Colored](http://i.imgur.com/mPCd20W.png)
 
 ## Texture ##
 
 To put a texture on the mesh, we will need to put an image file in our workspace, create a texture object in our code referencing that image, and then add a texture `VertexAttribute` to our mesh.
 
-To start, inside the `mesh-color-texture` project, create a folder named `data` on the same level as the `src` and `libs` folders. Copy any image into the folder, in this example we'll use [http://libgdx.googlecode.com/svn/wiki/img/badlogic.jpg badlogic.jpg]. It's important to note that any image used to create a texture must have width and height each be a power of two.
+To start, inside the `mesh-color-texture` project, create a folder named `data` on the same level as the `src` and `libs` folders. Copy any image into the folder, in this example we'll use [http://i.imgur.com/joJOP1R.jpg]. It's important to note that any image used to create a texture must have width and height each be a power of two.
 
-http://libgdx.googlecode.com/svn/wiki/img/badlogic.jpg
+![Image of Badlogic](http://i.imgur.com/joJOP1R.jpg)
 
 In the `MeshColorTexture` class, we need to add a `Texture` object field, then modify the `create()` and `render` methods. Here are the changes:
 
@@ -169,7 +169,7 @@ public void render() {
 
 Import the necessary classes and run the `MeshColorTextureDesktop` application. The result should look like this:
 
-http://libgdx.googlecode.com/svn/wiki/img/mesh_color_texture_textured.png
+![Image of Mesh Color Texture Textured](http://i.imgur.com/ODswR8B.png)
 
 ```java
 new VertexAttribute(Usage.TextureCoordinates, 2, "a_texCoords")
@@ -215,7 +215,7 @@ To run this example on an Android device or simulator, we just need to follow st
 
 The one last thing thing we need to do is to add the image file to the Android workspace. Under your Android project, if a folder named `assets` does not already exist adjacent to the `src` and `libs` directory, then create it. Inside `assets`, create a folder named `data`, and put your image file in it, in our case it was `badlogic.jpg`. Now you can run the project as an Android application.
 
-http://libgdx.googlecode.com/svn/wiki/img/mesh_color_texture_android.png
+![Image of Mesh Color Texture Android](http://i.imgur.com/qhCuLox.png)
 
 ## Conclusion ##
 
