@@ -57,6 +57,8 @@ java -cp gdx.jar:extensions/gdx-tools/gdx-tools.jar com.badlogic.gdx.tools.textu
 java -cp gdx.jar;extensions/gdx-tools/gdx-tools.jar com.badlogic.gdx.tools.texturepacker.TexturePacker inputDir [outputDir] [packFileName]
 ```
 
+TexturePacker can also be run from the [standalone nightly](https://libgdx.badlogicgames.com/nightlies/runnables/), just substitute `runnable-texturepacker.jar` for `gdx.jar;extensions/gdx-tools/gdx-tools.jar` in the above.
+
 Note that TexturePacker runs significantly faster with Java 1.7+, especially when packing hundreds of input images.
 
 ## <a id="Directory_structure"></a>Directory structure ##
@@ -188,6 +190,8 @@ java -cp gdx.jar:gdx-tools.jar com.badlogic.gdx.tools.texturepacker.TexturePacke
 //WINDOWS
 java -cp gdx.jar;gdx-tools.jar com.badlogic.gdx.tools.texturepacker.TexturePacker inputDir outputDir packFileName
 ```
+
+TexturePacker can also be run from the [standalone nightly](https://libgdx.badlogicgames.com/nightlies/runnables/) without gdx.jar (i.e. without the rest of libgdx at all), just substitute `runnable-texturepacker.jar` for `gdx.jar;gdx-tools.jar` in the above.
 
 `inputDir` is the root directory containing the images. `outputDir` is the output directory where the packed images will be placed. `packFileName` is the name of the pack file and the prefix used for the output packed image files.
 
