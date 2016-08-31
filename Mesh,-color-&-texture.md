@@ -1,4 +1,5 @@
-# No Op: Not translating
+## Outdated ##
+Refer to this page: https://github.com/libgdx/libgdx/wiki/3D-Graphics
 
 # Summary
 Going more indepth into Mesh, including colors and textures
@@ -219,7 +220,7 @@ The one last thing thing we need to do is to add the image file to the Android w
 
 ## Conclusion ##
 
-There are several resources to learn more about meshes, colors, and textures. In the [http://code.google.com/p/libgdx/downloads/list Downloads page], you can get the source code of the game Invaders, which uses these element more extensively. The Javadoc is quite complete, and provides better details on the requirements of different classes and methods. Check out this [http://www.badlogicgames.com/wordpress/?p=1199 article] for more information about file access within libgdx. If you have more questions, please visit our forum or go on our IRC channel `#badlogic` hosted on `apisutdios.com`. Also on the [http://code.google.com/p/libgdx/downloads/list Downloads page], you can find `MeshColorTexture.zip`, which contains the source code to the examples used in this tutorial.
+There are several resources to learn more about meshes, colors, and textures. In the [http://code.google.com/p/libgdx/downloads/list Downloads page], you can get the source code of the game Invaders, which uses these element more extensively. The Javadoc is quite complete, and provides better details on the requirements of different classes and methods. Check out this [http://www.badlogicgames.com/wordpress/?p=1199 article] for more information about file access within libgdx. If you have more questions, please visit our forum or go on our IRC channel `#libgdx` hosted on `Freenode`. Also on the [http://code.google.com/p/libgdx/downloads/list Downloads page], you can find `MeshColorTexture.zip`, which contains the source code to the examples used in this tutorial.
 
 = Change Log =
 == Feb 22 2011 ==
